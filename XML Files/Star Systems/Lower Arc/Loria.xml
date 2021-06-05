@@ -1,0 +1,2105 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="348.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="562.0" integer="yes" />
+    <set_variable name="Alignment" value="2.0" integer="yes" />
+  </start>
+  <folder_arme name="Loria System" id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <folder_arme name="Loria Settings" id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <folder_arme name="Loria Menu" id_arme="22a66b71-1df2-45ee-8eda-9da6108be998" parent_id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c" expanded_arme="" />
+  <event name="Loria Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="22a66b71-1df2-45ee-8eda-9da6108be998">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Loria System" />
+    <set_variable name="Loria Gate" value="1.0" integer="yes" />
+    <!--348,562-->
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="22a66b71-1df2-45ee-8eda-9da6108be998">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Loria System" />
+  </event>
+  <event name="Loria System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="22a66b71-1df2-45ee-8eda-9da6108be998">
+    <if_gm_button text="Lower Arc/Loria System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="105.0" integer="yes" />
+    <set_variable name="Loria System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Loria Sector I" id_arme="367c7f6c-afb3-4468-afe5-0ff55bfa431a" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector I" id_arme="8348bcd1-4b41-4ac5-8eff-5bbe17de5d77" parent_id_arme="367c7f6c-afb3-4468-afe5-0ff55bfa431a">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="45" type="nebulas" startX="47434.0" startY="0.0" startZ="35458.0" endX="15011.0" endY="0.0" endZ="46456.0" randomRange="10533" />
+    <create count="100" type="nebulas" startX="69430.0" startY="0.0" startZ="73665.0" endX="15581.0" endY="0.0" endZ="90448.0" randomRange="14710" />
+  </event>
+  <folder_arme name="Navigation" id_arme="49a3ebe1-f446-46cf-bfc7-e66986aa1f01" parent_id_arme="367c7f6c-afb3-4468-afe5-0ff55bfa431a" />
+  <event name="Transition to Sector II" id_arme="a51b1d67-1b3c-4b6c-9673-cd222905c080" parent_id_arme="49a3ebe1-f446-46cf-bfc7-e66986aa1f01">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="9a6bdb9a-6a2c-42a2-ba84-4417b5c1ccd3" parent_id_arme="49a3ebe1-f446-46cf-bfc7-e66986aa1f01">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="335191bf-bec0-4a97-ade2-c40012a68f4d" parent_id_arme="49a3ebe1-f446-46cf-bfc7-e66986aa1f01">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="c718d614-5303-46bb-8be8-526587e5006b" parent_id_arme="367c7f6c-afb3-4468-afe5-0ff55bfa431a" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="33520d00-36ba-4a5b-a328-dc2b8c1f39cd" parent_id_arme="c718d614-5303-46bb-8be8-526587e5006b">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="31384.0" y="0.0" z="73303.0" angle="0" name="DS-105" hullID="1000" sideValue="sectorside" />
+    <create type="station" x="77590.0" y="0.0" z="47723.0" angle="0" name="DS-107" hullID="1000" sideValue="sectorside" />
+    <create type="station" x="74777.0" y="0.0" z="77857.0" angle="0" name="Deserati" hullID="1003" sideValue="sectorside" />
+    <create type="station" x="63393.0" y="0.0" z="83214.0" angle="0" name="Conduti" hullID="1003" sideValue="sectorside" />
+    <create type="station" x="47322.0" y="0.0" z="52678.0" angle="0" name="DS-101" hullID="1000" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="4a907aec-386d-4bb4-89cf-dd0f9a44e242" parent_id_arme="c718d614-5303-46bb-8be8-526587e5006b">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="6f6eac0d-e550-496a-a1e1-b90b5179666b" parent_id_arme="c718d614-5303-46bb-8be8-526587e5006b">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-105" />
+    <destroy name="DS-107" />
+    <destroy name="Deserati" />
+    <destroy name="Conduti" />
+    <destroy name="DS-101" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector II" id_arme="e887bc5f-398a-4b23-a291-5ad2de429229" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector II" id_arme="886fa335-b555-4556-a51a-dc4e21e810d8" parent_id_arme="e887bc5f-398a-4b23-a291-5ad2de429229">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="10" type="nebulas" startX="67531.0" startY="0.0" startZ="39804.0" endX="22788.0" endY="0.0" endZ="50000.0" randomRange="6246" />
+    <create count="50" type="nebulas" startX="94964.0" startY="0.0" startZ="93129.0" endX="55722.0" endY="0.0" endZ="93349.0" randomRange="6761" />
+    <create count="10" type="nebulas" startX="94230.0" startY="0.0" startZ="78459.0" endX="54548.0" endY="0.0" endZ="79706.0" randomRange="8839" />
+    <create count="60" type="nebulas" startX="48167.0" startY="0.0" startZ="93056.0" endX="8851.0" endY="0.0" endZ="67897.0" randomRange="7795" />
+    <create count="60" type="asteroids" startX="60856.0" startY="0.0" startZ="34816.0" endX="25208.0" endY="0.0" endZ="42151.0" randomRange="6191" />
+    <create count="40" type="asteroids" startX="49634.0" startY="0.0" startZ="75378.0" endX="26309.0" endY="0.0" endZ="56454.0" randomRange="5439" />
+    <create count="10" type="asteroids" startX="30416.0" startY="0.0" startZ="49779.0" endX="22714.0" endY="0.0" endZ="45892.0" randomRange="7251" />
+  </event>
+  <folder_arme name="Navigation" id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e" parent_id_arme="e887bc5f-398a-4b23-a291-5ad2de429229" expanded_arme="" />
+  <event name="Transition to Sector III" id_arme="f0044381-731a-4baa-896a-1f502db7d73c" parent_id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="058bc96b-f6c4-4ada-a67a-95dc4fc84023" parent_id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="0195d0c5-7489-4231-b12f-69836e18f186" parent_id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="56908b80-a6ba-4a96-b26a-d16552491b4a" parent_id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="d740e8c9-7627-432a-8349-2a004f932039" parent_id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1" parent_id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e" expanded_arme="" />
+  <event name="Gate Offline" id_arme="38cbc171-f49a-46fa-be1d-7d0983a98789" parent_id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Mria Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b" parent_id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1" expanded_arme="" />
+  <event name="Ship1 Activation Range" id_arme="245683e8-6ba8-4fab-a70a-a262d1421eec" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="018be533-26c0-4407-acb3-b2aa370672bb" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="166bc2bf-4323-4136-9232-d89e5bbe0199" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="d63e9c6f-7fe9-4ea5-ac09-9ddc2fadbabc" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="4c2c18ac-33b0-4cfb-b704-0078aec03276" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="cbaf1456-66af-464a-a950-068167b5dfa0" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="1d123ced-d953-4866-8396-e386ac74753e" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="8b9d36eb-b22a-415c-9d22-7596e887e802" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="d74c2240-a1b7-42a7-83be-a1fde58a1d31" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="571d5d44-624a-4245-b191-1556d37bc45b" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="3c500a4c-206d-4249-8348-155f28e55207" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="14698ca4-d0c8-4985-bc51-b3bf374b8bc5" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="7e2a66d2-33aa-497e-9a5c-585800aa9da5" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="47dfb18b-591e-466f-ace6-7d85e3d88556" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="b9c6545d-51b9-4160-a95c-e0849d7fe7c7" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="b146b8b3-4ca9-4d53-818d-5ecb842ca550" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="d38e5354-c4aa-407d-9dbe-4a1511acf506" parent_id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Mria Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="a9a7abfe-86bd-478a-b874-2f170a88bd10" parent_id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria to Mria" value="1.0" />
+    <set_variable name="Mria System" value="1.0" />
+    <set_variable name="Sector" value="7" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="c4f985d2-1d95-42ac-8f67-452f4fb61fd8" parent_id_arme="e887bc5f-398a-4b23-a291-5ad2de429229" />
+  <event name="Generate Sector Entities" id_arme="2f232c81-c5df-43e2-970f-6a5649126116" parent_id_arme="c4f985d2-1d95-42ac-8f67-452f4fb61fd8">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="75715.0" y="0.0" z="36205.0" name="Mria Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create count="100" type="mines" startAngle="-60" endAngle="60" startX="73438.0" startY="0.0" startZ="92991.0" radius="20000" />
+    <create count="100" type="mines" startAngle="-120" endAngle="0" startX="27902.0" startY="0.0" startZ="72633.0" radius="20000" />
+    <create type="station" x="72634.0" y="0.0" z="89107.0" name="DS-118" hullID="1000" />
+    <create count="100" type="mines" startAngle="-120" endAngle="15" startX="10625.0" startY="0.0" startZ="34464.0" radius="20000" />
+    <create type="station" x="29375.0" y="0.0" z="71294.0" name="DS-119" hullID="1000" />
+    <create type="station" x="13734.0" y="0.0" z="34933.0" name="DS-120" hullID="1000" />
+    <create type="station" x="25358.0" y="0.0" z="50267.0" name="WP" hullID="1052" />
+    <create type="station" x="17858.0" y="0.0" z="76651.0" name="Ayana" hullID="1003" />
+    <create type="station" x="49465.0" y="0.0" z="85357.0" name="WP" hullID="1052" />
+    <create type="station" x="26831.0" y="0.0" z="85357.0" name="Customs House" hullID="1001" />
+    <create type="neutral" x="31786.0" y="0.0" z="89508.0" angle="0" name="Civilian SY" hullID="1053" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="c33c1f90-ec89-4a68-a3a2-b9007bb088f7" parent_id_arme="c4f985d2-1d95-42ac-8f67-452f4fb61fd8">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Mria Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Mria Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Mria Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Mria Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="5bdba8d6-4bb8-451c-a30f-e411257033ee" parent_id_arme="c4f985d2-1d95-42ac-8f67-452f4fb61fd8">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="Mria Gate" />
+    <destroy name="DS-118" />
+    <destroy name="DS-119" />
+    <destroy name="DS-120" />
+    <destroy name="WP" />
+    <destroy name="Ayana" />
+    <destroy name="WP" />
+    <destroy name="Customs House" />
+    <destroy name="Civilian SY" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Mria" id_arme="eaacf06c-92c9-4b9b-b4a5-3bbcadd96ac0" parent_id_arme="e887bc5f-398a-4b23-a291-5ad2de429229">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Mria to Loria" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Mria Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Mria to Loria" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector III" id_arme="9b6ea517-f66f-48ad-8ef4-9280f881faf6" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector III" id_arme="27891209-08c7-49a8-951a-d9db80161e3c" parent_id_arme="9b6ea517-f66f-48ad-8ef4-9280f881faf6">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="10" type="nebulas" startX="95624.0" startY="0.0" startZ="60929.0" endX="95844.0" endY="0.0" endZ="78166.0" randomRange="5708" />
+    <create count="10" type="nebulas" startX="89169.0" startY="0.0" startZ="63569.0" endX="29169.0" endY="0.0" endZ="46845.0" randomRange="4004" />
+    <create count="10" type="nebulas" startX="58436.0" startY="0.0" startZ="55207.0" endX="24475.0" endY="0.0" endZ="31369.0" randomRange="6036" />
+    <create count="50" type="asteroids" startX="37678.0" startY="0.0" startZ="39217.0" endX="3277.0" endY="0.0" endZ="44938.0" randomRange="7530" />
+    <create count="80" type="asteroids" startX="31150.0" startY="0.0" startZ="29975.0" endX="3497.0" endY="0.0" endZ="30562.0" randomRange="6456" />
+    <create count="30" type="asteroids" startX="30196.0" startY="0.0" startZ="49413.0" endX="4230.0" endY="0.0" endZ="63643.0" randomRange="6530" />
+  </event>
+  <folder_arme name="Navigation" id_arme="6eac6a9a-8ea4-49aa-946c-c0b0919bb9f5" parent_id_arme="9b6ea517-f66f-48ad-8ef4-9280f881faf6" />
+  <event name="Transition to Sector IV" id_arme="b55812c6-8567-4b82-b75e-df375421c28e" parent_id_arme="6eac6a9a-8ea4-49aa-946c-c0b0919bb9f5">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="7951b5fc-3661-465a-8656-aca6ded79908" parent_id_arme="6eac6a9a-8ea4-49aa-946c-c0b0919bb9f5">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="0cb26792-844c-42b9-8060-046c08493af0" parent_id_arme="6eac6a9a-8ea4-49aa-946c-c0b0919bb9f5">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="b7d34cad-bcf3-45e6-a06e-e1801f5c00f0" parent_id_arme="6eac6a9a-8ea4-49aa-946c-c0b0919bb9f5">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="5f243481-1824-452b-87d3-d1daf730b648" parent_id_arme="6eac6a9a-8ea4-49aa-946c-c0b0919bb9f5">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="db4872f8-7288-4185-bf65-ee74ddda6756" parent_id_arme="9b6ea517-f66f-48ad-8ef4-9280f881faf6" />
+  <event name="Generate Sector Entities" id_arme="a6a656b6-305e-4ac0-beb5-9e0f845e1546" parent_id_arme="db4872f8-7288-4185-bf65-ee74ddda6756">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="39554.0" y="0.0" z="25491.0" angle="0" name="DS-19" hullID="1000" />
+    <create type="station" x="67411.0" y="0.0" z="67812.0" angle="0" name="DS-39" hullID="1000" />
+    <create type="station" x="35000.0" y="0.0" z="45580.0" angle="0" name="Melnibo" hullID="1003" />
+    <create type="station" x="62188.0" y="0.0" z="49464.0" angle="0" name="Santiago" hullID="1003" />
+    <create type="station" x="66340.0" y="0.0" z="31785.0" angle="0" name="DS-148" hullID="1000" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="41174c68-493d-4b91-847b-c3728d17f7a9" parent_id_arme="db4872f8-7288-4185-bf65-ee74ddda6756">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="7ed0ba6e-a5c3-4b62-bd81-76323df85fd8" parent_id_arme="db4872f8-7288-4185-bf65-ee74ddda6756">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-19" />
+    <destroy name="DS-39" />
+    <destroy name="Melnibo" />
+    <destroy name="Santiago" />
+    <destroy name="DS-148" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector IV" id_arme="1f7ee0a0-af92-452d-b3c2-837d997a5f95" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector IV" id_arme="ba0ef9d8-ec5a-469d-a67e-dfa29472becb" parent_id_arme="1f7ee0a0-af92-452d-b3c2-837d997a5f95">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <create count="30" type="asteroids" startX="96578.0" startY="0.0" startZ="23740.0" endX="96504.0" endY="0.0" endZ="55574.0" randomRange="3686" />
+    <create count="60" type="asteroids" startX="92323.0" startY="0.0" startZ="27408.0" endX="39878.0" endY="0.0" endZ="5696.0" randomRange="5598" />
+    <create count="60" type="asteroids" startX="91296.0" startY="0.0" startZ="47212.0" endX="44939.0" endY="0.0" endZ="19706.0" randomRange="7959" />
+    <create count="30" type="asteroids" startX="49634.0" startY="0.0" startZ="23814.0" endX="4744.0" endY="0.0" endZ="29388.0" randomRange="9625" />
+    <create count="40" type="nebulas" startX="75233.0" startY="0.0" startZ="34669.0" endX="37311.0" endY="0.0" endZ="26234.0" randomRange="4153" />
+    <create count="40" type="asteroids" startX="44939.0" startY="0.0" startZ="70097.0" endX="19707.0" endY="0.0" endZ="64449.0" randomRange="3890" />
+    <create count="10" type="nebulas" startX="43179.0" startY="0.0" startZ="66943.0" endX="25208.0" endY="0.0" endZ="57848.0" randomRange="2046" />
+  </event>
+  <folder_arme name="Navigation" id_arme="6dfcee8f-b97b-428a-9a1e-ca9c769c7dd0" parent_id_arme="1f7ee0a0-af92-452d-b3c2-837d997a5f95" />
+  <event name="Transition to Sector III" id_arme="bd1fcf31-885b-4dd2-bf25-ae35011780bc" parent_id_arme="6dfcee8f-b97b-428a-9a1e-ca9c769c7dd0">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="2505b19b-032f-4faa-a52c-8fa491c70f53" parent_id_arme="6dfcee8f-b97b-428a-9a1e-ca9c769c7dd0">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="065e8b27-632a-466f-b136-37d36c32bf79" parent_id_arme="6dfcee8f-b97b-428a-9a1e-ca9c769c7dd0">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="f20fc733-0ca2-4a6d-95dd-c92a189b0657" parent_id_arme="1f7ee0a0-af92-452d-b3c2-837d997a5f95" />
+  <event name="Generate Sector Entities" id_arme="b3b45845-ba99-446e-8282-0bc0e5a2ead7" parent_id_arme="f20fc733-0ca2-4a6d-95dd-c92a189b0657">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="24018.0" y="0.0" z="56964.0" angle="0" name="Comms Relay" hullID="1055" />
+    <create type="station" x="74108.0" y="0.0" z="43973.0" angle="0" name="DS-59" hullID="1000" />
+    <create type="station" x="51875.0" y="0.0" z="66339.0" angle="0" name="DS-71" hullID="1000" />
+    <create type="station" x="64465.0" y="0.0" z="28169.0" angle="0" name="Okogonik" hullID="1003" />
+    <create type="neutral" x="38483.0" y="0.0" z="61919.0" angle="0" name="Sensor Buoy" hullID="1054" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="61ccc85f-4bf5-416f-ab30-3371084ededf" parent_id_arme="f20fc733-0ca2-4a6d-95dd-c92a189b0657">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="a97140de-f34c-46d5-86de-06d0767f23c3" parent_id_arme="f20fc733-0ca2-4a6d-95dd-c92a189b0657">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="Comms Relay" />
+    <destroy name="DS-59" />
+    <destroy name="DS-71" />
+    <destroy name="Okogonik" />
+    <destroy name="Sensor Buoy" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector V" id_arme="117f634a-5544-47a8-98c0-19b46ea891aa" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector V" id_arme="f6b1fa0e-6680-4f44-a14f-e494b547bda2" parent_id_arme="117f634a-5544-47a8-98c0-19b46ea891aa">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="nebulas" startX="58436.0" startY="0.0" startZ="3056.0" endX="2397.0" endY="0.0" endZ="4376.0" randomRange="5354" />
+    <create count="50" type="nebulas" startX="49634.0" startY="0.0" startZ="10611.0" endX="24328.0" endY="0.0" endZ="63129.0" randomRange="11298" />
+    <create count="30" type="nebulas" startX="35331.0" startY="0.0" startZ="57114.0" endX="56822.0" endY="0.0" endZ="74938.0" randomRange="5519" />
+    <create count="40" type="nebulas" startX="45453.0" startY="0.0" startZ="28728.0" endX="35037.0" endY="0.0" endZ="51613.0" randomRange="5765" />
+    <create count="10" type="asteroids" startX="45526.0" startY="0.0" startZ="77432.0" endX="17800.0" endY="0.0" endZ="59682.0" randomRange="5093" />
+    <create count="10" type="asteroids" startX="27115.0" startY="0.0" startZ="58875.0" endX="34524.0" endY="0.0" endZ="34743.0" randomRange="5373" />
+  </event>
+  <folder_arme name="Navigation" id_arme="7336e252-c2b6-42d5-8756-c3cfde044771" parent_id_arme="117f634a-5544-47a8-98c0-19b46ea891aa" />
+  <event name="Transition to Sector VI" id_arme="683a68e7-82c3-4bbd-9d37-966027cc859f" parent_id_arme="7336e252-c2b6-42d5-8756-c3cfde044771">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="cd7c6695-2bc4-4884-bc65-2106535bfc7b" parent_id_arme="7336e252-c2b6-42d5-8756-c3cfde044771">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="824cce07-d4d7-41ab-beb7-cb3b8880e3ac" parent_id_arme="7336e252-c2b6-42d5-8756-c3cfde044771">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="f231dc7a-ee31-4081-974e-06835efeb835" parent_id_arme="7336e252-c2b6-42d5-8756-c3cfde044771">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="376efca2-029f-4298-bf3f-16910be14f72" parent_id_arme="7336e252-c2b6-42d5-8756-c3cfde044771">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="4c06c357-1548-48b0-bcad-077ba538878f" parent_id_arme="117f634a-5544-47a8-98c0-19b46ea891aa" />
+  <event name="Generate Sector Entities" id_arme="e82fec75-ef13-4f2c-8f34-484f4a3b1651" parent_id_arme="4c06c357-1548-48b0-bcad-077ba538878f">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="23215.0" y="0.0" z="45580.0" angle="0" name="DS-53" hullID="1000" />
+    <create type="station" x="50670.0" y="0.0" z="23883.0" angle="0" name="DS-87" hullID="1000" />
+    <create type="station" x="77322.0" y="0.0" z="56562.0" angle="0" name="DS-166" hullID="1000" />
+    <create type="station" x="44242.0" y="0.0" z="75848.0" angle="0" name="Chel-rea" hullID="1003" />
+    <create type="station" x="47322.0" y="0.0" z="45714.0" angle="0" name="Chel-don" hullID="1003" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="fadc4b68-4d63-4f54-a120-bb8fad424723" parent_id_arme="4c06c357-1548-48b0-bcad-077ba538878f">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="0d773541-64d1-440f-9ab9-25ac611e3902" parent_id_arme="4c06c357-1548-48b0-bcad-077ba538878f">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-53" />
+    <destroy name="DS-87" />
+    <destroy name="DS-166" />
+    <destroy name="Chel-rea" />
+    <destroy name="Chel-don" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector VI" id_arme="4d0ad4f2-f619-4712-8fe2-38ce92ea6be0" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector VI" id_arme="250aa9ae-7f03-4805-8c30-4dbe1d23b837" parent_id_arme="4d0ad4f2-f619-4712-8fe2-38ce92ea6be0">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="20" type="nebulas" startX="95991.0" startY="0.0" startZ="4303.0" endX="67164.0" endY="0.0" endZ="5843.0" randomRange="4255" />
+    <create count="10" type="nebulas" startX="51908.0" startY="0.0" startZ="4009.0" endX="67898.0" endY="0.0" endZ="7530.0" randomRange="5512" />
+    <create count="60" type="nebulas" startX="61883.0" startY="0.0" startZ="38704.0" endX="11125.0" endY="0.0" endZ="60122.0" randomRange="7881" />
+    <create count="50" type="asteroids" startX="65844.0" startY="0.0" startZ="51173.0" endX="65844.0" endY="0.0" endZ="51173.0" randomRange="8137" />
+    <create count="10" type="asteroids" startX="58069.0" startY="0.0" startZ="47872.0" endX="38778.0" endY="0.0" endZ="54180.0" randomRange="4652" />
+    <create count="10" type="asteroids" startX="54768.0" startY="0.0" startZ="56821.0" endX="38778.0" endY="0.0" endZ="55061.0" randomRange="4607" />
+    <create count="10" type="asteroids" startX="73106.0" startY="0.0" startZ="44792.0" endX="87702.0" endY="0.0" endZ="49339.0" randomRange="3686" />
+    <create count="10" type="asteroids" startX="89169.0" startY="0.0" startZ="51246.0" endX="75820.0" endY="0.0" endZ="55721.0" randomRange="3158" />
+  </event>
+  <folder_arme name="Navigation" id_arme="cfd1f600-e287-4caf-bd71-025530e841e5" parent_id_arme="4d0ad4f2-f619-4712-8fe2-38ce92ea6be0" />
+  <event name="Transition to Sector VII" id_arme="0b2db30e-dd1a-487a-841c-80da2ccdf715" parent_id_arme="cfd1f600-e287-4caf-bd71-025530e841e5">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="f4cde02f-bdf1-4f3d-bb99-9bd019736392" parent_id_arme="cfd1f600-e287-4caf-bd71-025530e841e5">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="87a91547-ff22-4521-b88b-351ddaa7e65c" parent_id_arme="cfd1f600-e287-4caf-bd71-025530e841e5">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="c2ec2c09-8b7d-4da2-a3fd-998a1aafee98" parent_id_arme="cfd1f600-e287-4caf-bd71-025530e841e5">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="d10a24ea-4e71-471b-aa1c-827fcb21a0f7" parent_id_arme="cfd1f600-e287-4caf-bd71-025530e841e5">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="bb17e5e5-84b5-4b13-915b-fd5ef5d72c35" parent_id_arme="cfd1f600-e287-4caf-bd71-025530e841e5">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="83c07ac7-a947-4a2a-9858-e8c19b96f11a" parent_id_arme="cfd1f600-e287-4caf-bd71-025530e841e5">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="899e5616-8605-4b99-83a1-58417bd28bfc" parent_id_arme="cfd1f600-e287-4caf-bd71-025530e841e5">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="a62dc6ba-f000-496b-928c-644250e3f9c8" parent_id_arme="4d0ad4f2-f619-4712-8fe2-38ce92ea6be0" />
+  <event name="Generate Sector Entities" id_arme="8c428684-9b48-4f84-836f-c1632de7c20b" parent_id_arme="a62dc6ba-f000-496b-928c-644250e3f9c8">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="35536.0" y="0.0" z="65937.0" angle="0" name="DS-57" hullID="1000" />
+    <create type="station" x="25224.0" y="0.0" z="28035.0" angle="0" name="DS-33" hullID="1000" />
+    <create type="station" x="69822.0" y="0.0" z="28169.0" angle="0" name="DS-165" hullID="1000" />
+    <create type="station" x="52679.0" y="0.0" z="49866.0" angle="0" name="Staunton" hullID="1004" />
+    <create type="station" x="77456.0" y="0.0" z="51071.0" angle="0" name="Penton" hullID="1004" />
+    <create type="station" x="41697.0" y="0.0" z="77187.0" angle="0" name="Anton" hullID="1004" />
+    <create type="station" x="61117.0" y="0.0" z="77857.0" angle="0" name="Oralo" hullID="1004" />
+    <create type="station" x="74777.0" y="0.0" z="67008.0" angle="0" name="DS-21" hullID="1000" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="debf69c4-066d-4a1b-b350-da2387d93d38" parent_id_arme="a62dc6ba-f000-496b-928c-644250e3f9c8">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="8bbbd86d-afb9-4de4-bf0c-4e07f657bab9" parent_id_arme="a62dc6ba-f000-496b-928c-644250e3f9c8">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-57" />
+    <destroy name="DS-33" />
+    <destroy name="DS-165" />
+    <destroy name="Staunton" />
+    <destroy name="Penton" />
+    <destroy name="Anton" />
+    <destroy name="Oralo" />
+    <destroy name="DS-21" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector VII" id_arme="b256c4c2-66df-4f0d-b03d-5700b444e84a" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector VII" id_arme="588f1953-7c54-48d5-95bd-54eacae21c7c" parent_id_arme="b256c4c2-66df-4f0d-b03d-5700b444e84a">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="50" type="nebulas" startX="80367.0" startY="0.0" startZ="59168.0" endX="40612.0" endY="0.0" endZ="55281.0" randomRange="5999" />
+    <create count="10" type="asteroids" startX="60636.0" startY="0.0" startZ="49559.0" endX="34377.0" endY="0.0" endZ="45452.0" randomRange="2282" />
+    <create count="10" type="nebulas" startX="41859.0" startY="0.0" startZ="46039.0" endX="41859.0" endY="0.0" endZ="46039.0" randomRange="31095" />
+  </event>
+  <folder_arme name="Navigation" id_arme="d9a3e2d5-e755-495e-a7a9-4d0c07f9ea26" parent_id_arme="b256c4c2-66df-4f0d-b03d-5700b444e84a" />
+  <event name="Transition to Sector VIII" id_arme="31370a9b-9c59-4f23-b6e2-99dc459bb3d7" parent_id_arme="d9a3e2d5-e755-495e-a7a9-4d0c07f9ea26">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="b1997b36-bccb-458c-81ed-a9f9e28aa95b" parent_id_arme="d9a3e2d5-e755-495e-a7a9-4d0c07f9ea26">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="a120f301-8b11-46ae-a665-16d7dfedb8a2" parent_id_arme="d9a3e2d5-e755-495e-a7a9-4d0c07f9ea26">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="2fd46d2c-7986-44ec-a8b7-50b7375fc064" parent_id_arme="d9a3e2d5-e755-495e-a7a9-4d0c07f9ea26">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="c723d0ae-67c9-427b-ae47-7fd75d04b769" parent_id_arme="d9a3e2d5-e755-495e-a7a9-4d0c07f9ea26">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="1208bf8c-57a1-4e97-b7e2-a6ec9f46c09c" parent_id_arme="d9a3e2d5-e755-495e-a7a9-4d0c07f9ea26">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="85c852b5-b19f-4204-b39f-d4a52beaed61" parent_id_arme="d9a3e2d5-e755-495e-a7a9-4d0c07f9ea26">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="3116a55c-dcae-4158-b2d6-0e1c2f599034" parent_id_arme="d9a3e2d5-e755-495e-a7a9-4d0c07f9ea26">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="76ad929e-220c-4839-be26-94c05bc9d8d1" parent_id_arme="b256c4c2-66df-4f0d-b03d-5700b444e84a" />
+  <event name="Generate Sector Entities" id_arme="d743c7c3-3846-48f3-bd0e-d14d06a1b809" parent_id_arme="76ad929e-220c-4839-be26-94c05bc9d8d1">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="blackHole" x="46250.0" y="0.0" z="74508.0" name="Charybdis" />
+    <create type="blackHole" x="49197.0" y="0.0" z="30580.0" name="Scylla" />
+    <create type="neutral" x="83617.0" y="0.0" z="50937.0" angle="0" name="Comms Relay 1" hullID="1055" />
+    <create type="neutral" x="12902.0" y="0.0" z="46250.0" angle="0" name="Comms Relay 2" hullID="1055" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="4dddd298-b1e2-4aec-89a8-34b7e98e6c2d" parent_id_arme="76ad929e-220c-4839-be26-94c05bc9d8d1">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="bc5c5c15-2276-4b95-b1d7-72733b9f078b" parent_id_arme="76ad929e-220c-4839-be26-94c05bc9d8d1">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="Charybdis" />
+    <destroy name="Scylla" />
+    <destroy name="Comms Relay 1" />
+    <destroy name="Comms Relay 2" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector VIII" id_arme="d9961ffc-bf59-4620-a1b9-7282f3001502" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector VIII" id_arme="d6c6373d-160d-4aa8-845c-11f54fe7f4ac" parent_id_arme="d9961ffc-bf59-4620-a1b9-7282f3001502">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="70025.0" startY="0.0" startZ="46552.0" endX="70025.0" endY="0.0" endZ="46552.0" randomRange="28504" />
+    <create count="30" type="asteroids" startX="46920.0" startY="0.0" startZ="24180.0" endX="46920.0" endY="0.0" endZ="24180.0" randomRange="9592" />
+    <create count="20" type="asteroids" startX="37458.0" startY="0.0" startZ="18826.0" endX="18020.0" endY="0.0" endZ="30122.0" randomRange="4618" />
+    <create count="10" type="nebulas" startX="4010.0" startY="0.0" startZ="27481.0" endX="3644.0" endY="0.0" endZ="44938.0" randomRange="3787" />
+    <create count="10" type="nebulas" startX="2910.0" startY="0.0" startZ="67163.0" endX="2910.0" endY="0.0" endZ="87188.0" randomRange="3185" />
+    <create count="10" type="nebulas" startX="9952.0" startY="0.0" startZ="44352.0" endX="8191.0" endY="0.0" endZ="68190.0" randomRange="8105" />
+  </event>
+  <folder_arme name="Navigation" id_arme="aa6680f3-6cf9-4455-b1e8-25f247b696d4" parent_id_arme="d9961ffc-bf59-4620-a1b9-7282f3001502" />
+  <event name="Transition to Sector VII" id_arme="52f0762e-f588-4e5d-a6de-79da8d6f5b07" parent_id_arme="aa6680f3-6cf9-4455-b1e8-25f247b696d4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="2b55cba3-0a37-4550-84cd-902c44bf4879" parent_id_arme="aa6680f3-6cf9-4455-b1e8-25f247b696d4">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="d45346d5-2784-413f-a266-02386c7a12a8" parent_id_arme="aa6680f3-6cf9-4455-b1e8-25f247b696d4">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="99bd2dc2-a68a-4fb7-8ee9-54f297def6ce" parent_id_arme="aa6680f3-6cf9-4455-b1e8-25f247b696d4">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="43ad6b54-2435-49fc-b10c-42a2a4b3ebd4" parent_id_arme="aa6680f3-6cf9-4455-b1e8-25f247b696d4">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="ebe3dabf-1ca7-4f30-af8b-dd73b3fde327" parent_id_arme="d9961ffc-bf59-4620-a1b9-7282f3001502" />
+  <event name="Generate Sector Entities" id_arme="d2081652-0926-4ded-85b6-d8699d46105a" parent_id_arme="ebe3dabf-1ca7-4f30-af8b-dd73b3fde327">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="77322.0" y="0.0" z="70491.0" angle="0" name="DS-88" hullID="1000" />
+    <create type="station" x="49599.0" y="0.0" z="18526.0" angle="0" name="DS-92" hullID="1000" />
+    <create type="station" x="32188.0" y="0.0" z="43437.0" angle="0" name="Phineas" hullID="1003" />
+    <create type="station" x="34331.0" y="0.0" z="78392.0" angle="0" name="DS-44" hullID="1000" />
+    <create type="neutral" x="70492.0" y="0.0" z="42633.0" angle="0" name="Civilian SY" hullID="1053" />
+    <create type="neutral" x="26697.0" y="0.0" z="40892.0" angle="0" name="SY-199" hullID="1053" />
+    <create type="neutral" x="50268.0" y="0.0" z="27633.0" angle="0" name="Rockaway Metallurgy" hullID="1050" />
+    <create type="neutral" x="32724.0" y="0.0" z="22812.0" angle="0" name="Taylor Denabite" hullID="1051" />
+    <create type="station" x="76786.0" y="0.0" z="46517.0" angle="0" name="Immigration" hullID="1001" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="f6d00a94-3aad-4e05-8d2c-d802e94490c8" parent_id_arme="ebe3dabf-1ca7-4f30-af8b-dd73b3fde327">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="28552478-cd61-44f4-95a1-5ad6854120d1" parent_id_arme="ebe3dabf-1ca7-4f30-af8b-dd73b3fde327">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-88" />
+    <destroy name="DS-92" />
+    <destroy name="Phineas" />
+    <destroy name="DS-44" />
+    <destroy name="Civilian SY" />
+    <destroy name="SY-199" />
+    <destroy name="Rockaway Metallurgy" />
+    <destroy name="Taylor Denabite" />
+    <destroy name="Immigration" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector IX" id_arme="eef2d753-81bb-410b-99bd-ea927f07b2a4" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector IX" id_arme="f9d7b30d-eaac-4f14-a9bf-f1d3b7b523e8" parent_id_arme="eef2d753-81bb-410b-99bd-ea927f07b2a4">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="nebulas" startX="4670.0" startY="0.0" startZ="27481.0" endX="4157.0" endY="0.0" endZ="58141.0" randomRange="7444" />
+    <create count="10" type="nebulas" startX="19854.0" startY="0.0" startZ="42151.0" endX="19854.0" endY="0.0" endZ="42151.0" randomRange="8603" />
+    <create count="50" type="asteroids" startX="95551.0" startY="0.0" startZ="95770.0" endX="59536.0" endY="0.0" endZ="95183.0" randomRange="4736" />
+    <create count="30" type="asteroids" startX="86822.0" startY="0.0" startZ="89242.0" endX="67311.0" endY="0.0" endZ="83520.0" randomRange="11456" />
+    <create count="10" type="asteroids" startX="64964.0" startY="0.0" startZ="81393.0" endX="49634.0" endY="0.0" endZ="83447.0" randomRange="5118" />
+    <create count="10" type="nebulas" startX="79414.0" startY="0.0" startZ="81540.0" endX="79414.0" endY="0.0" endZ="81540.0" randomRange="16121" />
+  </event>
+  <folder_arme name="Navigation" id_arme="daca6d8f-e2aa-4938-95b5-8346334b5100" parent_id_arme="eef2d753-81bb-410b-99bd-ea927f07b2a4" />
+  <event name="Transition to Sector X" id_arme="95ac82b9-828d-4417-b9f5-e992ada535ea" parent_id_arme="daca6d8f-e2aa-4938-95b5-8346334b5100">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="e9f37f08-99aa-44d9-9093-dd83fa95d32f" parent_id_arme="daca6d8f-e2aa-4938-95b5-8346334b5100">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="f79f9bea-f22a-4dca-9564-148a2c12fecc" parent_id_arme="daca6d8f-e2aa-4938-95b5-8346334b5100">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="1d7c8cce-61a2-4265-a886-d7f7b098f6a1" parent_id_arme="daca6d8f-e2aa-4938-95b5-8346334b5100">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="13.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="2cf4c186-d86f-4123-9402-3fd0a49299ea" parent_id_arme="daca6d8f-e2aa-4938-95b5-8346334b5100">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="2a6f8e09-a6fe-4495-9697-74068d12cc2b" parent_id_arme="eef2d753-81bb-410b-99bd-ea927f07b2a4" />
+  <event name="Generate Sector Entities" id_arme="bcc14a6f-d785-4aea-8254-ccb4f3542c0c" parent_id_arme="2a6f8e09-a6fe-4495-9697-74068d12cc2b">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="19063.0" y="0.0" z="44776.0" angle="0" name="Magellan" hullID="1004" />
+    <create type="station" x="76117.0" y="0.0" z="24285.0" angle="0" name="DS-160" hullID="1000" />
+    <create type="station" x="73840.0" y="0.0" z="74241.0" angle="0" name="Puerto Piedra" hullID="1003" />
+    <create type="station" x="49465.0" y="0.0" z="49598.0" angle="0" name="DS-144" hullID="1000" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="c0e9fb70-a279-45e1-b29d-4ebc82f1ca49" parent_id_arme="2a6f8e09-a6fe-4495-9697-74068d12cc2b">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="03181292-81be-47c6-81fc-1559422ebb13" parent_id_arme="2a6f8e09-a6fe-4495-9697-74068d12cc2b">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="Magellan" />
+    <destroy name="DS-160" />
+    <destroy name="Puerto Piedra" />
+    <destroy name="DS-144" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector X" id_arme="cd1b109b-2100-43ef-94e2-936b8c7269e9" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector X" id_arme="1fbd048f-0699-462d-8550-ab8028d80024" parent_id_arme="cd1b109b-2100-43ef-94e2-936b8c7269e9">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="50" type="nebulas" startX="91370.0" startY="0.0" startZ="26161.0" endX="91736.0" endY="0.0" endZ="62982.0" randomRange="7481" />
+    <create count="40" type="nebulas" startX="79340.0" startY="0.0" startZ="32102.0" endX="37311.0" endY="0.0" endZ="42444.0" randomRange="7840" />
+    <create count="30" type="nebulas" startX="78754.0" startY="0.0" startZ="54400.0" endX="48607.0" endY="0.0" endZ="51613.0" randomRange="11307" />
+    <create count="40" type="asteroids" startX="63644.0" startY="0.0" startZ="56821.0" endX="26969.0" endY="0.0" endZ="43985.0" randomRange="10873" />
+    <create count="50" type="asteroids" startX="55942.0" startY="0.0" startZ="55721.0" endX="35624.0" endY="0.0" endZ="47139.0" randomRange="4622" />
+  </event>
+  <folder_arme name="Navigation" id_arme="1623bb0f-67ba-47a0-a69c-1eb6f334beb7" parent_id_arme="cd1b109b-2100-43ef-94e2-936b8c7269e9" />
+  <event name="Transition to Sector XI" id_arme="baf69a95-a9ad-4894-aafa-25ef327cb7d4" parent_id_arme="1623bb0f-67ba-47a0-a69c-1eb6f334beb7">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="f1d7a7c8-1001-4153-8266-42e0d8700b4b" parent_id_arme="1623bb0f-67ba-47a0-a69c-1eb6f334beb7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="bb5aafcf-9c16-4ddc-ab62-ef9efd7db343" parent_id_arme="1623bb0f-67ba-47a0-a69c-1eb6f334beb7">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="5d988a50-4eca-413f-a387-0059d6ea8ca3" parent_id_arme="1623bb0f-67ba-47a0-a69c-1eb6f334beb7">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="34145c37-634e-4780-9315-028506121452" parent_id_arme="1623bb0f-67ba-47a0-a69c-1eb6f334beb7">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="7eb657ec-eb1d-4e61-8318-4225f7b1f724" parent_id_arme="1623bb0f-67ba-47a0-a69c-1eb6f334beb7">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="40e66875-b53a-40f1-90e2-08a46295b262" parent_id_arme="1623bb0f-67ba-47a0-a69c-1eb6f334beb7">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="5ce52929-99ac-4f88-b54e-e980f216fb64" parent_id_arme="1623bb0f-67ba-47a0-a69c-1eb6f334beb7">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="13.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Loria System" value="3.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="0e50b883-bfb0-4109-b7eb-a4c5fab9e49c" parent_id_arme="cd1b109b-2100-43ef-94e2-936b8c7269e9" />
+  <event name="Generate Sector Entities" id_arme="2e67863a-8d71-42ca-9c76-fbfd413dd27d" parent_id_arme="0e50b883-bfb0-4109-b7eb-a4c5fab9e49c">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="73045.0" y="0.0" z="75017.0" angle="0" name="DS-68" hullID="1000" />
+    <create type="station" x="67947.0" y="0.0" z="47589.0" angle="0" name="Singh" hullID="1003" />
+    <create type="station" x="25492.0" y="0.0" z="51607.0" angle="0" name="Rio" hullID="1003" />
+    <create type="station" x="40762.0" y="0.0" z="21141.0" angle="0" name="DS-28" hullID="1000" />
+    <create type="station" x="77858.0" y="0.0" z="23616.0" angle="0" name="DS-105" hullID="1000" />
+    <create type="station" x="43840.0" y="0.0" z="78125.0" angle="0" name="DS-125" hullID="1000" />
+    <create type="neutral" x="71563.0" y="0.0" z="45446.0" angle="0" name="SY-992" hullID="1053" />
+    <create type="neutral" x="58974.0" y="0.0" z="55892.0" angle="0" name="Akira Metal Works" hullID="1050" />
+    <create type="neutral" x="41295.0" y="0.0" z="44508.0" angle="0" name="Joshua Tree Denebite" hullID="1051" />
+    <create type="neutral" x="21875.0" y="0.0" z="49598.0" angle="0" name="SY-998" hullID="1053" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="ecc57ac9-40d1-430e-9f29-f138605fbbad" parent_id_arme="0e50b883-bfb0-4109-b7eb-a4c5fab9e49c">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="6a82119c-0052-42bf-a44f-8409a79f3c5c" parent_id_arme="0e50b883-bfb0-4109-b7eb-a4c5fab9e49c">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-68" />
+    <destroy name="Singh" />
+    <destroy name="Rio" />
+    <destroy name="DS-28" />
+    <destroy name="DS-105" />
+    <destroy name="DS-125" />
+    <destroy name="SY-992" />
+    <destroy name="Akira Metal Works" />
+    <destroy name="Joshua Tree Denebite" />
+    <destroy name="SY-998" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector XI" id_arme="d385fc5b-db15-4f76-b85a-c60ffccd774a" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector XI" id_arme="a277c953-0e7c-4f5a-a203-ba409073c217" parent_id_arme="d385fc5b-db15-4f76-b85a-c60ffccd774a">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="50" type="nebulas" startX="17507.0" startY="0.0" startZ="79266.0" endX="37531.0" endY="0.0" endZ="79046.0" randomRange="19191" />
+    <create count="10" type="nebulas" startX="72225.0" startY="0.0" startZ="92762.0" endX="41859.0" endY="0.0" endZ="83154.0" randomRange="7127" />
+    <create count="30" type="asteroids" startX="50000.0" startY="0.0" startZ="80073.0" endX="30856.0" endY="0.0" endZ="65183.0" randomRange="3547" />
+    <create count="40" type="asteroids" startX="29683.0" startY="0.0" startZ="68044.0" endX="14719.0" endY="0.0" endZ="70684.0" randomRange="4305" />
+    <create count="20" type="asteroids" startX="26089.0" startY="0.0" startZ="81173.0" endX="26089.0" endY="0.0" endZ="81173.0" randomRange="11101" />
+    <create count="10" type="nebulas" startX="56162.0" startY="0.0" startZ="45525.0" endX="56162.0" endY="0.0" endZ="45525.0" randomRange="29826" />
+  </event>
+  <folder_arme name="Navigation" id_arme="89f4852e-d08b-4ac5-b9c6-9be64751930d" parent_id_arme="d385fc5b-db15-4f76-b85a-c60ffccd774a" />
+  <event name="Transition to Sector XII" id_arme="0c2c75b8-38f0-48f3-8477-b5fa46cc3782" parent_id_arme="89f4852e-d08b-4ac5-b9c6-9be64751930d">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="9724b746-1626-4130-b38b-7a924d5b3395" parent_id_arme="89f4852e-d08b-4ac5-b9c6-9be64751930d">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="d3dd3be1-df1a-4d51-8230-5ce3c35ee19a" parent_id_arme="89f4852e-d08b-4ac5-b9c6-9be64751930d">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="d1e26af7-2c62-4b13-ac16-f1a689750ab8" parent_id_arme="89f4852e-d08b-4ac5-b9c6-9be64751930d">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="be92d666-69a4-4efe-8e74-ab2f0a4b6f10" parent_id_arme="89f4852e-d08b-4ac5-b9c6-9be64751930d">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="d81c7db9-cb32-48f6-9b56-560ba6cfed45" parent_id_arme="89f4852e-d08b-4ac5-b9c6-9be64751930d">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="705eccde-8f60-4d0b-8fc2-c7d8fe329e6d" parent_id_arme="89f4852e-d08b-4ac5-b9c6-9be64751930d">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="16.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="c9452c0d-5588-4c24-b820-e233b04eb4a7" parent_id_arme="89f4852e-d08b-4ac5-b9c6-9be64751930d">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Loria System" value="3.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="b68d75c4-e09d-4edc-b5cc-2765a1f8f40d" parent_id_arme="d385fc5b-db15-4f76-b85a-c60ffccd774a" />
+  <event name="Generate Sector Entities" id_arme="e55ccea6-0ac1-44cf-9216-ba6a1d1bc7c4" parent_id_arme="b68d75c4-e09d-4edc-b5cc-2765a1f8f40d">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create count="200" type="mines" startAngle="7" endAngle="172" startX="60313.0" startY="-250.0" startZ="40089.0" radius="25000" />
+    <create count="200" type="mines" startAngle="7" endAngle="172" startX="60313.0" startY="250.0" startZ="40089.0" radius="25000" />
+    <create count="200" type="mines" startAngle="-8" endAngle="-173" startX="60313.0" startY="250.0" startZ="40089.0" radius="25000" />
+    <create count="200" type="mines" startAngle="-8" endAngle="-173" startX="60313.0" startY="-250.0" startZ="40089.0" radius="25000" />
+    <create type="station" x="60402.0" y="0.0" z="39777.0" name="Loria Command" hullID="1002" />
+    <create type="station" x="56593.0" y="0.0" z="27574.0" name="Ries" hullID="1003" />
+    <create type="station" x="70358.0" y="0.0" z="46517.0" name="DS-44" hullID="1000" />
+    <create type="neutral" x="60447.0" y="0.0" z="15178.0" angle="0" name="WP-09" hullID="1052" />
+    <create type="neutral" x="60447.0" y="0.0" z="65401.0" angle="0" name="WP-54" hullID="1052" />
+    <create type="station" x="51474.0" y="0.0" z="52008.0" name="Diana" hullID="1003" />
+    <create type="neutral" x="75313.0" y="0.0" z="48928.0" angle="0" name="SY-169" hullID="1053" />
+    <create type="neutral" x="52947.0" y="0.0" z="25892.0" angle="0" name="SY-172" hullID="1053" />
+    <create type="neutral" x="46384.0" y="0.0" z="49330.0" angle="0" name="SY-144" hullID="1053" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="f92af4f3-de34-4c25-b403-930223332556" parent_id_arme="b68d75c4-e09d-4edc-b5cc-2765a1f8f40d">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="a370e8fe-a9a3-429b-8726-05e0ef9d6ffe" parent_id_arme="b68d75c4-e09d-4edc-b5cc-2765a1f8f40d">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="Loria Command" />
+    <destroy name="Ries" />
+    <destroy name="DS-44" />
+    <destroy name="WP-09" />
+    <destroy name="WP-54" />
+    <destroy name="Diana" />
+    <destroy name="SY-169" />
+    <destroy name="SY-172" />
+    <destroy name="SY-144" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector XII" id_arme="06864e09-6a50-40ca-a140-934cc40251d9" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector XII" id_arme="7fd2f20d-9e1f-46c8-9502-06bbced05514" parent_id_arme="06864e09-6a50-40ca-a140-934cc40251d9">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="28582.0" startY="0.0" startZ="28288.0" endX="28582.0" endY="0.0" endZ="28288.0" randomRange="24143" />
+    <create count="40" type="nebulas" startX="89023.0" startY="0.0" startZ="86454.0" endX="72372.0" endY="0.0" endZ="86528.0" randomRange="15976" />
+    <create count="50" type="nebulas" startX="61370.0" startY="0.0" startZ="84400.0" endX="22641.0" endY="0.0" endZ="77139.0" randomRange="16774" />
+    <create count="40" type="asteroids" startX="44353.0" startY="0.0" startZ="67163.0" endX="17287.0" endY="0.0" endZ="48386.0" randomRange="6867" />
+    <create count="30" type="asteroids" startX="68485.0" startY="0.0" startZ="77579.0" endX="44499.0" endY="0.0" endZ="68777.0" randomRange="5287" />
+  </event>
+  <folder_arme name="Navigation" id_arme="598697c9-7c5c-4f18-8a12-10ef447657c3" parent_id_arme="06864e09-6a50-40ca-a140-934cc40251d9" />
+  <event name="Transition to Sector XI" id_arme="d344855f-3fe5-43cd-94ef-1983e6c1c262" parent_id_arme="598697c9-7c5c-4f18-8a12-10ef447657c3">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="43c9e19b-c55a-4e59-8f2c-73a88aac4d02" parent_id_arme="598697c9-7c5c-4f18-8a12-10ef447657c3">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="89750001-d2ba-4711-951e-1c993e2be253" parent_id_arme="598697c9-7c5c-4f18-8a12-10ef447657c3">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="c7f8c9a3-3022-40e8-a399-8f2f9d15daa5" parent_id_arme="598697c9-7c5c-4f18-8a12-10ef447657c3">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="16.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="65bd2938-555b-473b-a270-19ed5abf9968" parent_id_arme="598697c9-7c5c-4f18-8a12-10ef447657c3">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Loria System" value="3.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="83f0d401-f11d-4bcf-9432-4dabf464bb06" parent_id_arme="06864e09-6a50-40ca-a140-934cc40251d9" />
+  <event name="Generate Sector Entities" id_arme="b2561958-a863-45c2-84df-e55c57d6ab96" parent_id_arme="83f0d401-f11d-4bcf-9432-4dabf464bb06">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="26027.0" y="0.0" z="73303.0" angle="0" name="DS-190" hullID="1000" />
+    <create type="station" x="50000.0" y="0.0" z="50803.0" angle="0" name="DS-181" hullID="1000" />
+    <create type="station" x="75849.0" y="0.0" z="26964.0" angle="0" name="DS-166" hullID="1000" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="6061e5f9-49a1-4fc8-a105-dceb6df69bb0" parent_id_arme="83f0d401-f11d-4bcf-9432-4dabf464bb06">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="ee9e6638-0513-47eb-bfd1-9872aca40e07" parent_id_arme="83f0d401-f11d-4bcf-9432-4dabf464bb06">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-190" />
+    <destroy name="DS-181" />
+    <destroy name="DS-166" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector XIII" id_arme="da497e80-636e-4237-9b47-a4a906b1037e" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector XIII" id_arme="6b300b42-be60-484e-b40c-c9a1b975626a" parent_id_arme="da497e80-636e-4237-9b47-a4a906b1037e">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13.0" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <!--<create type="genericMesh" x="32250.0" y="0.0" z="38477.0" angle="0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\Planets\planetTex4.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />-->
+    <create count="30" type="asteroids" startX="74133.0" startY="0.0" startZ="8264.0" endX="90930.0" endY="0.0" endZ="12078.0" randomRange="11066" />
+    <create count="10" type="asteroids" startX="89096.0" startY="0.0" startZ="21833.0" endX="91663.0" endY="0.0" endZ="46772.0" randomRange="9789" />
+    <create count="10" type="nebulas" startX="78607.0" startY="0.0" startZ="24621.0" endX="78607.0" endY="0.0" endZ="24621.0" randomRange="20650" />
+    <create count="30" type="nebulas" startX="75746.0" startY="0.0" startZ="96723.0" endX="6578.0" endY="0.0" endZ="73251.0" randomRange="8912" />
+    <create count="40" type="nebulas" startX="49634.0" startY="0.0" startZ="93569.0" endX="6064.0" endY="0.0" endZ="90562.0" randomRange="8573" />
+  </event>
+  <folder_arme name="Navigation" id_arme="7b3c4900-a218-430d-8b2b-0937fef98662" parent_id_arme="da497e80-636e-4237-9b47-a4a906b1037e" />
+  <event name="Transition to (Right)" id_arme="da4041bf-4f48-4dae-9332-b731be23b8c5" parent_id_arme="7b3c4900-a218-430d-8b2b-0937fef98662">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="602e1b56-a56d-4b84-b4b0-5338211e3f65" parent_id_arme="7b3c4900-a218-430d-8b2b-0937fef98662">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="9.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="74a61fd0-928b-4837-a4c7-4e035ec174e7" parent_id_arme="7b3c4900-a218-430d-8b2b-0937fef98662">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="10.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="39e63eca-fdd0-4af7-87b2-abf8cc3afd96" parent_id_arme="da497e80-636e-4237-9b47-a4a906b1037e" />
+  <event name="Generate Sector Entities" id_arme="f01f3475-b73c-4e3c-ab13-2747b0174c7b" parent_id_arme="39e63eca-fdd0-4af7-87b2-abf8cc3afd96">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <create type="station" x="45447.0" y="0.0" z="25892.0" angle="0" name="DS-109" hullID="1000" />
+    <create type="station" x="44108.0" y="0.0" z="63794.0" angle="0" name="DS-114" hullID="1000" />
+    <create type="station" x="85625.0" y="0.0" z="34866.0" angle="0" name="Sanda" hullID="1003" />
+    <create type="station" x="50268.0" y="0.0" z="45178.0" angle="0" name="Customs House" hullID="1001" />
+    <create type="station" x="74509.0" y="0.0" z="74776.0" angle="0" name="DS-143" hullID="1000" />
+    <create type="neutral" x="50402.0" y="0.0" z="51607.0" angle="0" name="Civilian SY" hullID="1053" />
+    <create type="neutral" x="86831.0" y="0.0" z="23080.0" angle="0" name="Isotopia" hullID="1050" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="fc807ddc-3faf-4647-a145-b1562d54703a" parent_id_arme="39e63eca-fdd0-4af7-87b2-abf8cc3afd96">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="6dbce355-d98e-4e55-848d-65d24c175800" parent_id_arme="39e63eca-fdd0-4af7-87b2-abf8cc3afd96">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <set_variable name="DestroyPlanet" value="1.0" integer="yes" />
+    <destroy name="DS-109" />
+    <destroy name="DS-114" />
+    <destroy name="Sanda" />
+    <destroy name="Customs House" />
+    <destroy name="DS-143" />
+    <destroy name="Civilian SY" />
+    <destroy name="Isotopia" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector XIV" id_arme="d5b6aed6-2b57-4bea-ab47-777a5c876fb1" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector XIV" id_arme="27bc0ad2-13d5-4902-a5a5-94be2620d9d8" parent_id_arme="d5b6aed6-2b57-4bea-ab47-777a5c876fb1">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="93203.0" startY="0.0" startZ="69437.0" endX="92837.0" endY="0.0" endZ="95110.0" randomRange="6917" />
+    <create count="60" type="nebulas" startX="79560.0" startY="0.0" startZ="79119.0" endX="20074.0" endY="0.0" endZ="79706.0" randomRange="14695" />
+    <create count="40" type="nebulas" startX="91150.0" startY="0.0" startZ="95036.0" endX="12152.0" endY="0.0" endZ="92982.0" randomRange="6643" />
+    <create count="10" type="nebulas" startX="62543.0" startY="0.0" startZ="61955.0" endX="39585.0" endY="0.0" endZ="56601.0" randomRange="12322" />
+    <create count="40" type="asteroids" startX="70685.0" startY="0.0" startZ="71344.0" endX="55722.0" endY="0.0" endZ="60562.0" randomRange="5412" />
+    <create count="10" type="asteroids" startX="59023.0" startY="0.0" startZ="73618.0" endX="38265.0" endY="0.0" endZ="69144.0" randomRange="4921" />
+    <create count="40" type="asteroids" startX="50294.0" startY="0.0" startZ="62689.0" endX="29316.0" endY="0.0" endZ="73911.0" randomRange="6301" />
+  </event>
+  <folder_arme name="Navigation" id_arme="afa88ab0-48cb-4618-aaa3-25580d130394" parent_id_arme="d5b6aed6-2b57-4bea-ab47-777a5c876fb1" />
+  <event name="Transition to (Right)" id_arme="b48e132c-9585-4d4a-838f-8f44f8d61c22" parent_id_arme="afa88ab0-48cb-4618-aaa3-25580d130394">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Left)" id_arme="7445c822-5221-4a51-8516-1ce01f08e154" parent_id_arme="afa88ab0-48cb-4618-aaa3-25580d130394">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="13.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="78f1d608-b7f9-4149-b7a3-ca6b0b58fda9" parent_id_arme="afa88ab0-48cb-4618-aaa3-25580d130394">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="10.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="ebd071e9-6472-48d5-aa75-0f031e95d61b" parent_id_arme="afa88ab0-48cb-4618-aaa3-25580d130394">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="11.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="b2522543-b42f-45a8-8754-02b56d5da62d" parent_id_arme="afa88ab0-48cb-4618-aaa3-25580d130394">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="9.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="434ec4a7-4bc5-4c6f-8c3d-81d10c51d24c" parent_id_arme="d5b6aed6-2b57-4bea-ab47-777a5c876fb1" />
+  <event name="Generate Sector Entities" id_arme="4620762b-8412-4f74-ad13-8fa8caf396e9" parent_id_arme="434ec4a7-4bc5-4c6f-8c3d-81d10c51d24c">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <create type="station" x="75848.0" y="0.0" z="63494.0" angle="0" name="DS-180" hullID="1000" />
+    <create type="station" x="34733.0" y="0.0" z="71026.0" angle="0" name="Diatha" hullID="1003" />
+    <create type="station" x="65000.0" y="0.0" z="72232.0" angle="0" name="Arylin" hullID="1003" />
+    <create type="neutral" x="52143.0" y="0.0" z="61250.0" angle="0" name="Terranic Mining" hullID="1050" />
+    <create type="station" x="50208.0" y="0.0" z="37958.0" angle="0" name="DS-199" hullID="1000" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="e8e6b87d-2cdd-45e0-8090-5dba349994f6" parent_id_arme="434ec4a7-4bc5-4c6f-8c3d-81d10c51d24c">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="5987c5d8-3a4b-4572-883e-d59693b1c90d" parent_id_arme="434ec4a7-4bc5-4c6f-8c3d-81d10c51d24c">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-180" />
+    <destroy name="Diatha" />
+    <destroy name="Arylin" />
+    <destroy name="Terranic Mining" />
+    <destroy name="DS-199" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector XV" id_arme="3c773f67-cdc4-4311-a467-b2e137d97d80" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector XV" id_arme="af97d770-b944-4ee9-93a9-64be5f693757" parent_id_arme="3c773f67-cdc4-4311-a467-b2e137d97d80">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="30" type="nebulas" startX="54181.0" startY="0.0" startZ="9070.0" endX="6284.0" endY="0.0" endZ="7163.0" randomRange="10769" />
+    <create count="30" type="nebulas" startX="49194.0" startY="0.0" startZ="21833.0" endX="11932.0" endY="0.0" endZ="26014.0" randomRange="10769" />
+    <create count="40" type="asteroids" startX="46406.0" startY="0.0" startZ="27555.0" endX="21688.0" endY="0.0" endZ="23667.0" randomRange="4012" />
+    <create count="15" type="asteroids" startX="46553.0" startY="0.0" startZ="32542.0" endX="55795.0" endY="0.0" endZ="50366.0" randomRange="7255" />
+  </event>
+  <folder_arme name="Navigation" id_arme="f1cfb19e-6add-48cd-af3f-8c484816dacd" parent_id_arme="3c773f67-cdc4-4311-a467-b2e137d97d80" />
+  <event name="Transition to (Right)" id_arme="1bd4c0aa-2386-407b-a439-b0d3e7453334" parent_id_arme="f1cfb19e-6add-48cd-af3f-8c484816dacd">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="16.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Left)" id_arme="e1e1c1ad-2fcf-44e0-8eeb-2910b0c5588e" parent_id_arme="f1cfb19e-6add-48cd-af3f-8c484816dacd">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="bb62455a-b568-4a84-9f46-c87195cbe261" parent_id_arme="f1cfb19e-6add-48cd-af3f-8c484816dacd">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="11.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="ba2097a4-0ea7-4447-8880-eb178a445693" parent_id_arme="f1cfb19e-6add-48cd-af3f-8c484816dacd">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="12.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="1a80f9e5-3820-41d3-b96e-acfc66ad7676" parent_id_arme="f1cfb19e-6add-48cd-af3f-8c484816dacd">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="10.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="720c30b9-8b57-4389-b177-feb2e9f41a4b" parent_id_arme="3c773f67-cdc4-4311-a467-b2e137d97d80" />
+  <event name="Generate Sector Entities" id_arme="d963b457-fb94-42d5-a1f2-19209fa67dee" parent_id_arme="720c30b9-8b57-4389-b177-feb2e9f41a4b">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <create type="station" x="67813.0" y="0.0" z="36875.0" angle="0" name="DS-123" hullID="1000" />
+    <create type="station" x="21350.0" y="0.0" z="50622.0" angle="0" name="DS-138" hullID="1000" />
+    <create type="station" x="44291.0" y="0.0" z="31730.0" angle="0" name="Umber" hullID="1003" />
+    <create type="station" x="59375.0" y="0.0" z="77991.0" angle="0" name="DS-170" hullID="1000" />
+    <create type="station" x="26161.0" y="0.0" z="77991.0" angle="0" name="DS-159" hullID="1000" />
+    <create type="station" x="78795.0" y="0.0" z="56696.0" angle="0" name="Lorian Council" hullID="1001" />
+    <create type="neutral" x="47858.0" y="0.0" z="28705.0" angle="0" name="SY-881" hullID="1053" />
+    <create type="neutral" x="32858.0" y="0.0" z="35535.0" angle="0" name="Tiffan Denebite" hullID="1051" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="87c335f4-4562-4cf3-8796-2a42af0acf0a" parent_id_arme="720c30b9-8b57-4389-b177-feb2e9f41a4b">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="7eb8bdfd-7618-4d9c-824f-6ac31cafd692" parent_id_arme="720c30b9-8b57-4389-b177-feb2e9f41a4b">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-123" />
+    <destroy name="DS-138" />
+    <destroy name="Umber" />
+    <destroy name="DS-170" />
+    <destroy name="DS-159" />
+    <destroy name="Lorian Council" />
+    <destroy name="SY-881" />
+    <destroy name="Tiffan Denebite" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Loria Sector XVI" id_arme="38acdb08-1bcb-48f2-89c3-c39313ba44ee" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <event name="Create Loria Sector XVI" id_arme="dc4922f8-e9c7-402c-b37d-a35e6790851a" parent_id_arme="38acdb08-1bcb-48f2-89c3-c39313ba44ee">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <set_skybox_index index="21" />
+    <set_variable name="sectorside" value="2.0" integer="yes" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Loria System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="95111.0" startY="0.0" startZ="4303.0" endX="95404.0" endY="0.0" endZ="24180.0" randomRange="4988" />
+    <create count="30" type="nebulas" startX="89903.0" startY="0.0" startZ="6797.0" endX="10172.0" endY="0.0" endZ="6283.0" randomRange="7086" />
+    <create count="80" type="nebulas" startX="65624.0" startY="0.0" startZ="14132.0" endX="5697.0" endY="0.0" endZ="35550.0" randomRange="8036" />
+    <create count="50" type="asteroids" startX="51321.0" startY="0.0" startZ="71491.0" endX="29756.0" endY="0.0" endZ="51320.0" randomRange="7719" />
+    <create count="50" type="asteroids" startX="68778.0" startY="0.0" startZ="53300.0" endX="34524.0" endY="0.0" endZ="33276.0" randomRange="12866" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="e2da37c8-1fd0-485d-8f37-d7e194838d67" parent_id_arme="38acdb08-1bcb-48f2-89c3-c39313ba44ee" />
+  <event name="Transition to (Left)" id_arme="c2ef8dd3-d34b-4482-9461-ee72682899f2" parent_id_arme="e2da37c8-1fd0-485d-8f37-d7e194838d67">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="5fa124ba-82d1-4909-896b-8c68513e2210" parent_id_arme="e2da37c8-1fd0-485d-8f37-d7e194838d67">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="12.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="f63a6603-9dd0-49e7-88ea-fbb293088019" parent_id_arme="e2da37c8-1fd0-485d-8f37-d7e194838d67">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria System" value="3.0" />
+    <set_variable name="Sector" value="11.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="094654a4-528e-470a-8b80-7683380d95f8" parent_id_arme="38acdb08-1bcb-48f2-89c3-c39313ba44ee" />
+  <event name="Generate Sector Entities" id_arme="7c109cd5-687a-46c5-944c-1bb50615e1d5" parent_id_arme="094654a4-528e-470a-8b80-7683380d95f8">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="f05da88b-58e2-4d8b-8adf-f44dc95e2f8a" parent_id_arme="094654a4-528e-470a-8b80-7683380d95f8">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="0fc963da-07e5-4360-a1d0-d179651da4c1" parent_id_arme="094654a4-528e-470a-8b80-7683380d95f8">
+    <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Loria System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

@@ -1,0 +1,2108 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="273.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="185.0" integer="yes" />
+    <set_variable name="Alignment" value="0.0" integer="yes" />
+  </start>
+  <folder_arme name="Arcturus System" id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <folder_arme name="Arcturus Settings" id_arme="1986ea1d-abb5-4ccf-9766-f76d11759b00" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <folder_arme name="Arcturus Menu" id_arme="ef3ca4c9-6053-42df-a800-d3dab87b3c63" parent_id_arme="1986ea1d-abb5-4ccf-9766-f76d11759b00" />
+  <event name="Arcturus Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="ef3ca4c9-6053-42df-a800-d3dab87b3c63">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Arcturus System" />
+    <set_variable name="Arcturus Gate" value="1.0" integer="yes" />
+    <!--320,272-->
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="ef3ca4c9-6053-42df-a800-d3dab87b3c63">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Arcturus System" />
+  </event>
+  <event name="Arcturus System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="ef3ca4c9-6053-42df-a800-d3dab87b3c63">
+    <if_gm_button text="Lower Arc/Arcturus System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="105.0" integer="yes" />
+    <set_variable name="Arcturus System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="1986ea1d-abb5-4ccf-9766-f76d11759b00">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="1986ea1d-abb5-4ccf-9766-f76d11759b00">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="1986ea1d-abb5-4ccf-9766-f76d11759b00">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="1986ea1d-abb5-4ccf-9766-f76d11759b00">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="1986ea1d-abb5-4ccf-9766-f76d11759b00">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Arcturus Sector I" id_arme="abdf4e7e-69c7-4a1a-8f90-d3800329d6f4" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector I" id_arme="dbe5035e-a3f5-431a-b55e-6ede1f1469f9" parent_id_arme="abdf4e7e-69c7-4a1a-8f90-d3800329d6f4">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="nebulas" startX="69312.0" startY="0.0" startZ="44048.0" endX="20972.0" endY="0.0" endZ="26558.0" randomRange="7530" />
+    <create count="30" type="nebulas" startX="25345.0" startY="0.0" startZ="33117.0" endX="5183.0" endY="0.0" endZ="34089.0" randomRange="7530" />
+    <create count="10" type="nebulas" nebType="2" startX="72652.0" startY="0.0" startZ="57415.0" endX="65236.0" endY="0.0" endZ="60921.0" randomRange="2917" />
+  </event>
+  <folder_arme name="Navigation" id_arme="2a072232-b72d-4cd2-b46b-033e3b2cbfb4" parent_id_arme="abdf4e7e-69c7-4a1a-8f90-d3800329d6f4" />
+  <event name="Transition to Sector II" id_arme="1c0d43cb-51f6-4e87-bf44-ce47bc9437b4" parent_id_arme="2a072232-b72d-4cd2-b46b-033e3b2cbfb4">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="cfd810d1-2786-4598-ae17-71d0d2b4a9d1" parent_id_arme="2a072232-b72d-4cd2-b46b-033e3b2cbfb4">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="030679f6-fc3a-424c-9a07-4bd0ecdba836" parent_id_arme="2a072232-b72d-4cd2-b46b-033e3b2cbfb4">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="b65f4d2e-41a8-4d33-885d-e18ce6f3e2c9" parent_id_arme="abdf4e7e-69c7-4a1a-8f90-d3800329d6f4" />
+  <event name="Generate Sector Entities" id_arme="5221bcc9-dbb0-4c48-9b1d-d7cfd244ccd5" parent_id_arme="b65f4d2e-41a8-4d33-885d-e18ce6f3e2c9">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="2bf4b33a-a620-47c2-ac96-7082e83c36b1" parent_id_arme="b65f4d2e-41a8-4d33-885d-e18ce6f3e2c9">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="ffc157d8-160f-4d92-987d-31db50fbfc96" parent_id_arme="b65f4d2e-41a8-4d33-885d-e18ce6f3e2c9">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector II" id_arme="ab358ca2-2812-4ebe-9e3f-ef743daa43f6" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector II" id_arme="d63c3d71-43d1-4a4f-b9af-47358b9d7b15" parent_id_arme="ab358ca2-2812-4ebe-9e3f-ef743daa43f6">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="10" type="nebulas" nebType="3" startX="43077.0" startY="0.0" startZ="66396.0" endX="31660.0" endY="0.0" endZ="59595.0" randomRange="6131" />
+    <create count="10" type="nebulas" startX="95790.0" startY="0.0" startZ="27894.0" endX="96154.0" endY="0.0" endZ="45627.0" randomRange="4307" />
+    <create count="10" type="nebulas" startX="91539.0" startY="0.0" startZ="28744.0" endX="33482.0" endY="0.0" endZ="38582.0" randomRange="11707" />
+    <create count="50" type="asteroids" startX="61418.0" startY="0.0" startZ="15506.0" endX="13928.0" endY="0.0" endZ="31417.0" randomRange="14456" />
+    <create count="30" type="asteroids" startX="41498.0" startY="0.0" startZ="7246.0" endX="7126.0" endY="0.0" endZ="6518.0" randomRange="8027" />
+  </event>
+  <folder_arme name="Navigation" id_arme="44ea2b77-e9ca-4ad6-a1f6-6905d4150b23" parent_id_arme="ab358ca2-2812-4ebe-9e3f-ef743daa43f6" />
+  <event name="Transition to Sector III" id_arme="d42bb03f-05fa-49cd-9da8-7d64075b5beb" parent_id_arme="44ea2b77-e9ca-4ad6-a1f6-6905d4150b23">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="18757be5-5697-4c44-b381-6ac0354d165c" parent_id_arme="44ea2b77-e9ca-4ad6-a1f6-6905d4150b23">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="fcf64fea-ca1a-4419-acae-92eb5d40e873" parent_id_arme="44ea2b77-e9ca-4ad6-a1f6-6905d4150b23">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="72d8c206-e62e-42db-b3b8-fb8404195b08" parent_id_arme="44ea2b77-e9ca-4ad6-a1f6-6905d4150b23">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="180ff780-4099-4380-86b0-b3ba2f8c03a5" parent_id_arme="44ea2b77-e9ca-4ad6-a1f6-6905d4150b23">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="f82eeda7-b0a3-49ea-944f-8bdbb21dcf7a" parent_id_arme="ab358ca2-2812-4ebe-9e3f-ef743daa43f6" />
+  <event name="Generate Sector Entities" id_arme="deac2e6d-d92c-4f37-8f8c-446eb1cec7d7" parent_id_arme="f82eeda7-b0a3-49ea-944f-8bdbb21dcf7a">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="a4bd3893-4ffa-48ca-a757-3ab79dc82428" parent_id_arme="f82eeda7-b0a3-49ea-944f-8bdbb21dcf7a">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="57e39afd-67ce-4362-944e-5948d2b64a17" parent_id_arme="f82eeda7-b0a3-49ea-944f-8bdbb21dcf7a">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector III" id_arme="261c3fe0-7fb8-4623-8088-6613389e3525" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector III" id_arme="7f8cc289-c4f9-4b8c-91d4-c96633438d3a" parent_id_arme="261c3fe0-7fb8-4623-8088-6613389e3525">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="50" type="asteroids" startX="85830.0" startY="0.0" startZ="17692.0" endX="37733.0" endY="0.0" endZ="17085.0" randomRange="17213" />
+    <create count="30" type="nebulas" startX="35547.0" startY="0.0" startZ="73076.0" endX="67259.0" endY="0.0" endZ="80471.0" randomRange="17094" />
+    <create count="10" type="nebulas" startX="21147.0" startY="0.0" startZ="45820.0" endX="14540.0" endY="0.0" endZ="89910.0" randomRange="15103" />
+    <create count="10" type="nebulas" nebType="2" startX="58360.0" startY="0.0" startZ="21685.0" endX="58360.0" endY="0.0" endZ="21685.0" randomRange="6235" />
+  </event>
+  <folder_arme name="Navigation" id_arme="afedd84b-0c66-4e0a-bdef-0b61d1b43bee" parent_id_arme="261c3fe0-7fb8-4623-8088-6613389e3525" />
+  <event name="Transition to Sector IV" id_arme="e1b1f828-7f22-4f00-bf8f-61423cf564d1" parent_id_arme="afedd84b-0c66-4e0a-bdef-0b61d1b43bee">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="186ea5e4-1d78-437e-8f28-1c532a412331" parent_id_arme="afedd84b-0c66-4e0a-bdef-0b61d1b43bee">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="fbed9ee8-cd2a-4383-8bd8-76f26ac0c452" parent_id_arme="afedd84b-0c66-4e0a-bdef-0b61d1b43bee">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="2aef392d-f7f1-4887-b281-1bcaa2a252ca" parent_id_arme="afedd84b-0c66-4e0a-bdef-0b61d1b43bee">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="4f7cb676-47a6-492f-8c5f-b3e0717dcd8d" parent_id_arme="afedd84b-0c66-4e0a-bdef-0b61d1b43bee">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="3a86685c-760b-4264-9691-e947c6d81e51" parent_id_arme="261c3fe0-7fb8-4623-8088-6613389e3525" />
+  <event name="Generate Sector Entities" id_arme="20ed28cb-a2b8-43de-ae0c-0f5333af71f3" parent_id_arme="3a86685c-760b-4264-9691-e947c6d81e51">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="ffae3d85-1c72-4f90-9024-b11439c98220" parent_id_arme="3a86685c-760b-4264-9691-e947c6d81e51">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="935731e8-a05c-496a-8ea6-f5867e642182" parent_id_arme="3a86685c-760b-4264-9691-e947c6d81e51">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector IV" id_arme="ec30e324-521f-4a9e-a548-8778e2d54232" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector IV" id_arme="5fa31dc6-2e62-42ae-bb59-98ea2cab023b" parent_id_arme="ec30e324-521f-4a9e-a548-8778e2d54232">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="87166.0" startY="0.0" startZ="68218.0" endX="59960.0" endY="0.0" endZ="47327.0" randomRange="13293" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="72470.0" startY="0.0" startZ="20242.0" endX="27166.0" endY="0.0" endZ="40283.0" randomRange="17917" />
+    <create count="10" type="asteroids" startX="41863.0" startY="0.0" startZ="60931.0" endX="15628.0" endY="0.0" endZ="77327.0" randomRange="15156" />
+  </event>
+  <folder_arme name="Navigation" id_arme="ad47bc4e-38c1-4042-9b3e-0090cf7f0e72" parent_id_arme="ec30e324-521f-4a9e-a548-8778e2d54232" />
+  <event name="Transition to Sector III" id_arme="623bb10f-74d2-4d74-9693-4e479605d16c" parent_id_arme="ad47bc4e-38c1-4042-9b3e-0090cf7f0e72">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="a14dd740-46d5-4857-8414-2115c59af149" parent_id_arme="ad47bc4e-38c1-4042-9b3e-0090cf7f0e72">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="0bcf4d5d-d887-41e2-8bd9-99c02a80adde" parent_id_arme="ad47bc4e-38c1-4042-9b3e-0090cf7f0e72">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="ad7ec755-0260-4893-93d0-8e9b7259d394" parent_id_arme="ad47bc4e-38c1-4042-9b3e-0090cf7f0e72" />
+  <event name="Gate Offline" id_arme="62ca9800-638a-4966-9212-a6131eab0ac0" parent_id_arme="ad7ec755-0260-4893-93d0-8e9b7259d394">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Eyukua Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b" parent_id_arme="ad7ec755-0260-4893-93d0-8e9b7259d394" />
+  <event name="Ship1 Activation Range" id_arme="2a4efcb0-7f37-4555-ae3c-65ac63cb6234" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="f48c5808-8942-418a-9ffb-ad944a9c3dfd" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="e46b7884-1d78-46ee-9981-40e2d1bc0ea3" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="be6d736b-942d-4ebe-a80f-1bdc3bba67b8" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="354122a6-0c15-46c5-8bea-620d52ed30a1" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="c040f2e6-575d-46bb-8c52-23bc46bbb4c2" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="0f247a40-f833-45f7-a32e-3e3910cf004e" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="a9b51c74-2f15-49d1-b61b-83ae1413e8e6" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="ac231170-b422-4b70-ac99-f75e64b66204" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="92524459-73ea-4757-8035-0ba41b15ed74" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="4425407b-d54b-4705-8b67-98b3057c9fd5" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="9ba17950-39a5-4c55-bd6a-94528fe3dd62" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="c01988f7-9309-4206-90a9-92bb0fa11721" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="0b2af046-0b68-440a-be22-24b5cbcbc462" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="018b35a9-4c69-4a90-9615-e051523e688f" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="a52c7d2b-ec5f-4026-a700-3368e38141bb" parent_id_arme="69ea1bfa-47d7-44de-ad31-56b20a10129b">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="77aa8b87-543e-4645-bfdc-386f78b0ccfd" parent_id_arme="ad7ec755-0260-4893-93d0-8e9b7259d394">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Eyukua Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="1ee150a1-d09a-4c69-8f9e-34b1756d5646" parent_id_arme="ad7ec755-0260-4893-93d0-8e9b7259d394">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus to Eyukua" value="1.0" />
+    <set_variable name="Eyukua System" value="1.0" />
+    <set_variable name="Sector" value="21" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="705241bf-8193-4f5a-973e-4ab6a72ef0cc" parent_id_arme="ec30e324-521f-4a9e-a548-8778e2d54232" />
+  <event name="Generate Sector Entities" id_arme="a8859df8-71a9-4e2c-a15b-fc699199ed71" parent_id_arme="705241bf-8193-4f5a-973e-4ab6a72ef0cc">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="76357.0" y="0.0" z="68218.0" angle="0" name="Eyukua Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="61812591-17bb-4c22-9ffe-39190839bb65" parent_id_arme="705241bf-8193-4f5a-973e-4ab6a72ef0cc">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Eyukua Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Eyukua Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Eyukua Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Eyukua Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="86a75307-8804-49cd-83ba-aeebea215e3a" parent_id_arme="705241bf-8193-4f5a-973e-4ab6a72ef0cc">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <destroy name="Eyukua Gate" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Eyukua" id_arme="deeccf04-e604-46d0-94b9-ce929e30c349" parent_id_arme="ec30e324-521f-4a9e-a548-8778e2d54232">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Eyukua to Arcturus" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Eyukua Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Eyukua to Arcturus" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector V" id_arme="5210fc04-b9fd-4c1a-9056-f761de26fae0" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector V" id_arme="9b0271f3-6d4d-4706-8f6f-9df775179d2f" parent_id_arme="5210fc04-b9fd-4c1a-9056-f761de26fae0">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="10" type="asteroids" startX="71304.0" startY="0.0" startZ="26943.0" endX="32742.0" endY="0.0" endZ="57146.0" randomRange="20996" />
+    <create count="10" type="nebulas" startX="64832.0" startY="0.0" startZ="23977.0" endX="28562.0" endY="0.0" endZ="18988.0" randomRange="10956" />
+  </event>
+  <folder_arme name="Navigation" id_arme="785d2368-0ecd-49fe-9cbb-673ce18e631d" parent_id_arme="5210fc04-b9fd-4c1a-9056-f761de26fae0" />
+  <event name="Transition to Sector VI" id_arme="9aa92f80-9352-4298-a2b3-cb7228a52393" parent_id_arme="785d2368-0ecd-49fe-9cbb-673ce18e631d">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="12e809ed-480d-4cc7-ba80-9f769d4e8fa3" parent_id_arme="785d2368-0ecd-49fe-9cbb-673ce18e631d">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="8c2e5806-8b8b-4edf-a6f6-83618ccbc6c9" parent_id_arme="785d2368-0ecd-49fe-9cbb-673ce18e631d">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="78966a4d-8311-45aa-96e9-f00053b953bb" parent_id_arme="785d2368-0ecd-49fe-9cbb-673ce18e631d">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="fec4cb2e-5224-44b8-be70-988cd8328e96" parent_id_arme="785d2368-0ecd-49fe-9cbb-673ce18e631d">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="a9600642-a266-4154-844b-34d4bcb6de41" parent_id_arme="5210fc04-b9fd-4c1a-9056-f761de26fae0" />
+  <event name="Generate Sector Entities" id_arme="3bbb9ab6-f44b-440d-8a54-e5f0d0f37ab3" parent_id_arme="a9600642-a266-4154-844b-34d4bcb6de41">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="5a3f37f4-68bb-4012-9134-b2fb72c67332" parent_id_arme="a9600642-a266-4154-844b-34d4bcb6de41">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="6b246972-7d6f-47b4-9acc-7c2564bbb722" parent_id_arme="a9600642-a266-4154-844b-34d4bcb6de41">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector VI" id_arme="a3c45533-4a8f-46c2-81a9-c0724d223212" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector VI" id_arme="182b432a-3661-453a-b494-f3b53658f41f" parent_id_arme="a3c45533-4a8f-46c2-81a9-c0724d223212">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="20" type="nebulas" startX="4332.0" startY="0.0" startZ="64696.0" endX="34818.0" endY="0.0" endZ="93117.0" randomRange="5862" />
+    <create count="20" type="nebulas" startX="1660.0" startY="0.0" startZ="98461.0" endX="39677.0" endY="0.0" endZ="95060.0" randomRange="5862" />
+    <create count="20" type="nebulas" startX="8948.0" startY="0.0" startZ="70040.0" endX="6640.0" endY="0.0" endZ="89230.0" randomRange="5862" />
+    <create count="10" type="nebulas" startX="11863.0" startY="0.0" startZ="8582.0" endX="11013.0" endY="0.0" endZ="66761.0" randomRange="10744" />
+    <create type="genericMesh" x="33482.0" y="0.0" z="32874.0" angle="0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\Planets\planetTex4.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="5e095ce1-deba-4127-9e82-1a397d28d9bf" parent_id_arme="a3c45533-4a8f-46c2-81a9-c0724d223212" />
+  <event name="Transition to Sector VII" id_arme="c4ba29cd-af61-4ce1-b681-b3398ac56b24" parent_id_arme="5e095ce1-deba-4127-9e82-1a397d28d9bf">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="0922f7d8-3192-4153-904e-09de092bcf70" parent_id_arme="5e095ce1-deba-4127-9e82-1a397d28d9bf">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="b12be7a7-1d51-4b0a-9bd2-be500203bbac" parent_id_arme="5e095ce1-deba-4127-9e82-1a397d28d9bf">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="ddec6c27-2d94-482c-955c-3ec402df8bc1" parent_id_arme="5e095ce1-deba-4127-9e82-1a397d28d9bf">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="35009d29-123e-4b54-ade2-b8ea330b9a45" parent_id_arme="5e095ce1-deba-4127-9e82-1a397d28d9bf">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="abf307cc-e748-4138-968a-ed74be67b45c" parent_id_arme="5e095ce1-deba-4127-9e82-1a397d28d9bf">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="67dbc58b-756b-4f0e-ac72-e915989d599f" parent_id_arme="5e095ce1-deba-4127-9e82-1a397d28d9bf">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="103a49f2-9c52-4c71-9b5a-9b7442f400cd" parent_id_arme="5e095ce1-deba-4127-9e82-1a397d28d9bf">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="cb35b19a-1065-4b27-9c05-5027ce6f998f" parent_id_arme="a3c45533-4a8f-46c2-81a9-c0724d223212" />
+  <event name="Generate Sector Entities" id_arme="8329d5ed-0da4-4b25-bc3d-4c3da72662c6" parent_id_arme="cb35b19a-1065-4b27-9c05-5027ce6f998f">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ClassYPlanet" value="1.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="4faa3c9e-7bef-4632-a47c-2321a34df2eb" parent_id_arme="cb35b19a-1065-4b27-9c05-5027ce6f998f">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="f6c17828-19c8-4cef-b73b-79424b3ad04b" parent_id_arme="cb35b19a-1065-4b27-9c05-5027ce6f998f">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="DestroyPlanet" value="1.0" integer="yes" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector VII" id_arme="0acb2fc9-6202-4c78-8a6b-acfa9bfaf335" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector VII" id_arme="a55f2b9f-9369-4713-88a3-0c96ccff3052" parent_id_arme="0acb2fc9-6202-4c78-8a6b-acfa9bfaf335">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="10" type="nebulas" startX="98341.0" startY="0.0" startZ="97004.0" endX="86681.0" endY="0.0" endZ="97246.0" randomRange="4579" />
+    <create count="100" type="nebulas" startX="90689.0" startY="0.0" startZ="92267.0" endX="52551.0" endY="0.0" endZ="42469.0" randomRange="10377" />
+    <create count="100" type="nebulas" startX="65102.0" startY="0.0" startZ="45820.0" endX="68338.0" endY="0.0" endZ="31393.0" randomRange="33629" />
+    <create count="50" type="asteroids" startX="40023.0" startY="0.0" startZ="34629.0" endX="28562.0" endY="0.0" endZ="40022.0" randomRange="7261" />
+    <create count="30" type="asteroids" startX="80068.0" startY="0.0" startZ="46898.0" endX="67529.0" endY="0.0" endZ="34764.0" randomRange="4458" />
+  </event>
+  <folder_arme name="Navigation" id_arme="74652ec3-4167-4f2b-a7d3-4de2968bf106" parent_id_arme="0acb2fc9-6202-4c78-8a6b-acfa9bfaf335" />
+  <event name="Transition to Sector VIII" id_arme="a0c07877-0f79-46d7-a362-5c801f11d488" parent_id_arme="74652ec3-4167-4f2b-a7d3-4de2968bf106">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="edc38d68-bf31-4b32-aaba-ac20b7b9f765" parent_id_arme="74652ec3-4167-4f2b-a7d3-4de2968bf106">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="a1eff17a-eaea-4a5f-8562-9abbe076f8a8" parent_id_arme="74652ec3-4167-4f2b-a7d3-4de2968bf106">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="e551860e-8f02-4b6c-8f27-b4796c759878" parent_id_arme="74652ec3-4167-4f2b-a7d3-4de2968bf106">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="baa30ece-f389-4fc8-b6f8-fd3f7240f59e" parent_id_arme="74652ec3-4167-4f2b-a7d3-4de2968bf106">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="1d6361f0-b9e6-4cf8-ab9e-85f27ba88f03" parent_id_arme="74652ec3-4167-4f2b-a7d3-4de2968bf106">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="876e109c-9761-4687-b3f7-5d75e8dc6bd6" parent_id_arme="74652ec3-4167-4f2b-a7d3-4de2968bf106">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="23821a7b-7910-4477-9e75-d824ba1eb331" parent_id_arme="74652ec3-4167-4f2b-a7d3-4de2968bf106">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="17f6a506-ff75-44bb-80e9-7b4b48844a6b" parent_id_arme="0acb2fc9-6202-4c78-8a6b-acfa9bfaf335" />
+  <event name="Generate Sector Entities" id_arme="9c75c5fe-437c-4f88-b8c6-73a42a925e20" parent_id_arme="17f6a506-ff75-44bb-80e9-7b4b48844a6b">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="30e6d493-1982-484e-b62c-3ce5e0b45e85" parent_id_arme="17f6a506-ff75-44bb-80e9-7b4b48844a6b">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="508b19cc-2e47-4698-a911-cfa2165c5848" parent_id_arme="17f6a506-ff75-44bb-80e9-7b4b48844a6b">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector VIII" id_arme="fcee6a64-6c5b-48c0-a4bf-edbff9861afe" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector VIII" id_arme="56a0f084-83b4-4310-b5e2-6d087ab729ae" parent_id_arme="fcee6a64-6c5b-48c0-a4bf-edbff9861afe">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="40" type="nebulas" startX="27895.0" startY="0.0" startZ="93481.0" endX="70891.0" endY="0.0" endZ="92631.0" randomRange="6509" />
+    <create count="10" type="nebulas" startX="37612.0" startY="0.0" startZ="84129.0" endX="69069.0" endY="0.0" endZ="60445.0" randomRange="7337" />
+    <create count="100" type="asteroids" startX="48057.0" startY="0.0" startZ="33603.0" endX="48057.0" endY="0.0" endZ="33603.0" randomRange="18328" />
+    <create count="30" type="asteroids" startX="48057.0" startY="0.0" startZ="51578.0" endX="22430.0" endY="0.0" endZ="59230.0" randomRange="7404" />
+    <create count="38" type="asteroids" startX="47693.0" startY="0.0" startZ="12834.0" endX="12956.0" endY="0.0" endZ="36032.0" randomRange="8358" />
+    <create count="60" type="asteroids" startX="49758.0" startY="0.0" startZ="37125.0" endX="36154.0" endY="0.0" endZ="53765.0" randomRange="7694" />
+    <create count="40" type="asteroids" startX="40648.0" startY="0.0" startZ="36153.0" endX="32146.0" endY="0.0" endZ="28744.0" randomRange="4360" />
+    <create count="40" type="asteroids" startX="29231.0" startY="0.0" startZ="29595.0" endX="13442.0" endY="0.0" endZ="34817.0" randomRange="5257" />
+    <create count="10" type="nebulas" nebType="2" startX="50122.0" startY="0.0" startZ="36396.0" endX="50122.0" endY="0.0" endZ="36396.0" randomRange="21815" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3f77120b-3ca8-4d65-86d8-bc078f19fc79" parent_id_arme="fcee6a64-6c5b-48c0-a4bf-edbff9861afe" />
+  <event name="Transition to Sector VII" id_arme="20c61a26-1081-406b-8ebc-481ca2ecc29e" parent_id_arme="3f77120b-3ca8-4d65-86d8-bc078f19fc79">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="5c73b099-2780-4cc0-a6fd-d1dfdc25354d" parent_id_arme="3f77120b-3ca8-4d65-86d8-bc078f19fc79">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="778c85d9-b03d-46c8-af8c-868af079679d" parent_id_arme="3f77120b-3ca8-4d65-86d8-bc078f19fc79">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="71fba858-953e-4878-9d04-5f7878d709a5" parent_id_arme="3f77120b-3ca8-4d65-86d8-bc078f19fc79">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="954b3bc0-9ea9-41a8-b6f4-3b5ffdbfed09" parent_id_arme="3f77120b-3ca8-4d65-86d8-bc078f19fc79">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e5920a0d-4760-428d-a8c3-2df81113f49a" parent_id_arme="fcee6a64-6c5b-48c0-a4bf-edbff9861afe" />
+  <event name="Generate Sector Entities" id_arme="bf94987c-9c65-4d2f-8d86-441b2a94f5cf" parent_id_arme="e5920a0d-4760-428d-a8c3-2df81113f49a">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="9c843a07-0595-42e9-813e-1dc7161f6a53" parent_id_arme="e5920a0d-4760-428d-a8c3-2df81113f49a">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="c7aa2968-5ca6-44e2-806a-500be44c05e3" parent_id_arme="e5920a0d-4760-428d-a8c3-2df81113f49a">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector IX" id_arme="ba7d172f-477b-45e5-bbf9-556e82c02889" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector IX" id_arme="b970471d-80b3-4f4f-b612-6dfada40a9ea" parent_id_arme="ba7d172f-477b-45e5-bbf9-556e82c02889">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="40" type="nebulas" startX="74292.0" startY="0.0" startZ="41740.0" endX="50851.0" endY="0.0" endZ="47085.0" randomRange="10548" />
+    <create count="10" type="nebulas" startX="50608.0" startY="0.0" startZ="14777.0" endX="25952.0" endY="0.0" endZ="19028.0" randomRange="3965" />
+    <create count="30" type="asteroids" startX="58138.0" startY="0.0" startZ="43927.0" endX="15871.0" endY="0.0" endZ="42955.0" randomRange="7789" />
+    <create count="30" type="nebulas" startX="57409.0" startY="0.0" startZ="94453.0" endX="20972.0" endY="0.0" endZ="94939.0" randomRange="5032" />
+    <create count="10" type="nebulas" startX="20972.0" startY="0.0" startZ="95668.0" endX="1539.0" endY="0.0" endZ="97732.0" randomRange="3540" />
+  </event>
+  <folder_arme name="Navigation" id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556" parent_id_arme="ba7d172f-477b-45e5-bbf9-556e82c02889" />
+  <event name="Transition to Sector X" id_arme="91dc65dd-cd6a-412b-b541-daf49aef2536" parent_id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="4fc6adb2-9e69-47fe-9cae-b87581faadf1" parent_id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="fa83d988-cf89-473b-aad5-fa2ad67b992e" parent_id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="34aaa527-a498-462d-a7e5-c7a231bec56c" parent_id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="13.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="d997314f-1471-47a8-8867-da680d8e3866" parent_id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="0ff62029-9cbf-4732-b8e9-1f0b2aa918c7" parent_id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556" />
+  <event name="Gate Offline" id_arme="4cb6df91-c658-4e87-ab28-15c4b1515ef7" parent_id_arme="0ff62029-9cbf-4732-b8e9-1f0b2aa918c7">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Hjorden Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f" parent_id_arme="0ff62029-9cbf-4732-b8e9-1f0b2aa918c7" />
+  <event name="Ship1 Activation Range" id_arme="2b3636af-fd74-49ab-ae80-34c134b8b598" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="104b3c10-1f4c-48bb-aa65-60a24c78d677" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="80bda912-9a40-477e-bad4-5d1a5137dcda" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="1d3f8723-acc8-4fc8-af12-3b2bb106668b" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="5be9169c-5953-42a7-83a2-12c8bb17923f" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="1b0db5ea-1e64-4e60-985e-7509cc6854c8" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="952e07fc-71c0-4879-8b88-2c4522ba268d" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="b3dd3549-be49-4054-91e2-20ad6a944b03" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="7e0b0e25-4bca-4eb3-983a-51472b83e169" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="c60a9ef1-4d0f-413f-afb8-25b00dde8f9d" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="2fcd5b1f-f2d7-4ac6-a76e-6a41b94f6e64" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="901aef1c-84b7-4cee-a4cd-13440c36f08f" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="be6f0804-c8e3-4025-a86d-4d9e4c418012" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="016c79c9-4d6f-4e6f-8938-77cebd0639f3" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="1f03d254-20ed-4488-b393-e4db6fa90260" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="9e4db5c4-8d55-4ca1-b7af-a97b64bcbfa9" parent_id_arme="a28909bf-d3b3-4e66-b3d6-c0973a49a94f">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="2ed41824-e900-4d2f-8b3e-6a52411d7e55" parent_id_arme="0ff62029-9cbf-4732-b8e9-1f0b2aa918c7">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Hjorden Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="51f5e865-c428-4429-929e-a47854d0404a" parent_id_arme="0ff62029-9cbf-4732-b8e9-1f0b2aa918c7">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus to Hjorden" value="1.0" />
+    <set_variable name="Hjorden System" value="1.0" />
+    <set_variable name="Sector" value="3" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="67c3d1a7-f053-4941-93bb-3ead2eb4d60e" parent_id_arme="ba7d172f-477b-45e5-bbf9-556e82c02889" />
+  <event name="Generate Sector Entities" id_arme="345d0888-2122-4b3b-bc92-9ce4f51366f3" parent_id_arme="67c3d1a7-f053-4941-93bb-3ead2eb4d60e">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="70770.0" y="0.0" z="69190.0" angle="0" name="Hjorden Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="74899.0" y="0.0" z="52064.0" angle="0" name="SY-18" hullID="1053" />
+    <create type="station" x="69677.0" y="0.0" z="49757.0" angle="0" name="Outpost 91" hullID="1503" />
+    <create type="neutral" x="74292.0" y="0.0" z="67611.0" angle="0" name="BY-23" hullID="1055" />
+    <create type="neutral" x="26073.0" y="0.0" z="26680.0" angle="0" name="SR-76" hullID="1054" />
+    <create type="neutral" x="73442.0" y="0.0" z="22793.0" angle="0" name="SR-24" hullID="1054" />
+    <create type="neutral" x="19879.0" y="0.0" z="83157.0" angle="0" name="SR-59" hullID="1054" />
+    <create type="neutral" x="69798.0" y="0.0" z="85222.0" angle="0" name="SR-38" hullID="1054" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="5585b6ae-bb9b-4fbd-b6d0-2f98376496a8" parent_id_arme="67c3d1a7-f053-4941-93bb-3ead2eb4d60e">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Hjorden Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Hjorden Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Hjorden Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Hjorden Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="79973d80-06cf-45a9-b941-c46d1012a726" parent_id_arme="67c3d1a7-f053-4941-93bb-3ead2eb4d60e">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <destroy name="Hjorden Gate" />
+    <destroy name="SY-18" />
+    <destroy name="Outpost 91" />
+    <destroy name="BY-23" />
+    <destroy name="SR-76" />
+    <destroy name="SR-24" />
+    <destroy name="SR-59" />
+    <destroy name="SR-38" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Hjorden" id_arme="f0ec5c27-fb0d-4033-84dc-8cb5d0621e3b" parent_id_arme="ba7d172f-477b-45e5-bbf9-556e82c02889">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden to Arcturus" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Hjorden Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Hjorden to Arcturus" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector X" id_arme="c768ca9f-bfd9-4ce5-974d-1053f37038fd" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector X" id_arme="bfdf9a0b-ad46-45ce-81c3-ed327a1e5872" parent_id_arme="c768ca9f-bfd9-4ce5-974d-1053f37038fd">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="15" type="nebulas" startX="96519.0" startY="0.0" startZ="96153.0" endX="71863.0" endY="0.0" endZ="96032.0" randomRange="4188" />
+    <create count="10" type="nebulas" startX="69312.0" startY="0.0" startZ="97489.0" endX="55466.0" endY="0.0" endZ="97246.0" randomRange="3402" />
+    <create count="30" type="nebulas" nebType="3" startX="66762.0" startY="0.0" startZ="34210.0" endX="57895.0" endY="0.0" endZ="42955.0" randomRange="8485" />
+    <create count="40" type="nebulas" startX="29596.0" startY="0.0" startZ="5789.0" endX="6762.0" endY="0.0" endZ="30202.0" randomRange="6195" />
+    <create count="10" type="nebulas" startX="9312.0" startY="0.0" startZ="8340.0" endX="9312.0" endY="0.0" endZ="8340.0" randomRange="7736" />
+  </event>
+  <folder_arme name="Navigation" id_arme="f1fafcdd-8ccf-4483-bf96-77b481345683" parent_id_arme="c768ca9f-bfd9-4ce5-974d-1053f37038fd" />
+  <event name="Transition to Sector XI" id_arme="ae2028f3-be2d-44c1-9171-5f519a2260d8" parent_id_arme="f1fafcdd-8ccf-4483-bf96-77b481345683">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="935c7920-5d60-4913-ae89-be53a85ed0dc" parent_id_arme="f1fafcdd-8ccf-4483-bf96-77b481345683">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="ba54aac7-7c1a-460b-934c-70db9e1af266" parent_id_arme="f1fafcdd-8ccf-4483-bf96-77b481345683">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="1e7bf60e-f596-4665-80b2-22831bd1e54e" parent_id_arme="f1fafcdd-8ccf-4483-bf96-77b481345683">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="7b8c39ba-1691-4d1b-8b36-900f8d29e993" parent_id_arme="f1fafcdd-8ccf-4483-bf96-77b481345683">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="90c496ba-c904-4a61-b75c-064574d0360c" parent_id_arme="f1fafcdd-8ccf-4483-bf96-77b481345683">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="a443ebb5-1694-4766-8c80-08db91091966" parent_id_arme="f1fafcdd-8ccf-4483-bf96-77b481345683">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="420478bf-3e74-447a-ad62-07ce21fcb823" parent_id_arme="f1fafcdd-8ccf-4483-bf96-77b481345683">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="13.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Arcturus System" value="3.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="a859c70b-4bf4-47f2-a88b-47ce0a55dc47" parent_id_arme="c768ca9f-bfd9-4ce5-974d-1053f37038fd" />
+  <event name="Generate Sector Entities" id_arme="6ab00905-7147-427d-9e5e-e9c74ae685b6" parent_id_arme="a859c70b-4bf4-47f2-a88b-47ce0a55dc47">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="a3ac78c2-b9c2-4d8b-b19a-ce7050ebbb24" parent_id_arme="a859c70b-4bf4-47f2-a88b-47ce0a55dc47">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e087ccee-eab9-4b1a-8e53-6620d2168464" parent_id_arme="a859c70b-4bf4-47f2-a88b-47ce0a55dc47">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector XI" id_arme="7987df75-36f4-4fa7-8d79-8017fa9f84ce" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector XI" id_arme="c2549f72-bf20-4e59-976e-c81f5af995a0" parent_id_arme="7987df75-36f4-4fa7-8d79-8017fa9f84ce">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="10" type="nebulas" startX="96519.0" startY="0.0" startZ="2388.0" endX="96276.0" endY="0.0" endZ="25101.0" randomRange="4460" />
+    <create count="48" type="nebulas" startX="86802.0" startY="0.0" startZ="20728.0" endX="34454.0" endY="0.0" endZ="41983.0" randomRange="11244" />
+    <create count="32" type="nebulas" startX="54252.0" startY="0.0" startZ="20242.0" endX="22551.0" endY="0.0" endZ="18906.0" randomRange="8577" />
+    <create count="60" type="asteroids" startX="41620.0" startY="0.0" startZ="69433.0" endX="24130.0" endY="0.0" endZ="60080.0" randomRange="7096" />
+    <create count="10" type="nebulas" nebType="3" startX="45385.0" startY="0.0" startZ="69433.0" endX="38219.0" endY="0.0" endZ="75748.0" randomRange="3241" />
+  </event>
+  <folder_arme name="Navigation" id_arme="2754c2f8-203e-45e1-96d9-8d4598a7e5c2" parent_id_arme="7987df75-36f4-4fa7-8d79-8017fa9f84ce" />
+  <event name="Transition to Sector XII" id_arme="737bd715-1c3d-43a4-b18c-b17d79fd8122" parent_id_arme="2754c2f8-203e-45e1-96d9-8d4598a7e5c2">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="b0d0f5a0-cc28-4444-96da-56b8c9f485b6" parent_id_arme="2754c2f8-203e-45e1-96d9-8d4598a7e5c2">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="ddccedc9-c764-494b-916e-86b024a06770" parent_id_arme="2754c2f8-203e-45e1-96d9-8d4598a7e5c2">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="96876dc7-5279-43c2-9ab7-7690ffb5f524" parent_id_arme="2754c2f8-203e-45e1-96d9-8d4598a7e5c2">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="c3d2eeff-7c18-48d3-913f-fa46317b7f85" parent_id_arme="2754c2f8-203e-45e1-96d9-8d4598a7e5c2">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="3e5695b8-4363-4421-9473-2f5275895bdf" parent_id_arme="2754c2f8-203e-45e1-96d9-8d4598a7e5c2">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="fad295ad-4f71-4033-bfca-ade1183642c4" parent_id_arme="2754c2f8-203e-45e1-96d9-8d4598a7e5c2">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="16.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="b8d72364-1bef-44f1-9014-94f455ab5c09" parent_id_arme="2754c2f8-203e-45e1-96d9-8d4598a7e5c2">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Arcturus System" value="3.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="a66d3ba9-3571-4dc5-a9eb-4810d0413983" parent_id_arme="7987df75-36f4-4fa7-8d79-8017fa9f84ce" />
+  <event name="Generate Sector Entities" id_arme="0d911309-c7d2-47c9-a069-54da5210ab65" parent_id_arme="a66d3ba9-3571-4dc5-a9eb-4810d0413983">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="4923bca4-8533-473c-9214-e622f8331ef1" parent_id_arme="a66d3ba9-3571-4dc5-a9eb-4810d0413983">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="99ede1bd-8f1e-4388-852b-6420f6b69259" parent_id_arme="a66d3ba9-3571-4dc5-a9eb-4810d0413983">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector XII" id_arme="d8e2c4c3-5f30-4e42-9e4b-befe967514e3" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector XII" id_arme="8d7066c6-d869-4ed1-8ddf-222e3b593b2d" parent_id_arme="d8e2c4c3-5f30-4e42-9e4b-befe967514e3">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="40" type="nebulas" startX="33239.0" startY="0.0" startZ="10161.0" endX="9920.0" endY="0.0" endZ="37125.0" randomRange="11608" />
+    <create count="48" type="nebulas" startX="31903.0" startY="0.0" startZ="36518.0" endX="14292.0" endY="0.0" endZ="49757.0" randomRange="11608" />
+    <create count="50" type="nebulas" startX="70891.0" startY="0.0" startZ="5303.0" endX="34818.0" endY="0.0" endZ="19635.0" randomRange="5489" />
+    <create count="30" type="asteroids" startX="77450.0" startY="0.0" startZ="58380.0" endX="55952.0" endY="0.0" endZ="57651.0" randomRange="5693" />
+    <create count="30" type="asteroids" startX="55952.0" startY="0.0" startZ="58623.0" endX="31296.0" endY="0.0" endZ="74291.0" randomRange="5693" />
+    <create count="30" type="asteroids" startX="5183.0" startY="0.0" startZ="60202.0" endX="31296.0" endY="0.0" endZ="74291.0" randomRange="5693" />
+    <create count="30" type="asteroids" startX="45264.0" startY="0.0" startZ="60080.0" endX="22065.0" endY="0.0" endZ="58987.0" randomRange="5693" />
+  </event>
+  <folder_arme name="Navigation" id_arme="a59ffe96-e136-44cd-8d78-e037d3efbb8e" parent_id_arme="d8e2c4c3-5f30-4e42-9e4b-befe967514e3" />
+  <event name="Transition to Sector XI" id_arme="58cd33dc-9b90-4e1c-90cd-01c3f53aed24" parent_id_arme="a59ffe96-e136-44cd-8d78-e037d3efbb8e">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="86e34fd4-6d72-4f6f-9551-6e77758bc2f4" parent_id_arme="a59ffe96-e136-44cd-8d78-e037d3efbb8e">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="ce39bb26-15d8-46d7-a171-6c4d2ffc2241" parent_id_arme="a59ffe96-e136-44cd-8d78-e037d3efbb8e">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arcturus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="531fef5f-cc78-4ab2-831c-3b219ce63212" parent_id_arme="a59ffe96-e136-44cd-8d78-e037d3efbb8e">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="16.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="2d1a2121-2155-4c4d-a6e1-c4fdcc885158" parent_id_arme="a59ffe96-e136-44cd-8d78-e037d3efbb8e">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Arcturus System" value="3.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="1917ee67-b94c-437b-b41b-22fd94b3baac" parent_id_arme="d8e2c4c3-5f30-4e42-9e4b-befe967514e3" />
+  <event name="Generate Sector Entities" id_arme="9422b4d8-d0c7-4953-abed-8889b5cb0a46" parent_id_arme="1917ee67-b94c-437b-b41b-22fd94b3baac">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="b8da8ca6-c37b-4aeb-baf8-d43decfc0725" parent_id_arme="1917ee67-b94c-437b-b41b-22fd94b3baac">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="68b148c9-3031-44a7-b575-8d16533f6d7c" parent_id_arme="1917ee67-b94c-437b-b41b-22fd94b3baac">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector XIII" id_arme="1b95fe88-1938-4dfe-8768-94b74abccf35" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector XIII" id_arme="e1ac3464-cbdb-44cf-abdc-9730ed0e3fbb" parent_id_arme="1b95fe88-1938-4dfe-8768-94b74abccf35">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13.0" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="20" type="nebulas" startX="70527.0" startY="0.0" startZ="52793.0" endX="29596.0" endY="0.0" endZ="52793.0" randomRange="5770" />
+    <create count="10" type="nebulas" startX="58381.0" startY="0.0" startZ="55951.0" endX="48300.0" endY="0.0" endZ="56072.0" randomRange="4387" />
+    <create count="20" type="nebulas" startX="45507.0" startY="0.0" startZ="60323.0" endX="29596.0" endY="0.0" endZ="70161.0" randomRange="6171" />
+    <create count="23" type="nebulas" startX="47450.0" startY="0.0" startZ="3117.0" endX="2632.0" endY="0.0" endZ="2995.0" randomRange="4422" />
+    <create count="30" type="asteroids" startX="40967.0" startY="0.0" startZ="42719.0" endX="10765.0" endY="0.0" endZ="42314.0" randomRange="6029" />
+    <create count="10" type="asteroids" startX="40697.0" startY="0.0" startZ="45820.0" endX="54045.0" endY="0.0" endZ="52966.0" randomRange="3015" />
+  </event>
+  <folder_arme name="Navigation" id_arme="1db3881b-f54e-4ffd-9f3f-2a69348c894a" parent_id_arme="1b95fe88-1938-4dfe-8768-94b74abccf35" />
+  <event name="Transition to (Right)" id_arme="a8f70ce8-b9ea-43b2-a92c-c1306ba4cef6" parent_id_arme="1db3881b-f54e-4ffd-9f3f-2a69348c894a">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="019b3f36-30c8-4b67-9722-39923024d5a3" parent_id_arme="1db3881b-f54e-4ffd-9f3f-2a69348c894a">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="9.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="de06d028-7294-40fa-93f7-fb8ed8498147" parent_id_arme="1db3881b-f54e-4ffd-9f3f-2a69348c894a">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="10.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="564926b3-7ddf-43bf-a060-bb012124d74c" parent_id_arme="1b95fe88-1938-4dfe-8768-94b74abccf35" />
+  <event name="Generate Sector Entities" id_arme="2ee3dd2c-b5ec-4030-ab6c-79c7744392ac" parent_id_arme="564926b3-7ddf-43bf-a060-bb012124d74c">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="b4e8c719-5c40-4a56-80f8-a9ad9ccc446e" parent_id_arme="564926b3-7ddf-43bf-a060-bb012124d74c">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="151790de-0186-496d-91ef-d550ca5f780d" parent_id_arme="564926b3-7ddf-43bf-a060-bb012124d74c">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector XIV" id_arme="49b48a92-be6f-4227-abff-8d92d7f22ba9" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector XIV" id_arme="47ab6fb8-2c7e-42ca-8d3c-ff5b8fab772f" parent_id_arme="49b48a92-be6f-4227-abff-8d92d7f22ba9">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="27" type="nebulas" startX="98583.0" startY="0.0" startZ="2510.0" endX="59839.0" endY="0.0" endZ="2753.0" randomRange="3122" />
+    <create count="45" type="nebulas" startX="72713.0" startY="0.0" startZ="6153.0" endX="47207.0" endY="0.0" endZ="20000.0" randomRange="5981" />
+    <create count="55" type="nebulas" startX="60689.0" startY="0.0" startZ="19271.0" endX="37126.0" endY="0.0" endZ="67975.0" randomRange="11164" />
+    <create count="29" type="nebulas" startX="44656.0" startY="0.0" startZ="53765.0" endX="3118.0" endY="0.0" endZ="57530.0" randomRange="6541" />
+    <create count="10" type="nebulas" nebType="3" startX="61175.0" startY="0.0" startZ="80850.0" endX="54130.0" endY="0.0" endZ="76113.0" randomRange="4026" />
+    <create count="10" type="asteroids" startX="95790.0" startY="0.0" startZ="43198.0" endX="48422.0" endY="0.0" endZ="43198.0" randomRange="4354" />
+    <create count="10" type="asteroids" startX="76600.0" startY="0.0" startZ="44291.0" endX="57409.0" endY="0.0" endZ="48785.0" randomRange="4673" />
+  </event>
+  <folder_arme name="Navigation" id_arme="cf919476-8744-490c-ad1e-7954aa468abe" parent_id_arme="49b48a92-be6f-4227-abff-8d92d7f22ba9" />
+  <event name="Transition to (Right)" id_arme="b19d4a74-43b3-47af-b81a-3cc8cabeb297" parent_id_arme="cf919476-8744-490c-ad1e-7954aa468abe">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Left)" id_arme="ab9fb0bb-e5fa-4cef-b472-09918123b79a" parent_id_arme="cf919476-8744-490c-ad1e-7954aa468abe">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="13.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="7cc43a31-6026-4344-bda6-c1c09f770ef7" parent_id_arme="cf919476-8744-490c-ad1e-7954aa468abe">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="10.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="120f3356-71d8-406b-bf7a-6498e5d97ca0" parent_id_arme="cf919476-8744-490c-ad1e-7954aa468abe">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="11.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="b0e10047-4109-450f-90ab-cc4dc37f7ea9" parent_id_arme="cf919476-8744-490c-ad1e-7954aa468abe">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="9.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e49d3044-6d70-48fe-8243-a0f5000d10bf" parent_id_arme="49b48a92-be6f-4227-abff-8d92d7f22ba9" />
+  <event name="Generate Sector Entities" id_arme="04ed252b-06a0-4516-926e-976225b8ed31" parent_id_arme="e49d3044-6d70-48fe-8243-a0f5000d10bf">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="6fb52bc4-68a2-47e9-8c6b-cabeb129c9b4" parent_id_arme="e49d3044-6d70-48fe-8243-a0f5000d10bf">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="f02365ad-bea6-498d-aeb7-22b9831805d3" parent_id_arme="e49d3044-6d70-48fe-8243-a0f5000d10bf">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector XV" id_arme="4e79b2be-2857-4e9d-ad9e-b4f204a39a93" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector XV" id_arme="6ea516e3-13e6-480d-ba61-747dd4f38629" parent_id_arme="4e79b2be-2857-4e9d-ad9e-b4f204a39a93">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="95669.0" startY="0.0" startZ="55101.0" endX="96397.0" endY="0.0" endZ="66153.0" randomRange="4129" />
+    <create count="54" type="nebulas" startX="34454.0" startY="0.0" startZ="23157.0" endX="59839.0" endY="0.0" endZ="47206.0" randomRange="4129" />
+    <create count="28" type="nebulas" nebType="2" startX="46357.0" startY="0.0" startZ="84493.0" endX="34454.0" endY="0.0" endZ="86437.0" randomRange="6087" />
+    <create count="28" type="asteroids" startX="47086.0" startY="0.0" startZ="72591.0" endX="3361.0" endY="0.0" endZ="25344.0" randomRange="6087" />
+    <create count="10" type="asteroids" startX="21094.0" startY="0.0" startZ="45748.0" endX="1903.0" endY="0.0" endZ="37368.0" randomRange="4151" />
+  </event>
+  <folder_arme name="Navigation" id_arme="c0d6e96e-1a49-4b38-83fa-118498489749" parent_id_arme="4e79b2be-2857-4e9d-ad9e-b4f204a39a93" />
+  <event name="Transition to (Right)" id_arme="154f4f0b-6cd7-4b36-9882-fcc2f21972f1" parent_id_arme="c0d6e96e-1a49-4b38-83fa-118498489749">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="16.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Left)" id_arme="7564a745-1a2a-4fd8-9a02-93be27242492" parent_id_arme="c0d6e96e-1a49-4b38-83fa-118498489749">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="ea6959e6-98f9-4ce5-8956-c29e9a668702" parent_id_arme="c0d6e96e-1a49-4b38-83fa-118498489749">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="11.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="5ec0f2c3-3cb0-4be8-8809-08b298d339d7" parent_id_arme="c0d6e96e-1a49-4b38-83fa-118498489749">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="12.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="6eb5e7d3-45e3-4402-b8ec-fc90bbe0f563" parent_id_arme="c0d6e96e-1a49-4b38-83fa-118498489749">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="10.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="f1cd181f-6d52-464f-a92f-537967aab6ea" parent_id_arme="4e79b2be-2857-4e9d-ad9e-b4f204a39a93" />
+  <event name="Generate Sector Entities" id_arme="e4fc871f-f365-4e11-90ae-7dc11257492a" parent_id_arme="f1cd181f-6d52-464f-a92f-537967aab6ea">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="4e39dc06-3ecc-4ec8-bde8-70d9b57cf5ea" parent_id_arme="f1cd181f-6d52-464f-a92f-537967aab6ea">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="b1e1e845-acec-41a1-8049-83a94994e207" parent_id_arme="f1cd181f-6d52-464f-a92f-537967aab6ea">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arcturus Sector XVI" id_arme="d2f1ca0d-d83f-4403-bff8-58244a6fc17a" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
+  <event name="Create Arcturus Sector XVI" id_arme="a527ded1-0a35-47dc-a702-31c908657f58" parent_id_arme="d2f1ca0d-d83f-4403-bff8-58244a6fc17a">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arcturus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="asteroids" startX="96762.0" startY="0.0" startZ="26558.0" endX="97126.0" endY="0.0" endZ="37611.0" randomRange="3036" />
+    <create count="24" type="asteroids" startX="93118.0" startY="0.0" startZ="28987.0" endX="23523.0" endY="0.0" endZ="37854.0" randomRange="6030" />
+    <create count="25" type="nebulas" startX="84252.0" startY="0.0" startZ="48178.0" endX="27288.0" endY="0.0" endZ="45384.0" randomRange="6659" />
+    <create count="34" type="nebulas" startX="58138.0" startY="0.0" startZ="57044.0" endX="25709.0" endY="0.0" endZ="75870.0" randomRange="4124" />
+  </event>
+  <folder_arme name="Navigation" id_arme="2eeb09d1-dc6f-4226-b864-968ef85847b8" parent_id_arme="d2f1ca0d-d83f-4403-bff8-58244a6fc17a" />
+  <event name="Transition to (Left)" id_arme="48c50f01-35fd-4509-b8ae-884b26289682" parent_id_arme="2eeb09d1-dc6f-4226-b864-968ef85847b8">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="b66f9102-821e-4b77-8376-33e10a21724f" parent_id_arme="2eeb09d1-dc6f-4226-b864-968ef85847b8">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="12.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="295900a5-78e2-4edd-90f1-64b0fce22235" parent_id_arme="2eeb09d1-dc6f-4226-b864-968ef85847b8">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arcturus System" value="3.0" />
+    <set_variable name="Sector" value="11.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="dffdf5c0-6a3b-4dc0-be5f-b4719b76fba9" parent_id_arme="d2f1ca0d-d83f-4403-bff8-58244a6fc17a" />
+  <event name="Generate Sector Entities" id_arme="eb611021-c961-417f-b1a1-dce719910ae5" parent_id_arme="dffdf5c0-6a3b-4dc0-be5f-b4719b76fba9">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="ad9ab1c9-8647-4d67-8c02-0d5895f70ff9" parent_id_arme="dffdf5c0-6a3b-4dc0-be5f-b4719b76fba9">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="506b379b-dc8e-4c1b-ba7c-c69d60abbfb6" parent_id_arme="dffdf5c0-6a3b-4dc0-be5f-b4719b76fba9">
+    <if_variable name="Arcturus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arcturus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

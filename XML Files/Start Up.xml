@@ -1,0 +1,944 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <!--Configurations-->
+    <set_difficulty_level value="10" />
+    <set_variable name="FleetStatusOption" value="1.0" integer="yes" />
+    <big_message title="The TSN Universe" subtitle1="Created by Xavier" subtitle2="Version 9.0" />
+    <warning_popup_message message="V.9.0" consoles="MHWESCO" player_slot="0" />
+    <warning_popup_message message="Initialising ship systems...." consoles="MHWESCO" player_slot="0" />
+    <warning_popup_message message="Initialising ship systems...." consoles="MHWESCO" player_slot="1" />
+    <warning_popup_message message="Initialising ship systems...." consoles="MHWESCO" player_slot="2" />
+    <warning_popup_message message="Initialising ship systems...." consoles="MHWESCO" player_slot="3" />
+    <warning_popup_message message="Initialising ship systems...." consoles="MHWESCO" player_slot="4" />
+    <warning_popup_message message="Initialising ship systems...." consoles="MHWESCO" player_slot="5" />
+    <warning_popup_message message="Initialising ship systems...." consoles="MHWESCO" player_slot="6" />
+    <warning_popup_message message="Initialising ship systems...." consoles="MHWESCO" player_slot="7" />
+    <gm_instructions title="Instructions">Welcome to the TSN Sandbox^--Activation---^The activation sequence allows the GM to choose the System and Sector for the players to start. It also sets up key variables that are tracked once the Sandbox is running.^Once the activation sequence is completed, the main Sandbox menu will appear and the GM can begin their mission. Below is a step-by-step guide to activation: ^- First, ensure all player ships have spawned before activating GM Mode.^- Next, click on Activate GM Mode to begin the Sandbox activation sequence.^- Finally, select the Operational area, System and Sector, or select the Command Base where the players will start.^- Once complete, the Sandbox will run.^The GM can restart the Activation sequence by clicking on Restart Sandbox. Note; this is only available during the Sandbox activation sequence. The Sandbox cannot be restarted once it is running.</gm_instructions>
+    <!--Test Variables (not required in start block)-->
+    <!--Test Variables-->
+    <!--<set_variable name="Docking Port" value="10.0" integer="yes" />-->
+    <!--<set_variable name="DockingPortLocationX" value="0.0" integer="yes" />-->
+    <!--<set_variable name="DockingPortLocationY" value="0.0" integer="yes" />-->
+    <!--<set_variable name="DockingPortLocationZ" value="0.0" integer="yes" />-->
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System" value="1.0" integer="yes" />
+    <set_variable name="systemSideOverride" value="0.0" integer="yes" />
+    <set_variable name="reassignPatrol0" value="0.0" integer="yes" />
+    <set_variable name="reassignPatrol2" value="10.0" integer="yes" />
+    <set_variable name="reassignPatrol4" value="35.0" integer="yes" />
+    <set_variable name="reassignPatrol6" value="60.0" integer="yes" />
+    <set_variable name="reassignPatrol8" value="80.0" integer="yes" />
+    <set_variable name="secondpatnumber" value="0.0" integer="yes" />
+    <set_variable name="firstpatnumber" value="0.0" integer="yes" />
+    <set_variable name="patrolNumber" value="0.0" integer="yes" />
+    <!--<set_variable name="patrolX11" value="0.0" />-->
+    <!--<set_variable name="patrolZ11" value="0.0" />-->
+    <!--<set_variable name="patrolX21" value="0.0" />-->
+    <!--<set_variable name="patrolZ21" value="0.0" />-->
+    <!--<set_variable name="patrolX31" value="0.0" />-->
+    <!--<set_variable name="patrolZ31" value="0.0" />-->
+    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolX1|patrolNumber|" variable="PatrolX11" />-->
+    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolZ1|patrolNumber|" variable="PatrolX11" />-->
+    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolX2|patrolNumber|" variable="PatrolX11" />-->
+    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolZ2|patrolNumber|" variable="PatrolX11" />-->
+    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolX3|patrolNumber|" variable="PatrolX11" />-->
+    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolZ3|patrolNumber|" variable="PatrolX11" />-->
+    <!--Random Elements-->
+    <set_variable name="Name Assign" value="0.0" integer="yes" />
+    <set_variable name="LetterPrefix" value="1.0" integer="yes" />
+    <set_variable name="DestroyNamed" value="0.0" integer="yes" />
+    <set_variable name="Auto Delete" value="0.0" integer="yes" />
+    <set_variable name="Auto Spawn" value="0.0" integer="yes" />
+    <!--Ship Setups-->
+    <set_variable name="playerSide" value="2.0" integer="yes" />
+    <set_variable name="Ship1 Status" value="1.0" integer="yes" />
+    <set_variable name="Ship2 Status" value="1.0" integer="yes" />
+    <set_variable name="Ship3 Status" value="1.0" integer="yes" />
+    <set_variable name="Ship4 Status" value="1.0" integer="yes" />
+    <set_variable name="Ship5 Status" value="1.0" integer="yes" />
+    <set_variable name="Ship6 Status" value="1.0" integer="yes" />
+    <set_variable name="Ship7 Status" value="1.0" integer="yes" />
+    <set_variable name="Ship8 Status" value="1.0" integer="yes" />
+    <set_variable name="shipCount" value="0.0" integer="yes" />
+    <!--Shuttle Operations-->
+    <set_variable name="ShuttleSelect" value="0.0" integer="yes" />
+    <set_variable name="OperationType" value="0.0" integer="yes" />
+    <!--Adding Shuttles-->
+    <set_player_carried_type player_slot="0" bay_slot="0" hullID="102" name="Proteus" />
+    <set_player_carried_type player_slot="1" bay_slot="0" hullID="102" name="Theseus" />
+    <set_player_carried_type player_slot="2" bay_slot="0" hullID="102" name="Odysseus" />
+    <set_player_carried_type player_slot="3" bay_slot="0" hullID="102" name="Perseus" />
+    <set_player_carried_type player_slot="4" bay_slot="0" hullID="102" name="Dionysus" />
+    <set_player_carried_type player_slot="5" bay_slot="0" hullID="102" name="Icarus" />
+    <set_player_carried_type player_slot="6" bay_slot="0" hullID="102" name="Adonis" />
+    <set_player_carried_type player_slot="7" bay_slot="0" hullID="102" name="Invention" />
+    <!--Sandbox Activation-->
+    <set_variable name="GM Mode" value="0.0" integer="yes" />
+    <set_variable name="GM Controls" value="0.0" integer="yes" />
+    <set_timer name="Sandbox Activation" seconds="5" />
+    <set_variable name="Sandbox Activation" value="1.0" integer="yes" />
+    <set_variable name="rvnumber" value="1.0" integer="yes" />
+    <!--FCS System-->
+    <set_variable name="Enable FCS" value="1.0" integer="yes" />
+    <set_variable name="FCSRateMod" value="0.0" integer="yes" />
+    <set_variable name="FCSRechargeMod" value="0.0" integer="yes" />
+    <set_variable name="PDZModifier" value="0.0" integer="yes" />
+    <set_variable name="PDZRateModifier" value="0.0" integer="yes" />
+    <!--General-->
+    <set_variable name="Fuel Status Display" value="0.0" integer="yes" />
+    <set_variable name="Podnumber" value="1.0" integer="yes" />
+    <set_variable name="secondnumber" value="0.0" integer="yes" />
+    <set_variable name="firstnumber" value="0.0" integer="yes" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
+    <set_variable name="Fleetnumber" value="1.0" integer="yes" />
+    <set_variable name="Sector Locked" value="0.0" integer="yes" />
+    <set_timer name="Transition" seconds="1" />
+    <set_timer name="Destroy Objects" seconds="1" />
+    <set_variable name="Sector Type" value="0.0" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" integer="yes" />
+    <set_variable name="SpecialistOpsCheck" value="0.0" integer="yes" />
+    <set_variable name="Ship1MaxShieldLevelFront" value="0.0" integer="yes" />
+    <set_variable name="Ship1MaxShieldLevelBack" value="0.0" integer="yes" />
+    <!--Specialist Ops Specific-->
+    <set_variable name="CL.10MinePositionX" value="0.0" />
+    <set_variable name="CL.10MinePositionZ" value="0.0" />
+    <set_variable name="CL.20MinePositionX" value="0.0" />
+    <set_variable name="CL.20MinePositionZ" value="0.0" />
+    <set_variable name="CL.30MinePositionX" value="0.0" />
+    <set_variable name="CL.30MinePositionZ" value="0.0" />
+    <set_variable name="CL.40MinePositionX" value="0.0" />
+    <set_variable name="CL.40MinePositionZ" value="0.0" />
+    <set_variable name="CL.50MinePositionX" value="0.0" />
+    <set_variable name="CL.50MinePositionZ" value="0.0" />
+    <set_variable name="CL.60MinePositionX" value="0.0" />
+    <set_variable name="CL.60MinePositionZ" value="0.0" />
+    <set_variable name="CL.70MinePositionX" value="0.0" />
+    <set_variable name="CL.70MinePositionZ" value="0.0" />
+    <set_variable name="CL.80MinePositionX" value="0.0" />
+    <set_variable name="CL.80MinePositionZ" value="0.0" />
+    <!--GM Specific-->
+    <set_variable name="RVAngle" value="0.0" integer="yes" />
+    <set_variable name="ScanPointNumber" value="1.0" integer="yes" />
+    <set_variable name="BBNumber" value="1.0" integer="yes" />
+    <set_variable name="lifepodNumber" value="1.0" integer="yes" />
+    <set_variable name="waypointnumber" value="1.0" integer="yes" />
+    <set_variable name="Refresh" value="1.0" integer="yes" />
+    <set_timer name="Refresh" seconds="10" />
+    <set_variable name="Random Coordinates" value="1.0" integer="yes" />
+    <set_variable name="Random Direction" value="1.0" integer="yes" />
+    <set_variable name="combinednumber0" value="0.0" integer="yes" />
+    <set_variable name="combinednumber1" value="9.0" integer="yes" />
+    <set_variable name="combinednumber2" value="19.0" integer="yes" />
+    <set_variable name="combinednumber3" value="29.0" integer="yes" />
+    <set_variable name="combinednumber4" value="39.0" integer="yes" />
+    <set_variable name="combinednumber5" value="49.0" integer="yes" />
+    <set_variable name="combinednumber6" value="59.0" integer="yes" />
+    <set_variable name="combinednumber7" value="69.0" integer="yes" />
+    <set_variable name="combinednumber8" value="79.0" integer="yes" />
+    <set_variable name="combinednumber9" value="89.0" integer="yes" />
+    <set_variable name="StaticBlackhole" value="0.0" integer="yes" />
+    <set_variable name="BHNumber" value="0.0" integer="yes" />
+    <set_variable name="DynamicBlackhole" value="0.0" integer="yes" />
+    <set_timer name="DynamicBlackhole" seconds="1" />
+    <set_variable name="RandomCoordinateZ" randomIntLow="20" randomIntHigh="980" />
+    <set_variable name="RandomCoordinateX" randomIntLow="20" randomIntHigh="980" />
+    <set_variable name="reassignNumber0" value="0.0" integer="yes" />
+    <set_variable name="reassignNumber2" value="10.0" integer="yes" />
+    <set_variable name="reassignNumber4" value="35.0" integer="yes" />
+    <set_variable name="reassignNumber6" value="60.0" integer="yes" />
+    <set_variable name="reassignNumber8" value="80.0" integer="yes" />
+    <set_variable name="ReassignAI" value="0.0" integer="yes" />
+    <set_variable name="ReassignLetter" value="0.0" integer="yes" />
+    <set_variable name="ReassignDigits" value="0.0" integer="yes" />
+    <!--Random Damage Controls-->
+    <set_variable name="RandomDamage" value="0.0" integer="yes" />
+    <set_variable name="RandomDamageShip1" value="0.0" integer="yes" />
+    <set_timer name="Ship1DamageTimer" seconds="Ship1RandomTimer" />
+    <set_variable name="Ship1RandomTimer" randomIntLow="3" randomIntHigh="24" />
+    <set_variable name="Ship1NodeNumber" value="0.0" integer="yes" />
+    <set_variable name="Ship1DamageType" value="0.0" integer="yes" />
+    <set_variable name="RandomDamageShip2" value="0.0" integer="yes" />
+    <set_timer name="Ship2DamageTimer" seconds="Ship2RandomTimer" />
+    <set_variable name="Ship2RandomTimer" randomIntLow="3" randomIntHigh="24" />
+    <set_variable name="Ship2NodeNumber" value="0.0" integer="yes" />
+    <set_variable name="Ship2DamageType" value="0.0" integer="yes" />
+    <set_variable name="RandomDamageShip3" value="0.0" integer="yes" />
+    <set_timer name="Ship3DamageTimer" seconds="Ship3RandomTimer" />
+    <set_variable name="Ship3RandomTimer" randomIntLow="3" randomIntHigh="24" />
+    <set_variable name="Ship3NodeNumber" value="0.0" integer="yes" />
+    <set_variable name="Ship3DamageType" value="0.0" integer="yes" />
+    <set_variable name="RandomDamageShip4" value="0.0" integer="yes" />
+    <set_timer name="Ship4DamageTimer" seconds="Ship4RandomTimer" />
+    <set_variable name="Ship4RandomTimer" randomIntLow="3" randomIntHigh="24" />
+    <set_variable name="Ship4NodeNumber" value="0.0" integer="yes" />
+    <set_variable name="Ship4DamageType" value="0.0" integer="yes" />
+    <set_variable name="RandomDamageShip5" value="0.0" integer="yes" />
+    <set_timer name="Ship5DamageTimer" seconds="Ship5RandomTimer" />
+    <set_variable name="Ship5RandomTimer" randomIntLow="3" randomIntHigh="24" />
+    <set_variable name="Ship5NodeNumber" value="0.0" integer="yes" />
+    <set_variable name="Ship5DamageType" value="0.0" integer="yes" />
+    <set_variable name="RandomDamageShip6" value="0.0" integer="yes" />
+    <set_timer name="Ship6DamageTimer" seconds="Ship6RandomTimer" />
+    <set_variable name="Ship6RandomTimer" randomIntLow="3" randomIntHigh="24" />
+    <set_variable name="Ship6NodeNumber" value="0.0" integer="yes" />
+    <set_variable name="Ship6DamageType" value="0.0" integer="yes" />
+    <set_variable name="RandomDamageShip7" value="0.0" integer="yes" />
+    <set_timer name="Ship7DamageTimer" seconds="Ship7RandomTimer" />
+    <set_variable name="Ship7RandomTimer" randomIntLow="3" randomIntHigh="24" />
+    <set_variable name="Ship7NodeNumber" value="0.0" integer="yes" />
+    <set_variable name="Ship7DamageType" value="0.0" integer="yes" />
+    <set_variable name="RandomDamageShip8" value="0.0" integer="yes" />
+    <set_timer name="Ship8DamageTimer" seconds="Ship8RandomTimer" />
+    <set_variable name="Ship8RandomTimer" randomIntLow="3" randomIntHigh="24" />
+    <set_variable name="Ship8NodeNumber" value="0.0" integer="yes" />
+    <set_variable name="Ship8DamageType" value="0.0" integer="yes" />
+    <!--End of Start Block-->
+  </start>
+  <event name="Destroy Wrecks" id_arme="202200fd-4e3f-4f3a-b710-7f427d27fd91">
+    <if_exists name="WRECK" />
+    <destroy name="WRECK" />
+  </event>
+  <disabled_event name="Destroy Objects" id_arme="6b647792-11ee-4b66-b366-4dc3fecaac77">
+    <if_timer_finished name="Destroy Objects" />
+    <set_timer name="Destroy Objects" seconds="1" />
+  </disabled_event>
+  <folder_arme name="Sandbox Activation" id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" />
+  <folder_arme name="Reset Activation" id_arme="dec1f604-a38a-449a-b80b-d630ce45845c" parent_id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" />
+  <event name="Reset All Buttons" id_arme="4db38589-05f0-4387-9dd4-ef08c201581c" parent_id_arme="dec1f604-a38a-449a-b80b-d630ce45845c">
+    <if_gm_button text="Restart Sandbox" />
+    <clear_gm_button text="Restart Sandbox" />
+    <set_variable name="GM Mode" value="0.0" integer="yes" />
+    <set_timer name="Sandbox Activation" seconds="1" />
+    <set_variable name="Sandbox Activation" value="1.0" integer="yes" />
+  </event>
+  <event name="Set Activate Button" id_arme="32e38a24-d41e-477e-bf1c-d03ac902f653" parent_id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f">
+    <if_variable name="Sandbox Activation" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Sandbox Activation" />
+    <if_variable name="GM Mode" comparator="LESS_EQUAL" value="1.0" />
+    <set_gm_button text="Activate GM Mode" x="90" y="100" h="50" w="200" />
+    <set_gm_button text="V.9.0" x="115" y="38" h="25" w="100" />
+    <set_timer name="Sandbox Activation" seconds="20" />
+    <set_variable name="Sandbox Activation" value="2.0" integer="yes" />
+  </event>
+  <event name="Refresh Mode Select" id_arme="2d2b20c3-b5c0-4f2b-8239-a1c12796e6f0" parent_id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f">
+    <if_variable name="Sandbox Activation" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Sandbox Activation" />
+    <if_variable name="GM Mode" comparator="LESS" value="1.0" />
+    <clear_gm_button text="Activate GM Mode" />
+    <clear_gm_button text="V.9.0" />
+    <set_timer name="Sandbox Activation" seconds="1" />
+    <set_variable name="Sandbox Activation" value="1.0" integer="yes" />
+  </event>
+  <event name="GM Mode Selected" id_arme="18f7e6c4-bbfa-423f-8ca9-7cacea4f5587" parent_id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f">
+    <if_variable name="Sandbox Activation" comparator="EQUALS" value="2.0" />
+    <if_gm_button text="Activate GM Mode" />
+    <clear_gm_button text="Activate GM Mode" />
+    <set_gm_button text="Restart Sandbox" x="5" y="60" h="30" w="150" />
+    <set_variable name="Activation Menu" value="1.0" integer="yes" />
+    <set_gm_button text="Initial System Side\Hegemony (Side 1)" />
+    <set_gm_button text="Initial System Side\USFP (Side 2 Player)" />
+    <set_gm_button text="Initial System Side\USF (Side 3)" />
+    <set_gm_button text="Initial System Side\N'Tani (Side 4)" />
+    <set_gm_button text="Initial System Side\Pirate (Side 5)" />
+    <set_gm_button text="Initial System Side\Caltron (Side 6)" />
+    <set_gm_button text="Ship1 Config Disabled" x="700" y="100" h="30" w="120" />
+    <set_gm_button text="Ship2 Config Disabled" x="700" y="165" h="30" w="120" />
+    <set_gm_button text="Ship3 Config Disabled" x="700" y="230" h="30" w="120" />
+    <set_gm_button text="Ship4 Config Disabled" x="700" y="295" h="30" w="120" />
+    <set_gm_button text="Ship5 Config Disabled" x="700" y="360" h="30" w="120" />
+    <set_gm_button text="Ship6 Config Disabled" x="700" y="425" h="30" w="120" />
+    <set_gm_button text="Ship7 Config Disabled" x="700" y="490" h="30" w="120" />
+    <set_gm_button text="Ship8 Config Disabled" x="700" y="555" h="30" w="120" />
+    <set_variable name="Custom Config" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="GM Mode" id_arme="10a3b890-07b8-4df7-8bb8-5ec4c9750c28" parent_id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" />
+  <folder_arme name="Custom Config" id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288" parent_id_arme="10a3b890-07b8-4df7-8bb8-5ec4c9750c28" />
+  <event name="Ship 1 Enable" id_arme="92f3ba91-ad3a-4809-8512-b664bee80fda" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship1 Config Disabled" />
+    <clear_gm_button text="Ship1 Config Disabled" />
+    <set_gm_button text="Ship1 Config Enabled" x="700" y="100" h="30" w="120" />
+    <set_variable name="Ship1 Config" value="1.0" integer="yes" />
+  </event>
+  <event name="Ship 2 Enable" id_arme="4c3f61aa-4403-4fb3-957f-68a0a328f26f" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship2 Config Disabled" />
+    <clear_gm_button text="Ship2 Config Disabled" />
+    <set_gm_button text="Ship2 Config Enabled" x="700" y="165" h="30" w="120" />
+    <set_variable name="Ship2 Config" value="1.0" integer="yes" />
+  </event>
+  <event name="Ship 3 Enable" id_arme="c3c2f7d3-c1d2-476a-9686-c205536a0a57" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship3 Config Disabled" />
+    <clear_gm_button text="Ship3 Config Disabled" />
+    <set_gm_button text="Ship3 Config Enabled" x="700" y="230" h="30" w="120" />
+    <set_variable name="Ship3 Config" value="1.0" integer="yes" />
+  </event>
+  <event name="Ship 4 Enable" id_arme="6dbfa847-0983-4b4e-a6b7-9fc94f1a0f83" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship4 Config Disabled" />
+    <clear_gm_button text="Ship4 Config Disabled" />
+    <set_gm_button text="Ship4 Config Enabled" x="700" y="295" h="30" w="120" />
+    <set_variable name="Ship4 Config" value="1.0" integer="yes" />
+  </event>
+  <event name="Ship 5 Enable" id_arme="e709d221-2141-402c-a1c4-6240b514ee8e" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship5 Config Disabled" />
+    <clear_gm_button text="Ship5 Config Disabled" />
+    <set_gm_button text="Ship5 Config Enabled" x="700" y="360" h="30" w="120" />
+    <set_variable name="Ship5 Config" value="1.0" integer="yes" />
+  </event>
+  <event name="Ship 6 Enable" id_arme="bb53f50e-240f-4344-b203-b1a8ac0c4ba7" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship6 Config Disabled" />
+    <clear_gm_button text="Ship6 Config Disabled" />
+    <set_gm_button text="Ship6 Config Enabled" x="700" y="425" h="30" w="120" />
+    <set_variable name="Ship6 Config" value="1.0" integer="yes" />
+  </event>
+  <event name="Ship 7 Enable" id_arme="d372bfb0-c38b-4d2b-bb77-bf859e5fbad2" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship7 Config Disabled" />
+    <clear_gm_button text="Ship7 Config Disabled" />
+    <set_gm_button text="Ship7 Config Enabled" x="700" y="490" h="30" w="120" />
+    <set_variable name="Ship7 Config" value="1.0" integer="yes" />
+  </event>
+  <event name="Ship 8 Enable" id_arme="961ffa24-960a-44e4-982c-538cbf06b3cf" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship8 Config Disabled" />
+    <clear_gm_button text="Ship8 Config Disabled" />
+    <set_gm_button text="Ship8 Config Enabled" x="700" y="555" h="30" w="120" />
+    <set_variable name="Ship8 Config" value="1.0" integer="yes" />
+  </event>
+  <event name="Ship 1 Disabled" id_arme="b42e5ea0-3f2a-4bc2-9aac-b30c97ba8941" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship1 Config Enabled" />
+    <clear_gm_button text="Ship1 Config Enabled" />
+    <set_gm_button text="Ship1 Config Disabled" x="700" y="100" h="30" w="120" />
+    <set_variable name="Ship1 Config" value="0.0" integer="yes" />
+  </event>
+  <event name="Ship 2 Disabled" id_arme="bc625606-02dd-46f9-b367-b14acb2f70b9" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship2 Config Enabled" />
+    <clear_gm_button text="Ship2 Config Enabled" />
+    <set_gm_button text="Ship2 Config Disabled" x="700" y="165" h="30" w="120" />
+    <set_variable name="Ship2 Config" value="0.0" integer="yes" />
+  </event>
+  <event name="Ship 3 Disabled" id_arme="6550840c-c2e2-4723-a108-0e957244a00e" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship3 Config Enabled" />
+    <clear_gm_button text="Ship3 Config Enabled" />
+    <set_gm_button text="Ship3 Config Disabled" x="700" y="230" h="30" w="120" />
+    <set_variable name="Ship3 Config" value="0.0" integer="yes" />
+  </event>
+  <event name="Ship 4 Disabled" id_arme="0640cd5b-ba85-4e29-86e5-129a964f7ba4" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship4 Config Enabled" />
+    <clear_gm_button text="Ship4 Config Enabled" />
+    <set_gm_button text="Ship4 Config Disabled" x="700" y="295" h="30" w="120" />
+    <set_variable name="Ship4 Config" value="0.0" integer="yes" />
+  </event>
+  <event name="Ship 5 Disabled" id_arme="a845dfaf-3942-4892-9109-a23470367a77" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship5 Config Enabled" />
+    <clear_gm_button text="Ship5 Config Enabled" />
+    <set_gm_button text="Ship5 Config Disabled" x="700" y="360" h="30" w="120" />
+    <set_variable name="Ship5 Config" value="0.0" integer="yes" />
+  </event>
+  <event name="Ship 6 Disabled" id_arme="d3ab82b1-94e1-4aee-8640-6c319e11d2a1" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship6 Config Enabled" />
+    <clear_gm_button text="Ship6 Config Enabled" />
+    <set_gm_button text="Ship6 Config Disabled" x="700" y="425" h="30" w="120" />
+    <set_variable name="Ship6 Config" value="0.0" integer="yes" />
+  </event>
+  <event name="Ship 7 Disabled" id_arme="dca29768-b0c6-4ce5-9d39-6415362f97fd" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship7 Config Enabled" />
+    <clear_gm_button text="Ship7 Config Enabled" />
+    <set_gm_button text="Ship7 Config Disabled" x="700" y="490" h="30" w="120" />
+    <set_variable name="Ship7 Config" value="0.0" integer="yes" />
+  </event>
+  <event name="Ship 8 Disabled" id_arme="72725c3e-972b-4029-9244-b78764286e0b" parent_id_arme="fa633206-c6e0-4ee2-ad51-9dc16e3e3288">
+    <if_gm_button text="Ship8 Config Enabled" />
+    <clear_gm_button text="Ship8 Config Enabled" />
+    <set_gm_button text="Ship8 Config Disabled" x="700" y="555" h="30" w="120" />
+    <set_variable name="Ship8 Config" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Menus" id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3" parent_id_arme="10a3b890-07b8-4df7-8bb8-5ec4c9750c28" />
+  <event name="101 (3x2)" id_arme="49e30087-c5e6-4a89-83b8-8a59608074fd" parent_id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3">
+    <if_variable name="GM Mode" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="101.0" />
+    <set_gm_button text="Select Sector" x="90" y="100" h="30" w="200" />
+    <set_gm_button text="Sector 1" x="170" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 2" x="235" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 3" x="300" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 4" x="170" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 5" x="235" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 6" x="300" y="255" h="60" w="60" />
+    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="4.0" integer="yes" />
+  </event>
+  <event name="102 (3x3)" id_arme="0155e27b-0746-4adc-9798-ddcce26d4fd0" parent_id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3">
+    <if_variable name="GM Mode" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="102.0" />
+    <set_gm_button text="Select Sector" x="90" y="100" h="30" w="200" />
+    <set_gm_button text="Sector 1" x="170" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 2" x="235" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 3" x="300" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 4" x="170" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 5" x="235" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 6" x="300" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 7" x="170" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 8" x="235" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 9" x="300" y="320" h="60" w="60" />
+    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="4.0" integer="yes" />
+  </event>
+  <event name="103 (4x2)" id_arme="4d7a5a37-308d-44be-8eda-0799eced4874" parent_id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3">
+    <if_variable name="GM Mode" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="103.0" />
+    <set_gm_button text="Select Sector" x="90" y="100" h="30" w="200" />
+    <set_gm_button text="Sector 1" x="170" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 2" x="235" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 3" x="300" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 4" x="365" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 5" x="170" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 6" x="235" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 7" x="300" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 8" x="365" y="255" h="60" w="60" />
+    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="4.0" integer="yes" />
+  </event>
+  <event name="104 (4x3)" id_arme="1a06dadf-6bb2-4c04-9b77-a85da9b47b99" parent_id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3">
+    <if_variable name="GM Mode" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="104.0" />
+    <set_gm_button text="Select Sector" x="90" y="100" h="30" w="200" />
+    <set_gm_button text="Sector 1" x="170" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 2" x="235" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 3" x="300" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 4" x="365" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 5" x="170" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 6" x="235" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 7" x="300" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 8" x="365" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 9" x="170" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 10" x="235" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 11" x="300" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 12" x="365" y="320" h="60" w="60" />
+    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="4.0" integer="yes" />
+  </event>
+  <event name="105 (4x4)" id_arme="9e9fde88-3d83-4007-8315-951a984691bb" parent_id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3">
+    <if_variable name="GM Mode" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="105.0" />
+    <set_gm_button text="Select Sector" x="90" y="100" h="30" w="200" />
+    <set_gm_button text="Sector 1" x="170" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 2" x="235" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 3" x="300" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 4" x="365" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 5" x="170" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 6" x="235" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 7" x="300" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 8" x="365" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 9" x="170" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 10" x="235" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 11" x="300" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 12" x="365" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 13" x="170" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 14" x="235" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 15" x="300" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 16" x="365" y="375" h="60" w="60" />
+    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="4.0" integer="yes" />
+  </event>
+  <event name="106 (5x3)" id_arme="c711f8a5-4e79-4c58-a437-793d2715326e" parent_id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3">
+    <if_variable name="GM Mode" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="106.0" />
+    <set_gm_button text="Select Sector" x="90" y="100" h="30" w="200" />
+    <set_gm_button text="Sector 1" x="170" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 2" x="235" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 3" x="300" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 4" x="365" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 5" x="430" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 6" x="170" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 7" x="235" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 8" x="300" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 9" x="365" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 10" x="430" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 11" x="170" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 12" x="235" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 13" x="300" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 14" x="365" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 15" x="430" y="320" h="60" w="60" />
+    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="4.0" integer="yes" />
+  </event>
+  <event name="107 (5x4)" id_arme="d351eef3-47c1-4544-b5a5-22b7d8657838" parent_id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3">
+    <if_variable name="GM Mode" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="107.0" />
+    <set_gm_button text="Select Sector" x="90" y="100" h="30" w="200" />
+    <set_gm_button text="Sector 1" x="170" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 2" x="235" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 3" x="300" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 4" x="365" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 5" x="430" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 6" x="170" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 7" x="235" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 8" x="300" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 9" x="365" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 10" x="430" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 11" x="170" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 12" x="235" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 13" x="300" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 14" x="365" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 15" x="430" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 16" x="170" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 17" x="235" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 18" x="300" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 19" x="365" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 20" x="430" y="375" h="60" w="60" />
+    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="4.0" integer="yes" />
+  </event>
+  <event name="108 (2x2)" id_arme="29861a6e-2884-4fe7-a659-9d1fb76661e8" parent_id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3">
+    <if_variable name="GM Mode" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="108.0" />
+    <set_gm_button text="Select Sector" x="90" y="100" h="30" w="200" />
+    <set_gm_button text="Sector 1" x="170" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 2" x="235" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 3" x="170" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 4" x="235" y="255" h="60" w="60" />
+    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="4.0" integer="yes" />
+  </event>
+  <event name="109 (1x2)" id_arme="93fa5683-af26-4512-be54-4453ebff1d83" parent_id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3">
+    <if_variable name="GM Mode" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="109.0" />
+    <set_gm_button text="Select Sector" x="90" y="100" h="30" w="200" />
+    <set_gm_button text="Sector 1" x="170" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 2" x="170" y="255" h="60" w="60" />
+    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="4.0" integer="yes" />
+  </event>
+  <event name="110 (5x5)" id_arme="260601ef-57ea-47e5-993e-99db880d58a9" parent_id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3">
+    <if_variable name="GM Mode" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="110.0" />
+    <set_gm_button text="Select Sector" x="90" y="100" h="30" w="200" />
+    <set_gm_button text="Sector 1" x="170" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 2" x="235" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 3" x="300" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 4" x="365" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 5" x="430" y="190" h="60" w="60" />
+    <set_gm_button text="Sector 6" x="170" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 7" x="235" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 8" x="300" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 9" x="365" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 10" x="430" y="255" h="60" w="60" />
+    <set_gm_button text="Sector 11" x="170" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 12" x="235" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 13" x="300" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 14" x="365" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 15" x="430" y="320" h="60" w="60" />
+    <set_gm_button text="Sector 16" x="170" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 17" x="235" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 18" x="300" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 19" x="365" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 20" x="430" y="375" h="60" w="60" />
+    <set_gm_button text="Sector 21" x="170" y="440" h="60" w="60" />
+    <set_gm_button text="Sector 22" x="235" y="440" h="60" w="60" />
+    <set_gm_button text="Sector 23" x="300" y="440" h="60" w="60" />
+    <set_gm_button text="Sector 24" x="365" y="440" h="60" w="60" />
+    <set_gm_button text="Sector 25" x="430" y="440" h="60" w="60" />
+    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="4.0" integer="yes" />
+  </event>
+  <event name="200 (1x1)" id_arme="9c626b35-8507-4a61-8afd-2c91f194ac33" parent_id_arme="de68fc8e-8137-4c76-ad1d-cea535f027a3">
+    <if_variable name="GM Mode" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="200.0" />
+    <set_gm_button text="Select Sector" x="90" y="100" h="30" w="200" />
+    <set_gm_button text="Sector 1" x="170" y="190" h="60" w="60" />
+    <set_variable name="Sector" value="0.0" integer="yes" />
+    <set_variable name="GM Mode" value="4.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Selection" id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb" parent_id_arme="10a3b890-07b8-4df7-8bb8-5ec4c9750c28" />
+  <event name="Sector 1" id_arme="b51c3bd3-53a7-4969-8006-afafc00997a2" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 1" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 2" id_arme="3d7d3f94-c494-4a38-9b1d-decec9078108" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 2" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 3" id_arme="17c01ea5-fb25-4820-95e4-1b5e5841260e" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 3" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 4" id_arme="84e1e4a0-1be2-446f-817a-85f3e9893bff" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 4" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 5" id_arme="11f65616-af00-4ec0-b0cf-9e0c069b05a8" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 6" id_arme="02513447-2d61-4a4d-9735-402100d738fc" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 6" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 7" id_arme="af8297b7-3111-4072-95ab-265158a87922" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 7" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 8" id_arme="3c856a0e-d648-412d-8617-7141a7c9e256" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 8" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 9" id_arme="fba94a03-ca33-4297-8fe0-384cb409061e" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 9" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 10" id_arme="e9b83caa-0e5c-41ff-840b-3de2b9fd1e22" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 10" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 11" id_arme="56e6ab22-bca5-4145-aaaa-9b043005a199" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 11" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 12" id_arme="2e4d4f61-3c43-46ad-a89a-46aca610ee98" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 12" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 13" id_arme="d077dc55-b0ad-474b-bdb1-d73e669fd255" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 13" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="13.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 14" id_arme="bf6bff84-9247-415e-8615-0ee04cfc84f8" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 14" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="14.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 15" id_arme="b62bcbf7-dfb4-4951-b1fb-e50497527f65" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 15" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="15.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 16" id_arme="716ba577-2c93-46ee-9575-05b770f83358" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 16" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="16.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 17" id_arme="002b6c84-f168-468b-b104-3f1e6fd42c25" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 17" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="17.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 18" id_arme="df0efee3-cbd7-428b-b8f8-336c3ad222c2" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 18" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="18.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 19" id_arme="33ce0709-013c-4503-b5fd-45672fcdaa55" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 19" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="19.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 20" id_arme="1c13dd19-5129-4a08-a06c-f89e36dcba56" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 20" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="20.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 21" id_arme="6f28d13a-a48e-42d1-8845-ea904b14a56f" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 21" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="21.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 22" id_arme="1eb7aa23-daf2-4e07-a932-a03dc00347e2" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 22" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="22.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 23" id_arme="81643e45-3ef5-4fb8-9bce-45e9fec24dfb" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 23" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="23.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 24" id_arme="b5502adb-49c7-43a7-957e-df47fbad3067" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 24" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="24.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Sector 25" id_arme="8fe47463-e118-4e4d-af03-a23610446084" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
+    <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
+    <if_gm_button text="Sector 25" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <set_variable name="Sector" value="25.0" integer="yes" />
+    <set_variable name="GM Mode" value="5.0" integer="yes" />
+  </event>
+  <event name="Selection Complete" id_arme="b4d9605f-f1c8-43ba-b92f-d0ef023f6e6e" parent_id_arme="10a3b890-07b8-4df7-8bb8-5ec4c9750c28">
+    <if_variable name="GM Mode" comparator="EQUALS" value="5.0" />
+    <set_variable name="Activation Menu" value="0.0" integer="yes" />
+    <!--Clear Buttons-->
+    <clear_gm_button text="Initial System Side\Hegemony (Side 1)" />
+    <clear_gm_button text="Initial System Side\USFP (Side 2 Player)" />
+    <clear_gm_button text="Initial System Side\USF (Side 3)" />
+    <clear_gm_button text="Initial System Side\N'Tani (Side 4)" />
+    <clear_gm_button text="Initial System Side\Pirate (Side 5)" />
+    <clear_gm_button text="Initial System Side\Caltron (Side 6)" />
+    <clear_gm_button text="Select Sector" />
+    <clear_gm_button text="Sector 1" />
+    <clear_gm_button text="Sector 2" />
+    <clear_gm_button text="Sector 3" />
+    <clear_gm_button text="Sector 4" />
+    <clear_gm_button text="Sector 5" />
+    <clear_gm_button text="Sector 6" />
+    <clear_gm_button text="Sector 7" />
+    <clear_gm_button text="Sector 8" />
+    <clear_gm_button text="Sector 9" />
+    <clear_gm_button text="Sector 10" />
+    <clear_gm_button text="Sector 11" />
+    <clear_gm_button text="Sector 12" />
+    <clear_gm_button text="Sector 13" />
+    <clear_gm_button text="Sector 14" />
+    <clear_gm_button text="Sector 15" />
+    <clear_gm_button text="Sector 16" />
+    <clear_gm_button text="Sector 17" />
+    <clear_gm_button text="Sector 18" />
+    <clear_gm_button text="Sector 19" />
+    <clear_gm_button text="Sector 20" />
+    <clear_gm_button text="Sector 21" />
+    <clear_gm_button text="Sector 22" />
+    <clear_gm_button text="Sector 23" />
+    <clear_gm_button text="Sector 24" />
+    <clear_gm_button text="Sector 25" />
+    <clear_gm_button text="Restart Sandbox" />
+    <clear_gm_button text="Ship1 Config Disabled" />
+    <clear_gm_button text="Ship2 Config Disabled" />
+    <clear_gm_button text="Ship3 Config Disabled" />
+    <clear_gm_button text="Ship4 Config Disabled" />
+    <clear_gm_button text="Ship5 Config Disabled" />
+    <clear_gm_button text="Ship6 Config Disabled" />
+    <clear_gm_button text="Ship7 Config Disabled" />
+    <clear_gm_button text="Ship8 Config Disabled" />
+    <clear_gm_button text="Ship1 Config Enabled" />
+    <clear_gm_button text="Ship2 Config Enabled" />
+    <clear_gm_button text="Ship3 Config Enabled" />
+    <clear_gm_button text="Ship4 Config Enabled" />
+    <clear_gm_button text="Ship5 Config Enabled" />
+    <clear_gm_button text="Ship6 Config Enabled" />
+    <clear_gm_button text="Ship7 Config Enabled" />
+    <clear_gm_button text="Ship8 Config Enabled" />
+    <!---->
+    <warning_popup_message message="Linking to Command Network" consoles="MHWESCO" player_slot="0" />
+    <warning_popup_message message="Linking to Command Network" consoles="MHWESCO" player_slot="1" />
+    <warning_popup_message message="Linking to Command Network" consoles="MHWESCO" player_slot="2" />
+    <warning_popup_message message="Linking to Command Network" consoles="MHWESCO" player_slot="3" />
+    <warning_popup_message message="Linking to Command Network" consoles="MHWESCO" player_slot="4" />
+    <warning_popup_message message="Linking to Command Network" consoles="MHWESCO" player_slot="5" />
+    <warning_popup_message message="Linking to Command Network" consoles="MHWESCO" player_slot="6" />
+    <warning_popup_message message="Linking to Command Network" consoles="MHWESCO" player_slot="7" />
+    <set_variable name="GM Controls" value="1.0" integer="yes" />
+    <set_variable name="GM Menu" value="1.0" integer="yes" />
+    <set_variable name="GM Backup" value="1.0" integer="yes" />
+    <set_timer name="GM Backup" seconds="1" />
+    <set_variable name="Sandbox Activation" value="5.0" integer="yes" />
+    <set_variable name="GM Mode" value="6.0" integer="yes" />
+  </event>
+  <event name="Run Sandbox" id_arme="d2729ef3-7f51-4135-a735-1990e4e7651e" parent_id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f">
+    <if_variable name="Sandbox Activation" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Ship Systems Activated" consoles="MHWESCO" player_slot="0" />
+    <warning_popup_message message="Ship Systems Activated" consoles="MHWESCO" player_slot="1" />
+    <warning_popup_message message="Ship Systems Activated" consoles="MHWESCO" player_slot="2" />
+    <warning_popup_message message="Ship Systems Activated" consoles="MHWESCO" player_slot="3" />
+    <warning_popup_message message="Ship Systems Activated" consoles="MHWESCO" player_slot="4" />
+    <warning_popup_message message="Ship Systems Activated" consoles="MHWESCO" player_slot="5" />
+    <warning_popup_message message="Ship Systems Activated" consoles="MHWESCO" player_slot="6" />
+    <warning_popup_message message="Ship Systems Activated" consoles="MHWESCO" player_slot="7" />
+    <set_variable name="Refresh" value="0.0" integer="yes" />
+    <clear_gm_button text="Refresh" />
+    <set_variable name="CommsControls" value="1.0" integer="yes" />
+    <set_variable name="Position Ships" value="1.0" integer="yes" />
+    <set_variable name="System Settings" value="1.0" integer="yes" />
+    <set_variable name="Sandbox Activation" value="0.0" integer="yes" />
+    <set_variable name="Custom Config" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Positioning" id_arme="2b6075e9-c58b-4fe0-a574-ea19e06779b4" parent_id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" />
+  <event name="Position ships" id_arme="2053067c-7795-4d71-96a1-a14f17523794" parent_id_arme="2b6075e9-c58b-4fe0-a574-ea19e06779b4">
+    <if_variable name="Position Ships" comparator="EQUALS" value="1.0" />
+    <set_relative_position player_slot2="0" distance="160" angle="145.0" name1="1" />
+    <set_object_property property="positionY" value="0.0" player_slot="0" />
+    <set_relative_position player_slot2="1" distance="160" angle="35.0" name1="1" />
+    <set_object_property property="positionY" value="0.0" player_slot="1" />
+    <set_relative_position player_slot2="2" distance="160" angle="215.0" name1="1" />
+    <set_object_property property="positionY" value="0.0" player_slot="2" />
+    <set_relative_position player_slot2="3" distance="160" angle="325.0" name1="1" />
+    <set_object_property property="positionY" value="0.0" player_slot="3" />
+    <set_relative_position player_slot2="4" distance="160" angle="145.0" name1="2" />
+    <set_object_property property="positionY" value="0.0" player_slot="4" />
+    <set_relative_position player_slot2="5" distance="160" angle="35.0" name1="2" />
+    <set_object_property property="positionY" value="0.0" player_slot="5" />
+    <set_relative_position player_slot2="6" distance="160" angle="215.0" name1="2" />
+    <set_object_property property="positionY" value="0.0" player_slot="6" />
+    <set_relative_position player_slot2="7" distance="160" angle="325.0" name1="2" />
+    <set_object_property property="positionY" value="0.0" player_slot="7" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Position Ships" value="2.0" integer="yes" />
+  </event>
+  <event name="Remove marker" id_arme="391481c8-43e1-489f-b17c-c96ba899d79a" parent_id_arme="2b6075e9-c58b-4fe0-a574-ea19e06779b4">
+    <if_variable name="Position Ships" comparator="EQUALS" value="2.0" />
+    <destroy name="1" />
+    <destroy name="2" />
+    <destroy name="3" />
+    <warning_popup_message message="Impulse Engine Control: Online" consoles="H" player_slot="0" />
+    <warning_popup_message message="Weapon Systems: Active" consoles="W" player_slot="0" />
+    <warning_popup_message message="Engineering Management System: Online" consoles="E" player_slot="0" />
+    <warning_popup_message message="Sensors: Active" consoles="S" player_slot="0" />
+    <warning_popup_message message="Communications Array: Active" consoles="C" player_slot="0" />
+    <warning_popup_message message="Impulse Engine Control: Online" consoles="H" player_slot="1" />
+    <warning_popup_message message="Weapon Systems: Active" consoles="W" player_slot="1" />
+    <warning_popup_message message="Engineering Management System: Online" consoles="E" player_slot="1" />
+    <warning_popup_message message="Sensors: Active" consoles="S" player_slot="1" />
+    <warning_popup_message message="Communications Array: Active" consoles="C" player_slot="1" />
+    <warning_popup_message message="Impulse Engine Control: Online" consoles="H" player_slot="2" />
+    <warning_popup_message message="Weapon Systems: Active" consoles="W" player_slot="2" />
+    <warning_popup_message message="Engineering Management System: Online" consoles="E" player_slot="2" />
+    <warning_popup_message message="Sensors: Active" consoles="S" player_slot="2" />
+    <warning_popup_message message="Communications Array: Active" consoles="C" player_slot="2" />
+    <warning_popup_message message="Impulse Engine Control: Online" consoles="H" player_slot="3" />
+    <warning_popup_message message="Weapon Systems: Active" consoles="W" player_slot="3" />
+    <warning_popup_message message="Engineering Management System: Online" consoles="E" player_slot="3" />
+    <warning_popup_message message="Sensors: Active" consoles="S" player_slot="3" />
+    <warning_popup_message message="Communications Array: Active" consoles="C" player_slot="3" />
+    <warning_popup_message message="Impulse Engine Control: Online" consoles="H" player_slot="4" />
+    <warning_popup_message message="Weapon Systems: Active" consoles="W" player_slot="4" />
+    <warning_popup_message message="Engineering Management System: Online" consoles="E" player_slot="4" />
+    <warning_popup_message message="Sensors: Active" consoles="S" player_slot="4" />
+    <warning_popup_message message="Communications Array: Active" consoles="C" player_slot="4" />
+    <warning_popup_message message="Impulse Engine Control: Online" consoles="H" player_slot="5" />
+    <warning_popup_message message="Weapon Systems: Active" consoles="W" player_slot="5" />
+    <warning_popup_message message="Engineering Management System: Online" consoles="E" player_slot="5" />
+    <warning_popup_message message="Sensors: Active" consoles="S" player_slot="5" />
+    <warning_popup_message message="Communications Array: Active" consoles="C" player_slot="5" />
+    <warning_popup_message message="Impulse Engine Control: Online" consoles="H" player_slot="6" />
+    <warning_popup_message message="Weapon Systems: Active" consoles="W" player_slot="6" />
+    <warning_popup_message message="Engineering Management System: Online" consoles="E" player_slot="6" />
+    <warning_popup_message message="Sensors: Active" consoles="S" player_slot="6" />
+    <warning_popup_message message="Communications Array: Active" consoles="C" player_slot="6" />
+    <warning_popup_message message="Impulse Engine Control: Online" consoles="H" player_slot="7" />
+    <warning_popup_message message="Weapon Systems: Active" consoles="W" player_slot="7" />
+    <warning_popup_message message="Engineering Management System: Online" consoles="E" player_slot="7" />
+    <warning_popup_message message="Sensors: Active" consoles="S" player_slot="7" />
+    <warning_popup_message message="Communications Array: Active" consoles="C" player_slot="7" />
+    <incoming_comms_text from="Ship Systems" sideValue="playerSide" type="STATUS">Loading Systems.....^Ship Status Report:^Power Levels: 100%^Engineering Management System: Online^Weapon Systems: Online^Vertical Thruster Control: Enabled^Lateral Thrust Control: Enabled^Impulse Engine Control: Online^Main Drive Control: Online^Sensors: Active...Updating sensor readings...^Communications Array: Active^All systems ready.</incoming_comms_text>
+    <set_variable name="Position Ships" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Side Value Choice" id_arme="7535f2af-4f53-432b-a70f-f2cd769f552b" parent_id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" />
+  <event name="Default Side Selected" id_arme="8294f72b-d72c-4413-a17a-7cb49eb5395a" parent_id_arme="7535f2af-4f53-432b-a70f-f2cd769f552b">
+    <if_gm_button text="Initial System Side\Default Side" />
+    <set_variable name="systemSideOverride" value="0.0" integer="yes" />
+  </event>
+  <event name="Side 1 Selected" id_arme="fc06625b-87ad-4ea0-aa64-7250d2610955" parent_id_arme="7535f2af-4f53-432b-a70f-f2cd769f552b">
+    <if_gm_button text="Initial System Side\Hegemony (Side 1)" />
+    <set_variable name="systemSideOverride" value="1.0" integer="yes" />
+  </event>
+  <event name="Side 2 Selected" id_arme="ba839264-5aee-4d00-9ac4-4fe5a8fbe128" parent_id_arme="7535f2af-4f53-432b-a70f-f2cd769f552b">
+    <if_gm_button text="Initial System Side\USFP (Side 2 Player)" />
+    <set_variable name="systemSideOverride" value="2.0" integer="yes" />
+  </event>
+  <event name="Side 3 Selected" id_arme="c1b76692-6287-42f0-8d03-2ea6defa51d6" parent_id_arme="7535f2af-4f53-432b-a70f-f2cd769f552b">
+    <if_gm_button text="Initial System Side\USF (Side 3)" />
+    <set_variable name="systemSideOverride" value="3.0" integer="yes" />
+  </event>
+  <event name="Side 4 Selected" id_arme="005fba81-584b-4a9c-a5ac-1cc41d6d4f23" parent_id_arme="7535f2af-4f53-432b-a70f-f2cd769f552b">
+    <if_gm_button text="Initial System Side\N'Tani (Side 4)" />
+    <set_variable name="systemSideOverride" value="4.0" integer="yes" />
+  </event>
+  <event name="Side 5 Selected" id_arme="e8acea1f-a8ed-495d-a1bd-fc5e227ab1df" parent_id_arme="7535f2af-4f53-432b-a70f-f2cd769f552b">
+    <if_gm_button text="Initial System Side\Pirate (Side 5)" />
+    <set_variable name="systemSideOverride" value="5.0" integer="yes" />
+  </event>
+  <event name="Side 6 Selected" id_arme="8425d72f-a0b0-434f-8b38-16513db8d4c2" parent_id_arme="7535f2af-4f53-432b-a70f-f2cd769f552b">
+    <if_gm_button text="Initial System Side\Caltron (Side 6)" />
+    <set_variable name="systemSideOverride" value="6.0" integer="yes" />
+  </event>
+</mission_data>

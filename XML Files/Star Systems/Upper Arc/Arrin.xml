@@ -1,0 +1,1451 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="235.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="289.0" integer="yes" />
+    <set_variable name="Alignment" value="0.0" integer="yes" />
+  </start>
+  <folder_arme name="Arrin System" id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <folder_arme name="Arrin Settings" id_arme="730efd70-2c23-44b3-a9bd-e57acaaacc0c" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <folder_arme name="Arrin Menu" id_arme="7aac852e-45e0-4329-9dac-12c6782f6b70" parent_id_arme="730efd70-2c23-44b3-a9bd-e57acaaacc0c" />
+  <event name="Arrin Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="7aac852e-45e0-4329-9dac-12c6782f6b70">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Arrin System" />
+    <set_variable name="Arrin Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="7aac852e-45e0-4329-9dac-12c6782f6b70">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Arrin System" />
+  </event>
+  <event name="Arrin System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="7aac852e-45e0-4329-9dac-12c6782f6b70">
+    <if_gm_button text="Lower Arc/Arrin System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="101.0" integer="yes" />
+    <set_variable name="Arrin System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="730efd70-2c23-44b3-a9bd-e57acaaacc0c">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="730efd70-2c23-44b3-a9bd-e57acaaacc0c">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="730efd70-2c23-44b3-a9bd-e57acaaacc0c">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="730efd70-2c23-44b3-a9bd-e57acaaacc0c">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="730efd70-2c23-44b3-a9bd-e57acaaacc0c">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Arrin Sector I" id_arme="ef0eec79-85ca-47e3-8b9d-353260dfaa8e" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector I" id_arme="8757a166-c74a-410c-b480-62cfef19ff5e" parent_id_arme="ef0eec79-85ca-47e3-8b9d-353260dfaa8e">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="100" type="nebulas" startX="77120.0" startY="0.0" startZ="15659.0" endX="910.0" endY="0.0" endZ="97861.0" randomRange="5152" />
+    <create count="40" type="nebulas" startX="62216.0" startY="0.0" startZ="41933.0" endX="19347.0" endY="0.0" endZ="93713.0" randomRange="4269" />
+    <create count="40" type="nebulas" startX="48080.0" startY="0.0" startZ="35480.0" endX="2907.0" endY="0.0" endZ="78655.0" randomRange="4269" />
+    <create count="30" type="nebulas" startX="47158.0" startY="0.0" startZ="74660.0" endX="22267.0" endY="0.0" endZ="96786.0" randomRange="4681" />
+    <create count="30" type="nebulas" startX="26108.0" startY="0.0" startZ="45313.0" endX="3368.0" endY="0.0" endZ="65902.0" randomRange="4681" />
+    <create count="30" type="asteroids" startX="69591.0" startY="0.0" startZ="33790.0" endX="35481.0" endY="0.0" endZ="67900.0" randomRange="1321" />
+    <create count="30" type="asteroids" startX="64520.0" startY="0.0" startZ="38860.0" endX="47465.0" endY="0.0" endZ="60832.0" randomRange="1321" />
+    <create count="25" type="asteroids" startX="25954.0" startY="0.0" startZ="71587.0" endX="25954.0" endY="0.0" endZ="71587.0" randomRange="11420" />
+  </event>
+  <folder_arme name="Navigation" id_arme="00339285-bba3-4133-a2bd-5e3c6e9f6648" parent_id_arme="ef0eec79-85ca-47e3-8b9d-353260dfaa8e" />
+  <event name="Transition to Sector II" id_arme="d66d71cd-1343-4c4b-8ac2-0ab2bf4f4b6e" parent_id_arme="00339285-bba3-4133-a2bd-5e3c6e9f6648">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="e623c378-a8e2-439a-956f-1662db506583" parent_id_arme="00339285-bba3-4133-a2bd-5e3c6e9f6648">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="05ce5ff0-9d4a-471b-ba31-c5ea3a98f487" parent_id_arme="00339285-bba3-4133-a2bd-5e3c6e9f6648">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="f4a351ae-d364-40a7-96ae-26ff6f6bdd20" parent_id_arme="ef0eec79-85ca-47e3-8b9d-353260dfaa8e" />
+  <event name="Generate Sector Entities" id_arme="e70832f5-cd61-4607-9791-e0345d12cbe6" parent_id_arme="f4a351ae-d364-40a7-96ae-26ff6f6bdd20">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="588de45e-0048-4b76-9508-84cfdd8c16d2" parent_id_arme="f4a351ae-d364-40a7-96ae-26ff6f6bdd20">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="46e75c35-1f14-4058-8e62-0a0f38beeed0" parent_id_arme="f4a351ae-d364-40a7-96ae-26ff6f6bdd20">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arrin Sector II" id_arme="fffc40da-dadd-4fc8-b1cd-7a8883574d9e" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector II" id_arme="96c9c3d6-3369-45ec-a5b6-2680d81536fe" parent_id_arme="fffc40da-dadd-4fc8-b1cd-7a8883574d9e">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="nebulas" startX="96940.0" startY="0.0" startZ="63597.0" endX="70820.0" endY="0.0" endZ="96017.0" randomRange="3742" />
+    <create count="25" type="nebulas" startX="98477.0" startY="0.0" startZ="76350.0" endX="78041.0" endY="0.0" endZ="98322.0" randomRange="3742" />
+    <create count="27" type="nebulas" startX="92792.0" startY="0.0" startZ="91869.0" radius="5089" randomRange="4873" />
+    <create count="10" type="asteroids" startX="89872.0" startY="0.0" startZ="87874.0" endX="89872.0" endY="0.0" endZ="87874.0" randomRange="12233" />
+    <create count="40" type="nebulas" startX="43470.0" startY="0.0" startZ="35480.0" endX="43470.0" endY="0.0" endZ="35480.0" randomRange="12384" />
+    <create count="30" type="nebulas" startX="32715.0" startY="0.0" startZ="43316.0" endX="6441.0" endY="0.0" endZ="63905.0" randomRange="5079" />
+    <create count="27" type="asteroids" startX="44239.0" startY="0.0" startZ="66978.0" endX="35173.0" endY="0.0" endZ="72970.0" randomRange="4960" />
+  </event>
+  <folder_arme name="Navigation" id_arme="be222ba5-03b3-4d2b-9781-f17ad29fa9ea" parent_id_arme="fffc40da-dadd-4fc8-b1cd-7a8883574d9e" />
+  <event name="Transition to Sector III" id_arme="92ca105c-ead2-40a5-9bd3-77e2f1253a54" parent_id_arme="be222ba5-03b3-4d2b-9781-f17ad29fa9ea">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="cd1c21c0-1323-40c1-af88-fbab83f9cf33" parent_id_arme="be222ba5-03b3-4d2b-9781-f17ad29fa9ea">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="c1582fec-ed8c-4ff7-b1f5-d5d45902d789" parent_id_arme="be222ba5-03b3-4d2b-9781-f17ad29fa9ea">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="fef6f148-9261-470f-b53c-1a01bcea264f" parent_id_arme="be222ba5-03b3-4d2b-9781-f17ad29fa9ea">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="5491388f-12ff-4559-adb8-74fe70897a82" parent_id_arme="be222ba5-03b3-4d2b-9781-f17ad29fa9ea">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="daa9490e-b43f-435e-8860-d305358298e6" parent_id_arme="fffc40da-dadd-4fc8-b1cd-7a8883574d9e" />
+  <event name="Generate Sector Entities" id_arme="38f54bb7-7fdf-4fda-9c8b-2ec61ec05138" parent_id_arme="daa9490e-b43f-435e-8860-d305358298e6">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="83bd64f4-dc90-4164-be1d-df6ae872e4a2" parent_id_arme="daa9490e-b43f-435e-8860-d305358298e6">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="5f57cb26-1b23-44c5-8b39-782a9992b749" parent_id_arme="daa9490e-b43f-435e-8860-d305358298e6">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arrin Sector III" id_arme="ae101a67-0812-4bd8-a449-78dcbbe75983" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector III" id_arme="b6091159-b251-49ec-8e1b-e4fadec5db9b" parent_id_arme="ae101a67-0812-4bd8-a449-78dcbbe75983">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="14" type="nebulas" startX="97401.0" startY="0.0" startZ="62522.0" endX="88182.0" endY="0.0" endZ="71895.0" randomRange="3310" />
+    <create count="8" type="nebulas" startX="86646.0" startY="0.0" startZ="72355.0" endX="70513.0" endY="0.0" endZ="88642.0" randomRange="3310" />
+    <create count="200" type="nebulas" startX="53458.0" startY="0.0" startZ="23341.0" endX="53458.0" endY="0.0" endZ="23341.0" randomRange="23312" />
+    <create count="10" type="nebulas" startX="70974.0" startY="0.0" startZ="45928.0" endX="50999.0" endY="0.0" endZ="61139.0" randomRange="8014" />
+    <create count="10" type="nebulas" startX="41012.0" startY="0.0" startZ="46235.0" endX="49002.0" endY="0.0" endZ="62829.0" randomRange="6041" />
+    <create count="50" type="nebulas" startX="10129.0" startY="0.0" startZ="6594.0" endX="34559.0" endY="0.0" endZ="49308.0" randomRange="3997" />
+    <create count="100" type="nebulas" startX="11050.0" startY="0.0" startZ="58681.0" endX="14277.0" endY="0.0" endZ="2906.0" randomRange="7720" />
+    <create count="10" type="asteroids" startX="65135.0" startY="0.0" startZ="19500.0" endX="45929.0" endY="0.0" endZ="30102.0" randomRange="3256" />
+    <create count="10" type="asteroids" startX="60525.0" startY="0.0" startZ="29641.0" endX="49155.0" endY="0.0" endZ="33329.0" randomRange="3256" />
+    <create count="10" type="asteroids" startX="40705.0" startY="0.0" startZ="85108.0" endX="26415.0" endY="0.0" endZ="73124.0" randomRange="3256" />
+    <create count="10" type="asteroids" startX="41012.0" startY="0.0" startZ="84955.0" endX="31178.0" endY="0.0" endZ="70051.0" randomRange="3256" />
+  </event>
+  <folder_arme name="Navigation" id_arme="4672ca72-09de-4865-a261-931bdfb36464" parent_id_arme="ae101a67-0812-4bd8-a449-78dcbbe75983" />
+  <event name="Transition to Sector IV" id_arme="971640ca-d3eb-4423-a8c0-6ee1138589cb" parent_id_arme="4672ca72-09de-4865-a261-931bdfb36464">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="01f4c4cd-b02d-4274-9f6a-6808a791826a" parent_id_arme="4672ca72-09de-4865-a261-931bdfb36464">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="d097a5f8-bfda-40b5-838d-39988f817ff4" parent_id_arme="4672ca72-09de-4865-a261-931bdfb36464">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="7f0d5ff1-49b8-4436-b178-1feff6805b7f" parent_id_arme="4672ca72-09de-4865-a261-931bdfb36464">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="fd2d212a-1313-443b-8100-a2c13100d89a" parent_id_arme="4672ca72-09de-4865-a261-931bdfb36464">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d26eb91f-91d7-4856-91dd-d423ec0cc857" parent_id_arme="ae101a67-0812-4bd8-a449-78dcbbe75983" />
+  <event name="Generate Sector Entities" id_arme="e601168f-14a3-427d-9146-c2bed3302074" parent_id_arme="d26eb91f-91d7-4856-91dd-d423ec0cc857">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="67e7801d-a7a4-4874-bc87-aa97aef624d8" parent_id_arme="d26eb91f-91d7-4856-91dd-d423ec0cc857">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="994a8740-f4cb-4800-a557-8627685c6c8c" parent_id_arme="d26eb91f-91d7-4856-91dd-d423ec0cc857">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arrin Sector IV" id_arme="4fb0270c-f809-4ad1-a05c-5909ae8c508a" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector IV" id_arme="f71e1e67-6782-4300-ade1-9d43c695993a" parent_id_arme="4fb0270c-f809-4ad1-a05c-5909ae8c508a">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <create count="40" type="nebulas" startX="93867.0" startY="0.0" startZ="4135.0" endX="94789.0" endY="0.0" endZ="55915.0" randomRange="6657" />
+    <create count="40" type="nebulas" startX="85417.0" startY="0.0" startZ="6440.0" endX="34559.0" endY="0.0" endZ="37323.0" randomRange="6657" />
+    <create count="40" type="nebulas" startX="86339.0" startY="0.0" startZ="52996.0" endX="4290.0" endY="0.0" endZ="22727.0" randomRange="6657" />
+    <create count="40" type="nebulas" startX="84648.0" startY="0.0" startZ="34097.0" endX="68515.0" endY="0.0" endZ="30409.0" randomRange="6657" />
+    <create count="40" type="nebulas" startX="7977.0" startY="0.0" startZ="10128.0" endX="62062.0" endY="0.0" endZ="9206.0" randomRange="6657" />
+    <create count="40" type="asteroids" startX="35634.0" startY="0.0" startZ="64980.0" endX="16582.0" endY="0.0" endZ="70819.0" randomRange="5666" />
+    <create count="40" type="asteroids" startX="30871.0" startY="0.0" startZ="56837.0" endX="15045.0" endY="0.0" endZ="61293.0" randomRange="5666" />
+    <create count="40" type="asteroids" startX="21038.0" startY="0.0" startZ="51920.0" endX="8899.0" endY="0.0" endZ="41779.0" randomRange="5666" />
+  </event>
+  <folder_arme name="Navigation" id_arme="0117b5eb-311b-444c-9633-09de2ea424c4" parent_id_arme="4fb0270c-f809-4ad1-a05c-5909ae8c508a" />
+  <event name="Transition to Sector III" id_arme="546c9f62-5b9f-4fb2-9c9f-0e430af13c7d" parent_id_arme="0117b5eb-311b-444c-9633-09de2ea424c4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="40f37004-6896-41cc-8464-56986b1b9bc4" parent_id_arme="0117b5eb-311b-444c-9633-09de2ea424c4">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="7d0862f8-c78b-4587-b982-a080b3e93e98" parent_id_arme="0117b5eb-311b-444c-9633-09de2ea424c4">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="8149dd14-69e9-4319-af62-c195a5598188" parent_id_arme="4fb0270c-f809-4ad1-a05c-5909ae8c508a" />
+  <event name="Generate Sector Entities" id_arme="90dc63a1-05b3-42b6-9230-eca9af03efac" parent_id_arme="8149dd14-69e9-4319-af62-c195a5598188">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="blackHole" x="31486.0" y="0.0" z="23034.0" name="X-102" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="13755858-8ba3-4846-87c0-5f3af2f8333f" parent_id_arme="8149dd14-69e9-4319-af62-c195a5598188">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="7e5a2db9-9d11-4b76-872f-8bbb81016829" parent_id_arme="8149dd14-69e9-4319-af62-c195a5598188">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <destroy name="X-102" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arrin Sector V" id_arme="c3220a46-76f1-47b0-8191-daea7adcbbd1" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector V" id_arme="dd82a86c-7b42-4a7d-86c2-822d5a332455" parent_id_arme="c3220a46-76f1-47b0-8191-daea7adcbbd1">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="18" type="nebulas" startX="29335.0" startY="0.0" startZ="1370.0" endX="2292.0" endY="0.0" endZ="4903.0" randomRange="4152" />
+    <create count="25" type="nebulas" startX="25801.0" startY="0.0" startZ="6901.0" endX="3368.0" endY="0.0" endZ="14583.0" randomRange="4152" />
+    <create count="20" type="nebulas" startX="22267.0" startY="0.0" startZ="12279.0" endX="449.0" endY="0.0" endZ="28412.0" randomRange="4152" />
+    <create count="10" type="asteroids" startX="52689.0" startY="0.0" startZ="53918.0" endX="52689.0" endY="0.0" endZ="53918.0" randomRange="47703" />
+  </event>
+  <folder_arme name="Navigation" id_arme="e719bc45-9149-494c-b645-fdcc1f91b076" parent_id_arme="c3220a46-76f1-47b0-8191-daea7adcbbd1" />
+  <event name="Transition to Sector VI" id_arme="b19dc331-9e2b-4a73-961b-402da827ebab" parent_id_arme="e719bc45-9149-494c-b645-fdcc1f91b076">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="6381fe9c-63b6-4d58-9933-06e3c19ac545" parent_id_arme="e719bc45-9149-494c-b645-fdcc1f91b076">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="6f1354e0-ee6a-4597-9c33-d7423e12c822" parent_id_arme="e719bc45-9149-494c-b645-fdcc1f91b076">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="e82d919c-4da1-4aff-96e3-5a9f59b24600" parent_id_arme="e719bc45-9149-494c-b645-fdcc1f91b076">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="4b43adeb-1e8e-4d6f-aece-4bdfb3a19e00" parent_id_arme="e719bc45-9149-494c-b645-fdcc1f91b076">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="0306e01c-5a0d-4b44-9e8a-2f6d51e8ee28" parent_id_arme="c3220a46-76f1-47b0-8191-daea7adcbbd1" />
+  <event name="Generate Sector Entities" id_arme="3621c5a6-b760-4c79-a0d1-3e2fa099bba9" parent_id_arme="0306e01c-5a0d-4b44-9e8a-2f6d51e8ee28">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="b79eee25-51fc-4e1c-80dc-6decb579eb92" parent_id_arme="0306e01c-5a0d-4b44-9e8a-2f6d51e8ee28">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="73f667f1-7a5c-4886-86bc-00057bca32d9" parent_id_arme="0306e01c-5a0d-4b44-9e8a-2f6d51e8ee28">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arrin Sector VI" id_arme="d5c89728-e542-437e-a8c5-569578312f05" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector VI" id_arme="7a7c7639-8de2-4495-89da-9d72a2640b98" parent_id_arme="d5c89728-e542-437e-a8c5-569578312f05">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="19" type="nebulas" startX="96172.0" startY="0.0" startZ="24417.0" endX="97709.0" endY="0.0" endZ="1062.0" randomRange="4122" />
+    <create count="15" type="nebulas" startX="95097.0" startY="0.0" startZ="3828.0" endX="73125.0" endY="0.0" endZ="2445.0" randomRange="7875" />
+    <create count="80" type="nebulas" startX="91563.0" startY="0.0" startZ="9820.0" endX="34405.0" endY="0.0" endZ="57605.0" randomRange="7875" />
+    <create count="80" type="nebulas" startX="74047.0" startY="0.0" startZ="9667.0" endX="34559.0" endY="0.0" endZ="49308.0" randomRange="3164" />
+    <create count="80" type="nebulas" startX="89412.0" startY="0.0" startZ="20883.0" endX="40705.0" endY="0.0" endZ="48233.0" randomRange="5437" />
+    <create count="10" type="asteroids" startX="52075.0" startY="0.0" startZ="58066.0" endX="52075.0" endY="0.0" endZ="58066.0" randomRange="37474" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7" parent_id_arme="d5c89728-e542-437e-a8c5-569578312f05" />
+  <event name="Transition to Sector VII" id_arme="dec9d9cf-9871-46fc-9562-a72967032180" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="1d605eaf-376d-4f7a-ab6e-0413eeccafef" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="b34cde74-f22b-43d2-b210-feecbee764ff" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="bb9d5b10-ea44-432e-9b55-bb05f4de7325" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="075ac04c-801f-4409-b841-72958fc107ee" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="74513cbe-5606-4f3d-9e9b-7e291b1a0105" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="d359bdfc-5272-43a1-830b-be964b5a35ba" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="dd67dda9-7c84-48d5-9c80-ff6393b8255d" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="c463f39c-2474-4b85-8088-9f75a4b1b01d" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7" />
+  <event name="Gate Offline" id_arme="fc417da2-6e26-4a6b-a1ff-c79d3919c50e" parent_id_arme="c463f39c-2474-4b85-8088-9f75a4b1b01d">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Hjorden Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="8d3655a5-7714-4098-ba7e-e69307735416" parent_id_arme="c463f39c-2474-4b85-8088-9f75a4b1b01d" />
+  <event name="Ship1 Activation Range" id_arme="3655134b-936f-483a-8aad-d17884e82c9b" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="935d6880-86e7-4833-bded-8e40f9d7f4d9" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="25580f10-1ae4-4594-9407-58b2bc90075a" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="3d604cb3-4354-4666-9296-1d293a07697c" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="10476b56-a9d5-4ecd-9803-6090321ed724" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="23324009-ad21-4d7b-aab8-b4292205e6a4" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="aae0a3e5-7165-4b38-beb7-a1c5d2a13be6" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="9212c6aa-d3a8-4c7f-acc1-b32da24bf7ff" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="c5317b2d-b5a4-4f0d-9fa0-807517194161" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="cfc44058-4438-4d9a-9340-79d46c7a0727" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="a5a072eb-ef5d-4b87-a70e-17bf1ef23b39" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="eee6513d-dcbd-4005-b1d8-8bd077603c11" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="4e3edfae-8766-4c20-b506-4ec40e3b748d" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="a25010f3-653a-4e61-96cf-80eac6e8484d" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="04c7d381-319c-44b8-83cb-6be80b9f92d2" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="2e7e0e1c-f944-435a-b850-6212b48f8d53" parent_id_arme="8d3655a5-7714-4098-ba7e-e69307735416">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="26079ac7-5733-4f17-a687-bdfde7f7b646" parent_id_arme="c463f39c-2474-4b85-8088-9f75a4b1b01d">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Hjorden Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="cff1a435-0eeb-4e16-977c-e807569e6629" parent_id_arme="c463f39c-2474-4b85-8088-9f75a4b1b01d">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arrin to Hjorden" value="1.0" />
+    <set_variable name="Hjorden System" value="1.0" />
+    <set_variable name="Sector" value="7" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="39591bae-6a7d-4993-a497-808d9c57a7b3" parent_id_arme="d5c89728-e542-437e-a8c5-569578312f05" />
+  <event name="Generate Sector Entities" id_arme="1919cddf-a5c9-4e27-99de-5fd4c96ded19" parent_id_arme="39591bae-6a7d-4993-a497-808d9c57a7b3">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="47926.0" y="0.0" z="37323.0" angle="0" name="Hjorden Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="c308520c-8a76-4f47-b980-ffa9e3385b91" parent_id_arme="39591bae-6a7d-4993-a497-808d9c57a7b3">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Hjorden Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Hjorden Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Hjorden Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Hjorden Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="83d39534-781f-41be-8859-cf743bcdc645" parent_id_arme="39591bae-6a7d-4993-a497-808d9c57a7b3">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <destroy name="Hjorden Gate" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Hjorden" id_arme="b25ba3c3-3f37-4003-92a7-e424bf70108f" parent_id_arme="d5c89728-e542-437e-a8c5-569578312f05">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden to Arrin" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Hjorden Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Hjorden to Arrin" value="0.0" />
+  </event>
+  <folder_arme name="Arrin Sector VII" id_arme="7a7d0528-f3dd-407a-b70a-da1aabbabc37" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector VII" id_arme="c0fdba2a-6462-4a4e-b990-cc1bdaffe30b" parent_id_arme="7a7d0528-f3dd-407a-b70a-da1aabbabc37">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="asteroids" startX="50231.0" startY="0.0" startZ="49923.0" endX="50231.0" endY="0.0" endZ="49923.0" randomRange="47864" />
+    <create count="10" type="nebulas" startX="50846.0" startY="0.0" startZ="49923.0" endX="50846.0" endY="0.0" endZ="49923.0" randomRange="45882" />
+  </event>
+  <folder_arme name="Navigation" id_arme="c571c3d2-ab71-4227-93b2-09a48e6981c5" parent_id_arme="7a7d0528-f3dd-407a-b70a-da1aabbabc37" />
+  <event name="Transition to Sector VIII" id_arme="73cc0673-4114-49b3-9fe7-9386557a0187" parent_id_arme="c571c3d2-ab71-4227-93b2-09a48e6981c5">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="8fcb30f7-4b9a-49fa-87d9-65e1ea5c50d4" parent_id_arme="c571c3d2-ab71-4227-93b2-09a48e6981c5">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="d5743904-5e65-4402-8271-c818970f40d8" parent_id_arme="c571c3d2-ab71-4227-93b2-09a48e6981c5">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="73808c50-c971-4ad2-ad0f-ab3bc2bde448" parent_id_arme="c571c3d2-ab71-4227-93b2-09a48e6981c5">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="da7ed864-9717-4867-867a-b2fc357d9745" parent_id_arme="c571c3d2-ab71-4227-93b2-09a48e6981c5">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="5a375e2a-8b74-4483-a023-4d66fbc3c51f" parent_id_arme="c571c3d2-ab71-4227-93b2-09a48e6981c5">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="5a58286b-bf25-4ee9-80c2-3457ebb14aec" parent_id_arme="c571c3d2-ab71-4227-93b2-09a48e6981c5">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="ec6f8c07-51e4-4000-9765-3175f07ab368" parent_id_arme="c571c3d2-ab71-4227-93b2-09a48e6981c5">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e33f83ba-96e2-4906-9403-c951b11b01a9" parent_id_arme="7a7d0528-f3dd-407a-b70a-da1aabbabc37" />
+  <event name="Generate Sector Entities" id_arme="d785759b-2451-4600-a4d9-90e117be9e9a" parent_id_arme="e33f83ba-96e2-4906-9403-c951b11b01a9">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="4d72e3f8-92ad-4e25-b18a-3d1d5b057da9" parent_id_arme="e33f83ba-96e2-4906-9403-c951b11b01a9">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="7f464bd7-f0b5-4094-b069-9bf45a59b829" parent_id_arme="e33f83ba-96e2-4906-9403-c951b11b01a9">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arrin Sector VIII" id_arme="7c41d864-547b-437f-a69a-1362205c75f2" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector VIII" id_arme="18257772-3325-4c2c-b6be-7c95545987a1" parent_id_arme="7c41d864-547b-437f-a69a-1362205c75f2">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="60" type="nebulas" startX="40705.0" startY="0.0" startZ="74507.0" endX="3829.0" endY="0.0" endZ="96939.0" randomRange="4056" />
+    <create count="60" type="nebulas" startX="39322.0" startY="0.0" startZ="85877.0" endX="14584.0" endY="0.0" endZ="96939.0" randomRange="4056" />
+    <create count="30" type="nebulas" startX="22574.0" startY="0.0" startZ="79270.0" endX="602.0" endY="0.0" endZ="87106.0" randomRange="4056" />
+    <create count="10" type="nebulas" startX="37324.0" startY="0.0" startZ="96017.0" endX="27184.0" endY="0.0" endZ="97400.0" randomRange="4285" />
+    <create count="28" type="asteroids" startX="62062.0" startY="0.0" startZ="36094.0" endX="35173.0" endY="0.0" endZ="49769.0" randomRange="3197" />
+    <create count="28" type="asteroids" startX="53150.0" startY="0.0" startZ="35941.0" endX="13048.0" endY="0.0" endZ="50998.0" randomRange="3197" />
+    <create count="28" type="asteroids" startX="54226.0" startY="0.0" startZ="44699.0" endX="27030.0" endY="0.0" endZ="51613.0" randomRange="3197" />
+  </event>
+  <folder_arme name="Navigation" id_arme="dba97186-9111-46d2-8b51-b99cd77d4e57" parent_id_arme="7c41d864-547b-437f-a69a-1362205c75f2" />
+  <event name="Transition to Sector VII" id_arme="21769577-7bbf-4547-b827-711771e32692" parent_id_arme="dba97186-9111-46d2-8b51-b99cd77d4e57">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="c1d154b0-e549-4fc5-b98d-71debd5ba92e" parent_id_arme="dba97186-9111-46d2-8b51-b99cd77d4e57">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="d912acc4-f8fc-4078-a73a-48821982dac3" parent_id_arme="dba97186-9111-46d2-8b51-b99cd77d4e57">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="b2988db6-1f2f-41fc-bb98-7424dfe195c2" parent_id_arme="dba97186-9111-46d2-8b51-b99cd77d4e57">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="f16cbaff-381b-4a94-bd75-89f38bf27591" parent_id_arme="dba97186-9111-46d2-8b51-b99cd77d4e57">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="cfe9076c-5d97-497c-ab2a-d998b4a94f11" parent_id_arme="7c41d864-547b-437f-a69a-1362205c75f2" />
+  <event name="Generate Sector Entities" id_arme="f92eb751-9199-436e-b727-b6f29ac638c2" parent_id_arme="cfe9076c-5d97-497c-ab2a-d998b4a94f11">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="bac748b8-7086-43e5-8f16-6b32db969182" parent_id_arme="cfe9076c-5d97-497c-ab2a-d998b4a94f11">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="f387b326-79f5-453d-a77d-ded23037a056" parent_id_arme="cfe9076c-5d97-497c-ab2a-d998b4a94f11">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arrin Sector IX" id_arme="d68bd34a-2ace-4850-a509-06a24cacb339" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector IX" id_arme="13cb57f6-783d-4d15-bfb4-e82155b673d1" parent_id_arme="d68bd34a-2ace-4850-a509-06a24cacb339">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="60" type="nebulas" startX="97709.0" startY="0.0" startZ="49001.0" endX="47773.0" endY="0.0" endZ="96325.0" randomRange="4261" />
+    <create count="60" type="nebulas" startX="84956.0" startY="0.0" startZ="53918.0" endX="26108.0" endY="0.0" endZ="97861.0" randomRange="4261" />
+    <create count="60" type="nebulas" startX="73739.0" startY="0.0" startZ="24417.0" endX="39476.0" endY="0.0" endZ="51306.0" randomRange="4261" />
+    <create count="60" type="asteroids" startX="74815.0" startY="0.0" startZ="45928.0" endX="31639.0" endY="0.0" endZ="79731.0" randomRange="4261" />
+  </event>
+  <folder_arme name="Navigation" id_arme="8c8964c7-261c-4f08-a5a9-2bca1f8a36db" parent_id_arme="d68bd34a-2ace-4850-a509-06a24cacb339" />
+  <event name="Transition to Sector X" id_arme="524346dd-41b3-40ae-acd2-f117b9ffb56b" parent_id_arme="8c8964c7-261c-4f08-a5a9-2bca1f8a36db">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="e1dcd40f-3d81-4c97-b2b6-11003bab145f" parent_id_arme="8c8964c7-261c-4f08-a5a9-2bca1f8a36db">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="b57c1f5c-8d4f-4e0f-862a-0f151c17f48e" parent_id_arme="8c8964c7-261c-4f08-a5a9-2bca1f8a36db">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="c68106a1-f713-4886-b8f5-94b8105ce1e4" parent_id_arme="d68bd34a-2ace-4850-a509-06a24cacb339" />
+  <event name="Generate Sector Entities" id_arme="2e1f779b-7140-40ff-80b2-d892024ad38c" parent_id_arme="c68106a1-f713-4886-b8f5-94b8105ce1e4">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="d15c2413-f1ff-4ad8-ab90-19fdf210257a" parent_id_arme="c68106a1-f713-4886-b8f5-94b8105ce1e4">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="37003a87-bf6f-41c0-9dac-66f516c5c1e2" parent_id_arme="c68106a1-f713-4886-b8f5-94b8105ce1e4">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arrin Sector X" id_arme="56bd828f-ba62-43d1-aa53-871e0e85d94a" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector X" id_arme="3f1e5fcb-fb4b-4eae-a826-f08a94a5ac3e" parent_id_arme="56bd828f-ba62-43d1-aa53-871e0e85d94a">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="42" type="nebulas" startX="61294.0" startY="0.0" startZ="33482.0" endX="26415.0" endY="0.0" endZ="56530.0" randomRange="4674" />
+    <create count="27" type="nebulas" startX="49002.0" startY="0.0" startZ="12740.0" endX="15353.0" endY="0.0" endZ="35941.0" randomRange="4674" />
+    <create count="24" type="asteroids" startX="53304.0" startY="0.0" startZ="25185.0" endX="23035.0" endY="0.0" endZ="44699.0" randomRange="2688" />
+    <create count="34" type="nebulas" startX="75583.0" startY="0.0" startZ="56991.0" endX="39168.0" endY="0.0" endZ="85723.0" randomRange="2683" />
+    <create count="32" type="nebulas" startX="51460.0" startY="0.0" startZ="58066.0" endX="21038.0" endY="0.0" endZ="78655.0" randomRange="3266" />
+    <create count="10" type="asteroids" startX="77273.0" startY="0.0" startZ="36862.0" endX="63752.0" endY="0.0" endZ="50537.0" randomRange="1901" />
+    <create count="10" type="asteroids" startX="73432.0" startY="0.0" startZ="39628.0" endX="61447.0" endY="0.0" endZ="46081.0" randomRange="1901" />
+    <create count="10" type="asteroids" startX="75890.0" startY="0.0" startZ="41011.0" endX="59450.0" endY="0.0" endZ="53918.0" randomRange="1901" />
+  </event>
+  <folder_arme name="Navigation" id_arme="783da5b9-64aa-40e0-bc44-83641a8c774b" parent_id_arme="56bd828f-ba62-43d1-aa53-871e0e85d94a" />
+  <event name="Transition to Sector XI" id_arme="4d1f480a-2952-4eed-829d-bcaad5af477a" parent_id_arme="783da5b9-64aa-40e0-bc44-83641a8c774b">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="17e5acf9-21ef-4629-b316-8d066e519861" parent_id_arme="783da5b9-64aa-40e0-bc44-83641a8c774b">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="93c768ea-27cc-48cb-9205-8af4a1f9b68c" parent_id_arme="783da5b9-64aa-40e0-bc44-83641a8c774b">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="b3150659-41bf-442b-872a-a2dc5a7baf44" parent_id_arme="783da5b9-64aa-40e0-bc44-83641a8c774b">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="dd13e235-3fa8-41e7-8826-b0871360c19e" parent_id_arme="783da5b9-64aa-40e0-bc44-83641a8c774b">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="2955858a-add5-4030-abdf-4e8a27bbb4dc" parent_id_arme="56bd828f-ba62-43d1-aa53-871e0e85d94a" />
+  <event name="Generate Sector Entities" id_arme="cb9d0d82-6dd4-48f9-b9a7-6798cf7c0609" parent_id_arme="2955858a-add5-4030-abdf-4e8a27bbb4dc">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="75fcc8cd-1b41-42d4-90ac-1078e24a1d32" parent_id_arme="2955858a-add5-4030-abdf-4e8a27bbb4dc">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="8ee2e08d-285e-42b6-9248-52db50181c49" parent_id_arme="2955858a-add5-4030-abdf-4e8a27bbb4dc">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arrin Sector XI" id_arme="cbe040ba-c45b-484b-8b7b-a98c46bdc259" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector XI" id_arme="11546f08-dd85-481c-a484-55de6d822284" parent_id_arme="cbe040ba-c45b-484b-8b7b-a98c46bdc259">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="40" type="nebulas" startX="1063.0" startY="0.0" startZ="72970.0" endX="30564.0" endY="0.0" endZ="48233.0" randomRange="4261" />
+    <create count="40" type="nebulas" startX="57913.0" startY="0.0" startZ="24417.0" endX="30564.0" endY="0.0" endZ="48233.0" randomRange="4261" />
+    <create count="40" type="nebulas" startX="5365.0" startY="0.0" startZ="79423.0" endX="38093.0" endY="0.0" endZ="55147.0" randomRange="4261" />
+    <create count="10" type="asteroids" startX="80039.0" startY="0.0" startZ="64980.0" endX="70513.0" endY="0.0" endZ="75121.0" randomRange="2688" />
+    <create count="10" type="asteroids" startX="76659.0" startY="0.0" startZ="65441.0" endX="63752.0" endY="0.0" endZ="74199.0" randomRange="2688" />
+    <create count="10" type="asteroids" startX="82036.0" startY="0.0" startZ="69590.0" endX="64213.0" endY="0.0" endZ="85569.0" randomRange="2688" />
+    <create count="10" type="asteroids" startX="77120.0" startY="0.0" startZ="73124.0" endX="55916.0" endY="0.0" endZ="81882.0" randomRange="2688" />
+    <create count="10" type="asteroids" startX="72203.0" startY="0.0" startZ="64058.0" endX="55301.0" endY="0.0" endZ="75582.0" randomRange="2688" />
+    <create count="10" type="asteroids" startX="56531.0" startY="0.0" startZ="81267.0" endX="67440.0" endY="0.0" endZ="79731.0" randomRange="2688" />
+    <create count="4" type="nebulas" startX="82805.0" startY="0.0" startZ="15505.0" endX="82805.0" endY="0.0" endZ="15505.0" randomRange="20162" />
+    <create count="4" type="asteroids" startX="77120.0" startY="0.0" startZ="21190.0" endX="77120.0" endY="0.0" endZ="21190.0" randomRange="20162" />
+  </event>
+  <folder_arme name="Navigation" id_arme="f07aecf1-9c93-47f2-ae31-e37792dc5077" parent_id_arme="cbe040ba-c45b-484b-8b7b-a98c46bdc259" />
+  <event name="Transition to Sector XII" id_arme="fe890196-fe69-4e8a-9081-1e03b40b9219" parent_id_arme="f07aecf1-9c93-47f2-ae31-e37792dc5077">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="b07f86c2-8bdc-4bc8-b34b-5bb2bf337bd2" parent_id_arme="f07aecf1-9c93-47f2-ae31-e37792dc5077">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="068b76d8-7fe6-41be-98be-9e3a1a5654b5" parent_id_arme="f07aecf1-9c93-47f2-ae31-e37792dc5077">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="8d122da5-1e7a-4160-b7a4-bfbd602982b4" parent_id_arme="f07aecf1-9c93-47f2-ae31-e37792dc5077">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="e477da95-8974-4f03-9640-057cba611e18" parent_id_arme="f07aecf1-9c93-47f2-ae31-e37792dc5077">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d28b45e4-07e0-45d6-b3c4-eb9930dd30ab" parent_id_arme="cbe040ba-c45b-484b-8b7b-a98c46bdc259" />
+  <event name="Generate Sector Entities" id_arme="03cce21e-605b-4ca2-a3b7-e2b16189cd4e" parent_id_arme="d28b45e4-07e0-45d6-b3c4-eb9930dd30ab">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="513fed2f-67c8-418b-aca3-4670a725a612" parent_id_arme="d28b45e4-07e0-45d6-b3c4-eb9930dd30ab">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="ee33dfbb-5563-4d33-8498-2f76e95e99de" parent_id_arme="d28b45e4-07e0-45d6-b3c4-eb9930dd30ab">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arrin Sector XII" id_arme="b9f3d0b5-9b68-47c2-81ae-f3c6134d285e" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
+  <event name="Create Arrin Sector XII" id_arme="94e00bdc-1e63-4c8d-a015-a6fd96940e40" parent_id_arme="b9f3d0b5-9b68-47c2-81ae-f3c6134d285e">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <set_skybox_index index="27" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Arrin System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="40" type="nebulas" startX="37785.0" startY="0.0" startZ="2445.0" endX="3829.0" endY="0.0" endZ="4289.0" randomRange="4772" />
+    <create count="40" type="nebulas" startX="32408.0" startY="0.0" startZ="8898.0" endX="17965.0" endY="0.0" endZ="54071.0" randomRange="4772" />
+    <create count="40" type="nebulas" startX="14123.0" startY="0.0" startZ="12586.0" endX="4444.0" endY="0.0" endZ="58988.0" randomRange="4772" />
+    <create count="40" type="nebulas" startX="22420.0" startY="0.0" startZ="11357.0" endX="3829.0" endY="0.0" endZ="68822.0" randomRange="4772" />
+    <create count="40" type="nebulas" startX="4904.0" startY="0.0" startZ="7669.0" endX="2292.0" endY="0.0" endZ="46081.0" randomRange="4772" />
+    <create count="40" type="nebulas" startX="97862.0" startY="0.0" startZ="63444.0" endX="42702.0" endY="0.0" endZ="98169.0" randomRange="5324" />
+    <create count="40" type="nebulas" startX="97709.0" startY="0.0" startZ="74199.0" endX="57299.0" endY="0.0" endZ="96478.0" randomRange="5324" />
+    <create count="10" type="asteroids" startX="69283.0" startY="0.0" startZ="39475.0" endX="69591.0" endY="0.0" endZ="32099.0" randomRange="2644" />
+    <create count="10" type="asteroids" startX="67286.0" startY="0.0" startZ="35787.0" endX="64674.0" endY="0.0" endZ="46389.0" randomRange="2644" />
+    <create count="10" type="asteroids" startX="71127.0" startY="0.0" startZ="40857.0" endX="63138.0" endY="0.0" endZ="50845.0" randomRange="2644" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b9e7b906-207c-4fd2-a866-0afbaec779b0" parent_id_arme="b9f3d0b5-9b68-47c2-81ae-f3c6134d285e" />
+  <event name="Transition to Sector XI" id_arme="b861abf1-3b71-4cfd-96bd-31dd91edd5f4" parent_id_arme="b9e7b906-207c-4fd2-a866-0afbaec779b0">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="3637d6a9-d17c-4a68-b0dc-6937c33ea41d" parent_id_arme="b9e7b906-207c-4fd2-a866-0afbaec779b0">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="2c052bed-ac7c-42fe-9d18-b58d700d463c" parent_id_arme="b9e7b906-207c-4fd2-a866-0afbaec779b0">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Arrin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="18855497-21fe-4c0a-8024-d6eca0b63153" parent_id_arme="b9f3d0b5-9b68-47c2-81ae-f3c6134d285e" />
+  <event name="Generate Sector Entities" id_arme="28d658d8-f1a8-4ce1-9be3-8faf04e92167" parent_id_arme="18855497-21fe-4c0a-8024-d6eca0b63153">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="c460ba7f-0f45-4a90-a128-056dc55d9c45" parent_id_arme="18855497-21fe-4c0a-8024-d6eca0b63153">
+    <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="c9259391-cfc9-4ffd-89c7-d61e4010ed44" parent_id_arme="18855497-21fe-4c0a-8024-d6eca0b63153">
+    <if_variable name="Arrin System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Arrin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

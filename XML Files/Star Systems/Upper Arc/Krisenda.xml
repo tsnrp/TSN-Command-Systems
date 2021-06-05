@@ -1,0 +1,1696 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="286.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="399.0" integer="yes" />
+    <set_variable name="Alignment" value="2.0" integer="yes" />
+  </start>
+  <folder_arme name="Krisenda System" id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
+  <folder_arme name="Krisenda Settings" id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
+  <folder_arme name="Krisenda Menu" id_arme="a680029d-40d7-4fe7-ac26-951602f65d78" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2" expanded_arme="" />
+  <event name="Krisenda Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="a680029d-40d7-4fe7-ac26-951602f65d78">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Upper Arc/Krisenda System" />
+    <set_variable name="Krisenda Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="a680029d-40d7-4fe7-ac26-951602f65d78">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Upper Arc/Krisenda System" />
+  </event>
+  <event name="Krisenda System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="a680029d-40d7-4fe7-ac26-951602f65d78">
+    <if_gm_button text="Upper Arc/Krisenda System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="104.0" integer="yes" />
+    <set_variable name="Krisenda System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Krisenda Sector I" id_arme="28dd7353-94e4-45b3-9249-0ec42257871b" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector I" id_arme="c7184d3b-7f52-4991-abcd-99ee8482dd91" parent_id_arme="28dd7353-94e4-45b3-9249-0ec42257871b">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="100" type="nebulas" startX="64891.0" startY="0.0" startZ="14125.0" endX="20032.0" endY="0.0" endZ="17769.0" randomRange="9824" />
+    <create count="80" type="nebulas" startX="62503.0" startY="0.0" startZ="21664.0" endX="85372.0" endY="0.0" endZ="47801.0" randomRange="8742" />
+    <create count="31" type="nebulas" startX="93917.0" startY="0.0" startZ="10104.0" endX="69163.0" endY="0.0" endZ="14879.0" randomRange="6692" />
+    <create count="31" type="nebulas" startX="94294.0" startY="0.0" startZ="22293.0" endX="96179.0" endY="0.0" endZ="56596.0" randomRange="6692" />
+    <create count="60" type="asteroids" startX="92786.0" startY="0.0" startZ="40261.0" endX="63760.0" endY="0.0" endZ="9602.0" randomRange="3799" />
+    <create count="60" type="asteroids" startX="64262.0" startY="0.0" startZ="8471.0" endX="40137.0" endY="0.0" endZ="4450.0" randomRange="1966" />
+    <create count="30" type="nebulas" startX="48053.0" startY="0.0" startZ="73685.0" endX="75948.0" endY="0.0" endZ="90774.0" randomRange="13957" />
+    <create count="40" type="nebulas" startX="82985.0" startY="0.0" startZ="54586.0" endX="88137.0" endY="0.0" endZ="96931.0" randomRange="6131" />
+    <create count="20" type="nebulas" startX="96053.0" startY="0.0" startZ="61246.0" endX="96681.0" endY="0.0" endZ="96554.0" randomRange="3320" />
+    <create count="16" type="nebulas" startX="45288.0" startY="0.0" startZ="61371.0" endX="45288.0" endY="0.0" endZ="61371.0" randomRange="35623" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="424bf7cb-fa09-4d83-a41a-61055bd6eb7e" parent_id_arme="28dd7353-94e4-45b3-9249-0ec42257871b" />
+  <event name="Transition to Sector II" id_arme="bcabeb66-9df3-482d-8f72-e6d42fbc9766" parent_id_arme="424bf7cb-fa09-4d83-a41a-61055bd6eb7e">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="c9924754-f975-4014-a447-9d1a91436a39" parent_id_arme="424bf7cb-fa09-4d83-a41a-61055bd6eb7e">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="3af6d9fe-8cdc-4fe1-9b86-34431028618b" parent_id_arme="424bf7cb-fa09-4d83-a41a-61055bd6eb7e">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="88c5bf62-190f-4f16-85d7-bd49548eddf2" parent_id_arme="28dd7353-94e4-45b3-9249-0ec42257871b" />
+  <event name="Generate Sector Entities" id_arme="193fdf29-4905-4ed2-a742-8095b701a1d1" parent_id_arme="88c5bf62-190f-4f16-85d7-bd49548eddf2">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="41268.0" y="0.0" z="42397.0" angle="0" name="I-902S" hullID="1051" />
+    <create type="station" x="59613.0" y="0.0" z="56471.0" angle="0" name="I-82S" hullID="1051" />
+    <create type="station" x="73058.0" y="0.0" z="76575.0" angle="0" name="I-18A" hullID="1051" />
+    <create type="station" x="14377.0" y="0.0" z="36115.0" angle="0" name="I-32A" hullID="1051" />
+    <create type="station" x="28199.0" y="0.0" z="70795.0" angle="0" name="I-45B" hullID="1050" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="8d96ed18-7954-425f-bf7a-7b3fbd9c29be" parent_id_arme="88c5bf62-190f-4f16-85d7-bd49548eddf2">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="0d81f86d-6bfb-4ca3-8239-9d752c16a69a" parent_id_arme="88c5bf62-190f-4f16-85d7-bd49548eddf2">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="I-902S" />
+    <destroy name="I-82S" />
+    <destroy name="I-18A" />
+    <destroy name="I-32A" />
+    <destroy name="I-45B" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Krisenda Sector II" id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector II" id_arme="a809ba5b-a4de-453d-a686-511e5e880d0a" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <create count="10" type="nebulas" startX="71802.0" startY="0.0" startZ="38376.0" endX="71802.0" endY="0.0" endZ="38376.0" randomRange="21766" />
+    <create count="40" type="nebulas" startX="87383.0" startY="0.0" startZ="8722.0" endX="64137.0" endY="0.0" endZ="7465.0" randomRange="10990" />
+    <create count="20" type="nebulas" startX="95676.0" startY="0.0" startZ="5329.0" endX="94922.0" endY="0.0" endZ="20910.0" randomRange="4531" />
+    <create count="10" type="nebulas" startX="57477.0" startY="0.0" startZ="65392.0" endX="57477.0" endY="0.0" endZ="65392.0" randomRange="42879" />
+    <create count="20" type="asteroids" startX="48681.0" startY="0.0" startZ="10481.0" endX="17896.0" endY="0.0" endZ="27319.0" randomRange="4620" />
+    <create count="14" type="asteroids" startX="50817.0" startY="0.0" startZ="9979.0" endX="73058.0" endY="0.0" endZ="4073.0" randomRange="3144" />
+    <create count="10" type="nebulas" startX="33854.0" startY="0.0" startZ="35109.0" endX="15760.0" endY="0.0" endZ="43654.0" randomRange="2475" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" />
+  <event name="Transition to Sector III" id_arme="a3adbe75-527b-4693-bd45-83dad22af448" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="4f9099f6-6ea6-49af-b5ba-87fae50ca815" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="b9e70cde-5226-48f6-8745-2c0ae32565fe" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="3224c18e-b2bc-4d83-9760-1680985ab27d" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="a3367a1f-ac50-4006-b65d-f374608fa57b" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="b54404f0-5fea-4f76-a8b6-e386198dee06" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" />
+  <event name="Gate Offline" id_arme="42a58768-14b2-4178-b03b-93cba69aa579" parent_id_arme="b54404f0-5fea-4f76-a8b6-e386198dee06">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Cerberus Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d" parent_id_arme="b54404f0-5fea-4f76-a8b6-e386198dee06" />
+  <event name="Ship1 Activation Range" id_arme="6428fb98-b136-414a-b9de-bb92b0001644" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="1e664940-c875-401d-8a01-b1fe0f69652f" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="ea3e6eb0-93cf-43a7-82f9-3968158608fb" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="0dd2b5b8-0985-4b59-ac2b-ffd1bb1550fe" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="7df20169-976a-42b8-8016-81d4df86b79e" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="59ae3af2-18bd-4888-a4a7-992a159712cb" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="582799bd-4d8f-4e28-93ef-48b0d193099e" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="983e0802-2d71-48e3-bd1f-b11834892e66" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="3e25f970-bd77-4f9e-a7a6-30bf1acf1074" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="7726e99e-ca4c-4c48-a88f-51e7c30d0a4a" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="a176ce70-11fd-454c-8cfe-ee00e2eaff66" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="cfb16cd0-92a7-4b79-a010-7a20f411be1d" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="582f6b2e-9d59-4a6e-8998-eeb3b8472bf7" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="b6ee25df-5d3e-4724-ad70-a8f4fb99f98c" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="4e6bccee-5df4-4e0c-9b7f-9fa7739043ec" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="13f5be33-07cb-4860-9abc-0b5db68c47df" parent_id_arme="bb1fb5a7-0300-4488-a7f6-e6dce490232d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="632f882e-7491-432f-ac42-0c42fbafd599" parent_id_arme="b54404f0-5fea-4f76-a8b6-e386198dee06">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Cerberus Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="13bdbb83-c3a9-4292-b41b-309d494e1f43" parent_id_arme="b54404f0-5fea-4f76-a8b6-e386198dee06">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Krisenda to Cerberus" value="1.0" />
+    <set_variable name="Cerberus System" value="1.0" />
+    <set_variable name="Sector" value="1" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="f327503d-6438-48ab-8a1d-d9db64972062" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" />
+  <event name="Generate Sector Entities" id_arme="351e8c78-00ed-4923-99be-5c92b087a3de" parent_id_arme="f327503d-6438-48ab-8a1d-d9db64972062">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="51446.0" y="0.0" z="72303.0" angle="0" name="Cerberus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="52828.0" y="0.0" z="23549.0" angle="0" name="I-23" hullID="1003" />
+    <create type="station" x="48053.0" y="0.0" z="28827.0" angle="0" name="I-002" hullID="1003" />
+    <create type="station" x="57980.0" y="0.0" z="30712.0" angle="0" name="I-91" hullID="1003" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="4fdfaa34-e608-4fe7-b16d-4f1cd220b319" parent_id_arme="f327503d-6438-48ab-8a1d-d9db64972062">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Cerberus Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Cerberus Gate" />
+    <set_object_property property="angle" value="3.839724354" name="Cerberus Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Cerberus Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="2c7e4c3f-da71-4639-9b0d-c7027b29d3c6" parent_id_arme="f327503d-6438-48ab-8a1d-d9db64972062">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="Cerberus Gate" />
+    <destroy name="I-23" />
+    <destroy name="I-002" />
+    <destroy name="I-91" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Cerberus" id_arme="fd24725e-f912-498d-b4bf-e2a5b9ebf78c" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Cerberus to Krisenda" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Cerberus Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Cerberus to Krisenda" value="0.0" />
+  </event>
+  <folder_arme name="Krisenda Sector III" id_arme="6906c031-0705-49d7-b06e-0b6d1d786498" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector III" id_arme="a4fc3ba1-4e8e-48ee-bcc6-797c3dfcaafd" parent_id_arme="6906c031-0705-49d7-b06e-0b6d1d786498">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="10" type="nebulas" startX="56346.0" startY="0.0" startZ="37748.0" endX="56346.0" endY="0.0" endZ="37748.0" randomRange="39902" />
+    <create count="10" type="nebulas" startX="76953.0" startY="0.0" startZ="35738.0" endX="57603.0" endY="0.0" endZ="46544.0" randomRange="9247" />
+    <create count="40" type="nebulas" startX="55215.0" startY="0.0" startZ="47549.0" endX="30461.0" endY="0.0" endZ="65518.0" randomRange="5530" />
+    <create count="70" type="nebulas" startX="22294.0" startY="0.0" startZ="69036.0" endX="9980.0" endY="0.0" endZ="78586.0" randomRange="17923" />
+    <create count="30" type="asteroids" startX="39760.0" startY="0.0" startZ="14628.0" endX="18273.0" endY="0.0" endZ="20910.0" randomRange="3822" />
+    <create count="11" type="nebulas" startX="73184.0" startY="0.0" startZ="74439.0" endX="59613.0" endY="0.0" endZ="75821.0" randomRange="2893" />
+    <create count="30" type="asteroids" startX="80597.0" startY="0.0" startZ="70167.0" endX="80597.0" endY="0.0" endZ="70167.0" randomRange="8750" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91" parent_id_arme="6906c031-0705-49d7-b06e-0b6d1d786498" />
+  <event name="Transition to Sector IV" id_arme="57d8baa5-19a2-4e00-a989-f223339af5f9" parent_id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="c7c3edc9-1a04-4ab2-ae8b-a9a0aad7e977" parent_id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="ce282d1b-f067-4391-8d79-107f9de5b79d" parent_id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="232096af-11f7-4f92-ac70-120be8e8f4bd" parent_id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="fb68de04-80f0-4c85-a3fa-0f7e5e174f90" parent_id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="5d72b334-8af7-4fb1-82ec-02f429fb34c5" parent_id_arme="6906c031-0705-49d7-b06e-0b6d1d786498" />
+  <event name="Generate Sector Entities" id_arme="883b850d-23ca-4adf-ba6d-4561dc95445a" parent_id_arme="5d72b334-8af7-4fb1-82ec-02f429fb34c5">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="62754.0" y="0.0" z="57727.0" angle="0" name="DS-33" hullID="1000" />
+    <create type="station" x="48304.0" y="0.0" z="71298.0" angle="0" name="R-56X" hullID="1004" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="76dfc599-c9cd-4e18-8425-c793a8ebfa27" parent_id_arme="5d72b334-8af7-4fb1-82ec-02f429fb34c5">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="8469c1c9-73b0-4cfb-9242-099233659f19" parent_id_arme="5d72b334-8af7-4fb1-82ec-02f429fb34c5">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-33" />
+    <destroy name="R-56X" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Krisenda Sector IV" id_arme="49e27b78-c734-4108-9f0f-b6ad8a9a3c0d" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector IV" id_arme="b8b5c2f3-b684-4b4e-8654-fd73eb0bdc76" parent_id_arme="49e27b78-c734-4108-9f0f-b6ad8a9a3c0d">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="43" type="nebulas" startX="95048.0" startY="0.0" startZ="55717.0" endX="95550.0" endY="0.0" endZ="74816.0" randomRange="9497" />
+    <create count="50" type="nebulas" startX="83739.0" startY="0.0" startZ="66272.0" endX="23425.0" endY="0.0" endZ="88136.0" randomRange="8707" />
+    <create count="50" type="nebulas" startX="81226.0" startY="0.0" startZ="78083.0" endX="54084.0" endY="0.0" endZ="95926.0" randomRange="7913" />
+    <create count="20" type="nebulas" startX="24932.0" startY="0.0" startZ="79842.0" endX="2566.0" endY="0.0" endZ="84366.0" randomRange="6162" />
+    <create count="10" type="nebulas" startX="45917.0" startY="0.0" startZ="90146.0" endX="5079.0" endY="0.0" endZ="93916.0" randomRange="6921" />
+    <create count="20" type="asteroids" startX="64137.0" startY="0.0" startZ="17895.0" endX="37749.0" endY="0.0" endZ="22544.0" randomRange="4777" />
+    <create count="20" type="asteroids" startX="54587.0" startY="0.0" startZ="40513.0" endX="24681.0" endY="0.0" endZ="55089.0" randomRange="3418" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="7a6973e3-11fa-4a82-b396-83a3edccf737" parent_id_arme="49e27b78-c734-4108-9f0f-b6ad8a9a3c0d" />
+  <event name="Transition to Sector III" id_arme="7fcdadb7-e01f-4a6f-b436-be36ca9d83cc" parent_id_arme="7a6973e3-11fa-4a82-b396-83a3edccf737">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="fd569edc-0a5e-4226-8a2c-850ba9bf1761" parent_id_arme="7a6973e3-11fa-4a82-b396-83a3edccf737">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="ab83c2f7-601a-453a-a90a-4a98db7eadeb" parent_id_arme="7a6973e3-11fa-4a82-b396-83a3edccf737">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="af47a8b7-d28d-43d6-9fee-cd8261cd4bb3" parent_id_arme="49e27b78-c734-4108-9f0f-b6ad8a9a3c0d" />
+  <event name="Generate Sector Entities" id_arme="0b5f65d4-e50d-45a1-afd2-7429c12bb472" parent_id_arme="af47a8b7-d28d-43d6-9fee-cd8261cd4bb3">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="60241.0" y="0.0" z="55717.0" angle="0" name="DS-96" hullID="1000" />
+    <create type="station" x="35110.0" y="0.0" z="61120.0" angle="0" name="DS-47" hullID="1000" />
+    <create type="station" x="78587.0" y="0.0" z="46418.0" angle="0" name="DS-121" hullID="1000" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="eb9221eb-0471-4a97-9a4a-2bf1abf5f1bb" parent_id_arme="af47a8b7-d28d-43d6-9fee-cd8261cd4bb3">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="1938269f-0405-410d-9f6a-a4a67a1755e9" parent_id_arme="af47a8b7-d28d-43d6-9fee-cd8261cd4bb3">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-96" />
+    <destroy name="DS-47" />
+    <destroy name="DS-121" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Krisenda Sector V" id_arme="1bd2ae32-eb2a-44c5-a373-54271c683e70" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector V" id_arme="58750c96-2d10-4a6f-9325-ddd393d15bb4" parent_id_arme="1bd2ae32-eb2a-44c5-a373-54271c683e70">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="50" type="nebulas" startX="90398.0" startY="0.0" startZ="4701.0" endX="80974.0" endY="0.0" endZ="45916.0" randomRange="9967" />
+    <create count="10" type="nebulas" startX="52451.0" startY="0.0" startZ="52827.0" endX="52451.0" endY="0.0" endZ="52827.0" randomRange="46314" />
+    <create count="30" type="nebulas" startX="41393.0" startY="0.0" startZ="62251.0" endX="10859.0" endY="0.0" endZ="75319.0" randomRange="6182" />
+    <create count="20" type="nebulas" startX="72430.0" startY="0.0" startZ="49560.0" endX="38377.0" endY="0.0" endZ="66020.0" randomRange="7999" />
+    <create count="20" type="asteroids" startX="82608.0" startY="0.0" startZ="77329.0" endX="55592.0" endY="0.0" endZ="87256.0" randomRange="2361" />
+    <create count="20" type="asteroids" startX="28953.0" startY="0.0" startZ="89643.0" endX="11613.0" endY="0.0" endZ="89895.0" randomRange="4224" />
+    <create count="10" type="nebulas" startX="68698.0" startY="0.0" startZ="15953.0" endX="46233.0" endY="0.0" endZ="18186.0" randomRange="18848" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="ebf0e097-14a2-4578-b134-a62f584db216" parent_id_arme="1bd2ae32-eb2a-44c5-a373-54271c683e70" />
+  <event name="Transition to Sector VI" id_arme="8f8fb367-3402-460f-80c5-a0164e47aeef" parent_id_arme="ebf0e097-14a2-4578-b134-a62f584db216">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="cd0ad1a5-6a0c-4da4-ac7f-1804af6c33e2" parent_id_arme="ebf0e097-14a2-4578-b134-a62f584db216">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="3e4f1a5d-9518-4fb1-b606-275054180a63" parent_id_arme="ebf0e097-14a2-4578-b134-a62f584db216">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="ff2b9451-d4e5-4077-a287-aec1ed801449" parent_id_arme="ebf0e097-14a2-4578-b134-a62f584db216">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="b76c2cfa-d8b9-48f5-baea-363d03340ebf" parent_id_arme="ebf0e097-14a2-4578-b134-a62f584db216">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="379d893a-df52-4948-9e53-47728583800f" parent_id_arme="1bd2ae32-eb2a-44c5-a373-54271c683e70" />
+  <event name="Generate Sector Entities" id_arme="71676cd5-c73a-41c2-964b-37785f107576" parent_id_arme="379d893a-df52-4948-9e53-47728583800f">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="75814.0" y="0.0" z="65488.0" angle="0" name="P-282" hullID="1050" />
+    <create type="station" x="62977.0" y="0.0" z="74418.0" angle="0" name="P-382" hullID="1050" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="847a4ea1-8714-4890-a5fa-5c74054c0ad1" parent_id_arme="379d893a-df52-4948-9e53-47728583800f">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="548b1b9b-67fa-44c9-a43a-49bcfa7d4d29" parent_id_arme="379d893a-df52-4948-9e53-47728583800f">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="P-282" />
+    <destroy name="P-382" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Krisenda Sector VI" id_arme="f806cbc0-4187-40fc-b1bc-12f24226032b" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector VI" id_arme="ab3896b3-05a7-4ad8-97fa-e2fead9c2506" parent_id_arme="f806cbc0-4187-40fc-b1bc-12f24226032b">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="nebulas" startX="50315.0" startY="0.0" startZ="49685.0" endX="50315.0" endY="0.0" endZ="49685.0" randomRange="47103" />
+    <create count="30" type="nebulas" startX="91655.0" startY="0.0" startZ="61874.0" endX="58482.0" endY="0.0" endZ="71424.0" randomRange="9277" />
+    <create count="20" type="nebulas" startX="52576.0" startY="0.0" startZ="71549.0" endX="26817.0" endY="0.0" endZ="75193.0" randomRange="7280" />
+    <create count="20" type="asteroids" startX="77582.0" startY="0.0" startZ="83612.0" endX="47802.0" endY="0.0" endZ="88638.0" randomRange="3037" />
+    <create count="50" type="mines" startAngle="110" endAngle="220" startX="50436.0" startY="0.0" startZ="48211.0" radius="6132" />
+    <create count="50" type="mines" startAngle="-70" endAngle="40" startX="50436.0" startY="0.0" startZ="48211.0" radius="6132" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4" parent_id_arme="f806cbc0-4187-40fc-b1bc-12f24226032b" />
+  <event name="Transition to Sector VII" id_arme="08bb3e76-d107-4f90-b440-373a73882fe6" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="fb110a74-d0c1-4aad-9601-b5de3aa6110c" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="4cd53a67-89e6-45f4-a1be-8ac60e9337a7" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="29240600-5461-4c59-80a4-9bbba75699ee" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="eda6cea8-c990-4ebc-968c-73911753e6d7" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="ce26424c-f90d-4315-b5d4-675c0e6fee10" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="27f179a4-ff8d-44ff-925e-d2c1bc5d5dff" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="e3443c0e-a92b-4c09-ad0e-2e3bf4d43c4f" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="4034ee67-c0fb-4f10-b747-1a6ed5015fd4" parent_id_arme="f806cbc0-4187-40fc-b1bc-12f24226032b" />
+  <event name="Generate Sector Entities" id_arme="b8313b11-d96e-454f-a2c5-873b1e438dfe" parent_id_arme="4034ee67-c0fb-4f10-b747-1a6ed5015fd4">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="50436.0" y="0.0" z="48211.0" angle="0" name="Krisenda Command" hullID="1002" />
+    <create type="neutral" x="45139.0" y="0.0" z="46990.0" angle="0" name="WP-88" hullID="1052" />
+    <create type="neutral" x="55510.0" y="0.0" z="49861.0" angle="0" name="WP-24" hullID="1052" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="66c45ac7-8cef-45dc-8ec7-4c62ad3d0664" parent_id_arme="4034ee67-c0fb-4f10-b747-1a6ed5015fd4">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="3649b11d-3b56-49ab-b2ed-932383e7ae75" parent_id_arme="4034ee67-c0fb-4f10-b747-1a6ed5015fd4">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="Krisenda Command" />
+    <destroy name="WP-88" />
+    <destroy name="WP-24" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Krisenda Sector VII" id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector VII" id_arme="0e82ab1d-af45-412b-a825-b41a4d78269c" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <create count="24" type="nebulas" startX="49442.0" startY="0.0" startZ="50418.0" endX="49442.0" endY="0.0" endZ="50418.0" randomRange="34465" />
+    <create count="20" type="nebulas" startX="3256.0" startY="0.0" startZ="51534.0" endX="2838.0" endY="0.0" endZ="78325.0" randomRange="6499" />
+    <create count="20" type="asteroids" startX="81814.0" startY="0.0" startZ="82372.0" endX="56977.0" endY="0.0" endZ="82790.0" randomRange="3047" />
+    <create count="10" type="asteroids" startX="53489.0" startY="0.0" startZ="80000.0" endX="30605.0" endY="0.0" endZ="68976.0" randomRange="1749" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" />
+  <event name="Transition to Sector VIII" id_arme="138ead23-dbfd-44aa-81d8-bd1ceff7ea12" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="e883319d-5329-4884-94b1-950c25c55d5f" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="f1ff9eb0-c411-4d8c-93aa-968572f9730d" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="752aa281-c29f-4d42-ad4b-f005951ea124" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="de61506a-c0c4-47a7-b2b1-a57ee8cce468" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="db71a496-f8cd-45f0-93fd-3459ab77f9a9" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="840f44f0-b9b3-4f2e-8322-bb96cff3e996" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="919f1fbe-b3b5-43fe-9ca9-a36fa1889deb" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="5f545f1e-0e3e-491a-8e54-4824043646ff" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" />
+  <event name="Gate Offline" id_arme="30598e88-1aca-492a-ab22-f28b4911e3ae" parent_id_arme="5f545f1e-0e3e-491a-8e54-4824043646ff">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Waypoint 60 Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b" parent_id_arme="5f545f1e-0e3e-491a-8e54-4824043646ff" />
+  <event name="Ship1 Activation Range" id_arme="e0141165-4b10-4552-a585-f25b4457c094" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="4e14f3ea-895c-4da1-a4db-076f8e32b5e6" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="54746894-dd55-42b6-9fe3-40dec41e0ed3" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="50f42e2a-481e-42aa-b846-4f94661ba77b" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="067c9e35-1339-45ae-8b84-e2715d015005" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="8ed11814-8d6a-42d4-9902-c322acf6d0dd" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="29d37782-c16b-4737-aca3-ca0df6d4169b" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="540715fd-4d0e-4798-b16a-a4c0eb74f03c" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="45b6edcc-7f34-406e-a3ca-c4bc1efa2e96" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="37592c3a-6ffe-4dc1-89ef-6e731d3c1b9f" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="9d272009-5e4a-46de-a5d1-81d5a70d75a5" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="adfa3174-9dc6-43dd-8518-169f9f1b7947" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="1f423e55-a81b-4b44-930a-2bf25a11a031" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="3f1e0eae-86ea-4ac7-99b4-f77c8715dadb" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="317d9da3-af8b-4b3c-b65b-61756ff2a612" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="c69b69fa-8b8d-4e93-92bc-1323a1f973aa" parent_id_arme="d5a07b53-b0a8-4d92-9ccb-1e76291c779b">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="43d11419-3aa9-44ce-97b7-98b1f50e2bc0" parent_id_arme="5f545f1e-0e3e-491a-8e54-4824043646ff">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Waypoint 60 Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="f67cada4-876e-49b0-bc5e-812d070ae22e" parent_id_arme="5f545f1e-0e3e-491a-8e54-4824043646ff">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Krisenda to Waypoint 60" value="1.0" />
+    <set_variable name="Waypoint 60" value="1.0" />
+    <set_variable name="Sector" value="1" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="2261acc7-879c-4520-b456-245d9af95c5f" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" />
+  <event name="Generate Sector Entities" id_arme="9ed6791b-36f2-44b1-ad3d-c2131877d2ad" parent_id_arme="2261acc7-879c-4520-b456-245d9af95c5f">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="65907.0" y="0.0" z="64790.0" angle="0" name="Waypoint 60 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="48884.0" y="0.0" z="22232.0" angle="0" name="P-11" hullID="1050" />
+    <create type="station" x="35489.0" y="0.0" z="46372.0" angle="0" name="P-73" hullID="1050" />
+    <create type="station" x="72047.0" y="0.0" z="37720.0" angle="0" name="P-383" hullID="1050" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="c688f470-b862-40ab-ab0a-a54eada769aa" parent_id_arme="2261acc7-879c-4520-b456-245d9af95c5f">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Waypoint 60 Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Waypoint 60 Gate" />
+    <set_object_property property="angle" value="0.523598776" name="Waypoint 60 Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Waypoint 60 Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="f39e4d7d-35fd-4fef-84e6-fd2cb785d57b" parent_id_arme="2261acc7-879c-4520-b456-245d9af95c5f">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="Waypoint 60 Gate" />
+    <destroy name="P-11" />
+    <destroy name="P-73" />
+    <destroy name="P-383" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Waypoint 60" id_arme="4255818b-ae9a-4512-82e0-944453a6fbc9" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Waypoint 60 to Krisenda" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Waypoint 60 Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Waypoint 60 to Krisenda" value="0.0" />
+  </event>
+  <folder_arme name="Krisenda Sector VIII" id_arme="d5e05fbf-f84c-4caf-a9dd-8c54abb264fd" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector VIII" id_arme="b3fc16b5-65ef-4c66-a800-96ba234de919" parent_id_arme="d5e05fbf-f84c-4caf-a9dd-8c54abb264fd">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="20" type="nebulas" startX="53456.0" startY="0.0" startZ="3947.0" endX="4702.0" endY="0.0" endZ="35989.0" randomRange="6207" />
+    <create count="30" type="nebulas" startX="27822.0" startY="0.0" startZ="3947.0" endX="2566.0" endY="0.0" endZ="19403.0" randomRange="6188" />
+    <create count="40" type="nebulas" startX="35362.0" startY="0.0" startZ="23926.0" endX="23802.0" endY="0.0" endZ="68910.0" randomRange="3476" />
+    <create count="30" type="nebulas" startX="18775.0" startY="0.0" startZ="28575.0" endX="10608.0" endY="0.0" endZ="67403.0" randomRange="11583" />
+    <create count="20" type="nebulas" startX="78838.0" startY="0.0" startZ="77581.0" endX="38503.0" endY="0.0" endZ="34356.0" randomRange="24872" />
+    <create count="20" type="nebulas" startX="97435.0" startY="0.0" startZ="59989.0" endX="89016.0" endY="0.0" endZ="79465.0" randomRange="6900" />
+    <create count="20" type="asteroids" startX="82482.0" startY="0.0" startZ="84994.0" endX="64639.0" endY="0.0" endZ="77455.0" randomRange="3679" />
+    <create count="11" type="asteroids" startX="29079.0" startY="10.0" startZ="68659.0" endX="15006.0" endY="10.0" endZ="53078.0" randomRange="3538" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f" parent_id_arme="d5e05fbf-f84c-4caf-a9dd-8c54abb264fd" />
+  <event name="Transition to Sector VII" id_arme="86b927dc-6ee4-492e-b5e6-b96628ae5967" parent_id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="f38a8640-0755-43e3-a518-69bf1b992230" parent_id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="2b5611e9-59bb-45f3-9e0d-edc76c11c734" parent_id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="459edd50-3aec-4017-b523-82b86d8276bf" parent_id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="d2fad3c0-13ee-417e-80ea-16c05a67fdc7" parent_id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="33a6a376-1225-484c-a587-1b9c6f27706b" parent_id_arme="d5e05fbf-f84c-4caf-a9dd-8c54abb264fd" />
+  <event name="Generate Sector Entities" id_arme="7552481b-73fd-4f78-b9f6-9d8f7192e863" parent_id_arme="33a6a376-1225-484c-a587-1b9c6f27706b">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="39257.0" y="0.0" z="24554.0" angle="0" name="Stephenson" hullID="1001" />
+    <create type="station" x="46168.0" y="0.0" z="55717.0" angle="0" name="Brunell" hullID="1001" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="3c60ee25-edb3-403c-b63b-7a808f8d6983" parent_id_arme="33a6a376-1225-484c-a587-1b9c6f27706b">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="52743fbc-e2be-45eb-a744-006f00813f78" parent_id_arme="33a6a376-1225-484c-a587-1b9c6f27706b">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="Stephenson" />
+    <destroy name="Brunell" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Krisenda Sector IX" id_arme="b9bccd53-91cb-4a58-b1a0-e26f861313ef" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector IX" id_arme="244c2706-f827-4bf5-a231-fb7163dd8a79" parent_id_arme="b9bccd53-91cb-4a58-b1a0-e26f861313ef">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="20" type="asteroids" startX="66398.0" startY="0.0" startZ="27570.0" endX="25938.0" endY="0.0" endZ="35612.0" randomRange="4723" />
+    <create count="10" type="nebulas" startX="86000.0" startY="0.0" startZ="67654.0" endX="35362.0" endY="0.0" endZ="74565.0" randomRange="27592" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="0300c42f-cf2b-4e48-8354-c934abe1ca5f" parent_id_arme="b9bccd53-91cb-4a58-b1a0-e26f861313ef" />
+  <event name="Transition to Sector X" id_arme="7c033215-cade-4ca2-9564-a08d57d75c43" parent_id_arme="0300c42f-cf2b-4e48-8354-c934abe1ca5f">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="269f0ee9-78e8-408c-bcac-00a3dfd02cf6" parent_id_arme="0300c42f-cf2b-4e48-8354-c934abe1ca5f">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="a3e0156b-9772-4d39-9f91-cb1ea7792a57" parent_id_arme="0300c42f-cf2b-4e48-8354-c934abe1ca5f">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="9f34bc6f-af0e-4f4e-a3e1-21fca4c73b6b" parent_id_arme="b9bccd53-91cb-4a58-b1a0-e26f861313ef" />
+  <event name="Generate Sector Entities" id_arme="7d252bf1-3b50-443f-9f6e-f165f7579c4a" parent_id_arme="9f34bc6f-af0e-4f4e-a3e1-21fca4c73b6b">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="65142.0" y="0.0" z="56596.0" angle="0" name="DS-54" hullID="1000" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="f20f00c6-d98a-433f-870c-dbeb37ce4ecc" parent_id_arme="9f34bc6f-af0e-4f4e-a3e1-21fca4c73b6b">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e96cc8f3-7f40-43fb-8177-f5a2cb0f8600" parent_id_arme="9f34bc6f-af0e-4f4e-a3e1-21fca4c73b6b">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-54" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Krisenda Sector X" id_arme="039e566e-993a-43ee-816f-0a49e9595594" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector X" id_arme="4204d83e-533f-4475-beb5-7818238ac615" parent_id_arme="039e566e-993a-43ee-816f-0a49e9595594">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="20" type="nebulas" startX="52233.0" startY="0.0" startZ="51813.0" endX="52233.0" endY="0.0" endZ="51813.0" randomRange="47583" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed" parent_id_arme="039e566e-993a-43ee-816f-0a49e9595594" />
+  <event name="Transition to Sector XI" id_arme="7fef43ca-d4e5-4be1-98c8-f22659ebff38" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="47abd31e-6374-4851-bdea-4a6664df6aab" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="132a8d6b-1ef7-4660-a530-d6502b7d769c" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="072101f8-957b-48cf-b0b9-50a4e7c88800" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="a73bc52e-2c81-4b29-99f7-7b762ae5b577" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="cd2ed16d-abee-4b97-90a9-fcc979d44d7e" parent_id_arme="039e566e-993a-43ee-816f-0a49e9595594" />
+  <event name="Generate Sector Entities" id_arme="b3845691-69f5-4385-8c6b-6f484ddf7777" parent_id_arme="cd2ed16d-abee-4b97-90a9-fcc979d44d7e">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="74559.0" y="0.0" z="55720.0" angle="0" name="DS-43" hullID="1000" />
+    <create type="station" x="23628.0" y="0.0" z="36604.0" angle="0" name="DS-001" hullID="1000" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="3e94c63a-1031-42dd-b427-5dfc81442988" parent_id_arme="cd2ed16d-abee-4b97-90a9-fcc979d44d7e">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="642c5db6-da85-4a7a-a8ae-c233a01c0838" parent_id_arme="cd2ed16d-abee-4b97-90a9-fcc979d44d7e">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-43" />
+    <destroy name="DS-001" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Krisenda Sector XI" id_arme="20ccf47c-c46b-4ba0-aba1-244ced6cfd79" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector XI" id_arme="05237c5d-e79b-451d-8ada-bee15afa6404" parent_id_arme="20ccf47c-c46b-4ba0-aba1-244ced6cfd79">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="70" type="nebulas" startX="58357.0" startY="0.0" startZ="63130.0" endX="11487.0" endY="0.0" endZ="81727.0" randomRange="8819" />
+    <create count="40" type="nebulas" startX="53456.0" startY="0.0" startZ="94795.0" endX="6336.0" endY="0.0" endZ="91026.0" randomRange="3749" />
+    <create count="10" type="nebulas" startX="80220.0" startY="0.0" startZ="71549.0" endX="80220.0" endY="0.0" endZ="71549.0" randomRange="26983" />
+    <create count="20" type="nebulas" startX="3535.0" startY="0.0" startZ="72604.0" endX="2280.0" endY="0.0" endZ="95488.0" randomRange="5558" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97" parent_id_arme="20ccf47c-c46b-4ba0-aba1-244ced6cfd79" />
+  <event name="Transition to Sector XII" id_arme="f05f8293-10b3-40e9-bc34-a5d3764fb79c" parent_id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="d61c8906-2424-4940-96f1-e05504437a91" parent_id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="eebe0444-b293-451c-9df7-682b31fcabc4" parent_id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="c10260a4-7270-4c0e-83ae-bffc1d83c189" parent_id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="d782a021-9795-45a8-88c3-9260fdfb23e5" parent_id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="61219aab-db38-47d3-bd79-85a473a60e36" parent_id_arme="20ccf47c-c46b-4ba0-aba1-244ced6cfd79" />
+  <event name="Generate Sector Entities" id_arme="cc73848f-181d-41cf-8bf0-af2f761d3050" parent_id_arme="61219aab-db38-47d3-bd79-85a473a60e36">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="47927.0" y="0.0" z="29958.0" angle="0" name="DS-12" hullID="1000" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="ef4d666c-3c0f-4bcd-85b6-7fd3923aadfa" parent_id_arme="61219aab-db38-47d3-bd79-85a473a60e36">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="f66b7195-784d-4807-87ba-3104e3c0b14c" parent_id_arme="61219aab-db38-47d3-bd79-85a473a60e36">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-12" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Krisenda Sector XII" id_arme="d5f194b8-8b40-4e61-95c3-4d1f8148e0ae" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Krisenda Sector XII" id_arme="a24c6fa3-f106-4c0a-b80a-d7fad2399cc0" parent_id_arme="d5f194b8-8b40-4e61-95c3-4d1f8148e0ae">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="97789.0" startY="0.0" startZ="71105.0" endX="97940.0" endY="0.0" endZ="95527.0" randomRange="4482" />
+    <create count="90" type="nebulas" startX="93568.0" startY="0.0" startZ="72311.0" endX="1458.0" endY="0.0" endZ="55577.0" randomRange="6254" />
+    <create count="60" type="nebulas" startX="91307.0" startY="0.0" startZ="88743.0" endX="4624.0" endY="0.0" endZ="68994.0" randomRange="4683" />
+    <create count="10" type="nebulas" startX="8995.0" startY="0.0" startZ="84974.0" endX="70352.0" endY="0.0" endZ="92361.0" randomRange="14457" />
+    <create count="20" type="nebulas" startX="77890.0" startY="0.0" startZ="57989.0" endX="19850.0" endY="0.0" endZ="44271.0" randomRange="13719" />
+    <create count="20" type="asteroids" startX="81207.0" startY="0.0" startZ="24371.0" endX="57086.0" endY="0.0" endZ="16231.0" randomRange="3471" />
+    <set_variable name="Krisenda System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="fcc665cc-3b6c-4e40-ab5d-81f94bfe3aa7" parent_id_arme="d5f194b8-8b40-4e61-95c3-4d1f8148e0ae" />
+  <event name="Transition to Sector XI" id_arme="bf90d329-a7dd-4963-a2f0-d9bfa669b484" parent_id_arme="fcc665cc-3b6c-4e40-ab5d-81f94bfe3aa7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="b00e34ed-c32d-49f9-8731-ef8591d95334" parent_id_arme="fcc665cc-3b6c-4e40-ab5d-81f94bfe3aa7">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="06e372d4-83bd-44cf-807f-99817173135b" parent_id_arme="fcc665cc-3b6c-4e40-ab5d-81f94bfe3aa7">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Krisenda System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="691e46e9-e217-497a-b9f6-462289aef5e3" parent_id_arme="d5f194b8-8b40-4e61-95c3-4d1f8148e0ae" />
+  <event name="Generate Sector Entities" id_arme="8226fc0b-e90a-49f0-87f2-deabad88f551" parent_id_arme="691e46e9-e217-497a-b9f6-462289aef5e3">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="49699.0" y="0.0" z="26482.0" angle="0" name="DS-40" hullID="1000" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="0ba0ba5e-d3fe-43af-9387-72524e70c111" parent_id_arme="691e46e9-e217-497a-b9f6-462289aef5e3">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="eb5541c7-fbc8-48d5-9545-1ffeb84ac22b" parent_id_arme="691e46e9-e217-497a-b9f6-462289aef5e3">
+    <if_variable name="Krisenda System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-40" />
+    <set_variable name="Krisenda System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

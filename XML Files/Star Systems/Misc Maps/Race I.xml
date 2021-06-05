@@ -1,0 +1,104 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="200.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="200.0" integer="yes" />
+    <set_variable name="Alignment" value="0.0" integer="yes" />
+  </start>
+  <folder_arme name="Race I System" id_arme="317b667b-dd92-4b4e-a730-080079c54ea5" />
+  <folder_arme name="Race I Settings" id_arme="809a742b-921b-4da3-bc27-d95daa4290dc" parent_id_arme="317b667b-dd92-4b4e-a730-080079c54ea5" />
+  <folder_arme name="Race I Menu" id_arme="ea454127-4d42-4f59-86e0-688e70818892" parent_id_arme="809a742b-921b-4da3-bc27-d95daa4290dc" />
+  <event name="Race I Active" id_arme="04c648ac-1242-40fd-b2bc-0ee940ff6ece" parent_id_arme="ea454127-4d42-4f59-86e0-688e70818892">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Misc Systems/Race I System" />
+    <set_variable name="Race I Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="16d911be-d305-4002-a5aa-4c186321c6b6" parent_id_arme="ea454127-4d42-4f59-86e0-688e70818892">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Misc Systems/Race I System" />
+  </event>
+  <event name="Race I System" id_arme="21f1af84-4344-4ecc-9e76-409547c6871a" parent_id_arme="ea454127-4d42-4f59-86e0-688e70818892">
+    <if_gm_button text="Misc Systems/Race I System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="200.0" integer="yes" />
+    <set_variable name="Race I System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="acb983a4-45f6-481a-b714-fc502dcbbb4a" parent_id_arme="809a742b-921b-4da3-bc27-d95daa4290dc">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Race I System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="59875467-09a0-4556-a2aa-591aa2ccda44" parent_id_arme="809a742b-921b-4da3-bc27-d95daa4290dc">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Race I System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="311efe85-c5fe-4d03-930e-503bd66730da" parent_id_arme="809a742b-921b-4da3-bc27-d95daa4290dc">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Race I System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="563b3ad4-dc7a-439c-9278-e82a7fcfe7a7" parent_id_arme="809a742b-921b-4da3-bc27-d95daa4290dc">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="70ff01ca-54fb-4a68-8c1e-e83299646c60" parent_id_arme="809a742b-921b-4da3-bc27-d95daa4290dc">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Race I System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Race Sector I" id_arme="2cfb2887-234f-46da-9b94-9c8262d88e43" parent_id_arme="317b667b-dd92-4b4e-a730-080079c54ea5" />
+  <event name="Create Race I Sector I" id_arme="b0067f94-aa32-4fdf-ae26-c45a60baabec" parent_id_arme="2cfb2887-234f-46da-9b94-9c8262d88e43">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Race I System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Race I System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="40" type="nebulas" startX="84235.0" startY="0.0" startZ="16924.0" endX="33137.0" endY="0.0" endZ="31109.0" randomRange="11399" />
+    <create count="80" type="nebulas" startX="64259.0" startY="0.0" startZ="74825.0" endX="26623.0" endY="0.0" endZ="35452.0" randomRange="6698" />
+    <create count="50" type="nebulas" startX="34150.0" startY="0.0" startZ="58323.0" endX="43704.0" endY="0.0" endZ="95669.0" randomRange="7187" />
+    <create count="50" type="nebulas" startX="51086.0" startY="0.0" startZ="62231.0" endX="71641.0" endY="0.0" endZ="92050.0" randomRange="7187" />
+    <create count="50" type="nebulas" startX="72654.0" startY="0.0" startZ="64258.0" endX="94657.0" endY="0.0" endZ="95958.0" randomRange="7187" />
+    <create count="50" type="nebulas" startX="78879.0" startY="0.0" startZ="92629.0" endX="35019.0" endY="0.0" endZ="93353.0" randomRange="7187" />
+    <create count="40" type="asteroids" startX="90314.0" startY="0.0" startZ="19819.0" endX="54126.0" endY="0.0" endZ="40373.0" randomRange="5018" />
+    <create count="60" type="asteroids" startX="52389.0" startY="0.0" startZ="42400.0" endX="26768.0" endY="0.0" endZ="67297.0" randomRange="8159" />
+    <create count="90" type="asteroids" startX="31834.0" startY="0.0" startZ="69758.0" endX="5489.0" endY="0.0" endZ="83075.0" randomRange="7759" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="a5645101-1159-46d2-aa8f-e9dac7a39cea" parent_id_arme="2cfb2887-234f-46da-9b94-9c8262d88e43" />
+  <event name="Generate Sector Entities" id_arme="bc7ad158-0849-4f78-b0d0-5e6158d525df" parent_id_arme="a5645101-1159-46d2-aa8f-e9dac7a39cea">
+    <if_variable name="Race I System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="e00da0e4-4c20-4d86-9404-6991d6a2ba3e" parent_id_arme="a5645101-1159-46d2-aa8f-e9dac7a39cea">
+    <if_variable name="Race I System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="1dff5f1a-c0ea-46bc-8718-71390228de49" parent_id_arme="a5645101-1159-46d2-aa8f-e9dac7a39cea">
+    <if_variable name="Race I System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Race I System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

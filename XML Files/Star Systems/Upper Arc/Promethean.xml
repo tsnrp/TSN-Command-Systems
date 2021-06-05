@@ -1,0 +1,2145 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="472.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="341.0" integer="yes" />
+    <set_variable name="Alignment" value="2.0" integer="yes" />
+  </start>
+  <folder_arme name="Promethean System" id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Settings" id_arme="9fa33713-c913-4a6f-9b33-ddcd2e037971" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
+  <folder_arme name="Promethean Menu" id_arme="4e45781a-949e-4e74-ad37-0e9188cbe7d5" parent_id_arme="9fa33713-c913-4a6f-9b33-ddcd2e037971" />
+  <event name="Promethean Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="4e45781a-949e-4e74-ad37-0e9188cbe7d5">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Upper Arc/Promethean System" />
+    <set_variable name="Promethean Gate" value="1.0" integer="yes" />
+    <!--472,341-->
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="4e45781a-949e-4e74-ad37-0e9188cbe7d5">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Upper Arc/Promethean System" />
+  </event>
+  <event name="Promethean System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="4e45781a-949e-4e74-ad37-0e9188cbe7d5">
+    <if_gm_button text="Upper Arc/Promethean System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="104.0" integer="yes" />
+    <set_variable name="Promethean System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="9fa33713-c913-4a6f-9b33-ddcd2e037971">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="9fa33713-c913-4a6f-9b33-ddcd2e037971">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="9fa33713-c913-4a6f-9b33-ddcd2e037971">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="9fa33713-c913-4a6f-9b33-ddcd2e037971">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="9fa33713-c913-4a6f-9b33-ddcd2e037971">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Promethean Sector I" id_arme="f31123aa-9c39-4853-b3cc-9ca54e9aea3d" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <event name="Create Promethean Sector I" id_arme="88e1e32a-c8dc-4401-8b8f-b42405cb6d06" parent_id_arme="f31123aa-9c39-4853-b3cc-9ca54e9aea3d">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <set_skybox_index index="22" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="10" type="nebulas" startX="2494.0" startY="0.0" startZ="80363.0" endX="9758.0" endY="0.0" endZ="86174.0" randomRange="3588" />
+    <create count="70" type="asteroids" startX="70775.0" startY="0.0" startZ="54648.0" endX="41574.0" endY="0.0" endZ="39830.0" randomRange="2198" />
+    <create count="20" type="nebulas" startX="59298.0" startY="0.0" startZ="46658.0" endX="44480.0" endY="0.0" endZ="34019.0" randomRange="4559" />
+    <create count="40" type="nebulas" startX="75715.0" startY="0.0" startZ="63220.0" endX="51017.0" endY="0.0" endZ="46658.0" randomRange="5653" />
+    <create count="40" type="nebulas" startX="28354.0" startY="0.0" startZ="41138.0" endX="9904.0" endY="0.0" endZ="13680.0" randomRange="4636" />
+    <create count="18" type="nebulas" startX="82833.0" startY="0.0" startZ="14406.0" radius="5523" randomRange="5523" />
+    <create count="10" type="nebulas" startX="65836.0" startY="0.0" startZ="84285.0" endX="53051.0" endY="0.0" endZ="80072.0" randomRange="2651" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b90708ab-44ac-479b-bce4-ffa0c278db6d" parent_id_arme="f31123aa-9c39-4853-b3cc-9ca54e9aea3d" />
+  <event name="Transition to Sector II" id_arme="51f37663-73fc-44b5-8a19-15512ccda218" parent_id_arme="b90708ab-44ac-479b-bce4-ffa0c278db6d">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="0b262e28-1de2-43b1-80ed-fe8c17e1b4c0" parent_id_arme="b90708ab-44ac-479b-bce4-ffa0c278db6d">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="c84026a9-9dfb-4ef3-9b70-5bf27f4c2401" parent_id_arme="b90708ab-44ac-479b-bce4-ffa0c278db6d">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="92aedfdb-5324-44eb-9403-a207dc726533" parent_id_arme="f31123aa-9c39-4853-b3cc-9ca54e9aea3d" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="6772395c-47e8-4674-a9c6-e717cb4456c3" parent_id_arme="92aedfdb-5324-44eb-9403-a207dc726533">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="66126.0" y="0.0" z="68450.0" name="Sephua" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="55666.0" y="0.0" z="70242.0" name="Haleez" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="61332.0" y="0.0" z="76004.0" name="Artin" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="36635.0" y="0.0" z="34309.0" name="DS-34" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="55376.0" y="0.0" z="55811.0" name="M-761" hullID="1003" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="1.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="46139de1-7962-449b-bfea-481f7334b652" parent_id_arme="92aedfdb-5324-44eb-9403-a207dc726533">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" integer="yes" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="99aafd44-bd6f-47d7-9769-2e907ae52451" parent_id_arme="92aedfdb-5324-44eb-9403-a207dc726533">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="Sephua" />
+    <destroy name="Haleez" />
+    <destroy name="Artin" />
+    <destroy name="DS-34" />
+    <destroy name="M-761" />
+    <destroy name="Promethean I" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Promethean Sector II" id_arme="1b6c80c2-b8e8-432f-bc7d-67931c4de90f" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <event name="Create Promethean Sector II" id_arme="4ffa98b5-0aef-40c7-92dd-980421c7fc0a" parent_id_arme="1b6c80c2-b8e8-432f-bc7d-67931c4de90f">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <set_skybox_index index="22" />
+    <create count="60" type="mines" startAngle="110" endAngle="220" startX="73971.0" startY="0.0" startZ="55230.0" radius="9000" />
+    <create count="60" type="mines" startAngle="-70" endAngle="40" startX="73971.0" startY="0.0" startZ="55230.0" radius="9000" />
+    <create count="20" type="asteroids" startX="60606.0" startY="0.0" startZ="29951.0" endX="52325.0" endY="0.0" endZ="27046.0" randomRange="2631" />
+    <create count="27" type="asteroids" startX="52470.0" startY="0.0" startZ="26900.0" endX="42010.0" endY="0.0" endZ="15423.0" randomRange="2631" />
+    <create count="6" type="nebulas" startX="50291.0" startY="0.0" startZ="27191.0" endX="46514.0" endY="0.0" endZ="22542.0" randomRange="2469" />
+    <create count="30" type="nebulas" startX="56974.0" startY="0.0" startZ="55084.0" endX="47385.0" endY="0.0" endZ="46077.0" randomRange="3119" />
+    <create count="10" type="nebulas" startX="36635.0" startY="0.0" startZ="88789.0" endX="14553.0" endY="0.0" endZ="67433.0" randomRange="3997" />
+    <create count="10" type="nebulas" startX="26901.0" startY="0.0" startZ="77167.0" endX="22107.0" endY="0.0" endZ="70484.0" randomRange="2179" />
+    <create count="10" type="nebulas" startX="21816.0" startY="0.0" startZ="80508.0" endX="16586.0" endY="0.0" endZ="72518.0" randomRange="2678" />
+    <create count="10" type="nebulas" startX="100122.0" startY="0.0" startZ="85883.0" endX="91986.0" endY="0.0" endZ="78038.0" randomRange="4036" />
+    <create count="10" type="nebulas" startX="76586.0" startY="0.0" startZ="12227.0" endX="89807.0" endY="0.0" endZ="21670.0" randomRange="2921" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="700ce52c-4500-47c7-882f-e0ecf2887d4c" parent_id_arme="1b6c80c2-b8e8-432f-bc7d-67931c4de90f" />
+  <event name="Transition to Sector III" id_arme="9a767450-dba8-4703-8652-81acd65c79da" parent_id_arme="700ce52c-4500-47c7-882f-e0ecf2887d4c">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="67570ab3-8c34-4084-9d51-3c16b83a00e5" parent_id_arme="700ce52c-4500-47c7-882f-e0ecf2887d4c">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="48942193-fc62-4976-8462-1ee7632a75fd" parent_id_arme="700ce52c-4500-47c7-882f-e0ecf2887d4c">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="e26f00af-6307-47ca-9267-cfcaf61d55c6" parent_id_arme="700ce52c-4500-47c7-882f-e0ecf2887d4c">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="97deafe5-84ad-405c-b16d-6274c07e9355" parent_id_arme="700ce52c-4500-47c7-882f-e0ecf2887d4c">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="c436ba3d-7045-4d68-92e2-cb90952e2097" parent_id_arme="1b6c80c2-b8e8-432f-bc7d-67931c4de90f" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="418a24db-31b1-4f83-a2b4-ac0a386fba45" parent_id_arme="c436ba3d-7045-4d68-92e2-cb90952e2097">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="73826.0" y="0.0" z="59152.0" name="DS-75" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="81671.0" y="0.0" z="57845.0" angle="0" name="WP-07" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="71792.0" y="0.0" z="54648.0" name="CP-94" hullID="1002" sideValue="sectorSide" />
+    <create type="neutral" x="50436.0" y="0.0" z="18184.0" name="M-909" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="14843.0" y="0.0" z="68740.0" name="RS-25" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="65981.0" y="0.0" z="53341.0" angle="0" name="WP-41" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="76441.0" y="0.0" z="53341.0" name="I-001" hullID="1003" sideValue="sectorSide" />
+    <create type="blackHole" x="22107.0" y="0.0" z="76585.0" name="BH-001" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="1.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="a8f8567e-e4aa-4bb2-8a4e-b3bf079fb49f" parent_id_arme="c436ba3d-7045-4d68-92e2-cb90952e2097">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="0a854748-fdbb-43d8-8142-f834669d4ab5" parent_id_arme="c436ba3d-7045-4d68-92e2-cb90952e2097">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-75" />
+    <destroy name="WP-07" />
+    <destroy name="CP-94" />
+    <destroy name="M-909" />
+    <destroy name="RS-25" />
+    <destroy name="WP-41" />
+    <destroy name="I-001" />
+    <destroy name="BH-001" />
+    <destroy name="Promethean II" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Promethean Sector III" id_arme="52149a28-ab70-4c83-a417-dd3ca8968e66" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <event name="Create Promethean Sector III" id_arme="e6f88493-04f6-4557-8cd6-41d84d589368" parent_id_arme="52149a28-ab70-4c83-a417-dd3ca8968e66">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <set_skybox_index index="22" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="10" type="asteroids" startX="78620.0" startY="0.0" startZ="89515.0" endX="68306.0" endY="0.0" endZ="83123.0" randomRange="1837" />
+    <create count="30" type="asteroids" startX="68596.0" startY="0.0" startZ="80072.0" endX="55666.0" endY="0.0" endZ="63365.0" randomRange="4292" />
+    <create count="60" type="asteroids" startX="57119.0" startY="0.0" startZ="62058.0" endX="43027.0" endY="0.0" endZ="38958.0" randomRange="7085" />
+    <create count="90" type="asteroids" startX="49565.0" startY="0.0" startZ="38813.0" endX="44335.0" endY="100.0" endZ="4092.0" randomRange="3226" />
+    <create count="70" type="asteroids" startX="43608.0" startY="0.0" startZ="42590.0" endX="34310.0" endY="0.0" endZ="6125.0" randomRange="5461" />
+    <create count="60" type="asteroids" startX="38814.0" startY="0.0" startZ="43026.0" endX="22252.0" endY="0.0" endZ="7288.0" randomRange="3925" />
+    <create count="58" type="asteroids" startX="31114.0" startY="-200.0" startZ="10338.0" endX="67434.0" endY="-310.0" endZ="77748.0" randomRange="5666" />
+    <create count="65" type="asteroids" startX="31114.0" startY="-400.0" startZ="10338.0" endX="67434.0" endY="100.0" endZ="77748.0" randomRange="5666" />
+    <create count="20" type="asteroids" startX="42070.0" startY="400.0" startZ="5095.0" endX="43929.0" endY="-200.0" endZ="19097.0" randomRange="3841" />
+    <create count="90" type="nebulas" startX="52462.0" startY="0.0" startZ="66900.0" endX="18681.0" endY="0.0" endZ="18068.0" randomRange="5651" />
+    <create count="10" type="nebulas" startX="33866.0" startY="0.0" startZ="29817.0" endX="25114.0" endY="0.0" endZ="5533.0" randomRange="3041" />
+    <create count="30" type="nebulas" startX="26755.0" startY="0.0" startZ="21394.0" endX="16582.0" endY="0.0" endZ="6845.0" randomRange="3263" />
+    <create count="20" type="nebulas" startX="66135.0" startY="0.0" startZ="25332.0" endX="83310.0" endY="0.0" endZ="42944.0" randomRange="3496" />
+  </event>
+  <folder_arme name="Navigation" id_arme="be252bf8-a906-4096-acff-41863533238e" parent_id_arme="52149a28-ab70-4c83-a417-dd3ca8968e66" />
+  <event name="Transition to Sector IV" id_arme="00d51160-fdcf-4462-a142-b83153309140" parent_id_arme="be252bf8-a906-4096-acff-41863533238e">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="d2f76dfb-09ee-4225-b6fa-be59846c85ec" parent_id_arme="be252bf8-a906-4096-acff-41863533238e">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="5f732f40-259f-4236-afc5-a530a56d0a45" parent_id_arme="be252bf8-a906-4096-acff-41863533238e">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="b73a29af-58f1-4a77-bf6b-e88fda6cdd6a" parent_id_arme="be252bf8-a906-4096-acff-41863533238e">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="e5473cc5-0dc6-4e18-8b5d-6d7f82ebb232" parent_id_arme="be252bf8-a906-4096-acff-41863533238e">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="2b53b4e1-57f4-4746-b409-d1ad00b42e86" parent_id_arme="52149a28-ab70-4c83-a417-dd3ca8968e66" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="64c43c6e-e6e8-4fbe-8229-a4a9dd1e722a" parent_id_arme="2b53b4e1-57f4-4746-b409-d1ad00b42e86">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="50602.0" y="0.0" z="53117.0" name="M-061" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="53556.0" y="0.0" z="26645.0" name="M-449" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="40429.0" y="0.0" z="42069.0" name="M-152" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="74449.0" y="0.0" z="35834.0" name="Tera" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="29641.0" y="0.0" z="68202.0" name="DS-09" hullID="1000" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="5.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="22b840a8-4424-4aca-a28f-9450c8330144" parent_id_arme="2b53b4e1-57f4-4746-b409-d1ad00b42e86">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="57653dcf-b97d-4ec3-87c9-1759942241eb" parent_id_arme="2b53b4e1-57f4-4746-b409-d1ad00b42e86">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="M-061" />
+    <destroy name="M-449" />
+    <destroy name="M-152" />
+    <destroy name="Tera" />
+    <destroy name="DS-09" />
+    <destroy name="Promethean III" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Promethean Sector IV" id_arme="19fa7447-28d9-4017-beed-f12f68f128a7" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <event name="Create Promethean Sector IV" id_arme="5c0beada-d8dc-4a6d-a82e-94225f8dede9" parent_id_arme="19fa7447-28d9-4017-beed-f12f68f128a7">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <set_skybox_index index="22" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="30" type="nebulas" startX="67870.0" startY="0.0" startZ="37506.0" endX="48984.0" endY="0.0" endZ="17893.0" randomRange="3912" />
+    <create count="110" type="nebulas" startX="60606.0" startY="0.0" startZ="84285.0" endX="17894.0" endY="0.0" endZ="31113.0" randomRange="7061" />
+    <create count="20" type="nebulas" startX="61042.0" startY="0.0" startZ="79055.0" endX="81090.0" endY="0.0" endZ="89951.0" randomRange="3119" />
+    <create count="30" type="nebulas" startX="21526.0" startY="0.0" startZ="36198.0" endX="16441.0" endY="0.0" endZ="16150.0" randomRange="4320" />
+    <create count="40" type="asteroids" startX="39395.0" startY="0.0" startZ="66997.0" endX="22252.0" endY="0.0" endZ="44043.0" randomRange="930" />
+    <create count="70" type="asteroids" startX="30678.0" startY="0.0" startZ="37796.0" endX="9758.0" endY="0.0" endZ="5254.0" randomRange="2273" />
+    <create count="20" type="asteroids" startX="42737.0" startY="0.0" startZ="53196.0" endX="29226.0" endY="0.0" endZ="41283.0" randomRange="9659" />
+    <create count="10" type="asteroids" startX="35473.0" startY="0.0" startZ="50726.0" endX="30243.0" endY="0.0" endZ="43171.0" randomRange="3265" />
+    <create count="70" type="mines" startAngle="110" endAngle="220" startX="28935.0" startY="0.0" startZ="45932.0" radius="11814" />
+    <create count="70" type="mines" startAngle="-70" endAngle="40" startX="28935.0" startY="0.0" startZ="45932.0" radius="12000" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3b562660-aac4-4b42-971f-7fd45b390ecb" parent_id_arme="19fa7447-28d9-4017-beed-f12f68f128a7" />
+  <event name="Transition to Sector III" id_arme="ae819da8-5ecb-4a88-b908-0f1f43adb6ba" parent_id_arme="3b562660-aac4-4b42-971f-7fd45b390ecb">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="49c4fd90-e707-4313-bdd9-71e5054936c8" parent_id_arme="3b562660-aac4-4b42-971f-7fd45b390ecb">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="65d18e20-f312-4553-8e4d-cd2ed9e91758" parent_id_arme="3b562660-aac4-4b42-971f-7fd45b390ecb">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="329d4430-4274-4da5-8fab-af2e8a5c3a05" parent_id_arme="19fa7447-28d9-4017-beed-f12f68f128a7" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="e76dfa5a-59ba-4954-b0ee-ce404235cf10" parent_id_arme="329d4430-4274-4da5-8fab-af2e8a5c3a05">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="28063.0" y="0.0" z="39104.0" name="DS-72" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="37856.0" y="0.0" z="52053.0" angle="0" name="WP-92" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="28033.0" y="0.0" z="51039.0" angle="0" name="SY-170" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="18540.0" y="0.0" z="46645.0" angle="0" name="WP-77" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="39620.0" y="0.0" z="45865.0" angle="0" name="WP-05" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="28935.0" y="0.0" z="45932.0" name="CP-11" hullID="1002" sideValue="sectorSide" />
+    <create type="neutral" x="57410.0" y="0.0" z="23559.0" name="Mira" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="60606.0" y="0.0" z="33147.0" name="Harra" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="68160.0" y="0.0" z="26755.0" name="Eve" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="19957.0" y="0.0" z="40515.0" angle="0" name="WP-36" hullID="1052" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="1.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="c4206982-05cd-4c12-9b52-6f10295391bd" parent_id_arme="329d4430-4274-4da5-8fab-af2e8a5c3a05">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="59281d4d-5c17-45b3-88a2-0e55775a432f" parent_id_arme="329d4430-4274-4da5-8fab-af2e8a5c3a05">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-72" />
+    <destroy name="WP-92" />
+    <destroy name="SY-170" />
+    <destroy name="WP-77" />
+    <destroy name="WP-05" />
+    <destroy name="CP-11" />
+    <destroy name="Mira" />
+    <destroy name="Harra" />
+    <destroy name="Eve" />
+    <destroy name="WP-36" />
+    <destroy name="Promethean IV" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Promethean Sector V" id_arme="4d9c0b90-0bd6-4af4-8460-87ff581bbe7f" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <event name="Create Promethean Sector V" id_arme="d696736a-79df-4644-8fd5-8b62ff43624f" parent_id_arme="4d9c0b90-0bd6-4af4-8460-87ff581bbe7f">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <set_skybox_index index="22" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="20" type="nebulas" startX="36199.0" startY="0.0" startZ="23414.0" endX="20800.0" endY="0.0" endZ="33438.0" randomRange="3968" />
+    <create count="20" type="nebulas" startX="38959.0" startY="0.0" startZ="22397.0" endX="53778.0" endY="0.0" endZ="16295.0" randomRange="4525" />
+    <create count="30" type="nebulas" startX="50146.0" startY="0.0" startZ="28789.0" endX="35473.0" endY="0.0" endZ="36634.0" randomRange="4633" />
+    <create count="20" type="nebulas" startX="48402.0" startY="0.0" startZ="37070.0" endX="42737.0" endY="0.0" endZ="40556.0" randomRange="3644" />
+    <create count="12" type="nebulas" startX="48984.0" startY="0.0" startZ="23268.0" endX="70194.0" endY="0.0" endZ="8159.0" randomRange="4047" />
+    <create count="20" type="asteroids" startX="41429.0" startY="0.0" startZ="21815.0" endX="40993.0" endY="0.0" endZ="32566.0" randomRange="3898" />
+    <create count="20" type="asteroids" startX="44189.0" startY="0.0" startZ="20217.0" endX="52761.0" endY="0.0" endZ="15133.0" randomRange="4160" />
+    <create count="30" type="asteroids" startX="42155.0" startY="0.0" startZ="31259.0" endX="39831.0" endY="0.0" endZ="43462.0" randomRange="4487" />
+    <create count="40" type="nebulas" startX="79928.0" startY="0.0" startZ="71937.0" endX="57700.0" endY="0.0" endZ="62348.0" randomRange="7556" />
+    <create count="20" type="nebulas" startX="52616.0" startY="0.0" startZ="61912.0" endX="37797.0" endY="0.0" endZ="54067.0" randomRange="2632" />
+  </event>
+  <folder_arme name="Navigation" id_arme="9db7ad52-8bec-432a-a293-6da9635b4cb9" parent_id_arme="4d9c0b90-0bd6-4af4-8460-87ff581bbe7f" />
+  <event name="Transition to Sector VI" id_arme="d96c65da-9c03-4872-bcae-dad93d4e6f60" parent_id_arme="9db7ad52-8bec-432a-a293-6da9635b4cb9">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="4e674986-ab81-46fc-a976-db4e017fe7b7" parent_id_arme="9db7ad52-8bec-432a-a293-6da9635b4cb9">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="598c0397-a5fa-43a5-8106-c7d04b9fc81f" parent_id_arme="9db7ad52-8bec-432a-a293-6da9635b4cb9">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="32aacb30-0317-46f6-b2f7-8fe1fb50cd1d" parent_id_arme="9db7ad52-8bec-432a-a293-6da9635b4cb9">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="6037c6b8-1fbd-4396-a426-b14a177ce75d" parent_id_arme="9db7ad52-8bec-432a-a293-6da9635b4cb9">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="bbbdb8d8-d3e9-4d03-a8db-a4d13bca66ae" parent_id_arme="4d9c0b90-0bd6-4af4-8460-87ff581bbe7f" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="f3661bfc-0772-4b92-a7da-21d6c884618d" parent_id_arme="bbbdb8d8-d3e9-4d03-a8db-a4d13bca66ae">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="66126.0" y="0.0" z="45641.0" name="RS-02X" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="40267.0" y="0.0" z="79636.0" name="DS-36" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="56393.0" y="0.0" z="25157.0" name="M-445" hullID="1003" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="5.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="7ddbbbcc-1c9c-4045-9884-c4b667059f85" parent_id_arme="bbbdb8d8-d3e9-4d03-a8db-a4d13bca66ae">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="03a3cdc2-1cc2-4af0-b413-b31587ea4ed1" parent_id_arme="bbbdb8d8-d3e9-4d03-a8db-a4d13bca66ae">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="RS-02X" />
+    <destroy name="DS-36" />
+    <destroy name="M-445" />
+    <destroy name="Promethean V" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Promethean Sector VI" id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <event name="Create Promethean Sector VI" id_arme="facc920d-219b-449d-bde7-b57c4fd5b216" parent_id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="22" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="nebulas" startX="33293.0" startY="0.0" startZ="26319.0" endX="15134.0" endY="0.0" endZ="36343.0" randomRange="6167" />
+    <create count="10" type="nebulas" startX="82688.0" startY="0.0" startZ="70484.0" endX="66998.0" endY="0.0" endZ="63801.0" randomRange="3065" />
+    <create count="30" type="nebulas" startX="67724.0" startY="0.0" startZ="30242.0" endX="67724.0" endY="0.0" endZ="30242.0" randomRange="12668" />
+    <create count="20" type="nebulas" startX="73826.0" startY="0.0" startZ="26610.0" endX="84577.0" endY="0.0" endZ="11937.0" randomRange="6578" />
+    <create count="20" type="asteroids" startX="77168.0" startY="0.0" startZ="18765.0" endX="65545.0" endY="0.0" endZ="33147.0" randomRange="8037" />
+  </event>
+  <folder_arme name="Navigation" id_arme="122673a3-4826-4b4d-b524-c10a49a12177" parent_id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2" />
+  <event name="Transition to Sector VII" id_arme="35f61a1e-2b57-4513-a87b-b4a59cd3737d" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="822cbfab-6870-4daa-8839-139006a980fb" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="989b475f-9d7a-4224-994f-0f5b461135cf" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="182c8f2b-425e-4f3c-998e-479bdf58650e" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="3249a8b5-4676-4dcf-baa7-0c8dc6051bf0" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="180619e1-6fd0-4318-bbe7-59dd1f020ee6" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="5e9cd798-93d7-496a-ab96-8bf14bb9d0dc" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="fca8ac47-6efa-487a-9da6-b2f8e1966257" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="82075028-8227-4ce7-b2fd-20c6b2471e37" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177" />
+  <event name="Gate Offline" id_arme="3db734a0-57ea-4491-bf55-0b34bba28853" parent_id_arme="82075028-8227-4ce7-b2fd-20c6b2471e37">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Cerberus Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9" parent_id_arme="82075028-8227-4ce7-b2fd-20c6b2471e37" />
+  <event name="Ship1 Activation Range" id_arme="cf3a0500-d826-4bf0-86cc-bee1d1663ca2" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="ff91f6d7-c46d-41ba-9955-cac46bf7b016" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="a94eb89a-972a-4ed0-b865-68a77d6f2bba" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="2d040997-7947-4330-90eb-9c3197be0c8f" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="ed677196-3945-4c93-aa75-0b640ace6c2e" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="95ec480a-8184-4e57-81ee-b418540c5e3c" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="a2e77689-d1f9-4bcb-82b7-898e5ef205dd" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="0de2424d-7448-4e26-ad90-8c14408e7c1c" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="2b65d785-488c-4f59-ac6c-c8863eb3f2d8" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="11e671a1-ab71-4686-9cf2-009fcd1711af" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="894512ac-5847-4f8d-9200-2a3571ba55c2" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="c368cf23-b6ce-4ecb-b07a-28b8fc35edf5" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="8b055812-258b-461b-b8b7-1cd3a94e81ca" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="a6b82ea5-5a4d-40bf-ae3f-08e78121bd3d" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="5ad07092-35c9-43d2-b456-478fa362455d" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="17f27baa-f0e7-463c-bf34-96a3d0abb0f3" parent_id_arme="53e29460-9af2-4e70-8e9e-ae61613416c9">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="b273d90a-ac69-4311-8df0-5c3508416881" parent_id_arme="82075028-8227-4ce7-b2fd-20c6b2471e37">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Cerberus Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="a469205f-ab94-40d0-9a71-1bf6a0e86345" parent_id_arme="82075028-8227-4ce7-b2fd-20c6b2471e37">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Promethean to Cerberus" value="1.0" />
+    <set_variable name="Cerberus System" value="1.0" />
+    <set_variable name="Sector" value="4" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="5e679e6a-0bc6-4256-b360-dcc53fcd7c2a" parent_id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="0ae126dd-64c6-46b5-a7f5-d2059530b1c2" parent_id_arme="5e679e6a-0bc6-4256-b360-dcc53fcd7c2a">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="72161.0" y="0.0" z="60402.0" name="Cerberus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="66998.0" y="0.0" z="16150.0" name="M-33" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="39105.0" y="0.0" z="47239.0" name="Aetan" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="37797.0" y="0.0" z="57554.0" name="Selena" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="31260.0" y="0.0" z="52179.0" name="Columbia" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="69904.0" y="0.0" z="36343.0" name="M-051" hullID="1003" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="1.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="971ca18f-4f97-418e-a81c-ac1c07bcf46b" parent_id_arme="5e679e6a-0bc6-4256-b360-dcc53fcd7c2a">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Cerberus Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Cerberus Gate" />
+    <set_object_property property="angle" value="3.839724354" name="Cerberus Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Cerberus Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="b5b5c29c-f960-4a14-a9fc-fadd91450ea1" parent_id_arme="5e679e6a-0bc6-4256-b360-dcc53fcd7c2a">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="Cerberus Gate" />
+    <destroy name="M-33" />
+    <destroy name="Aetan" />
+    <destroy name="Selena" />
+    <destroy name="Columbia" />
+    <destroy name="M-051" />
+    <destroy name="Promethean VI" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Cerberus" id_arme="32ffbab4-534f-401a-951d-62edbae849b0" parent_id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Cerberus to Promethean" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Cerberus Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Cerberus to Promethean" value="0.0" />
+  </event>
+  <folder_arme name="Promethean Sector VII" id_arme="c9650d57-c72c-4574-b0e4-fd7656b1e614" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <event name="Create Promethean Sector VII" id_arme="8c4e398b-db7d-437f-a227-d01a39c7fe56" parent_id_arme="c9650d57-c72c-4574-b0e4-fd7656b1e614">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <create count="60" type="mines" startAngle="280" endAngle="220" startX="31406.0" startY="0.0" startZ="26286.0" radius="17579" />
+    <create count="70" type="mines" startAngle="110" endAngle="40" startX="31406.0" startY="0.0" startZ="26286.0" radius="17579" />
+    <create count="60" type="mines" startAngle="10" endAngle="-50" startX="31406.0" startY="0.0" startZ="26286.0" radius="17579" />
+    <create count="80" type="mines" startAngle="190" endAngle="110" startX="31406.0" startY="0.0" startZ="26286.0" radius="17579" />
+    <create count="30" type="nebulas" startX="88169.0" startY="0.0" startZ="44203.0" endX="88169.0" endY="0.0" endZ="44203.0" randomRange="11324" />
+    <create count="40" type="asteroids" startX="92535.0" startY="0.0" startZ="34416.0" endX="77027.0" endY="0.0" endZ="54140.0" randomRange="3433" />
+    <create count="20" type="nebulas" startX="50979.0" startY="0.0" startZ="85457.0" endX="31406.0" endY="0.0" endZ="75671.0" randomRange="1683" />
+    <create count="20" type="asteroids" startX="51883.0" startY="0.0" startZ="85307.0" endX="45408.0" endY="0.0" endZ="83048.0" randomRange="1763" />
+    <create count="20" type="nebulas" startX="52033.0" startY="0.0" startZ="8971.0" endX="57002.0" endY="0.0" endZ="19811.0" randomRange="3366" />
+    <create count="20" type="asteroids" startX="77841.0" startY="0.0" startZ="51929.0" endX="65529.0" endY="0.0" endZ="62955.0" randomRange="1810" />
+    <create count="10" type="nebulas" startX="94380.0" startY="0.0" startZ="38882.0" endX="81149.0" endY="0.0" endZ="51745.0" randomRange="2095" />
+    <set_skybox_index index="22" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="119a9ef5-bdc1-4449-bc87-a8d7752163f4" parent_id_arme="c9650d57-c72c-4574-b0e4-fd7656b1e614" />
+  <event name="Transition to Sector VIII" id_arme="78cd3f2a-5ee2-4879-a150-1f3b18a2559a" parent_id_arme="119a9ef5-bdc1-4449-bc87-a8d7752163f4">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="1ae1b8af-6c77-44d7-bc49-bcf67edf2b47" parent_id_arme="119a9ef5-bdc1-4449-bc87-a8d7752163f4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="27235299-4fb2-47e4-9cc8-da4d01349f0d" parent_id_arme="119a9ef5-bdc1-4449-bc87-a8d7752163f4">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="ffd59048-0275-49ed-a9f8-490433a4d43d" parent_id_arme="119a9ef5-bdc1-4449-bc87-a8d7752163f4">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="1a0e3b66-bc2b-484d-94e3-6e5c3fac3422" parent_id_arme="119a9ef5-bdc1-4449-bc87-a8d7752163f4">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="3011092e-bb8d-4d21-98e1-8f0d6ca111f2" parent_id_arme="119a9ef5-bdc1-4449-bc87-a8d7752163f4">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="7e5307ad-2b7d-4203-8b80-d30eae91cebb" parent_id_arme="119a9ef5-bdc1-4449-bc87-a8d7752163f4">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="5baa72f5-9aec-4884-8c07-a8c826ba8d45" parent_id_arme="119a9ef5-bdc1-4449-bc87-a8d7752163f4">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="7116dc87-7ed9-4187-8f32-16bc0c285b1c" parent_id_arme="c9650d57-c72c-4574-b0e4-fd7656b1e614" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="09b1db4f-67bb-4cf8-b44c-dd8967b9de92" parent_id_arme="7116dc87-7ed9-4187-8f32-16bc0c285b1c">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="40267.0" y="0.0" z="29806.0" name="DS-26" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="33584.0" y="0.0" z="17893.0" name="DS-81" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="26738.0" y="0.0" z="34265.0" name="SY-61" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="20218.0" y="0.0" z="25447.0" name="SY-55" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="23953.0" y="0.0" z="30225.0" name="SY-170" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="46161.0" y="0.0" z="19510.0" angle="0" name="WP-72" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="24179.0" y="0.0" z="11681.0" angle="0" name="WP-98" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="38378.0" y="0.0" z="41428.0" angle="0" name="WP-44" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="30388.0" y="0.0" z="27191.0" name="Promethean Command" hullID="1002" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="3.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="625a5b89-e373-47f8-8bf5-bd49a5725a39" parent_id_arme="7116dc87-7ed9-4187-8f32-16bc0c285b1c">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+    <!--<clear_ai name="SY-170" />-->
+    <!--<add_ai type="DIR_THROTTLE" value1="0" value2="0.0" name="SY-170" />-->
+    <!--<clear_ai name="SY-61" />-->
+    <!--<add_ai type="DIR_THROTTLE" value1="0" value2="0.0" name="SY-61" />-->
+    <!--<clear_ai name="SY-55" />-->
+    <!--<add_ai type="DIR_THROTTLE" value1="0" value2="0.0" name="SY-55" />-->
+  </event>
+  <event name="Destroy Sector Entities" id_arme="fe48f10c-6f16-4ea9-8774-7518b030efe1" parent_id_arme="7116dc87-7ed9-4187-8f32-16bc0c285b1c">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-26" />
+    <destroy name="DS-81" />
+    <destroy name="SY-61" />
+    <destroy name="SY-55" />
+    <destroy name="SY-170" />
+    <destroy name="WP-72" />
+    <destroy name="WP-98" />
+    <destroy name="WP-44" />
+    <destroy name="Promethean Command" />
+    <destroy name="Promethean VII" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Promethean Sector VIII" id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <event name="Create Promethean Sector VIII" id_arme="73bab143-2d62-4ea8-84f4-45cb2d705d51" parent_id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <set_skybox_index index="22" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="40" type="nebulas" startX="85157.0" startY="0.0" startZ="85608.0" endX="66487.0" endY="0.0" endZ="79284.0" randomRange="3026" />
+    <create count="30" type="nebulas" startX="46011.0" startY="0.0" startZ="65734.0" endX="30051.0" endY="0.0" endZ="47214.0" randomRange="4518" />
+    <create count="30" type="nebulas" startX="15898.0" startY="0.0" startZ="21317.0" endX="9875.0" endY="0.0" endZ="3249.0" randomRange="1421" />
+    <create count="30" type="nebulas" startX="83049.0" startY="0.0" startZ="51731.0" endX="66939.0" endY="0.0" endZ="41493.0" randomRange="1663" />
+    <create count="20" type="asteroids" startX="71004.0" startY="0.0" startZ="44654.0" endX="64229.0" endY="0.0" endZ="39535.0" randomRange="2047" />
+    <create count="30" type="nebulas" startX="48570.0" startY="0.0" startZ="26737.0" endX="38031.0" endY="0.0" endZ="9422.0" randomRange="2020" />
+  </event>
+  <folder_arme name="Navigation" id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee" parent_id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7" />
+  <event name="Transition to Sector VII" id_arme="f0437ef1-72bf-4cc0-b4f3-d7733bbe322e" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="588a277a-e24c-4189-9148-f834d3de9f9c" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="fb83b275-3954-4276-a523-9ec595002844" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="c29f8a81-088c-4795-9e99-7ea9f18ab93e" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="321d12ee-29f0-47f4-b782-1021bbcc7db7" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="e32dccac-b1fc-49b8-b4bb-282edcf3b4cc" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee" />
+  <event name="Gate Offline" id_arme="4f0bab27-56c6-4a6f-b54e-89e2404d26d2" parent_id_arme="e32dccac-b1fc-49b8-b4bb-282edcf3b4cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Volantis Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f" parent_id_arme="e32dccac-b1fc-49b8-b4bb-282edcf3b4cc" />
+  <event name="Ship1 Activation Range" id_arme="191769d9-2976-4e67-b662-51b940be3da2" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Volantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="7ed54792-1f11-4fe3-94be-83859b90b1d9" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Volantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="6c227fff-b1b7-43ef-9869-8e0566a91a75" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Volantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="cb4ed01d-1b3c-437c-98ec-a367d8f046ed" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Volantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="e38f7f93-c09a-4215-ad72-49069e10c901" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Volantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="0fbf2c07-3301-4685-9eaa-d8f574d5d923" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Volantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="e3ccca62-59d2-4895-9d16-360f1615ce8f" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Volantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="d2770ece-eaca-46f6-8cd4-f188099dad5f" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Volantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="c3c7a078-cf41-436f-8496-9b0d818767e7" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Volantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="1ca5a487-3e0b-41dc-bcce-bc58be2ccfc6" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Volantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="20b99219-d618-47f6-86ca-e0bd69b6c2c1" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Volantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="c6fea292-07d9-47a4-9278-09b6a850f0c0" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Volantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="b9f91621-c4c2-4af2-8aa2-95158b17ca82" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Volantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="2888454e-c3b9-46a2-8328-337a5aa13222" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Volantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="38b35d0b-1690-431b-89cf-f97aac38e9b0" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Volantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="279b4865-3a0a-4ae0-bc1c-7f7e6a6ae13f" parent_id_arme="16c1b128-adfa-492d-a3c4-94d44d6c039f">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Volantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="99e3bbea-e1eb-4b9e-9165-408caf3f12ad" parent_id_arme="e32dccac-b1fc-49b8-b4bb-282edcf3b4cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Volantis Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="935d7253-b564-40b9-b420-682ea23e3fb9" parent_id_arme="e32dccac-b1fc-49b8-b4bb-282edcf3b4cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Volantis Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Promethean to Volantis" value="1.0" />
+    <set_variable name="Volantis System" value="1.0" />
+    <set_variable name="Sector" value="2" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="7ad9bbf4-0182-410f-83f9-8a31129b3697" parent_id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="c6ec42f4-dc46-47cd-a820-e27328ca1e17" parent_id_arme="7ad9bbf4-0182-410f-83f9-8a31129b3697">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="37729.0" y="0.0" z="35470.0" name="Volantis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="51453.0" y="0.0" z="18184.0" name="RS-71" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="71792.0" y="0.0" z="38813.0" name="M-025" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="65691.0" y="0.0" z="35326.0" name="M-291" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="29952.0" y="0.0" z="68014.0" name="DS-39" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="59734.0" y="0.0" z="58571.0" name="DS-42" hullID="1000" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="5.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="c4514fe8-cf65-4805-afc9-cbb562dd5713" parent_id_arme="7ad9bbf4-0182-410f-83f9-8a31129b3697">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Volantis Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Volantis Gate" />
+    <set_object_property property="angle" value="1.396263402" name="Volantis Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Volantis Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="4dda6e4d-2f96-484b-b275-b6304acc9d90" parent_id_arme="7ad9bbf4-0182-410f-83f9-8a31129b3697">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="Volantis Gate" />
+    <destroy name="RS-71" />
+    <destroy name="M-025" />
+    <destroy name="M-291" />
+    <destroy name="DS-39" />
+    <destroy name="DS-42" />
+    <destroy name="Promethean VIII" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Volantis" id_arme="32b1bf82-4378-4ea3-ae7c-882966189073" parent_id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Volantis to Promethean" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Volantis Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Volantis Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Volantis Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Volantis Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Volantis Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Volantis Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Volantis Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Volantis Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Volantis to Promethean" value="0.0" />
+  </event>
+  <folder_arme name="Promethean Sector IX" id_arme="cb4b2724-6076-46af-a112-956751a99ead" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
+  <event name="Create Promethean Sector IX" id_arme="6938154c-4146-41ca-96d4-67922ceb6910" parent_id_arme="cb4b2724-6076-46af-a112-956751a99ead">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <set_skybox_index index="22" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="20" type="nebulas" startX="63366.0" startY="0.0" startZ="48837.0" endX="47531.0" endY="0.0" endZ="38523.0" randomRange="4018" />
+    <create count="100" type="nebulas" startX="67724.0" startY="0.0" startZ="48692.0" endX="93293.0" endY="0.0" endZ="56246.0" randomRange="11001" />
+    <create count="20" type="nebulas" startX="65836.0" startY="0.0" startZ="16295.0" endX="49129.0" endY="0.0" endZ="11065.0" randomRange="5232" />
+    <create count="20" type="nebulas" startX="7724.0" startY="0.0" startZ="50435.0" endX="21381.0" endY="0.0" endZ="61041.0" randomRange="2866" />
+    <create count="10" type="nebulas" startX="54359.0" startY="0.0" startZ="83268.0" endX="64674.0" endY="0.0" endZ="86464.0" randomRange="2574" />
+    <create count="50" type="asteroids" startX="78185.0" startY="0.0" startZ="49709.0" endX="73245.0" endY="0.0" endZ="54648.0" randomRange="4312" />
+  </event>
+  <folder_arme name="Navigation" id_arme="befa7aba-f431-477c-a8f2-0c64778021d9" parent_id_arme="cb4b2724-6076-46af-a112-956751a99ead" />
+  <event name="Transition to Sector X" id_arme="16861c39-8c50-4ac8-9afb-2efe3587173a" parent_id_arme="befa7aba-f431-477c-a8f2-0c64778021d9">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="88abcb1a-297a-4b95-ac0a-f81842ae506b" parent_id_arme="befa7aba-f431-477c-a8f2-0c64778021d9">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="dbff0006-44bd-4d3a-afe9-507790e103a9" parent_id_arme="befa7aba-f431-477c-a8f2-0c64778021d9">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d5fa7695-ef38-4553-8e9a-f4e6bbba8a87" parent_id_arme="cb4b2724-6076-46af-a112-956751a99ead" />
+  <event name="Generate Sector Entities" id_arme="257c4aff-a85f-455b-a398-5de6a0378660" parent_id_arme="d5fa7695-ef38-4553-8e9a-f4e6bbba8a87">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="81586.0" y="0.0" z="41013.0" name="M-040" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="71014.0" y="0.0" z="44317.0" name="M-294" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="85551.0" y="0.0" z="52114.0" name="M-008" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="38814.0" y="0.0" z="56973.0" name="DS-72" hullID="1000" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean IX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="5.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="57d45409-b44c-4ca1-83c7-995dd7e0ddca" parent_id_arme="d5fa7695-ef38-4553-8e9a-f4e6bbba8a87">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Entry Grid E" value="1.0" />
+    <set_timer name="Entry Grid E" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="287106eb-42be-4233-9c4f-d6e3c73f5aaf" parent_id_arme="d5fa7695-ef38-4553-8e9a-f4e6bbba8a87">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="M-040" />
+    <destroy name="M-294" />
+    <destroy name="M-008" />
+    <destroy name="DS-72" />
+    <destroy name="Promethean IX" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Promethean Sector X" id_arme="04763c64-5027-4dd1-a0e7-4a17b87dbc13" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <event name="Create Promethean Sector X" id_arme="15aa9b97-74b0-4fbf-844d-35f72d994473" parent_id_arme="04763c64-5027-4dd1-a0e7-4a17b87dbc13">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <set_skybox_index index="22" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="30" type="nebulas" startX="89516.0" startY="0.0" startZ="32711.0" endX="65981.0" endY="0.0" endZ="19782.0" randomRange="3419" />
+    <create count="20" type="nebulas" startX="65981.0" startY="0.0" startZ="20072.0" endX="57119.0" endY="0.0" endZ="8305.0" randomRange="2862" />
+    <create count="20" type="nebulas" startX="90097.0" startY="0.0" startZ="86029.0" endX="71938.0" endY="0.0" endZ="78619.0" randomRange="3777" />
+    <create count="10" type="nebulas" startX="71647.0" startY="0.0" startZ="78474.0" endX="56247.0" endY="0.0" endZ="68305.0" randomRange="3562" />
+    <create count="20" type="nebulas" startX="36344.0" startY="0.0" startZ="47675.0" endX="22979.0" endY="0.0" endZ="33002.0" randomRange="3835" />
+    <create count="20" type="nebulas" startX="37071.0" startY="0.0" startZ="91985.0" endX="19492.0" endY="0.0" endZ="79055.0" randomRange="3065" />
+    <create count="5" type="mines" startX="89226.0" startY="0.0" startZ="84285.0" endX="79492.0" endY="0.0" endZ="82397.0" randomRange="2714" />
+    <create count="6" type="mines" startX="69032.0" startY="0.0" startZ="78184.0" endX="63076.0" endY="0.0" endZ="73680.0" randomRange="2941" />
+    <create count="7" type="mines" startX="29662.0" startY="0.0" startZ="89370.0" endX="20945.0" endY="0.0" endZ="81380.0" randomRange="2274" />
+    <create count="11" type="mines" startX="87337.0" startY="0.0" startZ="31113.0" endX="77313.0" endY="0.0" endZ="25157.0" randomRange="2365" />
+    <create count="10" type="mines" startX="70194.0" startY="0.0" startZ="22832.0" endX="56974.0" endY="0.0" endZ="10193.0" randomRange="2274" />
+    <create count="7" type="mines" startX="28790.0" startY="0.0" startZ="42154.0" endX="23124.0" endY="0.0" endZ="34600.0" randomRange="2145" />
+    <create count="4" type="mines" startX="39105.0" startY="0.0" startZ="45060.0" endX="33729.0" endY="0.0" endZ="43026.0" randomRange="2256" />
+    <create count="10" type="asteroids" startX="33439.0" startY="0.0" startZ="88934.0" endX="39976.0" endY="0.0" endZ="92130.0" randomRange="1370" />
+    <create count="30" type="asteroids" startX="56829.0" startY="0.0" startZ="68595.0" endX="46514.0" endY="0.0" endZ="59588.0" randomRange="3822" />
+    <create count="10" type="asteroids" startX="19347.0" startY="0.0" startZ="29661.0" endX="14698.0" endY="0.0" endZ="20944.0" randomRange="1950" />
+  </event>
+  <folder_arme name="Navigation" id_arme="2491a8f1-953e-459c-ae95-6604f2ef1186" parent_id_arme="04763c64-5027-4dd1-a0e7-4a17b87dbc13" />
+  <event name="Transition to Sector XI" id_arme="77404dd3-1140-466b-8af9-b86186fe8aa0" parent_id_arme="2491a8f1-953e-459c-ae95-6604f2ef1186">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="05d0df20-3303-4b8d-887c-1af32e878872" parent_id_arme="2491a8f1-953e-459c-ae95-6604f2ef1186">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="af307219-20d4-4a8c-a501-c1aaacd538f3" parent_id_arme="2491a8f1-953e-459c-ae95-6604f2ef1186">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="b9e6144e-046c-4b9c-a467-983ccd682839" parent_id_arme="2491a8f1-953e-459c-ae95-6604f2ef1186">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="571ec3e8-1025-422e-a99a-91eac0a65d3a" parent_id_arme="2491a8f1-953e-459c-ae95-6604f2ef1186">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="f0c513ce-36ef-47fc-b5a8-aa229206822d" parent_id_arme="04763c64-5027-4dd1-a0e7-4a17b87dbc13" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="23fc08b4-ff6a-4922-bc1b-ece5ac8711ad" parent_id_arme="f0c513ce-36ef-47fc-b5a8-aa229206822d">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="80509.0" y="0.0" z="14116.0" name="DS-99" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="31986.0" y="0.0" z="71355.0" name="DS-142" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="32712.0" y="0.0" z="28062.0" name="DS-43" hullID="1000" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean X" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="2.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="b36b7af6-079d-4e17-9377-679e53ed5b9f" parent_id_arme="f0c513ce-36ef-47fc-b5a8-aa229206822d">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Entry Grid E" value="1.0" />
+    <set_timer name="Entry Grid E" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="ea3e1353-4532-4773-a89f-ec14439ffab0" parent_id_arme="f0c513ce-36ef-47fc-b5a8-aa229206822d">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-99" />
+    <destroy name="DS-142" />
+    <destroy name="DS-43" />
+    <destroy name="Promethean X" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Promethean Sector XI" id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <event name="Create Promethean Sector XI" id_arme="1aa0eb95-5af4-4dc3-984a-de96cff00f66" parent_id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <create count="50" type="mines" startX="80000.0" startY="0.0" startZ="66500.0" endX="70000.0" endY="0.0" endZ="66500.0" />
+    <create count="50" type="mines" startX="80000.0" startY="0.0" startZ="66250.0" endX="70000.0" endY="0.0" endZ="66250.0" />
+    <create count="50" type="mines" startX="80000.0" startY="0.0" startZ="66000.0" endX="70000.0" endY="0.0" endZ="66000.0" />
+    <create count="50" type="mines" startX="70000.0" startY="0.0" startZ="60000.0" endX="60000.0" endY="0.0" endZ="60000.0" />
+    <create count="50" type="mines" startX="60000.0" startY="0.0" startZ="66500.0" endX="50000.0" endY="0.0" endZ="66500.0" />
+    <create count="50" type="mines" startX="60000.0" startY="0.0" startZ="66250.0" endX="50000.0" endY="0.0" endZ="66250.0" />
+    <create count="50" type="mines" startX="60000.0" startY="0.0" startZ="66000.0" endX="50000.0" endY="0.0" endZ="66000.0" />
+    <create count="50" type="mines" startX="70000.0" startY="0.0" startZ="59750.0" endX="60000.0" endY="0.0" endZ="59750.0" />
+    <create count="50" type="mines" startX="70000.0" startY="0.0" startZ="59500.0" endX="60000.0" endY="0.0" endZ="59500.0" />
+    <create count="20" type="nebulas" startX="88244.0" startY="0.0" startZ="59658.0" endX="72537.0" endY="0.0" endZ="52439.0" randomRange="2553" />
+    <create count="18" type="nebulas" startX="44342.0" startY="0.0" startZ="40146.0" endX="31562.0" endY="0.0" endZ="33220.0" randomRange="2553" />
+    <create count="22" type="nebulas" startX="52537.0" startY="0.0" startZ="20439.0" endX="39561.0" endY="0.0" endZ="7853.0" randomRange="2553" />
+    <create count="14" type="nebulas" startX="33025.0" startY="0.0" startZ="82682.0" endX="23854.0" endY="0.0" endZ="74390.0" randomRange="1973" />
+    <create count="50" type="mines" startAngle="110" endAngle="220" startX="75053.0" startY="0.0" startZ="26325.0" radius="6132" />
+    <create count="50" type="mines" startAngle="-70" endAngle="40" startX="75053.0" startY="0.0" startZ="26325.0" radius="6132" />
+    <create count="30" type="asteroids" startX="44621.0" startY="0.0" startZ="40298.0" endX="37357.0" endY="0.0" endZ="38091.0" randomRange="719" />
+    <set_skybox_index index="22" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c" parent_id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3" />
+  <event name="Transition to Sector XII" id_arme="dcff69d4-e6db-40ed-b2a9-1b7c43ab3f4c" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="809cdcab-a8cd-4b54-9367-3c253a4ec228" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="5a42cffe-6c3a-445f-92ba-d02e421907ff" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="e802acb2-3e67-4dd8-9018-5afbc11be27a" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="6d944d8e-4185-4e13-9a3d-cfebe1d9912f" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="405d38b6-cae3-4358-9f19-66fd33c1a1ff" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c" />
+  <event name="Gate Offline" id_arme="a3618d9a-6155-47c8-973e-7c41b79e1534" parent_id_arme="405d38b6-cae3-4358-9f19-66fd33c1a1ff">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Cronus Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e" parent_id_arme="405d38b6-cae3-4358-9f19-66fd33c1a1ff" />
+  <event name="Ship1 Activation Range" id_arme="74863862-9a13-44d2-8cd2-27c8fbe31ed0" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="9065148d-7c6b-4fe4-ad74-00c2d78656e5" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="b6cfa20d-cf77-4081-b288-93dc87de3321" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="eb6a9773-c635-4b69-b1ce-095bfa16e20e" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="7041e97e-4671-4bde-bcb4-0e32c1b17987" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="4c652a69-87db-471a-a6a5-16cdfad491d8" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="65318c9f-7497-4373-8fb4-b8d322dd22f9" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="2257b840-bfdb-4de3-9bc0-5db16e71900b" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="b74bc245-28ac-4826-9c0c-df662ff6169f" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="522bb26c-45b5-4301-b1ce-c248758ae0e5" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="733fc92c-72dd-489b-940f-4d7d21f86b15" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="62874661-7fa4-4abf-bcae-a4d0604474c3" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="8b5f78b4-a67f-4fa9-bc80-d6503a70b71d" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="2f736420-488b-41b7-8979-3173948d3485" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="16344b16-3f89-4af6-9781-b6f3f712c061" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="46e4621a-05e7-4744-85c0-1755a86be92c" parent_id_arme="dd64c733-625e-4136-936c-4295f6b6ce6e">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="51bcd885-dcd0-4250-9503-3aa8d22bee0b" parent_id_arme="405d38b6-cae3-4358-9f19-66fd33c1a1ff">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Cronus Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="f800bd35-82b4-4041-a9cf-377c1c811a38" parent_id_arme="405d38b6-cae3-4358-9f19-66fd33c1a1ff">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Promethean to Cronus" value="1.0" />
+    <set_variable name="Cronus System" value="1.0" />
+    <set_variable name="Sector" value="1" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="1b4c91a8-7642-47ad-a743-dcef2d14d1de" parent_id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="cd18bc75-e088-430a-9841-38c012ccaa77" parent_id_arme="1b4c91a8-7642-47ad-a743-dcef2d14d1de">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="64585.0" y="0.0" z="77169.0" name="Cronus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="52927.0" y="0.0" z="60536.0" name="DS-12" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="64927.0" y="0.0" z="64048.0" angle="0" name="WP-56" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="50293.0" y="0.0" z="62000.0" angle="0" name="WP-23" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="75053.0" y="0.0" z="26450.0" name="Forward Command" hullID="1002" sideValue="sectorSide" />
+    <create type="neutral" x="80207.0" y="0.0" z="27977.0" angle="0" name="WP-07" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="69817.0" y="0.0" z="25218.0" angle="0" name="WP-15" hullID="1052" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean XI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="2.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="4f618333-7c85-4e8e-a01f-e26c461ae34a" parent_id_arme="1b4c91a8-7642-47ad-a743-dcef2d14d1de">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="topSpeed" value="0" name="--" />
+    <set_object_property property="surrenderChance" value="0" name="--" />
+    <clear_ai name="--" />
+    <add_ai type="CHASE_AI_SHIP" value1="3000" value2="500" name="--" />
+    <add_ai type="DEFEND" value1="3000" value2="1000" name="--" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="8000" name="--" />
+    <set_object_property property="artScale" value="1.0" name="Cronus Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Cronus Gate" />
+    <set_object_property property="angle" value="3.141592654" name="Cronus Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Cronus Gate" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Entry Grid E" value="1.0" />
+    <set_timer name="Entry Grid E" seconds="1" />
+    <clear_ai name="WP-07" />
+    <clear_ai name="WP-23" />
+    <clear_ai name="WP-15" />
+    <clear_ai name="WP-56" />
+    <add_ai type="DEFEND" value1="2000" value2="100000" name="WP-07" />
+    <add_ai type="DEFEND" value1="2000" value2="100000" name="WP-23" />
+    <add_ai type="DEFEND" value1="2000" value2="100000" name="WP-15" />
+    <add_ai type="DEFEND" value1="2000" value2="100000" name="WP-56" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="4fa0ff9c-021c-4be8-8bc9-e8bfc04709bd" parent_id_arme="1b4c91a8-7642-47ad-a743-dcef2d14d1de">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="Cronus Gate" />
+    <destroy name="DS-12" />
+    <destroy name="WP-56" />
+    <destroy name="WP-23" />
+    <destroy name="Forward Command" />
+    <destroy name="WP-07" />
+    <destroy name="WP-15" />
+    <destroy name="Promethean XI" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Cronus" id_arme="8eff541d-2caf-4c78-94c2-2e3ca5734f9f" parent_id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3">
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Cronus to Promethean" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Cronus Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Cronus to Promethean" value="0.0" />
+  </event>
+  <folder_arme name="Promethean Sector XII" id_arme="21900bea-b1b0-448b-bec1-016227d687a7" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <event name="Create Promethean Sector XII" id_arme="b0769cd1-a8b3-4353-9b04-4b3788ba9ff4" parent_id_arme="21900bea-b1b0-448b-bec1-016227d687a7">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <set_skybox_index index="22" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Promethean System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="30" type="nebulas" startX="91114.0" startY="0.0" startZ="48692.0" endX="80509.0" endY="0.0" endZ="36924.0" randomRange="2995" />
+    <create count="30" type="nebulas" startX="46659.0" startY="0.0" startZ="32276.0" endX="35327.0" endY="0.0" endZ="16731.0" randomRange="4037" />
+    <create count="30" type="nebulas" startX="80800.0" startY="0.0" startZ="80363.0" endX="66998.0" endY="0.0" endZ="73389.0" randomRange="3314" />
+    <create count="20" type="nebulas" startX="55521.0" startY="0.0" startZ="57409.0" endX="42737.0" endY="0.0" endZ="47239.0" randomRange="2757" />
+    <create count="20" type="nebulas" startX="27918.0" startY="0.0" startZ="83995.0" endX="11938.0" endY="0.0" endZ="68014.0" randomRange="3538" />
+    <create count="20" type="asteroids" startX="59444.0" startY="0.0" startZ="58716.0" endX="52616.0" endY="0.0" endZ="54067.0" randomRange="1605" />
+    <create count="18" type="mines" startX="33444.0" startY="0.0" startZ="17284.0" endX="46082.0" endY="0.0" endZ="28664.0" randomRange="2768" />
+    <create count="13" type="mines" startX="80067.0" startY="0.0" startZ="36754.0" endX="90581.0" endY="0.0" endZ="46168.0" randomRange="3245" />
+    <create count="8" type="mines" startX="68375.0" startY="0.0" startZ="75166.0" endX="79086.0" endY="0.0" endZ="78824.0" randomRange="3146" />
+    <create count="20" type="mines" startX="28544.0" startY="0.0" startZ="81258.0" endX="11060.0" endY="0.0" endZ="67748.0" randomRange="2768" />
+    <create count="6" type="mines" startX="48146.0" startY="0.0" startZ="51192.0" endX="42583.0" endY="0.0" endZ="47218.0" randomRange="2768" />
+  </event>
+  <folder_arme name="Navigation" id_arme="04493270-4be2-4842-9e9c-a81b997bca04" parent_id_arme="21900bea-b1b0-448b-bec1-016227d687a7" />
+  <event name="Transition to Sector XI" id_arme="f92313e2-b954-4adb-b69d-b56e9687b68d" parent_id_arme="04493270-4be2-4842-9e9c-a81b997bca04">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="5098abdb-78ec-4f5f-a315-7757fe026a56" parent_id_arme="04493270-4be2-4842-9e9c-a81b997bca04">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="5e360587-2153-4adc-9a61-ede26945a755" parent_id_arme="04493270-4be2-4842-9e9c-a81b997bca04">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Promethean System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e10f41fb-a4b9-4d89-8d5e-e42fc0eeb325" parent_id_arme="21900bea-b1b0-448b-bec1-016227d687a7" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="f2b6e565-436d-414d-a4eb-3ee7ffbb2203" parent_id_arme="e10f41fb-a4b9-4d89-8d5e-e42fc0eeb325">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="33729.0" y="0.0" z="69031.0" name="DS-06" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="65545.0" y="0.0" z="41573.0" name="DS-15" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="29226.0" y="0.0" z="34891.0" name="DS-31" hullID="1000" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean XII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Type" value="2.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="c6ba5524-d3b1-4b8b-95e9-93af5930e37c" parent_id_arme="e10f41fb-a4b9-4d89-8d5e-e42fc0eeb325">
+    <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Entry Grid E" value="1.0" />
+    <set_timer name="Entry Grid E" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="9aa0778b-3621-4450-a5ef-0c517825809c" parent_id_arme="e10f41fb-a4b9-4d89-8d5e-e42fc0eeb325">
+    <if_variable name="Promethean System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-06" />
+    <destroy name="DS-15" />
+    <destroy name="DS-31" />
+    <destroy name="Promethean XII" />
+    <set_variable name="Promethean System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

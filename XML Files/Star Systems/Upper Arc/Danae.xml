@@ -1,0 +1,1361 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="264.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="505.0" integer="yes" />
+    <set_variable name="Alignment" value="2.0" integer="yes" />
+  </start>
+  <folder_arme name="Danae System" id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <folder_arme name="Danae Settings" id_arme="25d8e749-6769-45c7-a706-192f453c7879" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <folder_arme name="Danae Menu" id_arme="ab0980b3-d5d3-43f2-b1c5-1a69fc43a68f" parent_id_arme="25d8e749-6769-45c7-a706-192f453c7879" />
+  <event name="Danae Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="ab0980b3-d5d3-43f2-b1c5-1a69fc43a68f">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Danae System" />
+    <set_variable name="Danae Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="ab0980b3-d5d3-43f2-b1c5-1a69fc43a68f">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Danae System" />
+  </event>
+  <event name="Danae System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="ab0980b3-d5d3-43f2-b1c5-1a69fc43a68f">
+    <if_gm_button text="Lower Arc/Danae System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="102.0" integer="yes" />
+    <set_variable name="Danae System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="25d8e749-6769-45c7-a706-192f453c7879">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="25d8e749-6769-45c7-a706-192f453c7879">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="25d8e749-6769-45c7-a706-192f453c7879">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="25d8e749-6769-45c7-a706-192f453c7879">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="25d8e749-6769-45c7-a706-192f453c7879">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Danae Sector I" id_arme="fee08dc2-86d4-4b29-bf67-c1c9d2ae4feb" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <event name="Create Danae Sector I" id_arme="8ec41a2b-005a-4d41-b753-69175b54882c" parent_id_arme="fee08dc2-86d4-4b29-bf67-c1c9d2ae4feb">
+    <if_variable name="Danae System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="15" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Danae System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="60" type="asteroids" startX="78587.0" startY="0.0" startZ="20408.0" endX="51948.0" endY="0.0" endZ="25685.0" randomRange="9227" />
+    <create count="60" type="asteroids" startX="94042.0" startY="0.0" startZ="42020.0" endX="93163.0" endY="0.0" endZ="7214.0" randomRange="4956" />
+    <create count="50" type="asteroids" startX="84744.0" startY="0.0" startZ="5706.0" endX="51571.0" endY="0.0" endZ="10607.0" randomRange="3946" />
+    <create count="20" type="asteroids" startX="81980.0" startY="0.0" startZ="12743.0" endX="86880.0" endY="0.0" endZ="29204.0" randomRange="8544" />
+    <create count="30" type="nebulas" startX="66650.0" startY="0.0" startZ="16010.0" endX="21540.0" endY="0.0" endZ="43277.0" randomRange="4177" />
+    <create count="30" type="nebulas" startX="58105.0" startY="0.0" startZ="23424.0" endX="73435.0" endY="0.0" endZ="30460.0" randomRange="7837" />
+    <create count="30" type="asteroids" startX="84744.0" startY="0.0" startZ="12492.0" endX="70294.0" endY="0.0" endZ="21036.0" randomRange="3695" />
+    <create count="30" type="asteroids" startX="74817.0" startY="0.0" startZ="77832.0" endX="48932.0" endY="0.0" endZ="64890.0" randomRange="4732" />
+  </event>
+  <folder_arme name="Navigation" id_arme="4c833257-6c35-45b8-94fa-2943219f1cd6" parent_id_arme="fee08dc2-86d4-4b29-bf67-c1c9d2ae4feb" />
+  <event name="Transition to Sector II" id_arme="9def90c5-32c9-4ac5-92a4-6e1fcf3497f6" parent_id_arme="4c833257-6c35-45b8-94fa-2943219f1cd6">
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="91efa8b5-507c-4047-9f9e-766432500648" parent_id_arme="4c833257-6c35-45b8-94fa-2943219f1cd6">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="40100c56-52e4-4d9c-a4b3-3015093ef667" parent_id_arme="4c833257-6c35-45b8-94fa-2943219f1cd6">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="85831dfd-90be-425f-99da-e31870c4d4d4" parent_id_arme="fee08dc2-86d4-4b29-bf67-c1c9d2ae4feb" />
+  <event name="Generate Sector Entities" id_arme="5363ed9c-77dd-4a21-9119-684a3519725e" parent_id_arme="85831dfd-90be-425f-99da-e31870c4d4d4">
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <create type="station" x="72681.0" y="0.0" z="41392.0" angle="0" name="M-762" hullID="1003" />
+    <create type="station" x="40514.0" y="0.0" z="16136.0" angle="0" name="M-242" hullID="1003" />
+    <create type="station" x="51194.0" y="0.0" z="37120.0" angle="0" name="M-351" hullID="1003" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="8dbb8581-94d6-470e-b1bb-0eec684a4739" parent_id_arme="85831dfd-90be-425f-99da-e31870c4d4d4">
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="d7ae15c1-63d2-4c06-a8fc-157e94cd8081" parent_id_arme="85831dfd-90be-425f-99da-e31870c4d4d4">
+    <if_variable name="Danae System" comparator="EQUALS" value="3.0" />
+    <destroy name="M-762" />
+    <destroy name="M-242" />
+    <destroy name="M-351" />
+    <set_variable name="Danae System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Danae Sector II" id_arme="3292d9d4-8aac-41af-91fb-44df0a159894" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <event name="Create Danae Sector II" id_arme="f5956aee-08ad-4f96-b204-9853562d2de0" parent_id_arme="3292d9d4-8aac-41af-91fb-44df0a159894">
+    <if_variable name="Danae System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="15" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Danae System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="50" type="nebulas" startX="43278.0" startY="0.0" startZ="93790.0" endX="62754.0" endY="0.0" endZ="77581.0" randomRange="7234" />
+    <create count="30" type="nebulas" startX="54084.0" startY="0.0" startZ="96931.0" endX="37121.0" endY="0.0" endZ="96680.0" randomRange="4279" />
+    <create count="50" type="nebulas" startX="56597.0" startY="0.0" startZ="22795.0" endX="16262.0" endY="0.0" endZ="25308.0" randomRange="4749" />
+    <create count="30" type="asteroids" startX="52702.0" startY="0.0" startZ="27570.0" endX="68409.0" endY="0.0" endZ="37874.0" randomRange="3670" />
+    <create count="30" type="asteroids" startX="62754.0" startY="0.0" startZ="76827.0" endX="44786.0" endY="0.0" endZ="68282.0" randomRange="3670" />
+  </event>
+  <folder_arme name="Navigation" id_arme="f6deb239-f857-421f-b93d-71d92f282ee6" parent_id_arme="3292d9d4-8aac-41af-91fb-44df0a159894" />
+  <event name="Transition to Sector III" id_arme="ab01189b-ede8-40a6-acd3-0e6742b097a3" parent_id_arme="f6deb239-f857-421f-b93d-71d92f282ee6">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="18f5a99e-b16f-427b-afe9-b42addf47a7e" parent_id_arme="f6deb239-f857-421f-b93d-71d92f282ee6">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="25881c2a-2b50-4694-abd2-cfc1d1f4e7fb" parent_id_arme="f6deb239-f857-421f-b93d-71d92f282ee6">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="647d5b59-8e75-48cc-aa1d-140a91abd200" parent_id_arme="f6deb239-f857-421f-b93d-71d92f282ee6">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="cb161f86-202e-4e55-8960-25ae0e2108aa" parent_id_arme="f6deb239-f857-421f-b93d-71d92f282ee6">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="42b520ec-3273-445c-b829-4a260864645b" parent_id_arme="3292d9d4-8aac-41af-91fb-44df0a159894" />
+  <event name="Generate Sector Entities" id_arme="efb256aa-1b06-4c88-96ec-fdc0d7085014" parent_id_arme="42b520ec-3273-445c-b829-4a260864645b">
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="42883a25-dd7f-4bd7-958e-c12d44187e93" parent_id_arme="42b520ec-3273-445c-b829-4a260864645b">
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="8e6108e0-165b-47b2-a1bb-aa8ce7e7d800" parent_id_arme="42b520ec-3273-445c-b829-4a260864645b">
+    <if_variable name="Danae System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Danae System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Danae Sector III" id_arme="a382484b-a5d6-4993-9c4b-0906fd46e58e" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <event name="Create Danae Sector III" id_arme="2ed2cdf9-fb88-4834-8380-ecf68621d83e" parent_id_arme="a382484b-a5d6-4993-9c4b-0906fd46e58e">
+    <if_variable name="Danae System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="15" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Danae System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="40" type="nebulas" startX="76576.0" startY="0.0" startZ="20659.0" endX="56346.0" endY="0.0" endZ="30209.0" randomRange="5175" />
+    <create count="112" type="mines" startAngle="-35.7" endAngle="294.1" startX="39885.0" startY="300.0" startZ="44910.0" radius="8168" />
+    <create count="50" type="asteroids" startX="50566.0" startY="0.0" startZ="30837.0" endX="27446.0" endY="0.0" endZ="27068.0" randomRange="4427" />
+    <create count="20" type="nebulas" startX="52828.0" startY="0.0" startZ="29078.0" endX="35739.0" endY="0.0" endZ="37874.0" randomRange="4810" />
+    <create count="70" type="nebulas" startX="31341.0" startY="0.0" startZ="61246.0" endX="34859.0" endY="0.0" endZ="80596.0" randomRange="11238" />
+    <create count="30" type="asteroids" startX="38126.0" startY="0.0" startZ="58607.0" endX="22294.0" endY="0.0" endZ="47298.0" randomRange="2651" />
+    <create count="30" type="asteroids" startX="22796.0" startY="0.0" startZ="42523.0" endX="11990.0" endY="0.0" endZ="26942.0" randomRange="3695" />
+    <create count="20" type="nebulas" startX="31090.0" startY="0.0" startZ="38628.0" endX="14000.0" endY="0.0" endZ="32471.0" randomRange="6540" />
+    <create count="40" type="asteroids" startX="26440.0" startY="0.0" startZ="31968.0" endX="2817.0" endY="0.0" endZ="13246.0" randomRange="3973" />
+    <create count="10" type="asteroids" startX="52828.0" startY="0.0" startZ="30586.0" endX="62629.0" endY="0.0" endZ="22670.0" randomRange="9330" />
+    <create count="20" type="asteroids" startX="55843.0" startY="0.0" startZ="24554.0" endX="55718.0" endY="0.0" endZ="10858.0" randomRange="4675" />
+    <create count="40" type="asteroids" startX="59864.0" startY="0.0" startZ="11989.0" endX="75571.0" endY="0.0" endZ="5204.0" randomRange="5373" />
+    <create count="30" type="asteroids" startX="85875.0" startY="0.0" startZ="81350.0" endX="67655.0" endY="0.0" endZ="75821.0" randomRange="6442" />
+    <create count="10" type="nebulas" startX="92032.0" startY="0.0" startZ="82607.0" endX="59362.0" endY="0.0" endZ="64010.0" randomRange="4194" />
+    <create count="112" type="mines" startAngle="-35.7" endAngle="294.1" startX="39885.0" startY="-300.0" startZ="44910.0" radius="8168" />
+    <create count="112" type="mines" startAngle="-35.7" endAngle="294.1" startX="39885.0" startY="0.0" startZ="44910.0" radius="8168" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3a5b8df6-b707-4446-8dfe-dc0c70347d68" parent_id_arme="a382484b-a5d6-4993-9c4b-0906fd46e58e" />
+  <event name="Transition to Sector II" id_arme="e4133412-3bd2-477d-9dee-4ad5fbabc5fa" parent_id_arme="3a5b8df6-b707-4446-8dfe-dc0c70347d68">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="be49dbe5-e01b-4a37-8730-d0ca66e385fb" parent_id_arme="3a5b8df6-b707-4446-8dfe-dc0c70347d68">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="fad2c3b5-4902-4913-abc3-f70318e354ad" parent_id_arme="3a5b8df6-b707-4446-8dfe-dc0c70347d68">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="a5b60334-b852-4662-b0c0-6473939e21ea" parent_id_arme="3a5b8df6-b707-4446-8dfe-dc0c70347d68" />
+  <event name="Gate Offline" id_arme="3c7180c0-61ec-4735-afb6-23d17a5a4c67" parent_id_arme="a5b60334-b852-4662-b0c0-6473939e21ea">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Euphini Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c" parent_id_arme="a5b60334-b852-4662-b0c0-6473939e21ea" />
+  <event name="Ship1 Activation Range" id_arme="eedfdc9b-5c17-45b0-9bb3-86018eb97168" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Euphini Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="2c2b8d13-8b17-492f-a349-d56eb33bd2ab" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Euphini Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="b23c8742-6285-4f98-b551-23fc73085d8e" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Euphini Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="ff626302-fb80-4b81-bc6d-28ba509cbcb4" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Euphini Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="76b4b9a9-3a9f-4409-94a9-a7380d9624c0" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Euphini Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="0d107de3-450f-4cff-822f-22fb30f8a50d" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Euphini Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="a82976cb-abd3-40da-ab4d-4f0a53ce3dd8" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Euphini Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="9973ea1b-dbf9-49d6-a66f-4a532eff7971" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Euphini Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="b0c694d6-3e26-48ac-9635-2122a7948508" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Euphini Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="e9a86bbe-9ff4-4fdd-ba0f-87f286795827" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Euphini Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="80437aaf-f822-433a-9da0-828b81a047b3" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Euphini Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="5074b7f0-bc93-4937-ac49-1e42ed343d03" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Euphini Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="79d338f6-c11d-402f-bc4b-95cff7819060" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Euphini Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="43e3adf4-f42c-4623-84ff-aa4fce22848e" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Euphini Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="8a96da44-794c-48f2-baa0-f900a4c6a5f4" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Euphini Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="c6ff6375-e04b-43ec-843e-75d2db0c5848" parent_id_arme="a1506e6c-1048-48b5-b165-b8bc5232ac2c">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Euphini Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="ad93968b-702d-472f-a9df-796eaa6ce4b9" parent_id_arme="a5b60334-b852-4662-b0c0-6473939e21ea">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Euphini Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="e9f9c353-ae54-4e0c-a7ef-b3132d30af13" parent_id_arme="a5b60334-b852-4662-b0c0-6473939e21ea">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Danae to Euphini" value="1.0" />
+    <set_variable name="Euphini System" value="1.0" />
+    <set_variable name="Sector" value="8" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="8f54867e-0727-4d4d-9b59-6ac4591a5017" parent_id_arme="a382484b-a5d6-4993-9c4b-0906fd46e58e" />
+  <event name="Generate Sector Entities" id_arme="82867d5a-b2b2-4ac8-a7b1-3c4bac12e71a" parent_id_arme="8f54867e-0727-4d4d-9b59-6ac4591a5017">
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="33477.0" y="0.0" z="69036.0" angle="0" name="Euphini Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="39885.0" y="0.0" z="44785.0" angle="0" name="DS-224" hullID="1002" />
+    <create type="neutral" x="45155.0" y="0.0" z="43283.0" angle="0" name="WP-11" hullID="1052" />
+    <create type="neutral" x="45850.0" y="0.0" z="39841.0" angle="0" name="WP-98" hullID="1052" />
+    <create type="neutral" x="34408.0" y="0.0" z="44309.0" angle="0" name="WP-14" hullID="1052" />
+    <create type="neutral" x="41261.0" y="0.0" z="49200.0" angle="0" name="WP-59" hullID="1052" />
+    <create type="neutral" x="39963.0" y="0.0" z="40294.0" angle="0" name="WP-36" hullID="1052" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="7cdbdad0-315d-4a34-a73a-24220df475e9" parent_id_arme="8f54867e-0727-4d4d-9b59-6ac4591a5017">
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Euphini Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Euphini Gate" />
+    <set_object_property property="angle" value="4.101523742" name="Euphini Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Euphini Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="38e44707-ca29-48a5-ba47-9adaba709e21" parent_id_arme="8f54867e-0727-4d4d-9b59-6ac4591a5017">
+    <if_variable name="Danae System" comparator="EQUALS" value="3.0" />
+    <destroy name="Euphini Gate" />
+    <destroy name="DS-224" />
+    <destroy name="WP-11" />
+    <destroy name="WP-98" />
+    <destroy name="WP-14" />
+    <destroy name="WP-59" />
+    <destroy name="WP-36" />
+    <set_variable name="Danae System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Euphini" id_arme="53bf72b5-9310-4dc8-b2b8-e08777efcffc" parent_id_arme="a382484b-a5d6-4993-9c4b-0906fd46e58e">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Euphini to Danae" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Euphini Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Euphini Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Euphini Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Euphini Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Euphini Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Euphini Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Euphini Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Euphini Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Euphini to Danae" value="0.0" />
+  </event>
+  <folder_arme name="Danae Sector IV" id_arme="bd35aec3-5beb-47aa-933a-002a98298ec2" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <event name="Create Danae Sector IV" id_arme="a097fd2d-a2fb-4f17-a1b7-6195920fd07a" parent_id_arme="bd35aec3-5beb-47aa-933a-002a98298ec2">
+    <if_variable name="Danae System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="15" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Danae System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="16" type="nebulas" startX="20399.0" startY="0.0" startZ="96248.0" endX="2594.0" endY="0.0" endZ="88576.0" randomRange="7550" />
+    <create count="36" type="asteroids" startX="78589.0" startY="0.0" startZ="49638.0" endX="44717.0" endY="0.0" endZ="17213.0" randomRange="8696" />
+    <create count="44" type="nebulas" startX="54560.0" startY="0.0" startZ="31254.0" endX="86551.0" endY="0.0" endZ="46019.0" randomRange="16722" />
+  </event>
+  <folder_arme name="Navigation" id_arme="6b3aa789-a6dd-46b2-9ce4-57bbf699aa0d" parent_id_arme="bd35aec3-5beb-47aa-933a-002a98298ec2" />
+  <event name="Transition to Sector V" id_arme="2ae60594-7123-4053-aa06-11546a93fa52" parent_id_arme="6b3aa789-a6dd-46b2-9ce4-57bbf699aa0d">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="6aa3a206-f1dc-487d-bba4-171270be9f9e" parent_id_arme="6b3aa789-a6dd-46b2-9ce4-57bbf699aa0d">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="57411585-85ba-4757-976c-365489f5be05" parent_id_arme="6b3aa789-a6dd-46b2-9ce4-57bbf699aa0d">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="0dbc7d8a-9137-4b38-9403-251c02891d14" parent_id_arme="6b3aa789-a6dd-46b2-9ce4-57bbf699aa0d">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="1c8f18d0-fd2d-4dda-a121-5961f420159c" parent_id_arme="6b3aa789-a6dd-46b2-9ce4-57bbf699aa0d">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="76159548-cbc5-4609-adac-ae61b76f63e2" parent_id_arme="bd35aec3-5beb-47aa-933a-002a98298ec2" />
+  <event name="Generate Sector Entities" id_arme="8c9ac3f4-4713-433c-8503-b926363ca387" parent_id_arme="76159548-cbc5-4609-adac-ae61b76f63e2">
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="1a9ba4fa-d3a6-48f7-ab71-a575051dc3d9" parent_id_arme="76159548-cbc5-4609-adac-ae61b76f63e2">
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="bd436405-01eb-40a0-a005-a7343cb2b7ce" parent_id_arme="76159548-cbc5-4609-adac-ae61b76f63e2">
+    <if_variable name="Danae System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Danae System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Danae Sector V" id_arme="fb716163-123d-4bdc-afa0-13a0d0598f54" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <event name="Create Danae Sector V" id_arme="5f231859-9c27-43c8-a30b-4d4d37cdda60" parent_id_arme="fb716163-123d-4bdc-afa0-13a0d0598f54">
+    <if_variable name="Danae System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="15" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Danae System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="50" type="nebulas" startX="89268.0" startY="0.0" startZ="32471.0" endX="39006.0" endY="0.0" endZ="25183.0" randomRange="9401" />
+    <create count="60" type="nebulas" startX="38754.0" startY="0.0" startZ="28450.0" endX="1435.0" endY="0.0" endZ="33476.0" randomRange="8109" />
+    <create count="30" type="nebulas" startX="5079.0" startY="0.0" startZ="40638.0" endX="3320.0" endY="0.0" endZ="61120.0" randomRange="6980" />
+    <create count="30" type="nebulas" startX="8220.0" startY="0.0" startZ="55214.0" endX="22042.0" endY="0.0" endZ="72052.0" randomRange="4541" />
+    <create count="80" type="asteroids" startX="96179.0" startY="0.0" startZ="27696.0" endX="56472.0" endY="0.0" endZ="20785.0" randomRange="7791" />
+    <create count="50" type="asteroids" startX="53079.0" startY="0.0" startZ="21162.0" endX="6461.0" endY="0.0" endZ="30209.0" randomRange="4398" />
+    <create count="20" type="nebulas" startX="97024.0" startY="0.0" startZ="97302.0" endX="66466.0" endY="0.0" endZ="98139.0" randomRange="5171" />
+    <create count="20" type="nebulas" startX="89070.0" startY="0.0" startZ="90744.0" endX="64652.0" endY="0.0" endZ="75534.0" randomRange="6103" />
+  </event>
+  <folder_arme name="Navigation" id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58" parent_id_arme="fb716163-123d-4bdc-afa0-13a0d0598f54" />
+  <event name="Transition to Sector VI" id_arme="4baf441e-d91a-4d3f-a627-43d4cedec1b9" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="5eba1953-3061-4007-866f-e6a756b8a042" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="313a93c4-37aa-46e9-8d24-385f9bb86038" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="9c89fa27-81f6-484c-9225-be3bf7738ff5" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="1229a36f-0003-4138-ba95-6b753edc2f7d" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="bbfacb23-a966-4b7f-9b8c-825c9aa89895" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="9fe7f766-4daf-4e94-aa5e-5e5dc25e3b4a" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="9489f286-1eb1-461a-9ab8-373570d3d31d" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="4ffd33e2-ef6e-4d6f-80ca-c12a0633b79c" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58" />
+  <event name="Gate Offline" id_arme="7eb1b17e-27bd-431d-ab18-790b0bf7601a" parent_id_arme="4ffd33e2-ef6e-4d6f-80ca-c12a0633b79c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Waypoint 60 Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1" parent_id_arme="4ffd33e2-ef6e-4d6f-80ca-c12a0633b79c" />
+  <event name="Ship1 Activation Range" id_arme="5cb9b035-035f-4da5-adfd-071e8bc6abae" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="4c6ec59e-f4e4-40d2-aef0-0980dee1ff32" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="49469289-7089-4d55-b1e1-f3ce48ee485d" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="13357d67-2930-42e4-ba53-c40343b29ae6" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="422ae2b7-2034-4f39-968a-7b7382075ec3" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="01a6039c-cb6e-43dd-8163-a96c25665eab" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="fdf2ad5d-3be4-4b69-bcca-5863afd36766" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="7f14405d-b524-48ce-a492-f97c69329a1a" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="8d804b51-fa75-4754-b820-e5a38ef52eaa" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="d4280095-78a8-45b3-a714-f4d6293b578a" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="f090a1f5-f6a7-4fb3-8000-f632ded85cfa" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="236a5733-1590-4c44-b90a-ad137e0badaa" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="eb52c972-be4d-4a90-b210-31d5baad1889" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="0f594ee6-b6e5-4714-839f-aa61ec4c1bec" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="3601a892-3c59-4854-84bc-00e512d05e18" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Waypoint 60 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="e293a01d-70ba-42c1-91ec-818fa55e7985" parent_id_arme="084e37b9-766a-48ce-8ce1-3b7346482bb1">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Waypoint 60 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="debe12c4-458d-41c1-ac07-c30b75c735cc" parent_id_arme="4ffd33e2-ef6e-4d6f-80ca-c12a0633b79c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Waypoint 60 Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="191c91b8-029e-4e17-832d-9da9b872c8b9" parent_id_arme="4ffd33e2-ef6e-4d6f-80ca-c12a0633b79c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Danae to Waypoint 60" value="1.0" />
+    <set_variable name="Waypoint 60" value="1.0" />
+    <set_variable name="Sector" value="3" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="28d04ea6-0870-44ed-883b-a6d261ce5fd1" parent_id_arme="fb716163-123d-4bdc-afa0-13a0d0598f54" />
+  <event name="Generate Sector Entities" id_arme="a0a2ba58-9ce4-4f90-9cb7-8aabd4a7ba07" parent_id_arme="28d04ea6-0870-44ed-883b-a6d261ce5fd1">
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="71676.0" y="0.0" z="67905.0" angle="0" name="M-142" hullID="1003" />
+    <create type="station" x="35613.0" y="0.0" z="75445.0" angle="0" name="M-119" hullID="1003" />
+    <create type="station" x="14126.0" y="0.0" z="38502.0" angle="0" name="DS-523" hullID="1000" />
+    <create type="genericMesh" x="50063.0" y="0.0" z="52198.0" angle="0" name="Waypoint 60 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="fd58c616-4d55-4b3e-8bb2-57debc2ab966" parent_id_arme="28d04ea6-0870-44ed-883b-a6d261ce5fd1">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Waypoint 60 Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Waypoint 60 Gate" />
+    <set_object_property property="angle" value="4.101523742" name="Waypoint 60 Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Waypoint 60 Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="05f1e9b8-cce1-4cf9-ae10-5f7fba84324b" parent_id_arme="28d04ea6-0870-44ed-883b-a6d261ce5fd1">
+    <if_variable name="Danae System" comparator="EQUALS" value="3.0" />
+    <destroy name="M-142" />
+    <destroy name="M-119" />
+    <destroy name="DS-523" />
+    <destroy name="Waypoint 60 Gate" />
+    <set_variable name="Danae System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Waypoint 60" id_arme="57d35206-3606-4cef-9a47-ac46eea2aa57" parent_id_arme="fb716163-123d-4bdc-afa0-13a0d0598f54">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Waypoint 60 to Danae" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Waypoint 60 Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Waypoint 60 Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Waypoint 60 to Danae" value="0.0" />
+  </event>
+  <folder_arme name="Danae Sector VI" id_arme="ecff97bc-0f01-4e2d-9123-3cd3acc13822" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <event name="Create Danae Sector VI" id_arme="752f5ad1-b644-47d5-b461-f6410ccc546e" parent_id_arme="ecff97bc-0f01-4e2d-9123-3cd3acc13822">
+    <if_variable name="Danae System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="15" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Danae System" value="2.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="44" type="nebulas" startX="97262.0" startY="0.0" startZ="26767.0" endX="97407.0" endY="0.0" endZ="51954.0" randomRange="6271" />
+    <create count="44" type="nebulas" startX="89735.0" startY="0.0" startZ="28648.0" endX="3318.0" endY="0.0" endZ="81194.0" randomRange="6271" />
+    <create count="55" type="nebulas" startX="94512.0" startY="0.0" startZ="45006.0" endX="2594.0" endY="0.0" endZ="62521.0" randomRange="6271" />
+    <create count="17" type="asteroids" startX="76997.0" startY="0.0" startZ="48190.0" endX="48046.0" endY="0.0" endZ="59770.0" randomRange="5041" />
+    <create count="17" type="asteroids" startX="52244.0" startY="0.0" startZ="51230.0" endX="31110.0" endY="0.0" endZ="57599.0" randomRange="5041" />
+    <create count="17" type="asteroids" startX="52389.0" startY="0.0" startZ="49348.0" endX="68456.0" endY="0.0" endZ="46743.0" randomRange="5041" />
+  </event>
+  <folder_arme name="Navigation" id_arme="d6ca4290-fe7c-4c00-843e-cba13bfcbe36" parent_id_arme="ecff97bc-0f01-4e2d-9123-3cd3acc13822" />
+  <event name="Transition to Sector V" id_arme="e0df3087-954e-4ea0-aff8-3396b67acc3d" parent_id_arme="d6ca4290-fe7c-4c00-843e-cba13bfcbe36">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="2afc9617-8a2a-4885-8a9c-3e8818c618c7" parent_id_arme="d6ca4290-fe7c-4c00-843e-cba13bfcbe36">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="fd603a48-2ef4-48f0-9d0a-46ec11ab7bba" parent_id_arme="d6ca4290-fe7c-4c00-843e-cba13bfcbe36">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="4ee33965-e318-4e0b-beaf-25bb7bc6cf02" parent_id_arme="d6ca4290-fe7c-4c00-843e-cba13bfcbe36">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="184a3126-623d-41a0-bced-e8571270c06b" parent_id_arme="d6ca4290-fe7c-4c00-843e-cba13bfcbe36">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="c5625220-f19a-494f-b69f-2aa830210632" parent_id_arme="ecff97bc-0f01-4e2d-9123-3cd3acc13822" />
+  <event name="Generate Sector Entities" id_arme="fdc71d5d-dd25-4edf-a1b4-63d3ccd92971" parent_id_arme="c5625220-f19a-494f-b69f-2aa830210632">
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="d097f0bc-985a-487d-a46c-f4fac9b64d54" parent_id_arme="c5625220-f19a-494f-b69f-2aa830210632">
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="99961cb1-c992-4ac9-a60e-b10b11c20eaf" parent_id_arme="c5625220-f19a-494f-b69f-2aa830210632">
+    <if_variable name="Danae System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Danae System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Danae Sector VII" id_arme="139b5ff3-dfa7-4d7a-bea8-2ae15325c95e" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <event name="Create Danae Sector VII" id_arme="f337965d-36fe-495a-96e4-8ccdc6a420c6" parent_id_arme="139b5ff3-dfa7-4d7a-bea8-2ae15325c95e">
+    <if_variable name="Danae System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="15" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Danae System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="4042.0" startY="0.0" startZ="3462.0" endX="3173.0" endY="0.0" endZ="19963.0" randomRange="3710" />
+    <create count="10" type="nebulas" startX="30242.0" startY="0.0" startZ="2882.0" endX="8095.0" endY="0.0" endZ="3027.0" randomRange="6729" />
+    <create count="27" type="nebulas" startX="13161.0" startY="0.0" startZ="9975.0" endX="35308.0" endY="0.0" endZ="22858.0" randomRange="7106" />
+    <create count="372" type="nebulas" startX="82932.0" startY="0.0" startZ="79891.0" endX="11713.0" endY="0.0" endZ="79891.0" randomRange="22828" />
+    <create count="10" type="nebulas" startX="35598.0" startY="0.0" startZ="28504.0" endX="52823.0" endY="0.0" endZ="49059.0" randomRange="7562" />
+    <create count="30" type="asteroids" startX="73233.0" startY="0.0" startZ="65416.0" endX="68456.0" endY="0.0" endZ="69034.0" randomRange="3497" />
+    <create count="30" type="asteroids" startX="32268.0" startY="0.0" startZ="69613.0" endX="27202.0" endY="0.0" endZ="74101.0" randomRange="3497" />
+    <create count="30" type="asteroids" startX="55863.0" startY="0.0" startZ="81194.0" endX="66864.0" endY="0.0" endZ="72509.0" randomRange="3497" />
+  </event>
+  <folder_arme name="Navigation" id_arme="f9c9a6c3-8fed-407d-a499-7834fe422ffd" parent_id_arme="139b5ff3-dfa7-4d7a-bea8-2ae15325c95e" />
+  <event name="Transition to Sector VIII" id_arme="791fbb90-1fd0-44ac-8023-ed53619385c9" parent_id_arme="f9c9a6c3-8fed-407d-a499-7834fe422ffd">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="74b876a7-82ff-43ba-a6e2-098150bfacc5" parent_id_arme="f9c9a6c3-8fed-407d-a499-7834fe422ffd">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="2b13a2ed-c5bd-4fd7-b94a-6fc285c19d4d" parent_id_arme="f9c9a6c3-8fed-407d-a499-7834fe422ffd">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="db90c21b-737f-4ab0-bba3-41db02016cf3" parent_id_arme="139b5ff3-dfa7-4d7a-bea8-2ae15325c95e" />
+  <event name="Generate Sector Entities" id_arme="df792219-dccb-43e2-b91c-a58b31575a83" parent_id_arme="db90c21b-737f-4ab0-bba3-41db02016cf3">
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="16bc472e-c3be-4c84-b39e-577c44e1deb3" parent_id_arme="db90c21b-737f-4ab0-bba3-41db02016cf3">
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="424ecb95-87f8-4b62-9f9d-2e721c48ab78" parent_id_arme="db90c21b-737f-4ab0-bba3-41db02016cf3">
+    <if_variable name="Danae System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Danae System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Danae Sector VIII" id_arme="8e690197-5703-4827-a614-e35875288375" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <event name="Create Danae Sector VIII" id_arme="74b25e41-8a59-44bf-8a52-e5595780d391" parent_id_arme="8e690197-5703-4827-a614-e35875288375">
+    <if_variable name="Danae System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="15" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Danae System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="38" type="nebulas" startX="68456.0" startY="0.0" startZ="6067.0" endX="93499.0" endY="0.0" endZ="7949.0" randomRange="9069" />
+    <create count="304" type="nebulas" startX="82063.0" startY="0.0" startZ="80615.0" endX="17648.0" endY="0.0" endZ="80036.0" randomRange="23991" />
+    <create count="10" type="nebulas" startX="15622.0" startY="0.0" startZ="59626.0" endX="42401.0" endY="0.0" endZ="37478.0" randomRange="11405" />
+    <create count="10" type="nebulas" startX="71931.0" startY="0.0" startZ="55717.0" endX="42401.0" endY="0.0" endZ="37478.0" randomRange="11405" />
+    <create count="10" type="nebulas" startX="48046.0" startY="0.0" startZ="51664.0" endX="40374.0" endY="0.0" endZ="51519.0" randomRange="11405" />
+    <create count="10" type="asteroids" startX="81484.0" startY="0.0" startZ="68600.0" endX="40809.0" endY="0.0" endZ="52533.0" randomRange="12304" />
+    <create count="25" type="asteroids" startX="40374.0" startY="0.0" startZ="80615.0" endX="32558.0" endY="0.0" endZ="73377.0" randomRange="4063" />
+  </event>
+  <folder_arme name="Navigation" id_arme="6cef2b22-7a02-4d52-9a48-2a31ff080aa9" parent_id_arme="8e690197-5703-4827-a614-e35875288375" />
+  <event name="Transition to Sector IX" id_arme="cf17bd8f-cd78-4a9c-a926-dda417e9bde2" parent_id_arme="6cef2b22-7a02-4d52-9a48-2a31ff080aa9">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="5a00142b-4c79-4fe9-999c-fe2f9c7d4fb1" parent_id_arme="6cef2b22-7a02-4d52-9a48-2a31ff080aa9">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="523a261d-b5bf-4b4c-9fc2-4270cd80187c" parent_id_arme="6cef2b22-7a02-4d52-9a48-2a31ff080aa9">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="be2f4366-9a6e-4648-a878-e40b66ad638d" parent_id_arme="6cef2b22-7a02-4d52-9a48-2a31ff080aa9">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="2613c281-4fcd-49c2-ad6a-61c6fdebc117" parent_id_arme="6cef2b22-7a02-4d52-9a48-2a31ff080aa9">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="8b20aa16-ab93-44b1-aa38-e8fb866f7a46" parent_id_arme="8e690197-5703-4827-a614-e35875288375" />
+  <event name="Generate Sector Entities" id_arme="37974cb9-33a7-4d1d-8859-5d4720105f00" parent_id_arme="8b20aa16-ab93-44b1-aa38-e8fb866f7a46">
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="b75cadec-7d4e-4c07-af97-e74cfe8e36b0" parent_id_arme="8b20aa16-ab93-44b1-aa38-e8fb866f7a46">
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="a11d24ec-a494-4a4a-a2db-1b5f5ed317eb" parent_id_arme="8b20aa16-ab93-44b1-aa38-e8fb866f7a46">
+    <if_variable name="Danae System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Danae System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Danae Sector IX" id_arme="d5d34391-6905-475f-8fbf-76be27d862c5" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <event name="Create Danae Sector IX" id_arme="28ccc743-ff2c-44c3-bf00-ee1bd0038ce2" parent_id_arme="d5d34391-6905-475f-8fbf-76be27d862c5">
+    <if_variable name="Danae System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="15" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Danae System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="250" type="nebulas" startX="91762.0" startY="0.0" startZ="83075.0" endX="12582.0" endY="0.0" endZ="83510.0" randomRange="18393" />
+    <create count="10" type="nebulas" startX="16780.0" startY="0.0" startZ="62086.0" endX="42835.0" endY="0.0" endZ="51519.0" randomRange="9206" />
+    <create count="10" type="nebulas" startX="65996.0" startY="0.0" startZ="58902.0" endX="42835.0" endY="0.0" endZ="51519.0" randomRange="9206" />
+    <create count="10" type="nebulas" startX="23149.0" startY="0.0" startZ="31833.0" endX="42835.0" endY="0.0" endZ="51519.0" randomRange="9206" />
+    <create count="10" type="nebulas" startX="89011.0" startY="0.0" startZ="58612.0" endX="64548.0" endY="0.0" endZ="52967.0" randomRange="9206" />
+    <create count="10" type="asteroids" startX="35887.0" startY="0.0" startZ="64258.0" endX="26623.0" endY="0.0" endZ="78588.0" randomRange="7472" />
+    <create count="10" type="asteroids" startX="42690.0" startY="0.0" startZ="67008.0" endX="30966.0" endY="0.0" endZ="67008.0" randomRange="5024" />
+    <create count="26" type="asteroids" startX="84669.0" startY="0.0" startZ="89879.0" endX="63824.0" endY="0.0" endZ="78154.0" randomRange="3367" />
+    <create count="26" type="asteroids" startX="79168.0" startY="0.0" startZ="76851.0" endX="68456.0" endY="0.0" endZ="89445.0" randomRange="3367" />
+    <create count="26" type="asteroids" startX="84669.0" startY="0.0" startZ="89879.0" endX="70483.0" endY="0.0" endZ="74535.0" randomRange="3367" />
+  </event>
+  <folder_arme name="Navigation" id_arme="50bd0f96-acbc-4261-a9f8-a43f506263c4" parent_id_arme="d5d34391-6905-475f-8fbf-76be27d862c5" />
+  <event name="Transition to Sector VIII" id_arme="2592fc97-d17b-487b-9048-a1fb1035a31f" parent_id_arme="50bd0f96-acbc-4261-a9f8-a43f506263c4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="7f4fe885-25e9-456b-81e5-1652aacc9c53" parent_id_arme="50bd0f96-acbc-4261-a9f8-a43f506263c4">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="ecd4f3d9-498b-427f-acc1-6713a588ad8f" parent_id_arme="50bd0f96-acbc-4261-a9f8-a43f506263c4">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Danae System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="5270aaad-433d-4f45-932e-d7aa0ef7cf6b" parent_id_arme="d5d34391-6905-475f-8fbf-76be27d862c5" />
+  <event name="Generate Sector Entities" id_arme="5b7de120-6a9c-488e-9fdd-1435933279a3" parent_id_arme="5270aaad-433d-4f45-932e-d7aa0ef7cf6b">
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="2263a935-74eb-4fb3-ab17-58d94ecef66c" parent_id_arme="5270aaad-433d-4f45-932e-d7aa0ef7cf6b">
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="d9708248-99d9-4cc0-baac-f8e43454c176" parent_id_arme="5270aaad-433d-4f45-932e-d7aa0ef7cf6b">
+    <if_variable name="Danae System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Danae System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>
