@@ -2,7 +2,7 @@
   <start id_arme="86e97228-28e8-4d69-abcf-c293d1d1ab5e">
     <set_variable name="Custom Config" value="0.0" integer="yes" />
   </start>
-  <folder_arme name="Custom Config" id_arme="f9dc6a29-7d1b-4399-9daa-0d993badc837" />
+  <folder_arme name="Custom Config" id_arme="f9dc6a29-7d1b-4399-9daa-0d993badc837" expanded_arme="" />
   <event name="Ship1 Configuration" id_arme="56643add-a468-4dc1-9549-d6ed1e6757ad" parent_id_arme="f9dc6a29-7d1b-4399-9daa-0d993badc837">
     <if_variable name="Custom Config" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship1 Config" comparator="EQUALS" value="1.0" />
@@ -168,7 +168,7 @@
     <set_variable name="Ship8SensorBuoys" value="1.0" integer="yes" />
     <set_variable name="Custom Config" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="Ship Modules" id_arme="2426f36e-da72-4835-9068-2067f83a12fa" parent_id_arme="f9dc6a29-7d1b-4399-9daa-0d993badc837" />
+  <folder_arme name="Ship Modules" id_arme="2426f36e-da72-4835-9068-2067f83a12fa" parent_id_arme="f9dc6a29-7d1b-4399-9daa-0d993badc837" expanded_arme="" />
   <event name="Enable Modules" id_arme="2a1a89b3-96ff-4195-86bb-7fdc1814c997" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa">
     <if_variable name="Custom Config" comparator="EQUALS" value="2.0" />
     <if_variable name="Modules" comparator="NOT" value="1.0" />
@@ -177,9 +177,9 @@
     <set_variable name="Ship3ModuleType" value="0" integer="yes" />
     <set_variable name="Ship4ModuleType" value="0" integer="yes" />
     <set_variable name="Ship5ModuleType" value="0" integer="yes" />
-    <set_variable name="Ship6ModuleType" value="0" integer="yes" />
-    <set_variable name="Ship7ModuleType" value="0" integer="yes" />
-    <set_variable name="Ship8ModuleType" value="0" integer="yes" />
+    <set_variable name="Ship6ModuleType" value="1.0" integer="yes" />
+    <set_variable name="Ship7ModuleType" value="2" integer="yes" />
+    <set_variable name="Ship8ModuleType" value="1.0" integer="yes" />
     <get_object_property property="shieldMaxStateFront" player_slot="0" variable="Ship1MaxShieldLevelFront" />
     <get_object_property property="shieldMaxStateBack" player_slot="0" variable="Ship1MaxShieldLevelBack" />
     <set_variable name="Modules" value="1.0" integer="yes" />
@@ -193,7 +193,7 @@
     <clear_comms_button text="Deactivate Shields" sideValue="playerSide" />
     <set_variable name="CycleModulesMenu" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship1 Modules" id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" />
+  <folder_arme name="Ship1 Modules" id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" expanded_arme="" />
   <folder_arme name="Cluster Module" id_arme="1ce6ddc0-a4cd-434c-ba27-12638524c685" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" />
   <event name="Ship1 Cluster Module (Deploy)" id_arme="7b955eb1-0077-4951-a9c5-e3a568cd6b11" parent_id_arme="1ce6ddc0-a4cd-434c-ba27-12638524c685">
     <if_variable name="ShipSelect" comparator="EQUALS" value="1.0" />
@@ -279,7 +279,7 @@
     <destroy name="D.10" />
     <set_variable name="Ship1Decoy" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Shield Enhancers Module" id_arme="f2749eda-294b-4571-866e-37f8cee4c8be" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" />
+  <folder_arme name="Shield Enhancers Module" id_arme="f2749eda-294b-4571-866e-37f8cee4c8be" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" expanded_arme="" />
   <event name="Ship1 Shield Module (Activate)" id_arme="cb7b389e-0ba2-40a7-9fdf-a75adb7bbccf" parent_id_arme="f2749eda-294b-4571-866e-37f8cee4c8be">
     <if_variable name="ShipSelect" comparator="EQUALS" value="1.0" />
     <if_variable name="Modules" comparator="EQUALS" value="1.0" />
@@ -291,17 +291,18 @@
     <if_variable name="ShipSelect" comparator="EQUALS" value="1.0" />
     <if_variable name="Modules" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="3.0" />
-    <if_variable name="Ship1Shields" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ship1Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship1Shields" comparator="LESS_EQUAL" value="3.0" />
     <set_comms_button text="Deactivate Shields" sideValue="playerSide" />
   </event>
-  <folder_arme name="Shield Enhancement" id_arme="0f1b1577-796c-42fe-a08f-5316dfda1362" parent_id_arme="f2749eda-294b-4571-866e-37f8cee4c8be" />
+  <folder_arme name="Shield Enhancement" id_arme="0f1b1577-796c-42fe-a08f-5316dfda1362" parent_id_arme="f2749eda-294b-4571-866e-37f8cee4c8be" expanded_arme="" />
   <event name="Shields Active" id_arme="92dc46cb-aba0-44db-a1f1-a146ad7e8fb8" parent_id_arme="0f1b1577-796c-42fe-a08f-5316dfda1362">
     <if_variable name="ShipSelect" comparator="EQUALS" value="1.0" />
     <if_variable name="Modules" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="Activate Shields" />
-    <set_timer name="Ship1Shields" seconds="30" />
+    <clear_comms_button text="Activate Shields" sideValue="playerSide" />
+    <set_timer name="Ship1Shields" seconds="5" />
     <set_variable name="Ship1Shields" value="2.0" integer="yes" />
   </event>
   <event name="Deactivate Shields" id_arme="088aa1d6-dfa7-4d4d-a354-226774b948e4" parent_id_arme="0f1b1577-796c-42fe-a08f-5316dfda1362">
@@ -309,6 +310,7 @@
     <if_variable name="Modules" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="Deactivate Shields" />
+    <clear_comms_button text="Deactivate Shields" sideValue="playerSide" />
     <set_variable name="Ship1Shields" value="0.0" integer="yes" />
     <set_timer name="Ship1Shields" seconds="0" />
   </event>
@@ -318,25 +320,29 @@
     <if_timer_finished name="Ship1Shields" />
     <addto_object_property value="20.0" property="shieldStateBack" player_slot="0" />
     <set_variable name="Ship1Shields" value="3.0" integer="yes" />
+    <warning_popup_message message="Rear Boosted" consoles="MHWESCF" player_slot="0" />
   </event>
   <event name="Skip Shields (Back)" id_arme="6953a7fa-f862-4f5e-babe-738cd45067bc" parent_id_arme="0f1b1577-796c-42fe-a08f-5316dfda1362">
     <if_object_property property="shieldStateBack" player_slot="0" comparator="GREATER_EQUAL" value="Ship1MaxShieldLevelBack*10" />
     <if_variable name="Ship1Shields" comparator="EQUALS" value="2.0" />
     <if_timer_finished name="Ship1Shields" />
     <set_variable name="Ship1Shields" value="3.0" integer="yes" />
+    <warning_popup_message message="Rear Skipped" consoles="MHWESCF" player_slot="0" />
   </event>
   <event name="Enhance Shields (Front)" id_arme="33185ec2-37d5-4560-957e-ebb8edc9c638" parent_id_arme="0f1b1577-796c-42fe-a08f-5316dfda1362">
     <if_object_property property="shieldStateFront" player_slot="0" comparator="LESS" value="Ship1MaxShieldLevelFront*10" />
     <if_variable name="Ship1Shields" comparator="EQUALS" value="3.0" />
     <addto_object_property value="20.0" property="shieldStateFront" player_slot="0" />
-    <set_timer name="Ship1Shields" seconds="30" />
+    <set_timer name="Ship1Shields" seconds="5" />
     <set_variable name="Ship1Shields" value="2.0" integer="yes" />
+    <warning_popup_message message="Front Boosted" consoles="MHWESCF" player_slot="0" />
   </event>
   <event name="Skip Shields (Front)" id_arme="e9be235a-d501-4997-80a1-624a491cce64" parent_id_arme="0f1b1577-796c-42fe-a08f-5316dfda1362">
     <if_object_property property="shieldStateFront" player_slot="0" comparator="GREATER_EQUAL" value="Ship1MaxShieldLevelFront*10" />
     <if_variable name="Ship1Shields" comparator="EQUALS" value="3.0" />
-    <set_timer name="Ship1Shields" seconds="30" />
+    <set_timer name="Ship1Shields" seconds="5" />
     <set_variable name="Ship1Shields" value="2.0" integer="yes" />
+    <warning_popup_message message="Front Skipped" consoles="MHWESCF" player_slot="0" />
   </event>
   <folder_arme name="Ship2 Modules" id_arme="0014cbb1-68dd-41aa-ad05-4321b4f25572" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" />
   <folder_arme name="Cluster Module" id_arme="feb59e7e-d134-4f7c-ac80-db1186455872" parent_id_arme="0014cbb1-68dd-41aa-ad05-4321b4f25572" />
@@ -424,6 +430,65 @@
     <destroy name="D.20" />
     <set_variable name="Ship2Decoy" value="0.0" integer="yes" />
   </event>
+  <folder_arme name="Shield Enhancers Module" id_arme="8416f365-115f-4a9c-9004-12fd82d30a7b" parent_id_arme="0014cbb1-68dd-41aa-ad05-4321b4f25572" />
+  <event name="Ship2 Shield Module (Activate)" id_arme="ee8d3a59-e3aa-4b78-97bf-8bed93df8f30" parent_id_arme="8416f365-115f-4a9c-9004-12fd82d30a7b">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="2.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship2ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship2Shields" comparator="LESS" value="1.0" />
+    <set_comms_button text="Activate Shields" sideValue="playerSide" />
+  </event>
+  <event name="Ship2 Shield Module (Dectivate)" id_arme="9433008c-2f2f-4834-875f-fd860a9c4568" parent_id_arme="8416f365-115f-4a9c-9004-12fd82d30a7b">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="2.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship2ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship2Shields" comparator="GREATER_EQUAL" value="2.0" />
+    <if_variable name="Ship2Shields" comparator="LESS_EQUAL" value="3.0" />
+    <set_comms_button text="Deactivate Shields" sideValue="playerSide" />
+  </event>
+  <folder_arme name="Shield Enhancement" id_arme="67d23a0b-bb13-4e12-9139-6a475948b583" parent_id_arme="8416f365-115f-4a9c-9004-12fd82d30a7b" />
+  <event name="Shields Active" id_arme="b5569ce2-e50b-4e22-a2e7-c5c6ec5b2ab7" parent_id_arme="67d23a0b-bb13-4e12-9139-6a475948b583">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="2.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship2ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Activate Shields" />
+    <set_timer name="Ship2Shields" seconds="30" />
+    <set_variable name="Ship2Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Deactivate Shields" id_arme="217e1fd6-0737-41c7-9976-d60c0bf251e1" parent_id_arme="67d23a0b-bb13-4e12-9139-6a475948b583">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="2.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship2ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Deactivate Shields" />
+    <set_variable name="Ship2Shields" value="0.0" integer="yes" />
+    <set_timer name="Ship2Shields" seconds="0" />
+  </event>
+  <event name="Enhance Shields (Back)" id_arme="94eeb31d-6004-4548-a4c3-034735a6c729" parent_id_arme="67d23a0b-bb13-4e12-9139-6a475948b583">
+    <if_object_property property="shieldStateBack" player_slot="1" comparator="LESS" value="Ship2MaxShieldLevelBack*10" />
+    <if_variable name="Ship2Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship2Shields" />
+    <addto_object_property value="20.0" property="shieldStateBack" player_slot="1" />
+    <set_variable name="Ship2Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Back)" id_arme="eae85da3-77a3-4409-945d-9baa4a4a7298" parent_id_arme="67d23a0b-bb13-4e12-9139-6a475948b583">
+    <if_object_property property="shieldStateBack" player_slot="1" comparator="GREATER_EQUAL" value="Ship2MaxShieldLevelBack*10" />
+    <if_variable name="Ship2Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship2Shields" />
+    <set_variable name="Ship2Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Enhance Shields (Front)" id_arme="6b43230a-8bdf-4beb-9833-2e34c4e11f4c" parent_id_arme="67d23a0b-bb13-4e12-9139-6a475948b583">
+    <if_object_property property="shieldStateFront" player_slot="1" comparator="LESS" value="Ship2MaxShieldLevelFront*10" />
+    <if_variable name="Ship2Shields" comparator="EQUALS" value="3.0" />
+    <addto_object_property value="20.0" property="shieldStateFront" player_slot="1" />
+    <set_timer name="Ship2Shields" seconds="30" />
+    <set_variable name="Ship2Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Front)" id_arme="ed63f9b6-8cc2-4377-ac74-e0364e7efcd1" parent_id_arme="67d23a0b-bb13-4e12-9139-6a475948b583">
+    <if_object_property property="shieldStateFront" player_slot="1" comparator="GREATER_EQUAL" value="Ship2MaxShieldLevelFront*10" />
+    <if_variable name="Ship2Shields" comparator="EQUALS" value="3.0" />
+    <set_timer name="Ship2Shields" seconds="30" />
+    <set_variable name="Ship2Shields" value="2.0" integer="yes" />
+  </event>
   <folder_arme name="Ship3 Modules" id_arme="8094535a-0493-47aa-bdbd-990caa849cdd" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" />
   <folder_arme name="Cluster Module" id_arme="c52019d0-d1ba-4d95-b13c-7a9ddec02c12" parent_id_arme="8094535a-0493-47aa-bdbd-990caa849cdd" />
   <event name="Ship3 Cluster Module (Deploy)" id_arme="26ddf69b-64b9-4e38-9a46-e43dee38bbf7" parent_id_arme="c52019d0-d1ba-4d95-b13c-7a9ddec02c12">
@@ -509,6 +574,65 @@
     <if_timer_finished name="Ship3Decoy" />
     <destroy name="D.30" />
     <set_variable name="Ship3Decoy" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Shield Enhancers Module" id_arme="b7507212-afde-4afa-b37f-777a4d49538f" parent_id_arme="8094535a-0493-47aa-bdbd-990caa849cdd" />
+  <event name="Ship3 Shield Module (Activate)" id_arme="91d89dcc-3693-4976-8ade-cb7fc40202a8" parent_id_arme="b7507212-afde-4afa-b37f-777a4d49538f">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="3.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship3ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship3Shields" comparator="LESS" value="1.0" />
+    <set_comms_button text="Activate Shields" sideValue="playerSide" />
+  </event>
+  <event name="Ship3 Shield Module (Dectivate)" id_arme="938970cd-8999-40c4-a303-8848a68ffb84" parent_id_arme="b7507212-afde-4afa-b37f-777a4d49538f">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="3.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship3ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship3Shields" comparator="GREATER_EQUAL" value="2.0" />
+    <if_variable name="Ship3Shields" comparator="LESS_EQUAL" value="3.0" />
+    <set_comms_button text="Deactivate Shields" sideValue="playerSide" />
+  </event>
+  <folder_arme name="Shield Enhancement" id_arme="2bc99480-9a75-4978-a05c-320027e2a0d7" parent_id_arme="b7507212-afde-4afa-b37f-777a4d49538f" />
+  <event name="Shields Active" id_arme="0968ee00-b14d-41c7-9cf5-ef3a8b6e28b2" parent_id_arme="2bc99480-9a75-4978-a05c-320027e2a0d7">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="3.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship3ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Activate Shields" />
+    <set_timer name="Ship3Shields" seconds="30" />
+    <set_variable name="Ship3Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Deactivate Shields" id_arme="40e6e0ed-2a46-455e-9f1b-69ca7ccf2ed7" parent_id_arme="2bc99480-9a75-4978-a05c-320027e2a0d7">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="3.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship3ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Deactivate Shields" />
+    <set_variable name="Ship3Shields" value="0.0" integer="yes" />
+    <set_timer name="Ship3Shields" seconds="0" />
+  </event>
+  <event name="Enhance Shields (Back)" id_arme="db8814c3-3d02-4315-9a39-7fa04cc9c2f2" parent_id_arme="2bc99480-9a75-4978-a05c-320027e2a0d7">
+    <if_object_property property="shieldStateBack" player_slot="2" comparator="LESS" value="Ship3MaxShieldLevelBack*10" />
+    <if_variable name="Ship3Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship3Shields" />
+    <addto_object_property value="20.0" property="shieldStateBack" player_slot="2" />
+    <set_variable name="Ship3Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Back)" id_arme="48987f26-ecbd-404f-bc5b-f6f6cf3f4a44" parent_id_arme="2bc99480-9a75-4978-a05c-320027e2a0d7">
+    <if_object_property property="shieldStateBack" player_slot="2" comparator="GREATER_EQUAL" value="Ship3MaxShieldLevelBack*10" />
+    <if_variable name="Ship3Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship3Shields" />
+    <set_variable name="Ship3Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Enhance Shields (Front)" id_arme="17ba642e-0f39-4320-b0dc-d3f38e8aeb03" parent_id_arme="2bc99480-9a75-4978-a05c-320027e2a0d7">
+    <if_object_property property="shieldStateFront" player_slot="2" comparator="LESS" value="Ship3MaxShieldLevelFront*10" />
+    <if_variable name="Ship3Shields" comparator="EQUALS" value="3.0" />
+    <addto_object_property value="20.0" property="shieldStateFront" player_slot="2" />
+    <set_timer name="Ship3Shields" seconds="30" />
+    <set_variable name="Ship3Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Front)" id_arme="0c6e6f07-060c-43a5-b405-318038b62adf" parent_id_arme="2bc99480-9a75-4978-a05c-320027e2a0d7">
+    <if_object_property property="shieldStateFront" player_slot="2" comparator="GREATER_EQUAL" value="Ship3MaxShieldLevelFront*10" />
+    <if_variable name="Ship3Shields" comparator="EQUALS" value="3.0" />
+    <set_timer name="Ship3Shields" seconds="30" />
+    <set_variable name="Ship3Shields" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Ship4 Modules" id_arme="5666f6ff-eaf8-4164-8566-96cb60b42207" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" />
   <folder_arme name="Cluster Module" id_arme="c34b3783-901c-40ec-8bfe-691bdec83486" parent_id_arme="5666f6ff-eaf8-4164-8566-96cb60b42207" />
@@ -596,6 +720,65 @@
     <destroy name="D.40" />
     <set_variable name="Ship4Decoy" value="0.0" integer="yes" />
   </event>
+  <folder_arme name="Shield Enhancers Module" id_arme="8490a5fa-3b9c-4e41-9828-d1cb850eb1de" parent_id_arme="5666f6ff-eaf8-4164-8566-96cb60b42207" />
+  <event name="Ship4 Shield Module (Activate)" id_arme="b71eb29a-efbb-4511-ba54-1790999d4bb1" parent_id_arme="8490a5fa-3b9c-4e41-9828-d1cb850eb1de">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="4.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship4ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship4Shields" comparator="LESS" value="1.0" />
+    <set_comms_button text="Activate Shields" sideValue="playerSide" />
+  </event>
+  <event name="Ship4 Shield Module (Dectivate)" id_arme="7926e3c6-e9b5-4c18-bddf-d0227cf576d2" parent_id_arme="8490a5fa-3b9c-4e41-9828-d1cb850eb1de">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="4.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship4ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship4Shields" comparator="GREATER_EQUAL" value="2.0" />
+    <if_variable name="Ship4Shields" comparator="LESS_EQUAL" value="3.0" />
+    <set_comms_button text="Deactivate Shields" sideValue="playerSide" />
+  </event>
+  <folder_arme name="Shield Enhancement" id_arme="b4b9c006-ecc9-49d1-81ee-dc6b1c0e046b" parent_id_arme="8490a5fa-3b9c-4e41-9828-d1cb850eb1de" />
+  <event name="Shields Active" id_arme="b94fb721-aee3-4cde-b441-b8a430d5018a" parent_id_arme="b4b9c006-ecc9-49d1-81ee-dc6b1c0e046b">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="4.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship4ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Activate Shields" />
+    <set_timer name="Ship4Shields" seconds="30" />
+    <set_variable name="Ship4Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Deactivate Shields" id_arme="ce948e55-7961-45d5-9afe-72810a4cc019" parent_id_arme="b4b9c006-ecc9-49d1-81ee-dc6b1c0e046b">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="4.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship4ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Deactivate Shields" />
+    <set_variable name="Ship4Shields" value="0.0" integer="yes" />
+    <set_timer name="Ship4Shields" seconds="0" />
+  </event>
+  <event name="Enhance Shields (Back)" id_arme="30990a6f-0076-4eb5-bacf-0fdad15be86a" parent_id_arme="b4b9c006-ecc9-49d1-81ee-dc6b1c0e046b">
+    <if_object_property property="shieldStateBack" player_slot="3" comparator="LESS" value="Ship4MaxShieldLevelBack*10" />
+    <if_variable name="Ship4Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship4Shields" />
+    <addto_object_property value="20.0" property="shieldStateBack" player_slot="3" />
+    <set_variable name="Ship4Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Back)" id_arme="5a0a0225-5610-46f2-8e11-98fe91a0127a" parent_id_arme="b4b9c006-ecc9-49d1-81ee-dc6b1c0e046b">
+    <if_object_property property="shieldStateBack" player_slot="3" comparator="GREATER_EQUAL" value="Ship4MaxShieldLevelBack*10" />
+    <if_variable name="Ship4Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship4Shields" />
+    <set_variable name="Ship4Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Enhance Shields (Front)" id_arme="c805529a-2039-4e67-acdb-579e0589d6e0" parent_id_arme="b4b9c006-ecc9-49d1-81ee-dc6b1c0e046b">
+    <if_object_property property="shieldStateFront" player_slot="3" comparator="LESS" value="Ship4MaxShieldLevelFront*10" />
+    <if_variable name="Ship4Shields" comparator="EQUALS" value="3.0" />
+    <addto_object_property value="20.0" property="shieldStateFront" player_slot="3" />
+    <set_timer name="Ship4Shields" seconds="30" />
+    <set_variable name="Ship4Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Front)" id_arme="2c6e6d02-da2c-4443-a52c-dc01b2224cbc" parent_id_arme="b4b9c006-ecc9-49d1-81ee-dc6b1c0e046b">
+    <if_object_property property="shieldStateFront" player_slot="3" comparator="GREATER_EQUAL" value="Ship4MaxShieldLevelFront*10" />
+    <if_variable name="Ship4Shields" comparator="EQUALS" value="3.0" />
+    <set_timer name="Ship4Shields" seconds="30" />
+    <set_variable name="Ship4Shields" value="2.0" integer="yes" />
+  </event>
   <folder_arme name="Ship5 Modules" id_arme="73293b01-e3b2-41ee-ae56-a68b6d3b5c22" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" />
   <folder_arme name="Cluster Module" id_arme="6e679883-266e-4162-8bcb-f98524241a87" parent_id_arme="73293b01-e3b2-41ee-ae56-a68b6d3b5c22" />
   <event name="Ship5 Cluster Module (Deploy)" id_arme="78e196e4-d249-400c-8aab-421ca4354171" parent_id_arme="6e679883-266e-4162-8bcb-f98524241a87">
@@ -681,6 +864,65 @@
     <if_timer_finished name="Ship5Decoy" />
     <destroy name="D.50" />
     <set_variable name="Ship5Decoy" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Shield Enhancers Module" id_arme="2cbb23ef-c12a-4509-87c9-34103051bff1" parent_id_arme="73293b01-e3b2-41ee-ae56-a68b6d3b5c22" />
+  <event name="Ship5 Shield Module (Activate)" id_arme="ec543a36-8fc0-41fc-854f-70442e5e448d" parent_id_arme="2cbb23ef-c12a-4509-87c9-34103051bff1">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="5.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship5ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship5Shields" comparator="LESS" value="1.0" />
+    <set_comms_button text="Activate Shields" sideValue="playerSide" />
+  </event>
+  <event name="Ship5 Shield Module (Dectivate)" id_arme="2401f893-37b3-4099-afb4-c0b0396fd7a0" parent_id_arme="2cbb23ef-c12a-4509-87c9-34103051bff1">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="5.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship5ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship5Shields" comparator="GREATER_EQUAL" value="2.0" />
+    <if_variable name="Ship5Shields" comparator="LESS_EQUAL" value="3.0" />
+    <set_comms_button text="Deactivate Shields" sideValue="playerSide" />
+  </event>
+  <folder_arme name="Shield Enhancement" id_arme="371924bf-669d-4721-9c18-ae2cf4214e68" parent_id_arme="2cbb23ef-c12a-4509-87c9-34103051bff1" />
+  <event name="Shields Active" id_arme="99397a95-d1ac-437f-9887-200b20b72cd8" parent_id_arme="371924bf-669d-4721-9c18-ae2cf4214e68">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="5.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship5ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Activate Shields" />
+    <set_timer name="Ship5Shields" seconds="30" />
+    <set_variable name="Ship5Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Deactivate Shields" id_arme="ef90ec46-733a-4e73-8abb-8e580f8e0a91" parent_id_arme="371924bf-669d-4721-9c18-ae2cf4214e68">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="5.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship5ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Deactivate Shields" />
+    <set_variable name="Ship5Shields" value="0.0" integer="yes" />
+    <set_timer name="Ship5Shields" seconds="0" />
+  </event>
+  <event name="Enhance Shields (Back)" id_arme="769e4438-374c-4bf8-a36d-992cb445572c" parent_id_arme="371924bf-669d-4721-9c18-ae2cf4214e68">
+    <if_object_property property="shieldStateBack" player_slot="4" comparator="LESS" value="Ship5MaxShieldLevelBack*10" />
+    <if_variable name="Ship5Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship5Shields" />
+    <addto_object_property value="20.0" property="shieldStateBack" player_slot="4" />
+    <set_variable name="Ship5Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Back)" id_arme="c3e3303a-3f10-498c-9d0c-14952646d016" parent_id_arme="371924bf-669d-4721-9c18-ae2cf4214e68">
+    <if_object_property property="shieldStateBack" player_slot="4" comparator="GREATER_EQUAL" value="Ship5MaxShieldLevelBack*10" />
+    <if_variable name="Ship5Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship5Shields" />
+    <set_variable name="Ship5Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Enhance Shields (Front)" id_arme="76f6d57d-960c-430d-9669-ff71e673c490" parent_id_arme="371924bf-669d-4721-9c18-ae2cf4214e68">
+    <if_object_property property="shieldStateFront" player_slot="4" comparator="LESS" value="Ship5MaxShieldLevelFront*10" />
+    <if_variable name="Ship5Shields" comparator="EQUALS" value="3.0" />
+    <addto_object_property value="20.0" property="shieldStateFront" player_slot="4" />
+    <set_timer name="Ship5Shields" seconds="30" />
+    <set_variable name="Ship5Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Front)" id_arme="59f9c32a-478f-41c5-8a9d-4c5d11f8a5b5" parent_id_arme="371924bf-669d-4721-9c18-ae2cf4214e68">
+    <if_object_property property="shieldStateFront" player_slot="4" comparator="GREATER_EQUAL" value="Ship5MaxShieldLevelFront*10" />
+    <if_variable name="Ship5Shields" comparator="EQUALS" value="3.0" />
+    <set_timer name="Ship5Shields" seconds="30" />
+    <set_variable name="Ship5Shields" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Ship6 Modules" id_arme="2f70b22e-4be9-4028-a82d-3bdd07faa528" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" />
   <folder_arme name="Cluster Module" id_arme="82f83324-92bc-4304-bee7-b4434f4f2cb5" parent_id_arme="2f70b22e-4be9-4028-a82d-3bdd07faa528" />
@@ -768,6 +1010,65 @@
     <destroy name="D.60" />
     <set_variable name="Ship6Decoy" value="0.0" integer="yes" />
   </event>
+  <folder_arme name="Shield Enhancers Module" id_arme="3306df7f-6522-4daf-8dcc-48aec290c2e0" parent_id_arme="2f70b22e-4be9-4028-a82d-3bdd07faa528" />
+  <event name="Ship6 Shield Module (Activate)" id_arme="08020dc9-579c-4938-8425-24a62aa33ebf" parent_id_arme="3306df7f-6522-4daf-8dcc-48aec290c2e0">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="6.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship6ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship6Shields" comparator="LESS" value="1.0" />
+    <set_comms_button text="Activate Shields" sideValue="playerSide" />
+  </event>
+  <event name="Ship6 Shield Module (Dectivate)" id_arme="45344ece-7a50-4790-88e4-5c132678d057" parent_id_arme="3306df7f-6522-4daf-8dcc-48aec290c2e0">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="6.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship6ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship6Shields" comparator="GREATER_EQUAL" value="2.0" />
+    <if_variable name="Ship6Shields" comparator="LESS_EQUAL" value="3.0" />
+    <set_comms_button text="Deactivate Shields" sideValue="playerSide" />
+  </event>
+  <folder_arme name="Shield Enhancement" id_arme="11349619-dd75-42ee-8de4-cac7a19457b1" parent_id_arme="3306df7f-6522-4daf-8dcc-48aec290c2e0" />
+  <event name="Shields Active" id_arme="d2ef621c-9bc4-4741-92c2-771d20ffb344" parent_id_arme="11349619-dd75-42ee-8de4-cac7a19457b1">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="6.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship6ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Activate Shields" />
+    <set_timer name="Ship6Shields" seconds="30" />
+    <set_variable name="Ship6Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Deactivate Shields" id_arme="b02c954a-6f46-490a-81ee-69c941499513" parent_id_arme="11349619-dd75-42ee-8de4-cac7a19457b1">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="6.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship6ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Deactivate Shields" />
+    <set_variable name="Ship6Shields" value="0.0" integer="yes" />
+    <set_timer name="Ship6Shields" seconds="0" />
+  </event>
+  <event name="Enhance Shields (Back)" id_arme="be3d48de-8aff-45ab-9be1-9dbd38c5556f" parent_id_arme="11349619-dd75-42ee-8de4-cac7a19457b1">
+    <if_object_property property="shieldStateBack" player_slot="5" comparator="LESS" value="Ship6MaxShieldLevelBack*10" />
+    <if_variable name="Ship6Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship6Shields" />
+    <addto_object_property value="20.0" property="shieldStateBack" player_slot="5" />
+    <set_variable name="Ship6Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Back)" id_arme="c8802922-9029-446d-8e0c-5daba35559cc" parent_id_arme="11349619-dd75-42ee-8de4-cac7a19457b1">
+    <if_object_property property="shieldStateBack" player_slot="5" comparator="GREATER_EQUAL" value="Ship6MaxShieldLevelBack*10" />
+    <if_variable name="Ship6Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship6Shields" />
+    <set_variable name="Ship6Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Enhance Shields (Front)" id_arme="92a9707f-9b90-4d0b-bb53-60c40468bc50" parent_id_arme="11349619-dd75-42ee-8de4-cac7a19457b1">
+    <if_object_property property="shieldStateFront" player_slot="5" comparator="LESS" value="Ship6MaxShieldLevelFront*10" />
+    <if_variable name="Ship6Shields" comparator="EQUALS" value="3.0" />
+    <addto_object_property value="20.0" property="shieldStateFront" player_slot="5" />
+    <set_timer name="Ship6Shields" seconds="30" />
+    <set_variable name="Ship6Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Front)" id_arme="45fcbd6c-d8d8-4f55-9235-a0afb5409c5f" parent_id_arme="11349619-dd75-42ee-8de4-cac7a19457b1">
+    <if_object_property property="shieldStateFront" player_slot="5" comparator="GREATER_EQUAL" value="Ship6MaxShieldLevelFront*10" />
+    <if_variable name="Ship6Shields" comparator="EQUALS" value="3.0" />
+    <set_timer name="Ship6Shields" seconds="30" />
+    <set_variable name="Ship6Shields" value="2.0" integer="yes" />
+  </event>
   <folder_arme name="Ship7 Modules" id_arme="2eb7160e-d3ba-471b-848b-bce395b8e2d9" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" />
   <folder_arme name="Cluster Module" id_arme="d07d7e40-d61d-4d38-912b-f1c579bde6ea" parent_id_arme="2eb7160e-d3ba-471b-848b-bce395b8e2d9" />
   <event name="Ship7 Cluster Module (Deploy)" id_arme="c75bd421-f720-4853-86c4-36d2a4e858e9" parent_id_arme="d07d7e40-d61d-4d38-912b-f1c579bde6ea">
@@ -854,6 +1155,65 @@
     <destroy name="D.70" />
     <set_variable name="Ship7Decoy" value="0.0" integer="yes" />
   </event>
+  <folder_arme name="Shield Enhancers Module" id_arme="7ae173e7-8727-4d58-91e9-70208cacd74e" parent_id_arme="2eb7160e-d3ba-471b-848b-bce395b8e2d9" />
+  <event name="Ship7 Shield Module (Activate)" id_arme="fd5bd3de-f0c4-43bf-84e3-c41eccf486d9" parent_id_arme="7ae173e7-8727-4d58-91e9-70208cacd74e">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="7.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship7ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship7Shields" comparator="LESS" value="1.0" />
+    <set_comms_button text="Activate Shields" sideValue="playerSide" />
+  </event>
+  <event name="Ship7 Shield Module (Dectivate)" id_arme="d6df7bb8-5f18-48b3-bd5e-b8359680c722" parent_id_arme="7ae173e7-8727-4d58-91e9-70208cacd74e">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="7.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship7ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship7Shields" comparator="GREATER_EQUAL" value="2.0" />
+    <if_variable name="Ship7Shields" comparator="LESS_EQUAL" value="3.0" />
+    <set_comms_button text="Deactivate Shields" sideValue="playerSide" />
+  </event>
+  <folder_arme name="Shield Enhancement" id_arme="f7789ece-fa8c-486c-ae72-559db1f3546d" parent_id_arme="7ae173e7-8727-4d58-91e9-70208cacd74e" />
+  <event name="Shields Active" id_arme="e3ae2b54-d054-47d3-b3aa-a68ef354ea26" parent_id_arme="f7789ece-fa8c-486c-ae72-559db1f3546d">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="7.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship7ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Activate Shields" />
+    <set_timer name="Ship7Shields" seconds="30" />
+    <set_variable name="Ship7Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Deactivate Shields" id_arme="44d9869e-4d62-484a-a95d-cab239a67223" parent_id_arme="f7789ece-fa8c-486c-ae72-559db1f3546d">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="7.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship7ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Deactivate Shields" />
+    <set_variable name="Ship7Shields" value="0.0" integer="yes" />
+    <set_timer name="Ship7Shields" seconds="0" />
+  </event>
+  <event name="Enhance Shields (Back)" id_arme="e6a7e706-d6e4-49d4-94e4-6594fa5a7d31" parent_id_arme="f7789ece-fa8c-486c-ae72-559db1f3546d">
+    <if_object_property property="shieldStateBack" player_slot="6" comparator="LESS" value="Ship7MaxShieldLevelBack*10" />
+    <if_variable name="Ship7Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship7Shields" />
+    <addto_object_property value="20.0" property="shieldStateBack" player_slot="6" />
+    <set_variable name="Ship7Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Back)" id_arme="001b8e1f-7012-4a67-82ac-6629200d2f3b" parent_id_arme="f7789ece-fa8c-486c-ae72-559db1f3546d">
+    <if_object_property property="shieldStateBack" player_slot="6" comparator="GREATER_EQUAL" value="Ship7MaxShieldLevelBack*10" />
+    <if_variable name="Ship7Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship7Shields" />
+    <set_variable name="Ship7Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Enhance Shields (Front)" id_arme="385e5e48-723d-4f75-a4e5-04126a5aeb9d" parent_id_arme="f7789ece-fa8c-486c-ae72-559db1f3546d">
+    <if_object_property property="shieldStateFront" player_slot="6" comparator="LESS" value="Ship7MaxShieldLevelFront*10" />
+    <if_variable name="Ship7Shields" comparator="EQUALS" value="3.0" />
+    <addto_object_property value="20.0" property="shieldStateFront" player_slot="6" />
+    <set_timer name="Ship7Shields" seconds="30" />
+    <set_variable name="Ship7Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Front)" id_arme="6a6b44f6-94a3-438e-b0c4-c8b22ff5f492" parent_id_arme="f7789ece-fa8c-486c-ae72-559db1f3546d">
+    <if_object_property property="shieldStateFront" player_slot="6" comparator="GREATER_EQUAL" value="Ship7MaxShieldLevelFront*10" />
+    <if_variable name="Ship7Shields" comparator="EQUALS" value="3.0" />
+    <set_timer name="Ship7Shields" seconds="30" />
+    <set_variable name="Ship7Shields" value="2.0" integer="yes" />
+  </event>
   <folder_arme name="Ship8 Modules" id_arme="1967d435-675c-4b67-b9a6-3821ecb3a001" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" />
   <folder_arme name="Cluster Module" id_arme="ff030441-ca9f-4a38-81a1-835e0e9d5c21" parent_id_arme="1967d435-675c-4b67-b9a6-3821ecb3a001" />
   <event name="Ship8 Cluster Module (Deploy)" id_arme="9bd28feb-3ca0-4c15-b648-05c5f2168f94" parent_id_arme="ff030441-ca9f-4a38-81a1-835e0e9d5c21">
@@ -939,5 +1299,64 @@
     <if_timer_finished name="Ship8Decoy" />
     <destroy name="D.80" />
     <set_variable name="Ship8Decoy" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Shield Enhancers Module" id_arme="a7767605-d806-454b-886c-08756c0c0cf3" parent_id_arme="1967d435-675c-4b67-b9a6-3821ecb3a001" />
+  <event name="Ship8 Shield Module (Activate)" id_arme="c2afad80-cb15-4837-82fb-7c0db47dedcf" parent_id_arme="a7767605-d806-454b-886c-08756c0c0cf3">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="8.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship8ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship8Shields" comparator="LESS" value="1.0" />
+    <set_comms_button text="Activate Shields" sideValue="playerSide" />
+  </event>
+  <event name="Ship8 Shield Module (Dectivate)" id_arme="6d843a91-ea51-46a8-93ca-e16215a96fe1" parent_id_arme="a7767605-d806-454b-886c-08756c0c0cf3">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="8.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship8ModuleType" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ship8Shields" comparator="GREATER_EQUAL" value="2.0" />
+    <if_variable name="Ship8Shields" comparator="LESS_EQUAL" value="3.0" />
+    <set_comms_button text="Deactivate Shields" sideValue="playerSide" />
+  </event>
+  <folder_arme name="Shield Enhancement" id_arme="e9e06e9d-416d-4277-81e9-17cac00c2678" parent_id_arme="a7767605-d806-454b-886c-08756c0c0cf3" />
+  <event name="Shields Active" id_arme="f774e0b1-f96a-496d-a9c9-4ff9b305a69e" parent_id_arme="e9e06e9d-416d-4277-81e9-17cac00c2678">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="8.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship8ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Activate Shields" />
+    <set_timer name="Ship8Shields" seconds="30" />
+    <set_variable name="Ship8Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Deactivate Shields" id_arme="66e371c4-9a75-46c0-a8a9-58ea2e948483" parent_id_arme="e9e06e9d-416d-4277-81e9-17cac00c2678">
+    <if_variable name="ShipSelect" comparator="EQUALS" value="8.0" />
+    <if_variable name="Modules" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ship8ModuleType" comparator="EQUALS" value="3.0" />
+    <if_comms_button text="Deactivate Shields" />
+    <set_variable name="Ship8Shields" value="0.0" integer="yes" />
+    <set_timer name="Ship8Shields" seconds="0" />
+  </event>
+  <event name="Enhance Shields (Back)" id_arme="45e4321c-7b53-4833-9675-b155b6c7ef93" parent_id_arme="e9e06e9d-416d-4277-81e9-17cac00c2678">
+    <if_object_property property="shieldStateBack" player_slot="7" comparator="LESS" value="Ship8MaxShieldLevelBack*10" />
+    <if_variable name="Ship8Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship8Shields" />
+    <addto_object_property value="20.0" property="shieldStateBack" player_slot="7" />
+    <set_variable name="Ship8Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Back)" id_arme="bf6a05d2-5bbe-4460-b7db-dc11071acd44" parent_id_arme="e9e06e9d-416d-4277-81e9-17cac00c2678">
+    <if_object_property property="shieldStateBack" player_slot="7" comparator="GREATER_EQUAL" value="Ship8MaxShieldLevelBack*10" />
+    <if_variable name="Ship8Shields" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Ship8Shields" />
+    <set_variable name="Ship8Shields" value="3.0" integer="yes" />
+  </event>
+  <event name="Enhance Shields (Front)" id_arme="20892f87-d161-4eca-b816-42f7c07a031f" parent_id_arme="e9e06e9d-416d-4277-81e9-17cac00c2678">
+    <if_object_property property="shieldStateFront" player_slot="7" comparator="LESS" value="Ship8MaxShieldLevelFront*10" />
+    <if_variable name="Ship8Shields" comparator="EQUALS" value="3.0" />
+    <addto_object_property value="20.0" property="shieldStateFront" player_slot="7" />
+    <set_timer name="Ship8Shields" seconds="30" />
+    <set_variable name="Ship8Shields" value="2.0" integer="yes" />
+  </event>
+  <event name="Skip Shields (Front)" id_arme="f13c3e40-dd2c-42b4-a94b-b34340258861" parent_id_arme="e9e06e9d-416d-4277-81e9-17cac00c2678">
+    <if_object_property property="shieldStateFront" player_slot="7" comparator="GREATER_EQUAL" value="Ship8MaxShieldLevelFront*10" />
+    <if_variable name="Ship8Shields" comparator="EQUALS" value="3.0" />
+    <set_timer name="Ship8Shields" seconds="30" />
+    <set_variable name="Ship8Shields" value="2.0" integer="yes" />
   </event>
 </mission_data>

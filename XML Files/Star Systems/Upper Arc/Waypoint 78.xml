@@ -1,7 +1,7 @@
 <mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
-    <set_variable name="Coordinate X" value="402.0" integer="yes" />
-    <set_variable name="Coordinate Y" value="106.0" integer="yes" />
+    <set_variable name="Coordinate X" value="395.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="125.0" integer="yes" />
     <set_variable name="Alignment" value="0.0" integer="yes" />
   </start>
   <folder_arme name="Waypoint 78" id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" />

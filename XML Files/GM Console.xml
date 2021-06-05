@@ -568,7 +568,7 @@
     <clear_gm_button text="PS Cancel" />
     <set_variable name="CyclePlayerSide" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Side Selected" id_arme="0efe80fd-70ab-4f13-8164-d17edb7f307c" parent_id_arme="59f773cc-4d91-40b9-b9a7-4695c7d34e0d" expanded_arme="" />
+  <folder_arme name="Side Selected" id_arme="0efe80fd-70ab-4f13-8164-d17edb7f307c" parent_id_arme="59f773cc-4d91-40b9-b9a7-4695c7d34e0d" />
   <event name="Cancelled" id_arme="5cf2cb4e-b418-4072-9ebf-629b209b8adc" parent_id_arme="0efe80fd-70ab-4f13-8164-d17edb7f307c">
     <if_gm_button text="PS Cancel" />
     <set_variable name="CyclePlayerSide" value="2.0" integer="yes" />
@@ -1001,6 +1001,7 @@
     <clear_gm_button text="USFP Assets\Weapons Platform" />
     <clear_gm_button text="USFP Assets\Sensor Buoy" />
     <clear_gm_button text="USFP Assets\Comms Relay" />
+    <clear_gm_button text="USFP Assets\Docking Port" />
     <!--Ximni Menu-->
     <clear_gm_button text="Single Ximni\Light Cruiser" />
     <clear_gm_button text="Single Ximni\Scout" />
@@ -1067,7 +1068,8 @@
     <clear_gm_button text="Hegemony Assets\Torgoth Base" />
     <clear_gm_button text="Hegemony Assets\Skaraan Base" />
     <clear_gm_button text="Hegemony Assets\Civilian Bio Base" />
-    <clear_gm_button text="Hegemony Assets\Defense Platform" />
+    <clear_gm_button text="Hegemony Assets\Fighter Defense Platform" />
+    <clear_gm_button text="Hegemony Assets\Hegemony Defense Platform" />
     <clear_gm_button text="Hegemony Assets\Sensor Buoy (Active)" />
     <clear_gm_button text="Hegemony Assets\Sensor Buoy (Inactive)" />
     <clear_gm_button text="Hegemony Assets\Slingshot Platform" />
@@ -1151,6 +1153,12 @@
     <clear_gm_button text="Military Base\N'Tani Base" />
     <clear_gm_button text="Military Base\Hjorden Base" />
     <!--Static Objects Menu-->
+    <clear_gm_button text="Docking Port\Energy Only" />
+    <clear_gm_button text="Docking Port\Light Ordnance" />
+    <clear_gm_button text="Docking Port\Heavy Ordnance" />
+    <clear_gm_button text="Docking Port\Mining" />
+    <clear_gm_button text="Docking Port\Exploration" />
+    <clear_gm_button text="Docking Port\Xeno Research" />
     <clear_gm_button text="Other\Lifepod" />
     <clear_gm_button text="Other\Black Box" />
     <set_variable name="CycleSpawnMenu" value="0.0" integer="yes" />
@@ -2212,6 +2220,7 @@
     <set_gm_button text="USFP Assets\Factory" />
     <set_gm_button text="USFP Assets\Denabite Refinary" />
     <set_gm_button text="USFP Assets\Weapons Platform" />
+    <set_gm_button text="USFP Assets\Docking Port" />
     <set_gm_button text="USFP Assets\Sensor Buoy" />
     <set_gm_button text="USFP Assets\Comms Relay" />
     <!--Change Default Side-->
@@ -2407,10 +2416,16 @@
     <create type="station" use_gm_position="" name="--" hullID="1051" sideValue="SideValue" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <event name="TSN Weapons Platform" id_arme="d33707c6-0add-44de-951b-50fc30fbeb7f" parent_id_arme="ac45407a-2a1c-4937-a427-17c2bb86b312">
+  <event name="TSN Weapons Platform" id_arme="f3b0f1ff-27eb-45c7-a390-533249f38b07" parent_id_arme="ac45407a-2a1c-4937-a427-17c2bb86b312">
     <if_gm_button text="USFP Assets\Weapons Platform" />
     <create type="enemy" use_gm_position="" name="--" hullID="1052" sideValue="SideValue" fleetnumber="-1" />
     <set_variable name="Auto AI Type" value="9.0" integer="yes" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+  </event>
+  <event name="TSN Docking Port" id_arme="d33707c6-0add-44de-951b-50fc30fbeb7f" parent_id_arme="ac45407a-2a1c-4937-a427-17c2bb86b312">
+    <if_gm_button text="USFP Assets\Docking Port" />
+    <create type="station" use_gm_position="" name="--" hullID="1058" sideValue="SideValue" />
+    <set_variable name="Auto AI Type" value="406.0" integer="yes" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
   <event name="Create Sensor Buoy" id_arme="607ef78a-160e-467d-9658-1f829c02709a" parent_id_arme="ac45407a-2a1c-4937-a427-17c2bb86b312">
@@ -2662,13 +2677,14 @@
     <set_gm_button text="Hegemony Assets\Torgoth Base" />
     <set_gm_button text="Hegemony Assets\Skaraan Base" />
     <set_gm_button text="Hegemony Assets\Civilian Bio Base" />
-    <set_gm_button text="Hegemony Assets\Defense Platform" />
+    <set_gm_button text="Hegemony Assets\Fighter Defense Platform" />
+    <set_gm_button text="Hegemony Assets\Hegemony Defense Platform" />
     <set_gm_button text="Hegemony Assets\Sensor Buoy (Active)" />
     <set_gm_button text="Hegemony Assets\Sensor Buoy (Inactive)" />
     <set_gm_button text="Hegemony Assets\Slingshot Platform" />
     <set_gm_button text="Hegemony Assets\Slingshot Power" />
     <set_gm_button text="Hegemony Assets\Slingshot Antenna" />
-    <!--<set_gm_button text="Hegemony Assets\Slingshot Array" />-->
+    <set_gm_button text="Hegemony Assets\Slingshot Array" />
     <!--Change Default Side-->
     <clear_gm_button text="Change" />
     <clear_gm_button text="1" />
@@ -3050,28 +3066,38 @@
   <folder_arme name="Assets" id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669" parent_id_arme="c7990b33-1f5b-4913-9155-e131df5266a1" />
   <event name="Kralien Base" id_arme="2e66a51d-6499-4cfe-885d-fa4502fd6441" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
     <if_gm_button text="Hegemony Assets\Kralien Base" />
-    <create type="station" use_gm_position="" name="--" hullID="1005" sideValue="SideValue" />
+    <create type="neutral" use_gm_position="" name="--" hullID="1005" sideValue="SideValue" />
+    <set_variable name="Auto AI Type" value="12.0" integer="yes" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
   <event name="Arvonian Base" id_arme="338c852d-c20b-44b4-93e0-23d683192c74" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
     <if_gm_button text="Hegemony Assets\Arvonian Base" />
-    <create type="station" use_gm_position="" name="--" hullID="1006" sideValue="SideValue" />
+    <create type="neutral" use_gm_position="" name="--" hullID="1006" sideValue="SideValue" />
+    <set_variable name="Auto AI Type" value="12.0" integer="yes" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
   <event name="Torgoth Base" id_arme="a6e68a7d-a4c6-44a5-a173-29d8b77dd9e4" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
     <if_gm_button text="Hegemony Assets\Torgoth Base" />
-    <create type="station" use_gm_position="" name="--" hullID="1007" sideValue="SideValue" />
+    <create type="neutral" use_gm_position="" name="--" hullID="1007" sideValue="SideValue" />
+    <set_variable name="Auto AI Type" value="12.0" integer="yes" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
   <event name="Skaraan Base" id_arme="54599717-a735-4f6d-a9b0-12d9086d8abd" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
     <if_gm_button text="Hegemony Assets\Skaraan Base" />
-    <create type="station" use_gm_position="" name="--" hullID="1008" sideValue="SideValue" />
+    <create type="neutral" use_gm_position="" name="--" hullID="1008" sideValue="SideValue" />
+    <set_variable name="Auto AI Type" value="11.0" integer="yes" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+  </event>
+  <event name="Arvonian Defense Platform" id_arme="ecfa5b8b-440e-445e-9537-4b8b800a88cf" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
+    <if_gm_button text="Hegemony Assets\Fighter Defense Platform" />
+    <create type="enemy" use_gm_position="" name="--" hullID="1350" sideValue="SideValue" fleetnumber="-1" />
+    <set_variable name="Auto AI Type" value="9.0" integer="yes" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
   <event name="Hegemony Defense Platform" id_arme="f5e93256-78b1-415b-9eeb-599a74b453ba" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
-    <if_gm_button text="Hegemony Assets\Defense Platform" />
+    <if_gm_button text="Hegemony Assets\Hegemony Defense Platform" />
     <create type="enemy" use_gm_position="" name="--" hullID="1350" sideValue="SideValue" fleetnumber="-1" />
-    <set_variable name="Auto AI Type" value="9.0" integer="yes" />
+    <set_variable name="Auto AI Type" value="10.0" integer="yes" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
   <event name="Hegemony Bio Base" id_arme="46335dcd-926c-4e10-835c-023e2d73bbbc" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
@@ -3119,17 +3145,21 @@
     <set_variable name="Random Multiplier" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" integer="yes" />
     <set_variable name="Slingshot Array" value="1.0" integer="yes" />
+    <set_timer name="Slingshot Array" seconds="1" />
   </event>
   <event name="Kralien Slingshot Array 2" id_arme="a28fd121-cf88-48b0-80b8-5bbb80810e48" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
     <if_variable name="Slingshot Array" comparator="EQUALS" value="1.0" />
-    <set_relative_position name2=",," distance="5000*randMult" angle="Degrees" name1=".." />
+    <if_timer_finished name="Slingshot Array" />
+    <set_relative_position name2=",," distance="750*randMult" angle="Degrees" name1=".." />
     <set_variable name="Random Multiplier" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" integer="yes" />
     <set_variable name="Slingshot Array" value="2.0" integer="yes" />
+    <set_timer name="Slingshot Array" seconds="1" />
   </event>
   <event name="Kralien Slingshot Array 3" id_arme="748eb5cf-fabc-4a73-8f49-b4141eea283d" parent_id_arme="b9d8374e-3df3-40ee-9466-2bdb5cd7c669">
     <if_variable name="Slingshot Array" comparator="EQUALS" value="2.0" />
-    <set_relative_position name2="''" distance="5000*randMult" angle="Degrees" name1=".." />
+    <if_timer_finished name="Slingshot Array" />
+    <set_relative_position name2="''" distance="750*randMult" angle="Degrees" name1=".." />
     <set_ship_text name=",," newname="--" />
     <set_ship_text name="''" newname="--" />
     <set_ship_text name=".." newname="--" />
@@ -3505,7 +3535,7 @@
     <set_variable name="SideValue" value="5.0" integer="yes" />
     <set_variable name="Ship Spawn Menu" value="1.0" />
   </event>
-  <folder_arme name="Euphini Pirates" id_arme="b0bebfa5-1a24-45fc-9f49-b3bf8a4be1b2" parent_id_arme="21ec6630-49d0-4164-8c46-f274e4b62b72" expanded_arme="" />
+  <folder_arme name="Euphini Pirates" id_arme="b0bebfa5-1a24-45fc-9f49-b3bf8a4be1b2" parent_id_arme="21ec6630-49d0-4164-8c46-f274e4b62b72" />
   <event name="Arrow" id_arme="32e9b770-4891-43c2-a92d-582bb5a901c8" parent_id_arme="b0bebfa5-1a24-45fc-9f49-b3bf8a4be1b2">
     <if_gm_button text="Euphini Pirates\Arrow" />
     <create type="enemy" use_gm_position="" name="--" hullID="7300" sideValue="SideValue" fleetnumber="-1" />
@@ -3563,7 +3593,7 @@
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Skull Pirates" id_arme="a7f8a57f-bc8f-4506-b571-f5a47ff4eeae" parent_id_arme="21ec6630-49d0-4164-8c46-f274e4b62b72" expanded_arme="" />
+  <folder_arme name="Skull Pirates" id_arme="a7f8a57f-bc8f-4506-b571-f5a47ff4eeae" parent_id_arme="21ec6630-49d0-4164-8c46-f274e4b62b72" />
   <event name="Strongbow" id_arme="b416ea47-331a-42da-ad49-6fc8ceaf8657" parent_id_arme="a7f8a57f-bc8f-4506-b571-f5a47ff4eeae">
     <if_gm_button text="Skull Pirates\Strongbow" />
     <create type="enemy" use_gm_position="" name="--" hullID="14" sideValue="SideValue" fleetnumber="-1" />
@@ -3819,6 +3849,12 @@
   <event name="Static Objects Menu" id_arme="77bf8b71-b09b-4680-b75d-fa67419810af" parent_id_arme="e68b43cd-1ae4-49d6-ae8b-19f9bfeefa38">
     <if_variable name="Ship Spawn Menu" comparator="EQUALS" value="14.0" />
     <if_timer_finished name="Ship Spawn Menu" />
+    <set_gm_button text="Docking Port\Energy Only" />
+    <set_gm_button text="Docking Port\Light Ordnance" />
+    <set_gm_button text="Docking Port\Heavy Ordnance" />
+    <set_gm_button text="Docking Port\Mining" />
+    <set_gm_button text="Docking Port\Exploration" />
+    <set_gm_button text="Docking Port\Xeno Research" />
     <set_gm_button text="Other\Lifepod" />
     <set_gm_button text="Other\Black Box" />
     <!--Change Default Side-->
@@ -4809,6 +4845,43 @@
     <if_variable name="lifepodNumber" comparator="GREATER_EQUAL" value="5.0" />
     <set_variable name="lifepodNumber" value="1.0" integer="yes" />
     <set_variable name="Lifepods" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Docking Ports" id_arme="822ebab5-c150-41fa-bcbc-8affff6360e8" parent_id_arme="e68b43cd-1ae4-49d6-ae8b-19f9bfeefa38" />
+  <event name="USFP Energy Only" id_arme="dbb90f12-887f-4841-8f7c-9e7700e294a6" parent_id_arme="822ebab5-c150-41fa-bcbc-8affff6360e8">
+    <if_gm_button text="Docking Port\Energy Only" />
+    <create type="station" use_gm_position="" name="--" hullID="1058" sideValue="2" />
+    <set_variable name="Auto AI Type" value="500.0" integer="yes" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+  </event>
+  <event name="USFP Light Ordnance" id_arme="f31a1d5b-b35a-4a36-923f-c39410eccc29" parent_id_arme="822ebab5-c150-41fa-bcbc-8affff6360e8">
+    <if_gm_button text="Docking Port\Light Ordnance" />
+    <create type="station" use_gm_position="" name="--" hullID="1058" sideValue="2" />
+    <set_variable name="Auto AI Type" value="501.0" integer="yes" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+  </event>
+  <event name="USFP Heavy Ordnance" id_arme="54d827f7-d983-498b-a23d-f48f294f4785" parent_id_arme="822ebab5-c150-41fa-bcbc-8affff6360e8">
+    <if_gm_button text="Docking Port\Heavy Ordnance" />
+    <create type="station" use_gm_position="" name="--" hullID="1058" sideValue="2" />
+    <set_variable name="Auto AI Type" value="502.0" integer="yes" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+  </event>
+  <event name="USFP Mining" id_arme="b0d9ef7c-4835-4310-81f9-faf74d15a45d" parent_id_arme="822ebab5-c150-41fa-bcbc-8affff6360e8">
+    <if_gm_button text="Docking Port\Mining" />
+    <create type="station" use_gm_position="" name="--" hullID="1058" sideValue="2" />
+    <set_variable name="Auto AI Type" value="503.0" integer="yes" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+  </event>
+  <event name="USFP Exploration" id_arme="57f006d0-df6c-469b-813b-2812ca042ace" parent_id_arme="822ebab5-c150-41fa-bcbc-8affff6360e8">
+    <if_gm_button text="Docking Port\Exploration" />
+    <create type="station" use_gm_position="" name="--" hullID="1058" sideValue="2" />
+    <set_variable name="Auto AI Type" value="504.0" integer="yes" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+  </event>
+  <event name="USFP Xeno Research" id_arme="84a032e3-ac17-4dba-8729-a5106dae70aa" parent_id_arme="822ebab5-c150-41fa-bcbc-8affff6360e8">
+    <if_gm_button text="Docking Port\Xeno Research" />
+    <create type="station" use_gm_position="" name="--" hullID="1058" sideValue="2" />
+    <set_variable name="Auto AI Type" value="505.0" integer="yes" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
   <folder_arme name="Default AI Override" id_arme="70c29f72-0adf-4368-8e52-9c49fccf287a" parent_id_arme="047cc0b3-ea2a-4991-98c9-400c3bbcd6c5" />
   <event name="Override Default AI" id_arme="f12c82cc-6107-483b-9b99-b6c4c0613b46" parent_id_arme="70c29f72-0adf-4368-8e52-9c49fccf287a">
@@ -40362,8 +40435,8 @@
     <set_variable name="ScanPoint" value="1.0" integer="yes" />
     <set_variable name="ScanSignature" value="65.0" integer="yes" />
   </event>
-  <folder_arme name="Moving Signatures" id_arme="6f45240c-bcea-4123-bc25-dc704dd6c630" parent_id_arme="9ff0c7aa-f5c0-488c-9554-1d3d2df80622" expanded_arme="" />
-  <folder_arme name="Skaraan" id_arme="dafa600b-cef6-4780-92b5-0ac940996577" parent_id_arme="6f45240c-bcea-4123-bc25-dc704dd6c630" expanded_arme="" />
+  <folder_arme name="Moving Signatures" id_arme="6f45240c-bcea-4123-bc25-dc704dd6c630" parent_id_arme="9ff0c7aa-f5c0-488c-9554-1d3d2df80622" />
+  <folder_arme name="Skaraan" id_arme="dafa600b-cef6-4780-92b5-0ac940996577" parent_id_arme="6f45240c-bcea-4123-bc25-dc704dd6c630" />
   <event name="Heading 0" id_arme="80f49316-8814-4fdd-9ba6-4ef215cc71d2" parent_id_arme="dafa600b-cef6-4780-92b5-0ac940996577">
     <if_gm_button text="Mobile Signature\Skaraan\Heading 0" />
     <create type="genericMesh" use_gm_position="" name="(|ScanPointNumber|)" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" fakeShieldsFront="1" fakeShieldsRear="1" hasFakeShldFreq="1" colorRed="0.1" colorGreen="0.5" colorBlue="0.1" />
@@ -40382,7 +40455,7 @@
     <create type="genericMesh" use_gm_position="" angle="0" name="(|ScanPointNumber|)" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.1" colorGreen="0.5" colorBlue="0.1" />
     <set_variable name="ScanPoint" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="Signature Readings" id_arme="db803b9b-8009-46a6-a192-cabd7cf92f25" parent_id_arme="057c8e7f-7f30-4c9a-a7e6-21a0335d87d7" expanded_arme="" />
+  <folder_arme name="Signature Readings" id_arme="db803b9b-8009-46a6-a192-cabd7cf92f25" parent_id_arme="057c8e7f-7f30-4c9a-a7e6-21a0335d87d7" />
   <folder_arme name="TSN Signatures" id_arme="a3ba9a1d-8974-4814-bc1e-49e0a2fbca22" parent_id_arme="db803b9b-8009-46a6-a192-cabd7cf92f25" />
   <event name="TSN Energy Signature" id_arme="34eb9755-40c1-4866-8a0b-daf1f4b8838e" parent_id_arme="a3ba9a1d-8974-4814-bc1e-49e0a2fbca22">
     <if_variable name="ScanPoint" comparator="EQUALS" value="2.0" />
@@ -40565,7 +40638,7 @@
     <set_variable name="ScanSignature" value="0.0" integer="yes" />
     <set_variable name="ScanPoint" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Mobile Signatures" id_arme="0cbf4caf-53fe-4785-87a6-3945453ef149" parent_id_arme="db803b9b-8009-46a6-a192-cabd7cf92f25" expanded_arme="" />
+  <folder_arme name="Mobile Signatures" id_arme="0cbf4caf-53fe-4785-87a6-3945453ef149" parent_id_arme="db803b9b-8009-46a6-a192-cabd7cf92f25" />
   <event name="Heading 0" id_arme="c392ccf4-53e8-4515-b1c1-0b085db227ee" parent_id_arme="0cbf4caf-53fe-4785-87a6-3945453ef149">
     <if_variable name="ScanPoint" comparator="EQUALS" value="2.0" />
     <if_variable name="ScanSignature" comparator="EQUALS" value="100.0" />
@@ -41215,7 +41288,7 @@
     <set_gm_button text="Random Damage\Set All On-" />
     <set_variable name="Interactions Menu" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Repair Damage" id_arme="9eead1e0-2012-4d71-8af1-17f9ac9fab25" parent_id_arme="209dd9dc-863e-4c29-a1e2-64950acc992e" expanded_arme="" />
+  <folder_arme name="Repair Damage" id_arme="9eead1e0-2012-4d71-8af1-17f9ac9fab25" parent_id_arme="209dd9dc-863e-4c29-a1e2-64950acc992e" />
   <event name="Repair Beams" id_arme="f57817ed-001b-4aef-aec5-c53e8d4d6d42" parent_id_arme="9eead1e0-2012-4d71-8af1-17f9ac9fab25">
     <if_gm_button text="Repair Ship\Repair Beams" />
     <set_player_grid_damage value="0.0" use_gm_selection=" " index="0" systemType="systemBeam" countFrom="front" />

@@ -164,9 +164,59 @@
     <add_ai type="LEADER_LEADS" name="--" />
     <add_ai type="FOLLOW_LEADER" name="--" />
   </event>
-  <event name="9 - Weapons Platform" id_arme="85915acf-22ca-42f4-afe6-42467f417bf8" parent_id_arme="d474c83d-3108-49d6-983d-3752ff52be2f">
+  <event name="9 - Arvonian Weapons Platform" id_arme="d154787e-2023-47b0-9e98-d02b04533d2f" parent_id_arme="d474c83d-3108-49d6-983d-3752ff52be2f">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="9.0" />
     <set_object_property property="topSpeed" value="0" name="--" />
+    <set_special name="--" ship="-1" captain="-1" ability="AntiMine" />
+    <set_special name="--" ship="-1" captain="-1" ability="AntiTorp" />
+    <set_object_property property="surrenderChance" value="0" name="--" />
+    <clear_ai name="--" />
+    <add_ai type="SPCL_AI" name="--" />
+    <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="--" />
+    <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="--" />
+    <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="--" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="--" />
+  </event>
+  <event name="10 - Hegemony Weapons Platform" id_arme="85915acf-22ca-42f4-afe6-42467f417bf8" parent_id_arme="d474c83d-3108-49d6-983d-3752ff52be2f">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="10.0" />
+    <set_object_property property="topSpeed" value="0" name="--" />
+    <set_special name="--" ship="-1" captain="-1" ability="AntiMine" />
+    <set_special name="--" ship="-1" captain="-1" ability="AntiTorp" />
+    <set_object_property property="surrenderChance" value="0" name="--" />
+    <clear_ai name="--" />
+    <add_ai type="SPCL_AI" name="--" />
+    <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="--" />
+    <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="--" />
+    <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="--" />
+  </event>
+  <event name="11 - Skaraan Base" id_arme="5bfeaae4-6a1f-4dba-a797-5020993e0660" parent_id_arme="d474c83d-3108-49d6-983d-3752ff52be2f">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="11.0" />
+    <set_object_property property="topSpeed" value="0" name="--" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="Stealth" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="Cloak" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="HET" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="Warp" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="Teleport" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="Tractor" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="ShldDrain" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="ShldVamp" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="TeleBack" />
+    <set_special name="--" ship="-1" captain="-1" clear="yes" ability="ShldReset" />
+    <set_special name="--" ship="-1" captain="-1" ability="AntiMine" />
+    <set_special name="--" ship="-1" captain="-1" ability="AntiTorp" />
+    <set_special name="--" ship="-1" captain="-1" ability="LowVis" />
+    <set_object_property property="surrenderChance" value="0" name="--" />
+    <clear_ai name="--" />
+    <add_ai type="SPCL_AI" name="--" />
+    <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="--" />
+    <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="--" />
+    <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="--" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="--" />
+  </event>
+  <event name="12 - Hegemony Base" id_arme="fb57931d-e8ff-4ef0-bb1b-8741031d8855" parent_id_arme="d474c83d-3108-49d6-983d-3752ff52be2f">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="12.0" />
+    <set_object_property property="topSpeed" value="0" name="--" />
+    <set_object_property property="turnRate" value="0.006" name="--" />
     <set_object_property property="surrenderChance" value="0" name="--" />
     <clear_ai name="--" />
     <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="--" />
@@ -6625,11 +6675,14 @@
   <event name="406 - Docking Port" id_arme="be394bee-b27a-46db-828e-f7212b3b0db2" parent_id_arme="693b84da-6a6c-4059-a2c1-c6bec1e040cb">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="406.0" />
     <set_object_property property="canBuild" value="0" name="--" />
-    <set_object_property property="missileStoresHoming" value="0" name="--" />
-    <set_object_property property="missileStoresNuke" value="0" name="--" />
-    <set_object_property property="missileStoresMine" value="0" name="--" />
-    <set_object_property property="missileStoresEMP" value="0" name="--" />
-    <set_object_property property="missileStoresPShock" value="0" name="--" />
+    <set_object_property property="missileStoresHoming" value="4" name="--" />
+    <set_object_property property="missileStoresNuke" value="5" name="--" />
+    <set_object_property property="missileStoresMine" value="3" name="--" />
+    <set_object_property property="missileStoresEMP" value="6" name="--" />
+    <set_object_property property="missileStoresPShock" value="2" name="--" />
+    <set_object_property property="missileStoresTag" value="1" name="--" />
+    <set_object_property property="missileStoresBeacon" value="6" name="--" />
+    <set_object_property property="missileStoresProbe" value="3" name="--" />
   </event>
   <event name="407 - Civilian Bases" id_arme="8872f213-f4b3-4dce-baff-279e7798df37" parent_id_arme="693b84da-6a6c-4059-a2c1-c6bec1e040cb">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="407.0" />
@@ -6682,7 +6735,7 @@
     <clear_ai name="--" />
     <set_variable name="Auto AI Type" value="0.0" integer="yes" />
   </event>
-  <event name="413 - Slingshot Antenna" id_arme="0760cb55-9aa0-44de-b726-9df8d43af691" parent_id_arme="693b84da-6a6c-4059-a2c1-c6bec1e040cb">
+  <event name="413 - Slingshot Antenna" id_arme="3c1945ff-bda3-4ac2-a913-7256fdf841f6" parent_id_arme="693b84da-6a6c-4059-a2c1-c6bec1e040cb">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="413.0" />
     <set_object_property property="surrenderChance" value="10" name="--" />
     <clear_ai name="--" />
@@ -7250,6 +7303,85 @@
     <clear_ai name="TSN Orpheus" />
     <add_ai type="DIR_THROTTLE" value1="Degrees" value2="1.0" name="TSN Orpheus" />
     <set_variable name="Random Direction" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Docking Ports (500 - 599)" id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c" parent_id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" />
+  <event name="500 - Energy Only" id_arme="d899309b-70ae-4c73-b003-3d306851d990" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="500.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations." />
+    <set_object_property property="missileStoresHoming" value="0" name="--" />
+    <set_object_property property="missileStoresNuke" value="0" name="--" />
+    <set_object_property property="missileStoresMine" value="0" name="--" />
+    <set_object_property property="missileStoresEMP" value="0" name="--" />
+    <set_object_property property="missileStoresPShock" value="0" name="--" />
+    <set_object_property property="missileStoresTag" value="0" name="--" />
+    <set_object_property property="missileStoresBeacon" value="0" name="--" />
+    <set_object_property property="missileStoresProbe" value="0" name="--" />
+  </event>
+  <event name="501 - Light Ordnance" id_arme="e1c2d79b-e766-45c0-b739-e0275f85351f" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="501.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have ordnance available for resupply." />
+    <set_object_property property="missileStoresHoming" value="50" name="--" />
+    <set_object_property property="missileStoresNuke" value="0" name="--" />
+    <set_object_property property="missileStoresMine" value="0" name="--" />
+    <set_object_property property="missileStoresEMP" value="30" name="--" />
+    <set_object_property property="missileStoresPShock" value="40" name="--" />
+    <set_object_property property="missileStoresTag" value="10" name="--" />
+    <set_object_property property="missileStoresBeacon" value="0" name="--" />
+    <set_object_property property="missileStoresProbe" value="0" name="--" />
+  </event>
+  <event name="502 - Heavy Ordnance" id_arme="c1af14ca-686f-4428-93fc-707928243147" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="502.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have ordnance available for resupply." />
+    <set_object_property property="missileStoresHoming" value="0" name="--" />
+    <set_object_property property="missileStoresNuke" value="10" name="--" />
+    <set_object_property property="missileStoresMine" value="15" name="--" />
+    <set_object_property property="missileStoresEMP" value="30" name="--" />
+    <set_object_property property="missileStoresPShock" value="20" name="--" />
+    <set_object_property property="missileStoresTag" value="5" name="--" />
+    <set_object_property property="missileStoresBeacon" value="0" name="--" />
+    <set_object_property property="missileStoresProbe" value="0" name="--" />
+  </event>
+  <event name="503 - Mining" id_arme="942dbb96-7041-4ef1-84ae-38e73c1337d7" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="503.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have mining equipment available for resupply." />
+    <set_object_property property="missileStoresHoming" value="0" name="--" />
+    <set_object_property property="missileStoresNuke" value="0" name="--" />
+    <set_object_property property="missileStoresMine" value="50" name="--" />
+    <set_object_property property="missileStoresEMP" value="0" name="--" />
+    <set_object_property property="missileStoresPShock" value="0" name="--" />
+    <set_object_property property="missileStoresTag" value="0" name="--" />
+    <set_object_property property="missileStoresBeacon" value="0" name="--" />
+    <set_object_property property="missileStoresProbe" value="30" name="--" />
+  </event>
+  <event name="504 - Exploration" id_arme="35bdb4b4-6b8c-4a8a-90d3-f68d867d2388" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="504.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have exploration equipment available for resupply." />
+    <set_object_property property="missileStoresHoming" value="0" name="--" />
+    <set_object_property property="missileStoresNuke" value="0" name="--" />
+    <set_object_property property="missileStoresMine" value="0" name="--" />
+    <set_object_property property="missileStoresEMP" value="20" name="--" />
+    <set_object_property property="missileStoresPShock" value="0" name="--" />
+    <set_object_property property="missileStoresTag" value="40" name="--" />
+    <set_object_property property="missileStoresBeacon" value="0" name="--" />
+    <set_object_property property="missileStoresProbe" value="30" name="--" />
+  </event>
+  <event name="505 - Xeno Research" id_arme="bce0c4bc-8312-4f0c-8321-f5c05d661452" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="505.0" />
+    <set_object_property property="canBuild" value="0" name="--" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have research equipment available for resupply." />
+    <set_object_property property="missileStoresHoming" value="0" name="--" />
+    <set_object_property property="missileStoresNuke" value="0" name="--" />
+    <set_object_property property="missileStoresMine" value="0" name="--" />
+    <set_object_property property="missileStoresEMP" value="0" name="--" />
+    <set_object_property property="missileStoresPShock" value="0" name="--" />
+    <set_object_property property="missileStoresTag" value="40" name="--" />
+    <set_object_property property="missileStoresBeacon" value="50" name="--" />
+    <set_object_property property="missileStoresProbe" value="30" name="--" />
   </event>
   <folder_arme name="Random Name System" id_arme="bfe4e4ff-aa5d-4c48-926a-056476e155d5" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <folder_arme name="Generate Fleet Names" id_arme="2dd8bf7f-9203-4c1a-9bea-2a4d2d3c05a6" parent_id_arme="bfe4e4ff-aa5d-4c48-926a-056476e155d5" />
@@ -30944,7 +31076,7 @@
     <set_variable name="Ship8RateFCS" value="0.0" integer="yes" />
     <set_variable name="Enable FCS" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship1" id_arme="972624a9-7450-4d67-93da-8ae0e5e22871" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship1" id_arme="972624a9-7450-4d67-93da-8ae0e5e22871" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="2f7d39dd-aabc-4a92-91a7-42176b72246d" parent_id_arme="972624a9-7450-4d67-93da-8ae0e5e22871">
     <if_variable name="Refuel Ship1" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="0" comparator="LESS_EQUAL" value="981.0" />
@@ -31061,7 +31193,7 @@
     <set_variable name="Ship1RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip1PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship2" id_arme="99626f33-d79a-426a-884f-87d223ad1289" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship2" id_arme="99626f33-d79a-426a-884f-87d223ad1289" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="0a13e7c3-1bc5-429e-9dfe-badd6b4aba5a" parent_id_arme="99626f33-d79a-426a-884f-87d223ad1289">
     <if_variable name="Refuel Ship2" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="1" comparator="LESS_EQUAL" value="981.0" />
@@ -31179,7 +31311,7 @@
     <set_variable name="Ship2RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip2PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship3" id_arme="a89fd645-14f4-4ff1-8f0d-190c22284dcf" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship3" id_arme="a89fd645-14f4-4ff1-8f0d-190c22284dcf" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="e2ca2386-267f-4d16-be84-561361c3eb47" parent_id_arme="a89fd645-14f4-4ff1-8f0d-190c22284dcf">
     <if_variable name="Refuel Ship3" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="2" comparator="LESS_EQUAL" value="981.0" />
@@ -31297,7 +31429,7 @@
     <set_variable name="Ship3RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip3PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship4" id_arme="41f8c1a7-c4d3-47e2-84da-63e5609ec11d" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship4" id_arme="41f8c1a7-c4d3-47e2-84da-63e5609ec11d" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="0f7f845b-e937-4d7f-b3fd-204602d045ab" parent_id_arme="41f8c1a7-c4d3-47e2-84da-63e5609ec11d">
     <if_variable name="Refuel Ship4" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="3" comparator="LESS_EQUAL" value="981.0" />
@@ -31415,7 +31547,7 @@
     <set_variable name="Ship4RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip4PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship5" id_arme="5c851141-e1dd-4626-b978-dffd54ae2782" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship5" id_arme="5c851141-e1dd-4626-b978-dffd54ae2782" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="25666586-a04e-4742-b681-75fd184f296a" parent_id_arme="5c851141-e1dd-4626-b978-dffd54ae2782">
     <if_variable name="Refuel Ship5" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="4" comparator="LESS_EQUAL" value="981.0" />
@@ -31533,7 +31665,7 @@
     <set_variable name="Ship5RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip5PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship6" id_arme="7538f096-38d9-4633-ad79-055747e909d7" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship6" id_arme="7538f096-38d9-4633-ad79-055747e909d7" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="dcee1fcd-4447-4f22-b9c8-a48da0859743" parent_id_arme="7538f096-38d9-4633-ad79-055747e909d7">
     <if_variable name="Refuel Ship6" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="5" comparator="LESS_EQUAL" value="981.0" />
@@ -31651,7 +31783,7 @@
     <set_variable name="Ship6RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip6PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship7" id_arme="06fae324-2781-4faa-8204-3f75c76dfc18" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship7" id_arme="06fae324-2781-4faa-8204-3f75c76dfc18" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="469e08cf-35b4-4f80-b25a-cc083c901707" parent_id_arme="06fae324-2781-4faa-8204-3f75c76dfc18">
     <if_variable name="Refuel Ship7" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="6" comparator="LESS_EQUAL" value="981.0" />
@@ -31769,7 +31901,7 @@
     <set_variable name="Ship7RateFCS" value="0.0" integer="yes" />
     <set_variable name="CheckShip7PDZRange" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship8" id_arme="7404d119-ec09-4c04-91a6-3c130b484f2a" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" expanded_arme="" />
+  <folder_arme name="Ship8" id_arme="7404d119-ec09-4c04-91a6-3c130b484f2a" parent_id_arme="9d864d69-fde0-4ec0-9abe-d9d738f85fc6" />
   <event name="Activating Collectors" id_arme="2a12003a-a7c0-4816-995a-9574ce04ede8" parent_id_arme="7404d119-ec09-4c04-91a6-3c130b484f2a">
     <if_variable name="Refuel Ship8" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="7" comparator="LESS_EQUAL" value="981.0" />
@@ -31957,7 +32089,7 @@
     <set_variable name="Ship1Level" value="Ship1Level - 2" integer="yes" />
     <set_timer name="Ship1 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="1dd130c6-298f-4023-978d-a64f0df727d7" parent_id_arme="1409a1db-5754-4a7f-89b8-7473d001a60e" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="1dd130c6-298f-4023-978d-a64f0df727d7" parent_id_arme="1409a1db-5754-4a7f-89b8-7473d001a60e" />
   <event name="Create Ship1 Monitor" id_arme="97a8ad76-37d0-4605-a526-1d254c4de429" parent_id_arme="1dd130c6-298f-4023-978d-a64f0df727d7">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="0" />
@@ -32171,7 +32303,7 @@
     <set_variable name="Ship2Level" value="Ship2Level - 2" integer="yes" />
     <set_timer name="Ship2 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="19fdc565-6bc6-4ce9-b7dd-e254750d03ea" parent_id_arme="8cf7129c-a432-4275-a256-61699e939c1e" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="19fdc565-6bc6-4ce9-b7dd-e254750d03ea" parent_id_arme="8cf7129c-a432-4275-a256-61699e939c1e" />
   <event name="Create Ship2 Monitor" id_arme="8d955054-62c1-4e88-a690-7c7924154b0b" parent_id_arme="19fdc565-6bc6-4ce9-b7dd-e254750d03ea">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="1" />
@@ -32385,7 +32517,7 @@
     <set_variable name="Ship3Level" value="Ship3Level - 2" integer="yes" />
     <set_timer name="Ship3 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="6549c055-b946-42db-a0ff-ad0138c88bd8" parent_id_arme="847b8649-29b2-4633-b0b6-9100fb7d408a" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="6549c055-b946-42db-a0ff-ad0138c88bd8" parent_id_arme="847b8649-29b2-4633-b0b6-9100fb7d408a" />
   <event name="Create Ship3 Monitor" id_arme="54776a1d-f4c6-4522-b51a-b791c0111300" parent_id_arme="6549c055-b946-42db-a0ff-ad0138c88bd8">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="2" />
@@ -32557,7 +32689,7 @@
     <if_distance player_slot1="2" name2="'" comparator="LESS_EQUAL" value="2000.0" />
     <set_variable name="Ship3RadDist" value="4.0" />
   </event>
-  <folder_arme name="Ship4 Radiation" id_arme="21fe9867-6065-401b-b0db-607ec47e9d01" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" expanded_arme="" />
+  <folder_arme name="Ship4 Radiation" id_arme="21fe9867-6065-401b-b0db-607ec47e9d01" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" />
   <folder_arme name="Radiation Effects" id_arme="e2dcb4f8-c9a9-455f-b719-fbad2af7a88f" parent_id_arme="21fe9867-6065-401b-b0db-607ec47e9d01" />
   <event name="Shield Failure" id_arme="d6798294-27d1-4a90-a717-3259c24c14d4" parent_id_arme="e2dcb4f8-c9a9-455f-b719-fbad2af7a88f">
     <if_variable name="Ship4Monitor" comparator="EQUALS" value="1.0" />
@@ -32599,7 +32731,7 @@
     <set_variable name="Ship4Level" value="Ship4Level - 2" integer="yes" />
     <set_timer name="Ship4 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="5df5d641-bb44-4a03-8f4b-ad141854520d" parent_id_arme="21fe9867-6065-401b-b0db-607ec47e9d01" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="5df5d641-bb44-4a03-8f4b-ad141854520d" parent_id_arme="21fe9867-6065-401b-b0db-607ec47e9d01" />
   <event name="Create Ship4 Monitor" id_arme="8764a9d5-c6a9-4c73-be0f-e6e5cb6c527a" parent_id_arme="5df5d641-bb44-4a03-8f4b-ad141854520d">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="3" />
@@ -32771,7 +32903,7 @@
     <if_distance player_slot1="3" name2="'" comparator="LESS_EQUAL" value="2000.0" />
     <set_variable name="Ship4RadDist" value="4.0" />
   </event>
-  <folder_arme name="Ship5 Radiation" id_arme="20bc86b2-b6df-46c2-b11e-5b28b1a043d1" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" expanded_arme="" />
+  <folder_arme name="Ship5 Radiation" id_arme="20bc86b2-b6df-46c2-b11e-5b28b1a043d1" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" />
   <folder_arme name="Radiation Effects" id_arme="4191ef9e-075c-4fe1-8c68-e33e715e0bef" parent_id_arme="20bc86b2-b6df-46c2-b11e-5b28b1a043d1" />
   <event name="Shield Failure" id_arme="b332d074-cb10-43a6-a9b6-821f3abfcabc" parent_id_arme="4191ef9e-075c-4fe1-8c68-e33e715e0bef">
     <if_variable name="Ship5Monitor" comparator="EQUALS" value="1.0" />
@@ -32813,7 +32945,7 @@
     <set_variable name="Ship5Level" value="Ship5Level - 2" integer="yes" />
     <set_timer name="Ship5 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="9ea81f38-66b8-4a8d-a817-2844d6033595" parent_id_arme="20bc86b2-b6df-46c2-b11e-5b28b1a043d1" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="9ea81f38-66b8-4a8d-a817-2844d6033595" parent_id_arme="20bc86b2-b6df-46c2-b11e-5b28b1a043d1" />
   <event name="Create Ship5 Monitor" id_arme="028d5984-0c71-447c-85b6-ce6b6728dbef" parent_id_arme="9ea81f38-66b8-4a8d-a817-2844d6033595">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="4" />
@@ -32985,7 +33117,7 @@
     <if_distance player_slot1="4" name2="'" comparator="LESS_EQUAL" value="2000.0" />
     <set_variable name="Ship5RadDist" value="4.0" />
   </event>
-  <folder_arme name="Ship6 Radiation" id_arme="84aca919-53ff-4aab-a7ef-3db66da3fc42" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" expanded_arme="" />
+  <folder_arme name="Ship6 Radiation" id_arme="84aca919-53ff-4aab-a7ef-3db66da3fc42" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" />
   <folder_arme name="Radiation Effects" id_arme="c3af1a11-ae9a-4322-97ad-c7b96a244fe3" parent_id_arme="84aca919-53ff-4aab-a7ef-3db66da3fc42" />
   <event name="Shield Failure" id_arme="3e2504a1-5ffd-46e9-a36d-b7585bafa470" parent_id_arme="c3af1a11-ae9a-4322-97ad-c7b96a244fe3">
     <if_variable name="Ship6Monitor" comparator="EQUALS" value="1.0" />
@@ -33027,7 +33159,7 @@
     <set_variable name="Ship6Level" value="Ship6Level - 2" integer="yes" />
     <set_timer name="Ship6 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="f95faa27-afd6-4389-a60c-dd2ba31d0d8b" parent_id_arme="84aca919-53ff-4aab-a7ef-3db66da3fc42" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="f95faa27-afd6-4389-a60c-dd2ba31d0d8b" parent_id_arme="84aca919-53ff-4aab-a7ef-3db66da3fc42" />
   <event name="Create Ship6 Monitor" id_arme="0879f8d8-655c-46bb-a32b-dbf3e8c33831" parent_id_arme="f95faa27-afd6-4389-a60c-dd2ba31d0d8b">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="5" />
@@ -33199,7 +33331,7 @@
     <if_distance player_slot1="5" name2="'" comparator="LESS_EQUAL" value="2000.0" />
     <set_variable name="Ship6RadDist" value="4.0" />
   </event>
-  <folder_arme name="Ship7 Radiation" id_arme="babe0460-0b20-4931-911b-497175ca08e0" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" expanded_arme="" />
+  <folder_arme name="Ship7 Radiation" id_arme="babe0460-0b20-4931-911b-497175ca08e0" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" />
   <folder_arme name="Radiation Effects" id_arme="f7e1006e-2888-40ce-80a4-f28d8aa6a092" parent_id_arme="babe0460-0b20-4931-911b-497175ca08e0" />
   <event name="Shield Failure" id_arme="d476f98f-2e7e-4bf5-9f0b-03bad96c3b0e" parent_id_arme="f7e1006e-2888-40ce-80a4-f28d8aa6a092">
     <if_variable name="Ship7Monitor" comparator="EQUALS" value="1.0" />
@@ -33241,7 +33373,7 @@
     <set_variable name="Ship7Level" value="Ship7Level - 2" integer="yes" />
     <set_timer name="Ship7 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="d3acbd90-3760-4938-8edb-cafe0537a0ed" parent_id_arme="babe0460-0b20-4931-911b-497175ca08e0" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="d3acbd90-3760-4938-8edb-cafe0537a0ed" parent_id_arme="babe0460-0b20-4931-911b-497175ca08e0" />
   <event name="Create Ship7 Monitor" id_arme="39fe83f5-797a-4d53-8370-f7a5bfe44b57" parent_id_arme="d3acbd90-3760-4938-8edb-cafe0537a0ed">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="6" />
@@ -33413,7 +33545,7 @@
     <if_distance player_slot1="6" name2="'" comparator="LESS_EQUAL" value="2000.0" />
     <set_variable name="Ship7RadDist" value="4.0" />
   </event>
-  <folder_arme name="Ship8 Radiation" id_arme="a0bf4618-80a0-442b-9281-54e39bc13044" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" expanded_arme="" />
+  <folder_arme name="Ship8 Radiation" id_arme="a0bf4618-80a0-442b-9281-54e39bc13044" parent_id_arme="a86142bd-50be-414e-8dd4-3cea6b57aaec" />
   <folder_arme name="Radiation Effects" id_arme="2868b2f0-2291-43d0-b717-4d2d2a271436" parent_id_arme="a0bf4618-80a0-442b-9281-54e39bc13044" />
   <event name="Shield Failure" id_arme="0aaad059-aef8-4324-989f-e1e0ae123b1d" parent_id_arme="2868b2f0-2291-43d0-b717-4d2d2a271436">
     <if_variable name="Ship8Monitor" comparator="EQUALS" value="1.0" />
@@ -33455,7 +33587,7 @@
     <set_variable name="Ship8Level" value="Ship8Level - 2" integer="yes" />
     <set_timer name="Ship8 Radiation" seconds="5" />
   </event>
-  <folder_arme name="Radiation Monitors" id_arme="f886651e-6f93-4705-91c8-206c4fb6955b" parent_id_arme="a0bf4618-80a0-442b-9281-54e39bc13044" expanded_arme="" />
+  <folder_arme name="Radiation Monitors" id_arme="f886651e-6f93-4705-91c8-206c4fb6955b" parent_id_arme="a0bf4618-80a0-442b-9281-54e39bc13044" />
   <event name="Create Ship8 Monitor" id_arme="a00e2d2f-5529-4855-b0e1-260157d3dc87" parent_id_arme="f886651e-6f93-4705-91c8-206c4fb6955b">
     <if_variable name="Active Radiation" comparator="EQUALS" value="2.0" />
     <if_exists player_slot="7" />
@@ -34411,7 +34543,7 @@
     <set_variable name="GM Backup" value="1.0" />
   </event>
   <folder_arme name="Edge to Edge Transition" id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
-  <folder_arme name="Grid A Transition" id_arme="84809d2a-2d3f-4f54-b8e0-2c604811c4be" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Grid A Transition" id_arme="84809d2a-2d3f-4f54-b8e0-2c604811c4be" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="c66cdc66-de56-4ab8-aa72-a997975b5076" parent_id_arme="84809d2a-2d3f-4f54-b8e0-2c604811c4be">
     <if_exists player_slot="0" />
     <if_object_property property="positionX" player_slot="0" comparator="GREATER" value="3000.0" />
@@ -34524,7 +34656,7 @@
     <set_variable name="Ship8 Ready Grid A" value="0.0" />
     <set_variable name="Grid A Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="5e9b6afe-48dc-497f-b485-f925fafc75be" parent_id_arme="84809d2a-2d3f-4f54-b8e0-2c604811c4be" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="5e9b6afe-48dc-497f-b485-f925fafc75be" parent_id_arme="84809d2a-2d3f-4f54-b8e0-2c604811c4be" />
   <event name="Grid A Transition Enabled" id_arme="baa3d82f-278a-49c4-bd51-ed1d1e411fad" parent_id_arme="5e9b6afe-48dc-497f-b485-f925fafc75be">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Grid A" comparator="EQUALS" value="1.0" />
@@ -34537,6 +34669,8 @@
     <if_variable name="Ship5 Ready Grid A" comparator="EQUALS" value="1.0" />
     <if_variable name="Grid A Transition Enabled" comparator="EQUALS" value="1.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Static_BH" value="3.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="3.0" integer="yes" />
     <set_object_property property="positionZ" value="98900.0" player_slot="0" />
     <set_object_property property="positionZ" value="98900.0" player_slot="5" />
     <set_object_property property="positionZ" value="98900.0" player_slot="3" />
@@ -34558,7 +34692,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Grid E Transition" id_arme="55c0a4de-0319-4073-945c-f9139a792254" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Grid E Transition" id_arme="55c0a4de-0319-4073-945c-f9139a792254" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="e896d18d-e08d-4b97-b9ba-beb50221dc21" parent_id_arme="55c0a4de-0319-4073-945c-f9139a792254">
     <if_exists player_slot="0" />
     <if_object_property property="positionX" player_slot="0" comparator="GREATER" value="3000.0" />
@@ -34671,7 +34805,7 @@
     <set_variable name="Ship8 Ready Grid E" value="0.0" />
     <set_variable name="Grid E Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="d49f0eb4-c720-4193-ad73-86e33f693ddc" parent_id_arme="55c0a4de-0319-4073-945c-f9139a792254" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="d49f0eb4-c720-4193-ad73-86e33f693ddc" parent_id_arme="55c0a4de-0319-4073-945c-f9139a792254" />
   <event name="Grid E Transition Enabled" id_arme="9257421c-fb55-4bd5-9592-601d2a78d2f4" parent_id_arme="d49f0eb4-c720-4193-ad73-86e33f693ddc">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Grid E" comparator="EQUALS" value="1.0" />
@@ -34684,6 +34818,8 @@
     <if_variable name="Ship5 Ready Grid E" comparator="EQUALS" value="1.0" />
     <if_variable name="Grid E Transition Enabled" comparator="EQUALS" value="1.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Static_BH" value="3.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="3.0" integer="yes" />
     <set_object_property property="positionZ" value="1100.0" player_slot="0" />
     <set_object_property property="positionZ" value="1100.0" player_slot="5" />
     <set_object_property property="positionZ" value="1100.0" player_slot="3" />
@@ -34705,7 +34841,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Grid 1 Transition" id_arme="57308234-709b-48e7-ade0-e7f1a36e1eca" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Grid 1 Transition" id_arme="57308234-709b-48e7-ade0-e7f1a36e1eca" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="6d63827d-332d-4590-b19d-e6c87bda62c5" parent_id_arme="57308234-709b-48e7-ade0-e7f1a36e1eca">
     <if_exists player_slot="0" />
     <if_object_property property="positionZ" player_slot="0" comparator="GREATER" value="3000.0" />
@@ -34818,7 +34954,7 @@
     <set_variable name="Ship8 Ready Grid 1" value="0.0" />
     <set_variable name="Grid 1 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="ca70e7a4-59e2-4492-bf1c-611a107cdad6" parent_id_arme="57308234-709b-48e7-ade0-e7f1a36e1eca" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="ca70e7a4-59e2-4492-bf1c-611a107cdad6" parent_id_arme="57308234-709b-48e7-ade0-e7f1a36e1eca" />
   <event name="Grid 1 Transition Enabled" id_arme="d20f5fcc-eff1-4376-9856-5865448f83e6" parent_id_arme="ca70e7a4-59e2-4492-bf1c-611a107cdad6">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Grid 1" comparator="EQUALS" value="1.0" />
@@ -34831,6 +34967,8 @@
     <if_variable name="Ship5 Ready Grid 1" comparator="EQUALS" value="1.0" />
     <if_variable name="Grid 1 Transition Enabled" comparator="EQUALS" value="1.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Static_BH" value="3.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="3.0" integer="yes" />
     <set_object_property property="positionX" value="1100.0" player_slot="0" />
     <set_object_property property="positionX" value="1100.0" player_slot="5" />
     <set_object_property property="positionX" value="1100.0" player_slot="3" />
@@ -34852,7 +34990,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Grid 5 Transition" id_arme="8069c3d5-c59c-4a71-9d3c-f9835d84723b" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Grid 5 Transition" id_arme="8069c3d5-c59c-4a71-9d3c-f9835d84723b" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="384f6633-6334-4046-ae3c-6d00d35707d9" parent_id_arme="8069c3d5-c59c-4a71-9d3c-f9835d84723b">
     <if_exists player_slot="0" />
     <if_object_property property="positionZ" player_slot="0" comparator="GREATER" value="3000.0" />
@@ -34965,7 +35103,7 @@
     <set_variable name="Ship8 Ready Grid 5" value="0.0" />
     <set_variable name="Grid 5 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="c3cb75c6-e8f2-46ef-aaac-9d231ade6cc8" parent_id_arme="8069c3d5-c59c-4a71-9d3c-f9835d84723b" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="c3cb75c6-e8f2-46ef-aaac-9d231ade6cc8" parent_id_arme="8069c3d5-c59c-4a71-9d3c-f9835d84723b" />
   <event name="Grid 5 Transition Enabled" id_arme="cb5e3c0e-18ab-4a25-95a7-79c3674190f4" parent_id_arme="c3cb75c6-e8f2-46ef-aaac-9d231ade6cc8">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Grid 5" comparator="EQUALS" value="1.0" />
@@ -34978,6 +35116,8 @@
     <if_variable name="Ship5 Ready Grid 5" comparator="EQUALS" value="1.0" />
     <if_variable name="Grid 5 Transition Enabled" comparator="EQUALS" value="1.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Static_BH" value="3.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="3.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="1.0" />
     <set_object_property property="positionX" value="98900.0" player_slot="0" />
     <set_object_property property="positionX" value="98900.0" player_slot="5" />
@@ -34999,7 +35139,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Corner A1 Transition" id_arme="b887beb7-20d0-4d9a-9cc1-b0db9d250753" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Corner A1 Transition" id_arme="b887beb7-20d0-4d9a-9cc1-b0db9d250753" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="731a01f9-c56c-443d-b7cf-5169dae4c02d" parent_id_arme="b887beb7-20d0-4d9a-9cc1-b0db9d250753">
     <if_exists player_slot="0" />
     <if_inside_sphere player_slot="0" centerX="100000.0" centerY="0" centerZ="0" radius="3000" />
@@ -35096,7 +35236,7 @@
     <set_variable name="Ship8 Ready Corner A1" value="0.0" />
     <set_variable name="Corner A1 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="b771b02e-5cde-462f-8863-f3de13af53c6" parent_id_arme="b887beb7-20d0-4d9a-9cc1-b0db9d250753" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="b771b02e-5cde-462f-8863-f3de13af53c6" parent_id_arme="b887beb7-20d0-4d9a-9cc1-b0db9d250753" />
   <event name="Corner A1 Transition Enabled" id_arme="5cea4253-babb-45e7-8efc-36c1b9cf9e47" parent_id_arme="b771b02e-5cde-462f-8863-f3de13af53c6">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Corner A1" comparator="EQUALS" value="1.0" />
@@ -35109,6 +35249,8 @@
     <if_variable name="Ship5 Ready Corner A1" comparator="EQUALS" value="1.0" />
     <if_variable name="Corner A1 Transition Enabled" comparator="EQUALS" value="1.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Static_BH" value="3.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="3.0" integer="yes" />
     <addto_object_property value="87950.0" property="positionZ" player_slot="0" />
     <addto_object_property value="-87950.0" property="positionX" player_slot="0" />
     <addto_object_property value="87950.0" property="positionZ" player_slot="5" />
@@ -35138,7 +35280,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Corner A5 Transition" id_arme="12e687c6-737d-4b3a-b185-496c5fb88bfe" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Corner A5 Transition" id_arme="12e687c6-737d-4b3a-b185-496c5fb88bfe" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="2344fbec-7ea8-47e9-962c-10b0b1a1e492" parent_id_arme="12e687c6-737d-4b3a-b185-496c5fb88bfe">
     <if_exists player_slot="0" />
     <if_inside_sphere player_slot="0" centerX="0" centerY="0" centerZ="0" radius="3000" />
@@ -35235,7 +35377,7 @@
     <set_variable name="Ship8 Ready Corner A5" value="0.0" />
     <set_variable name="Corner A5 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="a5b75549-ac04-40f8-b9f3-867e3fdd4dfc" parent_id_arme="12e687c6-737d-4b3a-b185-496c5fb88bfe" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="a5b75549-ac04-40f8-b9f3-867e3fdd4dfc" parent_id_arme="12e687c6-737d-4b3a-b185-496c5fb88bfe" />
   <event name="Corner A5 Transition Enabled" id_arme="9827d8d5-1fff-4937-8606-9d1b9965b260" parent_id_arme="a5b75549-ac04-40f8-b9f3-867e3fdd4dfc">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Corner A5" comparator="EQUALS" value="1.0" />
@@ -35248,6 +35390,8 @@
     <if_variable name="Ship5 Ready Corner A5" comparator="EQUALS" value="1.0" />
     <if_variable name="Corner A5 Transition Enabled" comparator="EQUALS" value="1.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Static_BH" value="3.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="3.0" integer="yes" />
     <addto_object_property value="87950.0" property="positionZ" player_slot="0" />
     <addto_object_property value="87950.0" property="positionX" player_slot="0" />
     <addto_object_property value="87950.0" property="positionZ" player_slot="5" />
@@ -35277,7 +35421,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Corner E1 Transition" id_arme="468f4509-96b0-4b52-9d0b-5ea8ed8fd268" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Corner E1 Transition" id_arme="468f4509-96b0-4b52-9d0b-5ea8ed8fd268" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="123df88c-5581-4978-8f69-b72a7fe07852" parent_id_arme="468f4509-96b0-4b52-9d0b-5ea8ed8fd268">
     <if_exists player_slot="0" />
     <if_inside_sphere player_slot="0" centerX="100000" centerY="0" centerZ="100000" radius="3000" />
@@ -35374,7 +35518,7 @@
     <set_variable name="Ship8 Ready Corner E1" value="0.0" />
     <set_variable name="Corner E1 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="abfd8793-41bc-49d1-990d-8618c2f75807" parent_id_arme="468f4509-96b0-4b52-9d0b-5ea8ed8fd268" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="abfd8793-41bc-49d1-990d-8618c2f75807" parent_id_arme="468f4509-96b0-4b52-9d0b-5ea8ed8fd268" />
   <event name="Corner E1 Transition Enabled" id_arme="fae8e535-1381-4e49-b436-14fe865be053" parent_id_arme="abfd8793-41bc-49d1-990d-8618c2f75807">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Corner E1" comparator="EQUALS" value="1.0" />
@@ -35387,6 +35531,8 @@
     <if_variable name="Ship5 Ready Corner E1" comparator="EQUALS" value="1.0" />
     <if_variable name="Corner E1 Transition Enabled" comparator="EQUALS" value="1.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Static_BH" value="3.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="3.0" integer="yes" />
     <addto_object_property value="-87950.0" property="positionZ" player_slot="0" />
     <addto_object_property value="-87950.0" property="positionX" player_slot="0" />
     <addto_object_property value="-87950.0" property="positionZ" player_slot="5" />
@@ -35416,7 +35562,7 @@
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Corner E5 Transition" id_arme="4a62099b-e94d-450e-a395-bbfc511a7d80" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" expanded_arme="" />
+  <folder_arme name="Corner E5 Transition" id_arme="4a62099b-e94d-450e-a395-bbfc511a7d80" parent_id_arme="3cd4d190-f1f2-46f9-8426-84c809038660" />
   <event name="Ship1 Ready" id_arme="d42050e8-d1d1-47bf-bbeb-f1d4899c84e3" parent_id_arme="4a62099b-e94d-450e-a395-bbfc511a7d80">
     <if_exists player_slot="0" />
     <if_inside_sphere player_slot="0" centerX="0" centerY="0" centerZ="100000" radius="3000" />
@@ -35513,7 +35659,7 @@
     <set_variable name="Ship8 Ready Corner E5" value="0.0" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="Transit Enabled" id_arme="f057a1dc-7f35-4d79-9997-13cfbbebf3b2" parent_id_arme="4a62099b-e94d-450e-a395-bbfc511a7d80" expanded_arme="" />
+  <folder_arme name="Transit Enabled" id_arme="f057a1dc-7f35-4d79-9997-13cfbbebf3b2" parent_id_arme="4a62099b-e94d-450e-a395-bbfc511a7d80" />
   <event name="Corner E5 Transition Enabled" id_arme="a0da528e-01b0-4bc6-919d-b1790c8452bd" parent_id_arme="f057a1dc-7f35-4d79-9997-13cfbbebf3b2">
     <if_variable name="Sector Locked" comparator="NOT" value="1.0" />
     <if_variable name="Ship1 Ready Corner E5" comparator="EQUALS" value="1.0" />
@@ -35526,6 +35672,8 @@
     <if_variable name="Ship5 Ready Corner E5" comparator="EQUALS" value="1.0" />
     <if_variable name="Corner E5 Transition Enabled" comparator="EQUALS" value="1.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Static_BH" value="3.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="3.0" integer="yes" />
     <addto_object_property value="-87950.0" property="positionZ" player_slot="0" />
     <addto_object_property value="87950.0" property="positionX" player_slot="0" />
     <addto_object_property value="-87950.0" property="positionZ" player_slot="1" />
@@ -40264,10 +40412,6 @@
     <set_object_property property="pushRadius" value="300.0" name="Moon" />
     <set_variable name="Moon" value="10.0" integer="yes" />
   </event>
-  <disabled_event name="Moon Orbit" id_arme="e6776b9b-ae57-4d77-b1c6-97be2fb9b6f7" parent_id_arme="4b001adc-17f5-44e5-8aef-368480a364f5">
-    <if_variable name="Moon" comparator="EQUALS" value="10.0" />
-    <set_relative_position name2="Moon" distance="6000" angle="0" name1="Uncatalogued" />
-  </disabled_event>
   <folder_arme name="Custom Planet" id_arme="c4756a0d-84a9-45f8-b1ce-65cada8867e2" parent_id_arme="d1ec6b0e-f1ea-49bc-842e-02a63fc668e2" />
   <event name="Create Slices" id_arme="65ec4162-d133-4fd4-a8ca-4a06b9f221c7" parent_id_arme="c4756a0d-84a9-45f8-b1ce-65cada8867e2">
     <if_variable name="CustomPlanet" comparator="EQUALS" value="1.0" />
@@ -43703,187 +43847,386 @@
     <addto_object_property value="xStrength" property="positionX" player_slot="7" />
   </event>
   <folder_arme name="Blackholes" id_arme="56b90798-8c7f-443d-aacf-dbcd58382d4e" parent_id_arme="c6be8c58-7d80-47b2-b306-c53b53f432b8" />
-  <event name="Remove Blackholes" id_arme="d71fdda4-3a5c-4f06-ad3c-fb11ffd8b6de" parent_id_arme="56b90798-8c7f-443d-aacf-dbcd58382d4e">
-    <if_variable name="DestroyBH" comparator="EQUALS" value="1.0" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Static Blackhole" />
-    <destroy name="Blackhole1" />
-    <destroy name="Blackhole2" />
-    <destroy name="Blackhole3" />
-    <destroy name="Blackhole4" />
-    <destroy name="Blackhole5" />
-    <destroy name="Blackhole6" />
-    <destroy name="Blackhole7" />
-    <destroy name="Blackhole8" />
-    <destroy name="Blackhole9" />
-    <destroy name="Blackhole10" />
-    <set_variable name="BHNumber" value="0.0" integer="yes" />
-    <set_variable name="DynamicBlackhole" value="0.0" integer="yes" />
-    <set_variable name="DestroyBH" value="0.0" integer="yes" />
-  </event>
   <folder_arme name="Static Blackholes" id_arme="4fbfe552-bd96-4b98-b440-021daec5f199" parent_id_arme="56b90798-8c7f-443d-aacf-dbcd58382d4e" />
-  <folder_arme name="Blackhole count" id_arme="f06823bf-b766-4db1-8f56-1ec6ae352b84" parent_id_arme="4fbfe552-bd96-4b98-b440-021daec5f199" />
-  <event name="Check for Blackholes" id_arme="db00df38-1be2-4afc-a0a1-e3e5953ce59b" parent_id_arme="f06823bf-b766-4db1-8f56-1ec6ae352b84">
-    <if_variable name="StaticBHCount" comparator="GREATER" value="1.0" />
-    <if_variable name="StaticBlackhole" comparator="EQUALS" value="0.0" />
-    <set_variable name="StaticBlackhole" value="1.0" integer="yes" />
+  <event name="Remove Blackholes" id_arme="5ce1937f-1dbb-4f59-9f9f-09f09a2ae215" parent_id_arme="4fbfe552-bd96-4b98-b440-021daec5f199">
+    <if_variable name="Static_BH" comparator="EQUALS" value="3.0" />
+    <destroy name="Static Blackhole 0.0" />
+    <destroy name="Static Blackhole 1.0" />
+    <destroy name="Static Blackhole 2.0" />
+    <destroy name="Static Blackhole 3.0" />
+    <destroy name="Static Blackhole 4.0" />
+    <destroy name="Static Blackhole 5.0" />
+    <destroy name="Static Blackhole 6.0" />
+    <destroy name="Static Blackhole 7.0" />
+    <destroy name="Static Blackhole 8.0" />
+    <destroy name="Static Blackhole 9.0" />
+    <destroy name="Static Blackhole 10.0" />
+    <destroy name="Static Blackhole 11.0" />
+    <destroy name="Static Blackhole 12.0" />
+    <destroy name="Static Blackhole 13.0" />
+    <destroy name="Static Blackhole 14.0" />
+    <destroy name="Static Blackhole 15.0" />
+    <destroy name="Static Blackhole 16.0" />
+    <destroy name="Static Blackhole 17.0" />
+    <destroy name="Static Blackhole 18.0" />
+    <destroy name="Static Blackhole 19.0" />
+    <destroy name="Static Blackhole 20.0" />
   </event>
-  <event name="Blackholes Mapped" id_arme="d924a95f-cb7d-4acc-b1d5-ba9017f2ce23" parent_id_arme="f06823bf-b766-4db1-8f56-1ec6ae352b84">
-    <if_variable name="StaticBHCount" comparator="EQUALS" value="1.0" />
-    <if_variable name="StaticBlackhole" comparator="EQUALS" value="0.0" />
-    <warning_popup_message message="Gravitational Distortions Mapped" consoles="MS" />
-    <set_variable name="StaticBHCount" value="0.0" />
+  <event name="Create Blackhole" id_arme="0711064b-a54c-49fd-bffa-9ba564490fc8" parent_id_arme="4fbfe552-bd96-4b98-b440-021daec5f199">
+    <if_variable name="Static_BH" comparator="EQUALS" value="1.0" />
+    <if_variable name="SBHNum" comparator="LESS" value="StaticBHCount" />
+    <if_timer_finished name="Static_BH" />
+    <set_variable name="StaticBHCoordX" randomIntLow="10" randomIntHigh="90" />
+    <set_variable name="StaticBHCoordZ" randomIntLow="10" randomIntHigh="90" />
+    <create type="blackHole" x="StaticBHCoordX*1000" y="0.0" z="StaticBHCoordZ*1000" name="Static Blackhole |SBHNum|" />
+    <set_variable name="SBHNum" value="SBHNum + 1" integer="yes" />
+    <set_timer name="Static_BH" seconds="1" />
   </event>
-  <event name="Set Location" id_arme="8488a6d9-2047-4319-b913-980307e4a10c" parent_id_arme="f06823bf-b766-4db1-8f56-1ec6ae352b84">
-    <if_variable name="StaticBlackhole" comparator="EQUALS" value="1.0" />
-    <set_variable name="StaticBHCoordX" randomIntLow="10" randomIntHigh="100" />
-    <set_variable name="StaticBHCoordZ" randomIntLow="10" randomIntHigh="100" />
-    <set_variable name="StaticBlackhole" value="2.0" integer="yes" />
-  </event>
-  <event name="Create Blackhole" id_arme="6f3599ed-9878-4bc4-9ae7-61ea06a2aa6a" parent_id_arme="f06823bf-b766-4db1-8f56-1ec6ae352b84">
-    <if_variable name="StaticBlackhole" comparator="EQUALS" value="2.0" />
-    <create type="blackHole" x="StaticBHCoordX*1000" y="0.0" z="StaticBHCoordZ*1000" name="Static Blackhole" />
-    <set_variable name="StaticBHCount" value="StaticBHCount-1" integer="yes" />
-    <set_variable name="StaticBlackhole" value="0.0" integer="yes" />
+  <event name="Blackholes Mapped" id_arme="2de1a0ad-6e68-4430-ab26-2df6d23f2ed2" parent_id_arme="4fbfe552-bd96-4b98-b440-021daec5f199">
+    <if_variable name="Static_BH" comparator="EQUALS" value="1.0" />
+    <if_variable name="SBHNum" comparator="EQUALS" value="StaticBHCount" />
+    <if_timer_finished name="Static_BH" />
+    <warning_popup_message message="Distortions Mapped" consoles="MS" />
+    <set_variable name="Static_BH" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Dynamic Blackholes" id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2" parent_id_arme="56b90798-8c7f-443d-aacf-dbcd58382d4e" />
-  <folder_arme name="Blackhole count" id_arme="274f211c-73c2-4b19-a1a0-d931c60fc0b9" parent_id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2" />
-  <event name="Check for Blackholes" id_arme="9235a114-98c0-4a62-ae8e-b31c755c5959" parent_id_arme="274f211c-73c2-4b19-a1a0-d931c60fc0b9">
-    <if_variable name="DynamicBHCount" comparator="GREATER" value="1.0" />
-    <if_variable name="DynamicBHCount" comparator="LESS" value="100.0" />
-    <if_variable name="DynamicBlackhole" comparator="EQUALS" value="0.0" />
-    <set_variable name="BHNumber" value="BHNumber+1" integer="yes" />
-    <set_variable name="DynamicBlackhole" value="1.0" integer="yes" />
+  <event name="Remove Blackholes" id_arme="00ba7867-be0e-409f-8238-e515207b275d" parent_id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2">
+    <if_variable name="Dynamic_BH" comparator="EQUALS" value="3.0" />
+    <destroy name="Dynamic Blackhole 0.0" />
+    <destroy name="Dynamic Blackhole 1.0" />
+    <destroy name="Dynamic Blackhole 2.0" />
+    <destroy name="Dynamic Blackhole 3.0" />
+    <destroy name="Dynamic Blackhole 4.0" />
+    <destroy name="Dynamic Blackhole 5.0" />
+    <destroy name="Dynamic Blackhole 6.0" />
+    <destroy name="Dynamic Blackhole 7.0" />
+    <destroy name="Dynamic Blackhole 8.0" />
+    <destroy name="Dynamic Blackhole 9.0" />
+    <destroy name="Dynamic Blackhole 10.0" />
+    <destroy name="Dynamic Blackhole 11.0" />
+    <destroy name="Dynamic Blackhole 12.0" />
+    <destroy name="Dynamic Blackhole 13.0" />
+    <destroy name="Dynamic Blackhole 14.0" />
+    <destroy name="Dynamic Blackhole 15.0" />
+    <destroy name="Dynamic Blackhole 16.0" />
+    <destroy name="Dynamic Blackhole 17.0" />
+    <destroy name="Dynamic Blackhole 18.0" />
+    <destroy name="Dynamic Blackhole 19.0" />
+    <destroy name="Dynamic Blackhole 20.0" />
   </event>
-  <event name="Blackholes Mapped" id_arme="d7a8acd7-d0c0-4bcf-bbb5-c62148d0f4c1" parent_id_arme="274f211c-73c2-4b19-a1a0-d931c60fc0b9">
-    <if_variable name="DynamicBHCount" comparator="EQUALS" value="1.0" />
-    <if_variable name="DynamicBlackhole" comparator="EQUALS" value="0.0" />
-    <warning_popup_message message="Gravitational Disruption Tracking" consoles="MS" />
-    <set_variable name="BlackholeTimer" value="2.0" integer="yes" />
-    <set_variable name="BHNumberMax" value="BHNumber" integer="yes" />
-    <set_variable name="DynamicBHCount" value="0.0" />
-    <set_variable name="DynamicBlackhole" value="100.0" integer="yes" />
+  <event name="Create Blackhole" id_arme="99abd40c-3bce-4aef-ae6b-bde5b723a477" parent_id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2">
+    <if_variable name="Dynamic_BH" comparator="EQUALS" value="1.0" />
+    <if_variable name="DBHNum" comparator="LESS" value="DynamicBHCount" />
+    <if_timer_finished name="Dynamic_BH" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <create type="blackHole" x="DynamicBHCoordX*1000" y="0.0" z="DynamicBHCoordZ*1000" name="Dynamic Blackhole |DBHNum|" />
+    <set_variable name="DriftBH|DBHNum|X" randomIntLow="0-30" randomIntHigh="30" integer="yes" />
+    <set_variable name="DriftBH|DBHNum|Z" randomIntLow="0-30" randomIntHigh="30" integer="yes" />
+    <set_variable name="DBHNum" value="DBHNum + 1" integer="yes" />
+    <set_timer name="Dynamic_BH" seconds="1" />
   </event>
-  <event name="Set Location" id_arme="65450e20-08c8-46ff-9f59-78c48abc907f" parent_id_arme="274f211c-73c2-4b19-a1a0-d931c60fc0b9">
-    <if_variable name="DynamicBlackhole" comparator="EQUALS" value="1.0" />
-    <set_variable name="DynamicBHCoordX" randomIntLow="10" randomIntHigh="100" />
-    <set_variable name="DynamicBHCoordZ" randomIntLow="10" randomIntHigh="100" />
-    <set_variable name="DynamicBlackhole" value="2.0" integer="yes" />
+  <event name="Blackholes Mapped" id_arme="217aca79-1d52-4fa1-a9ca-660206d906f0" parent_id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2">
+    <if_variable name="Dynamic_BH" comparator="EQUALS" value="1.0" />
+    <if_variable name="DBHNum" comparator="EQUALS" value="DynamicBHCount" />
+    <if_timer_finished name="Dynamic_BH" />
+    <warning_popup_message message="Distortions Mapped" consoles="MS" />
+    <set_variable name="DBHTimerVal" randomIntLow="10" randomIntHigh="20" integer="yes" />
+    <set_timer name="DBHTimer" seconds="DBHTimerVal" />
+    <set_variable name="Dynamic_BH" value="2.0" integer="yes" />
   </event>
-  <event name="Create Blackhole" id_arme="c701f223-77c4-427a-9333-74c3cf83d403" parent_id_arme="274f211c-73c2-4b19-a1a0-d931c60fc0b9">
-    <if_variable name="DynamicBlackhole" comparator="EQUALS" value="2.0" />
-    <create type="blackHole" x="DynamicBHCoordX*1000" y="0.0" z="DynamicBHCoordZ*1000" name="Blackhole|BHNumber|" />
-    <set_variable name="DynamicBHCount" value="DynamicBHCount-1" integer="yes" />
-    <set_variable name="DynamicBlackhole" value="0.0" integer="yes" />
+  <folder_arme name="BH Drift Setting" id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e" parent_id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2" />
+  <event name="Timer" id_arme="3abf7fdf-83a8-4e6b-8696-3c65b5652750" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_variable name="Dynamic_BH" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="DBHTimer" />
+    <set_variable name="DBHTimerVal" randomIntLow="10" randomIntHigh="20" integer="yes" />
+    <set_timer name="DBHTimer" seconds="DBHTimerVal" />
+    <set_variable name="BHSelected" randomIntLow="0" randomIntHigh="DynamicBHCount-1" />
+    <set_variable name="Set_Drift" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Drift Code" id_arme="f44a16df-cec3-4b47-8c11-8deca960f661" parent_id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2" />
-  <event name="Drift Variable" id_arme="ac518ec3-b40d-4c93-82d9-28e2920fc15e" parent_id_arme="f44a16df-cec3-4b47-8c11-8deca960f661">
-    <if_variable name="DynamicBlackhole" comparator="EQUALS" value="100.0" />
-    <set_variable name="BHDriftX" value="30.0" integer="yes" />
-    <set_variable name="BHDriftZ" value="30.0" integer="yes" />
-    <set_variable name="BlackholeTimer" randomIntLow="60" randomIntHigh="320" />
-    <set_variable name="DynamicBlackhole" value="101.0" integer="yes" />
+  <event name="Set Drift" id_arme="93b66c7f-f387-419b-a074-41913d684c8d" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_variable name="Set_Drift" comparator="EQUALS" value="1.0" />
+    <set_variable name="DriftBH|BHSelected|X" randomIntLow="0-30" randomIntHigh="30" integer="yes" />
+    <set_variable name="DriftBH|BHSelected|Z" randomIntLow="0-30" randomIntHigh="30" integer="yes" />
+    <set_variable name="Set_Drift" value="0.0" integer="yes" />
   </event>
-  <event name="Blackhole 1 Drift" id_arme="7e968b7e-0e12-43fa-8bc0-d7d77aa6d433" parent_id_arme="f44a16df-cec3-4b47-8c11-8deca960f661">
-    <if_exists name="Blackhole1" />
-    <addto_object_property value="BHDriftX" property="positionX" name="Blackhole1" />
-    <addto_object_property value="BHDriftZ" property="positionZ" name="Blackhole1" />
+  <event name="Blackhole 0 Drift" id_arme="a6646dd6-6b73-48dc-abe1-c9632a1b9073" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 0.0" />
+    <addto_object_property value="DriftBH0.0X" property="positionX" name="Dynamic Blackhole 0.0" />
+    <addto_object_property value="DriftBH0.0Z" property="positionZ" name="Dynamic Blackhole 0.0" />
   </event>
-  <event name="Blackhole 2 Drift" id_arme="55c36c22-d35c-42a4-b46e-6a5be492fd9e" parent_id_arme="f44a16df-cec3-4b47-8c11-8deca960f661">
-    <if_exists name="Blackhole2" />
-    <addto_object_property value="0-BHDriftX" property="positionX" name="Blackhole2" />
-    <addto_object_property value="BHDriftZ" property="positionZ" name="Blackhole2" />
+  <event name="Blackhole 1 Drift" id_arme="3757440d-ea46-49b1-b2bd-677bd0b18276" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 1.0" />
+    <addto_object_property value="DriftBH1.0X" property="positionX" name="Dynamic Blackhole 1.0" />
+    <addto_object_property value="DriftBH1.0Z" property="positionZ" name="Dynamic Blackhole 1.0" />
   </event>
-  <event name="Blackhole 3 Drift" id_arme="83d678d4-ca0b-40be-b9c4-b717a0e5d9e1" parent_id_arme="f44a16df-cec3-4b47-8c11-8deca960f661">
-    <if_exists name="Blackhole3" />
-    <addto_object_property value="BHDriftX" property="positionX" name="Blackhole3" />
-    <addto_object_property value="0-BHDriftZ" property="positionZ" name="Blackhole3" />
+  <event name="Blackhole 2 Drift" id_arme="c53b1b95-cdd4-405b-b2e2-685589f0c6d6" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 2.0" />
+    <addto_object_property value="DriftBH2.0X" property="positionX" name="Dynamic Blackhole 2.0" />
+    <addto_object_property value="DriftBH2.0Z" property="positionZ" name="Dynamic Blackhole 2.0" />
   </event>
-  <event name="Blackhole 4 Drift" id_arme="9c4faa91-9270-4a06-942b-1d5649f4fb15" parent_id_arme="f44a16df-cec3-4b47-8c11-8deca960f661">
-    <if_exists name="Blackhole4" />
-    <addto_object_property value="0-BHDriftX" property="positionX" name="Blackhole4" />
-    <addto_object_property value="0-BHDriftZ" property="positionZ" name="Blackhole4" />
+  <event name="Blackhole 3 Drift" id_arme="709cd6cb-5fb6-4760-b177-fa17db219403" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 3.0" />
+    <addto_object_property value="DriftBH3.0X" property="positionX" name="Dynamic Blackhole 3.0" />
+    <addto_object_property value="DriftBH3.0Z" property="positionZ" name="Dynamic Blackhole 3.0" />
   </event>
-  <event name="Blackhole 5 Drift" id_arme="045aa2dc-631f-4820-8926-dec2d3b1bdb5" parent_id_arme="f44a16df-cec3-4b47-8c11-8deca960f661">
-    <if_exists name="Blackhole5" />
-    <addto_object_property value="BHDriftZ" property="positionX" name="Blackhole5" />
-    <addto_object_property value="BHDriftX" property="positionZ" name="Blackhole5" />
+  <event name="Blackhole 4 Drift" id_arme="1b1d75f3-f1fd-4259-90cf-04a24eafcb5c" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 4.0" />
+    <addto_object_property value="DriftBH4.0X" property="positionX" name="Dynamic Blackhole 4.0" />
+    <addto_object_property value="DriftBH4.0Z" property="positionZ" name="Dynamic Blackhole 4.0" />
   </event>
-  <event name="Blackhole 6 Drift" id_arme="2ce6b975-b165-4220-9edd-671d53fec590" parent_id_arme="f44a16df-cec3-4b47-8c11-8deca960f661">
-    <if_exists name="Blackhole6" />
-    <addto_object_property value="BHDriftZ" property="positionX" name="Blackhole6" />
-    <addto_object_property value="0-BHDriftX" property="positionZ" name="Blackhole6" />
+  <event name="Blackhole 5 Drift" id_arme="37e4bf35-c21c-4299-a384-7274643b427e" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 5.0" />
+    <addto_object_property value="DriftBH5.0X" property="positionX" name="Dynamic Blackhole 5.0" />
+    <addto_object_property value="DriftBH5.0Z" property="positionZ" name="Dynamic Blackhole 5.0" />
   </event>
-  <event name="Blackhole 7 Drift" id_arme="bf75935c-b244-44a8-85bb-5dd0e3883421" parent_id_arme="f44a16df-cec3-4b47-8c11-8deca960f661">
-    <if_exists name="Blackhole7" />
-    <addto_object_property value="0-BHDriftX" property="positionZ" name="Blackhole7" />
-    <addto_object_property value="BHDriftZ" property="positionX" name="Blackhole7" />
+  <event name="Blackhole 6 Drift" id_arme="df80037c-72ef-4233-a487-7bf057e245a4" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 6.0" />
+    <addto_object_property value="DriftBH6.0X" property="positionX" name="Dynamic Blackhole 6.0" />
+    <addto_object_property value="DriftBH6.0Z" property="positionZ" name="Dynamic Blackhole 6.0" />
   </event>
-  <event name="Blackhole 8 Drift" id_arme="7cfe7201-7a78-426b-983d-36a8b8ef5573" parent_id_arme="f44a16df-cec3-4b47-8c11-8deca960f661">
-    <if_exists name="Blackhole8" />
-    <addto_object_property value="0-BHDriftX" property="positionZ" name="Blackhole8" />
-    <addto_object_property value="0-BHDriftZ" property="positionX" name="Blackhole8" />
+  <event name="Blackhole 7 Drift" id_arme="a273f3df-0658-43a0-a812-31609f7aa7c6" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 7.0" />
+    <addto_object_property value="DriftBH7.0X" property="positionX" name="Dynamic Blackhole 7.0" />
+    <addto_object_property value="DriftBH7.0Z" property="positionZ" name="Dynamic Blackhole 7.0" />
   </event>
-  <event name="Blackhole 9 Drift" id_arme="d9f12877-c9ab-4edd-9c3e-671dab6d4f61" parent_id_arme="f44a16df-cec3-4b47-8c11-8deca960f661">
-    <if_exists name="Blackhole9" />
-    <addto_object_property value="BHDriftX+5" property="positionX" name="Blackhole9" />
-    <addto_object_property value="BHDriftZ" property="positionZ" name="Blackhole9" />
+  <event name="Blackhole 8 Drift" id_arme="bac09065-019f-4b3e-92a3-4db3e06f7513" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 8.0" />
+    <addto_object_property value="DriftBH8.0X" property="positionX" name="Dynamic Blackhole 8.0" />
+    <addto_object_property value="DriftBH8.0Z" property="positionZ" name="Dynamic Blackhole 8.0" />
   </event>
-  <event name="Blackhole 10 Drift" id_arme="c421126f-f4b9-4ff4-ba05-2bb7345cd214" parent_id_arme="f44a16df-cec3-4b47-8c11-8deca960f661">
-    <if_exists name="Blackhole10" />
-    <addto_object_property value="BHDriftX" property="positionX" name="Blackhole10" />
-    <addto_object_property value="BHDriftZ+5" property="positionZ" name="Blackhole10" />
+  <event name="Blackhole 9 Drift" id_arme="9348e8d7-e776-4889-8e7a-7ffc5ced6c5c" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 9.0" />
+    <addto_object_property value="DriftBH9.0X" property="positionX" name="Dynamic Blackhole 9.0" />
+    <addto_object_property value="DriftBH9.0Z" property="positionZ" name="Dynamic Blackhole 9.0" />
   </event>
-  <folder_arme name="Remove" id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b" parent_id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2" />
-  <event name="Choose" id_arme="9baf5e02-fdfb-468a-a7c0-1fdc9cfe9372" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
-    <if_variable name="DynamicBlackhole" comparator="EQUALS" value="101.0" />
-    <if_timer_finished name="DynamicBlackhole" />
-    <set_variable name="BHNumber" randomIntLow="1" randomIntHigh="BHNumberMax" />
-    <set_variable name="BlackholeTimer" randomIntLow="60" randomIntHigh="320" />
-    <set_variable name="DynamicBlackhole" value="102.0" integer="yes" />
+  <event name="Blackhole 10 Drift" id_arme="ef331eb0-5ca6-43b3-935a-71def91221b9" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 10.0" />
+    <addto_object_property value="DriftBH10.0X" property="positionX" name="Dynamic Blackhole 10.0" />
+    <addto_object_property value="DriftBH10.0Z" property="positionZ" name="Dynamic Blackhole 10.0" />
   </event>
-  <event name="Remove" id_arme="9dae8cbb-db25-4810-aa84-721ed6c003fc" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
-    <if_variable name="DynamicBlackhole" comparator="EQUALS" value="102.0" />
-    <destroy name="Blackhole|BHNumber|" />
-    <set_variable name="DynamicBHCoordX" randomIntLow="10" randomIntHigh="100" />
-    <set_variable name="DynamicBHCoordZ" randomIntLow="10" randomIntHigh="100" />
-    <set_variable name="DynamicBlackhole" value="103.0" integer="yes" />
+  <event name="Blackhole 11 Drift" id_arme="57f5dd5a-cddc-40cd-bda3-ee47ec66d2cd" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 11.0" />
+    <addto_object_property value="DriftBH11.0X" property="positionX" name="Dynamic Blackhole 11.0" />
+    <addto_object_property value="DriftBH11.0Z" property="positionZ" name="Dynamic Blackhole 11.0" />
   </event>
-  <event name="Reset" id_arme="b6624530-9cf6-4769-9394-9fdff6d6222d" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
-    <if_variable name="DynamicBlackhole" comparator="EQUALS" value="103.0" />
-    <create type="blackHole" x="DynamicBHCoordX*1000" y="0.0" z="DynamicBHCoordZ*1000" name="Blackhole|BHNumber|" />
-    <set_timer name="DynamicBlackhole" seconds="BlackholeTimer" />
-    <set_variable name="DynamicBlackhole" value="101.0" integer="yes" />
+  <event name="Blackhole 12 Drift" id_arme="03543f34-6fa3-4a6a-a136-9e1a224aef7a" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 12.0" />
+    <addto_object_property value="DriftBH12.0X" property="positionX" name="Dynamic Blackhole 12.0" />
+    <addto_object_property value="DriftBH12.0Z" property="positionZ" name="Dynamic Blackhole 12.0" />
+  </event>
+  <event name="Blackhole 13 Drift" id_arme="1d8f032c-d56b-4cea-811d-cb498ecbb8f0" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 13.0" />
+    <addto_object_property value="DriftBH13.0X" property="positionX" name="Dynamic Blackhole 13.0" />
+    <addto_object_property value="DriftBH13.0Z" property="positionZ" name="Dynamic Blackhole 13.0" />
+  </event>
+  <event name="Blackhole 14 Drift" id_arme="936ff277-cd30-4659-9948-2ec0eb56b4b5" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 14.0" />
+    <addto_object_property value="DriftBH14.0X" property="positionX" name="Dynamic Blackhole 14.0" />
+    <addto_object_property value="DriftBH14.0Z" property="positionZ" name="Dynamic Blackhole 14.0" />
+  </event>
+  <event name="Blackhole 15 Drift" id_arme="a24b434a-a051-41c4-8050-982f6dfb3eb2" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 15.0" />
+    <addto_object_property value="DriftBH15.0X" property="positionX" name="Dynamic Blackhole 15.0" />
+    <addto_object_property value="DriftBH15.0Z" property="positionZ" name="Dynamic Blackhole 15.0" />
+  </event>
+  <event name="Blackhole 16 Drift" id_arme="330d7784-3d0d-4bdd-a655-86d4fcb99c70" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 16.0" />
+    <addto_object_property value="DriftBH16.0X" property="positionX" name="Dynamic Blackhole 16.0" />
+    <addto_object_property value="DriftBH16.0Z" property="positionZ" name="Dynamic Blackhole 16.0" />
+  </event>
+  <event name="Blackhole 17 Drift" id_arme="97b27ef3-bd73-4839-a2b5-6bc2c483745c" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 17.0" />
+    <addto_object_property value="DriftBH17.0X" property="positionX" name="Dynamic Blackhole 17.0" />
+    <addto_object_property value="DriftBH17.0Z" property="positionZ" name="Dynamic Blackhole 17.0" />
+  </event>
+  <event name="Blackhole 18 Drift" id_arme="2389960f-3b01-4409-9180-e7b78745ba45" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 18.0" />
+    <addto_object_property value="DriftBH18.0X" property="positionX" name="Dynamic Blackhole 18.0" />
+    <addto_object_property value="DriftBH18.0Z" property="positionZ" name="Dynamic Blackhole 18.0" />
+  </event>
+  <event name="Blackhole 19 Drift" id_arme="21e0de83-5d87-4fa1-96f6-f5a8db187b49" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 19.0" />
+    <addto_object_property value="DriftBH19.0X" property="positionX" name="Dynamic Blackhole 19.0" />
+    <addto_object_property value="DriftBH19.0Z" property="positionZ" name="Dynamic Blackhole 19.0" />
+  </event>
+  <event name="Blackhole 20 Drift" id_arme="823dafc6-600e-4bc1-ae7d-5a67cf8bacd1" parent_id_arme="9d2605c1-c3c7-4d7c-8793-0fc12f2c6e9e">
+    <if_exists name="Dynamic Blackhole 20.0" />
+    <addto_object_property value="DriftBH20.0X" property="positionX" name="Dynamic Blackhole 20.0" />
+    <addto_object_property value="DriftBH20.0Z" property="positionZ" name="Dynamic Blackhole 20.0" />
+  </event>
+  <folder_arme name="New Location Respawn" id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b" parent_id_arme="0fb3e094-9569-4367-b7f2-21844da0c9e2" />
+  <event name="Blackhole 0.0 Move" id_arme="833753fc-7a8a-493a-8a57-0c2c4fc16b3b" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 0.0" />
+    <if_outside_box name="Dynamic Blackhole 0.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 0.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 0.0" />
+  </event>
+  <event name="Blackhole 2.0 Move" id_arme="3e83c504-cf32-4fd4-962a-28856f24536d" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 2.0" />
+    <if_outside_box name="Dynamic Blackhole 2.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 2.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 2.0" />
+  </event>
+  <event name="Blackhole 3.0 Move" id_arme="76043e5b-5fdd-47c0-a92d-58aa37359406" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 3.0" />
+    <if_outside_box name="Dynamic Blackhole 3.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 3.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 3.0" />
+  </event>
+  <event name="Blackhole 4.0 Move" id_arme="e451e54b-60aa-44fc-b41a-f48ef5a12bee" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 4.0" />
+    <if_outside_box name="Dynamic Blackhole 4.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 4.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 4.0" />
+  </event>
+  <event name="Blackhole 5.0 Move" id_arme="86fabfd2-3b8e-4c9d-b2d6-9f6ff9348832" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 5.0" />
+    <if_outside_box name="Dynamic Blackhole 5.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 5.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 5.0" />
+  </event>
+  <event name="Blackhole 6.0 Move" id_arme="2ad9f993-d52d-479f-844b-edb25ca0304b" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 6.0" />
+    <if_outside_box name="Dynamic Blackhole 6.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 6.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 6.0" />
+  </event>
+  <event name="Blackhole 7.0 Move" id_arme="86b328d4-2ab0-4acb-87be-779f9d82e9ba" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 7.0" />
+    <if_outside_box name="Dynamic Blackhole 7.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 7.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 7.0" />
+  </event>
+  <event name="Blackhole 8.0 Move" id_arme="55995e37-13e9-4f3a-9c44-d3f4a469110e" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 8.0" />
+    <if_outside_box name="Dynamic Blackhole 8.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 8.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 8.0" />
+  </event>
+  <event name="Blackhole 9.0 Move" id_arme="b2054496-f4bf-4531-89d9-eb16c6376299" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 9.0" />
+    <if_outside_box name="Dynamic Blackhole 9.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 9.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 9.0" />
+  </event>
+  <event name="Blackhole 10.0 Move" id_arme="20b70b2f-cdb7-4dbd-8e96-0d7cf60a0d85" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 10.0" />
+    <if_outside_box name="Dynamic Blackhole 10.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 10.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 10.0" />
+  </event>
+  <event name="Blackhole 11.0 Move" id_arme="035dd974-f4d0-4543-bb0d-2caaf75d1d56" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 11.0" />
+    <if_outside_box name="Dynamic Blackhole 11.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 11.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 11.0" />
+  </event>
+  <event name="Blackhole 12.0 Move" id_arme="95617464-95ec-4d8a-af16-716888917655" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 12.0" />
+    <if_outside_box name="Dynamic Blackhole 12.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 12.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 12.0" />
+  </event>
+  <event name="Blackhole 13.0 Move" id_arme="a6c56541-52f8-4549-b5bf-319cb68e3734" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 13.0" />
+    <if_outside_box name="Dynamic Blackhole 13.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 13.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 13.0" />
+  </event>
+  <event name="Blackhole 14.0 Move" id_arme="d4ef2ccc-382e-49e1-911e-3a462402773a" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 14.0" />
+    <if_outside_box name="Dynamic Blackhole 14.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 14.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 14.0" />
+  </event>
+  <event name="Blackhole 15.0 Move" id_arme="1d7b8269-5b75-4d41-980f-0f79d1f30fb5" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 15.0" />
+    <if_outside_box name="Dynamic Blackhole 15.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 15.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 15.0" />
+  </event>
+  <event name="Blackhole 16.0 Move" id_arme="12eeb84a-57f1-4c21-aef0-c6f111339cec" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 16.0" />
+    <if_outside_box name="Dynamic Blackhole 16.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 16.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 16.0" />
+  </event>
+  <event name="Blackhole 17.0 Move" id_arme="b16f4278-b923-46eb-ad49-3b777f142747" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 17.0" />
+    <if_outside_box name="Dynamic Blackhole 17.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 17.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 17.0" />
+  </event>
+  <event name="Blackhole 18.0 Move" id_arme="da16d983-7644-4ae7-bb71-ed3cd2d7f6bd" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 18.0" />
+    <if_outside_box name="Dynamic Blackhole 18.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 18.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 18.0" />
+  </event>
+  <event name="Blackhole 19.0 Move" id_arme="6999e90b-337b-432c-82de-515c52034aeb" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 19.0" />
+    <if_outside_box name="Dynamic Blackhole 19.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 19.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 19.0" />
+  </event>
+  <event name="Blackhole 20.0 Move" id_arme="166c9a60-e4a0-4c36-bccb-c8f65af37d94" parent_id_arme="41ae4ece-071e-48c2-9f30-5634ece55b7b">
+    <if_exists name="Dynamic Blackhole 20.0" />
+    <if_outside_box name="Dynamic Blackhole 20.0" leastX="500" leastZ="500" mostX="99500" mostZ="99500" />
+    <set_variable name="DynamicBHCoordX" randomIntLow="5" randomIntHigh="95" />
+    <set_variable name="DynamicBHCoordZ" randomIntLow="5" randomIntHigh="95" />
+    <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 20.0" />
+    <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 20.0" />
   </event>
   <event name="End Mission" id_arme="3e9b80be-6696-467c-ba4f-26a41d2ae9ee" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696">
     <if_variable name="Mission End" comparator="EQUALS" value="1.0" />
     <if_timer_finished name="Mission End" />
-    <log text="Ship1HomingCurrent is |Ship1HomingCurrent|" />
-    <log text="Ship2HomingCurrent is |Ship2HomingCurrent|" />
-    <log text="Ship3HomingCurrent is |Ship3HomingCurrent|" />
-    <log text="Ship4HomingCurrent is |Ship4HomingCurrent|" />
+    <log text="Ship1 Ordnance: |Ship1HomingCurrent|, |Ship1NukeCurrent|, |Ship1MineCurrent|, |Ship1EMPCurrent|, |Ship1ShkCurrent|, |Ship1BeaCurrent|, |Ship1ProCurrent|, |Ship1TagCurrent|" />
+    <log text="Ship2 Ordnance: |Ship2HomingCurrent|, |Ship2NukeCurrent|, |Ship2MineCurrent|, |Ship2EMPCurrent|, |Ship2ShkCurrent|, |Ship2BeaCurrent|, |Ship2ProCurrent|, |Ship2TagCurrent|" />
+    <log text="Ship3 Ordnance: |Ship3HomingCurrent|, |Ship3NukeCurrent|, |Ship3MineCurrent|, |Ship3EMPCurrent|, |Ship3ShkCurrent|, |Ship3BeaCurrent|, |Ship3ProCurrent|, |Ship3TagCurrent|" />
+    <log text="Ship4 Ordnance: |Ship4HomingCurrent|, |Ship4NukeCurrent|, |Ship4MineCurrent|, |Ship4EMPCurrent|, |Ship4ShkCurrent|, |Ship4BeaCurrent|, |Ship4ProCurrent|, |Ship4TagCurrent|" />
+    <log text="Ship5 Ordnance: |Ship5HomingCurrent|, |Ship5NukeCurrent|, |Ship5MineCurrent|, |Ship5EMPCurrent|, |Ship5ShkCurrent|, |Ship5BeaCurrent|, |Ship5ProCurrent|, |Ship5TagCurrent|" />
+    <log text="Ship6 Ordnance: |Ship6HomingCurrent|, |Ship6NukeCurrent|, |Ship6MineCurrent|, |Ship6EMPCurrent|, |Ship6ShkCurrent|, |Ship6BeaCurrent|, |Ship6ProCurrent|, |Ship6TagCurrent|" />
+    <log text="Ship7 Ordnance: |Ship7HomingCurrent|, |Ship7NukeCurrent|, |Ship7MineCurrent|, |Ship7EMPCurrent|, |Ship7ShkCurrent|, |Ship7BeaCurrent|, |Ship7ProCurrent|, |Ship7TagCurrent|" />
+    <log text="Ship8 Ordnance: |Ship8HomingCurrent|, |Ship8NukeCurrent|, |Ship8MineCurrent|, |Ship8EMPCurrent|, |Ship8ShkCurrent|, |Ship8BeaCurrent|, |Ship8ProCurrent|, |Ship8TagCurrent|" />
     <end_mission />
   </event>
 </mission_data>

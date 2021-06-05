@@ -304,9 +304,9 @@
     <set_variable name="MissionCode" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Krellis I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <create type="genericMesh" x="52997.0" y="0.0" z="69590.0" name="Acantha Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="33125.0" y="0.0" z="78392.0" name="Eshi Directorate" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="15715.0" y="0.0" z="46919.0" name="Hagma Base" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="73170.0" y="0.0" z="79196.0" name="Edi Edi Base" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="33125.0" y="0.0" z="78392.0" name="Eshi Directorate" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="15715.0" y="0.0" z="46919.0" name="Hagma Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="73170.0" y="0.0" z="79196.0" name="Edi Edi Base" hullID="1007" sideValue="sectorSide" />
     <create type="enemy" x="34733.0" y="0.0" z="72767.0" angle="0" name="Defense Platform 1" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="23215.0" y="0.0" z="50937.0" angle="0" name="Defense Platform 2" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="69152.0" y="0.0" z="74642.0" angle="0" name="Defense Platform 3" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
@@ -444,9 +444,9 @@
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Krellis II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="station" x="39956.0" y="0.0" z="60848.0" name="Arshira Base" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="71027.0" y="0.0" z="31250.0" name="N'Taira Base" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="77322.0" y="0.0" z="35133.0" name="Onshi Mining" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="39956.0" y="0.0" z="60848.0" name="Arshira Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="71027.0" y="0.0" z="31250.0" name="N'Taira Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="77322.0" y="0.0" z="35133.0" name="Onshi Mining" hullID="1005" sideValue="sectorSide" />
     <create type="enemy" x="74777.0" y="0.0" z="42901.0" angle="0" name="Defense Platform 4" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
   </event>
@@ -549,9 +549,9 @@
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Krellis III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="station" x="34465.0" y="0.0" z="44910.0" name="Koth Ore Processor" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="48929.0" y="0.0" z="29107.0" name="P'Gel Metals" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="35670.0" y="0.0" z="32321.0" name="Uxa Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="34465.0" y="0.0" z="44910.0" name="Koth Ore Processor" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="48929.0" y="0.0" z="29107.0" name="P'Gel Metals" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="35670.0" y="0.0" z="32321.0" name="Uxa Base" hullID="1005" sideValue="sectorSide" />
   </event>
   <event name="Settings" id_arme="71a32eaf-ef73-4630-b31a-522fdb1a44ee" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -652,7 +652,7 @@
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Krellis IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="station" x="54018.0" y="0.0" z="51473.0" name="Turkeshi Mines" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="54018.0" y="0.0" z="51473.0" name="Turkeshi Mines" hullID="1005" sideValue="sectorSide" />
   </event>
   <event name="Settings" id_arme="6fb89a0f-141c-4adf-8c9a-4bbec8071282" parent_id_arme="cfde8ffc-b137-4ab5-8613-903a87490bd0">
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -970,10 +970,10 @@
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Krellis VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="station" x="64867.0" y="500.0" z="42633.0" name="Osca Base" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="53884.0" y="-500.0" z="58303.0" name="Zawpan Base" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="29777.0" y="0.0" z="32857.0" name="Ungswor Base" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="72500.0" y="0.0" z="60982.0" name="Zol-Quen Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="64867.0" y="500.0" z="42633.0" name="Osca Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="53884.0" y="-500.0" z="58303.0" name="Zawpan Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="29777.0" y="0.0" z="32857.0" name="Ungswor Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="72500.0" y="0.0" z="60982.0" name="Zol-Quen Base" hullID="1005" sideValue="sectorSide" />
   </event>
   <event name="Settings" id_arme="f8b3994c-b0f9-445e-bf69-61dc478a9604" parent_id_arme="37fdd8e3-6b43-4b84-9e9e-17572786b5cb">
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1259,7 +1259,7 @@
     <set_variable name="MissionCode" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Krellis VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <create type="genericMesh" x="42634.0" y="0.0" z="58571.0" name="Erowis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="71161.0" y="0.0" z="55892.0" name="On-Ansi Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="71161.0" y="0.0" z="55892.0" name="On-Ansi Base" hullID="1005" sideValue="sectorSide" />
   </event>
   <event name="Settings" id_arme="5cdef4f7-f60f-4e79-b11c-01ec66abb68a" parent_id_arme="e04eb7b3-de99-4b25-af6b-12a4c917fe93">
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -1366,10 +1366,10 @@
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Krellis IX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="station" x="36875.0" y="0.0" z="27098.0" name="Kral-Ta Minerals" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="33527.0" y="0.0" z="49062.0" name="Yi-Pular'Me Base" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="66072.0" y="0.0" z="45848.0" name="Ootath Base" hullID="1005" sideValue="sectorSide" />
-    <create type="station" x="49599.0" y="0.0" z="41026.0" name="Re'eya Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="36875.0" y="0.0" z="27098.0" name="Kral-Ta Minerals" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="33527.0" y="0.0" z="49062.0" name="Yi-Pular'Me Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="66072.0" y="0.0" z="45848.0" name="Ootath Base" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="49599.0" y="0.0" z="41026.0" name="Re'eya Base" hullID="1005" sideValue="sectorSide" />
   </event>
   <event name="Settings" id_arme="667fb717-ba4d-4c2b-99b6-118dfa59aaab" parent_id_arme="19016afb-8cf0-42f2-a4e2-7496d28f5ac6">
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />

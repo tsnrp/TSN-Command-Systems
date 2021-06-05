@@ -1,6 +1,10 @@
 <mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!--Configurations-->
+    <get_object_property property="shieldStateFront" player_slot="0" variable="Ship1ShieldStateFront" />
+    <get_object_property property="shieldStateBack" player_slot="0" variable="Ship1ShieldStateBack" />
+    <get_object_property property="shieldMaxStateFront" player_slot="0" variable="Ship1MaxShieldLevelFront" />
+    <get_object_property property="shieldMaxStateBack" player_slot="0" variable="Ship1MaxShieldLevelBack" />
     <set_difficulty_level value="10" />
     <set_variable name="FleetStatusOption" value="1.0" integer="yes" />
     <big_message title="The TSN Universe" subtitle1="Created by Xavier" subtitle2="Version 9.0" />

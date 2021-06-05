@@ -118,7 +118,7 @@
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="76384.0" y="0.0" z="22812.0" name="Trellis Confederacies" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="76384.0" y="0.0" z="22812.0" name="Trellis Confederacies" hullID="1000" sideValue="sectorSide" />
     <create type="neutral" x="60179.0" y="0.0" z="39151.0" angle="0" name="LCR-4" hullID="1055" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
@@ -406,7 +406,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <create type="genericMesh" x="47456.0" y="0.0" z="27901.0" name="Jhohara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="72634.0" y="0.0" z="45848.0" name="Bratmech Cartographics" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="72634.0" y="0.0" z="45848.0" name="Bratmech Cartographics" hullID="1004" sideValue="sectorSide" />
     <create type="neutral" x="47188.0" y="0.0" z="33794.0" angle="356.2" name="Jartak Inspections" hullID="1053" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -616,7 +616,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="neutral" x="43036.0" y="0.0" z="62857.0" angle="0" name="LCR-1" hullID="1055" sideValue="sectorSide" />
-    <create type="station" x="66875.0" y="0.0" z="48125.0" name="Staraway Systems" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="66875.0" y="0.0" z="48125.0" name="Staraway Systems" hullID="1003" sideValue="sectorSide" />
     <create type="genericMesh" x="63929.0" y="0.0" z="62723.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\Planets\planetTex4.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
@@ -921,7 +921,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="82679.0" y="0.0" z="36205.0" name="Sumri Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="37411.0" y="0.0" z="30714.0" name="Canton" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="37411.0" y="0.0" z="30714.0" name="Canton" hullID="1001" sideValue="sectorSide" />
     <create type="neutral" x="69688.0" y="0.0" z="36473.0" angle="270.6" name="Sultan Customs" hullID="1053" sideValue="sectorSide" />
     <create type="genericMesh" x="58974.0" y="0.0" z="54151.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\Planets\planetTex4.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
@@ -1109,10 +1109,10 @@
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="51608.0" y="0.0" z="42232.0" name="Makerat Tours" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="17441.0" y="0.0" z="36123.0" name="M-381" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="18526.0" y="0.0" z="56720.0" name="RS-703" hullID="1004" sideValue="sectorSide" />
-    <create type="station" x="62054.0" y="0.0" z="20937.0" name="Marge Security" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="51608.0" y="0.0" z="42232.0" name="Makerat Tours" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="17441.0" y="0.0" z="36123.0" name="M-381" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="18526.0" y="0.0" z="56720.0" name="RS-703" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="62054.0" y="0.0" z="20937.0" name="Marge Security" hullID="1000" sideValue="sectorSide" />
     <create type="neutral" x="23750.0" y="0.0" z="57500.0" angle="0" name="LBY-1" hullID="1054" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
@@ -1256,15 +1256,15 @@
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="74643.0" y="0.0" z="68080.0" name="Baratron Refineries" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="74643.0" y="0.0" z="68080.0" name="Baratron Refineries" hullID="1003" sideValue="sectorSide" />
     <create type="neutral" x="63259.0" y="0.0" z="77053.0" angle="0" name="SY-C1" hullID="1053" sideValue="sectorSide" />
     <create type="neutral" x="68483.0" y="0.0" z="79598.0" angle="0" name="SY-C2" hullID="1053" sideValue="sectorSide" />
-    <create type="station" x="62858.0" y="0.0" z="66607.0" name="Campton Industries" hullID="1050" sideValue="sectorSide" />
-    <create type="station" x="67009.0" y="0.0" z="75312.0" name="Carilon Shipyards" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="84458.0" y="0.0" z="42369.0" name="RS-329" hullID="1004" sideValue="sectorSide" />
-    <create type="station" x="65908.0" y="0.0" z="53843.0" name="M-830" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="50268.0" y="0.0" z="26830.0" name="M-734" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="20201.0" y="0.0" z="59879.0" name="RS-703" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="62858.0" y="0.0" z="66607.0" name="Campton Industries" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="67009.0" y="0.0" z="75312.0" name="Carilon Shipyards" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="84458.0" y="0.0" z="42369.0" name="RS-329" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="65908.0" y="0.0" z="53843.0" name="M-830" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="50268.0" y="0.0" z="26830.0" name="M-734" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="20201.0" y="0.0" z="59879.0" name="RS-703" hullID="1004" sideValue="sectorSide" />
     <create type="neutral" x="24018.0" y="0.0" z="40625.0" angle="0" name="LCR-2" hullID="1055" sideValue="sectorSide" />
     <create type="neutral" x="27367.0" y="0.0" z="17991.0" angle="0" name="LBY-2" hullID="1054" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
@@ -1560,7 +1560,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="11429.0" y="0.0" z="29642.0" name="Khoros Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="74108.0" y="0.0" z="75714.0" name="Marge Security" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="74108.0" y="0.0" z="75714.0" name="Marge Security" hullID="1000" sideValue="sectorSide" />
     <create type="neutral" x="21742.0" y="0.0" z="26294.0" angle="108.4" name="Ketan Customs" hullID="1053" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
@@ -1855,7 +1855,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="67411.0" y="0.0" z="58571.0" name="Reema Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="29108.0" y="0.0" z="76116.0" name="Veich" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="29108.0" y="0.0" z="76116.0" name="Veich" hullID="1000" sideValue="sectorSide" />
     <create type="neutral" x="56831.0" y="0.0" z="61250.0" angle="282.7" name="Reticle Inspections" hullID="1053" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis IX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
@@ -2089,9 +2089,9 @@
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="11" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="72768.0" y="0.0" z="30982.0" name="Charity" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="69956.0" y="0.0" z="26428.0" name="Faith" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="66742.0" y="0.0" z="31919.0" name="Hope" hullID="1056" sideValue="sectorSide" />
+    <create type="neutral" x="72768.0" y="0.0" z="30982.0" name="Charity" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="69956.0" y="0.0" z="26428.0" name="Faith" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="66742.0" y="0.0" z="31919.0" name="Hope" hullID="1056" sideValue="sectorSide" />
     <create type="neutral" x="18929.0" y="0.0" z="54553.0" angle="0" name="LCR-3" hullID="1055" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis XI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />

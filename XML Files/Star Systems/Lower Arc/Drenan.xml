@@ -1,0 +1,1904 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="194.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="150.0" integer="yes" />
+    <set_variable name="Alignment" value="1.0" integer="yes" />
+  </start>
+  <folder_arme name="Drenan System" id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <folder_arme name="Drenan Settings" id_arme="971f6410-0bc3-41db-bb50-0bf7545c65f5" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <folder_arme name="Drenan Menu" id_arme="d40267b7-73d1-459b-ba36-e8fe13883e8c" parent_id_arme="971f6410-0bc3-41db-bb50-0bf7545c65f5" />
+  <event name="Drenan Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="d40267b7-73d1-459b-ba36-e8fe13883e8c">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Drenan System" />
+    <set_variable name="Drenan Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="d40267b7-73d1-459b-ba36-e8fe13883e8c">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Drenan System" />
+  </event>
+  <event name="Drenan System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="d40267b7-73d1-459b-ba36-e8fe13883e8c">
+    <if_gm_button text="Lower Arc/Drenan System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="105.0" integer="yes" />
+    <set_variable name="Drenan System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="971f6410-0bc3-41db-bb50-0bf7545c65f5">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="1.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="971f6410-0bc3-41db-bb50-0bf7545c65f5">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="971f6410-0bc3-41db-bb50-0bf7545c65f5">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="971f6410-0bc3-41db-bb50-0bf7545c65f5">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="971f6410-0bc3-41db-bb50-0bf7545c65f5">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Drenan Sector I" id_arme="c65110ba-f7d2-4b86-8ec1-609c9eb21057" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector I" id_arme="77f5fe7f-8882-4ba5-afec-b785e8ff5768" parent_id_arme="c65110ba-f7d2-4b86-8ec1-609c9eb21057">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <set_skybox_index index="21" />
+    <create count="100" type="nebulas" nebType="1" startX="1920.0" startY="0.0" startZ="45312.0" endX="59509.0" endY="0.0" endZ="97142.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="8483.0" startY="0.0" startZ="41964.0" endX="49465.0" endY="0.0" endZ="95267.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="3" startX="52813.0" startY="0.0" startZ="45312.0" endX="51206.0" endY="0.0" endZ="92857.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="52545.0" startY="0.0" startZ="42366.0" endX="40224.0" endY="0.0" endZ="92589.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="51072.0" startY="0.0" startZ="48125.0" endX="39286.0" endY="0.0" endZ="1651.0" randomRange="10000" />
+    <create count="80" type="nebulas" nebType="3" startX="51072.0" startY="0.0" startZ="45714.0" endX="35536.0" endY="0.0" endZ="4598.0" randomRange="10000" />
+    <create count="100" type="asteroids" startX="77724.0" startY="0.0" startZ="28169.0" endX="37545.0" endY="0.0" endZ="69553.0" randomRange="8000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="a7663c7c-2486-476e-91ea-b7bcc7463e63" parent_id_arme="c65110ba-f7d2-4b86-8ec1-609c9eb21057" />
+  <event name="Transition to Sector II" id_arme="58fe1590-f3f5-42d3-b480-7f7eca56ba69" parent_id_arme="a7663c7c-2486-476e-91ea-b7bcc7463e63">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="374a3afe-1e99-4039-84ca-d22ee52fe030" parent_id_arme="a7663c7c-2486-476e-91ea-b7bcc7463e63">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="a43c5a0c-7d17-46bf-bc4c-837fb4efbacf" parent_id_arme="a7663c7c-2486-476e-91ea-b7bcc7463e63">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="6ff454b3-8145-4022-bd59-ff8365374989" parent_id_arme="c65110ba-f7d2-4b86-8ec1-609c9eb21057" />
+  <event name="Generate Sector Entities" id_arme="b7bd6c2f-115e-468c-8b46-31dbcc8a3875" parent_id_arme="6ff454b3-8145-4022-bd59-ff8365374989">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="enemy" x="68349.0" y="0.0" z="39419.0" angle="0" name="Okka Mining" hullID="1005" sideValue="sectorSide" fleetnumber="-1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="7496ed23-f191-4372-a660-8fdecbc9bf29" parent_id_arme="6ff454b3-8145-4022-bd59-ff8365374989">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="881181aa-7cb8-4354-9a04-95d93dcb2c77" parent_id_arme="6ff454b3-8145-4022-bd59-ff8365374989">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <destroy name="Okka Mining" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector II" id_arme="ab2850bf-1bed-4554-902f-367a54a668a1" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector II" id_arme="208e52e9-468b-44de-b5f5-fa2b9e5607d4" parent_id_arme="ab2850bf-1bed-4554-902f-367a54a668a1">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <set_skybox_index index="21" />
+    <create count="100" type="nebulas" nebType="1" startX="98750.0" startY="0.0" startZ="47589.0" endX="26283.0" endY="0.0" endZ="20929.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="99420.0" startY="0.0" startZ="50803.0" endX="17658.0" endY="0.0" endZ="24944.0" randomRange="10000" />
+    <create count="30" type="nebulas" nebType="1" startX="36543.0" startY="0.0" startZ="15873.0" endX="1450.0" endY="0.0" endZ="28215.0" randomRange="10000" />
+    <create count="30" type="nebulas" nebType="2" startX="41153.0" startY="0.0" startZ="19739.0" endX="2491.0" endY="0.0" endZ="24646.0" randomRange="10000" />
+    <create count="30" type="asteroids" startX="70224.0" startY="200.0" startZ="39419.0" endX="65134.0" endY="200.0" endZ="57767.0" randomRange="9000" />
+    <create count="30" type="asteroids" startX="58840.0" startY="-200.0" startZ="37812.0" endX="67277.0" endY="-200.0" endZ="44508.0" randomRange="9000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="66a3cf84-5c4b-415b-a653-35d047282953" parent_id_arme="ab2850bf-1bed-4554-902f-367a54a668a1" />
+  <event name="Transition to Sector III" id_arme="ab8ec027-6cd2-489c-99f4-6e13d2531baf" parent_id_arme="66a3cf84-5c4b-415b-a653-35d047282953">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="330610ec-d00e-44d8-9900-c15f306a78d8" parent_id_arme="66a3cf84-5c4b-415b-a653-35d047282953">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="a6217279-38ed-4d95-8e78-ad3cda209a22" parent_id_arme="66a3cf84-5c4b-415b-a653-35d047282953">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="03788e5f-13f4-40b2-89a8-07e84fd8caa1" parent_id_arme="66a3cf84-5c4b-415b-a653-35d047282953">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="eb297925-d5f5-47b7-8912-6254a8b22171" parent_id_arme="66a3cf84-5c4b-415b-a653-35d047282953">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="da8d4752-c6e4-466a-833e-fe14196c311f" parent_id_arme="ab2850bf-1bed-4554-902f-367a54a668a1" />
+  <event name="Generate Sector Entities" id_arme="9f7fed80-c207-44e9-8125-dcd174ec570d" parent_id_arme="da8d4752-c6e4-466a-833e-fe14196c311f">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="45313.0" y="0.0" z="58973.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\Planets\planetTex4.png" colorRed="0.2" colorGreen="0.8" colorBlue="0.2" />
+    <create type="enemy" x="40893.0" y="0.0" z="42633.0" name="Drenan Station" hullID="1007" sideValue="sectorSide" />
+    <create type="enemy" x="50402.0" y="0.0" z="36339.0" angle="0" name="Security Pod 22" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="32054.0" y="0.0" z="34330.0" angle="0" name="Drenan Shipyards" hullID="1005" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="67277.0" y="0.0" z="45714.0" angle="0" name="Ronn Factories" hullID="1357" sideValue="sectorSide" fleetnumber="-1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="41cf506c-e5d5-40be-bf64-85bb1700e03c" parent_id_arme="da8d4752-c6e4-466a-833e-fe14196c311f">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="CustomPlanet" value="1.0" integer="yes" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Custom Planet Data (ADD TO SECTOR CODE)" id_arme="a6633e4a-3297-4f17-a9aa-a93b90da3938" parent_id_arme="da8d4752-c6e4-466a-833e-fe14196c311f">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="CustomPlanet" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="CustomPlanet" />
+    <set_ship_text name="PA" newname=" " />
+    <set_ship_text name="PB" newname=" " />
+    <set_ship_text name="PC" newname=" " />
+    <set_ship_text name="PD" newname=" " />
+    <set_ship_text name="PE" newname=" " />
+    <set_ship_text name="PF" newname=" " />
+    <set_ship_text name="PG" newname=" " />
+    <set_ship_text name="PH" newname=" " />
+    <set_ship_text name="Planet" newname="DRENAN PRIME" class="Class P Planet" />
+    <set_variable name="CustomPlanet" value="0.0" integer="yes" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="64b4e1fa-4437-474a-8e8a-7c247551a10c" parent_id_arme="da8d4752-c6e4-466a-833e-fe14196c311f">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <destroy name="Drenan Station" />
+    <destroy name="Security Pod 22" />
+    <destroy name="Drenan Shipyards" />
+    <destroy name="Ronn Factories" />
+    <destroy name="DRENAN PRIME" />
+    <set_variable name="DestroyPlanet" value="1.0" integer="yes" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector III" id_arme="4e660a4a-47a4-456e-a1af-806207ad709c" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector III" id_arme="a62dfa62-75ac-4ac0-af15-91f7b0a46a7d" parent_id_arme="4e660a4a-47a4-456e-a1af-806207ad709c">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <set_skybox_index index="21" />
+    <create count="30" type="nebulas" nebType="1" startX="58706.0" startY="0.0" startZ="39821.0" endX="95670.0" endY="0.0" endZ="23883.0" randomRange="10000" />
+    <create count="30" type="nebulas" nebType="2" startX="67947.0" startY="0.0" startZ="38883.0" endX="95000.0" endY="0.0" endZ="24955.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="1" startX="1384.0" startY="0.0" startZ="51339.0" endX="66340.0" endY="0.0" endZ="26428.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="2456.0" startY="0.0" startZ="59375.0" endX="71697.0" endY="0.0" endZ="22544.0" randomRange="10000" />
+    <create count="120" type="asteroids" startX="41965.0" startY="0.0" startZ="43973.0" endX="59294.0" endY="0.0" endZ="99591.0" randomRange="5000" />
+    <create count="30" type="asteroids" startX="27768.0" startY="0.0" startZ="18660.0" endX="17658.0" endY="0.0" endZ="1598.0" randomRange="5000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="fb2a3df8-cb57-4ddd-8758-7f1edcc22df0" parent_id_arme="4e660a4a-47a4-456e-a1af-806207ad709c" />
+  <event name="Transition to Sector IV" id_arme="6bc6bfa8-51a0-45bd-9ed2-1bdd19889526" parent_id_arme="fb2a3df8-cb57-4ddd-8758-7f1edcc22df0">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="f9d5fb57-16a0-43f5-862b-2d302df701c2" parent_id_arme="fb2a3df8-cb57-4ddd-8758-7f1edcc22df0">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="b6c97346-531f-476a-9c55-3635d1f901e7" parent_id_arme="fb2a3df8-cb57-4ddd-8758-7f1edcc22df0">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="dc026ffb-4643-4966-8acb-4a3c3bb7a954" parent_id_arme="fb2a3df8-cb57-4ddd-8758-7f1edcc22df0">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="bf38e65f-92c2-4570-836a-dea1503f90b8" parent_id_arme="fb2a3df8-cb57-4ddd-8758-7f1edcc22df0">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="eeb03087-39f2-4109-a45f-b592de763468" parent_id_arme="4e660a4a-47a4-456e-a1af-806207ad709c" />
+  <event name="Generate Sector Entities" id_arme="c4cdd28f-be80-4340-b5cc-e76cb95dc407" parent_id_arme="eeb03087-39f2-4109-a45f-b592de763468">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="enemy" x="39688.0" y="0.0" z="39821.0" angle="45" name="Ixaqa Mining" hullID="1005" sideValue="sectorSide" fleetnumber="-1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="9cf82cc5-8fb4-438c-8e16-ec25bd2807fc" parent_id_arme="eeb03087-39f2-4109-a45f-b592de763468">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="21b14e00-f89c-4e51-8b6c-e459cc2091ba" parent_id_arme="eeb03087-39f2-4109-a45f-b592de763468">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <destroy name="Ixaqa Mining" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector IV" id_arme="070c5fb1-9f9d-4614-a64f-c9bb5f4c4b84" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector IV" id_arme="eabe5475-274d-42bf-904e-1deca2e15a56" parent_id_arme="070c5fb1-9f9d-4614-a64f-c9bb5f4c4b84">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <set_skybox_index index="21" />
+    <create count="100" type="nebulas" nebType="1" startX="99420.0" startY="0.0" startZ="49732.0" endX="30715.0" endY="0.0" endZ="92991.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="98081.0" startY="0.0" startZ="55223.0" endX="24152.0" endY="0.0" endZ="90312.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="60930.0" startY="0.0" startZ="98550.0" endX="34461.0" endY="0.0" endZ="3828.0" randomRange="9000" />
+    <create count="50" type="asteroids" startX="74242.0" startY="0.0" startZ="45044.0" endX="47322.0" endY="0.0" endZ="92455.0" randomRange="10000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="46951124-1dd7-42d6-929f-0e22c695a73b" parent_id_arme="070c5fb1-9f9d-4614-a64f-c9bb5f4c4b84" />
+  <event name="Transition to Sector III" id_arme="425faef8-9a03-4faf-96e8-b9d212346142" parent_id_arme="46951124-1dd7-42d6-929f-0e22c695a73b">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="28cad3bd-a9c5-4f9c-9d38-2301bcba14fe" parent_id_arme="46951124-1dd7-42d6-929f-0e22c695a73b">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="e616a100-fe21-46c9-80a4-82c2ed835105" parent_id_arme="46951124-1dd7-42d6-929f-0e22c695a73b">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="ab4c0793-ee6d-4afa-ab59-bbdae3683d6d" parent_id_arme="070c5fb1-9f9d-4614-a64f-c9bb5f4c4b84" />
+  <event name="Generate Sector Entities" id_arme="cc684bbe-04e8-4e0f-bfa0-0b59bc4d66c8" parent_id_arme="ab4c0793-ee6d-4afa-ab59-bbdae3683d6d">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="enemy" x="57099.0" y="0.0" z="71294.0" angle="0" name="Hunting Comms" hullID="1352" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="50000.0" y="0.0" z="76383.0" angle="0" name="Whale Sensors" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="genericMesh" x="73438.0" y="0.0" z="15044.0" name="Marker Buoy 1" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <create type="genericMesh" x="70893.0" y="0.0" z="32321.0" name="Marker Buoy 2" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <create type="genericMesh" x="64465.0" y="0.0" z="48258.0" name="Marker Buoy 3" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <create type="genericMesh" x="53349.0" y="0.0" z="59508.0" name="Marker Buoy 4" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <create type="genericMesh" x="39554.0" y="0.0" z="68616.0" name="Marker Buoy 5" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <create type="genericMesh" x="21206.0" y="0.0" z="73303.0" name="Marker Buoy 6" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <create type="genericMesh" x="4197.0" y="0.0" z="72901.0" name="Marker Buoy 7" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="499501b8-5ea9-4e5a-8bc7-b6b4a70b1c67" parent_id_arme="ab4c0793-ee6d-4afa-ab59-bbdae3683d6d">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="979e17b3-83ef-4632-b52f-2db6b528cc46" parent_id_arme="ab4c0793-ee6d-4afa-ab59-bbdae3683d6d">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <destroy name="Hunting Comms" />
+    <destroy name="Whale Sensors" />
+    <destroy name="Marker Buoy 1" />
+    <destroy name="Marker Buoy 2" />
+    <destroy name="Marker Buoy 3" />
+    <destroy name="Marker Buoy 4" />
+    <destroy name="Marker Buoy 5" />
+    <destroy name="Marker Buoy 6" />
+    <destroy name="Marker Buoy 7" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector V" id_arme="317d475e-ee15-455a-9e91-a482b38ed4ae" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector V" id_arme="b7aa7c30-4878-46b8-896e-d1f64c79a3e6" parent_id_arme="317d475e-ee15-455a-9e91-a482b38ed4ae">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <set_skybox_index index="21" />
+    <create count="50" type="nebulas" nebType="1" startX="50938.0" startY="0.0" startZ="7008.0" endX="96608.0" endY="0.0" endZ="57366.0" randomRange="10000" />
+    <create count="30" type="nebulas" nebType="2" startX="46652.0" startY="0.0" startZ="5133.0" endX="95402.0" endY="0.0" endZ="55223.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="3" startX="45045.0" startY="0.0" startZ="982.0" endX="1250.0" endY="0.0" endZ="79062.0" randomRange="10000" />
+    <create count="120" type="nebulas" nebType="2" startX="49599.0" startY="0.0" startZ="-90.0" endX="2590.0" endY="0.0" endZ="82812.0" randomRange="12000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc" parent_id_arme="317d475e-ee15-455a-9e91-a482b38ed4ae" />
+  <event name="Transition to Sector VI" id_arme="45226fda-b314-446e-9f3d-22c7c92fe476" parent_id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="073b4a99-9f5a-45ba-8b64-6cad2386b9c9" parent_id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="ed362875-4d2e-46f2-b9bc-465141fe4714" parent_id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="6cf9446d-b9db-4237-b279-16983f44928b" parent_id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="77558896-d70a-42c7-baf2-68b6c70855ef" parent_id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="53997442-6716-4c91-bf4c-f9a78d7f1ca9" parent_id_arme="317d475e-ee15-455a-9e91-a482b38ed4ae" />
+  <event name="Generate Sector Entities" id_arme="58e224fd-ca1a-423d-b085-daec00c547e1" parent_id_arme="53997442-6716-4c91-bf4c-f9a78d7f1ca9">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="52679.0" y="0.0" z="67946.0" name="Erowis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="enemy" x="51340.0" y="0.0" z="38080.0" angle="0" name="Anta Market" hullID="1007" fleetnumber="-1" />
+    <create type="enemy" x="40625.0" y="0.0" z="52544.0" angle="0" name="Security Pod 16" hullID="1350" fleetnumber="-1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="22612e9a-d918-4e8b-a4c7-77677e38e659" parent_id_arme="53997442-6716-4c91-bf4c-f9a78d7f1ca9">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Erowis Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Erowis Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Erowis Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Erowis Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="18667a8b-5131-44ce-ae75-73cac8c7adf7" parent_id_arme="53997442-6716-4c91-bf4c-f9a78d7f1ca9">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <destroy name="Erowis Gate" />
+    <destroy name="Anta Market" />
+    <destroy name="Security Pod 16" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Erowis" id_arme="db57b408-8129-4859-8a35-9d2ea13b6ea0" parent_id_arme="317d475e-ee15-455a-9e91-a482b38ed4ae">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Erowis to Drenan" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Erowis Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Erowis Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Erowis Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Erowis Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Erowis Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Erowis Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Erowis Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Erowis Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Erowis to Drenan" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector VI" id_arme="268fcf16-2c34-4e64-9e37-3d2f89320060" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector VI" id_arme="8ca7b384-eaa3-4e6c-a830-ddc9c4599f8e" parent_id_arme="268fcf16-2c34-4e64-9e37-3d2f89320060">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="21" />
+    <create count="20" type="nebulas" nebType="3" startX="77054.0" startY="0.0" startZ="97812.0" endX="98750.0" endY="0.0" endZ="78928.0" randomRange="10000" />
+    <create count="30" type="nebulas" nebType="2" startX="75447.0" startY="0.0" startZ="98080.0" endX="99286.0" endY="0.0" endZ="82276.0" randomRange="12000" />
+    <create count="100" type="nebulas" nebType="1" startX="3393.0" startY="0.0" startZ="47053.0" endX="37287.0" endY="0.0" endZ="97806.0" randomRange="11000" />
+    <create count="100" type="nebulas" nebType="3" startX="2322.0" startY="0.0" startZ="56428.0" endX="41450.0" endY="0.0" endZ="97211.0" randomRange="11000" />
+    <create count="50" type="asteroids" startX="60045.0" startY="300.0" startZ="77857.0" endX="52009.0" endY="0.0" endZ="77589.0" randomRange="7000" />
+    <create count="50" type="asteroids" startX="55358.0" startY="-300.0" startZ="85089.0" endX="53750.0" endY="0.0" endZ="69419.0" randomRange="7000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="77ca4fcf-d828-4dd1-b891-904d9a5e7114" parent_id_arme="268fcf16-2c34-4e64-9e37-3d2f89320060" />
+  <event name="Transition to Sector VII" id_arme="7a1fa86b-f496-4f4e-8391-42140f488197" parent_id_arme="77ca4fcf-d828-4dd1-b891-904d9a5e7114">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="38a06403-13fa-48f2-ae5e-4bf311442083" parent_id_arme="77ca4fcf-d828-4dd1-b891-904d9a5e7114">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="df8b6259-4b1f-49f0-b3b1-1cdaf79678fe" parent_id_arme="77ca4fcf-d828-4dd1-b891-904d9a5e7114">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="e31bfe50-7d7f-419d-9ffe-509978fc44a6" parent_id_arme="77ca4fcf-d828-4dd1-b891-904d9a5e7114">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="86afde87-579b-43ec-98c8-c6527bf0dfda" parent_id_arme="77ca4fcf-d828-4dd1-b891-904d9a5e7114">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="be770449-d150-4369-b140-467cda4964f1" parent_id_arme="77ca4fcf-d828-4dd1-b891-904d9a5e7114">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="5f688fee-4a57-4439-b3b9-c6912d583ab3" parent_id_arme="77ca4fcf-d828-4dd1-b891-904d9a5e7114">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="ce04332e-76f0-4780-ba60-44a1e61f86fd" parent_id_arme="77ca4fcf-d828-4dd1-b891-904d9a5e7114">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="90082c9d-82ec-443e-83c3-589af9d52841" parent_id_arme="268fcf16-2c34-4e64-9e37-3d2f89320060" />
+  <event name="Generate Sector Entities" id_arme="f397fc4c-22a2-450f-a855-91499623ddaa" parent_id_arme="90082c9d-82ec-443e-83c3-589af9d52841">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="enemy" x="49063.0" y="0.0" z="49464.0" name="Torgoth Command" hullID="1007" sideValue="sectorSide" />
+    <create type="enemy" x="54420.0" y="0.0" z="75848.0" angle="0" name="Torg News Network" hullID="1352" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="55090.0" y="0.0" z="39821.0" angle="0" name="Security Pod 33" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="42902.0" y="0.0" z="41964.0" angle="0" name="Security Pod 34" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="38483.0" y="0.0" z="51607.0" angle="0" name="Security Pod 35" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="43840.0" y="0.0" z="59776.0" angle="0" name="Security Pod 36" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="57099.0" y="0.0" z="59107.0" angle="0" name="Security Pod 37" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="61384.0" y="0.0" z="47723.0" angle="0" name="Security Pod 38" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="63929.0" y="0.0" z="38750.0" angle="0" name="WP Alpha" hullID="1052" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="47456.0" y="0.0" z="34866.0" angle="0" name="WP Beta" hullID="1052" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="33929.0" y="0.0" z="44642.0" angle="0" name="WP Charlie" hullID="1052" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="34733.0" y="0.0" z="58973.0" angle="0" name="WP Delta" hullID="1052" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="50000.0" y="0.0" z="64866.0" angle="0" name="WP Echo" hullID="1052" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="65804.0" y="0.0" z="54821.0" angle="0" name="WP Foxtrot" hullID="1052" sideValue="sectorSide" fleetnumber="-1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="483158b3-fa6c-40ec-9c0d-235250fcac7a" parent_id_arme="90082c9d-82ec-443e-83c3-589af9d52841">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="090c1196-246c-4f60-a63b-5688e7d59606" parent_id_arme="90082c9d-82ec-443e-83c3-589af9d52841">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <destroy name="Torgoth Command" />
+    <destroy name="Torg News Network" />
+    <destroy name="Security Pod 33" />
+    <destroy name="Security Pod 34" />
+    <destroy name="Security Pod 35" />
+    <destroy name="Security Pod 36" />
+    <destroy name="Security Pod 37" />
+    <destroy name="Security Pod 38" />
+    <destroy name="WP Alpha" />
+    <destroy name="WP Beta" />
+    <destroy name="WP Charlie" />
+    <destroy name="WP Delta" />
+    <destroy name="WP Echo" />
+    <destroy name="WP Foxtrot" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector VII" id_arme="17901af2-0cab-4a2d-8442-e8f83f65682a" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector VII" id_arme="f9998e76-8444-48c6-adc8-cd86cd8a8b20" parent_id_arme="17901af2-0cab-4a2d-8442-e8f83f65682a">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <set_skybox_index index="21" />
+    <create count="100" type="nebulas" nebType="1" startX="99688.0" startY="0.0" startZ="57232.0" endX="41965.0" endY="0.0" endZ="41830.0" randomRange="12000" />
+    <create count="100" type="nebulas" nebType="3" startX="98750.0" startY="0.0" startZ="62589.0" endX="50938.0" endY="0.0" endZ="44910.0" randomRange="12000" />
+    <create count="30" type="nebulas" nebType="1" startX="17188.0" startY="0.0" startZ="36473.0" endX="2054.0" endY="0.0" endZ="40357.0" randomRange="12000" />
+    <create count="30" type="nebulas" nebType="3" startX="14509.0" startY="0.0" startZ="39687.0" endX="7947.0" endY="0.0" endZ="42098.0" randomRange="12000" />
+    <create count="120" type="asteroids" startX="60447.0" startY="0.0" startZ="1651.0" endX="79063.0" endY="0.0" endZ="98080.0" randomRange="5000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="09543651-9d7c-49ae-b982-1d8b014a487f" parent_id_arme="17901af2-0cab-4a2d-8442-e8f83f65682a" />
+  <event name="Transition to Sector VIII" id_arme="f68244e1-e29a-4950-9979-33bcf9652aac" parent_id_arme="09543651-9d7c-49ae-b982-1d8b014a487f">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="82d734f5-1cb6-4880-a4b9-fcc4fa20e24c" parent_id_arme="09543651-9d7c-49ae-b982-1d8b014a487f">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="b3fb3b1f-3e35-4d9c-a815-822e7f6b0a36" parent_id_arme="09543651-9d7c-49ae-b982-1d8b014a487f">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="f8711185-31de-49e8-bd19-db7b2e88054c" parent_id_arme="09543651-9d7c-49ae-b982-1d8b014a487f">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="fdac8901-8b05-427b-8506-c986e3791ff9" parent_id_arme="09543651-9d7c-49ae-b982-1d8b014a487f">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="7433e4fb-fcb7-4ec6-b8e4-571244d4d607" parent_id_arme="09543651-9d7c-49ae-b982-1d8b014a487f">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="2b6c5a0a-83b4-4dfc-b35d-c8c28bcfd64e" parent_id_arme="09543651-9d7c-49ae-b982-1d8b014a487f">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="4c1e655a-85d2-402b-960c-6a81ca7cb1a6" parent_id_arme="09543651-9d7c-49ae-b982-1d8b014a487f">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="cb7f5e69-43ad-4857-a98e-85488ff04836" parent_id_arme="17901af2-0cab-4a2d-8442-e8f83f65682a" />
+  <event name="Generate Sector Entities" id_arme="60d53a5c-d30e-4a44-b7da-50f518f63a29" parent_id_arme="cb7f5e69-43ad-4857-a98e-85488ff04836">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="a96e2708-3504-4304-8dcb-9f3890f9455f" parent_id_arme="cb7f5e69-43ad-4857-a98e-85488ff04836">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="13df63f2-e183-46f6-a24f-8a6b6d66a97f" parent_id_arme="cb7f5e69-43ad-4857-a98e-85488ff04836">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector VIII" id_arme="7f372945-bf4a-4202-9565-ce8f93642be8" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector VIII" id_arme="9af228f3-e2a9-4e6b-b36c-e9c12587ea4d" parent_id_arme="7f372945-bf4a-4202-9565-ce8f93642be8">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <set_skybox_index index="21" />
+    <create count="200" type="nebulas" nebType="2" startX="78922.0" startY="0.0" startZ="96022.0" endX="56320.0" endY="0.0" endZ="1747.0" randomRange="9000" />
+    <create count="100" type="nebulas" nebType="2" startX="60930.0" startY="0.0" startZ="98550.0" endX="34461.0" endY="0.0" endZ="3828.0" randomRange="9000" />
+    <create count="150" type="nebulas" nebType="1" startX="99956.0" startY="0.0" startZ="34464.0" endX="4733.0" endY="0.0" endZ="50267.0" randomRange="13000" />
+    <create count="150" type="nebulas" nebType="3" startX="95804.0" startY="0.0" startZ="43973.0" endX="3527.0" endY="0.0" endZ="56696.0" randomRange="13500" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="d8710197-d844-4049-ad37-8f390da6aa9b" parent_id_arme="7f372945-bf4a-4202-9565-ce8f93642be8" />
+  <event name="Transition to Sector VII" id_arme="2d9f48df-c480-4272-84da-10598960af93" parent_id_arme="d8710197-d844-4049-ad37-8f390da6aa9b">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="6eea3ee0-d9ba-455c-a4af-be76b82c1763" parent_id_arme="d8710197-d844-4049-ad37-8f390da6aa9b">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="d99eeb8b-fc94-47a3-89c6-6fa54c65d801" parent_id_arme="d8710197-d844-4049-ad37-8f390da6aa9b">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="ff749f6d-1a42-47dc-a565-5cc6a27c123c" parent_id_arme="d8710197-d844-4049-ad37-8f390da6aa9b">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="341f74d2-071b-4a08-b789-5dcff19e9e2a" parent_id_arme="d8710197-d844-4049-ad37-8f390da6aa9b">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="7204c99e-cfb6-4858-826b-6c9b45811bd6" parent_id_arme="7f372945-bf4a-4202-9565-ce8f93642be8" />
+  <event name="Generate Sector Entities" id_arme="b694c64e-db0a-4158-8519-66631a069686" parent_id_arme="7204c99e-cfb6-4858-826b-6c9b45811bd6">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="29375.0" y="0.0" z="75312.0" name="Onwia Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="enemy" x="39018.0" y="0.0" z="67142.0" angle="0" name="Onwia Guard" hullID="1005" fleetnumber="-1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="1b26f688-fa92-46a0-8b75-353ede5fb0d4" parent_id_arme="7204c99e-cfb6-4858-826b-6c9b45811bd6">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Onwia Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Onwia Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Onwia Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Onwia Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="c33b7d3b-8585-4bfa-a3f3-4ef721e3048e" parent_id_arme="7204c99e-cfb6-4858-826b-6c9b45811bd6">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <destroy name="Onwia Gate" />
+    <destroy name="Onwia Guard" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Onwia" id_arme="c570fdb8-0060-4618-a084-6406a0ccc186" parent_id_arme="7f372945-bf4a-4202-9565-ce8f93642be8">
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Onwia to Drenan" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Onwia Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Onwia Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Onwia Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Onwia Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Onwia Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Onwia Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Onwia Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Onwia Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Onwia to Drenan" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector IX" id_arme="753ae8fe-f0e7-4233-9c0c-782b6c6df1ba" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector IX" id_arme="b8538809-5e20-4f98-bb09-01b225529f1d" parent_id_arme="753ae8fe-f0e7-4233-9c0c-782b6c6df1ba">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <set_skybox_index index="21" />
+    <create count="40" type="nebulas" nebType="1" startX="1450.0" startY="0.0" startZ="77286.0" endX="21376.0" endY="0.0" endZ="97657.0" randomRange="9000" />
+    <create count="40" type="nebulas" nebType="3" startX="1450.0" startY="0.0" startZ="69851.0" endX="29108.0" endY="0.0" endZ="99293.0" randomRange="10000" />
+    <create count="50" type="asteroids" startX="52679.0" startY="-300.0" startZ="47723.0" endX="53750.0" endY="-300.0" endZ="67678.0" randomRange="7000" />
+    <create count="50" type="asteroids" startX="61250.0" startY="300.0" startZ="58571.0" endX="36875.0" endY="300.0" endZ="54955.0" randomRange="7000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="390f5638-4972-439b-ac20-af8afe6363ca" parent_id_arme="753ae8fe-f0e7-4233-9c0c-782b6c6df1ba" />
+  <event name="Transition to Sector X" id_arme="c42e47f2-93d9-45cc-a1fc-79670a433abf" parent_id_arme="390f5638-4972-439b-ac20-af8afe6363ca">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="bffeda10-1c3b-41f2-844b-1ff4252a670c" parent_id_arme="390f5638-4972-439b-ac20-af8afe6363ca">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="3285e5a1-d992-4175-9637-c7ae65cb0938" parent_id_arme="390f5638-4972-439b-ac20-af8afe6363ca">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="4c69ba01-98f2-4184-a643-7a14151c5b1c" parent_id_arme="390f5638-4972-439b-ac20-af8afe6363ca">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="13.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="70915440-780c-48c7-a2a1-fd267255e3ef" parent_id_arme="390f5638-4972-439b-ac20-af8afe6363ca">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="96b99f84-b2af-4e76-a895-0b8e5559d672" parent_id_arme="753ae8fe-f0e7-4233-9c0c-782b6c6df1ba" />
+  <event name="Generate Sector Entities" id_arme="a21d2dcf-8f5a-4ce7-9b20-b9d9cd4ea1a2" parent_id_arme="96b99f84-b2af-4e76-a895-0b8e5559d672">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="caa462ea-2c2f-4b75-b0c9-dff961fe5d95" parent_id_arme="96b99f84-b2af-4e76-a895-0b8e5559d672">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="b81be90d-7338-49c6-8b1b-0d10314c16f5" parent_id_arme="96b99f84-b2af-4e76-a895-0b8e5559d672">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector X" id_arme="1f57bced-3b47-4d25-93e0-9dc154cdd7c3" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector X" id_arme="955f319f-cf7d-48b2-a7d9-582b0c4ae643" parent_id_arme="1f57bced-3b47-4d25-93e0-9dc154cdd7c3">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <set_skybox_index index="21" />
+    <create count="20" type="nebulas" nebType="3" startX="76841.0" startY="0.0" startZ="1598.0" endX="60186.0" endY="0.0" endZ="26133.0" randomRange="10000" />
+    <create count="30" type="nebulas" nebType="2" startX="74908.0" startY="0.0" startZ="3085.0" endX="60186.0" endY="0.0" endZ="23754.0" randomRange="12000" />
+    <create count="80" type="nebulas" nebType="2" startX="3829.0" startY="0.0" startZ="50817.0" endX="60186.0" endY="0.0" endZ="23754.0" randomRange="12000" />
+    <create count="60" type="nebulas" nebType="3" startX="5614.0" startY="0.0" startZ="45910.0" endX="60186.0" endY="0.0" endZ="26133.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="1" startX="72826.0" startY="0.0" startZ="43234.0" endX="36692.0" endY="0.0" endZ="3085.0" randomRange="11000" />
+    <create count="100" type="nebulas" nebType="3" startX="81896.0" startY="0.0" startZ="41301.0" endX="41004.0" endY="0.0" endZ="2490.0" randomRange="11000" />
+    <create count="30" type="asteroids" startX="67813.0" startY="300.0" startZ="25491.0" endX="43438.0" endY="0.0" endZ="21205.0" randomRange="5000" />
+    <create count="30" type="asteroids" startX="48527.0" startY="-300.0" startZ="32187.0" endX="58438.0" endY="0.0" endZ="10223.0" randomRange="5000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="bbfc7d3a-3e1f-4643-a0c2-00b308b9302c" parent_id_arme="1f57bced-3b47-4d25-93e0-9dc154cdd7c3" />
+  <event name="Transition to Sector XI" id_arme="c1b74580-4da5-471b-95ef-2c630099bea4" parent_id_arme="bbfc7d3a-3e1f-4643-a0c2-00b308b9302c">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="8848fa23-9ab4-48a6-8f56-0ebe264bec8e" parent_id_arme="bbfc7d3a-3e1f-4643-a0c2-00b308b9302c">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="0a93f81f-980a-4a5c-85e1-10b8cc0622b6" parent_id_arme="bbfc7d3a-3e1f-4643-a0c2-00b308b9302c">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="afb12c38-04b4-4b20-8591-8528322f9642" parent_id_arme="bbfc7d3a-3e1f-4643-a0c2-00b308b9302c">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="0bbbaf8a-6299-4763-9e4f-50fc8841a906" parent_id_arme="bbfc7d3a-3e1f-4643-a0c2-00b308b9302c">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="07969d1b-989a-4f53-91ad-c5928032cffa" parent_id_arme="bbfc7d3a-3e1f-4643-a0c2-00b308b9302c">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="7baa1497-19e7-441f-9039-0d2b2ed47308" parent_id_arme="bbfc7d3a-3e1f-4643-a0c2-00b308b9302c">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="6a3ec4a2-434e-47f7-b4eb-1b8f7f07900c" parent_id_arme="bbfc7d3a-3e1f-4643-a0c2-00b308b9302c">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="13.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Drenan System" value="3.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="30ca2cda-e16d-4f90-91b7-a4b8d1b070ed" parent_id_arme="1f57bced-3b47-4d25-93e0-9dc154cdd7c3" />
+  <event name="Generate Sector Entities" id_arme="733b987c-03fe-4eed-910a-5a1fd0522701" parent_id_arme="30ca2cda-e16d-4f90-91b7-a4b8d1b070ed">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="975f9a4f-f8da-4688-98ca-ca603572e0f8" parent_id_arme="30ca2cda-e16d-4f90-91b7-a4b8d1b070ed">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="4e422a7c-a900-458d-8867-6c2580b9ab54" parent_id_arme="30ca2cda-e16d-4f90-91b7-a4b8d1b070ed">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector XI" id_arme="dee66f52-68e5-4cc2-9ec4-1a7fa5e544a9" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector XI" id_arme="05d3b601-146e-4db9-9899-e3ef35523497" parent_id_arme="dee66f52-68e5-4cc2-9ec4-1a7fa5e544a9">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <set_skybox_index index="21" />
+    <create count="120" type="nebulas" nebType="2" startX="98349.0" startY="0.0" startZ="50401.0" endX="3929.0" endY="0.0" endZ="52544.0" randomRange="12000" />
+    <create count="120" type="nebulas" nebType="3" startX="97277.0" startY="0.0" startZ="45848.0" endX="2590.0" endY="0.0" endZ="54687.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="1302.0" startY="0.0" startZ="63159.0" endX="20670.0" endY="0.0" endZ="97812.0" randomRange="9000" />
+    <create count="120" type="asteroids" startX="79599.0" startY="0.0" startZ="31651.0" endX="58572.0" endY="0.0" endZ="96875.0" randomRange="5000" />
+    <create count="50" type="asteroids" startX="79071.0" startY="0.0" startZ="35353.0" endX="77287.0" endY="0.0" endZ="2936.0" randomRange="5000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="ee6ee97a-0fff-4805-9f58-26ce36016989" parent_id_arme="dee66f52-68e5-4cc2-9ec4-1a7fa5e544a9" />
+  <event name="Transition to Sector XII" id_arme="b9c1542a-be69-499b-904f-f30230884f38" parent_id_arme="ee6ee97a-0fff-4805-9f58-26ce36016989">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="497edb92-82cf-49d5-899f-63c77f7751ad" parent_id_arme="ee6ee97a-0fff-4805-9f58-26ce36016989">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="e9bd5c79-0ccf-47e7-919a-db15f98b16bc" parent_id_arme="ee6ee97a-0fff-4805-9f58-26ce36016989">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="56fb5833-3583-4752-ab82-14873c5929c6" parent_id_arme="ee6ee97a-0fff-4805-9f58-26ce36016989">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="7d169298-c3cb-42e3-b9df-928aeee9ed4c" parent_id_arme="ee6ee97a-0fff-4805-9f58-26ce36016989">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="ae08b9fd-c5ae-4fe3-bc52-14bc2bfd94e3" parent_id_arme="ee6ee97a-0fff-4805-9f58-26ce36016989">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="b9b8ebb6-9d83-4411-9730-e975f5275982" parent_id_arme="ee6ee97a-0fff-4805-9f58-26ce36016989">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="16.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="d62baf56-91ae-44c4-bd78-6c64e9c1c8fd" parent_id_arme="ee6ee97a-0fff-4805-9f58-26ce36016989">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Drenan System" value="3.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="ec731126-cdb2-4d6a-a2e4-42966acfca59" parent_id_arme="dee66f52-68e5-4cc2-9ec4-1a7fa5e544a9" />
+  <event name="Generate Sector Entities" id_arme="153a7d73-a198-47ac-a0cb-431813ceb6fa" parent_id_arme="ec731126-cdb2-4d6a-a2e4-42966acfca59">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="44911.0" y="0.0" z="70223.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\Planets\planetTex4.png" colorRed="0.2" colorGreen="0.8" colorBlue="0.2" />
+    <create type="enemy" x="50402.0" y="0.0" z="53750.0" angle="0" name="U'o Directorate" hullID="1007" fleetnumber="-1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="864096c7-ac15-430d-8142-a3901b510cbd" parent_id_arme="ec731126-cdb2-4d6a-a2e4-42966acfca59">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="CustomPlanet" value="1.0" integer="yes" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Custom Planet Data (ADD TO SECTOR CODE)" id_arme="0c5044f6-16cc-438a-abc3-c40df08c497f" parent_id_arme="ec731126-cdb2-4d6a-a2e4-42966acfca59">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="CustomPlanet" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="CustomPlanet" />
+    <set_ship_text name="PA" newname=" " />
+    <set_ship_text name="PB" newname=" " />
+    <set_ship_text name="PC" newname=" " />
+    <set_ship_text name="PD" newname=" " />
+    <set_ship_text name="PE" newname=" " />
+    <set_ship_text name="PF" newname=" " />
+    <set_ship_text name="PG" newname=" " />
+    <set_ship_text name="PH" newname=" " />
+    <set_ship_text name="Planet" newname="AGNIA" class="Class P Planet" />
+    <set_variable name="CustomPlanet" value="0.0" integer="yes" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="2e725094-194d-4bfa-a56f-ea373b65b32d" parent_id_arme="ec731126-cdb2-4d6a-a2e4-42966acfca59">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <destroy name="U'o Directorate" />
+    <destroy name="AGNIA" />
+    <set_variable name="DestroyPlanet" value="1.0" integer="yes" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector XII" id_arme="4a88ceac-98d7-45ae-b609-0d504e35de64" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector XII" id_arme="06c2d2d9-b5ce-4461-8fd8-a9658916d81a" parent_id_arme="4a88ceac-98d7-45ae-b609-0d504e35de64">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <set_skybox_index index="21" />
+    <create count="200" type="nebulas" nebType="2" startX="98848.0" startY="0.0" startZ="67769.0" endX="78476.0" endY="0.0" endZ="3828.0" randomRange="9000" />
+    <create count="120" type="nebulas" nebType="2" startX="57634.0" startY="0.0" startZ="50803.0" endX="3929.0" endY="0.0" endZ="52544.0" randomRange="15000" />
+    <create count="120" type="nebulas" nebType="3" startX="56295.0" startY="0.0" startZ="48928.0" endX="2590.0" endY="0.0" endZ="54687.0" randomRange="15000" />
+    <create count="100" type="asteroids" startX="33259.0" startY="0.0" startZ="63258.0" radius="20000" randomRange="20000" />
+    <create count="150" type="asteroids" startX="39152.0" startY="0.0" startZ="51875.0" radius="20000" randomRange="20000" />
+    <create count="150" type="asteroids" startX="32456.0" startY="0.0" startZ="48660.0" radius="20000" randomRange="20000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="c4101ad0-1caa-4a6c-9aa0-0cb56ec0dab7" parent_id_arme="4a88ceac-98d7-45ae-b609-0d504e35de64" />
+  <event name="Transition to Sector XI" id_arme="03b98a23-7c1b-44c2-9146-b67e61206444" parent_id_arme="c4101ad0-1caa-4a6c-9aa0-0cb56ec0dab7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="51f514b0-4b52-42c0-816e-1f6c16dd0884" parent_id_arme="c4101ad0-1caa-4a6c-9aa0-0cb56ec0dab7">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="979c9035-eea5-48d9-b816-16663d1788ed" parent_id_arme="c4101ad0-1caa-4a6c-9aa0-0cb56ec0dab7">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Down)" id_arme="740d0d3f-6f9f-44c0-87d6-cc822928e63c" parent_id_arme="c4101ad0-1caa-4a6c-9aa0-0cb56ec0dab7">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="16.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="0bdf7f6b-7c83-4d16-8c9d-765c0b4686c5" parent_id_arme="c4101ad0-1caa-4a6c-9aa0-0cb56ec0dab7">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Drenan System" value="3.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="b4e6c0e0-4616-4772-8bb3-9be66497bce5" parent_id_arme="4a88ceac-98d7-45ae-b609-0d504e35de64" />
+  <event name="Generate Sector Entities" id_arme="34d3d67f-c26b-428d-b777-f4c7301a60d9" parent_id_arme="b4e6c0e0-4616-4772-8bb3-9be66497bce5">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="enemy" x="39286.0" y="0.0" z="50803.0" name="Dred Falsu" hullID="1008" sideValue="sectorSide" />
+    <create type="enemy" x="28572.0" y="0.0" z="45044.0" angle="0" name="Ekka Shipyards" hullID="1053" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="27902.0" y="0.0" z="53214.0" angle="0" name="Danil Denabite" hullID="1008" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="50670.0" y="0.0" z="61517.0" angle="0" name="Sensor Array 1" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="12634.0" y="0.0" z="62991.0" angle="0" name="Sensor Array 3" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="14911.0" y="0.0" z="44508.0" angle="0" name="Sensor Array 2" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="9494ec26-3839-45cf-9750-734100b9fca8" parent_id_arme="b4e6c0e0-4616-4772-8bb3-9be66497bce5">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="38548f59-928f-4275-af97-e807357e2b2a" parent_id_arme="b4e6c0e0-4616-4772-8bb3-9be66497bce5">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <destroy name="Dred Falsu" />
+    <destroy name="Ekka Shipyards" />
+    <destroy name="Danil Denabite" />
+    <destroy name="Sensor Array 1" />
+    <destroy name="Sensor Array 3" />
+    <destroy name="Sensor Array 2" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector XIII" id_arme="c38ec9ac-c1ac-49da-bab8-87073500a493" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector XIII" id_arme="42d05d75-01f8-487a-989a-88c6b03f2d8b" parent_id_arme="c38ec9ac-c1ac-49da-bab8-87073500a493">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13.0" />
+    <set_skybox_index index="21" />
+    <create count="100" type="nebulas" nebType="1" startX="79071.0" startY="0.0" startZ="97657.0" endX="32826.0" endY="0.0" endZ="2342.0" randomRange="11000" />
+    <create count="90" type="nebulas" nebType="3" startX="70595.0" startY="0.0" startZ="97955.0" endX="31041.0" endY="0.0" endZ="1747.0" randomRange="11000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="1403ac1a-6aa8-4d0b-81d2-c2fa7c06cdf4" parent_id_arme="c38ec9ac-c1ac-49da-bab8-87073500a493" />
+  <event name="Transition to (Right)" id_arme="93c97fe5-73cd-4fd5-9c0d-1e9635729d4f" parent_id_arme="1403ac1a-6aa8-4d0b-81d2-c2fa7c06cdf4">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="6ce8464a-09f4-4c99-9002-4bd850b0ccbe" parent_id_arme="1403ac1a-6aa8-4d0b-81d2-c2fa7c06cdf4">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="9.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="b738f592-e160-466b-b66e-ee4104f9f137" parent_id_arme="1403ac1a-6aa8-4d0b-81d2-c2fa7c06cdf4">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="10.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="cb32613e-a602-460a-ba5d-2d3ee869178a" parent_id_arme="c38ec9ac-c1ac-49da-bab8-87073500a493" />
+  <event name="Generate Sector Entities" id_arme="f60714ea-a4be-4053-822d-cf111c737a14" parent_id_arme="cb32613e-a602-460a-ba5d-2d3ee869178a">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="7474c7d9-c64c-4db7-91bc-5e3aaf7a225f" parent_id_arme="cb32613e-a602-460a-ba5d-2d3ee869178a">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="32348a2a-9787-4282-a899-63ab16a49e2e" parent_id_arme="cb32613e-a602-460a-ba5d-2d3ee869178a">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector XIV" id_arme="2da0bc40-678e-4fdf-8858-054de6cbbd33" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector XIV" id_arme="55e5fdaf-7273-4d6a-bf44-94990438aa06" parent_id_arme="2da0bc40-678e-4fdf-8858-054de6cbbd33">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <set_skybox_index index="21" />
+    <create count="200" type="nebulas" nebType="1" startX="849.0" startY="0.0" startZ="59241.0" endX="80402.0" endY="0.0" endZ="97678.0" randomRange="10000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf" parent_id_arme="2da0bc40-678e-4fdf-8858-054de6cbbd33" />
+  <event name="Transition to (Right)" id_arme="3a872ac7-b536-4458-b453-2dc457fc52bb" parent_id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Left)" id_arme="07f5bd02-564f-4bb6-854d-8ee7325486c5" parent_id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="13.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="09921067-14bf-4856-a489-c24903baa4d1" parent_id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="10.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="de4e7490-8c39-4353-87d5-d3ddd8087ba1" parent_id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="11.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="216bbc55-7224-43a9-8cbe-d320e68697a5" parent_id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="9.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="6738dab2-8542-4608-8282-797b4c9f5933" parent_id_arme="2da0bc40-678e-4fdf-8858-054de6cbbd33" />
+  <event name="Generate Sector Entities" id_arme="b1cea50b-0158-434d-a2ca-8f3885e99851" parent_id_arme="6738dab2-8542-4608-8282-797b4c9f5933">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <create type="genericMesh" x="34599.0" y="0.0" z="71026.0" name="Ibroan Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="enemy" x="42367.0" y="0.0" z="42098.0" name="Ibroan Trading" hullID="1005" sideValue="sectorSide" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="50836733-f047-4fc2-84d3-b68d96268109" parent_id_arme="6738dab2-8542-4608-8282-797b4c9f5933">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <set_object_property property="artScale" value="1.0" name="Ibroan Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Ibroan Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Ibroan Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Ibroan Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="52bd2f5c-322b-49c1-bc20-c5dc887d7759" parent_id_arme="6738dab2-8542-4608-8282-797b4c9f5933">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <destroy name="Ibroan Gate" />
+    <destroy name="Ibroan Trading" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Ibroan" id_arme="3156e983-28f3-4b23-859e-c2875fdd27d9" parent_id_arme="2da0bc40-678e-4fdf-8858-054de6cbbd33">
+    <if_variable name="Sector" comparator="EQUALS" value="14.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ibroan to Drenan" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Ibroan Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Ibroan Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Ibroan Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Ibroan Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Ibroan Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Ibroan Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Ibroan Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Ibroan Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Ibroan to Drenan" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector XV" id_arme="f863cc52-5607-4fb3-8a6e-ffc9051a1785" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector XV" id_arme="6c4663ca-36fc-4e1b-b46d-c788887bff98" parent_id_arme="f863cc52-5607-4fb3-8a6e-ffc9051a1785">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <set_skybox_index index="21" />
+    <create count="200" type="nebulas" nebType="2" startX="37584.0" startY="0.0" startZ="97657.0" endX="17956.0" endY="0.0" endZ="2639.0" randomRange="9000" />
+    <create count="200" type="nebulas" nebType="1" startX="1302.0" startY="0.0" startZ="18252.0" endX="98105.0" endY="0.0" endZ="59144.0" randomRange="10000" />
+    <create count="120" type="asteroids" startX="59509.0" startY="0.0" startZ="2857.0" endX="1117.0" endY="0.0" endZ="66473.0" randomRange="5000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="6a2524b1-13be-4a95-affc-c554489bff02" parent_id_arme="f863cc52-5607-4fb3-8a6e-ffc9051a1785" />
+  <event name="Transition to (Right)" id_arme="41ba7289-e340-423d-82cf-d8f25f227e86" parent_id_arme="6a2524b1-13be-4a95-affc-c554489bff02">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="16.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Left)" id_arme="0bd690a0-afbd-4288-8554-a23df6cc6cd6" parent_id_arme="6a2524b1-13be-4a95-affc-c554489bff02">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="14.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="00db67fd-9846-49f7-ab2f-cf83ca86e6a3" parent_id_arme="6a2524b1-13be-4a95-affc-c554489bff02">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="11.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="0dbd908b-cbc1-4083-9696-71cb16e1164b" parent_id_arme="6a2524b1-13be-4a95-affc-c554489bff02">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="12.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="f5d4660a-d773-4b1b-9870-07e6300a32c5" parent_id_arme="6a2524b1-13be-4a95-affc-c554489bff02">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="10.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="dda55ea7-7427-4669-9ae8-09c028347cb2" parent_id_arme="f863cc52-5607-4fb3-8a6e-ffc9051a1785" />
+  <event name="Generate Sector Entities" id_arme="261338b7-18c1-4e60-991b-e3d5905b49d4" parent_id_arme="dda55ea7-7427-4669-9ae8-09c028347cb2">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="6588ceb2-a65a-4133-961e-65dc419ab2e1" parent_id_arme="dda55ea7-7427-4669-9ae8-09c028347cb2">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e01f82fd-ec18-4ade-8685-2c131b46a9ec" parent_id_arme="dda55ea7-7427-4669-9ae8-09c028347cb2">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Drenan Sector XVI" id_arme="63531a11-07cd-4ef2-8c1e-a619a56d25c0" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
+  <event name="Create Drenan Sector XVI" id_arme="24e49c2b-882c-4053-8d73-892fcb001e91" parent_id_arme="63531a11-07cd-4ef2-8c1e-a619a56d25c0">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <set_skybox_index index="21" />
+    <create count="100" type="nebulas" startX="98997.0" startY="0.0" startZ="19739.0" endX="49183.0" endY="0.0" endZ="19144.0" randomRange="9000" />
+    <create count="100" type="nebulas" startX="261.0" startY="0.0" startZ="28810.0" endX="49183.0" endY="0.0" endZ="19144.0" randomRange="9000" />
+    <create count="50" type="asteroids" startX="73421.0" startY="0.0" startZ="81747.0" endX="99145.0" endY="0.0" endZ="67472.0" randomRange="5000" />
+    <create count="50" type="asteroids" startX="73421.0" startY="0.0" startZ="81747.0" endX="25625.0" endY="0.0" endZ="97410.0" randomRange="5000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Drenan System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="0b903c8f-e84c-4b05-bbdf-2c7cbe2fa26c" parent_id_arme="63531a11-07cd-4ef2-8c1e-a619a56d25c0" />
+  <event name="Transition to (Left)" id_arme="679b96b8-2bf5-4851-9d01-efa3d526d6a9" parent_id_arme="0b903c8f-e84c-4b05-bbdf-2c7cbe2fa26c">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="ce098202-b2a4-4e35-95f9-9f89ba42fa9c" parent_id_arme="0b903c8f-e84c-4b05-bbdf-2c7cbe2fa26c">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="12.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="68ac5688-e161-49fc-8ef7-981245cbb47a" parent_id_arme="0b903c8f-e84c-4b05-bbdf-2c7cbe2fa26c">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan System" value="3.0" />
+    <set_variable name="Sector" value="11.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="74ece36b-7d0f-4899-a3f7-04d8c1a537a3" parent_id_arme="63531a11-07cd-4ef2-8c1e-a619a56d25c0" />
+  <event name="Generate Sector Entities" id_arme="aa63315e-91a1-44a7-ab7d-9b2bc5482a0a" parent_id_arme="74ece36b-7d0f-4899-a3f7-04d8c1a537a3">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <create type="genericMesh" x="28974.0" y="0.0" z="59910.0" name="No-Ma Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="enemy" x="53617.0" y="0.0" z="65133.0" name="No-Ma Transit" hullID="1005" sideValue="sectorSide" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="1a93b208-b973-4e97-858f-37f420ffe14c" parent_id_arme="74ece36b-7d0f-4899-a3f7-04d8c1a537a3">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <set_object_property property="artScale" value="1.0" name="No'Ma Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="No'Ma Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="No'Ma Gate" />
+    <set_object_property property="angle" value="4.71238898" name="No'Ma Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="5117c96a-3085-40a4-b069-b7f57979e142" parent_id_arme="74ece36b-7d0f-4899-a3f7-04d8c1a537a3">
+    <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
+    <destroy name="No-Ma Gate" />
+    <destroy name="No-Ma Transit" />
+    <set_variable name="Drenan System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From No'Ma" id_arme="e64b4017-36ff-42fe-84c3-25691b65a496" parent_id_arme="63531a11-07cd-4ef2-8c1e-a619a56d25c0">
+    <if_variable name="Sector" comparator="EQUALS" value="16.0" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="No'Ma to Drenan" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="No'Ma Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="No'Ma Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="No'Ma Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="No'Ma Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="No'Ma Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="No'Ma Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="No'Ma Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="No'Ma Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="No'Ma to Drenan" value="0.0" />
+  </event>
+</mission_data>

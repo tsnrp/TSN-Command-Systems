@@ -293,6 +293,8 @@
     <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
     <if_variable name="Arietis Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Static_BH" value="3.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="3.0" integer="yes" />
     <set_variable name="Poseidon System" value="3.0" integer="yes" />
     <set_variable name="System" value="1.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
@@ -308,10 +310,16 @@
     <if_variable name="Poseidon System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="73739.0" y="0.0" z="75121.0" angle="0" name="Arietis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="73739.0" y="0.0" z="75121.0" name="Arietis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="Gravitational Wave Detected" value="1.0" integer="yes" />
-    <set_variable name="StaticBHCount" randomIntLow="5" randomIntHigh="10" />
-    <set_variable name="DynamicBHCount" randomIntLow="5" randomIntHigh="10" />
+    <set_variable name="StaticBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="SBHNum" value="0.0" integer="yes" />
+    <set_variable name="Static_BH" value="1.0" integer="yes" />
+    <set_timer name="Static_BH" seconds="1" />
+    <set_variable name="DynamicBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="DBHNum" value="0.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="1.0" integer="yes" />
+    <set_timer name="Dynamic_BH" seconds="1" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -329,7 +337,6 @@
   <event name="Destroy Sector Entities" id_arme="43a6da84-bcf9-44a0-af10-04e98635c87a" parent_id_arme="bbda4e70-103b-4c10-a868-fbecf7cccadf">
     <if_variable name="Poseidon System" comparator="EQUALS" value="3.0" />
     <destroy name="Arietis Gate" />
-    <set_variable name="DestroyBH" value="1.0" integer="yes" />
     <set_variable name="Poseidon System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
     <set_variable name="Gravitational Wave Detected" value="3.0" />
@@ -445,8 +452,14 @@
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="Gravitational Wave Detected" value="1.0" integer="yes" />
-    <set_variable name="StaticBHCount" randomIntLow="5" randomIntHigh="10" />
-    <set_variable name="DynamicBHCount" randomIntLow="5" randomIntHigh="10" />
+    <set_variable name="StaticBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="SBHNum" value="0.0" integer="yes" />
+    <set_variable name="Static_BH" value="1.0" integer="yes" />
+    <set_timer name="Static_BH" seconds="1" />
+    <set_variable name="DynamicBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="DBHNum" value="0.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="1.0" integer="yes" />
+    <set_timer name="Dynamic_BH" seconds="1" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -459,9 +472,9 @@
   </event>
   <event name="Destroy Sector Entities" id_arme="2f91a4ba-ee14-4808-8e91-16971af1fbac" parent_id_arme="88c504f5-31f9-4030-9f86-bd4fbbfaeb8e">
     <if_variable name="Poseidon System" comparator="EQUALS" value="3.0" />
-    <set_variable name="DestroyBH" value="1.0" integer="yes" />
     <set_variable name="Poseidon System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
+    <set_variable name="Static_BH" value="3.0" integer="yes" />
     <set_variable name="Gravitational Wave Detected" value="3.0" />
   </event>
   <folder_arme name="Poseidon Sector III" id_arme="f6a8b9fb-a69d-4d4e-a12c-909874fe3e14" parent_id_arme="f02d8774-f2e8-48c5-8c29-1949ff32f20b" />
@@ -552,8 +565,14 @@
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="Gravitational Wave Detected" value="1.0" integer="yes" />
-    <set_variable name="StaticBHCount" randomIntLow="5" randomIntHigh="10" />
-    <set_variable name="DynamicBHCount" randomIntLow="5" randomIntHigh="10" />
+    <set_variable name="StaticBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="SBHNum" value="0.0" integer="yes" />
+    <set_variable name="Static_BH" value="1.0" integer="yes" />
+    <set_timer name="Static_BH" seconds="1" />
+    <set_variable name="DynamicBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="DBHNum" value="0.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="1.0" integer="yes" />
+    <set_timer name="Dynamic_BH" seconds="1" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -637,8 +656,14 @@
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="Gravitational Wave Detected" value="1.0" integer="yes" />
-    <set_variable name="StaticBHCount" randomIntLow="5" randomIntHigh="10" />
-    <set_variable name="DynamicBHCount" randomIntLow="5" randomIntHigh="10" />
+    <set_variable name="StaticBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="SBHNum" value="0.0" integer="yes" />
+    <set_variable name="Static_BH" value="1.0" integer="yes" />
+    <set_timer name="Static_BH" seconds="1" />
+    <set_variable name="DynamicBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="DBHNum" value="0.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="1.0" integer="yes" />
+    <set_timer name="Dynamic_BH" seconds="1" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -724,8 +749,14 @@
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="Gravitational Wave Detected" value="1.0" integer="yes" />
-    <set_variable name="StaticBHCount" randomIntLow="5" randomIntHigh="10" />
-    <set_variable name="DynamicBHCount" randomIntLow="5" randomIntHigh="10" />
+    <set_variable name="StaticBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="SBHNum" value="0.0" integer="yes" />
+    <set_variable name="Static_BH" value="1.0" integer="yes" />
+    <set_timer name="Static_BH" seconds="1" />
+    <set_variable name="DynamicBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="DBHNum" value="0.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="1.0" integer="yes" />
+    <set_timer name="Dynamic_BH" seconds="1" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -832,8 +863,14 @@
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="Gravitational Wave Detected" value="1.0" integer="yes" />
-    <set_variable name="StaticBHCount" randomIntLow="5" randomIntHigh="10" />
-    <set_variable name="DynamicBHCount" randomIntLow="5" randomIntHigh="10" />
+    <set_variable name="StaticBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="SBHNum" value="0.0" integer="yes" />
+    <set_variable name="Static_BH" value="1.0" integer="yes" />
+    <set_timer name="Static_BH" seconds="1" />
+    <set_variable name="DynamicBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="DBHNum" value="0.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="1.0" integer="yes" />
+    <set_timer name="Dynamic_BH" seconds="1" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -930,8 +967,14 @@
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="Gravitational Wave Detected" value="1.0" integer="yes" />
-    <set_variable name="StaticBHCount" randomIntLow="5" randomIntHigh="10" />
-    <set_variable name="DynamicBHCount" randomIntLow="5" randomIntHigh="10" />
+    <set_variable name="StaticBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="SBHNum" value="0.0" integer="yes" />
+    <set_variable name="Static_BH" value="1.0" integer="yes" />
+    <set_timer name="Static_BH" seconds="1" />
+    <set_variable name="DynamicBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="DBHNum" value="0.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="1.0" integer="yes" />
+    <set_timer name="Dynamic_BH" seconds="1" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1006,8 +1049,14 @@
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="Gravitational Wave Detected" value="1.0" integer="yes" />
-    <set_variable name="StaticBHCount" randomIntLow="5" randomIntHigh="10" />
-    <set_variable name="DynamicBHCount" randomIntLow="5" randomIntHigh="10" />
+    <set_variable name="StaticBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="SBHNum" value="0.0" integer="yes" />
+    <set_variable name="Static_BH" value="1.0" integer="yes" />
+    <set_timer name="Static_BH" seconds="1" />
+    <set_variable name="DynamicBHCount" randomIntLow="10" randomIntHigh="20" />
+    <set_variable name="DBHNum" value="0.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="1.0" integer="yes" />
+    <set_timer name="Dynamic_BH" seconds="1" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
