@@ -120,9 +120,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="enemy" x="68349.0" y="0.0" z="39419.0" angle="0" name="Okka Mining" hullID="1005" sideValue="sectorSide" fleetnumber="-1" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="7496ed23-f191-4372-a660-8fdecbc9bf29" parent_id_arme="6ff454b3-8145-4022-bd59-ff8365374989">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -225,9 +223,7 @@
     <create type="enemy" x="50402.0" y="0.0" z="36339.0" angle="0" name="Security Pod 22" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="32054.0" y="0.0" z="34330.0" angle="0" name="Drenan Shipyards" hullID="1005" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="67277.0" y="0.0" z="45714.0" angle="0" name="Ronn Factories" hullID="1357" sideValue="sectorSide" fleetnumber="-1" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="41cf506c-e5d5-40be-bf64-85bb1700e03c" parent_id_arme="da8d4752-c6e4-466a-833e-fe14196c311f">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -348,9 +344,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="enemy" x="39688.0" y="0.0" z="39821.0" angle="45" name="Ixaqa Mining" hullID="1005" sideValue="sectorSide" fleetnumber="-1" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="9cf82cc5-8fb4-438c-8e16-ec25bd2807fc" parent_id_arme="eeb03087-39f2-4109-a45f-b592de763468">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -433,9 +427,7 @@
     <create type="genericMesh" x="39554.0" y="0.0" z="68616.0" name="Marker Buoy 5" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
     <create type="genericMesh" x="21206.0" y="0.0" z="73303.0" name="Marker Buoy 6" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
     <create type="genericMesh" x="4197.0" y="0.0" z="72901.0" name="Marker Buoy 7" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="499501b8-5ea9-4e5a-8bc7-b6b4a70b1c67" parent_id_arme="ab4c0793-ee6d-4afa-ab59-bbdae3683d6d">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -534,17 +526,196 @@
     <set_variable name="Sector" value="10.0" integer="yes" />
     <set_variable name="Drenan System" value="3.0" integer="yes" />
   </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc" />
+  <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Erowis Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" />
+  <event name="Ship1 Activation Range" id_arme="9ee3d7c6-fc41-4126-9f10-ff4740910803" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Erowis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="a17eaf43-4ffc-4aab-8b15-1a3117b245d3" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Erowis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="821c7eeb-4bda-470d-b813-db2f91f723f0" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Erowis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="8538df1f-9f88-48bc-8fd3-25f196f7707d" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Erowis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="487a4879-0868-4f63-8533-6213ba0d530f" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Erowis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="cfecc391-c0f4-40c4-ac0c-262dce7f46bb" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Erowis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="f6a229f0-ba8d-42f4-b3a7-e17f26ffaa78" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Erowis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="6aefb361-f909-4601-b04d-64ee277ae1fa" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Erowis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="ab17df6f-e69c-4bb7-88d2-466ab15382a3" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Erowis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="305f2236-daf5-477e-a42f-c20a910ca54f" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Erowis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="a06e393a-a845-4ac1-a474-f561bafe34cc" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Erowis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="6f3cc0a7-9479-4ed6-8f08-1d2e8862b558" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Erowis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="aa322b59-8748-4f26-a9ea-089be033b6fd" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Erowis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="6605b477-d0b3-406f-98b2-d317c4c1f2b6" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Erowis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="6d6d19a5-7e59-4609-a4d6-057b979f2dfe" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Erowis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="e727d711-e221-4770-bdcf-0205f51d2e40" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Erowis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="e113c47c-ccd7-48c8-b520-4174a25a8a6a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Erowis Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="cbb7a700-d872-4afe-97b3-23b096f478c8" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Erowis Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan to Erowis" value="1.0" />
+    <set_variable name="Erowis System" value="1.0" />
+    <set_variable name="Sector" value="1.0" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
   <folder_arme name="Sector Entities" id_arme="53997442-6716-4c91-bf4c-f9a78d7f1ca9" parent_id_arme="317d475e-ee15-455a-9e91-a482b38ed4ae" />
   <event name="Generate Sector Entities" id_arme="58e224fd-ca1a-423d-b085-daec00c547e1" parent_id_arme="53997442-6716-4c91-bf4c-f9a78d7f1ca9">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="52679.0" y="0.0" z="67946.0" name="Erowis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="enemy" x="51340.0" y="0.0" z="38080.0" angle="0" name="Anta Market" hullID="1007" fleetnumber="-1" />
-    <create type="enemy" x="40625.0" y="0.0" z="52544.0" angle="0" name="Security Pod 16" hullID="1350" fleetnumber="-1" />
-    <set_variable name="ExitorRetreat" value="0.0" />
+    <create type="enemy" x="51340.0" y="0.0" z="38080.0" angle="0" name="Anta Market" hullID="1007" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="40625.0" y="0.0" z="52544.0" angle="0" name="Security Pod 16" hullID="1350" sideValue="sectorSide" fleetnumber="-1" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="22612e9a-d918-4e8b-a4c7-77677e38e659" parent_id_arme="53997442-6716-4c91-bf4c-f9a78d7f1ca9">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -718,9 +889,7 @@
     <create type="enemy" x="34733.0" y="0.0" z="58973.0" angle="0" name="WP Delta" hullID="1052" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="50000.0" y="0.0" z="64866.0" angle="0" name="WP Echo" hullID="1052" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="65804.0" y="0.0" z="54821.0" angle="0" name="WP Foxtrot" hullID="1052" sideValue="sectorSide" fleetnumber="-1" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="483158b3-fa6c-40ec-9c0d-235250fcac7a" parent_id_arme="90082c9d-82ec-443e-83c3-589af9d52841">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -863,9 +1032,7 @@
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="a96e2708-3504-4304-8dcb-9f3890f9455f" parent_id_arme="cb7f5e69-43ad-4857-a98e-85488ff04836">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -954,6 +1121,187 @@
     <set_variable name="Corner E1 Transition" value="0.0" />
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="Drenan System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="212852d3-b29f-4039-a799-1080727b957a" parent_id_arme="d8710197-d844-4049-ad37-8f390da6aa9b" />
+  <event name="Gate Offline" id_arme="938516a4-0a72-4cf2-b159-ad39133ba771" parent_id_arme="212852d3-b29f-4039-a799-1080727b957a">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Onwia Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037" parent_id_arme="212852d3-b29f-4039-a799-1080727b957a" />
+  <event name="Ship1 Activation Range" id_arme="07240232-f563-4483-9a7a-5d4c121cd9a5" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Onwia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="453a21c4-5fd4-4144-a69b-0006f47b5985" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Onwia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="0b1b815f-e3e0-44fa-9e95-75cb342fa268" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Onwia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="e8076973-e67d-406d-baef-ab6c899215cf" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Onwia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="e5eb59a7-3fd2-4f83-a30f-4af9d0764f7d" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Onwia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="f52d83c2-e2d1-4d1c-9408-6912386e4b0c" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Onwia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="52b5efc3-5da3-45a7-a872-403b437bd917" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Onwia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="e0934a1c-7907-4546-97a3-2bc00872b5b7" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Onwia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="16d734e3-a746-4ed7-bb9e-f0d872748f41" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Onwia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="6def7212-2fde-4b60-9634-71669f772749" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Onwia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="71258a1d-3b74-4be4-91f4-8af8f6143f94" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Onwia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="0de1be62-0ccf-4a12-8ec0-754aa2cf37d0" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Onwia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="00bb0943-c843-4c3b-b7fc-d87bfc73da19" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Onwia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="b8ec342c-4439-4a32-bad6-c15ff961f87c" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Onwia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="f68fbcf7-4ce4-421d-bc23-fd557bbbde64" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Onwia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="b1dde400-100d-40e6-b479-39ad62948392" parent_id_arme="8d775efb-66d3-461a-a1c5-f99f61fb3037">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Onwia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="4992ac26-1de4-40ee-b8bd-8a2a4bed2a12" parent_id_arme="212852d3-b29f-4039-a799-1080727b957a">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Onwia Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="22ea55ef-a912-4069-a407-a1fc2843db15" parent_id_arme="212852d3-b29f-4039-a799-1080727b957a">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Onwia Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan to Onwia" value="1.0" />
+    <set_variable name="Onwia System" value="1.0" />
+    <set_variable name="Sector" value="5.0" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
   </event>
   <folder_arme name="Sector Entities" id_arme="7204c99e-cfb6-4858-826b-6c9b45811bd6" parent_id_arme="7f372945-bf4a-4202-9565-ce8f93642be8" />
   <event name="Generate Sector Entities" id_arme="b694c64e-db0a-4158-8519-66631a069686" parent_id_arme="7204c99e-cfb6-4858-826b-6c9b45811bd6">
@@ -1088,9 +1436,7 @@
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="caa462ea-2c2f-4b75-b0c9-dff961fe5d95" parent_id_arme="96b99f84-b2af-4e76-a895-0b8e5559d672">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -1222,9 +1568,7 @@
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="10" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="975f9a4f-f8da-4688-98ca-ca603572e0f8" parent_id_arme="30ca2cda-e16d-4f90-91b7-a4b8d1b070ed">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -1354,10 +1698,8 @@
     <if_variable name="Sector" comparator="EQUALS" value="11" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="44911.0" y="0.0" z="70223.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\Planets\planetTex4.png" colorRed="0.2" colorGreen="0.8" colorBlue="0.2" />
-    <create type="enemy" x="50402.0" y="0.0" z="53750.0" angle="0" name="U'o Directorate" hullID="1007" fleetnumber="-1" />
-    <set_variable name="ExitorRetreat" value="0.0" />
+    <create type="enemy" x="50402.0" y="0.0" z="53750.0" angle="0" name="U'o Directorate" hullID="1007" sideValue="sectorSide" fleetnumber="-1" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="864096c7-ac15-430d-8142-a3901b510cbd" parent_id_arme="ec731126-cdb2-4d6a-a2e4-42966acfca59">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -1475,19 +1817,32 @@
     <if_variable name="Sector" comparator="EQUALS" value="12" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="enemy" x="39286.0" y="0.0" z="50803.0" name="Dred Falsu" hullID="1008" sideValue="sectorSide" />
-    <create type="enemy" x="28572.0" y="0.0" z="45044.0" angle="0" name="Ekka Shipyards" hullID="1053" sideValue="sectorSide" fleetnumber="-1" />
-    <create type="enemy" x="27902.0" y="0.0" z="53214.0" angle="0" name="Danil Denabite" hullID="1008" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="28572.0" y="0.0" z="45044.0" angle="0" name="Ekka Shipyards" hullID="1358" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="27902.0" y="0.0" z="53214.0" angle="0" name="Danil Denabite" hullID="1356" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="50670.0" y="0.0" z="61517.0" angle="0" name="Sensor Array 1" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="12634.0" y="0.0" z="62991.0" angle="0" name="Sensor Array 3" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
     <create type="enemy" x="14911.0" y="0.0" z="44508.0" angle="0" name="Sensor Array 2" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="9494ec26-3839-45cf-9750-734100b9fca8" parent_id_arme="b4e6c0e0-4616-4772-8bb3-9be66497bce5">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="12" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <clear_ai name="Dred Falsu" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="Stealth" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="LowVis" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="Cloak" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="HET" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="Warp" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="Teleport" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" ability="Tractor" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" ability="Drones" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" ability="AntiMine" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" ability="AntiTorp" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="ShldDrain" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="ShldVamp" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="TeleBack" />
+    <set_special name="Dred Falsu" ship="-1" captain="-1" clear="yes" ability="ShldReset" />
     <set_variable name="Sector Entities" value="3.0" />
   </event>
   <event name="Destroy Sector Entities" id_arme="38548f59-928f-4275-af97-e807357e2b2a" parent_id_arme="b4e6c0e0-4616-4772-8bb3-9be66497bce5">
@@ -1559,9 +1914,7 @@
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="13" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="7474c7d9-c64c-4db7-91bc-5e3aaf7a225f" parent_id_arme="cb32613e-a602-460a-ba5d-2d3ee869178a">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -1648,6 +2001,187 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner A1 Transition" value="0.0" />
   </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="d825fd81-efca-4ee4-ac86-2185ea8b3506" parent_id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf" />
+  <event name="Gate Offline" id_arme="a30fdcc4-0e6c-4dc3-a7ca-b734b8ec4707" parent_id_arme="d825fd81-efca-4ee4-ac86-2185ea8b3506">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Ibroan Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33" parent_id_arme="d825fd81-efca-4ee4-ac86-2185ea8b3506" />
+  <event name="Ship1 Activation Range" id_arme="3a580395-84ba-4bb2-b6ee-6474b0964187" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Ibroan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="d187c39d-2be0-446a-abf9-00eb7ee1f9a8" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Ibroan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="3be26fcc-49a9-4083-8d3a-d691587519a4" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Ibroan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="43e0450e-ea2c-406d-b2a8-d9350c5b28de" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Ibroan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="5b4a3e10-176f-49cd-bab2-a588fa12c308" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Ibroan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="d9c0a199-0ec4-479f-a6b8-c637efb6093c" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Ibroan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="65b3c835-b535-440c-95f5-58a661491b98" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Ibroan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="020befe9-10a9-4e93-bdc3-252556a26292" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Ibroan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="f0c3928a-c50e-4f4b-8473-7feaf53c0022" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Ibroan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="8bde0d21-fb24-400f-9e14-07d75dbf6b16" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Ibroan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="a27d5f58-0f66-4b44-94d9-91fee8003c97" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Ibroan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="754f36a7-69ef-44b4-9f5b-1e934ae4a80f" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Ibroan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="e1471da1-0db4-4bec-9192-a007582dfe2e" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Ibroan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="e514b62a-ca61-4924-9979-c0462cd509a4" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Ibroan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="7ea66027-7065-4b2d-a760-71c95060bee9" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Ibroan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="8b0edc3c-f877-4808-a24d-ddb26f222e29" parent_id_arme="fbee5a35-9223-40e1-9176-8f9ad4716d33">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Ibroan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="275aa427-16bc-4cb7-b583-67ef8df41d47" parent_id_arme="d825fd81-efca-4ee4-ac86-2185ea8b3506">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Ibroan Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="d9997a75-02a9-4985-9d1c-ca368bdc11fe" parent_id_arme="d825fd81-efca-4ee4-ac86-2185ea8b3506">
+    <if_variable name="Sector" comparator="EQUALS" value="14" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ibroan Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan to Ibroan" value="1.0" />
+    <set_variable name="Ibroan System" value="1.0" />
+    <set_variable name="Sector" value="7.0" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
   <folder_arme name="Sector Entities" id_arme="6738dab2-8542-4608-8282-797b4c9f5933" parent_id_arme="2da0bc40-678e-4fdf-8858-054de6cbbd33" />
   <event name="Generate Sector Entities" id_arme="b1cea50b-0158-434d-a2ca-8f3885e99851" parent_id_arme="6738dab2-8542-4608-8282-797b4c9f5933">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -1655,9 +2189,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="14" />
     <create type="genericMesh" x="34599.0" y="0.0" z="71026.0" name="Ibroan Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <create type="enemy" x="42367.0" y="0.0" z="42098.0" name="Ibroan Trading" hullID="1005" sideValue="sectorSide" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="50836733-f047-4fc2-84d3-b68d96268109" parent_id_arme="6738dab2-8542-4608-8282-797b4c9f5933">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -1780,9 +2312,7 @@
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="15" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="6588ceb2-a65a-4133-961e-65dc419ab2e1" parent_id_arme="dda55ea7-7427-4669-9ae8-09c028347cb2">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -1850,16 +2380,195 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner A1 Transition" value="0.0" />
   </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="0bf403c4-2572-41c6-bb47-ca9e8c74de15" parent_id_arme="0b903c8f-e84c-4b05-bbdf-2c7cbe2fa26c" />
+  <event name="Gate Offline" id_arme="b907c774-2127-457b-8dbd-3cbd0435c970" parent_id_arme="0bf403c4-2572-41c6-bb47-ca9e8c74de15">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="No'Ma Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="82aba12e-b00b-413f-89a0-17018169242b" parent_id_arme="0bf403c4-2572-41c6-bb47-ca9e8c74de15" />
+  <event name="Ship1 Activation Range" id_arme="91ccd3a6-970e-4b85-94c5-de9b2c457d6c" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="No'Ma Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="05c57140-cb80-41d6-b6f4-81e091c0b879" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="No'Ma Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="d88c353b-3289-4bba-acdd-3f20e95a06b1" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="No'Ma Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="038bed2d-b827-4494-988b-3e1dc6d3bdb1" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="No'Ma Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="621b03a5-17a6-409c-a2ea-429c9e321041" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="No'Ma Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="d3e8fe19-1e4e-4785-9d38-e38a417343fd" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="No'Ma Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="3bd8f1b1-3aa8-4ec7-b3c8-ed9f1a42f118" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="No'Ma Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="a3e15028-d1e2-44de-ab6f-04915122861b" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="No'Ma Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="a9cdb548-bb17-4cb7-82a5-135b27d5a060" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="No'Ma Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="522446a5-5710-4e48-855e-a40d9078c97e" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="No'Ma Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="2a9808b3-1bb0-4cdd-9e27-785184a9f41d" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="No'Ma Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="bd60befb-6a73-4534-9eef-928fe9daf137" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="No'Ma Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="096bf4f7-c11d-4f9b-a439-90287c92a436" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="No'Ma Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="bdd05980-e4da-4669-8829-baf2a5e6b7ce" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="No'Ma Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="5cad5a2c-a913-490d-ad72-7a1f73ef2a13" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="No'Ma Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="878924d4-970f-4520-b3e9-319deffb8e41" parent_id_arme="82aba12e-b00b-413f-89a0-17018169242b">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="No'Ma Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="f87ce667-4a06-4381-b7ba-aeff0f270cd7" parent_id_arme="0bf403c4-2572-41c6-bb47-ca9e8c74de15">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="No'Ma Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="a8c64d84-d0ac-4217-bb70-45b69ad9672a" parent_id_arme="0bf403c4-2572-41c6-bb47-ca9e8c74de15">
+    <if_variable name="Sector" comparator="EQUALS" value="16" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="No'Ma Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Drenan System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Drenan to No'Ma" value="1.0" />
+    <set_variable name="No'Ma System" value="1.0" />
+    <set_variable name="Sector" value="targetSector" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
   <folder_arme name="Sector Entities" id_arme="74ece36b-7d0f-4899-a3f7-04d8c1a537a3" parent_id_arme="63531a11-07cd-4ef2-8c1e-a619a56d25c0" />
   <event name="Generate Sector Entities" id_arme="aa63315e-91a1-44a7-ab7d-9b2bc5482a0a" parent_id_arme="74ece36b-7d0f-4899-a3f7-04d8c1a537a3">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="16" />
     <create type="genericMesh" x="28974.0" y="0.0" z="59910.0" name="No-Ma Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="enemy" x="53617.0" y="0.0" z="65133.0" name="No-Ma Transit" hullID="1005" sideValue="sectorSide" />
-    <set_variable name="ExitorRetreat" value="0.0" />
+    <create type="enemy" x="53617.0" y="0.0" z="65133.0" name="No-Ma Transit" hullID="1357" sideValue="sectorSide" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="1a93b208-b973-4e97-858f-37f420ffe14c" parent_id_arme="74ece36b-7d0f-4899-a3f7-04d8c1a537a3">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />

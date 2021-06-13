@@ -11,7 +11,6 @@
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
     <set_gm_button text="Lower Arc/G'Torin System" />
     <set_variable name="G'Torin Gate" value="1.0" integer="yes" />
-    <!--320,272-->
   </event>
   <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="725d51eb-6e6c-4c70-85c3-0f2b1cf29960">
     <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />

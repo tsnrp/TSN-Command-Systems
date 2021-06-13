@@ -292,7 +292,6 @@
     <set_variable name="Sector" value="1" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
-    <set_variable name="ExitorRetreat" value="1.0" />
   </event>
   <folder_arme name="Sector Entities" id_arme="779b0754-b216-4581-80fc-b990d3ad25cc" parent_id_arme="2c904c1e-52ef-4efb-b841-b1a8077998f0" />
   <event name="Generate Sector Entities" id_arme="8c65217d-efc0-4506-ab03-2980f876a14d" parent_id_arme="779b0754-b216-4581-80fc-b990d3ad25cc">
@@ -306,9 +305,7 @@
     <create type="neutral" x="72500.0" y="0.0" z="62455.0" angle="0" name="Multada Denabite" hullID="1051" sideValue="sectorSide" />
     <create type="neutral" x="33125.0" y="0.0" z="21071.0" angle="0" name="Nautri Ores" hullID="1050" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="ff3cd582-e710-4423-beee-5c34e528edcd" parent_id_arme="779b0754-b216-4581-80fc-b990d3ad25cc">
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
@@ -441,9 +438,7 @@
     <create type="neutral" x="32054.0" y="0.0" z="39821.0" angle="0" name="SB-112" hullID="1054" sideValue="sectorSide" />
     <create type="neutral" x="51206.0" y="0.0" z="30178.0" angle="0" name="CR-982" hullID="1055" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="70abf22e-0390-4764-940f-f4b4eb8c282a" parent_id_arme="32f79e1c-9b85-40c3-b3b3-7012cb35d410">
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -520,9 +515,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="6838b95e-2eb9-4a38-9731-cf0f5daab500" parent_id_arme="769c1f30-617a-4d4a-89c0-0a60f076a084">
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -628,9 +621,7 @@
     <create type="neutral" x="70492.0" y="0.0" z="63526.0" angle="0" name="Truda Mining" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="62992.0" y="0.0" z="26830.0" angle="0" name="Zorazi Mining" hullID="1050" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="2cabbd1e-c19f-47e1-a7ea-a0df4931935b" parent_id_arme="2553c159-c94e-4048-b70f-fa5c4941a321">
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -943,7 +934,6 @@
     <set_variable name="Sector" value="5" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
-    <set_variable name="ExitorRetreat" value="1.0" />
   </event>
   <folder_arme name="Sector Entities" id_arme="ac8a7ac7-4f22-4fe8-b26e-2d6129b639da" parent_id_arme="61e9dc9c-f81b-467d-8250-2dcb6699ad2d" />
   <event name="Generate Sector Entities" id_arme="0f4c3c4e-56c4-4975-9d6f-300f27581cec" parent_id_arme="ac8a7ac7-4f22-4fe8-b26e-2d6129b639da">
@@ -955,9 +945,7 @@
     <create type="station" x="34063.0" y="0.0" z="81607.0" name="Utimni" hullID="1001" sideValue="sectorSide" />
     <create type="station" x="85759.0" y="0.0" z="46517.0" name="Ozkal" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="647059f1-974d-4295-8715-3e2c9fcc3523" parent_id_arme="ac8a7ac7-4f22-4fe8-b26e-2d6129b639da">
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -1086,9 +1074,7 @@
     <create type="station" x="36072.0" y="0.0" z="36875.0" name="Ladna Labs" hullID="1004" sideValue="sectorSide" />
     <create type="station" x="63795.0" y="0.0" z="57767.0" name="Nessin" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="6daf7643-c504-4a9a-ad84-0a38de140505" parent_id_arme="d00af73d-afa3-47ad-9c97-68fb68738c5b">
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -1167,9 +1153,7 @@
     <create type="station" x="45581.0" y="0.0" z="67678.0" name="Betos Bazaar" hullID="1001" sideValue="sectorSide" />
     <create type="station" x="55893.0" y="0.0" z="31919.0" name="Onzi Oasis" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="3a885dd4-4b82-4bde-b843-523da8d0976d" parent_id_arme="b297b919-64b6-4c73-bb08-f9677fbb49ed">
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1271,9 +1255,7 @@
     <create type="station" x="77456.0" y="0.0" z="23214.0" name="Quee" hullID="1003" sideValue="sectorSide" />
     <create type="station" x="43974.0" y="0.0" z="22946.0" name="Gi'Yanu Mall" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="512665f1-aac3-4db9-8a81-9ebca37ee4e8" parent_id_arme="4df95258-ec67-482c-8a69-5145e1b8664c">
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -1526,7 +1508,6 @@
     <set_variable name="Sector" value="1" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
-    <set_variable name="ExitorRetreat" value="1.0" />
   </event>
   <folder_arme name="Sector Entities" id_arme="1109c9b3-3332-4556-a510-c7fa89d82767" parent_id_arme="a324e02e-48a7-4ca4-b4dd-f54fbd8047cb" />
   <event name="Generate Sector Entities" id_arme="ee4a268d-9783-4b51-b784-3e057b6dcff3" parent_id_arme="1109c9b3-3332-4556-a510-c7fa89d82767">
@@ -1537,9 +1518,7 @@
     <create type="station" x="79599.0" y="0.0" z="53348.0" name="Nuzeli" hullID="1001" sideValue="sectorSide" />
     <create type="station" x="54018.0" y="0.0" z="28571.0" name="Yimsu" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha IX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="072926c6-c6c8-45e2-8c99-afc02fe387bd" parent_id_arme="1109c9b3-3332-4556-a510-c7fa89d82767">
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />

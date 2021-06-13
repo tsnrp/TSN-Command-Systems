@@ -46758,41 +46758,23 @@
   <folder_arme name="Menu 1" id_arme="0fc9dd71-2783-4713-a773-bca1116e079d" parent_id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87" />
   <event name="Custom 1A" id_arme="7cbbe37d-6ec1-46fe-808c-f304306ad0a4" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_gm_button text="Menu 1\Custom 1A" />
-    <create type="genericMesh" x="91516.0" y="0.0" z="77359.0" angle="0" name="B-07" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <create type="genericMesh" x="42079.0" y="0.0" z="63569.0" angle="0" name="B-09" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <create type="genericMesh" x="22128.0" y="0.0" z="85281.0" angle="0" name="B-11" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <create type="genericMesh" x="18006.0" y="0.0" z="34061.0" angle="0" name="SP-01" meshFileName="dat\mine.dxs" textureFileName="dat\mine1.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <create type="enemy" use_gm_position="" name="TSN Blunderbuss" hullID="4" sideValue="1" fleetnumber="-1" />
     <set_timer name="Custom 1A" seconds="2" />
     <set_variable name="Custom 1A" value="1.0" integer="yes" />
   </event>
   <event name="1A Settings" id_arme="99314d93-be3b-4409-a29b-22d99319add0" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_variable name="Custom 1A" comparator="EQUALS" value="1.0" />
     <if_timer_finished name="Custom 1A" />
-    <set_object_property property="pushRadius" value="10.0" name="B-07" />
-    <set_object_property property="rollDelta" value="-0.2" name="B-07" />
-    <set_object_property property="angleDelta" value="0.05" name="B-07" />
-    <set_object_property property="pushRadius" value="10.0" name="B-09" />
-    <set_object_property property="rollDelta" value="-0.2" name="B-09" />
-    <set_object_property property="angleDelta" value="0.05" name="B-09" />
-    <set_object_property property="pushRadius" value="10.0" name="B-11" />
-    <set_object_property property="rollDelta" value="-0.2" name="B-11" />
-    <set_object_property property="angleDelta" value="0.05" name="B-11" />
-    <set_object_property property="pushRadius" value="10.0" name="SP-01" />
-    <set_object_property property="rollDelta" value="-0.2" name="SP-01" />
-    <set_object_property property="angleDelta" value="0.05" name="SP-01" />
+    <clear_ai name="TSN Blunderbuss" />
     <set_timer name="Custom 1A" seconds="2" />
     <set_variable name="Custom 1A" value="2.0" integer="yes" />
   </event>
-  <event name="1A Delete" id_arme="fd45c2a4-ff8c-474f-82df-9a900050c249" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
+  <disabled_event name="1A Delete" id_arme="fd45c2a4-ff8c-474f-82df-9a900050c249" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_gm_button text="Menu 1\Custom 1A" />
     <if_variable name="Custom 1A" comparator="EQUALS" value="2.0" />
     <if_timer_finished name="Custom 1A" />
-    <destroy name="B-07" />
-    <destroy name="B-09" />
-    <destroy name="B-11" />
-    <destroy name="SP-01" />
     <set_variable name="Custom 1A" value="0.0" />
-  </event>
+  </disabled_event>
   <disabled_event name="Custom 1B" id_arme="4137bdc3-9d7c-4cd9-9fab-d84e1f1621dd" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_gm_button text="Menu 1\Custom 1B" />
     <if_variable name="Custom 1B" comparator="EQUALS" value="0.0" />
