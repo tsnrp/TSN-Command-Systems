@@ -2556,7 +2556,7 @@
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Drenan to No'Ma" value="1.0" />
     <set_variable name="No'Ma System" value="1.0" />
-    <set_variable name="Sector" value="targetSector" />
+    <set_variable name="Sector" value="2.0" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
