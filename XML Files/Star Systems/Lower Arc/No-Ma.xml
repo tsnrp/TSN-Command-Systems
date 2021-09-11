@@ -742,6 +742,7 @@
     <if_variable name="No-Ma System" comparator="EQUALS" value="3.0" />
     <destroy name="No-Ma III" />
     <destroy name="HATA STELLAR REMNANT" />
+    <destroy name="Lokuli'Bala Gate" />
     <set_variable name="DestroyPlanet" value="1.0" integer="yes" />
     <set_variable name="No-Ma System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
