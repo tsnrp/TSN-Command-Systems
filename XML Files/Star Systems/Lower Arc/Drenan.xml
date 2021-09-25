@@ -2566,8 +2566,8 @@
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="16" />
-    <create type="genericMesh" x="28974.0" y="0.0" z="59910.0" name="No-Ma Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="enemy" x="53617.0" y="0.0" z="65133.0" name="No-Ma Transit" hullID="1357" sideValue="sectorSide" />
+    <create type="genericMesh" x="28974.0" y="0.0" z="59910.0" name="No'Ma Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="enemy" x="53617.0" y="0.0" z="65133.0" name="No'Ma Transit" hullID="1357" sideValue="sectorSide" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
   <event name="Settings" id_arme="1a93b208-b973-4e97-858f-37f420ffe14c" parent_id_arme="74ece36b-7d0f-4899-a3f7-04d8c1a537a3">
@@ -2582,8 +2582,8 @@
   </event>
   <event name="Destroy Sector Entities" id_arme="5117c96a-3085-40a4-b069-b7f57979e142" parent_id_arme="74ece36b-7d0f-4899-a3f7-04d8c1a537a3">
     <if_variable name="Drenan System" comparator="EQUALS" value="3.0" />
-    <destroy name="No-Ma Gate" />
-    <destroy name="No-Ma Transit" />
+    <destroy name="No'Ma Gate" />
+    <destroy name="No'Ma Transit" />
     <set_variable name="Drenan System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
