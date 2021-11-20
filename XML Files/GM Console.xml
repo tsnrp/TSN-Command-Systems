@@ -40959,7 +40959,7 @@
     <clear_gm_button text="Reset Comms" />
     <set_variable name="CycleInteractionsMenu" value="1.0" integer="yes" />
   </event>
-  <event name="Cycle Menu" id_arme="4929d044-3a92-4bac-93e8-3b0aed2b6ac9" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99">
+  <event name="Cycle Menu" id_arme="b028510c-7095-41f5-a0e0-3c2aaddb6766" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99">
     <if_variable name="CycleInteractionsMenu" comparator="EQUALS" value="1.0" />
     <set_variable name="CycleInteractionsMenu" value="0.0" integer="yes" />
     <clear_gm_button text="Boarding Actions\Attack Ship1" />
@@ -41056,6 +41056,7 @@
     <clear_gm_button text="Tag" />
     <clear_gm_button text="Probe" />
     <clear_gm_button text="100 Enrgy" />
+    <clear_gm_button text="Coolant" />
     <!--Progress Indicator-->
     <clear_gm_button text="Select Time Interval" />
     <clear_gm_button text="+" />
@@ -41250,6 +41251,10 @@
   <event name="Energy" id_arme="35a924b4-af49-41a6-a728-d510d7971b34" parent_id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab">
     <if_gm_button text="100 Enrgy" />
     <addto_object_property value="Ordnance*100" property="energy" use_gm_selection=" " />
+  </event>
+  <event name="Coolant" id_arme="3ef818b8-677a-4a29-9ca8-33af504c43a2" parent_id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab">
+    <if_gm_button text="Coolant" />
+    <addto_object_property value="Ordnance" property="totalCoolant" use_gm_selection=" " />
   </event>
   <folder_arme name="Repair And Damage" id_arme="209dd9dc-863e-4c29-a1e2-64950acc992e" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" />
   <event name="Damages and Damage Menu" id_arme="f69be5cf-84e9-4503-859c-a5471048b679" parent_id_arme="209dd9dc-863e-4c29-a1e2-64950acc992e">
