@@ -551,200 +551,200 @@
   <event name="Sector 1" id_arme="b51c3bd3-53a7-4969-8006-afafc00997a2" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 1" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="1.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 2" id_arme="3d7d3f94-c494-4a38-9b1d-decec9078108" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 2" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="2.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 3" id_arme="17c01ea5-fb25-4820-95e4-1b5e5841260e" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 3" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="3.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 4" id_arme="84e1e4a0-1be2-446f-817a-85f3e9893bff" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 4" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="4.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 5" id_arme="11f65616-af00-4ec0-b0cf-9e0c069b05a8" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 5" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="5.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 6" id_arme="02513447-2d61-4a4d-9735-402100d738fc" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 6" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 7" id_arme="af8297b7-3111-4072-95ab-265158a87922" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 7" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 8" id_arme="3c856a0e-d648-412d-8617-7141a7c9e256" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 8" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="8.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 9" id_arme="fba94a03-ca33-4297-8fe0-384cb409061e" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 9" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="9.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 10" id_arme="e9b83caa-0e5c-41ff-840b-3de2b9fd1e22" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 10" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="10.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 11" id_arme="56e6ab22-bca5-4145-aaaa-9b043005a199" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 11" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 12" id_arme="2e4d4f61-3c43-46ad-a89a-46aca610ee98" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 12" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="12.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 13" id_arme="d077dc55-b0ad-474b-bdb1-d73e669fd255" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 13" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="13.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 14" id_arme="bf6bff84-9247-415e-8615-0ee04cfc84f8" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 14" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="14.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 15" id_arme="b62bcbf7-dfb4-4951-b1fb-e50497527f65" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 15" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="15.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 16" id_arme="716ba577-2c93-46ee-9575-05b770f83358" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 16" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="16.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 17" id_arme="002b6c84-f168-468b-b104-3f1e6fd42c25" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 17" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="17.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 18" id_arme="df0efee3-cbd7-428b-b8f8-336c3ad222c2" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 18" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="18.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 19" id_arme="33ce0709-013c-4503-b5fd-45672fcdaa55" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 19" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="19.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 20" id_arme="1c13dd19-5129-4a08-a06c-f89e36dcba56" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 20" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="20.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 21" id_arme="6f28d13a-a48e-42d1-8845-ea904b14a56f" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 21" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="21.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 22" id_arme="1eb7aa23-daf2-4e07-a932-a03dc00347e2" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 22" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="22.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 23" id_arme="81643e45-3ef5-4fb8-9bce-45e9fec24dfb" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 23" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="23.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 24" id_arme="b5502adb-49c7-43a7-957e-df47fbad3067" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 24" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="24.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
   <event name="Sector 25" id_arme="8fe47463-e118-4e4d-af03-a23610446084" parent_id_arme="2e2c0c72-d93b-479d-ba3a-757e3e905ebb">
     <if_variable name="GM Mode" comparator="EQUALS" value="4.0" />
     <if_gm_button text="Sector 25" />
-    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" angle="0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
-    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" angle="0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="18000.0" y="-500.0" z="12635.0" name="1" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
+    <create type="genericMesh" x="20000.0" y="-500.0" z="13198.0" name="2" meshFileName="dat\asteroid.dxs" textureFileName="dat\black32.png" colorRed="0.0" colorGreen="0.0" colorBlue="0.5" />
     <set_variable name="Sector" value="25.0" integer="yes" />
     <set_variable name="GM Mode" value="5.0" integer="yes" />
   </event>
