@@ -2,7 +2,7 @@
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!---->
   </start>
-  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
+  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <folder_arme name="Random Elements" id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <event name="Random Coordinates" id_arme="7c7265dd-f0de-4d29-9f42-9f23d1e09a4e" parent_id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947">
     <if_variable name="Random Coordinates" comparator="EQUALS" value="1.0" />
@@ -44228,12 +44228,5 @@
     <log text="Ship7 Ordnance: |Ship7HomingCurrent|, |Ship7NukeCurrent|, |Ship7MineCurrent|, |Ship7EMPCurrent|, |Ship7ShkCurrent|, |Ship7BeaCurrent|, |Ship7ProCurrent|, |Ship7TagCurrent|" />
     <log text="Ship8 Ordnance: |Ship8HomingCurrent|, |Ship8NukeCurrent|, |Ship8MineCurrent|, |Ship8EMPCurrent|, |Ship8ShkCurrent|, |Ship8BeaCurrent|, |Ship8ProCurrent|, |Ship8TagCurrent|" />
     <end_mission />
-  </event>
-  <folder_arme name="Advanced Ship Controls" id_arme="a2bce8e2-655c-4a0f-9b22-27a12717aa3e" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
-  <event name="Sabre Strafe Left" id_arme="b1ffe186-4852-414e-a92b-6025b796a79d" parent_id_arme="a2bce8e2-655c-4a0f-9b22-27a12717aa3e">
-    <if_client_key keyText="A" />
-  </event>
-  <event name="Sabre Strafe Right" id_arme="88eb2085-ada8-4b4a-8f37-2dbf5134efcb" parent_id_arme="a2bce8e2-655c-4a0f-9b22-27a12717aa3e">
-    <if_client_key keyText="D" />
   </event>
 </mission_data>
