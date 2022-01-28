@@ -3559,9 +3559,9 @@
   </event>
   <event name="Light Fleet" id_arme="8a9e9268-d4d3-423a-8945-8b5c6b255611" parent_id_arme="b0bebfa5-1a24-45fc-9f49-b3bf8a4be1b2">
     <if_gm_button text="Euphini Pirates\Light Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -3569,11 +3569,11 @@
   </event>
   <event name="Medium Fleet" id_arme="9362066b-b32e-4e26-bbc4-41b87954d4a2" parent_id_arme="b0bebfa5-1a24-45fc-9f49-b3bf8a4be1b2">
     <if_gm_button text="Euphini Pirates\Medium Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" sideValue="SideValue" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -3581,13 +3581,13 @@
   </event>
   <event name="Heavy Fleet" id_arme="c2bf5caa-3aa7-4e95-8b10-6fafc38fd069" parent_id_arme="b0bebfa5-1a24-45fc-9f49-b3bf8a4be1b2">
     <if_gm_button text="Euphini Pirates\Heavy Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" sideValue="SideValue" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -3631,9 +3631,9 @@
   </event>
   <event name="Light Fleet" id_arme="94653e92-0aa8-467f-bf91-618086e23e6e" parent_id_arme="a7f8a57f-bc8f-4506-b571-f5a47ff4eeae">
     <if_gm_button text="Skull Pirates\Light Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -3641,11 +3641,11 @@
   </event>
   <event name="Medium Fleet" id_arme="b1aea3a8-5a1e-437e-9fb0-590255b4d13b" parent_id_arme="a7f8a57f-bc8f-4506-b571-f5a47ff4eeae">
     <if_gm_button text="Skull Pirates\Medium Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Longbow Brigantine" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Longbow Brigantine" sideValue="SideValue" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Longbow Brigantine" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Longbow Brigantine" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -3653,12 +3653,12 @@
   </event>
   <event name="Heavy Fleet" id_arme="3ea62644-08f8-4eb4-8c89-68bf4f75c3be" parent_id_arme="a7f8a57f-bc8f-4506-b571-f5a47ff4eeae">
     <if_gm_button text="Skull Pirates\Heavy Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow Brigantine" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Brigantine" sideValue="SideValue" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Brigantine" sideValue="SideValue" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow Brigantine" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Brigantine" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Brigantine" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -40959,7 +40959,7 @@
     <clear_gm_button text="Reset Comms" />
     <set_variable name="CycleInteractionsMenu" value="1.0" integer="yes" />
   </event>
-  <event name="Cycle Menu" id_arme="b028510c-7095-41f5-a0e0-3c2aaddb6766" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99">
+  <event name="Cycle Menu" id_arme="4929d044-3a92-4bac-93e8-3b0aed2b6ac9" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99">
     <if_variable name="CycleInteractionsMenu" comparator="EQUALS" value="1.0" />
     <set_variable name="CycleInteractionsMenu" value="0.0" integer="yes" />
     <clear_gm_button text="Boarding Actions\Attack Ship1" />
@@ -40970,6 +40970,7 @@
     <clear_gm_button text="Boarding Actions\Attack Ship2" />
     <clear_gm_button text="Boarding Actions\Attack Ship8" />
     <clear_gm_button text="Boarding Actions\Attack Ship5" />
+    <clear_gm_button text="Boarding Actions\Disable Ship" />
     <clear_gm_button text="NPC Descriptions\Refugee Marker" />
     <clear_gm_button text="NPC Descriptions\Contraband" />
     <clear_gm_button text="NPC Descriptions\Radiation Haz" />
@@ -41005,6 +41006,8 @@
     <clear_gm_button text="Snsr Rng with msg\Set to 16000" />
     <clear_gm_button text="Snsr Rng with msg\Set to 33000" />
     <clear_gm_button text="Snsr Rng with msg\Set to unlimited" />
+    <clear_gm_button text="Sensor Ping\Enable Ping" />
+    <clear_gm_button text="Sensor Ping\Disable Ping" />
     <clear_gm_button text="Command Messages\Sim Aborted" />
     <clear_gm_button text="Command Messages\Data Tranferring" />
     <clear_gm_button text="Command Messages\Personnel Tranferring" />
@@ -41200,9 +41203,10 @@
     <set_gm_button text="Tag" x="200" y="345" h="30" w="100" />
     <set_gm_button text="Probe" x="200" y="380" h="30" w="100" />
     <set_gm_button text="100 Enrgy" x="200" y="415" h="30" w="100" />
+    <set_gm_button text="Coolant" x="200" y="450" h="30" w="100" />
     <set_variable name="Interactions Menu" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Menu Cycle" id_arme="c7d7a8b3-6000-4447-b2a0-2e04c03abfac" parent_id_arme="bf9c65f4-1f28-4a8d-a240-7d0962f1b6fb" />
+  <folder_arme name="Menu Cycle" id_arme="c7d7a8b3-6000-4447-b2a0-2e04c03abfac" parent_id_arme="bf9c65f4-1f28-4a8d-a240-7d0962f1b6fb" expanded_arme="" />
   <event name="Cycle Menu (Remove)" id_arme="cf713c51-6cea-4c9d-97db-ee85196cf5d8" parent_id_arme="c7d7a8b3-6000-4447-b2a0-2e04c03abfac">
     <if_gm_button text="Add Ordn" />
     <clear_gm_button text="Add Ordn" />
@@ -41215,7 +41219,7 @@
     <set_gm_button text="Add Ordn" x="200" y="125" h="30" w="100" />
     <set_variable name="Ordnance" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Ordnance Supply" id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab" parent_id_arme="bf9c65f4-1f28-4a8d-a240-7d0962f1b6fb" />
+  <folder_arme name="Ordnance Supply" id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab" parent_id_arme="bf9c65f4-1f28-4a8d-a240-7d0962f1b6fb" expanded_arme="" />
   <event name="Homing Torpedo" id_arme="47fbfe47-3194-4dd4-8703-e65f9b38f691" parent_id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab">
     <if_gm_button text="Homing" />
     <addto_object_property value="Ordnance" property="countHoming" use_gm_selection=" " />
@@ -41248,11 +41252,11 @@
     <if_gm_button text="Probe" />
     <addto_object_property value="Ordnance" property="countPro" use_gm_selection=" " />
   </event>
-  <event name="Energy" id_arme="35a924b4-af49-41a6-a728-d510d7971b34" parent_id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab">
+  <event name="Energy" id_arme="2d3223d6-cbe3-45d6-8213-41fc08da77a1" parent_id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab">
     <if_gm_button text="100 Enrgy" />
     <addto_object_property value="Ordnance*100" property="energy" use_gm_selection=" " />
   </event>
-  <event name="Coolant" id_arme="3ef818b8-677a-4a29-9ca8-33af504c43a2" parent_id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab">
+  <event name="Coolant" id_arme="35a924b4-af49-41a6-a728-d510d7971b34" parent_id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab">
     <if_gm_button text="Coolant" />
     <addto_object_property value="Ordnance" property="totalCoolant" use_gm_selection=" " />
   </event>
@@ -41386,7 +41390,7 @@
     <if_gm_button text="Repair Ship\Heal DamCon 2" />
     <set_damcon_members value="6" team_index="2" use_gm_selection=" " />
   </event>
-  <folder_arme name="Give Damage" id_arme="f6f72731-834e-4195-8981-59ddeb5f7f85" parent_id_arme="209dd9dc-863e-4c29-a1e2-64950acc992e" />
+  <folder_arme name="Give Damage" id_arme="f6f72731-834e-4195-8981-59ddeb5f7f85" parent_id_arme="209dd9dc-863e-4c29-a1e2-64950acc992e" expanded_arme="" />
   <event name="Damage Beams" id_arme="0439df48-f868-44cf-a998-83e754e13d1f" parent_id_arme="f6f72731-834e-4195-8981-59ddeb5f7f85">
     <if_gm_button text="Damage Ship\Damage Beams" />
     <set_player_grid_damage value="1.0" use_gm_selection=" " index="0" systemType="systemBeam" countFrom="front" />
@@ -41630,54 +41634,74 @@
     <set_gm_button text="Snsr Rng with msg\Set to 16000" />
     <set_gm_button text="Snsr Rng with msg\Set to 33000" />
     <set_gm_button text="Snsr Rng with msg\Set to unlimited" />
+    <set_gm_button text="Sensor Ping\Enable Ping" />
+    <set_gm_button text="Sensor Ping\Disable Ping" />
     <set_variable name="Interactions Menu" value="1.0" integer="yes" />
+  </event>
+  <event name="Enable Sensor Ping" id_arme="0a956c13-44ec-4f58-9e6d-79991efe22cd" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
+    <if_gm_button text="Sensor Ping\Enable Ping" />
+    <set_variable name="Sensor Ping" value="1.0" integer="yes" />
+  </event>
+  <event name="Disable Sensor Ping" id_arme="c8c34b5c-d8b7-42c0-8cdd-b8f234f20b1b" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
+    <if_gm_button text="Sensor Ping\Disable Ping" />
+    <set_variable name="Sensor Ping" value="10.0" integer="yes" />
   </event>
   <event name="8K sensors" id_arme="b6b91c81-4466-43b8-b187-1ba7d4dfd06d" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Sensor Range\Set to 8000" />
+    <set_variable name="Sensor Ping" value="1.0" integer="yes" />
     <set_object_property property="sensorSetting" value="4.0" />
   </event>
   <event name="11K sensors" id_arme="e5ddc5fe-bea4-4ca6-8f9e-8123e4df4f29" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Sensor Range\Set to 11000" />
+    <set_variable name="Sensor Ping" value="1.0" integer="yes" />
     <set_object_property property="sensorSetting" value="3.0" />
   </event>
   <event name="16K sensors" id_arme="c91026d7-9510-4871-8dcf-3bd472d9a4df" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Sensor Range\Set to 16000" />
+    <set_variable name="Sensor Ping" value="1.0" integer="yes" />
     <set_object_property property="sensorSetting" value="2.0" />
   </event>
   <event name="33K sensors" id_arme="0e255891-7a13-46ab-898d-0da9563de258" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Sensor Range\Set to 33000" />
+    <set_variable name="Sensor Ping" value="1.0" integer="yes" />
     <set_object_property property="sensorSetting" value="1.0" />
   </event>
   <event name="Unlimited sensors" id_arme="cbfba619-8fa7-4ddc-8a67-deeac1f4bf3f" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Sensor Range\Set to unlimited" />
+    <set_variable name="Sensor Ping" value="10.0" integer="yes" />
     <set_object_property property="sensorSetting" value="0.0" />
   </event>
   <event name="8K sensors (msg)" id_arme="2f1fc731-1eed-482c-9051-e427d45538df" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Snsr Rng with msg\Set to 8000" />
+    <set_variable name="Sensor Ping" value="1.0" integer="yes" />
     <set_object_property property="sensorSetting" value="4.0" />
     <warning_popup_message message="Effective 8K" consoles="S" />
     <warning_popup_message message="Sensors Disrupted" consoles="MHWESC" />
   </event>
   <event name="11K sensors  (msg)" id_arme="662e3d35-6a74-47c3-86bb-66259bb3dc1a" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Snsr Rng with msg\Set to 11000" />
+    <set_variable name="Sensor Ping" value="1.0" integer="yes" />
     <set_object_property property="sensorSetting" value="3.0" />
     <warning_popup_message message="Effective 11K" consoles="S" />
     <warning_popup_message message="Sensors Disrupted" consoles="MHWESC" />
   </event>
   <event name="16K sensors  (msg)" id_arme="0ca5ec9f-a0e1-416e-9795-2d229ac81c61" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Snsr Rng with msg\Set to 16000" />
+    <set_variable name="Sensor Ping" value="1.0" integer="yes" />
     <set_object_property property="sensorSetting" value="2.0" />
     <warning_popup_message message="Effective 16K" consoles="S" />
     <warning_popup_message message="Sensors Disrupted" consoles="MHWESC" />
   </event>
   <event name="33K sensors  (msg)" id_arme="0e269fb7-6f6e-4fdd-8600-688be66e5021" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Snsr Rng with msg\Set to 33000" />
+    <set_variable name="Sensor Ping" value="1.0" integer="yes" />
     <set_object_property property="sensorSetting" value="1.0" />
     <warning_popup_message message="Effective 33K" consoles="S" />
     <warning_popup_message message="Sensors Disrupted" consoles="MHWESC" />
   </event>
   <event name="Unlimited sensors  (msg)" id_arme="780301c6-1898-4970-a106-0c0a523bfffd" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Snsr Rng with msg\Set to unlimited" />
+    <set_variable name="Sensor Ping" value="10.0" integer="yes" />
     <set_object_property property="sensorSetting" value="0.0" />
     <warning_popup_message message="100% Effective" consoles="S" />
     <warning_popup_message message="Sensors Restored" consoles="MHWESC" />
@@ -41694,6 +41718,7 @@
     <set_gm_button text="Boarding Actions\Attack Ship2" />
     <set_gm_button text="Boarding Actions\Attack Ship8" />
     <set_gm_button text="Boarding Actions\Attack Ship5" />
+    <set_gm_button text="Boarding Actions\Disable Ship" />
     <set_variable name="Interactions Menu" value="1.0" integer="yes" />
   </event>
   <folder_arme name="Boarding Player Ships" id_arme="dcc1e36a-00c8-4b9e-a3ba-cc71c716a850" parent_id_arme="c223fb98-94a1-42fa-b5a5-8a1e6411342e" />
@@ -46616,6 +46641,69 @@
     <if_variable name="Ship8NodeSelect" comparator="EQUALS" value="4.0" />
     <set_player_grid_damage value="1.0" player_slot="7" index="4" systemType="systemWarp" countFrom="front" />
     <set_variable name="DamageShip8" value="0.0" />
+  </event>
+  <event name="Disable ship" id_arme="1a74b601-bbbf-4931-965d-9557d765dc8c" parent_id_arme="c223fb98-94a1-42fa-b5a5-8a1e6411342e">
+    <if_gm_button text="Boarding Actions\Disable Ship" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="0" systemType="systemBeam" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="1" systemType="systemBeam" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="2" systemType="systemBeam" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="3" systemType="systemBeam" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="4" systemType="systemBeam" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="5" systemType="systemBeam" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="6" systemType="systemBeam" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="0" systemType="systemTorpedo" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="1" systemType="systemTorpedo" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="2" systemType="systemTorpedo" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="3" systemType="systemTorpedo" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="4" systemType="systemTorpedo" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="5" systemType="systemTorpedo" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="6" systemType="systemTorpedo" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="0" systemType="systemTactical" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="1" systemType="systemTactical" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="2" systemType="systemTactical" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="3" systemType="systemTactical" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="4" systemType="systemTactical" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="5" systemType="systemTactical" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="6" systemType="systemTactical" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="0" systemType="systemTurning" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="1" systemType="systemTurning" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="2" systemType="systemTurning" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="3" systemType="systemTurning" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="4" systemType="systemTurning" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="5" systemType="systemTurning" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="6" systemType="systemTurning" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="0" systemType="systemImpulse" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="1" systemType="systemImpulse" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="2" systemType="systemImpulse" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="3" systemType="systemImpulse" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="4" systemType="systemImpulse" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="5" systemType="systemImpulse" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="6" systemType="systemImpulse" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="0" systemType="systemWarp" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="1" systemType="systemWarp" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="2" systemType="systemWarp" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="3" systemType="systemWarp" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="4" systemType="systemWarp" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="5" systemType="systemWarp" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="6" systemType="systemWarp" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="0" systemType="systemFrontShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="1" systemType="systemFrontShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="2" systemType="systemFrontShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="3" systemType="systemFrontShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="4" systemType="systemFrontShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="5" systemType="systemFrontShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="6" systemType="systemFrontShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="0" systemType="systemBackShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="1" systemType="systemBackShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="2" systemType="systemBackShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="3" systemType="systemBackShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="4" systemType="systemBackShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="5" systemType="systemBackShield" countFrom="front" />
+    <set_player_grid_damage value="1.0" use_gm_selection=" " index="6" systemType="systemBackShield" countFrom="front" />
+    <set_damcon_members value="0" team_index="0" use_gm_selection=" " />
+    <set_damcon_members value="0" team_index="1" use_gm_selection=" " />
+    <set_damcon_members value="0" team_index="2" use_gm_selection=" " />
+    <warning_popup_message message="**ALERT** Ship Systems Disable" consoles="MHWESF" use_gm_selection="" />
   </event>
   <folder_arme name="Scan Text" id_arme="45d6ee9b-946b-42ef-b2ae-1eeefb3f5462" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" />
   <event name="Scan Text Menu" id_arme="51998164-6682-4508-81a7-3b4338a8cfae" parent_id_arme="45d6ee9b-946b-42ef-b2ae-1eeefb3f5462">

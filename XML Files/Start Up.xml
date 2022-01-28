@@ -1,6 +1,7 @@
 <mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!--Configurations-->
+    <set_variable name="Ship1CommsMenu" value="0.0" integer="yes" />
     <get_object_property property="shieldStateFront" player_slot="0" variable="Ship1ShieldStateFront" />
     <get_object_property property="shieldStateBack" player_slot="0" variable="Ship1ShieldStateBack" />
     <get_object_property property="shieldMaxStateFront" player_slot="0" variable="Ship1MaxShieldLevelFront" />
@@ -193,6 +194,59 @@
     <set_variable name="Ship8RandomTimer" randomIntLow="3" randomIntHigh="24" />
     <set_variable name="Ship8NodeNumber" value="0.0" integer="yes" />
     <set_variable name="Ship8DamageType" value="0.0" integer="yes" />
+    <!--Sensor Ping Data-->
+    <set_variable name="digitA1" value="0.0" integer="yes" />
+    <set_variable name="digitB1" value="0.0" integer="yes" />
+    <set_variable name="digitC1" value="0.0" integer="yes" />
+    <set_variable name="digitD1" value="0.0" integer="yes" />
+    <set_variable name="digitE1" value="0.0" integer="yes" />
+    <set_variable name="digitF1" value="0.0" integer="yes" />
+    <set_variable name="digitG1" value="0.0" integer="yes" />
+    <set_variable name="digitH1" value="0.0" integer="yes" />
+    <set_variable name="digitI1" value="0.0" integer="yes" />
+    <set_variable name="digitJ1" value="0.0" integer="yes" />
+    <set_variable name="digitK1" value="0.0" integer="yes" />
+    <set_variable name="digitL1" value="0.0" integer="yes" />
+    <set_variable name="digitM1" value="0.0" integer="yes" />
+    <set_variable name="digitN1" value="0.0" integer="yes" />
+    <set_variable name="digitO1" value="0.0" integer="yes" />
+    <set_variable name="digitP1" value="0.0" integer="yes" />
+    <set_variable name="digitQ1" value="0.0" integer="yes" />
+    <set_variable name="digitR1" value="0.0" integer="yes" />
+    <set_variable name="digitS1" value="0.0" integer="yes" />
+    <set_variable name="digitT1" value="0.0" integer="yes" />
+    <set_variable name="digitU1" value="0.0" integer="yes" />
+    <set_variable name="digitV1" value="0.0" integer="yes" />
+    <set_variable name="digitW1" value="0.0" integer="yes" />
+    <set_variable name="digitX1" value="0.0" integer="yes" />
+    <set_variable name="digitY1" value="0.0" integer="yes" />
+    <set_variable name="digitZ1" value="0.0" integer="yes" />
+    <set_variable name="digitA2" value="0.0" integer="yes" />
+    <set_variable name="digitB2" value="0.0" integer="yes" />
+    <set_variable name="digitC2" value="0.0" integer="yes" />
+    <set_variable name="digitD2" value="0.0" integer="yes" />
+    <set_variable name="digitE2" value="0.0" integer="yes" />
+    <set_variable name="digitF2" value="0.0" integer="yes" />
+    <set_variable name="digitG2" value="0.0" integer="yes" />
+    <set_variable name="digitH2" value="0.0" integer="yes" />
+    <set_variable name="digitI2" value="0.0" integer="yes" />
+    <set_variable name="digitJ2" value="0.0" integer="yes" />
+    <set_variable name="digitK2" value="0.0" integer="yes" />
+    <set_variable name="digitL2" value="0.0" integer="yes" />
+    <set_variable name="digitM2" value="0.0" integer="yes" />
+    <set_variable name="digitN2" value="0.0" integer="yes" />
+    <set_variable name="digitO2" value="0.0" integer="yes" />
+    <set_variable name="digitP2" value="0.0" integer="yes" />
+    <set_variable name="digitQ2" value="0.0" integer="yes" />
+    <set_variable name="digitR2" value="0.0" integer="yes" />
+    <set_variable name="digitS2" value="0.0" integer="yes" />
+    <set_variable name="digitT2" value="0.0" integer="yes" />
+    <set_variable name="digitU2" value="0.0" integer="yes" />
+    <set_variable name="digitV2" value="0.0" integer="yes" />
+    <set_variable name="digitW2" value="0.0" integer="yes" />
+    <set_variable name="digitX2" value="0.0" integer="yes" />
+    <set_variable name="digitY2" value="0.0" integer="yes" />
+    <set_variable name="digitZ2" value="0.0" integer="yes" />
     <!--End of Start Block-->
   </start>
   <event name="Destroy Wrecks" id_arme="202200fd-4e3f-4f3a-b710-7f427d27fd91">
