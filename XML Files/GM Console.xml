@@ -47009,10 +47009,10 @@
     <!--<set_gm_button text="Menu 1\Custom 1D" />-->
     <!--<set_gm_button text="Menu 1\Custom 1E" />-->
     <!--<set_gm_button text="Menu 1\Custom 1F" />-->
-    <!--<set_gm_button text="Menu 2\Custom 2A" />-->
-    <!--<set_gm_button text="Menu 2\Custom 2B" />-->
-    <!--<set_gm_button text="Menu 2\Custom 2C" />-->
-    <!--<set_gm_button text="Menu 2\Custom 2D" />-->
+    <set_gm_button text="Menu 2\Custom 2A" />
+    <set_gm_button text="Menu 2\Custom 2B" />
+    <set_gm_button text="Menu 2\Custom 2C" />
+    <set_gm_button text="Menu 2\Custom 2D" />
     <!--<set_gm_button text="Menu 2\Custom 2E" />-->
     <!--<set_gm_button text="Menu 2\Custom 2F" />-->
     <!--<set_gm_button text="Menu 3\Custom 3A" />-->
@@ -47196,71 +47196,27 @@
     <set_variable name="Custom 1F" value="0.0" />
   </disabled_event>
   <folder_arme name="Menu 2" id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab" parent_id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87" />
-  <disabled_event name="Custom 2A" id_arme="4c6857f4-b2a9-4e79-8d40-5cf23f295b7d" parent_id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab">
+  <event name="Custom 2A" id_arme="4c6857f4-b2a9-4e79-8d40-5cf23f295b7d" parent_id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab">
     <if_gm_button text="Menu 2\Custom 2A" />
-  </disabled_event>
-  <disabled_event name="Custom 2B" id_arme="65d95b22-218a-4d60-bfb8-3ee7d5686dc0" parent_id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab">
+    <set_variable name="Gravitational Wave Detected" value="1.0" integer="yes" />
+  </event>
+  <event name="Custom 2B" id_arme="65d95b22-218a-4d60-bfb8-3ee7d5686dc0" parent_id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab">
     <if_gm_button text="Menu 2\Custom 2B" />
-    <set_variable name="Blackhole Orbit" value="1.0" integer="yes" />
-  </disabled_event>
-  <disabled_event name="Custom 2C" id_arme="bbcb6be5-9c57-41a1-9c34-dc73bf055080" parent_id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab">
+    <set_variable name="DBHNum" value="0.0" integer="yes" />
+    <set_variable name="DynamicBlackhole" value="1.0" integer="yes" />
+    <set_variable name="Dynamic_BH" value="1.0" integer="yes" />
+    <set_variable name="DynamicBHCount" value="5.0" integer="yes" />
+    <set_timer name="Dynamic_BH" seconds="0" />
+  </event>
+  <event name="Custom 2C" id_arme="7749d9a8-181c-47e8-927b-03a304b313e8" parent_id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab">
     <if_gm_button text="Menu 2\Custom 2C" />
-    <set_damcon_members value="0.0" team_index="1" name="TSN Lancer" />
-    <set_damcon_members value="0.0" team_index="2" name="TSN Lancer" />
-    <set_damcon_members value="0.0" team_index="0" name="TSN Lancer" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="0" systemType="systemBeam" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="1" systemType="systemBeam" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="2" systemType="systemBeam" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="3" systemType="systemBeam" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="4" systemType="systemBeam" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="5" systemType="systemBeam" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="0" systemType="systemImpulse" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="1" systemType="systemImpulse" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="2" systemType="systemImpulse" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="3" systemType="systemImpulse" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="4" systemType="systemImpulse" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="5" systemType="systemImpulse" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="0" systemType="systemWarp" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="1" systemType="systemWarp" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="2" systemType="systemWarp" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="3" systemType="systemWarp" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="4" systemType="systemWarp" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="5" systemType="systemWarp" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="0" systemType="systemFrontShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="1" systemType="systemFrontShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="2" systemType="systemFrontShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="3" systemType="systemFrontShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="4" systemType="systemFrontShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="5" systemType="systemFrontShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="0" systemType="systemBackShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="1" systemType="systemBackShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="2" systemType="systemBackShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="3" systemType="systemBackShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="4" systemType="systemBackShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="5" systemType="systemBackShield" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="0" systemType="systemTorpedo" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="1" systemType="systemTorpedo" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="2" systemType="systemTorpedo" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="3" systemType="systemTorpedo" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="4" systemType="systemTorpedo" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="5" systemType="systemTorpedo" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="0" systemType="systemTurning" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="1" systemType="systemTurning" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="2" systemType="systemTurning" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="3" systemType="systemTurning" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="4" systemType="systemTurning" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="5" systemType="systemTurning" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="0" systemType="systemTactical" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="1" systemType="systemTactical" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="2" systemType="systemTactical" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="3" systemType="systemTactical" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="4" systemType="systemTactical" countFrom="front" />
-    <set_player_grid_damage value="1.0" name="TSN Lancer" index="5" systemType="systemTactical" countFrom="front" />
-  </disabled_event>
-  <disabled_event name="Custom 2D" id_arme="7749d9a8-181c-47e8-927b-03a304b313e8" parent_id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab">
-    <if_gm_button text="Menu 2\Custom 2D" />
-  </disabled_event>
-  <disabled_event name="Custom 2E" id_arme="761209fa-e5db-4f07-b089-8256600efed9" parent_id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab">
+    <set_variable name="Gravitational Wave Detected" value="3.0" integer="yes" />
+  </event>
+  <event name="Custom 2D" id_arme="761209fa-e5db-4f07-b089-8256600efed9" parent_id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab">
+      <if_gm_button text="Menu 2\Custom 2D" />
+      <set_variable name="Dynamic_BH" value="3.0" integer="yes" />
+    </event>
+    <disabled_event name="Custom 2E" id_arme="761209fa-e5db-4f07-b089-8256600efed9" parent_id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab">
     <if_gm_button text="Menu 2\Custom 2E" />
     <create type="enemy" use_gm_position="" name="Indestructable" hullID="2001" sideValue="6" />
     <set_variable name="IndestructableDirection" randomIntLow="0" randomIntHigh="360" />
