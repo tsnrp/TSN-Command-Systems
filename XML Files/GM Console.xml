@@ -18,6 +18,8 @@
     <set_variable name="paintMineLineIter" value="0.0" integer="yes" />
     <set_variable name="paintAsteroidLineIter" value="0.0" integer="yes" />
     <set_variable name="paintAsteroidFieldIter" value="0.0" integer="yes" />
+    <set_variable name="paintAsteroidFieldIter" value="0.0" integer="yes" />
+    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event> 
   <event name="GM Main Menu" id_arme="605a7c3f-76b5-4953-bb43-aa50abc3f88b" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f">
     <if_variable name="GM Controls" comparator="EQUALS" value="1.0" />
@@ -40966,6 +40968,8 @@
     <set_gm_button text="Painter\Asteroid Field (arc)"/>
     <set_gm_button text="Painter\Mines (line START)"/>
     <set_gm_button text="Painter\Asteroids (line START)"/>
+    <set_gm_button text="ArcSpacing: |painterArcSpacing|" x="100" y="310" h="30" w="150" />
+
 
     <set_variable name="GM Menu" value="2.0" />
   </event>
@@ -41242,6 +41246,8 @@
     <clear_gm_button text="PerLayerCount: |painterObjectCount|" />
     <set_variable name="painterObjectCount" value="painterObjectCount+5" integer="yes" />
     <set_gm_button text="PerLayerCount: |painterObjectCount|"  x="100" y="130" h="30" w="150" />
+ 
+    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
   <event name="Decrease painterObjectCount" id_arme="fe90bce7-8a37-4cdf-9251-bb345a2f6f83" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Count-5" />
@@ -41250,6 +41256,8 @@
     <clear_gm_button text="PerLayerCount: |painterObjectCount|" />
     <set_variable name="painterObjectCount" value="painterObjectCount-5" integer="yes" />
     <set_gm_button text="PerLayerCount: |painterObjectCount|"  x="100" y="130" h="30" w="150" />
+    
+    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
 
   <event name="Increase painterRadius" id_arme="08b33fbe-b884-417f-9ffc-b67f4a6b280c" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
@@ -41259,6 +41267,8 @@
     <clear_gm_button text="Radius: |painterRadius|" />
     <set_variable name="painterRadius" value="painterRadius+250" integer="yes" />
     <set_gm_button text="Radius: |painterRadius|"  x="100" y="160" h="30" w="150" />
+  
+    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
   <event name="Decrease painterRadius" id_arme="7e1b48cf-d8e0-48ea-8f26-1e243b3672a9" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Radius-250" />
@@ -41267,6 +41277,8 @@
     <clear_gm_button text="Radius: |painterRadius|" />
     <set_variable name="painterRadius" value="painterRadius-250" integer="yes" />
     <set_gm_button text="Radius: |painterRadius|"  x="100" y="160" h="30" w="150" />
+
+    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
 
   <event name="Increase painterArcStart" id_arme="e3e046f6-e8f9-4cd1-9c02-dbfe9a5aa664" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
@@ -41275,6 +41287,8 @@
     <clear_gm_button text="ArcStartDeg: |painterArcStart|" />
     <set_variable name="painterArcStart" value="painterArcStart+10" integer="yes" />
     <set_gm_button text="ArcStartDeg: |painterArcStart|"  x="100" y="190" h="30" w="150" />
+
+    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
   <event name="Decrease painterArcStart" id_arme="2725f097-13cf-4a0e-bd55-74fcc98c6b6d" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="ArcStart-10" />
@@ -41282,6 +41296,8 @@
     <clear_gm_button text="ArcStartDeg: |painterArcStart|" />
     <set_variable name="painterArcStart" value="painterArcStart-10" integer="yes" />
     <set_gm_button text="ArcStartDeg: |painterArcStart|"  x="100" y="190" h="30" w="150" />
+
+    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
 
   <event name="Increase painterArcStop" id_arme="778d7aea-abef-4257-ae31-f9ee40c1fd97" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
@@ -41290,6 +41306,8 @@
     <clear_gm_button text="ArcStopDeg: |painterArcStop|" />
     <set_variable name="painterArcStop" value="painterArcStop+10" integer="yes" />
     <set_gm_button text="ArcStopDeg: |painterArcStop|"  x="100" y="220" h="30" w="150" />
+
+    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
   <event name="Decrease painterArcStop" id_arme="df9eef9a-9793-4e8e-af0e-056747da392a" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="ArcStop-10" />
@@ -41297,6 +41315,18 @@
     <clear_gm_button text="ArcStopDeg: |painterArcStop|" />
     <set_variable name="painterArcStop" value="painterArcStop-10" integer="yes" />
     <set_gm_button text="ArcStopDeg: |painterArcStop|"  x="100" y="220" h="30" w="150" />
+
+    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
+  </event>
+
+  <event name="Update painterArcSpacing" id_arme="df9eef9a-9793-4e8e-af0e-056747da392a" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+    <if_variable name="updatePainterArcSpacing" comparator="EQUALS" value="1.0" />
+
+    <clear_gm_button text="ArcSpacing: |painterArcSpacing|" />
+    <set_variable name="painterArcSpacing" value="((painterArcStop - painterArcStart)/360.0) * (2.0 * 3.14 * painterRadius) / painterObjectCount" integer="no" />
+    <set_gm_button text="ArcSpacing: |painterArcSpacing|" x="100" y="310" h="30" w="150" />
+
+    <set_variable name="updatePainterArcSpacing" value="0.0" integer="yes" />
   </event>
 
   <event name="Increase painterRandomRange" id_arme="2d2e91d7-4fa4-453a-ae7e-c7ff13c6cd82" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
