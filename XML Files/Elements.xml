@@ -2,7 +2,48 @@
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!---->
   </start>
-  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
+  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
+
+  <!-- <folder_arme name="Maths" id_arme="ad6c1930-dedf-4bd0-9b83-a094f09230df" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" /> -->
+  <event name="SqrtStart" id_arme="cff7e802-a04f-48bb-8350-37729c48ae33" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696">
+    <if_variable name="sqrt_calc" comparator="EQUALS" value="1.0" />
+
+    <set_variable name="sqrt_high" value="sqrt_y" integer="no" />
+    <set_variable name="sqrt_low" value="0.0" integer="no" />
+    <set_variable name="sqrt_depth" value="0.0" integer="yes" />
+    <set_variable name="sqrt_calc" value="2.0" integer="yes" />
+  </event>
+  <event name="SqrtRecur1" id_arme="4859ef14-3662-4459-846e-1feb5960c296" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696">
+    <if_variable name="sqrt_depth" comparator="LESS" value="15.0" />
+    <if_variable name="sqrt_calc" comparator="EQUALS" value="2.0" />
+
+    <set_variable name="sqrt_ans" value="(sqrt_high+sqrt_low)/2.0" integer="no" />
+
+    <set_variable name="sqrt_ans2" value="sqrt_ans*sqrt_ans" integer="yes" />
+    <set_variable name="sqrt_calc" value="3.0" integer="yes" />
+    <set_variable name="sqrt_depth" value="sqrt_depth+1" integer="yes" />
+  </event>
+  <event name="SqrtRecur2GT" id_arme="7c13a185-0c8f-47c7-a808-fd5633d18fb5" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696">
+    <if_variable name="sqrt_calc" comparator="EQUALS" value="3.0" />
+    <if_variable name="sqrt_ans2" comparator="GREATER_EQUAL" value="sqrt_y" />
+
+    <set_variable name="sqrt_high" value="(sqrt_low + sqrt_high) / 2.0" integer="no" />
+    <set_variable name="sqrt_calc" value="2.0" integer="yes" />
+  </event>
+  <event name="SqrtRecur2LT" id_arme="bdd2d478-152d-4070-be9c-239adf2a9409" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696">
+    <if_variable name="sqrt_calc" comparator="EQUALS" value="3.0" />
+    <if_variable name="sqrt_ans2" comparator="LESS" value="sqrt_y" />
+
+    <set_variable name="sqrt_low" value="(sqrt_low + sqrt_high) / 2.0" integer="no" />
+    <set_variable name="sqrt_calc" value="2.0" integer="yes" />
+  </event>
+  <event name="SqrtRecur3" id_arme="a4121358-67b6-4dd0-b868-e2f2ef9a4e27" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696">
+    <if_variable name="sqrt_depth" comparator="GREATER_EQUAL" value="15.0" />
+    <if_variable name="sqrt_calc" comparator="EQUALS" value="2.0" />
+    <set_variable name="sqrt_calc" value="4.0" integer="yes" />
+  </event>
+  <!-- </folder> -->
+
   <folder_arme name="Random Elements" id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <event name="Random Coordinates" id_arme="7c7265dd-f0de-4d29-9f42-9f23d1e09a4e" parent_id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947">
     <if_variable name="Random Coordinates" comparator="EQUALS" value="1.0" />

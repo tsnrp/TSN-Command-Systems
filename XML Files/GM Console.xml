@@ -14,12 +14,12 @@
     <set_variable name="painterLayerCount" value="3.0" integer="yes" />
     <set_variable name="painterLayerOffset" value="-750.0" integer="yes" />
     <set_variable name="painterLayerStepSize" value="250.0" integer="yes" />
+    <set_variable name="painterArcSpacing" value="0.0" integer="no" />
+    <set_variable name="painterLineSpacing" value="0.0" integer="yes" />
     <set_variable name="paintMineFieldIter" value="0.0" integer="yes" />
     <set_variable name="paintMineLineIter" value="0.0" integer="yes" />
     <set_variable name="paintAsteroidLineIter" value="0.0" integer="yes" />
     <set_variable name="paintAsteroidFieldIter" value="0.0" integer="yes" />
-    <set_variable name="paintAsteroidFieldIter" value="0.0" integer="yes" />
-    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event> 
   <event name="GM Main Menu" id_arme="605a7c3f-76b5-4953-bb43-aa50abc3f88b" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f">
     <if_variable name="GM Controls" comparator="EQUALS" value="1.0" />
@@ -183,26 +183,26 @@
     <clear_gm_button text="Mines\Medium Minefield (Circ.)" />
     <clear_gm_button text="Mines\Small Minefield (Circ.)" />
     <clear_gm_button text="Mines\Single Mine" />
-    <clear_gm_button text="Painter options" x="100" y="100" h="30" w="350"/>
-    <clear_gm_button text="PerLayerCount: |painterObjectCount|" x="100" y="130" h="30" w="150" />
-    <clear_gm_button text="Count+5" x="250" y="130" h="30" w="100" />
-    <clear_gm_button text="Count-5" x="350" y="130" h="30" w="100"/>
-    <clear_gm_button text="Radius: |painterRadius|" x="100" y="160" h="30" w="150"/>
-    <clear_gm_button text="Radius+250" x="250" y="160" h="30" w="100"/>
-    <clear_gm_button text="Radius-250" x="350" y="160" h="30" w="100"/>
-    <clear_gm_button text="ArcStartDeg: |painterArcStart|" x="100" y="190" h="30" w="150" />
-    <clear_gm_button text="ArcStopDeg: |painterArcStop|" x="100" y="220" h="30" w="150" />
-    <clear_gm_button text="ArcStart+10" x="250" y="190" h="30" w="100"/>
-    <clear_gm_button text="ArcStart-10" x="350" y="190" h="30" w="100"/>
-    <clear_gm_button text="ArcStop+10" x="250" y="220" h="30" w="100"/>
-    <clear_gm_button text="ArcStop-10" x="350" y="220" h="30" w="100"/>
-    <clear_gm_button text="RandomRange: |painterRandomRange|" x="100" y="250" h="30" w="150" />
-    <clear_gm_button text="RndRange+250" x="250" y="250" h="30" w="100"/>
-    <clear_gm_button text="RndRange-250" x="350" y="250" h="30" w="100"/>
-    <clear_gm_button text="LayerCount: |painterLayerCount|" x="100" y="280" h="30" w="150" />
-    <clear_gm_button text="1 Lyr" x="250" y="280" h="30" w="66"/>
-    <clear_gm_button text="3 Lyrs" x="316" y="280" h="30" w="66"/>
-    <clear_gm_button text="5 Lyrs" x="382" y="280" h="30" w="68"/>
+    <clear_gm_button text="Painter options"/>
+    <clear_gm_button text="PerLayerCount: |painterObjectCount|" />
+    <clear_gm_button text="Count+5" />
+    <clear_gm_button text="Count-5" />
+    <clear_gm_button text="Radius: |painterRadius|" />
+    <clear_gm_button text="Radius+250" />
+    <clear_gm_button text="Radius-250" />
+    <clear_gm_button text="ArcStartDeg: |painterArcStart|" />
+    <clear_gm_button text="ArcStopDeg: |painterArcStop|" />
+    <clear_gm_button text="ArcStart+10"/>
+    <clear_gm_button text="ArcStart-10"/>
+    <clear_gm_button text="ArcStop+10"/>
+    <clear_gm_button text="ArcStop-10"/>
+    <clear_gm_button text="RandomRange: |painterRandomRange|" />
+    <clear_gm_button text="RndRange+250"/>
+    <clear_gm_button text="RndRange-250"/>
+    <clear_gm_button text="LayerCount: |painterLayerCount|" />
+    <clear_gm_button text="1 Lyr"/>
+    <clear_gm_button text="3 Lyrs"/>
+    <clear_gm_button text="5 Lyrs"/>
     <clear_gm_button text="Painter\Mines (arc)"/>
     <clear_gm_button text="Painter\Asteroid Field (arc)"/>
     <clear_gm_button text="Painter\Mines (line START)"/>
@@ -211,6 +211,8 @@
     <clear_gm_button text="Painter\Asteroids (line START)"/>
     <clear_gm_button text="Painter\Asteroids (line FINISH)"/>
     <clear_gm_button text="Painter\Asteroids (line CANCEL)"/>
+    <clear_gm_button text="ArcSpacing: |painterArcSpacing|"/>
+    <clear_gm_button text="LineSpacing: |painterLineSpacing|"/>
     <!--Interactions Keys-->
     <clear_gm_button text="Clear" />
     <clear_gm_button text="Messages" />
@@ -40969,7 +40971,9 @@
     <set_gm_button text="Painter\Mines (line START)"/>
     <set_gm_button text="Painter\Asteroids (line START)"/>
     <set_gm_button text="ArcSpacing: |painterArcSpacing|" x="100" y="310" h="30" w="150" />
+    <set_gm_button text="LineSpacing: |painterLineSpacing|" x="100" y="340" h="30" w="150" />
 
+    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
 
     <set_variable name="GM Menu" value="2.0" />
   </event>
@@ -41006,32 +41010,36 @@
     <clear_gm_button text="Mines\Medium Minefield (Circ.)" />
     <clear_gm_button text="Mines\Small Minefield (Circ.)" />
     <clear_gm_button text="Mines\Single Mine" />
-    <clear_gm_button text="Painter options" x="100" y="100" h="30" w="350"/>
-    <clear_gm_button text="PerLayerCount: |painterObjectCount|" x="100" y="130" h="30" w="150" />
-    <clear_gm_button text="Count+5" x="250" y="130" h="30" w="100" />
-    <clear_gm_button text="Count-5" x="350" y="130" h="30" w="100"/>
-    <clear_gm_button text="Radius: |painterRadius|" x="100" y="160" h="30" w="150"/>
-    <clear_gm_button text="Radius+250" x="250" y="160" h="30" w="100"/>
-    <clear_gm_button text="Radius-250" x="350" y="160" h="30" w="100"/>
-    <clear_gm_button text="ArcStartDeg: |painterArcStart|" x="100" y="190" h="30" w="150" />
-    <clear_gm_button text="ArcStopDeg: |painterArcStop|" x="100" y="220" h="30" w="150" />
-    <clear_gm_button text="ArcStart+10" x="250" y="190" h="30" w="100"/>
-    <clear_gm_button text="ArcStart-10" x="350" y="190" h="30" w="100"/>
-    <clear_gm_button text="ArcStop+10" x="250" y="220" h="30" w="100"/>
-    <clear_gm_button text="ArcStop-10" x="350" y="220" h="30" w="100"/>
-    <clear_gm_button text="RandomRange: |painterRandomRange|" x="100" y="250" h="30" w="150" />
-    <clear_gm_button text="RndRange+250" x="250" y="250" h="30" w="100"/>
-    <clear_gm_button text="RndRange-250" x="350" y="250" h="30" w="100"/>
-    <clear_gm_button text="LayerCount: |painterLayerCount|" x="100" y="280" h="30" w="150" />
-    <clear_gm_button text="1 Lyr" x="250" y="280" h="30" w="66"/>
-    <clear_gm_button text="3 Lyrs" x="316" y="280" h="30" w="66"/>
-    <clear_gm_button text="5 Lyrs" x="382" y="280" h="30" w="68"/>
+    <clear_gm_button text="Painter options"/>
+    <clear_gm_button text="PerLayerCount: |painterObjectCount|" />
+    <clear_gm_button text="Count+5" />
+    <clear_gm_button text="Count-5" />
+    <clear_gm_button text="Radius: |painterRadius|" />
+    <clear_gm_button text="Radius+250" />
+    <clear_gm_button text="Radius-250" />
+    <clear_gm_button text="ArcStartDeg: |painterArcStart|" />
+    <clear_gm_button text="ArcStopDeg: |painterArcStop|" />
+    <clear_gm_button text="ArcStart+10"/>
+    <clear_gm_button text="ArcStart-10"/>
+    <clear_gm_button text="ArcStop+10"/>
+    <clear_gm_button text="ArcStop-10"/>
+    <clear_gm_button text="RandomRange: |painterRandomRange|" />
+    <clear_gm_button text="RndRange+250"/>
+    <clear_gm_button text="RndRange-250"/>
+    <clear_gm_button text="LayerCount: |painterLayerCount|" />
+    <clear_gm_button text="1 Lyr"/>
+    <clear_gm_button text="3 Lyrs"/>
+    <clear_gm_button text="5 Lyrs"/>
     <clear_gm_button text="Painter\Mines (arc)"/>
     <clear_gm_button text="Painter\Asteroid Field (arc)"/>
     <clear_gm_button text="Painter\Mines (line START)"/>
     <clear_gm_button text="Painter\Mines (line FINISH)"/>
     <clear_gm_button text="Painter\Mines (line CANCEL)"/>
-
+    <clear_gm_button text="Painter\Asteroids (line START)"/>
+    <clear_gm_button text="Painter\Asteroids (line FINISH)"/>
+    <clear_gm_button text="Painter\Asteroids (line CANCEL)"/>
+    <clear_gm_button text="ArcSpacing: |painterArcSpacing|"/>
+    <clear_gm_button text="LineSpacing: |painterLineSpacing|"/>
   </event>
   <folder_arme name="Minefields" id_arme="db3263b3-984a-48c5-b0c0-b1233fae129e" parent_id_arme="043c9bdc-8549-4b00-ab76-1d191d309472" />
   <event name="Single Mine" id_arme="c56d9e38-89c9-4c2f-9822-6a8b31544054" parent_id_arme="db3263b3-984a-48c5-b0c0-b1233fae129e">
@@ -41399,36 +41407,75 @@
     <set_variable name="paintMineFieldIter" value="0.0" integer="yes" />
   </event>
 
+  <event name="SpawnLine spacing refresh 1" id_arme="21a96c4c-6ec6-4c3c-b865-3403871d2c64" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+    <if_variable name="refreshLineSpacingTimerLoopActive" comparator="EQUALS" value="1.0" />
+    <if_timer name="refreshLineSpacingTimerLoop" />
+    <if_variable name="sqrt_calc" comparator="EQUALS" value="0.0" />
+
+    <create type="genericMesh" use_gm_position="" name="CurrGm" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
+    <get_object_property property="positionX" name="CurrGm" variable="CurrGmX" />
+    <get_object_property property="positionZ" name="CurrGm" variable="CurrGmZ" />
+    <destroy name="CurrGm" />
+
+    <set_variable name="sqrt_y" value="(LineStartX-CurrGmX)*(LineStartX-CurrGmX)+(LineStartZ-CurrGmZ)*(LineStartZ-CurrGmZ)" integer="no" />
+    <set_variable name="sqrt_calc" value="1.0" integer="yes" />
+  </event>
+
+  <event name="SpawnLine spacing refresh 2" id_arme="3e8572e6-2d9b-4d21-9430-c55be054d7cc" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+    <if_variable name="sqrt_calc" comparator="EQUALS" value="4.0" />
+    <if_variable name="refreshLineSpacingTimerLoopActive" comparator="EQUALS" value="1.0" />
+
+    <clear_gm_button text="LineSpacing: |painterLineSpacing|" />
+    <set_variable name="painterLineSpacing" value="sqrt_ans / painterObjectCount" integer="no" />
+    <set_gm_button text="LineSpacing: |painterLineSpacing|" x="100" y="340" h="30" w="150" />
+
+    <set_variable name="sqrt_calc" value="0.0" integer="yes" />
+
+    <set_timer name="refreshLineSpacingTimerLoop" seconds="1.0" />
+  </event>
+
+
   <event name="SpawnLine Mines Start" id_arme="706bea52-641f-472e-9418-d7ed9ed35019" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Mines (line START)" />
 
-    <create type="genericMesh" use_gm_position="" name="MineLineStart" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
-    <get_object_property property="positionX" name="MineLineStart" variable="MineLineStartX" />
-    <get_object_property property="positionZ" name="MineLineStart" variable="MineLineStartZ" />
+    <create type="genericMesh" use_gm_position="" name="LineStart" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
+    <get_object_property property="positionX" name="LineStart" variable="LineStartX" />
+    <get_object_property property="positionZ" name="LineStart" variable="LineStartZ" />
+
+    <set_variable name="refreshLineSpacingTimerLoopActive" value="1.0" />
+    <set_timer name="refreshLineSpacingTimerLoop" seconds="1.0" />
+    <set_variable name="sqrt_calc" value="0.0" integer="yes" />
 
     <clear_gm_button text="Painter\Mines (line START)"/>
+    <clear_gm_button text="Painter\Asteroids (line START)"/>
     <set_gm_button text="Painter\Mines (line FINISH)"/>
     <set_gm_button text="Painter\Mines (line CANCEL)"/>
   </event>
   <event name="SpawnLine Mines End" id_arme="9cc4c714-fb88-455e-a14b-6b4ba35066" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Mines (line FINISH)" />
 
-    <create type="genericMesh" use_gm_position="" name="MineLineEnd" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
-    <get_object_property property="positionX" name="MineLineEnd" variable="MineLineEndX" />
-    <get_object_property property="positionZ" name="MineLineEnd" variable="MineLineEndZ" />
+    <create type="genericMesh" use_gm_position="" name="LineEnd" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
+    <get_object_property property="positionX" name="LineEnd" variable="LineEndX" />
+    <get_object_property property="positionZ" name="LineEnd" variable="LineEndZ" />
+
+    <set_variable name="refreshLineSpacingTimerLoopActive" value="0.0" />
 
     <clear_gm_button text="Painter\Mines (line FINISH)"/>
     <clear_gm_button text="Painter\Mines (line CANCEL)"/>
     <set_gm_button text="Painter\Mines (line START)"/>
+    <set_gm_button text="Painter\Asteroids (line START)"/>
     <set_variable name="paintMineLineIter" value="1.0" integer="yes" />
   </event>
   <event name="SpawnLine Mines Cancel" id_arme="9cc4c714-fb88-455e-a14b-6b4ba35066" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Mines (line CANCEL)" />
 
+    <set_variable name="refreshLineSpacingTimerLoopActive" value="0.0" />
+
     <clear_gm_button text="Painter\Mines (line FINISH)"/>
     <clear_gm_button text="Painter\Mines (line CANCEL)"/>
     <set_gm_button text="Painter\Mines (line START)"/>
-    <destroy name="MineLineStart" />
+    <set_gm_button text="Painter\Asteroids (line START)"/>
+    <destroy name="LineStart" />
 
     <set_variable name="paintMineLineIter" value="0.0" integer="yes" />
   </event>
@@ -41436,15 +41483,15 @@
     <if_variable name="paintMineLineIter" comparator="GREATER" value="0.0" />
 
     <set_variable name="painterRandSeed" randomIntLow="1" randomIntHigh="100" integer="yes" />
-    <create count="painterObjectCount" type="mines" startX="MineLineEndX" startY="painterLayerOffset+paintMineLineIter*painterLayerStepSize" startZ="MineLineEndZ" endX="MineLineStartX" endY="painterLayerOffset+paintMineLineIter*painterLayerStepSize" endZ="MineLineStartZ"  randomSeed="painterRandSeed" randomRange="painterRandomRange" />
+    <create count="painterObjectCount" type="mines" startX="LineEndX" startY="painterLayerOffset+paintMineLineIter*painterLayerStepSize" startZ="LineEndZ" endX="LineStartX" endY="painterLayerOffset+paintMineLineIter*painterLayerStepSize" endZ="LineStartZ"  randomSeed="painterRandSeed" randomRange="painterRandomRange" />
 
     <set_variable name="paintMineLineIter" value="paintMineLineIter+1" integer="yes" />
   </event>
   <event name="SpawnLine Mines Stop" id_arme="5816317b-830a-4b11-8da7-7e49c17a80ed" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_variable name="paintMineLineIter" comparator="GREATER_EQUAL" value="painterLayerCount+1" />
     
-    <destroy name="MineLineStart" />
-    <destroy name="MineLineEnd" />
+    <destroy name="LineStart" />
+    <destroy name="LineEnd" />
 
     <set_variable name="paintMineLineIter" value="0.0" integer="yes" />
   </event>
@@ -41453,10 +41500,15 @@
   <event name="SpawnLine Asteroids Start" id_arme="b1bee9c6-fdc6-4dc4-8b33-a8938b79d6d3" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Asteroids (line START)" />
 
-    <create type="genericMesh" use_gm_position="" name="AsteroidLineStart" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
-    <get_object_property property="positionX" name="AsteroidLineStart" variable="AsteroidLineStartX" />
-    <get_object_property property="positionZ" name="AsteroidLineStart" variable="AsteroidLineStartZ" />
+    <create type="genericMesh" use_gm_position="" name="LineStart" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
+    <get_object_property property="positionX" name="LineStart" variable="LineStartX" />
+    <get_object_property property="positionZ" name="LineStart" variable="LineStartZ" />
 
+    <set_variable name="refreshLineSpacingTimerLoopActive" value="1.0" />
+    <set_timer name="refreshLineSpacingTimerLoop" seconds="1.0" />
+    <set_variable name="sqrt_calc" value="0.0" integer="yes" />
+
+    <clear_gm_button text="Painter\Mines (line START)"/>
     <clear_gm_button text="Painter\Asteroids (line START)"/>
     <set_gm_button text="Painter\Asteroids (line FINISH)"/>
     <set_gm_button text="Painter\Asteroids (line CANCEL)"/>
@@ -41464,22 +41516,29 @@
   <event name="SpawnLine Asteroids End" id_arme="d363d8eb-c977-47cd-8dfc-013587f84755" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Asteroids (line FINISH)" />
 
-    <create type="genericMesh" use_gm_position="" name="AsteroidLineEnd" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
-    <get_object_property property="positionX" name="AsteroidLineEnd" variable="AsteroidLineEndX" />
-    <get_object_property property="positionZ" name="AsteroidLineEnd" variable="AsteroidLineEndZ" />
+    <create type="genericMesh" use_gm_position="" name="LineEnd" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
+    <get_object_property property="positionX" name="LineEnd" variable="LineEndX" />
+    <get_object_property property="positionZ" name="LineEnd" variable="LineEndZ" />
+
+    <set_variable name="refreshLineSpacingTimerLoopActive" value="0.0" />
 
     <clear_gm_button text="Painter\Asteroids (line FINISH)"/>
     <clear_gm_button text="Painter\Asteroids (line CANCEL)"/>
+    <set_gm_button text="Painter\Mines (line START)"/>
     <set_gm_button text="Painter\Asteroids (line START)"/>
+
     <set_variable name="paintAsteroidLineIter" value="1.0" integer="yes" />
   </event>
   <event name="SpawnLine Asteroids Cancel" id_arme="23e33054-d02b-4141-9fa1-c5333b87914e" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Asteroids (line CANCEL)" />
 
+    <set_variable name="refreshLineSpacingTimerLoopActive" value="0.0" />
+
     <clear_gm_button text="Painter\Asteroids (line FINISH)"/>
     <clear_gm_button text="Painter\Asteroids (line CANCEL)"/>
+    <set_gm_button text="Painter\Mines (line START)"/>
     <set_gm_button text="Painter\Asteroids (line START)"/>
-    <destroy name="AsteroidLineStart" />
+    <destroy name="LineStart" />
 
     <set_variable name="paintAsteroidLineIter" value="0.0" integer="yes" />
   </event>
@@ -41487,15 +41546,15 @@
     <if_variable name="paintAsteroidLineIter" comparator="GREATER" value="0.0" />
 
     <set_variable name="painterRandSeed" randomIntLow="1" randomIntHigh="100" integer="yes" />
-    <create count="painterObjectCount" type="asteroids" startX="AsteroidLineEndX" startY="painterLayerOffset+paintAsteroidLineIter*painterLayerStepSize" startZ="AsteroidLineEndZ" endX="AsteroidLineStartX" endY="painterLayerOffset+paintAsteroidLineIter*painterLayerStepSize" endZ="AsteroidLineStartZ"  randomSeed="painterRandSeed" randomRange="painterRandomRange" />
+    <create count="painterObjectCount" type="asteroids" startX="LineEndX" startY="painterLayerOffset+paintAsteroidLineIter*painterLayerStepSize" startZ="LineEndZ" endX="LineStartX" endY="painterLayerOffset+paintAsteroidLineIter*painterLayerStepSize" endZ="LineStartZ"  randomSeed="painterRandSeed" randomRange="painterRandomRange" />
 
     <set_variable name="paintAsteroidLineIter" value="paintAsteroidLineIter+1" integer="yes" />
   </event>
   <event name="SpawnLine Asteroids Stop" id_arme="fb2de260-680d-402f-968f-a231cbd07c18" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_variable name="paintAsteroidLineIter" comparator="GREATER_EQUAL" value="painterLayerCount+1" />
     
-    <destroy name="AsteroidLineStart" />
-    <destroy name="AsteroidLineEnd" />
+    <destroy name="LineStart" />
+    <destroy name="LineEnd" />
 
     <set_variable name="paintAsteroidLineIter" value="0.0" integer="yes" />
   </event>
