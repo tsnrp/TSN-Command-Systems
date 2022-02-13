@@ -1,0 +1,2413 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="1365.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="343.0" integer="yes" />
+    <set_variable name="Alignment" value="Neutral" integer="yes" />
+  </start>
+  <folder_arme name="Eulis System" id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <folder_arme name="Eulis Settings" id_arme="3d60fee4-9c78-4717-aac3-2dd895dab426" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <folder_arme name="Eulis Menu" id_arme="5b3bbef5-7529-4395-941b-7321a10b17d3" parent_id_arme="3d60fee4-9c78-4717-aac3-2dd895dab426" />
+  <event name="Eulis Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="5b3bbef5-7529-4395-941b-7321a10b17d3">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Eulis System" />
+    <set_variable name="Eulis Gate" value="1.0" integer="yes" />
+    <!--365,343-->
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="5b3bbef5-7529-4395-941b-7321a10b17d3">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Eulis System" />
+  </event>
+  <event name="Eulis System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="5b3bbef5-7529-4395-941b-7321a10b17d3">
+    <if_gm_button text="Lower Arc/Eulis System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="104.0" integer="yes" />
+    <set_variable name="Eulis System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="3d60fee4-9c78-4717-aac3-2dd895dab426">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="3d60fee4-9c78-4717-aac3-2dd895dab426">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="3d60fee4-9c78-4717-aac3-2dd895dab426">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="3d60fee4-9c78-4717-aac3-2dd895dab426">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="3d60fee4-9c78-4717-aac3-2dd895dab426">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Eulis Sector I" id_arme="ccd856ec-483d-496b-b76d-4054935bd64f" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector I" id_arme="b70e91a2-45bf-4945-b972-acdde29e8ba9" parent_id_arme="ccd856ec-483d-496b-b76d-4054935bd64f">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="nebulas" startX="78534.0" startY="0.0" startZ="21393.0" endX="78534.0" endY="0.0" endZ="21393.0" randomRange="18902" />
+    <create count="30" type="nebulas" startX="39732.0" startY="0.0" startZ="94816.0" endX="3570.0" endY="0.0" endZ="95256.0" randomRange="4595" />
+    <create count="10" type="nebulas" startX="38925.0" startY="0.0" startZ="91075.0" endX="52641.0" endY="0.0" endZ="81540.0" randomRange="4888" />
+    <create count="30" type="asteroids" startX="59903.0" startY="0.0" startZ="23520.0" endX="39218.0" endY="0.0" endZ="39144.0" randomRange="4679" />
+    <create count="10" type="nebulas" nebType="2" startX="82274.0" startY="0.0" startZ="31149.0" endX="75306.0" endY="0.0" endZ="20586.0" randomRange="4170" />
+  </event>
+  <folder_arme name="Navigation" id_arme="d3104792-4244-4c82-a4c6-8bc8f663a28d" parent_id_arme="ccd856ec-483d-496b-b76d-4054935bd64f" />
+  <event name="Transition to Sector II" id_arme="7de7248a-6f05-477f-9cfd-70036da5f0da" parent_id_arme="d3104792-4244-4c82-a4c6-8bc8f663a28d">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="3ecb00e4-56a4-4c74-8c0f-47f52c819eff" parent_id_arme="d3104792-4244-4c82-a4c6-8bc8f663a28d">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="21e29baa-967a-49a5-9bff-1784fd79bec3" parent_id_arme="d3104792-4244-4c82-a4c6-8bc8f663a28d">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="4a4bcee5-fcf1-45e0-8ec6-a65093914f0f" parent_id_arme="ccd856ec-483d-496b-b76d-4054935bd64f" />
+  <event name="Generate Sector Entities" id_arme="ffec39dd-051a-41ca-8722-c9edaf61900a" parent_id_arme="4a4bcee5-fcf1-45e0-8ec6-a65093914f0f">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="76384.0" y="0.0" z="22812.0" name="Trellis Confederacies" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="60179.0" y="0.0" z="39151.0" angle="0" name="LCR-4" hullID="1055" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="87cf5493-2c73-4ea6-9369-a370df16f3b5" parent_id_arme="4a4bcee5-fcf1-45e0-8ec6-a65093914f0f">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e7c1ae1c-5056-435a-a23d-4c64653c9b7b" parent_id_arme="4a4bcee5-fcf1-45e0-8ec6-a65093914f0f">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Trellis Confederacies" />
+    <destroy name="LCR-4" />
+    <destroy name="Eulis I" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Eulis Sector II" id_arme="93ada8cf-3ec7-4220-bbef-1e7da5c1fbc8" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector II" id_arme="7f8f5824-6a21-4959-b74c-2e5878e118eb" parent_id_arme="93ada8cf-3ec7-4220-bbef-1e7da5c1fbc8">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="20" type="nebulas" startX="96944.0" startY="0.0" startZ="95256.0" endX="63350.0" endY="0.0" endZ="95183.0" randomRange="4639" />
+    <create count="40" type="nebulas" startX="69145.0" startY="0.0" startZ="91222.0" endX="31516.0" endY="0.0" endZ="64009.0" randomRange="6246" />
+    <create count="45" type="asteroids" startX="62397.0" startY="0.0" startZ="74132.0" endX="32030.0" endY="0.0" endZ="56528.0" randomRange="3228" />
+    <create count="50" type="asteroids" startX="38411.0" startY="0.0" startZ="55941.0" endX="28362.0" endY="0.0" endZ="29315.0" randomRange="5522" />
+    <create count="60" type="asteroids" startX="51908.0" startY="0.0" startZ="49339.0" endX="51908.0" endY="0.0" endZ="49339.0" randomRange="10447" />
+    <create count="10" type="asteroids" startX="52201.0" startY="0.0" startZ="59388.0" endX="52201.0" endY="0.0" endZ="59388.0" randomRange="2801" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7" parent_id_arme="93ada8cf-3ec7-4220-bbef-1e7da5c1fbc8" />
+  <event name="Transition to Sector III" id_arme="2a89974b-b7b0-4137-8be0-9dd6fa8f92ec" parent_id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="06bbada4-ab56-4395-9077-2c476d800571" parent_id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="7277edbd-41e2-414d-8784-2f8628205d52" parent_id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="f05dbf9f-5d51-418e-8f4f-78389141d315" parent_id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="c7689911-29fc-4cc1-8c60-ccdc5b19c370" parent_id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="4899796a-d418-4e42-877c-b5ef463eeaf9" parent_id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7" />
+  <event name="Gate Offline" id_arme="1ccc5df3-b091-4737-9033-31c579bba6aa" parent_id_arme="4899796a-d418-4e42-877c-b5ef463eeaf9">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Jhohara Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="01a65a69-a832-4937-aab8-b851562de470" parent_id_arme="4899796a-d418-4e42-877c-b5ef463eeaf9" />
+  <event name="Ship1 Activation Range" id_arme="d2825ba5-1f1c-4273-ae65-00451ac03250" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Jhohara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="d93a22d9-e114-40e5-b7b9-db8e9fd6170a" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Jhohara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="4d00e303-a7f2-4ec8-b512-e1569e1154cb" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Jhohara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="ceac5757-3a7d-45ce-813b-7238309dc00c" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Jhohara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="2fc0e48d-ae33-41d6-ab8b-2ada7934e3e7" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Jhohara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="1634dcc6-008c-434d-a7d5-970b4dcf30ae" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Jhohara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="39d81d87-dbe7-4e45-b120-7618beb657b7" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Jhohara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="50bc8b12-46fc-48e0-9fb4-9a3512844e78" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Jhohara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="5f7b163c-e0b9-41d6-bd60-9e199d405310" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Jhohara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="c0d23f4b-fae5-4883-ba7d-abec0afc4c4a" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Jhohara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="727079d3-7fb2-42cd-90df-0ecbbfc3b248" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Jhohara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="40af4735-1cc3-4bfc-81c6-76f1968c92ce" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Jhohara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="7934ceb0-8a09-4762-995a-77c0716bacbc" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Jhohara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="96d14055-4a91-44cb-8d0f-2930d8b5a034" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Jhohara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="6dd9e1bc-d3a3-4d07-b060-1d4d3ee4be80" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Jhohara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="d4853421-0f58-4903-86d9-b42f18837938" parent_id_arme="01a65a69-a832-4937-aab8-b851562de470">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Jhohara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="ff9467ba-9e23-45c5-86db-04c7b153113d" parent_id_arme="4899796a-d418-4e42-877c-b5ef463eeaf9">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Jhohara Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="bd1689a6-47d3-482d-a192-9e8f24eb157c" parent_id_arme="4899796a-d418-4e42-877c-b5ef463eeaf9">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Jhohara Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Eulis to Jhohara" value="1.0" />
+    <set_variable name="Jhohara System" value="1.0" />
+    <set_variable name="Sector" value="targetSector" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="3a607706-30e4-4336-8610-d64d57e27845" parent_id_arme="93ada8cf-3ec7-4220-bbef-1e7da5c1fbc8" />
+  <event name="Generate Sector Entities" id_arme="f3fc5b42-e444-4a3e-aaa1-c2b9e849f877" parent_id_arme="3a607706-30e4-4336-8610-d64d57e27845">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="genericMesh" x="47456.0" y="0.0" z="27901.0" name="Jhohara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="72634.0" y="0.0" z="45848.0" name="Bratmech Cartographics" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="47188.0" y="0.0" z="33794.0" angle="356.2" name="Jartak Inspections" hullID="1053" sideValue="sectorSide" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="69cf748d-a1f0-40e4-bb91-b321664b4261" parent_id_arme="3a607706-30e4-4336-8610-d64d57e27845">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Jhohara Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Jhohara Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Jhohara Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Jhohara Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e1d20895-8c1d-4f4a-a90d-d8477adbf659" parent_id_arme="3a607706-30e4-4336-8610-d64d57e27845">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Jhohara Gate" />
+    <destroy name="Bratmech Cartographics" />
+    <destroy name="Jartak Inspections" />
+    <destroy name="Eulis II" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Jhohara" id_arme="db57b408-8129-4859-8a35-9d2ea13b6ea0" parent_id_arme="93ada8cf-3ec7-4220-bbef-1e7da5c1fbc8">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Jhohara to Eulis" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Jhohara Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Jhohara Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Jhohara Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Jhohara Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Jhohara Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Jhohara Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Jhohara Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Jhohara Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Jhohara to Eulis" value="0.0" />
+  </event>
+  <folder_arme name="Eulis Sector III" id_arme="d4d0ab2b-0dfd-4d39-b4cd-8949068ceef7" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector III" id_arme="38af7a95-a979-430c-9090-e8064753cfc5" parent_id_arme="d4d0ab2b-0dfd-4d39-b4cd-8949068ceef7">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="40" type="nebulas" startX="73546.0" startY="0.0" startZ="57921.0" endX="30563.0" endY="0.0" endZ="23080.0" randomRange="6637" />
+    <create count="100" type="asteroids" startX="56015.0" startY="0.0" startZ="35256.0" endX="34670.0" endY="0.0" endZ="9877.0" randomRange="5708" />
+    <create count="100" type="asteroids" startX="36284.0" startY="0.0" startZ="19486.0" endX="4597.0" endY="0.0" endZ="36503.0" randomRange="7218" />
+    <create count="100" type="asteroids" startX="20000.0" startY="0.0" startZ="12518.0" endX="13692.0" endY="0.0" endZ="18092.0" randomRange="14736" />
+  </event>
+  <folder_arme name="Navigation" id_arme="33e755ca-dba4-4d5b-bcd9-2320e11f11f2" parent_id_arme="d4d0ab2b-0dfd-4d39-b4cd-8949068ceef7" />
+  <event name="Transition to Sector IV" id_arme="f1ccbf94-6758-4c76-9f71-f0759985c304" parent_id_arme="33e755ca-dba4-4d5b-bcd9-2320e11f11f2">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="fc29c97a-e9f4-4309-8ab4-d2523e93a679" parent_id_arme="33e755ca-dba4-4d5b-bcd9-2320e11f11f2">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="0ab73e97-1395-4e39-a524-3d12ac806537" parent_id_arme="33e755ca-dba4-4d5b-bcd9-2320e11f11f2">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="b1b297f8-cd5b-43a3-b66b-43304c28e05c" parent_id_arme="33e755ca-dba4-4d5b-bcd9-2320e11f11f2">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="56dece46-ee48-4745-af4a-b3bab3153780" parent_id_arme="33e755ca-dba4-4d5b-bcd9-2320e11f11f2">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="9ea0285b-7174-4594-b318-a1b0f1b5decb" parent_id_arme="d4d0ab2b-0dfd-4d39-b4cd-8949068ceef7" />
+  <event name="Generate Sector Entities" id_arme="8fab847f-5c05-481e-a341-ac24dc1137dd" parent_id_arme="9ea0285b-7174-4594-b318-a1b0f1b5decb">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="607ea2cc-879f-4787-9506-b4ace5a20f0b" parent_id_arme="9ea0285b-7174-4594-b318-a1b0f1b5decb">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="31f2b9d3-a64e-47a3-8b0d-dac99576d9f6" parent_id_arme="9ea0285b-7174-4594-b318-a1b0f1b5decb">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Eulis III" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Eulis Sector IV" id_arme="2a639a86-3071-425c-a6fa-9bd19b8c6459" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector IV" id_arme="24bc6eb6-016a-4d10-aeba-f64a7a812319" parent_id_arme="2a639a86-3071-425c-a6fa-9bd19b8c6459">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <create count="80" type="asteroids" startX="96064.0" startY="0.0" startZ="3936.0" endX="95991.0" endY="0.0" endZ="38557.0" randomRange="4076" />
+    <create count="40" type="asteroids" startX="91516.0" startY="0.0" startZ="8117.0" endX="34890.0" endY="0.0" endZ="29608.0" randomRange="6172" />
+    <create count="100" type="asteroids" startX="83375.0" startY="0.0" startZ="29168.0" endX="83375.0" endY="0.0" endZ="29168.0" randomRange="10146" />
+    <create count="50" type="asteroids" startX="72372.0" startY="0.0" startZ="31955.0" endX="53008.0" endY="0.0" endZ="24474.0" randomRange="4469" />
+    <create count="80" type="nebulas" startX="47653.0" startY="0.0" startZ="62542.0" endX="8411.0" endY="0.0" endZ="77652.0" randomRange="9379" />
+    <create count="10" type="nebulas" startX="25502.0" startY="0.0" startZ="56601.0" endX="3497.0" endY="0.0" endZ="60488.0" randomRange="6226" />
+  </event>
+  <folder_arme name="Navigation" id_arme="75244afd-c371-4904-8d0a-95af8ac7aff6" parent_id_arme="2a639a86-3071-425c-a6fa-9bd19b8c6459" />
+  <event name="Transition to Sector III" id_arme="eeb2d424-757f-4753-9429-98fbadba204f" parent_id_arme="75244afd-c371-4904-8d0a-95af8ac7aff6">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="074f0353-02d5-4bc3-b726-22fc7182143c" parent_id_arme="75244afd-c371-4904-8d0a-95af8ac7aff6">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="2cf41afd-8443-49c2-acf0-231a1a3d26fd" parent_id_arme="75244afd-c371-4904-8d0a-95af8ac7aff6">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="61c5f62a-62b6-4b9d-a0eb-02f6005ad8a4" parent_id_arme="2a639a86-3071-425c-a6fa-9bd19b8c6459" />
+  <event name="Generate Sector Entities" id_arme="53d07cb2-db01-4eaf-b2a3-004829528fff" parent_id_arme="61c5f62a-62b6-4b9d-a0eb-02f6005ad8a4">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="43036.0" y="0.0" z="62857.0" angle="0" name="LCR-1" hullID="1055" sideValue="sectorSide" />
+    <create type="neutral" x="66875.0" y="0.0" z="48125.0" name="Staraway Systems" hullID="1003" sideValue="sectorSide" />
+    <create type="genericMesh" x="63929.0" y="0.0" z="62723.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\Planets\planetTex4.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="a32b5da7-94eb-453a-b601-8949398d9da8" parent_id_arme="61c5f62a-62b6-4b9d-a0eb-02f6005ad8a4">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="CustomPlanet" value="1.0" integer="yes" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Custom Planet Data (ADD TO SECTOR CODE)" id_arme="a6633e4a-3297-4f17-a9aa-a93b90da3938" parent_id_arme="61c5f62a-62b6-4b9d-a0eb-02f6005ad8a4">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="CustomPlanet" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="CustomPlanet" />
+    <set_ship_text name="PA" newname=" " />
+    <set_ship_text name="PB" newname=" " />
+    <set_ship_text name="PC" newname=" " />
+    <set_ship_text name="PD" newname=" " />
+    <set_ship_text name="PE" newname=" " />
+    <set_ship_text name="PF" newname=" " />
+    <set_ship_text name="PG" newname=" " />
+    <set_ship_text name="PH" newname=" " />
+    <set_ship_text name="Planet" newname="EULIS C" class="Class P Planet" />
+    <set_variable name="CustomPlanet" value="0.0" integer="yes" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="61f88c39-6efe-4dfa-80b3-1ebeff34515e" parent_id_arme="61c5f62a-62b6-4b9d-a0eb-02f6005ad8a4">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="LCR-1" />
+    <destroy name="Staraway Systems" />
+    <destroy name="EULIS C" />
+    <destroy name="Eulis IV" />
+    <set_variable name="DestroyPlanet" value="1.0" integer="yes" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Eulis Sector V" id_arme="67aa2fa9-ec9c-41e2-aa30-0a0d1c1dea8a" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector V" id_arme="dda799dc-aeee-4dbc-8f8e-1c329710304d" parent_id_arme="67aa2fa9-ec9c-41e2-aa30-0a0d1c1dea8a">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="nebulas" startX="36798.0" startY="0.0" startZ="3716.0" endX="5037.0" endY="0.0" endZ="6797.0" randomRange="4396" />
+    <create count="30" type="nebulas" startX="23668.0" startY="0.0" startZ="10244.0" endX="5844.0" endY="0.0" endZ="38704.0" randomRange="6898" />
+    <create count="50" type="nebulas" startX="5844.0" startY="0.0" startZ="12224.0" endX="4597.0" endY="0.0" endZ="67897.0" randomRange="5047" />
+    <create count="10" type="nebulas" startX="5111.0" startY="0.0" startZ="69290.0" endX="3717.0" endY="0.0" endZ="97383.0" randomRange="3963" />
+    <create count="40" type="nebulas" startX="21834.0" startY="0.0" startZ="94083.0" endX="6944.0" endY="0.0" endZ="77212.0" randomRange="6549" />
+  </event>
+  <folder_arme name="Navigation" id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8" parent_id_arme="67aa2fa9-ec9c-41e2-aa30-0a0d1c1dea8a" />
+  <event name="Transition to Sector VI" id_arme="6b27dd35-61bb-4caa-968e-87f69055de14" parent_id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="78d7d2c7-4830-49cf-ac9a-7001a5f5b4c5" parent_id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="aa1f5172-040c-4464-8228-0ce54798344c" parent_id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="29372701-b849-4c89-b862-ea180aa2b7ae" parent_id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="e8f392c1-f65b-469d-af3b-a729a26cfce0" parent_id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="133f636a-f317-42c7-a4c9-5468afc403e8" parent_id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8" />
+  <event name="Gate Offline" id_arme="0a9d502c-6f56-4713-977c-e475d03d4938" parent_id_arme="133f636a-f317-42c7-a4c9-5468afc403e8">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Sumri Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872" parent_id_arme="133f636a-f317-42c7-a4c9-5468afc403e8" />
+  <event name="Ship1 Activation Range" id_arme="db99d539-7bc9-43d8-8f3e-8981a9c351db" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="c1c67bf0-891a-4220-8bed-0b2bd513762d" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="6bcab1eb-184b-40b7-9621-0217247d9083" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="29052b83-d3d6-47f9-9864-ed348c974d14" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="9daa6f95-98f4-4a9b-9f5a-27d70abc4f5d" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="d348ec8a-5ca3-4421-ace7-739af8bbbbaf" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="4161aba4-7878-4801-8cb5-c3cd4fee9ef4" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="75bf3205-b1da-4796-b414-148855c9cc24" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="57439f63-5b32-4c3d-8a42-0adb82493c9e" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="ffb6e403-923b-43e7-a71b-deefba0838f7" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="83226758-8cf6-43a3-89bd-e460fdbb9f90" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="8e73ffb2-fea7-4838-b2c5-413f9829bc8e" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="c6d802aa-b493-463d-875b-031530a46e2b" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="c2f86bc9-749b-4790-bf42-33bef958b13e" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="6b786da9-9283-470e-b925-f8a93826246a" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="22cbcf6e-1165-4e27-b433-a63dc1fe80c6" parent_id_arme="baa6fa14-f7d2-43f8-801a-367bb4715872">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="6753a06a-a000-4fd7-9ceb-d67b67c6193c" parent_id_arme="133f636a-f317-42c7-a4c9-5468afc403e8">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Sumri Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="5603e503-5ac2-4b96-b806-caca4d308bd5" parent_id_arme="133f636a-f317-42c7-a4c9-5468afc403e8">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Eulis to Sumri" value="1.0" />
+    <set_variable name="Sumri System" value="1.0" />
+    <set_variable name="Sector" value="7" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="4d97e4b0-2997-475d-bf08-03b585249dba" parent_id_arme="67aa2fa9-ec9c-41e2-aa30-0a0d1c1dea8a" />
+  <event name="Generate Sector Entities" id_arme="9eea7e8c-5671-43e1-8630-732b94799840" parent_id_arme="4d97e4b0-2997-475d-bf08-03b585249dba">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="82679.0" y="0.0" z="36205.0" name="Sumri Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="37411.0" y="0.0" z="30714.0" name="Canton" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="69688.0" y="0.0" z="36473.0" angle="270.6" name="Sultan Customs" hullID="1053" sideValue="sectorSide" />
+    <create type="genericMesh" x="58974.0" y="0.0" z="54151.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\Planets\planetTex4.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ClassMPlanet" value="1.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="22eaf526-ce0b-4755-96c3-57cd0e186a36" parent_id_arme="4d97e4b0-2997-475d-bf08-03b585249dba">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Sumri Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Sumri Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Sumri Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Sumri Gate" />
+    <set_variable name="CustomPlanet" value="1.0" integer="yes" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Custom Planet Data (ADD TO SECTOR CODE)" id_arme="458108ee-69a5-413e-90fe-e8c429913e7d" parent_id_arme="4d97e4b0-2997-475d-bf08-03b585249dba">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="CustomPlanet" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="CustomPlanet" />
+    <set_ship_text name="PA" newname=" " />
+    <set_ship_text name="PB" newname=" " />
+    <set_ship_text name="PC" newname=" " />
+    <set_ship_text name="PD" newname=" " />
+    <set_ship_text name="PE" newname=" " />
+    <set_ship_text name="PF" newname=" " />
+    <set_ship_text name="PG" newname=" " />
+    <set_ship_text name="PH" newname=" " />
+    <set_ship_text name="Planet" newname="EULIS A" class="Class P Planet" />
+    <set_variable name="CustomPlanet" value="0.0" integer="yes" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="fdf730e6-2619-4608-be64-fc87744319a9" parent_id_arme="4d97e4b0-2997-475d-bf08-03b585249dba">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Sumri Gate" />
+    <destroy name="Canton" />
+    <destroy name="Sultan Customs" />
+    <destroy name="Eulis V" />
+    <destroy name="EULIS A" />
+    <set_variable name="DestroyPlanet" value="1.0" integer="yes" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Sumri" id_arme="616aa11c-235c-488e-895f-0e49a91e11ab" parent_id_arme="67aa2fa9-ec9c-41e2-aa30-0a0d1c1dea8a">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sumri to Eulis" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Sumri Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Sumri to Eulis" value="0.0" />
+  </event>
+  <folder_arme name="Eulis Sector VI" id_arme="f6955b8a-1359-477b-a609-883b0be7ea23" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector VI" id_arme="3975c298-c01b-4a1d-ba6b-641c8329e792" parent_id_arme="f6955b8a-1359-477b-a609-883b0be7ea23">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="nebulas" startX="97018.0" startY="0.0" startZ="5256.0" endX="67751.0" endY="0.0" endZ="4449.0" randomRange="4576" />
+    <create count="10" type="nebulas" startX="97091.0" startY="0.0" startZ="96723.0" endX="73986.0" endY="0.0" endZ="51026.0" randomRange="3596" />
+    <create count="10" type="nebulas" startX="75526.0" startY="0.0" startZ="9951.0" endX="76700.0" endY="0.0" endZ="47139.0" randomRange="5013" />
+    <create count="80" type="nebulas" startX="92177.0" startY="0.0" startZ="12004.0" endX="91663.0" endY="0.0" endZ="73838.0" randomRange="7121" />
+    <create count="100" type="asteroids" startX="35404.0" startY="0.0" startZ="43618.0" endX="1810.0" endY="0.0" endZ="56748.0" randomRange="5311" />
+    <create count="80" type="asteroids" startX="21101.0" startY="0.0" startZ="40537.0" endX="6578.0" endY="0.0" endZ="40317.0" randomRange="7764" />
+    <create count="10" type="nebulas" nebType="2" startX="31296.0" startY="0.0" startZ="49119.0" endX="8998.0" endY="0.0" endZ="60562.0" randomRange="3288" />
+  </event>
+  <folder_arme name="Navigation" id_arme="6be33c28-4bc3-42ba-9f40-a6394ac107cb" parent_id_arme="f6955b8a-1359-477b-a609-883b0be7ea23" />
+  <event name="Transition to Sector VII" id_arme="ea3a27cb-e2ce-4eb7-9e47-6cc515d5d617" parent_id_arme="6be33c28-4bc3-42ba-9f40-a6394ac107cb">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="91ae5b2c-db41-49ef-a70f-848c72684e28" parent_id_arme="6be33c28-4bc3-42ba-9f40-a6394ac107cb">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="71191c72-cf4e-409b-8955-b488d8410196" parent_id_arme="6be33c28-4bc3-42ba-9f40-a6394ac107cb">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="3570acd9-d283-4a19-b657-81fa075418aa" parent_id_arme="6be33c28-4bc3-42ba-9f40-a6394ac107cb">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="102fc2f2-3c67-4f49-91fd-c119c00e2298" parent_id_arme="6be33c28-4bc3-42ba-9f40-a6394ac107cb">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="23ea365d-ef91-486d-84dd-f6f904c282af" parent_id_arme="6be33c28-4bc3-42ba-9f40-a6394ac107cb">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="f3c84de1-f45d-45ee-adbf-32d61d9bbbc8" parent_id_arme="6be33c28-4bc3-42ba-9f40-a6394ac107cb">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="e3ff0631-84b1-4a23-abcd-979c42eae1b1" parent_id_arme="6be33c28-4bc3-42ba-9f40-a6394ac107cb">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="2c6e32da-d9f0-4f94-b15b-f97d0ad83aed" parent_id_arme="f6955b8a-1359-477b-a609-883b0be7ea23" />
+  <event name="Generate Sector Entities" id_arme="d515afb9-60cb-4671-885e-54a22409d137" parent_id_arme="2c6e32da-d9f0-4f94-b15b-f97d0ad83aed">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="51608.0" y="0.0" z="42232.0" name="Makerat Tours" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="17441.0" y="0.0" z="36123.0" name="M-381" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="18526.0" y="0.0" z="56720.0" name="RS-703" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="62054.0" y="0.0" z="20937.0" name="Marge Security" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="23750.0" y="0.0" z="57500.0" angle="0" name="LBY-1" hullID="1054" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="cdf36de5-4061-4134-9be0-a899e57e4880" parent_id_arme="2c6e32da-d9f0-4f94-b15b-f97d0ad83aed">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="eae9a97b-ddee-45b3-832d-e3f5bb969a6a" parent_id_arme="2c6e32da-d9f0-4f94-b15b-f97d0ad83aed">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Makerat Tours" />
+    <destroy name="M-381" />
+    <destroy name="RS-703" />
+    <destroy name="Marge Security" />
+    <destroy name="LBY-1" />
+    <destroy name="Eulis VI" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Eulis Sector VII" id_arme="9b4b1045-538e-448f-acac-4bb7196bbb2a" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector VII" id_arme="3df31816-9303-4006-9986-d8a3c676a2f4" parent_id_arme="9b4b1045-538e-448f-acac-4bb7196bbb2a">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="40" type="asteroids" startX="97164.0" startY="0.0" startZ="35550.0" endX="97678.0" endY="0.0" endZ="58948.0" randomRange="2176" />
+    <create count="250" type="asteroids" startX="95771.0" startY="0.0" startZ="37530.0" endX="25282.0" endY="0.0" endZ="25134.0" randomRange="3096" />
+    <create count="200" type="asteroids" startX="93937.0" startY="0.0" startZ="54987.0" endX="42592.0" endY="0.0" endZ="35036.0" randomRange="5031" />
+    <create count="10" type="asteroids" startX="93203.0" startY="0.0" startZ="44205.0" endX="75306.0" endY="0.0" endZ="38190.0" randomRange="3479" />
+    <create count="250" type="asteroids" startX="61883.0" startY="0.0" startZ="53960.0" endX="7971.0" endY="0.0" endZ="64523.0" randomRange="6465" />
+    <create count="10" type="asteroids" startX="81101.0" startY="0.0" startZ="57921.0" endX="66137.0" endY="0.0" endZ="54547.0" randomRange="2861" />
+    <create count="50" type="asteroids" startX="37678.0" startY="0.0" startZ="44425.0" endX="32470.0" endY="0.0" endZ="40464.0" randomRange="15140" />
+    <create count="40" type="asteroids" startX="88069.0" startY="0.0" startZ="30709.0" endX="33057.0" endY="0.0" endZ="22493.0" randomRange="3648" />
+    <create count="10" type="nebulas" startX="55337.0" startY="0.0" startZ="44256.0" endX="55337.0" endY="0.0" endZ="44256.0" randomRange="31376" />
+  </event>
+  <folder_arme name="Navigation" id_arme="cde08490-c6ba-4a56-9475-0ab2b213d471" parent_id_arme="9b4b1045-538e-448f-acac-4bb7196bbb2a" />
+  <event name="Transition to Sector VIII" id_arme="bde44af2-93d9-4706-92c5-c6ab3f50aebf" parent_id_arme="cde08490-c6ba-4a56-9475-0ab2b213d471">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="689d8d3a-1d8e-4d8d-a679-5a8d451c03d6" parent_id_arme="cde08490-c6ba-4a56-9475-0ab2b213d471">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="b80c9ffb-966a-4644-bdf2-a19e5487b7b9" parent_id_arme="cde08490-c6ba-4a56-9475-0ab2b213d471">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="33b464ba-d6e6-4e10-a630-2c8a829c76a4" parent_id_arme="cde08490-c6ba-4a56-9475-0ab2b213d471">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="9d844dd0-8fd1-4287-86a9-ae3b7579088b" parent_id_arme="cde08490-c6ba-4a56-9475-0ab2b213d471">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="01dbe43b-a31d-495b-bb1a-725545631bab" parent_id_arme="cde08490-c6ba-4a56-9475-0ab2b213d471">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="1e56c1b7-b899-4725-a77b-540d3dff9166" parent_id_arme="cde08490-c6ba-4a56-9475-0ab2b213d471">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="14ac1e89-f319-45fa-9c46-bc6a2dfbc13c" parent_id_arme="cde08490-c6ba-4a56-9475-0ab2b213d471">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="8695c0d4-8514-453b-b52a-0199477b4471" parent_id_arme="9b4b1045-538e-448f-acac-4bb7196bbb2a" />
+  <event name="Generate Sector Entities" id_arme="22ea1aec-4c1e-49b4-a422-a09bce275031" parent_id_arme="8695c0d4-8514-453b-b52a-0199477b4471">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="74643.0" y="0.0" z="68080.0" name="Baratron Refineries" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="63259.0" y="0.0" z="77053.0" angle="0" name="SY-C1" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="68483.0" y="0.0" z="79598.0" angle="0" name="SY-C2" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="62858.0" y="0.0" z="66607.0" name="Campton Industries" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="67009.0" y="0.0" z="75312.0" name="Carilon Shipyards" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="84458.0" y="0.0" z="42369.0" name="RS-329" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="65908.0" y="0.0" z="53843.0" name="M-830" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="50268.0" y="0.0" z="26830.0" name="M-734" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="20201.0" y="0.0" z="59879.0" name="RS-703" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="24018.0" y="0.0" z="40625.0" angle="0" name="LCR-2" hullID="1055" sideValue="sectorSide" />
+    <create type="neutral" x="27367.0" y="0.0" z="17991.0" angle="0" name="LBY-2" hullID="1054" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="7315ea88-32f7-4efa-b0fe-9481b1ba87b4" parent_id_arme="8695c0d4-8514-453b-b52a-0199477b4471">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="cf0ff8e1-d5d4-411c-8a3b-6e1017fa8ed7" parent_id_arme="8695c0d4-8514-453b-b52a-0199477b4471">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Baratron Refineries" />
+    <destroy name="SY-C1" />
+    <destroy name="SY-C2" />
+    <destroy name="Campton Industries" />
+    <destroy name="Carilon Shipyards" />
+    <destroy name="RS-329" />
+    <destroy name="M-830" />
+    <destroy name="M-734" />
+    <destroy name="RS-703" />
+    <destroy name="LCR-2" />
+    <destroy name="LBY-2" />
+    <destroy name="Eulis VII" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Eulis Sector VIII" id_arme="31e1c238-0ae5-4171-bd58-6715b6516883" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector VIII" id_arme="167d9984-4bf2-42b8-914a-5ef859c2ef74" parent_id_arme="31e1c238-0ae5-4171-bd58-6715b6516883">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="asteroids" startX="96284.0" startY="0.0" startZ="60562.0" endX="96724.0" endY="0.0" endZ="68704.0" randomRange="4503" />
+    <create count="10" type="asteroids" startX="92837.0" startY="0.0" startZ="60195.0" endX="73986.0" endY="0.0" endZ="62689.0" randomRange="3285" />
+    <create count="10" type="nebulas" startX="50807.0" startY="0.0" startZ="35990.0" endX="3937.0" endY="0.0" endZ="27848.0" randomRange="5033" />
+    <create count="40" type="nebulas" startX="41785.0" startY="0.0" startZ="37163.0" endX="563.0" endY="0.0" endZ="39070.0" randomRange="6276" />
+    <create count="30" type="nebulas" startX="54842.0" startY="0.0" startZ="96870.0" endX="1296.0" endY="0.0" endZ="82860.0" randomRange="4561" />
+  </event>
+  <folder_arme name="Navigation" id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd" parent_id_arme="31e1c238-0ae5-4171-bd58-6715b6516883" />
+  <event name="Transition to Sector VII" id_arme="1db0f00c-9a6c-4fc1-9615-2c32bf48e56f" parent_id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="7f480897-355b-40c6-b1db-b331fe37bf6d" parent_id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="6815be80-8326-4b46-9f48-95c7f3f46f1d" parent_id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="274803a7-f915-46b0-9c9c-cedb999b7538" parent_id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="af9d53fa-70bd-4b48-ac9a-b6d07d4645a6" parent_id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="fe05b82a-f135-40dd-bc61-eb9ef80f5e67" parent_id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd" />
+  <event name="Gate Offline" id_arme="a7efed36-156d-47b6-8bf2-8e0b54ad8147" parent_id_arme="fe05b82a-f135-40dd-bc61-eb9ef80f5e67">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Khoros Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc" parent_id_arme="fe05b82a-f135-40dd-bc61-eb9ef80f5e67" />
+  <event name="Ship1 Activation Range" id_arme="2af1f1bb-a98c-4975-a22f-2d27758215cd" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Khoros Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="9c03ee9f-a867-4899-857f-0cbecfa9fa1b" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Khoros Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="f4e239fd-e7ec-4706-838c-3b2bb27a7aa2" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Khoros Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="3856eaee-a6a0-4773-ba51-303a1cca3718" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Khoros Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="4ea611d1-24d6-45ad-afa2-00dc327e6177" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Khoros Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="8fd430ef-0adc-4ec1-a3a5-f53bed900a2c" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Khoros Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="ea052940-bfaa-4961-9a55-06d872023e05" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Khoros Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="45df312a-f57e-4dfa-986c-42dea144f4e1" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Khoros Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="b8a7b882-8a17-4884-84e1-c7a5cbdabd12" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Khoros Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="ab95d9a5-034a-4edd-95f4-2c191c88e13b" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Khoros Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="41c25c31-8669-4167-b626-ef99cc47480a" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Khoros Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="9733fee6-990b-4299-936a-87ba58b94750" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Khoros Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="06381628-b3fa-4291-8dd9-bdf07e391c32" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Khoros Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="ef29dff9-182a-4b3f-8f8a-b6f991bee8d9" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Khoros Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="ebd6d50c-4118-4054-ae25-99f89877cda0" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Khoros Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="1d9e2734-6688-4b6a-b155-16700bc27d2d" parent_id_arme="e55f422a-a453-4f53-8d1e-a9be347eb6cc">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Khoros Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="221223cb-5d59-49e5-b06d-34e555477d54" parent_id_arme="fe05b82a-f135-40dd-bc61-eb9ef80f5e67">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Khoros Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="aa05c1aa-fe7c-4940-936c-6cae6fae3972" parent_id_arme="fe05b82a-f135-40dd-bc61-eb9ef80f5e67">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Khoros Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Eulis to Khoros" value="1.0" />
+    <set_variable name="Khoros System" value="1.0" />
+    <set_variable name="Sector" value="4" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="13d2fb3b-559b-43d8-bb0a-bef11f344086" parent_id_arme="31e1c238-0ae5-4171-bd58-6715b6516883" />
+  <event name="Generate Sector Entities" id_arme="76c80552-4e09-4ac2-8dc1-2d5b7616206c" parent_id_arme="13d2fb3b-559b-43d8-bb0a-bef11f344086">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="11429.0" y="0.0" z="29642.0" name="Khoros Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="74108.0" y="0.0" z="75714.0" name="Marge Security" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="21742.0" y="0.0" z="26294.0" angle="108.4" name="Ketan Customs" hullID="1053" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="0020ad4d-1702-4f68-a16f-1900c868bf3f" parent_id_arme="13d2fb3b-559b-43d8-bb0a-bef11f344086">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Khoros Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Khoros Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Khoros Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Khoros Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="ccac28eb-5a42-4ada-b71c-e2416e2d8806" parent_id_arme="13d2fb3b-559b-43d8-bb0a-bef11f344086">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Khoros Gate" />
+    <destroy name="Marge Security" />
+    <destroy name="Ketan Customs" />
+    <destroy name="Eulis VIII" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Khoros" id_arme="4db5ffba-6ddb-437d-908d-882fe825f082" parent_id_arme="31e1c238-0ae5-4171-bd58-6715b6516883">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Khoros to Eulis" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Khoros Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Khoros Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Khoros Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Khoros Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Khoros Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Khoros Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Khoros Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Khoros Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Khoros to Eulis" value="0.0" />
+  </event>
+  <folder_arme name="Eulis Sector IX" id_arme="2f3faa50-2377-4ae8-9fd7-81f52bd5ce44" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector IX" id_arme="488aef6d-e217-4949-9d74-f534453933ab" parent_id_arme="2f3faa50-2377-4ae8-9fd7-81f52bd5ce44">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="3497.0" startY="0.0" startZ="3936.0" endX="19560.0" endY="0.0" endZ="4889.0" randomRange="3502" />
+    <create count="50" type="nebulas" startX="10318.0" startY="0.0" startZ="9290.0" endX="26162.0" endY="0.0" endZ="35916.0" randomRange="5355" />
+    <create count="10" type="nebulas" startX="25942.0" startY="0.0" startZ="37750.0" endX="20367.0" endY="0.0" endZ="67750.0" randomRange="4569" />
+    <create count="60" type="asteroids" startX="93057.0" startY="0.0" startZ="65550.0" endX="54695.0" endY="0.0" endZ="48973.0" randomRange="6899" />
+    <create count="50" type="asteroids" startX="95111.0" startY="0.0" startZ="52640.0" endX="65404.0" endY="0.0" endZ="45012.0" randomRange="5641" />
+    <create count="10" type="asteroids" startX="58949.0" startY="0.0" startZ="42958.0" endX="47213.0" endY="0.0" endZ="20513.0" randomRange="3151" />
+    <create count="40" type="asteroids" startX="87629.0" startY="0.0" startZ="43178.0" endX="59389.0" endY="0.0" endZ="14132.0" randomRange="4604" />
+    <create count="10" type="asteroids" startX="59243.0" startY="0.0" startZ="18459.0" endX="48167.0" endY="0.0" endZ="18386.0" randomRange="4946" />
+  </event>
+  <folder_arme name="Navigation" id_arme="08ceadfc-6d1c-4d2b-a708-e4307a685a4a" parent_id_arme="2f3faa50-2377-4ae8-9fd7-81f52bd5ce44" />
+  <event name="Transition to Sector X" id_arme="4716a078-cecc-448d-80fb-9df9e278d97c" parent_id_arme="08ceadfc-6d1c-4d2b-a708-e4307a685a4a">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="69166d4d-57bf-405f-b645-d2936717ee8f" parent_id_arme="08ceadfc-6d1c-4d2b-a708-e4307a685a4a">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="bbd64bd4-6572-40d7-aa38-0e4daf085a9c" parent_id_arme="08ceadfc-6d1c-4d2b-a708-e4307a685a4a">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="da02711c-dcbe-4075-97a5-bc566b4c0738" parent_id_arme="08ceadfc-6d1c-4d2b-a708-e4307a685a4a" />
+  <event name="Gate Offline" id_arme="4882b592-2fa4-4722-b1ae-51906c42e649" parent_id_arme="da02711c-dcbe-4075-97a5-bc566b4c0738">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Reema Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0" parent_id_arme="da02711c-dcbe-4075-97a5-bc566b4c0738" />
+  <event name="Ship1 Activation Range" id_arme="d9a7915a-dd86-46d6-88af-a0c0f51ec8fb" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="0d508931-4817-4837-a6a8-95d1b1e5febe" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="81e8adac-8b17-4426-8ea2-8e207ba25f0f" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="9b4a4692-5ec5-4678-980e-feda922036c0" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="80276180-5bcb-4f24-98c5-17a09be2c20a" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="42c76d86-8dac-4fc7-b1bf-f84ed7c6f052" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="b8cc19aa-7ea2-4916-896d-49fb9c217ebb" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="71d55da2-9ea7-4022-8398-21353135a0bc" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="b456ecb8-ef23-4e68-8c45-95e18a03c829" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="b4274069-40d5-4313-a6f2-0da3a7d25bbe" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="6bfbcffe-c458-44c7-b204-843d7c4a3bc1" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="1fa1b7c4-db76-438e-908a-9a8c831f90a2" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="9051c64d-e7a2-4fd8-85e6-fe2ae6ff0617" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="7aa2c5d3-d2ad-452d-ad6c-1bbb5bf37081" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="0b65aabe-e47e-4f1e-a909-9786a3fabdc1" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="feb28db2-75f1-496d-8528-64203c7ec600" parent_id_arme="4da06451-ab3c-4da5-b18d-96d496d7b7f0">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="c2b4780c-d870-4f33-b694-a3aedaa10111" parent_id_arme="da02711c-dcbe-4075-97a5-bc566b4c0738">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Reema Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="86fcbea5-56fe-4c99-b680-68e75ba182f5" parent_id_arme="da02711c-dcbe-4075-97a5-bc566b4c0738">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Eulis to Reema" value="1.0" />
+    <set_variable name="Reema System" value="1.0" />
+    <set_variable name="Sector" value="25" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="16b0ec91-5e15-481d-98eb-fc3ceddf51d6" parent_id_arme="2f3faa50-2377-4ae8-9fd7-81f52bd5ce44" />
+  <event name="Generate Sector Entities" id_arme="18a078c1-5b31-4283-89e7-b645006f2fa7" parent_id_arme="16b0ec91-5e15-481d-98eb-fc3ceddf51d6">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="67411.0" y="0.0" z="58571.0" name="Reema Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="29108.0" y="0.0" z="76116.0" name="Veich" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="56831.0" y="0.0" z="61250.0" angle="282.7" name="Reticle Inspections" hullID="1053" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis IX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="bf629e18-8e2f-4fa5-810d-76f09b608420" parent_id_arme="16b0ec91-5e15-481d-98eb-fc3ceddf51d6">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Reema Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Reema Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Reema Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Reema Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="87a3f648-4343-4dac-9b5e-219ed0846388" parent_id_arme="16b0ec91-5e15-481d-98eb-fc3ceddf51d6">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Reema Gate" />
+    <destroy name="Veich" />
+    <destroy name="Reticle Inspections" />
+    <destroy name="Eulis IX" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Reema" id_arme="63e8896d-ffcc-43e2-953b-a5e5ede7fa26" parent_id_arme="2f3faa50-2377-4ae8-9fd7-81f52bd5ce44">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Reema to Eulis" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Reema Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Reema to Eulis" value="0.0" />
+  </event>
+  <folder_arme name="Eulis Sector X" id_arme="f5600f78-3493-4fdb-9d88-18096d0312a7" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector X" id_arme="0b981e6f-2db7-4d6c-a628-634af2099458" parent_id_arme="f5600f78-3493-4fdb-9d88-18096d0312a7">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="92397.0" startY="0.0" startZ="4743.0" endX="96504.0" endY="0.0" endZ="10317.0" randomRange="4417" />
+    <create count="50" type="nebulas" startX="86015.0" startY="0.0" startZ="96723.0" endX="8045.0" endY="0.0" endZ="71124.0" randomRange="5404" />
+    <create count="20" type="nebulas" startX="29976.0" startY="0.0" startZ="73105.0" endX="3717.0" endY="0.0" endZ="51540.0" randomRange="7426" />
+    <create count="60" type="nebulas" startX="49340.0" startY="0.0" startZ="92909.0" endX="5257.0" endY="0.0" endZ="88215.0" randomRange="6286" />
+    <create count="10" type="nebulas" nebType="2" startX="39288.0" startY="0.0" startZ="87433.0" endX="26986.0" endY="0.0" endZ="81975.0" randomRange="2573" />
+  </event>
+  <folder_arme name="Navigation" id_arme="efbd25c4-9d2c-4ace-8741-871312f09caa" parent_id_arme="f5600f78-3493-4fdb-9d88-18096d0312a7" />
+  <event name="Transition to Sector XI" id_arme="64279301-9ae7-4a35-a9b7-2b69d4f5e3f4" parent_id_arme="efbd25c4-9d2c-4ace-8741-871312f09caa">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="47f39cf0-2d37-40ca-b3a3-20ad91d717bd" parent_id_arme="efbd25c4-9d2c-4ace-8741-871312f09caa">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="2c2edd45-f149-40b9-9043-5ca3bb7d6bd0" parent_id_arme="efbd25c4-9d2c-4ace-8741-871312f09caa">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="b741c46c-79d2-4427-8bfa-e7dbb930a9df" parent_id_arme="efbd25c4-9d2c-4ace-8741-871312f09caa">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="abb6f0a7-eed2-46a1-a920-73805f35d921" parent_id_arme="efbd25c4-9d2c-4ace-8741-871312f09caa">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="7fd41765-e9f0-4ee2-b3f8-cc6228df7504" parent_id_arme="f5600f78-3493-4fdb-9d88-18096d0312a7" />
+  <event name="Generate Sector Entities" id_arme="2a70c278-5887-486b-bf90-ceb8bc40654e" parent_id_arme="7fd41765-e9f0-4ee2-b3f8-cc6228df7504">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis X" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="203d96c1-b393-49d8-9b55-8296645a5e6b" parent_id_arme="7fd41765-e9f0-4ee2-b3f8-cc6228df7504">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="a6fd9e42-d29c-463d-9141-73b2902cfe65" parent_id_arme="7fd41765-e9f0-4ee2-b3f8-cc6228df7504">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Eulis X" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Eulis Sector XI" id_arme="a29b15f1-3307-4d2f-94e2-061e6ed1b34c" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector XI" id_arme="902b5d1c-4a49-4e8a-aadd-66666bee725f" parent_id_arme="a29b15f1-3307-4d2f-94e2-061e6ed1b34c">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="40" type="nebulas" startX="96944.0" startY="0.0" startZ="57481.0" endX="96651.0" endY="0.0" endZ="96283.0" randomRange="4140" />
+    <create count="60" type="nebulas" startX="93717.0" startY="0.0" startZ="94816.0" endX="17360.0" endY="0.0" endZ="52420.0" randomRange="4257" />
+    <create count="80" type="nebulas" startX="50661.0" startY="0.0" startZ="54767.0" endX="88142.0" endY="0.0" endZ="75525.0" randomRange="10055" />
+    <create count="80" type="nebulas" startX="5771.0" startY="0.0" startZ="59535.0" endX="44279.0" endY="0.0" endZ="53667.0" randomRange="10055" />
+    <create count="60" type="asteroids" startX="55575.0" startY="0.0" startZ="29242.0" endX="29389.0" endY="0.0" endZ="22933.0" randomRange="3434" />
+    <create count="10" type="asteroids" startX="54108.0" startY="0.0" startZ="20220.0" endX="35771.0" endY="0.0" endZ="16699.0" randomRange="3336" />
+    <create count="10" type="asteroids" startX="51027.0" startY="0.0" startZ="33349.0" endX="28802.0" endY="0.0" endZ="26601.0" randomRange="4447" />
+  </event>
+  <folder_arme name="Navigation" id_arme="c71cd06d-8b6c-426b-ac10-20a4e09c869f" parent_id_arme="a29b15f1-3307-4d2f-94e2-061e6ed1b34c" />
+  <event name="Transition to Sector XII" id_arme="cb6fe6b0-741b-47a0-9853-a51d8b332655" parent_id_arme="c71cd06d-8b6c-426b-ac10-20a4e09c869f">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="31cca42a-7583-4563-87cf-ae450da65781" parent_id_arme="c71cd06d-8b6c-426b-ac10-20a4e09c869f">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="42dfda96-cae5-4518-8eb8-9786995a38b3" parent_id_arme="c71cd06d-8b6c-426b-ac10-20a4e09c869f">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="e434a98f-c719-4a63-8b09-b1a019b955d7" parent_id_arme="c71cd06d-8b6c-426b-ac10-20a4e09c869f">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="010f387b-544f-4c85-94c0-7e5b7afabb31" parent_id_arme="c71cd06d-8b6c-426b-ac10-20a4e09c869f">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="7aa16168-af6b-453c-a4ac-415181a692e2" parent_id_arme="a29b15f1-3307-4d2f-94e2-061e6ed1b34c" />
+  <event name="Generate Sector Entities" id_arme="1d86aac4-d7a5-4566-b95b-b4cf56979a30" parent_id_arme="7aa16168-af6b-453c-a4ac-415181a692e2">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="72768.0" y="0.0" z="30982.0" name="Charity" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="69956.0" y="0.0" z="26428.0" name="Faith" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="66742.0" y="0.0" z="31919.0" name="Hope" hullID="1056" sideValue="sectorSide" />
+    <create type="neutral" x="18929.0" y="0.0" z="54553.0" angle="0" name="LCR-3" hullID="1055" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis XI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="0a6030a8-76ba-4d41-af49-3686883da578" parent_id_arme="7aa16168-af6b-453c-a4ac-415181a692e2">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="bdcf85e7-bd5c-49ae-8452-4d3520e98afc" parent_id_arme="7aa16168-af6b-453c-a4ac-415181a692e2">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Charity" />
+    <destroy name="Faith" />
+    <destroy name="Hope" />
+    <destroy name="LCR-3" />
+    <destroy name="Eulis XI" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Eulis Sector XII" id_arme="84b3e4e1-3534-49e1-bc66-988b6c3e0acf" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
+  <event name="Create Eulis Sector XII" id_arme="1c25873b-aa68-4bac-ba42-56d0306dde5f" parent_id_arme="84b3e4e1-3534-49e1-bc66-988b6c3e0acf">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <create count="18" type="nebulas" startX="96651.0" startY="0.0" startZ="53007.0" endX="96798.0" endY="0.0" endZ="69511.0" randomRange="4201" />
+    <create count="10" type="nebulas" startX="92397.0" startY="0.0" startZ="52273.0" endX="29536.0" endY="0.0" endZ="64449.0" randomRange="2803" />
+    <create count="30" type="nebulas" startX="91296.0" startY="0.0" startZ="61662.0" endX="35184.0" endY="0.0" endZ="64743.0" randomRange="4595" />
+    <create count="80" type="asteroids" startX="22934.0" startY="0.0" startZ="79779.0" endX="22934.0" endY="0.0" endZ="79779.0" randomRange="9393" />
+    <create count="50" type="asteroids" startX="56675.0" startY="0.0" startZ="92396.0" endX="33130.0" endY="0.0" endZ="76919.0" randomRange="4086" />
+    <create count="60" type="asteroids" startX="44353.0" startY="0.0" startZ="94669.0" endX="17067.0" endY="0.0" endZ="91955.0" randomRange="4924" />
+    <create count="10" type="asteroids" startX="21321.0" startY="0.0" startZ="69657.0" endX="1150.0" endY="0.0" endZ="71051.0" randomRange="6065" />
+    <create count="10" type="asteroids" startX="9878.0" startY="0.0" startZ="73765.0" endX="8705.0" endY="0.0" endZ="95623.0" randomRange="6391" />
+    <create count="10" type="nebulas" startX="49120.0" startY="0.0" startZ="2469.0" endX="61003.0" endY="0.0" endZ="5916.0" randomRange="3764" />
+    <create count="10" type="nebulas" startX="45893.0" startY="0.0" startZ="5843.0" endX="2910.0" endY="0.0" endZ="3422.0" randomRange="5554" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Eulis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="34b2ba05-e4d9-45a2-80e9-fa6af51fba50" parent_id_arme="84b3e4e1-3534-49e1-bc66-988b6c3e0acf" />
+  <event name="Transition to Sector XI" id_arme="bba1b6ee-cca1-4cdc-bf05-f466f61f7c16" parent_id_arme="34b2ba05-e4d9-45a2-80e9-fa6af51fba50">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="3b7a5802-aec4-4a8a-83b8-7a95b829d383" parent_id_arme="34b2ba05-e4d9-45a2-80e9-fa6af51fba50">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="0527c6da-4d12-45e8-8d5c-868a3811eec2" parent_id_arme="34b2ba05-e4d9-45a2-80e9-fa6af51fba50">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="691bab30-dd3d-484f-badb-51f2b2214270" parent_id_arme="34b2ba05-e4d9-45a2-80e9-fa6af51fba50" />
+  <event name="Gate Offline" id_arme="54f34bed-ac98-4c63-b80c-95b8e96d9ad6" parent_id_arme="691bab30-dd3d-484f-badb-51f2b2214270">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Mria Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06" parent_id_arme="691bab30-dd3d-484f-badb-51f2b2214270" />
+  <event name="Ship1 Activation Range" id_arme="5a83e841-5acc-49f9-89d8-98aaa1c2a6a8" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="8a82885b-6631-4120-9812-dd820136c2b7" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="b4399bd5-8738-488b-994b-3f3f84d2d5e9" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="64295efd-9379-4522-9aa9-849598490cc4" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="6a8d8ab5-93ea-41d5-bd07-8a25600acd4f" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="b7ef50dd-6710-4a2f-a4e3-c1fee6e5fe8c" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="00482d66-5bcc-4770-91ee-1667ffffff46" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="a0f3df07-99e0-44ec-a23e-45e236ef4f3f" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="42fb6d47-ce9a-4af9-ad41-70377c40e3f4" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="ddfdc29e-5512-4971-af2b-892fe5e515e3" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="5b724f7a-4e5e-4569-8561-f20dca6ecdf3" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="8df9a940-e727-4673-a2cc-6bada03c48b7" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="cd240933-48a9-4b22-b925-7c495aa5dc68" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="dba9b6bb-fa57-4ddf-93bb-9b4aedd2c305" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="cd4499d9-01da-4ae2-8c95-dabb36983954" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="753e8020-abdd-4f02-82ed-1e099817f7f7" parent_id_arme="cb9b5c92-7a04-4d9b-97f0-0fe7cef75c06">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="96c9d29d-ae14-4c86-9615-ab9b33778621" parent_id_arme="691bab30-dd3d-484f-badb-51f2b2214270">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Mria Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="5a5ad38e-465c-40a9-94d8-696a6d82472c" parent_id_arme="691bab30-dd3d-484f-badb-51f2b2214270">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Mria Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Eulis System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Eulis to Mria" value="1.0" />
+    <set_variable name="Mria System" value="1.0" />
+    <set_variable name="Sector" value="2" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="988e25f9-7a65-4561-a26e-df5cf6595cc2" parent_id_arme="84b3e4e1-3534-49e1-bc66-988b6c3e0acf" />
+  <event name="Generate Sector Entities" id_arme="81ed3978-3b95-411d-9f48-32c5d988eca6" parent_id_arme="988e25f9-7a65-4561-a26e-df5cf6595cc2">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="45453.0" y="0.0" z="37090.0" name="Mria Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="55625.0" y="0.0" z="27901.0" angle="134.2" name="Madison Customs" hullID="1053" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Eulis XII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="322201d6-a511-4895-8afc-cd1a171a8b38" parent_id_arme="988e25f9-7a65-4561-a26e-df5cf6595cc2">
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Mria Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Mria Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Mria Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Mria Gate" />
+    <set_object_property property="turnRate" value="0.0" name="Madison Customs" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="81d09f40-06e4-496c-a007-1412acc0ae84" parent_id_arme="988e25f9-7a65-4561-a26e-df5cf6595cc2">
+    <if_variable name="Eulis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Eulis XII" />
+    <destroy name="Madison Customs" />
+    <destroy name="Mria Gate" />
+    <set_variable name="Eulis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Mria" id_arme="9ca7d21b-d625-4376-8454-6576f8e82295" parent_id_arme="84b3e4e1-3534-49e1-bc66-988b6c3e0acf">
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Mria to Eulis" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Mria Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Mria to Eulis" value="0.0" />
+  </event>
+</mission_data>

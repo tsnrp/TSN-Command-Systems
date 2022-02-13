@@ -1,0 +1,974 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="1100.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="200.0" integer="yes" />
+    <set_variable name="Alignment" value="Hegemony" integer="yes" />
+  </start>
+  <folder_arme name="Erowis System" id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <folder_arme name="Erowis Settings" id_arme="a5dba461-b284-47ac-955b-3589afa07984" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <folder_arme name="Erowis Menu" id_arme="678e3871-0237-498c-bc2c-a0c3ae561298" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984" />
+  <event name="Erowis Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="678e3871-0237-498c-bc2c-a0c3ae561298">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Erowis System" />
+    <set_variable name="Erowis Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="678e3871-0237-498c-bc2c-a0c3ae561298">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Erowis System" />
+  </event>
+  <event name="Erowis System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="678e3871-0237-498c-bc2c-a0c3ae561298">
+    <if_gm_button text="Lower Arc/Erowis System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="101.0" integer="yes" />
+    <set_variable name="Erowis System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="1.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Erowis Sector I" id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Erowis Sector I" id_arme="3f891468-1e8e-4606-acd9-c4ce08ec9c6e" parent_id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <create count="150" type="nebulas" startX="65134.0" startY="0.0" startZ="22544.0" endX="2992.0" endY="0.0" endZ="62723.0" randomRange="15000" />
+    <create count="50" type="asteroids" startX="34331.0" startY="0.0" startZ="36875.0" radius="3000" randomRange="5000" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erowis System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea" parent_id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246" />
+  <event name="Transition to Sector II" id_arme="e450f899-09ad-407f-8d81-d333578cac19" parent_id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="8e7c22d0-03d5-4a41-8971-151bcdf31e69" parent_id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="ff809e3a-c02f-4301-9ad7-25860360f6cc" parent_id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea" />
+  <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Drenan Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" />
+  <event name="Ship1 Activation Range" id_arme="9ee3d7c6-fc41-4126-9f10-ff4740910803" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Drenan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="a17eaf43-4ffc-4aab-8b15-1a3117b245d3" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Drenan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="821c7eeb-4bda-470d-b813-db2f91f723f0" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Drenan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="8538df1f-9f88-48bc-8fd3-25f196f7707d" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Drenan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="487a4879-0868-4f63-8533-6213ba0d530f" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Drenan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="cfecc391-c0f4-40c4-ac0c-262dce7f46bb" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Drenan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="f6a229f0-ba8d-42f4-b3a7-e17f26ffaa78" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Drenan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="6aefb361-f909-4601-b04d-64ee277ae1fa" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Drenan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="ab17df6f-e69c-4bb7-88d2-466ab15382a3" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Drenan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="305f2236-daf5-477e-a42f-c20a910ca54f" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Drenan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="a06e393a-a845-4ac1-a474-f561bafe34cc" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Drenan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="6f3cc0a7-9479-4ed6-8f08-1d2e8862b558" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Drenan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="aa322b59-8748-4f26-a9ea-089be033b6fd" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Drenan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="6605b477-d0b3-406f-98b2-d317c4c1f2b6" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Drenan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="6d6d19a5-7e59-4609-a4d6-057b979f2dfe" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Drenan Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="e727d711-e221-4770-bdcf-0205f51d2e40" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Drenan Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="e113c47c-ccd7-48c8-b520-4174a25a8a6a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Drenan Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="cbb7a700-d872-4afe-97b3-23b096f478c8" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Drenan Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Erowis to Drenan" value="1.0" />
+    <set_variable name="Drenan System" value="1.0" />
+    <set_variable name="Sector" value="5.0" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="91acdb57-6210-4d66-9a20-a4082d37678c" parent_id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246" />
+  <event name="Generate Sector Entities" id_arme="43a2964c-e793-4f24-9099-cd721a0c093c" parent_id_arme="91acdb57-6210-4d66-9a20-a4082d37678c">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Erowis I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="genericMesh" x="59911.0" y="0.0" z="44241.0" name="Drenan Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="enemy" x="30849.0" y="0.0" z="67946.0" angle="0" name="Drenan Gatekeeper" hullID="1005" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="42233.0" y="0.0" z="74375.0" angle="0" name="Ashtarna Dry Dock" hullID="1358" sideValue="sectorSide" fleetnumber="-1" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="eef4d5af-9da6-4f33-a6fe-f33165d7d2ce" parent_id_arme="91acdb57-6210-4d66-9a20-a4082d37678c">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Drenan Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Drenan Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Drenan Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Drenan Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="3ac6a44b-2500-4ec3-bba5-8d7f632f975b" parent_id_arme="91acdb57-6210-4d66-9a20-a4082d37678c">
+    <if_variable name="Erowis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Erowis I" />
+    <destroy name="Drenan Gate" />
+    <destroy name="Drenan Gatekeeper" />
+    <destroy name="Ashtarna Dry Dock" />
+    <set_variable name="Erowis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Drenan" id_arme="708fb0d4-2d70-4140-898b-8cb4cbc6d044" parent_id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Drenan to Erowis" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Drenan Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Drenan Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Drenan Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Drenan Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Drenan Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Drenan Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Drenan Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Drenan Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Drenan to Erowis" value="0.0" />
+  </event>
+  <folder_arme name="Erowis Sector II" id_arme="42a04c39-e5a4-4f76-83b7-6c44b0b6ed75" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Erowis Sector II" id_arme="8a11ce37-4996-44f2-9963-af5619d2fe6c" parent_id_arme="42a04c39-e5a4-4f76-83b7-6c44b0b6ed75">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <create count="150" type="nebulas" startX="98617.0" startY="0.0" startZ="58437.0" endX="3125.0" endY="0.0" endZ="39285.0" randomRange="15000" />
+    <create count="250" type="asteroids" startX="69286.0" startY="-300.0" startZ="12633.0" endX="37679.0" endY="300.0" endZ="80669.0" randomRange="10000" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="Erowis System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6" parent_id_arme="42a04c39-e5a4-4f76-83b7-6c44b0b6ed75" />
+  <event name="Transition to Sector III" id_arme="cecd9a83-5a60-4134-8fa9-e366e25e7ab1" parent_id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="2e122b7a-bd1f-46fd-a224-2ead0691daff" parent_id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="f63685e9-45c2-4ac6-9304-54d07e0c8f8c" parent_id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="6465e855-338e-4263-b264-39e44d06fad2" parent_id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="503aea4a-03d8-4c91-9342-536139ce369d" parent_id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="14ef3586-ba7c-4516-9b4f-57f28ca5073e" parent_id_arme="42a04c39-e5a4-4f76-83b7-6c44b0b6ed75" />
+  <event name="Generate Sector Entities" id_arme="b4d6c07f-b554-4fa9-b705-2d113f037c19" parent_id_arme="14ef3586-ba7c-4516-9b4f-57f28ca5073e">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Erowis II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="enemy" x="52545.0" y="0.0" z="48125.0" angle="0" name="Iniyi Trading Post" hullID="1008" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="59777.0" y="-150.0" z="37544.0" angle="0" name="Cloak1" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="44643.0" y="200.0" z="60312.0" angle="0" name="Cloak2" hullID="1351" sideValue="sectorSide" fleetnumber="-1" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="8385a649-07d1-4308-8f39-3ace36ee94ca" parent_id_arme="14ef3586-ba7c-4516-9b4f-57f28ca5073e">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="790ffa74-dd43-4841-8d72-eff8e73b668e" parent_id_arme="14ef3586-ba7c-4516-9b4f-57f28ca5073e">
+    <if_variable name="Erowis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Erowis II" />
+    <destroy name="Iniyi Trading Post" />
+    <destroy name="Cloak1" />
+    <destroy name="Cloak2" />
+    <set_variable name="Erowis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erowis Sector III" id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Erowis Sector III" id_arme="79f935b9-9c53-4db9-a765-907636dbc3b2" parent_id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <create count="100" type="nebulas" startX="98349.0" startY="0.0" startZ="39821.0" endX="47054.0" endY="0.0" endZ="9285.0" randomRange="15000" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="Erowis System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="123248e1-d36f-4070-88a1-1bd1d7324198" parent_id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594" />
+  <event name="Transition to Sector II" id_arme="89797f69-10d5-4402-8f31-ec1e1925f9a6" parent_id_arme="123248e1-d36f-4070-88a1-1bd1d7324198">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="a3bb0bba-8438-40ab-804b-7e0568f5f8cf" parent_id_arme="123248e1-d36f-4070-88a1-1bd1d7324198">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="491e0b1c-8be1-4e47-8777-702617db55cd" parent_id_arme="123248e1-d36f-4070-88a1-1bd1d7324198">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="2b9dfa54-865b-4cb4-b7b4-578f337bea97" parent_id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594" />
+  <event name="Generate Sector Entities" id_arme="5ef24497-8bdb-4ed2-b0da-e186f5096f52" parent_id_arme="2b9dfa54-865b-4cb4-b7b4-578f337bea97">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Erowis III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="c449f42d-1275-4644-8993-a13777dbf658" parent_id_arme="2b9dfa54-865b-4cb4-b7b4-578f337bea97">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="d1baf9f9-16e4-4e6d-a887-da9f0c2e4853" parent_id_arme="2b9dfa54-865b-4cb4-b7b4-578f337bea97">
+    <if_variable name="Erowis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Erowis III" />
+    <set_variable name="Erowis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erowis Sector IV" id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Erowis Sector IV" id_arme="ec122f90-212a-4a33-9285-9c92b2de90f4" parent_id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <create count="100" type="nebulas" nebType="2" startX="57233.0" startY="0.0" startZ="43973.0" endX="35000.0" endY="0.0" endZ="61517.0" randomRange="20000" />
+    <create count="100" type="nebulas" nebType="3" startX="47724.0" startY="0.0" startZ="41964.0" endX="48661.0" endY="0.0" endZ="61785.0" randomRange="20000" />
+    <create count="50" type="asteroids" startX="75179.0" startY="0.0" startZ="36875.0" endX="49063.0" endY="0.0" endZ="63928.0" randomRange="8000" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Erowis System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01" parent_id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172" />
+  <event name="Transition to Sector V" id_arme="285b096a-651f-4081-b47f-cdf2988e8743" parent_id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="d212ec07-7da0-46fc-b0c5-723236ef0c73" parent_id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="a12c7c30-a911-4c33-854e-b455847aad2e" parent_id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="bae8cfb4-22c6-4e5f-9d3e-01beb1742504" parent_id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172" />
+  <event name="Generate Sector Entities" id_arme="d9eb6ce0-b342-474d-85ce-1b17047d2c7c" parent_id_arme="bae8cfb4-22c6-4e5f-9d3e-01beb1742504">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Erowis IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="04444f12-d2e9-4fb1-8a03-17ad8e0dc1d8" parent_id_arme="bae8cfb4-22c6-4e5f-9d3e-01beb1742504">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="8e4c66ce-4ab9-42dc-a40d-d61fc4042842" parent_id_arme="bae8cfb4-22c6-4e5f-9d3e-01beb1742504">
+    <if_variable name="Erowis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Erowis IV" />
+    <set_variable name="Erowis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erowis Sector V" id_arme="3bea3bd9-b6ce-446a-9f13-c784edaa29c3" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Erowis Sector V" id_arme="b3bf3ecc-3be4-459a-a8b4-b4ff655005d6" parent_id_arme="3bea3bd9-b6ce-446a-9f13-c784edaa29c3">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <create count="250" type="asteroids" startX="51875.0" startY="400.0" startZ="49062.0" endX="36474.0" endY="-400.0" endZ="67544.0" randomRange="20000" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Erowis System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3" parent_id_arme="3bea3bd9-b6ce-446a-9f13-c784edaa29c3" />
+  <event name="Transition to Sector VI" id_arme="61954ed9-5dce-4258-b9e4-cb159bd5018b" parent_id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="e76d7650-4dca-4afb-a0da-2dcec5d85a86" parent_id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="9602abcc-62ac-4b84-85a3-6f9873dc73fe" parent_id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="0a10c239-ed7d-48e8-8201-2b80cd3b387f" parent_id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="537e5518-40f5-4fce-a338-1b91ad461f4d" parent_id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d065efb2-4bc7-4e7a-bbe5-f72bff47506c" parent_id_arme="3bea3bd9-b6ce-446a-9f13-c784edaa29c3" />
+  <event name="Generate Sector Entities" id_arme="54d9a1d4-6c4a-4838-8bce-6a20e6d7fe8a" parent_id_arme="d065efb2-4bc7-4e7a-bbe5-f72bff47506c">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Erowis V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="enemy" x="54420.0" y="0.0" z="29776.0" angle="0" name="Erowis Master" hullID="1005" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="48259.0" y="-200.0" z="62187.0" angle="0" name="Op Refinery" hullID="1357" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="37143.0" y="200.0" z="51339.0" angle="0" name="Thith Denabite" hullID="1355" sideValue="sectorSide" fleetnumber="-1" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="7aeec7b0-4c3b-437f-95fc-443a03ad5c0c" parent_id_arme="d065efb2-4bc7-4e7a-bbe5-f72bff47506c">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="035a667f-824f-4a8d-afed-2faaedc2207b" parent_id_arme="d065efb2-4bc7-4e7a-bbe5-f72bff47506c">
+    <if_variable name="Erowis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Erowis V" />
+    <destroy name="Erowis Master" />
+    <destroy name="Op Refinery" />
+    <destroy name="Thith Denabite" />
+    <set_variable name="Erowis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erowis Sector VI" id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Erowis Sector VI" id_arme="d1f648ed-607d-4f9b-9619-1550fdd1fe70" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <create count="100" type="nebulas" startX="15045.0" startY="0.0" startZ="86428.0" endX="35804.0" endY="0.0" endZ="65401.0" randomRange="15000" />
+    <create count="100" type="nebulas" nebType="2" startX="7009.0" startY="0.0" startZ="74508.0" endX="41563.0" endY="0.0" endZ="75446.0" randomRange="15000" />
+    <create count="60" type="asteroids" startX="89242.0" startY="0.0" startZ="9151.0" endX="86965.0" endY="0.0" endZ="20937.0" randomRange="8000" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Erowis System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" />
+  <event name="Transition to Sector V" id_arme="e70edfd4-10cc-44d3-aeb3-ade938c24a0c" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="cd733437-9156-48f8-82f9-ac5ad5130b57" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="ef7a40b7-0244-4570-b791-08da615c6969" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="9fc82c07-3802-488a-b718-6146f7a09d37" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" />
+  <event name="Gate Offline" id_arme="60abed91-3b08-4916-907a-8578c553980a" parent_id_arme="9fc82c07-3802-488a-b718-6146f7a09d37">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Krellis Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12" parent_id_arme="9fc82c07-3802-488a-b718-6146f7a09d37" />
+  <event name="Ship1 Activation Range" id_arme="97a8dca7-25b4-4164-8c40-4ad0fcceb4fd" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Krellis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="c97e9d5c-0414-4b84-af66-d21ddc6c8ebe" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Krellis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="9eb471ab-a80e-4ec2-b088-840b90199251" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Krellis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="bb13e005-5b75-4d30-95c3-0d969b34e4a5" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Krellis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="64f81037-7721-4c0a-9785-862637b564e8" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Krellis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="b38b1c67-f926-4a74-9cc8-cfdaa417aa8a" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Krellis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="31557236-8aad-4fa7-b322-3097e001e291" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Krellis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="41dc0805-0306-494e-a429-fbc4a49237d3" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Krellis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="6e6879be-9ca9-4a8d-88a0-7298bc56cd4f" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Krellis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="05ce9c15-0c21-4190-a5c1-def7abc928f4" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Krellis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="c1d60b05-6f38-402c-8976-7eb38a8887b4" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Krellis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="58bbd99b-ed59-4521-b841-520e27fada9e" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Krellis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="aa490cce-0e9e-4b0a-ab5b-5aab061e9155" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Krellis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="b4d5057e-f93d-4267-9978-4ee99e19fdaf" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Krellis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="8a9a45f2-a2f3-4ace-bdff-96878f0448b2" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Krellis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="b9af3008-36d1-4ab8-92f2-d08b5ed255d6" parent_id_arme="8a83080e-f2b9-4d6f-ab82-b8977942ff12">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Krellis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="71f3b3c1-f227-4bde-8569-d5a5a61a33f4" parent_id_arme="9fc82c07-3802-488a-b718-6146f7a09d37">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Krellis Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="fb44b834-a13f-4e53-a107-d92b9e8e2636" parent_id_arme="9fc82c07-3802-488a-b718-6146f7a09d37">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Krellis Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Erowis System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Erowis to Krellis" value="1.0" />
+    <set_variable name="Krellis System" value="1.0" />
+    <set_variable name="Sector" value="8.0" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="bde8d601-a8e9-4c6e-a297-d5b20d6abcdb" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" />
+  <event name="Generate Sector Entities" id_arme="2630e448-64d0-4042-98b0-21f7b7d90656" parent_id_arme="bde8d601-a8e9-4c6e-a297-d5b20d6abcdb">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Erowis VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="genericMesh" x="24554.0" y="0.0" z="77991.0" name="Krellis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="enemy" x="49063.0" y="0.0" z="52410.0" angle="0" name="Krellis Gatekeeper" hullID="1354" sideValue="sectorSide" fleetnumber="-1" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="d473c86f-5148-4014-82ac-efd0415314b2" parent_id_arme="bde8d601-a8e9-4c6e-a297-d5b20d6abcdb">
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="1adb59af-690b-4641-ab92-c48257004899" parent_id_arme="bde8d601-a8e9-4c6e-a297-d5b20d6abcdb">
+    <if_variable name="Erowis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Erowis VI" />
+    <destroy name="Krellis Gate" />
+    <set_variable name="Erowis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Krellis" id_arme="f51e0d6e-1243-4ba9-aec6-e93ea5e6456d" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Krellis to Erowis" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Krellis Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Krellis Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Krellis Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Krellis Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Krellis Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Krellis Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Krellis Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Krellis Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Krellis to Erowis" value="0.0" />
+  </event>
+</mission_data>

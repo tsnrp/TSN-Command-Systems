@@ -1,0 +1,1815 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="341.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="279.0" integer="yes" />
+    <set_variable name="Alignment" value="Neutral" integer="yes" />
+  </start>
+  <folder_arme name="Hjorden System" id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <folder_arme name="Hjorden Settings" id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <folder_arme name="Hjorden Menu" id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" />
+  <event name="Hjorden Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Hjorden System" />
+    <set_variable name="Hjorden Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Hjorden System" />
+  </event>
+  <event name="Hjorden System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227">
+    <if_gm_button text="Lower Arc/Hjorden System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="102.0" integer="yes" />
+    <set_variable name="Hjorden System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Hjorden Sector I" id_arme="994a941f-a7a1-45b2-9635-b52ce51d6029" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Hjorden Sector I" id_arme="cd5a3fa4-c1b2-4451-8062-df9adf986d86" parent_id_arme="994a941f-a7a1-45b2-9635-b52ce51d6029">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Hjorden System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="40" type="nebulas" startX="67090.0" startY="0.0" startZ="9121.0" endX="88169.0" endY="0.0" endZ="22070.0" randomRange="4670" />
+    <create count="20" type="nebulas" startX="77629.0" startY="0.0" startZ="84102.0" endX="58809.0" endY="0.0" endZ="84705.0" randomRange="3776" />
+    <create count="50" type="asteroids" startX="31707.0" startY="0.0" startZ="16348.0" endX="42999.0" endY="0.0" endZ="25834.0" randomRange="4902" />
+    <create count="40" type="asteroids" startX="42698.0" startY="0.0" startZ="24479.0" endX="49775.0" endY="0.0" endZ="40439.0" randomRange="2559" />
+    <create count="10" type="asteroids" startX="50076.0" startY="0.0" startZ="39987.0" endX="56399.0" endY="0.0" endZ="53086.0" randomRange="1096" />
+    <create count="70" type="asteroids" startX="34116.0" startY="0.0" startZ="17402.0" endX="17253.0" endY="0.0" endZ="5508.0" randomRange="5571" />
+    <create count="12" type="nebulas" startX="61368.0" startY="0.0" startZ="38030.0" radius="4000" randomRange="3859" />
+  </event>
+  <folder_arme name="Navigation" id_arme="4975773b-0efa-4e1a-be5a-4413587b7212" parent_id_arme="994a941f-a7a1-45b2-9635-b52ce51d6029" />
+  <event name="Transition to Sector II" id_arme="38eca361-43c4-4bc5-9825-9a0eb72565ad" parent_id_arme="4975773b-0efa-4e1a-be5a-4413587b7212">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="f5e71e3b-b00c-40c2-a663-a2115cbae953" parent_id_arme="4975773b-0efa-4e1a-be5a-4413587b7212">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="be77d00c-2ff4-4db2-a59f-a5d26896c357" parent_id_arme="4975773b-0efa-4e1a-be5a-4413587b7212">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="6478d327-fe3c-4276-860c-283f7b770741" parent_id_arme="994a941f-a7a1-45b2-9635-b52ce51d6029" />
+  <event name="Generate Sector Entities" id_arme="295cbbad-46a7-4f31-a309-8f3bc47d77ea" parent_id_arme="6478d327-fe3c-4276-860c-283f7b770741">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+    <create type="station" x="59712.0" y="0.0" z="21016.0" angle="0" name="L-94" hullID="1100" />
+    <create type="station" x="65283.0" y="0.0" z="20414.0" angle="0" name="G-82" hullID="1100" />
+    <create type="station" x="64229.0" y="0.0" z="25081.0" angle="0" name="K-77" hullID="1100" />
+    <create type="station" x="68896.0" y="0.0" z="24178.0" angle="0" name="H-20" hullID="1100" />
+    <create type="station" x="54442.0" y="0.0" z="72208.0" angle="0" name="Lagora" hullID="1100" />
+  </event>
+  <event name="Settings" id_arme="04a78bbd-fa8d-4df6-9691-ee675302001c" parent_id_arme="6478d327-fe3c-4276-860c-283f7b770741">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="2bebeb7e-d7f2-4201-88df-eea883fadedf" parent_id_arme="6478d327-fe3c-4276-860c-283f7b770741">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="3.0" />
+    <destroy name="L-94" />
+    <destroy name="G-82" />
+    <destroy name="K-77" />
+    <destroy name="H-20" />
+    <destroy name="Lagora" />
+    <set_variable name="Hjorden System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Hjorden Sector II" id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Hjorden Sector II" id_arme="cbcb7ea4-4969-4fb9-a34c-96a8bfc90014" parent_id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Hjorden System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="33" type="nebulas" startX="16801.0" startY="0.0" startZ="82747.0" radius="12778" randomRange="13841" />
+    <create count="60" type="nebulas" startX="53689.0" startY="0.0" startZ="9422.0" endX="32460.0" endY="0.0" endZ="24328.0" randomRange="4390" />
+    <create count="20" type="nebulas" startX="88169.0" startY="0.0" startZ="83199.0" endX="66186.0" endY="0.0" endZ="78381.0" randomRange="3515" />
+    <create count="30" type="asteroids" startX="26136.0" startY="0.0" startZ="61969.0" endX="41644.0" endY="0.0" endZ="78230.0" randomRange="3434" />
+    <create count="30" type="asteroids" startX="23576.0" startY="0.0" startZ="59560.0" endX="1895.0" endY="0.0" endZ="49322.0" randomRange="4095" />
+    <create count="30" type="asteroids" startX="23878.0" startY="0.0" startZ="62722.0" endX="22522.0" endY="0.0" endZ="75821.0" randomRange="3620" />
+    <create count="30" type="asteroids" startX="25985.0" startY="0.0" startZ="55947.0" endX="22974.0" endY="0.0" endZ="26587.0" randomRange="2573" />
+    <create count="20" type="asteroids" startX="22522.0" startY="0.0" startZ="31555.0" endX="11381.0" endY="0.0" endZ="22371.0" randomRange="2896" />
+    <create count="10" type="nebulas" startX="19963.0" startY="0.0" startZ="47063.0" endX="16801.0" endY="0.0" endZ="39385.0" randomRange="2293" />
+    <create count="11" type="nebulas" startX="23275.0" startY="0.0" startZ="44203.0" endX="23125.0" endY="0.0" endZ="55646.0" randomRange="3544" />
+  </event>
+  <folder_arme name="Navigation" id_arme="40317299-7ecd-4667-92c0-248b4746aef7" parent_id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da" />
+  <event name="Transition to Sector III" id_arme="223845c0-0623-4342-aa3e-549381b4375b" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="23020da1-0002-4e32-86d3-9ac3263195dd" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="511a0770-540c-43e2-a9ed-4964ccf2f015" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="3bbdc285-0e89-495d-8f12-573f235a39be" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="38216a87-7000-4c88-8228-48779184b713" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="31ad8cea-530d-4c6e-b93e-d3ddcf977280" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7" />
+  <event name="Gate Offline" id_arme="5e0f0ab2-edcc-479f-bbf7-f8ad41b5914d" parent_id_arme="31ad8cea-530d-4c6e-b93e-d3ddcf977280">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Antara Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="3e326f62-613c-4278-acf7-6e72b46377ce" parent_id_arme="31ad8cea-530d-4c6e-b93e-d3ddcf977280" />
+  <event name="Ship1 Activation Range" id_arme="3a6f384a-7b7f-4e21-87fd-b5a73cd00a22" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Antara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="1524f12b-e3e9-41c3-bbf6-b0baebf2a596" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Antara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="c1d71243-9d8a-450b-8a9e-a4f0b9fa78cb" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Antara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="6e4ce426-48fa-465b-a348-b50a5d510575" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Antara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="66655d81-cb4d-4c9c-8d51-928709cf34fa" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Antara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="0962ecba-a631-4a9a-81c3-8e183e05a74f" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Antara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="ebfa1719-7aa4-4497-9042-c7131fd8acb8" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Antara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="3e2c4460-87da-485d-a3d2-513cc161e331" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Antara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="9fb87e80-1139-4734-a823-dfe3a821f273" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Antara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="f631ca1e-4eac-4197-93ab-2f5bee0e7e6c" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Antara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="6a6e9bfc-02fd-4dd6-93f7-d83a2c5b4d72" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Antara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="caefbb65-0177-461b-96ee-3bf0d36b1639" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Antara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="491191ea-11af-4479-bf9d-92be89e1543c" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Antara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="509d62d0-37ec-4115-b4c1-1d72d82a811f" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Antara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="74cdcb71-d389-44b8-abd0-8f4ff7bab1ef" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Antara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="5ae58192-d773-4e44-b97e-d07ac9741ce8" parent_id_arme="3e326f62-613c-4278-acf7-6e72b46377ce">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Antara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="44c4f151-3741-4e7d-958f-6564d725fb52" parent_id_arme="31ad8cea-530d-4c6e-b93e-d3ddcf977280">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Antara Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="408b6322-1ba9-4935-bb53-fe5d50004ec0" parent_id_arme="31ad8cea-530d-4c6e-b93e-d3ddcf977280">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Antara Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Hjorden to Antara" value="1.0" />
+    <set_variable name="Antara System" value="1.0" />
+    <set_variable name="Sector" value="6" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="43b8ed36-1779-4bd2-9ee7-7f18fef4859f" parent_id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da" />
+  <event name="Generate Sector Entities" id_arme="2128fd85-20ca-479d-9be2-dc5003f76466" parent_id_arme="43b8ed36-1779-4bd2-9ee7-7f18fef4859f">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="51280.0" y="0.0" z="35621.0" angle="0" name="S-54" hullID="1100" />
+    <create type="station" x="67391.0" y="0.0" z="46010.0" angle="0" name="L-01" hullID="1100" />
+    <create type="station" x="46914.0" y="0.0" z="19811.0" angle="0" name="Z-12" hullID="1100" />
+    <create type="station" x="87566.0" y="0.0" z="52333.0" angle="0" name="X-53" hullID="1100" />
+    <create type="station" x="49624.0" y="0.0" z="51129.0" angle="0" name="Nanara" hullID="1100" />
+    <create type="genericMesh" x="73714.0" y="0.0" z="28092.0" angle="0" name="Antara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="2b2290b7-7c2a-44ca-8565-bbd5cfc0284d" parent_id_arme="43b8ed36-1779-4bd2-9ee7-7f18fef4859f">
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Antara Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Antara Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Antara Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Antara Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="c04b6bf3-556b-455f-b5b5-5a02076f9512" parent_id_arme="43b8ed36-1779-4bd2-9ee7-7f18fef4859f">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Hjorden System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+    <destroy name="S-54" />
+    <destroy name="L-01" />
+    <destroy name="Z-12" />
+    <destroy name="X-53" />
+    <destroy name="Nanara" />
+    <destroy name="Antara Gate" />
+  </event>
+  <event name="Arrival From Antara" id_arme="ed32d38f-3d4b-4f63-9cac-f757b3b77195" parent_id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Antara to Hjorden" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Antara Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Antara Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Antara Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Antara Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Antara Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Antara Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Antara Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Antara Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Antara to Hjorden" value="0.0" />
+  </event>
+  <folder_arme name="Hjorden Sector III" id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Hjorden Sector III" id_arme="4d9141ec-c868-4ca6-85e5-74a62a9aea4e" parent_id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Hjorden System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="asteroids" startX="99913.0" startY="0.0" startZ="56549.0" endX="93890.0" endY="0.0" endZ="50376.0" randomRange="1763" />
+    <create count="100" type="asteroids" startX="71908.0" startY="0.0" startZ="25232.0" endX="71908.0" endY="0.0" endZ="25232.0" randomRange="17642" />
+    <create count="40" type="nebulas" startX="77629.0" startY="0.0" startZ="41944.0" endX="77629.0" endY="0.0" endZ="41944.0" randomRange="24605" />
+    <create count="10" type="asteroids" startX="91933.0" startY="0.0" startZ="51279.0" endX="78231.0" endY="0.0" endZ="44353.0" randomRange="2279" />
+    <create count="20" type="asteroids" startX="61820.0" startY="0.0" startZ="20263.0" endX="40891.0" endY="0.0" endZ="7013.0" randomRange="7677" />
+    <create count="10" type="asteroids" startX="54593.0" startY="0.0" startZ="36675.0" endX="47667.0" endY="0.0" endZ="22672.0" randomRange="3529" />
+    <create count="20" type="asteroids" startX="52033.0" startY="0.0" startZ="14993.0" endX="33213.0" endY="0.0" endZ="9422.0" randomRange="2563" />
+    <create count="24" type="nebulas" startX="33514.0" startY="30.0" startZ="70401.0" endX="33514.0" endY="30.0" endZ="70401.0" randomRange="31838" />
+  </event>
+  <folder_arme name="Navigation" id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6" parent_id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a" />
+  <event name="Transition to Sector II" id_arme="cf917f7b-b0ea-43e2-84fb-244bf2418837" parent_id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="fecd4bb8-d415-43f0-bbf9-7c18976afa34" parent_id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="d9dd83a8-cac7-4f29-aa53-14a2bf4a64c0" parent_id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="9814d69c-d1b7-49b1-bbd2-dc6ecd90e1ff" parent_id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6" />
+  <event name="Gate Offline" id_arme="1cc0a1f6-4d8e-4ffa-b27b-f2ff465ba3fa" parent_id_arme="9814d69c-d1b7-49b1-bbd2-dc6ecd90e1ff">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Arcturus Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="9418ca57-95e6-42fc-b2ea-106995e413da" parent_id_arme="9814d69c-d1b7-49b1-bbd2-dc6ecd90e1ff" />
+  <event name="Ship1 Activation Range" id_arme="be0d0b65-02c7-465a-bd68-9348a6c0d805" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Arcturus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="49dc6c68-0631-4200-92f8-a18739ef031b" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Arcturus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="f7eb8a70-8c25-427d-8c9d-b6c714082c77" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Arcturus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="5b33c970-783d-4490-b3e1-3dee3373de0c" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Arcturus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="52bdb22c-78d8-4398-8c12-7c43bf884d77" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Arcturus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="20d5c544-2f31-4f59-aaf5-78240456e6a3" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Arcturus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="48406542-295b-4251-8192-a4883616a815" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Arcturus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="fb827ffc-8fef-431f-af7a-fad7b0943911" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Arcturus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="6196340d-2872-4241-8682-ef33aeb5252e" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Arcturus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="fb14682d-075a-471b-b47f-cb94196b3708" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Arcturus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="538276f2-d290-481a-98ba-05e17c3d5bb5" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Arcturus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="efa07664-f68e-484f-80fd-f88397ffb90e" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Arcturus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="0eedd564-8ee1-4b2f-a6ca-3690c5d4b5cd" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Arcturus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="9aa6c82d-8171-44b5-a8eb-6c26c16c5a74" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Arcturus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="2dc1934a-1f65-4e8d-9f57-676f5f993307" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Arcturus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="4f694e7a-349b-4dde-9a76-2ca7d5b792a7" parent_id_arme="9418ca57-95e6-42fc-b2ea-106995e413da">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Arcturus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="5dc51931-6dfe-4acd-bf39-4ec2b9cba2c4" parent_id_arme="9814d69c-d1b7-49b1-bbd2-dc6ecd90e1ff">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Arcturus Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="194c1d91-f4dd-4d83-b72c-3f94d761e7cf" parent_id_arme="9814d69c-d1b7-49b1-bbd2-dc6ecd90e1ff">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Hjorden to Arcturus" value="1.0" />
+    <set_variable name="Arcturus System" value="1.0" />
+    <set_variable name="Sector" value="9" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="cbe556ab-699d-4c9c-b8eb-ba0a9ccbd923" parent_id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a" />
+  <event name="Generate Sector Entities" id_arme="e02be73f-fa81-427a-bbfd-268b6d24966f" parent_id_arme="cbe556ab-699d-4c9c-b8eb-ba0a9ccbd923">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="52997.0" y="0.0" z="69590.0" angle="0" name="Arcturus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="424762ee-6484-4ba9-a223-a922dece71dc" parent_id_arme="cbe556ab-699d-4c9c-b8eb-ba0a9ccbd923">
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Arcturus Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Arcturus Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Arcturus Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Arcturus Gate" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="0a68c9d8-de1d-47e5-b741-6a2cff910d11" parent_id_arme="cbe556ab-699d-4c9c-b8eb-ba0a9ccbd923">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="3.0" />
+    <destroy name="Arcturus Gate" />
+    <set_variable name="Hjorden System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Arcturus" id_arme="1ff1186f-e59d-4564-96fc-64c7d37e2614" parent_id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Arcturus to Hjorden" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Arcturus Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Arcturus Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Arcturus Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Arcturus Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Arcturus Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Arcturus Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Arcturus Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Arcturus Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Arcturus to Hjorden" value="0.0" />
+  </event>
+  <folder_arme name="Hjorden Sector IV" id_arme="87e16a09-cbfe-4b61-a51e-98be03376df0" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Hjorden Sector IV" id_arme="3b6279e5-1fba-4463-858e-023106689cac" parent_id_arme="87e16a09-cbfe-4b61-a51e-98be03376df0">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Hjorden System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="10" type="nebulas" startX="74698.0" startY="0.0" startZ="28353.0" endX="64819.0" endY="0.0" endZ="35326.0" randomRange="2764" />
+    <create count="10" type="nebulas" startX="75570.0" startY="0.0" startZ="30387.0" endX="83850.0" endY="0.0" endZ="22687.0" randomRange="4642" />
+    <create count="10" type="nebulas" startX="83996.0" startY="0.0" startZ="20799.0" endX="89226.0" endY="0.0" endZ="13535.0" randomRange="3453" />
+    <create count="17" type="asteroids" startX="64964.0" startY="0.0" startZ="31259.0" endX="81816.0" endY="0.0" endZ="16150.0" randomRange="1895" />
+    <create count="4" type="nebulas" startX="36925.0" startY="0.0" startZ="86464.0" endX="33729.0" endY="0.0" endZ="80653.0" randomRange="2405" />
+    <create count="3" type="nebulas" startX="85158.0" startY="0.0" startZ="60460.0" endX="86611.0" endY="0.0" endZ="62058.0" randomRange="3675" />
+    <create count="2" type="nebulas" startX="17603.0" startY="0.0" startZ="15569.0" endX="19056.0" endY="0.0" endZ="16731.0" randomRange="6570" />
+  </event>
+  <folder_arme name="Navigation" id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc" parent_id_arme="87e16a09-cbfe-4b61-a51e-98be03376df0" />
+  <event name="Transition to Sector V" id_arme="cc3f86a0-45d9-4e38-8426-85c036a8ada8" parent_id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="be69da06-5519-41aa-93c0-3c4d928509bb" parent_id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="b8bd9694-786b-4a26-bff2-0a047330a306" parent_id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="5695c407-008f-45d9-8377-4deded8f59d6" parent_id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="2dfa73ca-e21d-4fa6-bcb3-eae0d011b049" parent_id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="9bed4d39-9396-4b95-9dc1-49ee8973f0e1" parent_id_arme="87e16a09-cbfe-4b61-a51e-98be03376df0" />
+  <event name="Generate Sector Entities" id_arme="2a60dd13-a9f0-46ca-86af-3c9c83a92aca" parent_id_arme="9bed4d39-9396-4b95-9dc1-49ee8973f0e1">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="55195.0" y="0.0" z="52183.0" angle="0" name="Pantera" hullID="1100" />
+    <create type="station" x="42925.0" y="0.0" z="31103.0" angle="0" name="Q-78" hullID="1100" />
+    <create type="station" x="76651.0" y="0.0" z="75821.0" angle="0" name="E-24" hullID="1100" />
+    <create type="station" x="71983.0" y="0.0" z="71003.0" angle="0" name="T-75" hullID="1100" />
+    <create type="station" x="46659.0" y="0.0" z="29079.0" angle="0" name="X-02" hullID="1100" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="1366d992-9d93-4f9e-a103-ab4e2c74429f" parent_id_arme="9bed4d39-9396-4b95-9dc1-49ee8973f0e1">
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="a7beb0b6-57c9-46e7-bc25-1e02b63dd8fa" parent_id_arme="9bed4d39-9396-4b95-9dc1-49ee8973f0e1">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="3.0" />
+    <destroy name="Pantera" />
+    <destroy name="Q-78" />
+    <destroy name="E-24" />
+    <destroy name="T-75" />
+    <destroy name="X-02" />
+    <set_variable name="Hjorden System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Hjorden Sector V" id_arme="6f71a6ae-36a1-46da-9f1c-daf6ccd9c17c" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Hjorden Sector V" id_arme="bc0094dc-ab84-4a31-9e71-e2924137d01f" parent_id_arme="6f71a6ae-36a1-46da-9f1c-daf6ccd9c17c">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Hjorden System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="60" type="nebulas" startX="31857.0" startY="0.0" startZ="56097.0" endX="31857.0" endY="0.0" endZ="56097.0" randomRange="32674" />
+    <create count="20" type="nebulas" startX="79737.0" startY="0.0" startZ="16649.0" endX="79737.0" endY="0.0" endZ="16649.0" randomRange="4077" />
+    <create count="30" type="nebulas" startX="89072.0" startY="0.0" startZ="69196.0" endX="77780.0" endY="0.0" endZ="49021.0" randomRange="2664" />
+    <create count="20" type="asteroids" startX="54141.0" startY="0.0" startZ="23726.0" endX="54141.0" endY="0.0" endZ="23726.0" randomRange="12956" />
+    <create count="20" type="asteroids" startX="41795.0" startY="0.0" startZ="25683.0" endX="28545.0" endY="0.0" endZ="21317.0" randomRange="3176" />
+    <create count="20" type="asteroids" startX="46312.0" startY="0.0" startZ="13488.0" endX="28093.0" endY="0.0" endZ="10627.0" randomRange="3219" />
+  </event>
+  <folder_arme name="Navigation" id_arme="85b9b907-0573-4481-96b0-e13d70b423c4" parent_id_arme="6f71a6ae-36a1-46da-9f1c-daf6ccd9c17c" />
+  <event name="Transition to Sector VI" id_arme="8c5bfa56-5fe0-4b26-addb-c7d0da62a959" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="8518387e-5724-4b2d-813e-7c40f04c587b" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="e6550bd6-4db9-4d76-9579-86c43aa6845e" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="b305e99b-0ccd-489b-93fa-65f297a39c29" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="d121a1f8-b588-4a32-9c03-d893c833a8a0" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="26cf2c1e-f676-47ab-888d-d6a4a660a1ea" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="6d4689fe-61ad-42ad-ad5f-3af21763c2dc" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="93f024ba-0703-45fe-8176-ad67832984e7" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e2f45a04-e0a9-49e7-a304-8e720d51b5a1" parent_id_arme="6f71a6ae-36a1-46da-9f1c-daf6ccd9c17c" />
+  <event name="Generate Sector Entities" id_arme="448f729a-4813-4fbb-9b9e-9cf9502942b5" parent_id_arme="e2f45a04-e0a9-49e7-a304-8e720d51b5a1">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="65433.0" y="0.0" z="48569.0" angle="0" name="S-12" hullID="1100" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="7e6fbb2a-4b16-4272-b11e-f882e6d57d23" parent_id_arme="e2f45a04-e0a9-49e7-a304-8e720d51b5a1">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="c70a4b12-fb21-4082-950c-4edfc8c610a3" parent_id_arme="e2f45a04-e0a9-49e7-a304-8e720d51b5a1">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="3.0" />
+    <destroy name="S-12" />
+    <set_variable name="Hjorden System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Hjorden Sector VI" id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Hjorden Sector VI" id_arme="3c185f07-54e4-4edd-920a-a74af77ee755" parent_id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Hjorden System" value="2.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="160" type="nebulas" startX="67842.0" startY="0.0" startZ="29749.0" endX="34718.0" endY="0.0" endZ="69046.0" randomRange="34081" />
+    <create count="90" type="nebulas" startX="76274.0" startY="0.0" startZ="77478.0" endX="22522.0" endY="0.0" endZ="22823.0" randomRange="23121" />
+    <create count="40" type="asteroids" startX="68896.0" startY="0.0" startZ="29297.0" endX="38934.0" endY="0.0" endZ="31555.0" randomRange="2891" />
+    <create count="30" type="asteroids" startX="43903.0" startY="0.0" startZ="79134.0" endX="15446.0" endY="0.0" endZ="68143.0" randomRange="4728" />
+  </event>
+  <folder_arme name="Navigation" id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4" parent_id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16" />
+  <event name="Transition to Sector V" id_arme="01b84d9d-7624-4839-ae1c-e502a18ed116" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="13f5e06d-bbe4-45df-8c42-e338ba02278f" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="9737e30f-df29-4e87-9e3e-23745ca8e93d" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="d4634893-68bd-4712-8016-a756061dd8fb" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="578c8d13-b306-400a-8f80-1f8657f23a1a" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="b633fe08-2ece-49c5-a584-dcdaeda7d372" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4" />
+  <event name="Gate Offline" id_arme="f11d0afa-fee5-4159-945a-2132439d6cdb" parent_id_arme="b633fe08-2ece-49c5-a584-dcdaeda7d372">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Cerberus Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90" parent_id_arme="b633fe08-2ece-49c5-a584-dcdaeda7d372" />
+  <event name="Ship1 Activation Range" id_arme="c57d4eb8-ba67-4351-8da8-9209127b4b58" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="c6907f0f-6ae9-43da-a382-0c93de2695ce" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="25eda1ef-27a5-4d33-99cf-c6d729bfd163" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="9495f46c-31ea-4378-8dc1-706bfedee592" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="44a59639-12e1-4526-9934-aa89a82710f3" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="5ef9333e-dfad-4e24-a96a-38c939fd509c" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="4ea1fac6-d498-4ee9-8da3-b6159b29891f" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="0f74251a-90a0-405f-9cec-72eb218032e4" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="09903425-8018-4dea-a2b3-2d65bbd80cc6" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="c9ec874a-c2d3-46de-a8b6-c5bc6591b743" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="00b42e04-b86e-4664-a251-b4af6d64770c" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="d6400a02-71e9-4e91-886e-f92735170f1a" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="6b6d943e-52c5-4c8a-b031-5f3a2f10c984" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="b23abdf2-2a56-4f88-9734-c22e6223d58c" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="681e1d92-dce3-45ae-8f53-068ae05b91e6" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Cerberus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="c38a2a22-264f-4e73-bafd-10d84bd812da" parent_id_arme="30bc1b16-a76f-4ec1-b9c4-3704056cfb90">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Cerberus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="ad140753-9e99-4741-89df-c6cb1e861dbe" parent_id_arme="b633fe08-2ece-49c5-a584-dcdaeda7d372">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Cerberus Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="ef5e0c75-5037-4734-ac4b-c02ffe7f54fa" parent_id_arme="b633fe08-2ece-49c5-a584-dcdaeda7d372">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Hjorden to Cerberus" value="1.0" />
+    <set_variable name="Cerberus System" value="1.0" />
+    <set_variable name="Sector" value="7" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="712fa932-7add-4bbc-94e1-9bb4397ee885" parent_id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16" />
+  <event name="Generate Sector Entities" id_arme="3c43bfe2-0ad7-4446-8122-ecd1308b10c9" parent_id_arme="712fa932-7add-4bbc-94e1-9bb4397ee885">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="27642.0" y="0.0" z="35169.0" angle="0" name="Cerberus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="44806.0" y="0.0" z="82296.0" angle="0" name="A-14" hullID="1100" />
+    <create type="station" x="72058.0" y="0.0" z="66185.0" angle="0" name="F-01" hullID="1100" />
+    <create type="station" x="41795.0" y="0.0" z="80037.0" angle="0" name="L-33" hullID="1100" />
+    <create type="station" x="75521.0" y="0.0" z="64680.0" angle="0" name="D-46" hullID="1100" />
+    <create type="station" x="50377.0" y="0.0" z="46311.0" angle="0" name="Alpha" hullID="1100" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="574ae171-07ab-4723-a28a-44044aac1913" parent_id_arme="712fa932-7add-4bbc-94e1-9bb4397ee885">
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Cerberus Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Cerberus Gate" />
+    <set_object_property property="angle" value="1.221730476" name="Cerberus Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Cerberus Gate" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="226adf94-553b-487c-ab44-ef4f20d693f8" parent_id_arme="712fa932-7add-4bbc-94e1-9bb4397ee885">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="3.0" />
+    <destroy name="Cerberus Gate" />
+    <destroy name="A-14" />
+    <destroy name="F-01" />
+    <destroy name="L-33" />
+    <destroy name="D-46" />
+    <destroy name="Alpha" />
+    <set_variable name="Hjorden System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Cerberus" id_arme="f75222cc-01cd-4598-b1ff-3dc48d25bc38" parent_id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Cerberus to Hjorden" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Cerberus Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Cerberus Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Cerberus to Hjorden" value="0.0" />
+  </event>
+  <folder_arme name="Hjorden Sector VII" id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Hjorden Sector VII" id_arme="cf73260d-9ecf-4da3-b473-a0ada0117bdd" parent_id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Hjorden System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="asteroids" startX="77894.0" startY="0.0" startZ="64673.0" endX="68741.0" endY="0.0" endZ="74697.0" randomRange="2775" />
+    <create count="30" type="asteroids" startX="76586.0" startY="0.0" startZ="13244.0" endX="55521.0" endY="0.0" endZ="26319.0" randomRange="3735" />
+    <create count="10" type="asteroids" startX="56393.0" startY="0.0" startZ="24430.0" endX="35473.0" endY="0.0" endZ="36779.0" randomRange="1950" />
+    <create count="20" type="asteroids" startX="69032.0" startY="0.0" startZ="73825.0" endX="41574.0" endY="0.0" endZ="93728.0" randomRange="1700" />
+    <create count="40" type="asteroids" startX="75860.0" startY="300.0" startZ="67288.0" endX="44189.0" endY="250.0" endZ="90242.0" randomRange="3079" />
+    <create count="60" type="asteroids" startX="75424.0" startY="300.0" startZ="12663.0" endX="36344.0" endY="-300.0" endZ="36343.0" randomRange="4320" />
+    <create count="40" type="asteroids" startX="81816.0" startY="0.0" startZ="42445.0" endX="99540.0" endY="0.0" endZ="30532.0" randomRange="2862" />
+    <create count="50" type="asteroids" startX="99105.0" startY="-300.0" startZ="29951.0" endX="77313.0" endY="300.0" endZ="47820.0" randomRange="2218" />
+    <create count="30" type="asteroids" startX="30388.0" startY="0.0" startZ="72518.0" endX="17603.0" endY="0.0" endZ="84576.0" randomRange="2963" />
+    <create count="30" type="asteroids" startX="34165.0" startY="-300.0" startZ="69322.0" endX="18766.0" endY="300.0" endZ="82687.0" randomRange="2923" />
+  </event>
+  <folder_arme name="Navigation" id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c" parent_id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14" />
+  <event name="Transition to Sector VIII" id_arme="fd7d7f42-60fa-4b25-a07e-0533294b1cf9" parent_id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="ba917c6b-0771-495b-88a2-bce7ac5b340e" parent_id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="ec80ae6d-f38c-44e4-8d60-c23c68fb83ac" parent_id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="b878c744-fd44-4283-8891-6afe9c201d4d" parent_id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c" />
+  <event name="Gate Offline" id_arme="f0934bf4-591a-4c7c-9bc2-0822c32aac4b" parent_id_arme="b878c744-fd44-4283-8891-6afe9c201d4d">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Arrin Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="2021032d-96cb-48de-b908-a3881676d570" parent_id_arme="b878c744-fd44-4283-8891-6afe9c201d4d" />
+  <event name="Ship1 Activation Range" id_arme="b15e08d1-b84e-4cbc-a444-e182d090088c" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Arrin Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="5f0c435e-dda0-4583-bc56-b7a29d382b9a" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Arrin Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="7b2d7c19-612d-4107-a0d2-81552636ef2a" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Arrin Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="a6371309-7d68-428d-b18b-738319d0da52" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Arrin Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="53666a4d-2079-4dc6-9589-77b40c9b9c2a" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Arrin Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="39876bd6-67b3-47ff-b517-f7f08ff6ec6a" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Arrin Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="e7374a3e-f336-4c80-9c3a-44ac5eff9b27" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Arrin Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="b86ab2d3-8a5f-44fe-bf2b-aea07566d064" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Arrin Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="83fff411-5775-4111-9cbd-9bf51e7ce9c0" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Arrin Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="dcb43746-bf94-490d-bba5-350e8a443922" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Arrin Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="315a4a14-9e90-467b-b815-e83b97edc2c8" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Arrin Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="e30faf6e-b934-460a-876b-036c2361126e" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Arrin Gate" comparator="LESS" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="f0854377-70c4-4bf4-84bc-b30970bbc7c2" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Arrin Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="fe4e6e23-9f5d-4b38-8033-25e0ddf99892" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Arrin Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="c4882a34-1f15-4274-8c08-a35d94989247" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Arrin Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="4e01f0bf-7b0d-494e-be51-94de9e54786c" parent_id_arme="2021032d-96cb-48de-b908-a3881676d570">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Arrin Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="41e267e9-b1c6-46f1-86e0-52acd9d04dbd" parent_id_arme="b878c744-fd44-4283-8891-6afe9c201d4d">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Arrin Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="0b162f4d-1edf-43f7-8ce9-f48a3729cbb4" parent_id_arme="b878c744-fd44-4283-8891-6afe9c201d4d">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Arrin Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Hjorden to Arrin" value="1.0" />
+    <set_variable name="Arrin System" value="1.0" />
+    <set_variable name="Sector" value="6" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="f40250e0-ea85-448e-9c02-6039b07d18b2" parent_id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14" />
+  <event name="Generate Sector Entities" id_arme="98bcf296-7c67-4f53-a3a9-4e77d6015dd0" parent_id_arme="f40250e0-ea85-448e-9c02-6039b07d18b2">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="54214.0" y="0.0" z="50581.0" angle="0" name="Arrin Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="30722f58-3c04-476d-947a-e4e20ecd302c" parent_id_arme="f40250e0-ea85-448e-9c02-6039b07d18b2">
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Arrin Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Arrin Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Arrin Gate" />
+    <set_object_property property="artScale" value="0.3" name="Arrin Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="d4e3b9bf-637f-492a-b093-3a2c81d22dd7" parent_id_arme="f40250e0-ea85-448e-9c02-6039b07d18b2">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="3.0" />
+    <destroy name="Arrin Gate" />
+    <set_variable name="Hjorden System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Arrin" id_arme="e7a6eafa-b03c-4718-9f22-d53872bb115c" parent_id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Arrin to Hjorden" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Arrin Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Arrin Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Arrin Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Arrin Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Arrin Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Arrin Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Arrin Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Arrin Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Arrin to Hjorden" value="0.0" />
+  </event>
+  <folder_arme name="Hjorden Sector VIII" id_arme="f50b6e5b-6c1f-4eb3-b010-790d941a1e40" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Hjorden Sector VIII" id_arme="3675c7d8-9e52-4b73-a381-5a853516edaa" parent_id_arme="f50b6e5b-6c1f-4eb3-b010-790d941a1e40">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Hjorden System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="asteroids" startX="53689.0" startY="0.0" startZ="21317.0" endX="43300.0" endY="0.0" endZ="24027.0" randomRange="2988" />
+    <create count="18" type="nebulas" startX="8219.0" startY="0.0" startZ="6260.0" endX="9875.0" endY="0.0" endZ="96148.0" randomRange="8314" />
+    <create count="30" type="nebulas" startX="41494.0" startY="0.0" startZ="64981.0" endX="46613.0" endY="0.0" endZ="70853.0" randomRange="3691" />
+    <create count="30" type="asteroids" startX="83200.0" startY="0.0" startZ="25232.0" endX="81694.0" endY="0.0" endZ="50075.0" randomRange="11584" />
+  </event>
+  <folder_arme name="Navigation" id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659" parent_id_arme="f50b6e5b-6c1f-4eb3-b010-790d941a1e40" />
+  <event name="Transition to Sector IX" id_arme="e7db033b-891c-4abf-a12e-9b88b8779850" parent_id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="90a38f15-5fc5-49f5-9c38-e57de15a652e" parent_id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="3334d593-68e0-4de0-927d-cc8670c9f0e5" parent_id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="d9865cbd-6579-4658-be01-a088d6c99db8" parent_id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="7fcfc7c1-5e98-4b7b-b1c0-6b763a778f10" parent_id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="781ed8c5-308e-48ad-bbba-007c4557bbcc" parent_id_arme="f50b6e5b-6c1f-4eb3-b010-790d941a1e40" />
+  <event name="Generate Sector Entities" id_arme="a5cb4eb6-8426-4bd2-a22e-b949193898bc" parent_id_arme="781ed8c5-308e-48ad-bbba-007c4557bbcc">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="64982.0" y="0.0" z="50526.0" angle="0" name="Quill" hullID="1100" />
+    <create type="station" x="80731.0" y="0.0" z="33922.0" angle="0" name="D-56" hullID="1100" />
+    <create type="station" x="85594.0" y="0.0" z="41573.0" angle="0" name="C-72" hullID="1100" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="55c201ab-271d-47b7-b8c9-9b8633c389dd" parent_id_arme="781ed8c5-308e-48ad-bbba-007c4557bbcc">
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="95529f9e-709a-45c2-b5ba-f2d079877a43" parent_id_arme="781ed8c5-308e-48ad-bbba-007c4557bbcc">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="3.0" />
+    <destroy name="Quill" />
+    <destroy name="D-56" />
+    <destroy name="C-72" />
+    <set_variable name="Hjorden System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Hjorden Sector IX" id_arme="2cca11a0-d788-4074-ad4f-41b71fffd729" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Hjorden Sector IX" id_arme="263489ad-2277-4443-be3c-89db441fb52a" parent_id_arme="2cca11a0-d788-4074-ad4f-41b71fffd729">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Hjorden System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="50" type="nebulas" startX="28394.0" startY="0.0" startZ="25382.0" endX="28394.0" endY="0.0" endZ="25382.0" randomRange="26781" />
+    <create count="68" type="nebulas" startX="32008.0" startY="0.0" startZ="67691.0" endX="32008.0" endY="0.0" endZ="67691.0" randomRange="31715" />
+    <create count="24" type="nebulas" startX="88921.0" startY="0.0" startZ="22521.0" endX="91632.0" endY="0.0" endZ="36223.0" randomRange="4018" />
+  </event>
+  <folder_arme name="Navigation" id_arme="e07ee84a-e606-4eb2-aacb-48f7b986efda" parent_id_arme="2cca11a0-d788-4074-ad4f-41b71fffd729" />
+  <event name="Transition to Sector VIII" id_arme="b6319b46-7274-4a18-bcea-a0e9ad7b82b7" parent_id_arme="e07ee84a-e606-4eb2-aacb-48f7b986efda">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="d138a56d-1ad6-4620-bb97-a56bd2eecc41" parent_id_arme="e07ee84a-e606-4eb2-aacb-48f7b986efda">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="54a64fb3-794c-48b5-9e79-60a4f996582d" parent_id_arme="e07ee84a-e606-4eb2-aacb-48f7b986efda">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Hjorden System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="5afb07df-a1fe-46e9-85dc-602aedf74c22" parent_id_arme="2cca11a0-d788-4074-ad4f-41b71fffd729" />
+  <event name="Generate Sector Entities" id_arme="0cec9741-d227-4bba-893a-1ddd3f5a2603" parent_id_arme="5afb07df-a1fe-46e9-85dc-602aedf74c22">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="8c8114d8-e7ef-43ba-b696-7eeaced55161" parent_id_arme="5afb07df-a1fe-46e9-85dc-602aedf74c22">
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="513a62cb-3cf5-4426-8543-53aacc2d9534" parent_id_arme="5afb07df-a1fe-46e9-85dc-602aedf74c22">
+    <if_variable name="Hjorden System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Hjorden System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

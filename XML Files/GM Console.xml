@@ -41006,8 +41006,6 @@
     <clear_gm_button text="Snsr Rng with msg\Set to 16000" />
     <clear_gm_button text="Snsr Rng with msg\Set to 33000" />
     <clear_gm_button text="Snsr Rng with msg\Set to unlimited" />
-    <clear_gm_button text="Sensor Ping\Enable Ping" />
-    <clear_gm_button text="Sensor Ping\Disable Ping" />
     <clear_gm_button text="Command Messages\Sim Aborted" />
     <clear_gm_button text="Command Messages\Data Tranferring" />
     <clear_gm_button text="Command Messages\Personnel Tranferring" />
@@ -41634,17 +41632,7 @@
     <set_gm_button text="Snsr Rng with msg\Set to 16000" />
     <set_gm_button text="Snsr Rng with msg\Set to 33000" />
     <set_gm_button text="Snsr Rng with msg\Set to unlimited" />
-    <set_gm_button text="Sensor Ping\Enable Ping" />
-    <set_gm_button text="Sensor Ping\Disable Ping" />
     <set_variable name="Interactions Menu" value="1.0" integer="yes" />
-  </event>
-  <event name="Enable Sensor Ping" id_arme="0a956c13-44ec-4f58-9e6d-79991efe22cd" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
-    <if_gm_button text="Sensor Ping\Enable Ping" />
-    <set_variable name="Sensor Ping" value="1.0" integer="yes" />
-  </event>
-  <event name="Disable Sensor Ping" id_arme="c8c34b5c-d8b7-42c0-8cdd-b8f234f20b1b" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
-    <if_gm_button text="Sensor Ping\Disable Ping" />
-    <set_variable name="Sensor Ping" value="10.0" integer="yes" />
   </event>
   <event name="8K sensors" id_arme="b6b91c81-4466-43b8-b187-1ba7d4dfd06d" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Sensor Range\Set to 8000" />
@@ -46786,7 +46774,14 @@
   <event name="Reset Comms Buttons" id_arme="2f450435-1b0e-4cbd-9cde-dab0400027e2" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99">
     <if_variable name="Interactions Menu" comparator="EQUALS" value="1.0" />
     <if_gm_button text="Reset Comms" />
-    <set_variable name="CycleCommsMenu" value="1.0" integer="yes" />
+    <set_variable name="Ship1CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship2CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship3CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship4CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship5CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship6CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship7CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship8CommsMenu" value="0.0" integer="yes" />
   </event>
   <folder_arme name="Custom Keys" id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
   <event name="Custom Keys Menu" id_arme="9c078e16-5385-44db-ab15-563fd2dff7f1" parent_id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87">

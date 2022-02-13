@@ -1,0 +1,1695 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="407.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="211.0" integer="yes" />
+    <set_variable name="Alignment" value="Neutral" integer="yes" />
+  </start>
+  <folder_arme name="Antara System" id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <folder_arme name="Antara Settings" id_arme="0b232f9e-4aa0-457b-900a-d71f1d435f25" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <folder_arme name="Antara Menu" id_arme="9ca09069-ad23-412b-8b69-665b7583133c" parent_id_arme="0b232f9e-4aa0-457b-900a-d71f1d435f25" />
+  <event name="Antara Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="9ca09069-ad23-412b-8b69-665b7583133c">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Antara System" />
+    <set_variable name="Antara Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="9ca09069-ad23-412b-8b69-665b7583133c">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Antara System" />
+  </event>
+  <event name="Antara System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="9ca09069-ad23-412b-8b69-665b7583133c">
+    <if_gm_button text="Lower Arc/Antara System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="104.0" integer="yes" />
+    <set_variable name="Antara System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="0b232f9e-4aa0-457b-900a-d71f1d435f25">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="0b232f9e-4aa0-457b-900a-d71f1d435f25">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="0b232f9e-4aa0-457b-900a-d71f1d435f25">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="0b232f9e-4aa0-457b-900a-d71f1d435f25">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="0b232f9e-4aa0-457b-900a-d71f1d435f25">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Antara Sector I" id_arme="5995b647-abdb-4182-962b-df7d50bdcdf2" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector I" id_arme="b97ee6e7-8074-41b6-9489-19a49781ba23" parent_id_arme="5995b647-abdb-4182-962b-df7d50bdcdf2">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="40" type="nebulas" startX="84235.0" startY="0.0" startZ="16924.0" endX="33137.0" endY="0.0" endZ="31109.0" randomRange="11399" />
+    <create count="80" type="nebulas" startX="64259.0" startY="0.0" startZ="74825.0" endX="26623.0" endY="0.0" endZ="35452.0" randomRange="6698" />
+    <create count="50" type="nebulas" startX="34150.0" startY="0.0" startZ="58323.0" endX="43704.0" endY="0.0" endZ="95669.0" randomRange="7187" />
+    <create count="50" type="nebulas" startX="51086.0" startY="0.0" startZ="62231.0" endX="71641.0" endY="0.0" endZ="92050.0" randomRange="7187" />
+    <create count="50" type="nebulas" startX="72654.0" startY="0.0" startZ="64258.0" endX="94657.0" endY="0.0" endZ="95958.0" randomRange="7187" />
+    <create count="50" type="nebulas" startX="78879.0" startY="0.0" startZ="92629.0" endX="35019.0" endY="0.0" endZ="93353.0" randomRange="7187" />
+    <create count="40" type="asteroids" startX="90314.0" startY="0.0" startZ="19819.0" endX="54126.0" endY="0.0" endZ="40373.0" randomRange="5018" />
+    <create count="60" type="asteroids" startX="52389.0" startY="0.0" startZ="42400.0" endX="26768.0" endY="0.0" endZ="67297.0" randomRange="8159" />
+    <create count="90" type="asteroids" startX="31834.0" startY="0.0" startZ="69758.0" endX="5489.0" endY="0.0" endZ="83075.0" randomRange="7759" />
+  </event>
+  <folder_arme name="Navigation" id_arme="d9099ef0-5046-4023-949b-90a39a101986" parent_id_arme="5995b647-abdb-4182-962b-df7d50bdcdf2" />
+  <event name="Transition to Sector II" id_arme="2c3acdcd-bc78-4c3e-90f2-61679f15906a" parent_id_arme="d9099ef0-5046-4023-949b-90a39a101986">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="b9d69263-406f-4c2c-b578-02d7b9a1d9c4" parent_id_arme="d9099ef0-5046-4023-949b-90a39a101986">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="12876452-d466-4735-a736-6aa153379107" parent_id_arme="d9099ef0-5046-4023-949b-90a39a101986">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="b34621b5-e2f6-4fdf-9d42-a2047f9f51fa" parent_id_arme="5995b647-abdb-4182-962b-df7d50bdcdf2" />
+  <event name="Generate Sector Entities" id_arme="d8f287e8-e7a1-4b4b-bd42-560560fbda73" parent_id_arme="b34621b5-e2f6-4fdf-9d42-a2047f9f51fa">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="baa15e24-e5ac-4533-810a-5cbe39c7a558" parent_id_arme="b34621b5-e2f6-4fdf-9d42-a2047f9f51fa">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="58f6d003-5083-4169-ac3c-94b38cb1de32" parent_id_arme="b34621b5-e2f6-4fdf-9d42-a2047f9f51fa">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Antara Sector II" id_arme="1b2b367e-0aca-42de-bc6a-bf18ff258371" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector II" id_arme="01be8b91-20ff-4a98-b46b-4f96f32d5b53" parent_id_arme="1b2b367e-0aca-42de-bc6a-bf18ff258371">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="80" type="asteroids" startX="92775.0" startY="0.0" startZ="78878.0" endX="56442.0" endY="0.0" endZ="91471.0" randomRange="8262" />
+    <create count="120" type="asteroids" startX="61364.0" startY="0.0" startZ="79891.0" endX="17793.0" endY="0.0" endZ="69469.0" randomRange="11291" />
+    <create count="120" type="asteroids" startX="59771.0" startY="0.0" startZ="8094.0" endX="8095.0" endY="0.0" endZ="33136.0" randomRange="11291" />
+    <create count="50" type="nebulas" startX="42111.0" startY="0.0" startZ="47611.0" endX="9397.0" endY="0.0" endZ="52388.0" randomRange="10944" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b5dfdaf7-b0d9-4a73-8b0b-4464a19a0e25" parent_id_arme="1b2b367e-0aca-42de-bc6a-bf18ff258371" />
+  <event name="Transition to Sector III" id_arme="c1cbe4c5-c60a-46e5-ac3e-5e3c302bb3f9" parent_id_arme="b5dfdaf7-b0d9-4a73-8b0b-4464a19a0e25">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="3f7ebc45-2593-4535-9db6-74c02d9acb7c" parent_id_arme="b5dfdaf7-b0d9-4a73-8b0b-4464a19a0e25">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="a605facc-cbee-4e93-bca6-598a3f340ef5" parent_id_arme="b5dfdaf7-b0d9-4a73-8b0b-4464a19a0e25">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="078f73c7-3ef1-49d5-bbae-616bf8e0431e" parent_id_arme="b5dfdaf7-b0d9-4a73-8b0b-4464a19a0e25">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="4eadfd96-5a3d-44cb-9fd8-569e7385e497" parent_id_arme="b5dfdaf7-b0d9-4a73-8b0b-4464a19a0e25">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="6ff78cac-943e-4220-8b60-1a50f2fc425d" parent_id_arme="1b2b367e-0aca-42de-bc6a-bf18ff258371" />
+  <event name="Generate Sector Entities" id_arme="5ecbe9d4-98d5-4057-b548-593e458c5c6f" parent_id_arme="6ff78cac-943e-4220-8b60-1a50f2fc425d">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="9d8cd90c-ff8e-4ea8-88bc-d6ec0c89a89d" parent_id_arme="6ff78cac-943e-4220-8b60-1a50f2fc425d">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="df4480cb-fb1c-4a7c-af38-8161dfe1f1a0" parent_id_arme="6ff78cac-943e-4220-8b60-1a50f2fc425d">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Antara Sector III" id_arme="677d408e-d0f7-40bd-97de-635006d7a4fb" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector III" id_arme="2f810af3-2904-4fa4-8f86-cbe284023139" parent_id_arme="677d408e-d0f7-40bd-97de-635006d7a4fb">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="80" type="asteroids" startX="96104.0" startY="0.0" startZ="34873.0" endX="42111.0" endY="0.0" endZ="47901.0" randomRange="6784" />
+    <create count="60" type="asteroids" startX="94657.0" startY="0.0" startZ="79022.0" endX="79892.0" endY="0.0" endZ="74969.0" randomRange="6376" />
+    <create count="60" type="asteroids" startX="56587.0" startY="0.0" startZ="67876.0" endX="29518.0" endY="0.0" endZ="50940.0" randomRange="6376" />
+    <create count="80" type="asteroids" startX="31110.0" startY="-100.0" startZ="8673.0" endX="10700.0" endY="0.0" endZ="22714.0" randomRange="12935" />
+    <create count="60" type="asteroids" startX="6213.0" startY="100.0" startZ="5488.0" endX="25320.0" endY="0.0" endZ="25174.0" randomRange="7186" />
+    <create count="90" type="asteroids" startX="33426.0" startY="0.0" startZ="61507.0" endX="2015.0" endY="0.0" endZ="77575.0" randomRange="8830" />
+    <create count="70" type="nebulas" startX="94222.0" startY="0.0" startZ="55283.0" endX="58179.0" endY="0.0" endZ="55138.0" randomRange="11123" />
+    <create count="80" type="nebulas" startX="48191.0" startY="0.0" startZ="48480.0" endX="26044.0" endY="0.0" endZ="32123.0" randomRange="5935" />
+    <create count="40" type="nebulas" startX="38203.0" startY="0.0" startZ="95814.0" endX="5344.0" endY="0.0" endZ="89300.0" randomRange="6376" />
+    <create count="1" type="mines" startX="73985.0" startY="0.0" startZ="34943.0" endX="73985.0" endY="0.0" endZ="34943.0" />
+    <create count="1" type="mines" startX="26470.0" startY="0.0" startZ="58701.0" endX="26470.0" endY="0.0" endZ="58701.0" />
+    <create count="1" type="mines" startX="48260.0" startY="0.0" startZ="63392.0" endX="48260.0" endY="0.0" endZ="63392.0" />
+    <create count="1" type="mines" startX="85486.0" startY="0.0" startZ="73833.0" endX="85486.0" endY="0.0" endZ="73833.0" />
+    <create count="1" type="mines" startX="76104.0" startY="0.0" startZ="73530.0" endX="76104.0" endY="0.0" endZ="73530.0" />
+    <create count="1" type="mines" startX="63847.0" startY="0.0" startZ="45687.0" endX="63847.0" endY="0.0" endZ="45687.0" />
+    <create count="1" type="mines" startX="19206.0" startY="0.0" startZ="73379.0" endX="19206.0" endY="0.0" endZ="73379.0" />
+    <create count="1" type="mines" startX="9370.0" startY="0.0" startZ="68839.0" endX="9370.0" endY="0.0" endZ="68839.0" />
+    <create count="1" type="mines" startX="83367.0" startY="0.0" startZ="41450.0" endX="83367.0" endY="0.0" endZ="41450.0" />
+    <create count="1" type="mines" startX="31161.0" startY="0.0" startZ="24955.0" endX="31161.0" endY="0.0" endZ="24955.0" />
+    <create count="1" type="mines" startX="53103.0" startY="0.0" startZ="55825.0" endX="53103.0" endY="0.0" endZ="55825.0" />
+    <create count="1" type="mines" startX="37062.0" startY="0.0" startZ="63240.0" endX="37062.0" endY="0.0" endZ="63240.0" />
+    <create count="85" type="asteroids" startX="96104.0" startY="-600.0" startZ="34873.0" endX="42111.0" endY="600.0" endZ="47901.0" randomRange="6784" />
+    <create count="90" type="asteroids" startX="96104.0" startY="600.0" startZ="34873.0" endX="42111.0" endY="-600.0" endZ="47901.0" randomRange="6784" />
+    <create count="50" type="asteroids" startX="56587.0" startY="-550.0" startZ="67876.0" endX="29518.0" endY="550.0" endZ="50940.0" randomRange="6376" />
+    <create count="40" type="asteroids" startX="56587.0" startY="550.0" startZ="67876.0" endX="29518.0" endY="-550.0" endZ="50940.0" randomRange="6376" />
+    <create count="75" type="asteroids" startX="33426.0" startY="550.0" startZ="61507.0" endX="2015.0" endY="-550.0" endZ="77575.0" randomRange="8830" />
+    <create count="85" type="asteroids" startX="33426.0" startY="-550.0" startZ="61507.0" endX="2015.0" endY="550.0" endZ="77575.0" randomRange="8830" />
+    <create count="60" type="asteroids" startX="94657.0" startY="200.0" startZ="79022.0" endX="79892.0" endY="-200.0" endZ="74969.0" randomRange="6376" />
+    <create count="40" type="asteroids" startX="94657.0" startY="-200.0" startZ="79022.0" endX="79892.0" endY="200.0" endZ="74969.0" randomRange="6376" />
+  </event>
+  <folder_arme name="Navigation" id_arme="55a330a3-11a5-414a-ac73-c9c9a21a11bc" parent_id_arme="677d408e-d0f7-40bd-97de-635006d7a4fb" />
+  <event name="Transition to Sector IV" id_arme="f84f8c3f-ec67-4641-8693-b50e20b9639b" parent_id_arme="55a330a3-11a5-414a-ac73-c9c9a21a11bc">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="6a3c17bb-50c3-4992-ab83-60cc6bf22e3a" parent_id_arme="55a330a3-11a5-414a-ac73-c9c9a21a11bc">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="c52c06d7-d1e7-4c19-9af3-ba0a191bb204" parent_id_arme="55a330a3-11a5-414a-ac73-c9c9a21a11bc">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="663c42bd-58e4-46fd-9ba9-2945d7e43090" parent_id_arme="55a330a3-11a5-414a-ac73-c9c9a21a11bc">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="ae50d6cc-afa8-4a0d-bb01-aea4969c3216" parent_id_arme="55a330a3-11a5-414a-ac73-c9c9a21a11bc">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="87a5da6e-35fd-4e79-b3c9-18a99b62dbb6" parent_id_arme="677d408e-d0f7-40bd-97de-635006d7a4fb" />
+  <event name="Generate Sector Entities" id_arme="61a44675-d153-426f-b2fb-8e50d0b1eb4a" parent_id_arme="87a5da6e-35fd-4e79-b3c9-18a99b62dbb6">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="e416a992-3e36-42d9-9ba0-ebc1f35e4d15" parent_id_arme="87a5da6e-35fd-4e79-b3c9-18a99b62dbb6">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="536e0289-d760-4fbe-8dc4-b2708f48c2b1" parent_id_arme="87a5da6e-35fd-4e79-b3c9-18a99b62dbb6">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Antara Sector IV" id_arme="11501710-2ab7-490b-9b9a-f0554009e495" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector IV" id_arme="b7050737-4471-44fc-accb-a3ade6a4b43a" parent_id_arme="11501710-2ab7-490b-9b9a-f0554009e495">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <create count="90" type="asteroids" startX="93354.0" startY="0.0" startZ="17937.0" endX="60350.0" endY="0.0" endZ="17068.0" randomRange="7655" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <create count="120" type="asteroids" startX="94367.0" startY="0.0" startZ="5922.0" endX="52823.0" endY="0.0" endZ="6212.0" randomRange="7655" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="80" type="asteroids" startX="95959.0" startY="0.0" startZ="79457.0" endX="52823.0" endY="0.0" endZ="95379.0" randomRange="5741" />
+    <create count="90" type="asteroids" startX="70773.0" startY="0.0" startZ="82062.0" endX="37624.0" endY="0.0" endZ="68745.0" randomRange="7726" />
+    <create count="40" type="nebulas" startX="94078.0" startY="0.0" startZ="92919.0" endX="69759.0" endY="0.0" endZ="96103.0" randomRange="5675" />
+    <create count="90" type="nebulas" startX="20109.0" startY="0.0" startZ="19819.0" endX="20109.0" endY="0.0" endZ="19819.0" randomRange="20644" />
+    <create count="20" type="nebulas" startX="37045.0" startY="0.0" startZ="21411.0" endX="56297.0" endY="0.0" endZ="14318.0" randomRange="12385" />
+    <create count="30" type="nebulas" startX="16490.0" startY="0.0" startZ="39505.0" endX="7371.0" endY="0.0" endZ="65126.0" randomRange="9613" />
+    <create count="65" type="asteroids" startX="95959.0" startY="600.0" startZ="79457.0" endX="52823.0" endY="-200.0" endZ="95379.0" randomRange="5741" />
+    <create count="70" type="asteroids" startX="95959.0" startY="-200.0" startZ="79457.0" endX="52823.0" endY="600.0" endZ="95379.0" randomRange="5741" />
+    <create count="80" type="asteroids" startX="70773.0" startY="-200.0" startZ="82062.0" endX="37624.0" endY="600.0" endZ="68745.0" randomRange="7726" />
+    <create count="75" type="asteroids" startX="70773.0" startY="600.0" startZ="82062.0" endX="37624.0" endY="-200.0" endZ="68745.0" randomRange="7726" />
+  </event>
+  <folder_arme name="Navigation" id_arme="e0221d9e-bc58-4ce7-a6b5-e58cdd59b080" parent_id_arme="11501710-2ab7-490b-9b9a-f0554009e495" />
+  <event name="Transition to Sector III" id_arme="dafdbb2c-b206-499d-8857-1086c989f22e" parent_id_arme="e0221d9e-bc58-4ce7-a6b5-e58cdd59b080">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="e92edff9-af91-4218-9271-82d91e2598d2" parent_id_arme="e0221d9e-bc58-4ce7-a6b5-e58cdd59b080">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="7873812c-abca-48d7-a547-5f572db4d445" parent_id_arme="e0221d9e-bc58-4ce7-a6b5-e58cdd59b080">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="0c420bd8-801c-4884-aa0c-58d325568e4a" parent_id_arme="11501710-2ab7-490b-9b9a-f0554009e495" />
+  <event name="Generate Sector Entities" id_arme="6490e89b-3c8b-4b1e-a1e6-acfdbc0f6ece" parent_id_arme="0c420bd8-801c-4884-aa0c-58d325568e4a">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="e7a5ccc2-0f3a-41fb-afcf-ceee6f1dab33" parent_id_arme="0c420bd8-801c-4884-aa0c-58d325568e4a">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="7eed3819-8e13-416c-9426-5a3e9d3d7146" parent_id_arme="0c420bd8-801c-4884-aa0c-58d325568e4a">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Antara Sector V" id_arme="4309444b-fd8d-4503-b8ee-56d4e6633e13" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector V" id_arme="081b2798-25b0-4259-8bc1-827a8875dbe0" parent_id_arme="4309444b-fd8d-4503-b8ee-56d4e6633e13">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="80" type="nebulas" startX="38878.0" startY="0.0" startZ="9066.0" endX="90934.0" endY="0.0" endZ="9823.0" randomRange="11017" />
+    <create count="80" type="nebulas" startX="71716.0" startY="0.0" startZ="26166.0" endX="31766.0" endY="0.0" endZ="65510.0" randomRange="11017" />
+    <create count="80" type="nebulas" startX="54313.0" startY="0.0" startZ="57793.0" endX="78525.0" endY="0.0" endZ="91235.0" randomRange="12414" />
+    <create count="30" type="nebulas" startX="22687.0" startY="0.0" startZ="52496.0" endX="5436.0" endY="0.0" endZ="54010.0" randomRange="7580" />
+    <create count="40" type="asteroids" startX="34187.0" startY="0.0" startZ="79432.0" endX="5738.0" endY="0.0" endZ="92749.0" randomRange="7539" />
+    <create count="70" type="asteroids" startX="38424.0" startY="0.0" startZ="94413.0" endX="13910.0" endY="0.0" endZ="94867.0" randomRange="5217" />
+  </event>
+  <folder_arme name="Navigation" id_arme="82bea0e0-fc74-4705-8280-31dd948f9fb1" parent_id_arme="4309444b-fd8d-4503-b8ee-56d4e6633e13" />
+  <event name="Transition to Sector VI" id_arme="029e6c07-433a-48ae-bbf5-df49becce624" parent_id_arme="82bea0e0-fc74-4705-8280-31dd948f9fb1">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="d6a86033-6f81-4c34-9297-4aecd6da1f7a" parent_id_arme="82bea0e0-fc74-4705-8280-31dd948f9fb1">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="b56a3f10-adfc-4e0e-9258-7484644c488f" parent_id_arme="82bea0e0-fc74-4705-8280-31dd948f9fb1">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="08751403-7be4-477a-b3f6-6cd2a8ca6845" parent_id_arme="82bea0e0-fc74-4705-8280-31dd948f9fb1">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="2566e0d2-7aac-4f20-bf6e-f6cfa066b10f" parent_id_arme="82bea0e0-fc74-4705-8280-31dd948f9fb1">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="ca0c0274-29de-48dd-8c34-bc1eb3f9e191" parent_id_arme="4309444b-fd8d-4503-b8ee-56d4e6633e13" />
+  <event name="Generate Sector Entities" id_arme="fc500813-0946-4732-8463-3771485885a7" parent_id_arme="ca0c0274-29de-48dd-8c34-bc1eb3f9e191">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="1eb14468-8142-4bac-8e3e-56b9f6d56a33" parent_id_arme="ca0c0274-29de-48dd-8c34-bc1eb3f9e191">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="75de14b2-14ef-40c3-8613-530ecad0d1b7" parent_id_arme="ca0c0274-29de-48dd-8c34-bc1eb3f9e191">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Antara Sector VI" id_arme="843f5f4b-dde3-47b3-9a40-62c3c45bb733" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector VI" id_arme="907cf267-e308-4a4f-9e77-9de28a7ed921" parent_id_arme="843f5f4b-dde3-47b3-9a40-62c3c45bb733">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="asteroids" startX="57311.0" startY="0.0" startZ="3027.0" endX="41822.0" endY="0.0" endZ="15621.0" randomRange="3043" />
+    <create count="40" type="nebulas" startX="90748.0" startY="0.0" startZ="51375.0" endX="90604.0" endY="0.0" endZ="61218.0" randomRange="9903" />
+    <create count="80" type="nebulas" startX="80760.0" startY="0.0" startZ="59915.0" endX="32703.0" endY="0.0" endZ="45295.0" randomRange="10379" />
+    <create count="70" type="nebulas" startX="48770.0" startY="0.0" startZ="64692.0" endX="25465.0" endY="0.0" endZ="91326.0" randomRange="9392" />
+    <create count="40" type="asteroids" startX="15332.0" startY="0.0" startZ="63823.0" endX="29952.0" endY="0.0" endZ="63534.0" randomRange="5688" />
+    <create count="40" type="asteroids" startX="14174.0" startY="0.0" startZ="56296.0" endX="5489.0" endY="0.0" endZ="41531.0" randomRange="5688" />
+    <create count="20" type="asteroids" startX="11569.0" startY="0.0" startZ="62665.0" endX="2594.0" endY="0.0" endZ="64981.0" randomRange="3895" />
+  </event>
+  <folder_arme name="Navigation" id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d" parent_id_arme="843f5f4b-dde3-47b3-9a40-62c3c45bb733" />
+  <event name="Transition to Sector VII" id_arme="53340bca-b244-40e6-89a4-5dbb8b303306" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="b031b423-e0cb-4ef6-8a6d-43056d62c86b" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="fe5fa0be-c686-43e6-a16e-8cea71f86122" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="4f8fdb69-74bb-4f67-8199-dec041d90c4c" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="4c2b6874-66fb-4561-9c69-7cc95076eb1c" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="4ceb51ce-1a6b-4790-9d2d-b52917e28d68" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="7af1409e-5d33-4ec8-a729-bbc9befecf2e" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="990ddbd1-1ca9-44ff-b3ba-706a0dad8f68" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="d139eab9-b16b-459e-9fd3-f4d507cc725e" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d" />
+  <event name="Gate Offline" id_arme="cb45c514-6d1f-4484-a126-4bfdb67b4fc6" parent_id_arme="d139eab9-b16b-459e-9fd3-f4d507cc725e">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Hjorden Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53" parent_id_arme="d139eab9-b16b-459e-9fd3-f4d507cc725e" />
+  <event name="Ship1 Activation Range" id_arme="25fb4a96-1c05-43db-bb9f-0c1a49280690" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="d8c842b0-2255-49b9-b261-7253e6c8ff01" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="27b0d52e-5dd0-4899-ad03-7667cb1cf009" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="a8b89d48-4b84-4d64-a85f-23a235ff7499" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="5c249ec4-52f2-4282-a822-f7bba2da6f80" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="383391d0-6f2b-4921-9e9a-4950ee6097fc" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="d32f1a74-8b3b-4558-a42c-d8ef9bd769c1" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="2fda38a1-1408-44bc-81d3-06ab7bff1d0b" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="5b28a0ea-599b-4a1e-ae4c-181424873e39" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="599b8fab-f558-41b1-85b2-1ca586a304ca" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="ad2f02b4-7b2b-4669-86fb-b30fd958ca6d" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="5b4f1253-9ed1-41ed-9589-63e4a7c863fb" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="cc998465-4adf-4fcc-a009-48c9c8be45f0" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="9db705e6-335a-4a56-80f1-8bb128ecef50" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="ed631fdd-45ee-4e7c-9aa7-3109ada7a1c7" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="1245695f-275e-4ef6-a286-7d1f41d8844b" parent_id_arme="67d5383a-8ef6-4061-8956-65a2fe476b53">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="0f154c46-1817-4d71-9a2c-fcbe69e62199" parent_id_arme="d139eab9-b16b-459e-9fd3-f4d507cc725e">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Hjorden Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="137fcedf-4e19-496c-a591-e10eb39dfff8" parent_id_arme="d139eab9-b16b-459e-9fd3-f4d507cc725e">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Antara to Hjorden" value="1.0" />
+    <set_variable name="Hjorden System" value="1.0" />
+    <set_variable name="Sector" value="2" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="0e7d6699-5ff1-48ef-a9a1-60ad0c8e368e" parent_id_arme="843f5f4b-dde3-47b3-9a40-62c3c45bb733" />
+  <event name="Generate Sector Entities" id_arme="8ea09c0a-f8b8-47bc-8166-12f142bebee9" parent_id_arme="0e7d6699-5ff1-48ef-a9a1-60ad0c8e368e">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="65417.0" y="0.0" z="84089.0" angle="0" name="Hjorden Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="5c7e18af-d4ca-49ae-8d72-b26bdc558fb5" parent_id_arme="0e7d6699-5ff1-48ef-a9a1-60ad0c8e368e">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Hjorden Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Hjorden Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Hjorden Gate" />
+    <set_object_property property="artScale" value="1.0" name="Hjorden Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="5fbf17a3-0b19-4880-ba5b-4f77a4442425" parent_id_arme="0e7d6699-5ff1-48ef-a9a1-60ad0c8e368e">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <destroy name="Hjorden Gate" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Hjorden" id_arme="e54139a6-9036-4e1b-8198-a937dca7c093" parent_id_arme="843f5f4b-dde3-47b3-9a40-62c3c45bb733">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden to Antara" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Hjorden Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Hjorden to Antara" value="0.0" />
+  </event>
+  <folder_arme name="Antara Sector VII" id_arme="0698c181-9dde-4943-aeb4-e107a0ced8ff" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector VII" id_arme="41991a40-4d1d-42c2-a727-66946c9176e1" parent_id_arme="0698c181-9dde-4943-aeb4-e107a0ced8ff">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="asteroids" startX="96249.0" startY="0.0" startZ="39505.0" endX="96249.0" endY="0.0" endZ="64113.0" randomRange="3118" />
+    <create count="10" type="nebulas" startX="37479.0" startY="0.0" startZ="4475.0" endX="2304.0" endY="0.0" endZ="3751.0" randomRange="3897" />
+    <create count="40" type="asteroids" startX="91472.0" startY="0.0" startZ="58468.0" endX="60785.0" endY="0.0" endZ="19529.0" randomRange="6986" />
+    <create count="80" type="nebulas" startX="74826.0" startY="0.0" startZ="44571.0" endX="14608.0" endY="0.0" endZ="10265.0" randomRange="12663" />
+    <create count="70" type="asteroids" startX="93354.0" startY="0.0" startZ="43413.0" endX="60495.0" endY="0.0" endZ="22135.0" randomRange="7540" />
+    <create count="40" type="nebulas" startX="55573.0" startY="0.0" startZ="74390.0" endX="22715.0" endY="0.0" endZ="67876.0" randomRange="4032" />
+    <create count="60" type="asteroids" startX="93354.0" startY="-600.0" startZ="43413.0" endX="60495.0" endY="200.0" endZ="22135.0" randomRange="7540" />
+    <create count="80" type="asteroids" startX="93354.0" startY="200.0" startZ="43413.0" endX="60495.0" endY="-600.0" endZ="22135.0" randomRange="7540" />
+    <create count="20" type="asteroids" startX="96249.0" startY="200.0" startZ="39505.0" endX="96249.0" endY="-600.0" endZ="64113.0" randomRange="3118" />
+    <create count="38" type="asteroids" startX="96249.0" startY="-600.0" startZ="39505.0" endX="96249.0" endY="200.0" endZ="64113.0" randomRange="3118" />
+    <create count="45" type="asteroids" startX="91472.0" startY="-600.0" startZ="58468.0" endX="60785.0" endY="200.0" endZ="19529.0" randomRange="6986" />
+    <create count="30" type="asteroids" startX="91472.0" startY="-600.0" startZ="58468.0" endX="60785.0" endY="200.0" endZ="19529.0" randomRange="6986" />
+    <create count="1" type="mines" startX="87907.0" startY="0.0" startZ="45535.0" endX="87907.0" endY="0.0" endZ="45535.0" />
+    <create count="1" type="mines" startX="78676.0" startY="0.0" startZ="25712.0" endX="78676.0" endY="0.0" endZ="25712.0" />
+    <create count="1" type="mines" startX="68386.0" startY="0.0" startZ="85182.0" endX="68386.0" endY="0.0" endZ="85182.0" />
+    <create count="1" type="mines" startX="28285.0" startY="0.0" startZ="67175.0" endX="28285.0" endY="0.0" endZ="67175.0" />
+    <create count="1" type="mines" startX="78071.0" startY="0.0" startZ="36153.0" endX="78071.0" endY="0.0" endZ="36153.0" />
+    <create count="1" type="mines" startX="93506.0" startY="0.0" startZ="38877.0" endX="93506.0" endY="0.0" endZ="38877.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="11039aac-d113-41ef-9deb-c3496b878ff4" parent_id_arme="0698c181-9dde-4943-aeb4-e107a0ced8ff" />
+  <event name="Transition to Sector VIII" id_arme="f280e0ac-9d9d-4058-98f1-36ffcae9b2a2" parent_id_arme="11039aac-d113-41ef-9deb-c3496b878ff4">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="4450a191-9c4c-45f3-ba1e-77211ac53b40" parent_id_arme="11039aac-d113-41ef-9deb-c3496b878ff4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="dc26e271-b8ba-4d5f-8e45-51bcd54c5638" parent_id_arme="11039aac-d113-41ef-9deb-c3496b878ff4">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="68ddc706-8863-41c2-9a00-be4c125eea0d" parent_id_arme="11039aac-d113-41ef-9deb-c3496b878ff4">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="f36d180a-aeb9-40a4-942d-e3940758dd74" parent_id_arme="11039aac-d113-41ef-9deb-c3496b878ff4">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="92662787-6dfa-4e92-839c-ae316d99505a" parent_id_arme="11039aac-d113-41ef-9deb-c3496b878ff4">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="2a3910dc-cac1-4b74-ae4d-fe237e094765" parent_id_arme="11039aac-d113-41ef-9deb-c3496b878ff4">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="3a933b42-b211-4722-8a39-68d2787cb2a1" parent_id_arme="11039aac-d113-41ef-9deb-c3496b878ff4">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="a40618e3-13c9-4d2f-b50e-ee18685e3eb2" parent_id_arme="0698c181-9dde-4943-aeb4-e107a0ced8ff" />
+  <event name="Generate Sector Entities" id_arme="20fcfbe4-48fa-48b8-814a-71247615eb0f" parent_id_arme="a40618e3-13c9-4d2f-b50e-ee18685e3eb2">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="cc752a30-56dc-4088-8c9f-665f6158f991" parent_id_arme="a40618e3-13c9-4d2f-b50e-ee18685e3eb2">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="ca529afc-3626-401a-97fc-d60984d0e8ca" parent_id_arme="a40618e3-13c9-4d2f-b50e-ee18685e3eb2">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Antara Sector VIII" id_arme="4afefae6-0fec-4792-8e93-8071938df556" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector VIII" id_arme="ed7c84af-48c1-43ae-88b3-97dff680f912" parent_id_arme="4afefae6-0fec-4792-8e93-8071938df556">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="30" type="nebulas" startX="73957.0" startY="0.0" startZ="6791.0" endX="95815.0" endY="0.0" endZ="6501.0" randomRange="6226" />
+    <create count="10" type="nebulas" startX="94512.0" startY="0.0" startZ="7370.0" endX="95091.0" endY="0.0" endZ="21411.0" randomRange="5221" />
+    <create count="20" type="asteroids" startX="73089.0" startY="0.0" startZ="6067.0" endX="50797.0" endY="0.0" endZ="5633.0" randomRange="6184" />
+    <create count="100" type="asteroids" startX="51810.0" startY="0.0" startZ="11857.0" endX="13016.0" endY="0.0" endZ="32991.0" randomRange="13223" />
+    <create count="40" type="nebulas" startX="73812.0" startY="0.0" startZ="66574.0" endX="42980.0" endY="0.0" endZ="64981.0" randomRange="4985" />
+    <create count="60" type="nebulas" startX="9542.0" startY="0.0" startZ="78154.0" endX="30676.0" endY="0.0" endZ="91471.0" randomRange="9408" />
+    <create count="10" type="nebulas" startX="5344.0" startY="0.0" startZ="95090.0" endX="13450.0" endY="0.0" endZ="87129.0" randomRange="6250" />
+    <create count="10" type="nebulas" startX="30821.0" startY="0.0" startZ="93932.0" endX="45007.0" endY="0.0" endZ="96103.0" randomRange="6184" />
+    <create count="40" type="asteroids" startX="58758.0" startY="0.0" startZ="65850.0" endX="19385.0" endY="0.0" endZ="78588.0" randomRange="6864" />
+    <create count="40" type="asteroids" startX="23149.0" startY="0.0" startZ="74101.0" endX="5779.0" endY="0.0" endZ="65126.0" randomRange="6864" />
+  </event>
+  <folder_arme name="Navigation" id_arme="6943abb5-121f-4a49-bc05-958d94689abf" parent_id_arme="4afefae6-0fec-4792-8e93-8071938df556" />
+  <event name="Transition to Sector VII" id_arme="021b2a5a-965c-4af3-8219-0ac817308739" parent_id_arme="6943abb5-121f-4a49-bc05-958d94689abf">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="724d8c50-34e0-47b9-8a5c-bda712e2cfbf" parent_id_arme="6943abb5-121f-4a49-bc05-958d94689abf">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="80064408-c3e3-48df-b422-ab84bc7284f8" parent_id_arme="6943abb5-121f-4a49-bc05-958d94689abf">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="efa13a00-03fa-4abd-8680-b62874bbf50c" parent_id_arme="6943abb5-121f-4a49-bc05-958d94689abf">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="f3e3b606-12b1-4f00-9d29-e547c1d2f8a9" parent_id_arme="6943abb5-121f-4a49-bc05-958d94689abf">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="535892c7-5de8-4ee3-bc2c-a87517b65481" parent_id_arme="4afefae6-0fec-4792-8e93-8071938df556" />
+  <event name="Generate Sector Entities" id_arme="a583ec86-7fc6-4a99-a365-0a15ea51d363" parent_id_arme="535892c7-5de8-4ee3-bc2c-a87517b65481">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="bb58effb-c03c-458a-9836-97a6438f9764" parent_id_arme="535892c7-5de8-4ee3-bc2c-a87517b65481">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="1f161d39-f6ba-44f3-9d7f-8afd64796742" parent_id_arme="535892c7-5de8-4ee3-bc2c-a87517b65481">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Antara Sector IX" id_arme="c1707f76-3c95-4909-a59b-5fda06077d04" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector IX" id_arme="c9bcc48a-96b8-4595-ab25-0808bfa233ab" parent_id_arme="c1707f76-3c95-4909-a59b-5fda06077d04">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="90" type="asteroids" startX="11279.0" startY="0.0" startZ="11133.0" endX="28070.0" endY="0.0" endZ="11568.0" randomRange="12768" />
+    <create count="200" type="asteroids" startX="35887.0" startY="0.0" startZ="22279.0" endX="79892.0" endY="0.0" endZ="68455.0" randomRange="16753" />
+    <create count="80" type="asteroids" startX="49060.0" startY="0.0" startZ="71351.0" endX="55139.0" endY="0.0" endZ="93642.0" randomRange="8887" />
+    <create count="60" type="asteroids" startX="92051.0" startY="0.0" startZ="79746.0" endX="74826.0" endY="0.0" endZ="93932.0" randomRange="10617" />
+    <create count="80" type="nebulas" startX="76273.0" startY="0.0" startZ="13594.0" endX="78155.0" endY="0.0" endZ="38926.0" randomRange="14198" />
+    <create count="30" type="nebulas" startX="84090.0" startY="0.0" startZ="5922.0" endX="60640.0" endY="0.0" endZ="5922.0" randomRange="5056" />
+    <create count="80" type="nebulas" startX="77286.0" startY="0.0" startZ="50361.0" endX="58613.0" endY="0.0" endZ="72943.0" randomRange="13474" />
+    <create count="80" type="nebulas" startX="92775.0" startY="0.0" startZ="93063.0" endX="60495.0" endY="0.0" endZ="73811.0" randomRange="9903" />
+    <create count="70" type="nebulas" startX="66430.0" startY="0.0" startZ="91616.0" endX="19675.0" endY="0.0" endZ="80180.0" randomRange="7239" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3dcd4cd2-7605-4aa5-84fe-3a2ee6c399aa" parent_id_arme="c1707f76-3c95-4909-a59b-5fda06077d04" />
+  <event name="Transition to Sector X" id_arme="b6dda586-780b-4d89-9269-d7230efd7fc7" parent_id_arme="3dcd4cd2-7605-4aa5-84fe-3a2ee6c399aa">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="0d5118d9-6393-41c1-b603-d0331c3e61d7" parent_id_arme="3dcd4cd2-7605-4aa5-84fe-3a2ee6c399aa">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="2b258573-2d43-4fff-a96c-5abdc277f06a" parent_id_arme="3dcd4cd2-7605-4aa5-84fe-3a2ee6c399aa">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="954a117f-638d-44f4-b8ad-9bed7587953f" parent_id_arme="c1707f76-3c95-4909-a59b-5fda06077d04" />
+  <event name="Generate Sector Entities" id_arme="b18c00e7-6056-40d5-8954-e87e0e86024b" parent_id_arme="954a117f-638d-44f4-b8ad-9bed7587953f">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="c7cf14d8-8e90-48e9-b833-230445d56df2" parent_id_arme="954a117f-638d-44f4-b8ad-9bed7587953f">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="878fa6f7-d4ce-470f-93ff-d7fc318bf068" parent_id_arme="954a117f-638d-44f4-b8ad-9bed7587953f">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Antara Sector X" id_arme="1465a573-7318-40f5-b5c2-4f8ef1082656" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector X" id_arme="30cdb8c3-73aa-46c7-8eff-4e700d927e9f" parent_id_arme="1465a573-7318-40f5-b5c2-4f8ef1082656">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="30" type="nebulas" startX="26044.0" startY="0.0" startZ="6791.0" endX="14464.0" endY="0.0" endZ="17213.0" randomRange="7775" />
+    <create count="50" type="nebulas" startX="74102.0" startY="0.0" startZ="75548.0" endX="32847.0" endY="0.0" endZ="28069.0" randomRange="26063" />
+    <create count="10" type="asteroids" startX="95380.0" startY="0.0" startZ="7804.0" endX="95380.0" endY="0.0" endZ="21990.0" randomRange="5785" />
+    <create count="60" type="asteroids" startX="89590.0" startY="0.0" startZ="24451.0" endX="60785.0" endY="0.0" endZ="37334.0" randomRange="11959" />
+    <create count="90" type="asteroids" startX="53257.0" startY="0.0" startZ="47611.0" endX="18517.0" endY="0.0" endZ="82062.0" randomRange="18497" />
+  </event>
+  <folder_arme name="Navigation" id_arme="c779d37d-8d57-4dbe-a3c2-e264f7ae32fd" parent_id_arme="1465a573-7318-40f5-b5c2-4f8ef1082656" />
+  <event name="Transition to Sector XI" id_arme="6d120d92-6422-4e21-ba22-5dd299440616" parent_id_arme="c779d37d-8d57-4dbe-a3c2-e264f7ae32fd">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="4d9f0e98-74d1-4db6-9eae-43b7d4bfea0e" parent_id_arme="c779d37d-8d57-4dbe-a3c2-e264f7ae32fd">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="0694d562-a294-4ce1-bffe-720c01294086" parent_id_arme="c779d37d-8d57-4dbe-a3c2-e264f7ae32fd">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="ffd45fad-371a-48f9-bda5-be16b743e1eb" parent_id_arme="c779d37d-8d57-4dbe-a3c2-e264f7ae32fd">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="048cf185-3151-4892-9cd2-2303dcd4f359" parent_id_arme="c779d37d-8d57-4dbe-a3c2-e264f7ae32fd">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="3749de17-468f-40c2-849a-fb93a8ff1c67" parent_id_arme="1465a573-7318-40f5-b5c2-4f8ef1082656" />
+  <event name="Generate Sector Entities" id_arme="2724abb5-7716-4dd8-8f88-1ea5e34d1133" parent_id_arme="3749de17-468f-40c2-849a-fb93a8ff1c67">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="e9cb5e5b-5271-4acc-ad1e-79e6b3cc296f" parent_id_arme="3749de17-468f-40c2-849a-fb93a8ff1c67">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="ce2ea5d4-0122-49ce-b0ec-438a570549e7" parent_id_arme="3749de17-468f-40c2-849a-fb93a8ff1c67">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Antara Sector XI" id_arme="0f32d272-a361-40bc-b733-f3b5115b374b" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector XI" id_arme="e49caec4-6404-48fc-8f63-b286913a3b6e" parent_id_arme="0f32d272-a361-40bc-b733-f3b5115b374b">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="80" type="nebulas" startX="73378.0" startY="0.0" startZ="56296.0" endX="7226.0" endY="0.0" endZ="55572.0" randomRange="6673" />
+    <create count="60" type="nebulas" startX="55573.0" startY="0.0" startZ="43413.0" endX="6647.0" endY="0.0" endZ="38202.0" randomRange="7145" />
+    <create count="30" type="nebulas" startX="35019.0" startY="0.0" startZ="29517.0" endX="8095.0" endY="0.0" endZ="28793.0" randomRange="9234" />
+    <create count="30" type="asteroids" startX="79458.0" startY="0.0" startZ="79746.0" endX="79458.0" endY="0.0" endZ="79746.0" randomRange="20278" />
+    <create count="20" type="asteroids" startX="71352.0" startY="0.0" startZ="79312.0" endX="38927.0" endY="0.0" endZ="91037.0" randomRange="10504" />
+    <create count="20" type="asteroids" startX="55139.0" startY="0.0" startZ="40373.0" endX="28215.0" endY="0.0" endZ="36899.0" randomRange="26154" />
+  </event>
+  <folder_arme name="Navigation" id_arme="87227d28-8610-4f31-8476-3e7db72590a9" parent_id_arme="0f32d272-a361-40bc-b733-f3b5115b374b" />
+  <event name="Transition to Sector XII" id_arme="a8a5788d-350e-401c-9be7-0f0b8a95a3cb" parent_id_arme="87227d28-8610-4f31-8476-3e7db72590a9">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="1356901d-de01-4455-9987-51937fb1d91b" parent_id_arme="87227d28-8610-4f31-8476-3e7db72590a9">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="a2313635-a97d-46c2-8d6a-133892025a01" parent_id_arme="87227d28-8610-4f31-8476-3e7db72590a9">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="c0633ece-0219-4a2a-a464-30a6a638ea6a" parent_id_arme="87227d28-8610-4f31-8476-3e7db72590a9">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="d2c8fd88-a182-4300-9be2-56ddc2fc4245" parent_id_arme="87227d28-8610-4f31-8476-3e7db72590a9">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="2a2fe32d-3e3f-4c82-81de-9ebdeda14f32" parent_id_arme="0f32d272-a361-40bc-b733-f3b5115b374b" />
+  <event name="Generate Sector Entities" id_arme="88c6ab83-bcc5-4a8f-85a8-89a29078b3b7" parent_id_arme="2a2fe32d-3e3f-4c82-81de-9ebdeda14f32">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="fa719ec0-8879-45f0-9aef-ea4ca8dfb002" parent_id_arme="2a2fe32d-3e3f-4c82-81de-9ebdeda14f32">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="90a12bab-7bab-41dc-97b4-cff8d3949339" parent_id_arme="2a2fe32d-3e3f-4c82-81de-9ebdeda14f32">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Antara Sector XII" id_arme="cab9f3fd-d98b-4b25-bdc0-93d96530b2c5" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
+  <event name="Create Antara Sector XII" id_arme="bd8a5515-5cf0-4b00-b746-3f714b10b539" parent_id_arme="cab9f3fd-d98b-4b25-bdc0-93d96530b2c5">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <set_skybox_index index="25" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Antara System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="40" type="nebulas" startX="37335.0" startY="0.0" startZ="7515.0" endX="5779.0" endY="0.0" endZ="7080.0" randomRange="7050" />
+    <create count="80" type="nebulas" startX="87564.0" startY="0.0" startZ="26622.0" endX="87709.0" endY="0.0" endZ="51664.0" randomRange="13661" />
+    <create count="70" type="nebulas" startX="70338.0" startY="0.0" startZ="39650.0" endX="31110.0" endY="0.0" endZ="18516.0" randomRange="15666" />
+    <create count="60" type="nebulas" startX="68167.0" startY="0.0" startZ="65416.0" endX="45007.0" endY="0.0" endZ="83655.0" randomRange="13595" />
+    <create count="10" type="asteroids" startX="82932.0" startY="0.0" startZ="17647.0" endX="62087.0" endY="0.0" endZ="78299.0" randomRange="16722" />
+    <create count="80" type="asteroids" startX="14029.0" startY="0.0" startZ="51809.0" endX="10845.0" endY="0.0" endZ="75548.0" randomRange="11024" />
+    <create count="40" type="asteroids" startX="13740.0" startY="0.0" startZ="46743.0" endX="4621.0" endY="0.0" endZ="23727.0" randomRange="8150" />
+  </event>
+  <folder_arme name="Navigation" id_arme="5e8d2baf-b998-425c-801f-b0820f5a451d" parent_id_arme="cab9f3fd-d98b-4b25-bdc0-93d96530b2c5" />
+  <event name="Transition to Sector XI" id_arme="4705ab56-d349-4745-832a-9fc3ad8f8edb" parent_id_arme="5e8d2baf-b998-425c-801f-b0820f5a451d">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="07884a7a-ccfe-4ed4-9f20-dbd95148968b" parent_id_arme="5e8d2baf-b998-425c-801f-b0820f5a451d">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="20c58a1f-2d81-432e-b2f0-40737b1e9763" parent_id_arme="5e8d2baf-b998-425c-801f-b0820f5a451d">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="e60adddf-a79c-4c74-bab8-64563b85cd4e" parent_id_arme="5e8d2baf-b998-425c-801f-b0820f5a451d" />
+  <event name="Gate Offline" id_arme="9961eadd-1233-4507-889f-c4af84f00feb" parent_id_arme="e60adddf-a79c-4c74-bab8-64563b85cd4e">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Kalixa Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="9f235f9b-1517-4a20-aa89-417f4af39886" parent_id_arme="e60adddf-a79c-4c74-bab8-64563b85cd4e" />
+  <event name="Ship1 Activation Range" id_arme="68571d3b-e78b-46e8-ab83-6663d78cd76f" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="d3c27a74-9526-4f87-b501-98453af39394" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="204b8dd3-624b-4786-81ac-060da0de3142" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="b66b2319-dd2e-4234-879d-54fed6a33087" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="783ec504-e970-4c06-8a2d-d4ed6e570105" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="2ff7a3ae-ddd2-48e8-99a8-2dc13431c876" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="f0e815d0-c3bd-4d9c-b8ff-537c67c23732" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="54e8e43b-95cb-4ade-9202-383be6619a97" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="65227e3b-831d-4519-9fec-1b509e31f658" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="ac78db88-ece4-4b6f-834c-15b13aba4d80" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="925d5fe4-9ed9-460a-9d7b-c3a34cf0001e" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="2c56cbf4-df27-4ecb-8131-885db06aa2c8" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="f9b6de16-2bfb-4650-8317-49ce4d56374c" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="12d3b81f-6906-4ec9-9c5b-7b7ae8520df8" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="9fda95e1-5f4a-474b-940b-6a92249de989" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="65edd178-efe1-4def-9436-54d1e334b1a1" parent_id_arme="9f235f9b-1517-4a20-aa89-417f4af39886">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="5ee4afed-d6e1-4ab3-a6bd-6cde6c589ef7" parent_id_arme="e60adddf-a79c-4c74-bab8-64563b85cd4e">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Kalixa Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="91c149ad-7024-4dc9-898a-790da4b8fea4" parent_id_arme="e60adddf-a79c-4c74-bab8-64563b85cd4e">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Antara System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Antara to Kalixa" value="1.0" />
+    <set_variable name="Kalixa System" value="1.0" />
+    <set_variable name="Sector" value="12" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d97c9369-2e3c-4002-9df5-7efaa8a40484" parent_id_arme="cab9f3fd-d98b-4b25-bdc0-93d96530b2c5" />
+  <event name="Generate Sector Entities" id_arme="8df8a5a7-8673-4920-a39a-ccec7dd3890d" parent_id_arme="d97c9369-2e3c-4002-9df5-7efaa8a40484">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="44862.0" y="0.0" z="57310.0" angle="0" name="Kalixa Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="72088f4b-fbfd-4638-9cda-4fd95ea1a9fb" parent_id_arme="d97c9369-2e3c-4002-9df5-7efaa8a40484">
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Kalixa Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Kalixa Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Kalixa Gate" />
+    <set_object_property property="artScale" value="1.0" name="Kalixa Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="5579c40e-b8cd-4a88-9052-8bb039e63215" parent_id_arme="d97c9369-2e3c-4002-9df5-7efaa8a40484">
+    <if_variable name="Antara System" comparator="EQUALS" value="3.0" />
+    <destroy name="Kalixa Gate" />
+    <set_variable name="Antara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Kalixa" id_arme="b1cdd818-1ffe-4e5d-9f77-fa6b00828a45" parent_id_arme="cab9f3fd-d98b-4b25-bdc0-93d96530b2c5">
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Kalixa to Antara" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Kalixa Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Kalixa to Antara" value="0.0" />
+  </event>
+</mission_data>

@@ -1,0 +1,792 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="395.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="125.0" integer="yes" />
+    <set_variable name="Alignment" value="Neutral" integer="yes" />
+  </start>
+  <folder_arme name="Waypoint 78" id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" />
+  <folder_arme name="Waypoint 78 Settings" id_arme="e8f51934-06c1-4626-91a8-3eaade362d34" parent_id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" />
+  <folder_arme name="Waypoint 78 Menu" id_arme="2f4a4e8b-245b-4bc1-974f-d2b0a915b7eb" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34" />
+  <event name="Waypoint 78 Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="2f4a4e8b-245b-4bc1-974f-d2b0a915b7eb">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Waypoint 78 System" />
+    <set_variable name="Waypoint 78 Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="2f4a4e8b-245b-4bc1-974f-d2b0a915b7eb">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Waypoint 78 System" />
+  </event>
+  <event name="Waypoint 78 System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="2f4a4e8b-245b-4bc1-974f-d2b0a915b7eb">
+    <if_gm_button text="Lower Arc/Waypoint 78 System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="108.0" integer="yes" />
+    <set_variable name="Waypoint 78 System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Waypoint 78 System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Waypoint 78 System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Waypoint 78 System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Waypoint 78 System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector 1" id_arme="babb1f16-2109-4912-970e-880d316dcb12" parent_id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" />
+  <event name="Create Waypoint 78-1" id_arme="f26f75dc-3039-41b4-a3b2-b716d8d5408a" parent_id_arme="babb1f16-2109-4912-970e-880d316dcb12">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="16" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Waypoint 78" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="56" type="nebulas" startX="73399.0" startY="0.0" startZ="77212.0" endX="34890.0" endY="0.0" endZ="48679.0" randomRange="7828" />
+    <create count="38" type="nebulas" startX="31443.0" startY="0.0" startZ="46772.0" endX="2323.0" endY="0.0" endZ="41564.0" randomRange="5734" />
+    <create count="120" type="asteroids" startX="76113.0" startY="0.0" startZ="7603.0" endX="22054.0" endY="0.0" endZ="21833.0" randomRange="7488" />
+    <create count="500" type="asteroids" startX="86749.0" startY="0.0" startZ="23887.0" endX="86749.0" endY="0.0" endZ="23887.0" randomRange="14796" />
+    <create count="100" type="asteroids" startX="71712.0" startY="0.0" startZ="34816.0" endX="56162.0" endY="0.0" endZ="21100.0" randomRange="6280" />
+    <create count="40" type="asteroids" startX="94890.0" startY="0.0" startZ="5916.0" endX="73619.0" endY="0.0" endZ="8337.0" randomRange="5183" />
+  </event>
+  <folder_arme name="Navigation" id_arme="70bc1537-300e-4873-987e-e6d9e175747b" parent_id_arme="babb1f16-2109-4912-970e-880d316dcb12" />
+  <event name="Transition to (Right)" id_arme="109a4a4f-f891-4fae-acf3-4c97bfbc410c" parent_id_arme="70bc1537-300e-4873-987e-e6d9e175747b">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Waypoint 78" value="3.0" />
+    <set_variable name="Sector" value="2.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Down)" id_arme="a0de2525-dbd1-410c-84b7-a49027b2f987" parent_id_arme="70bc1537-300e-4873-987e-e6d9e175747b">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Waypoint 78" value="3.0" />
+    <set_variable name="Sector" value="3.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="565fe406-e46b-4f1a-bdb3-7a9912c2e55c" parent_id_arme="70bc1537-300e-4873-987e-e6d9e175747b">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Waypoint 78" value="3.0" />
+    <set_variable name="Sector" value="4.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="b09f8187-db21-434b-859c-ccf1144673d5" parent_id_arme="70bc1537-300e-4873-987e-e6d9e175747b" />
+  <event name="Gate Offline" id_arme="167dbbe7-f1c8-4ab9-aaa5-bc11f8dc419b" parent_id_arme="b09f8187-db21-434b-859c-ccf1144673d5">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Eyukua Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="621932b5-bb75-4fff-be8e-05427654eb1b" parent_id_arme="b09f8187-db21-434b-859c-ccf1144673d5" />
+  <event name="Ship1 Activation Range" id_arme="f130c945-d02d-4868-a5c9-2b6fee187ac1" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="e4827185-bd53-4af4-904e-928ebbccf3b5" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="10242b47-acff-49a8-8624-90bce2a127fa" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="6f08a373-9d31-43d4-ad5d-04804ede69ec" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="1f5d6834-9153-49ee-a3e1-ac5c7cd526dc" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="79d21f7a-c981-4c1a-ab39-981d41d68144" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="f19b146a-7ffb-42ec-8ec0-d471ff73d59d" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="b675f74b-4697-42d6-beff-a31f80f4ed70" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="0b5a5c6a-4cf4-4464-bb8a-f3a513e37576" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="23181929-dc79-445c-8817-995dba4fc471" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="dcceb1b6-cff2-4f8c-9bff-d9e487dca53c" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="c43d93db-7f47-412a-a77b-638609e42a9b" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="f5986216-dd9a-4257-b8d8-154ff60b26cc" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="8f925551-d54b-4b27-af7f-deedf300d8a7" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="ba147814-697c-476e-8b32-252c6c442dee" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Eyukua Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="9f72f6c7-2d95-4309-a3bb-fb670baea3fa" parent_id_arme="621932b5-bb75-4fff-be8e-05427654eb1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Eyukua Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="73550e1d-46a3-45cc-8c88-0ddf8ec49fe8" parent_id_arme="b09f8187-db21-434b-859c-ccf1144673d5">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Eyukua Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="fd10b980-584d-4478-b23b-76dac94a82d7" parent_id_arme="b09f8187-db21-434b-859c-ccf1144673d5">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Eyukua Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Waypoint 78" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="systemName to Eyukua" value="1.0" />
+    <set_variable name="Eyukua System" value="1.0" />
+    <set_variable name="Sector" value="2" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="b151ccb6-b799-47e4-bd53-db6f277c9e6a" parent_id_arme="babb1f16-2109-4912-970e-880d316dcb12" />
+  <event name="Generate Sector Entities" id_arme="e0dff65d-5025-48ac-ab29-4210777c7f90" parent_id_arme="b151ccb6-b799-47e4-bd53-db6f277c9e6a">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="50294.0" y="0.0" z="38337.0" angle="0" name="Eyukua Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="04f6f0fb-336e-48fb-92b0-e259289a5fe7" parent_id_arme="b151ccb6-b799-47e4-bd53-db6f277c9e6a">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Sector Entities" value="3.0" />
+    <set_object_property property="artScale" value="1.0" name="Eyukua Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Eyukua Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Eyukua Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Eyukua Gate" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="60e40c87-0db2-4d51-ab94-0598c50e7b58" parent_id_arme="b151ccb6-b799-47e4-bd53-db6f277c9e6a">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="3.0" />
+    <set_variable name="Waypoint 78" value="System" />
+    <set_variable name="Sector Entities" value="0.0" />
+    <destroy name="Eyukua Gate" />
+  </event>
+  <event name="Arrival From Eyukua" id_arme="fe680d4b-9e48-4c1e-9c26-6096de6ccaf1" parent_id_arme="babb1f16-2109-4912-970e-880d316dcb12">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Eyukua to systemName" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Eyukua Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Eyukua Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Eyukua to systemName" value="0.0" />
+  </event>
+  <folder_arme name="Sector 2" id_arme="04078dd5-5fe7-40e1-876e-b7bbc970ff12" parent_id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" />
+  <event name="Create Waypoint 78-2" id_arme="fd7b4177-5293-495f-93d2-2082eae53a55" parent_id_arme="04078dd5-5fe7-40e1-876e-b7bbc970ff12">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="16" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Waypoint 78" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="97898.0" startY="0.0" startZ="40611.0" endX="71639.0" endY="0.0" endZ="34889.0" randomRange="4051" />
+    <create count="300" type="asteroids" startX="63423.0" startY="0.0" startZ="12885.0" endX="9805.0" endY="0.0" endZ="29682.0" randomRange="9771" />
+    <create count="500" type="asteroids" startX="45673.0" startY="0.0" startZ="30635.0" endX="30489.0" endY="0.0" endZ="72518.0" randomRange="9503" />
+    <create count="10" type="nebulas" startX="41859.0" startY="0.0" startZ="33643.0" endX="41859.0" endY="0.0" endZ="33643.0" randomRange="24457" />
+  </event>
+  <folder_arme name="Navigation" id_arme="dae10e98-b23d-4cb4-9de1-7f84f466954d" parent_id_arme="04078dd5-5fe7-40e1-876e-b7bbc970ff12" />
+  <event name="Transition to (Left)" id_arme="015cd60e-a58f-4e67-9bcc-62bf7b0f08b3" parent_id_arme="dae10e98-b23d-4cb4-9de1-7f84f466954d">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Waypoint 78" value="3.0" />
+    <set_variable name="Sector" value="1.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Down)" id_arme="7cd71bf7-bca6-4754-9630-c4f374ac05ab" parent_id_arme="dae10e98-b23d-4cb4-9de1-7f84f466954d">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Waypoint 78" value="3.0" />
+    <set_variable name="Sector" value="4.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="d09ed304-ef0d-41c3-9280-8eff373aee46" parent_id_arme="dae10e98-b23d-4cb4-9de1-7f84f466954d">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="3.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Waypoint 78" value="3.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="1a626cca-5879-42e8-9fc0-78307119336f" parent_id_arme="04078dd5-5fe7-40e1-876e-b7bbc970ff12" />
+  <event name="Generate Sector Entities" id_arme="6cfa1703-d435-4fe9-a510-e0fb26247ea1" parent_id_arme="1a626cca-5879-42e8-9fc0-78307119336f">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="14caee6e-3360-4a4b-8e5b-250184be7db0" parent_id_arme="1a626cca-5879-42e8-9fc0-78307119336f">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="2ad485d7-97a9-475a-a771-2399636fc8be" parent_id_arme="1a626cca-5879-42e8-9fc0-78307119336f">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="3.0" />
+    <set_variable name="Waypoint 78" value="System" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Sector 3" id_arme="2eae0028-5fb8-499d-92de-dedb02a26904" parent_id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" />
+  <event name="Create Waypoint 78-3" id_arme="a716dd3f-7e60-4b0d-9935-dc9f2ae60163" parent_id_arme="2eae0028-5fb8-499d-92de-dedb02a26904">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="16" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Waypoint 78" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="38" type="nebulas" startX="27482.0" startY="0.0" startZ="51320.0" endX="19120.0" endY="0.0" endZ="62762.0" randomRange="8984" />
+    <create count="100" type="nebulas" startX="94744.0" startY="0.0" startZ="42665.0" endX="28069.0" endY="0.0" endZ="25061.0" randomRange="9831" />
+    <create count="60" type="asteroids" startX="55502.0" startY="0.0" startZ="34743.0" endX="8631.0" endY="0.0" endZ="49559.0" randomRange="8792" />
+    <create count="500" type="asteroids" startX="94890.0" startY="0.0" startZ="93129.0" endX="35111.0" endY="0.0" endZ="85281.0" randomRange="7723" />
+    <create count="200" type="asteroids" startX="36284.0" startY="0.0" startZ="91662.0" endX="3937.0" endY="0.0" endZ="94156.0" randomRange="5591" />
+    <create count="100" type="asteroids" startX="62397.0" startY="0.0" startZ="97163.0" endX="33644.0" endY="0.0" endZ="97017.0" randomRange="2862" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b0d08366-4819-470a-840e-bc71ff0af24e" parent_id_arme="2eae0028-5fb8-499d-92de-dedb02a26904" />
+  <event name="Transition to (Right)" id_arme="a848cdff-25e0-48c7-b211-3ada32b3f4db" parent_id_arme="b0d08366-4819-470a-840e-bc71ff0af24e">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Waypoint 78" value="3.0" />
+    <set_variable name="Sector" value="4.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="5b7e1ebd-3766-4e45-b24e-0534d451cbcf" parent_id_arme="b0d08366-4819-470a-840e-bc71ff0af24e">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Waypoint 78" value="3.0" />
+    <set_variable name="Sector" value="1.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="bdd2cc4b-1228-47d4-a049-73abdd969b43" parent_id_arme="b0d08366-4819-470a-840e-bc71ff0af24e">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Waypoint 78" value="3.0" />
+    <set_variable name="Sector" value="3.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="9d6eaa8e-a0c7-40e9-ba06-c73ac9f63fa9" parent_id_arme="b0d08366-4819-470a-840e-bc71ff0af24e" />
+  <event name="Gate Offline" id_arme="5bd2a32c-1e4e-44aa-8b1a-5a847dca28e6" parent_id_arme="9d6eaa8e-a0c7-40e9-ba06-c73ac9f63fa9">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Kalixa Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8" parent_id_arme="9d6eaa8e-a0c7-40e9-ba06-c73ac9f63fa9" />
+  <event name="Ship1 Activation Range" id_arme="60cac53b-3d24-4bc5-b073-ba144a97b382" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="65d96ca2-8f76-4fc8-ae8d-27bc90cdb843" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="7cbaa55d-7fa2-42b6-b9a9-cba968a2f62a" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="f40dba85-35f6-495f-baf7-6a931e391116" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="ecf61491-01f0-4ab1-84b3-33a03c94cfff" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="eace5812-be65-4c35-b2dc-eb130d7c7d95" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="f4486803-b214-4c65-b421-d55e4f196893" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="9a42bd21-7ba1-45af-aa33-f1abe9e9c0d9" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="30b8af0e-3b58-4d68-b782-371bcdcb4e6a" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="4d323464-3a99-46d3-ac95-9d35df7acfbb" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="41f1973c-5683-4ae7-aed7-0c51ffd323f7" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="26cbcf27-a49e-4b50-a29c-3ec7daf33947" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="e570a284-638b-4c94-bb26-460d12d3e36e" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="1af2ec67-63e4-45f8-98ef-01a93eab52cb" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="670e1d94-c17a-4d0a-9e6f-4461ae49c91f" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="cc79343d-141b-43fe-a7fa-7619f47f2d03" parent_id_arme="3aeb8b2f-215b-4e64-9170-11f06637c0a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="2882d6d6-6dee-469a-b304-10c2223d96b3" parent_id_arme="9d6eaa8e-a0c7-40e9-ba06-c73ac9f63fa9">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Kalixa Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="e0b73c53-f6cc-46b3-b95b-7820a1fa255d" parent_id_arme="9d6eaa8e-a0c7-40e9-ba06-c73ac9f63fa9">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Waypoint 78" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="systemName to Kalixa" value="1.0" />
+    <set_variable name="Kalixa System" value="1.0" />
+    <set_variable name="Sector" value="4" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="b70e37be-69a0-4d88-8698-6ae8eba08172" parent_id_arme="2eae0028-5fb8-499d-92de-dedb02a26904" />
+  <event name="Generate Sector Entities" id_arme="d3ecf4a7-a6c6-4b5e-a439-23cd9faa3783" parent_id_arme="b70e37be-69a0-4d88-8698-6ae8eba08172">
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="31370.0" y="0.0" z="64523.0" angle="0" name="Kalixa Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="e4f08bbe-a4a4-46b0-8347-f832a3f0bae3" parent_id_arme="b70e37be-69a0-4d88-8698-6ae8eba08172">
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Kalixa Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Kalixa Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Kalixa Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Kalixa Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="524d0901-3d6d-483a-8fa5-6f1047d07c74" parent_id_arme="b70e37be-69a0-4d88-8698-6ae8eba08172">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="3.0" />
+    <destroy name="Kalixa Gate" />
+    <set_variable name="Waypoint 78" value="System" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Kalixa" id_arme="feb346ee-d446-48aa-b9ee-846d9a790417" parent_id_arme="2eae0028-5fb8-499d-92de-dedb02a26904">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Kalixa to systemName" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Kalixa Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Kalixa to systemName" value="0.0" />
+  </event>
+  <folder_arme name="Sector 4" id_arme="1481f4f6-c384-4cf1-99be-5289209c957a" parent_id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" />
+  <event name="Create Waypoint 78-4" id_arme="d2fa526e-3523-405b-944a-a542f16b4685" parent_id_arme="1481f4f6-c384-4cf1-99be-5289209c957a">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="16" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Waypoint 78" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="60" type="asteroids" startX="28142.0" startY="0.0" startZ="85941.0" endX="5184.0" endY="0.0" endZ="71858.0" randomRange="8792" />
+    <create count="500" type="asteroids" startX="95991.0" startY="0.0" startZ="83080.0" endX="35111.0" endY="0.0" endZ="85281.0" randomRange="7723" />
+    <create count="200" type="asteroids" startX="53081.0" startY="0.0" startZ="78019.0" endX="5331.0" endY="0.0" endZ="60855.0" randomRange="5591" />
+    <create count="100" type="asteroids" startX="98778.0" startY="0.0" startZ="96430.0" endX="72299.0" endY="0.0" endZ="93276.0" randomRange="2862" />
+    <create count="10" type="nebulas" startX="54328.0" startY="0.0" startZ="20220.0" endX="19194.0" endY="0.0" endZ="48826.0" randomRange="9027" />
+  </event>
+  <folder_arme name="Navigation" id_arme="937d0c95-c0dc-400e-8690-ab3509f6f714" parent_id_arme="1481f4f6-c384-4cf1-99be-5289209c957a" />
+  <event name="Transition to (Left)" id_arme="2233c523-5ca7-4d1d-b05a-0ae9229c3178" parent_id_arme="937d0c95-c0dc-400e-8690-ab3509f6f714">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Waypoint 78" value="3.0" />
+    <set_variable name="Sector" value="3.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="5012936e-af0f-4cf0-8985-af1ec7c4367a" parent_id_arme="937d0c95-c0dc-400e-8690-ab3509f6f714">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Waypoint 78" value="3.0" />
+    <set_variable name="Sector" value="2.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="73b747e5-e6f2-4459-aba9-ad53d6a0c425" parent_id_arme="937d0c95-c0dc-400e-8690-ab3509f6f714">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Waypoint 78" value="3.0" />
+    <set_variable name="Sector" value="1.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="55bf9d54-f230-4235-ab11-6bef1a2f6811" parent_id_arme="1481f4f6-c384-4cf1-99be-5289209c957a" />
+  <event name="Generate Sector Entities" id_arme="a2cd4671-c49a-4057-bb66-f43b2378d66a" parent_id_arme="55bf9d54-f230-4235-ab11-6bef1a2f6811">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="66f7fe9b-dc53-412c-b080-524e035bdc60" parent_id_arme="55bf9d54-f230-4235-ab11-6bef1a2f6811">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e558a02c-cdfb-459a-9c15-56559d4cb2b7" parent_id_arme="55bf9d54-f230-4235-ab11-6bef1a2f6811">
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="3.0" />
+    <set_variable name="Waypoint 78" value="System" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

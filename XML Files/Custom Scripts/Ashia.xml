@@ -1,0 +1,1873 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="1188.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="500.0" integer="yes" />
+    <set_variable name="Alignment" value="USFP" integer="yes" />
+  </start>
+  <folder_arme name="Ashia System" id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <folder_arme name="Ashia Settings" id_arme="11e9ee7d-f5ac-403b-be11-c1aff306d2e6" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <folder_arme name="Ashia Menu" id_arme="b26b22e8-d915-4e87-b174-46aae791c78f" parent_id_arme="11e9ee7d-f5ac-403b-be11-c1aff306d2e6" />
+  <event name="Ashia Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="b26b22e8-d915-4e87-b174-46aae791c78f">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Ashia System" />
+    <set_variable name="Ashia Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="b26b22e8-d915-4e87-b174-46aae791c78f">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Ashia System" />
+  </event>
+  <event name="Ashia System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="b26b22e8-d915-4e87-b174-46aae791c78f">
+    <if_gm_button text="Lower Arc/Ashia System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="102.0" integer="yes" />
+    <set_variable name="Ashia System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="11e9ee7d-f5ac-403b-be11-c1aff306d2e6">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="11e9ee7d-f5ac-403b-be11-c1aff306d2e6">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="11e9ee7d-f5ac-403b-be11-c1aff306d2e6">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="11e9ee7d-f5ac-403b-be11-c1aff306d2e6">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="11e9ee7d-f5ac-403b-be11-c1aff306d2e6">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Ashia Sector I" id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <event name="Create Ashia Sector I" id_arme="2a7deed8-1f8f-4b4a-b745-eff4dcf12cc4" parent_id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f">
+    <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="120" type="nebulas" startX="17188.0" startY="-300.0" startZ="28571.0" endX="72099.0" endY="0.0" endZ="68883.0" randomRange="8000" />
+    <create count="120" type="nebulas" nebType="2" startX="581.0" startY="-500.0" startZ="30178.0" endX="73974.0" endY="0.0" endZ="58973.0" randomRange="7000" />
+    <create count="30" type="nebulas" startX="16652.0" startY="0.0" startZ="35937.0" endX="1117.0" endY="0.0" endZ="36339.0" randomRange="5000" />
+    <create count="30" type="nebulas" startX="14375.0" startY="0.0" startZ="24687.0" endX="1117.0" endY="0.0" endZ="22946.0" randomRange="5000" />
+    <create count="150" type="asteroids" startX="65000.0" startY="-400.0" startZ="58705.0" endX="1786.0" endY="0.0" endZ="23214.0" randomRange="4000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Ashia System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62" parent_id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f" />
+  <event name="Transition to Sector II" id_arme="5b108269-5dbb-4867-b7c3-b6c2e68176c9" parent_id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="a3e00ef2-5490-46c5-aea6-8345fcd2fcbf" parent_id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="2942ffa4-dcd7-49a1-938d-4a6e75f7101e" parent_id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="6616da75-b3fe-42e9-aa95-779c79e6a575" parent_id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62" />
+  <event name="Gate Offline" id_arme="91e384b0-05d9-42ea-865c-2c72b0878019" parent_id_arme="6616da75-b3fe-42e9-aa95-779c79e6a575">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Tyr Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="03564ffa-87ec-4762-bd0f-32c933472f76" parent_id_arme="6616da75-b3fe-42e9-aa95-779c79e6a575" />
+  <event name="Ship1 Activation Range" id_arme="1a71c5f7-f8d2-4e33-81d4-4be02139d37e" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="f2fcf192-8dc5-4c92-9963-3f9e2aee44aa" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="2aaf6169-cf0e-45d8-8c92-239248c73d3a" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="188fb572-6481-48d6-a185-88e19726bb3e" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="236f086e-b8f5-4ab8-9912-4b593b7b1078" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="754b74e2-754b-43f6-bb5f-19aebca25dad" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="287e403f-99f8-4b1b-b354-4f63ba695c02" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="367a42fc-0f26-4381-9c41-15ee18ffd37e" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="07c68068-758c-477b-a825-3756f81dc8f9" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="e63d2ead-83d3-45ed-94d4-0b02cd98eabe" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="ec2d2952-4818-483d-88b7-e2abe2580cc4" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="e6e1f059-d5a1-420b-839c-43b8e836976b" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="ac7b08c7-a4de-4634-8965-a65ab967719b" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="2bd79f01-f1e1-450f-b8b7-438af4893935" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="5703f404-aa94-4486-8e69-e526ba65522e" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="6765a8b1-e50c-449f-8022-af5f887ee8a0" parent_id_arme="03564ffa-87ec-4762-bd0f-32c933472f76">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="d944d445-f0b6-4f1d-bb6c-0fb1ff81c3fa" parent_id_arme="6616da75-b3fe-42e9-aa95-779c79e6a575">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Tyr Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="391ed34f-207c-442e-8697-ca1b82c59876" parent_id_arme="6616da75-b3fe-42e9-aa95-779c79e6a575">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Ashia to Tyr" value="1.0" />
+    <set_variable name="Tyr System" value="1.0" />
+    <set_variable name="Sector" value="8.0" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="45ff839a-76ee-4783-8f4f-a7ec78a9bc37" parent_id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f" />
+  <event name="Generate Sector Entities" id_arme="3892f310-8db1-429d-aa3c-e510f42a88c7" parent_id_arme="45ff839a-76ee-4783-8f4f-a7ec78a9bc37">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="47054.0" y="0.0" z="36339.0" name="Tyr Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="26529.0" y="0.0" z="58839.0" name="DS-165" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="73974.0" y="0.0" z="76250.0" name="DS-250" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="31652.0" y="0.0" z="13973.0" name="DS-552" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="41697.0" y="0.0" z="67544.0" name="Goshen Hitchpost" hullID="1001" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="fe0d0025-a89a-41b4-bb85-f6748fa199d8" parent_id_arme="45ff839a-76ee-4783-8f4f-a7ec78a9bc37">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Tyr Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Tyr Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Tyr Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Tyr Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="9f9323d6-cdfd-47b5-840c-723bad250ac0" parent_id_arme="45ff839a-76ee-4783-8f4f-a7ec78a9bc37">
+    <if_variable name="Ashia System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-165" />
+    <destroy name="DS-250" />
+    <destroy name="DS-552" />
+    <destroy name="Goshen Hitchpost" />
+    <destroy name="Tyr Gate" />
+    <destroy name="Ashia I" />
+    <set_variable name="Ashia System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Tyr" id_arme="269da136-b1a8-4841-9822-b516883056fc" parent_id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tyr to Ashia" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Tyr Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Tyr to Ashia" value="0.0" />
+  </event>
+  <folder_arme name="Ashia Sector II" id_arme="e6ace131-8b8b-4839-b9b7-7ffceaa2d0b3" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <event name="Create Ashia Sector II" id_arme="5d8f1a34-67b4-4fb0-be30-9a58773c24a2" parent_id_arme="e6ace131-8b8b-4839-b9b7-7ffceaa2d0b3">
+    <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="120" type="nebulas" startX="40759.0" startY="0.0" startZ="40357.0" endX="99688.0" endY="200.0" endZ="31250.0" randomRange="8000" />
+    <create count="100" type="nebulas" nebType="2" startX="99554.0" startY="0.0" startZ="24419.0" endX="29911.0" endY="200.0" endZ="63392.0" randomRange="7000" />
+    <create count="80" type="nebulas" nebType="1" startX="34465.0" startY="200.0" startZ="50000.0" endX="37143.0" endY="300.0" endZ="97544.0" randomRange="8000" />
+    <create count="60" type="nebulas" nebType="2" startX="58572.0" startY="200.0" startZ="49732.0" endX="27634.0" endY="300.0" endZ="77589.0" randomRange="8000" />
+    <create count="60" type="nebulas" startX="23755.0" startY="300.0" startZ="98401.0" endX="47992.0" endY="400.0" endZ="71026.0" randomRange="8000" />
+    <create count="60" type="nebulas" nebType="2" startX="32380.0" startY="300.0" startZ="98847.0" endX="41429.0" endY="400.0" endZ="68482.0" randomRange="8000" />
+    <create count="70" type="nebulas" startX="98617.0" startY="0.0" startZ="35267.0" endX="37679.0" endY="200.0" endZ="51875.0" randomRange="7000" />
+    <create count="30" type="nebulas" startX="67813.0" startY="0.0" startZ="46116.0" endX="42500.0" endY="200.0" endZ="65401.0" randomRange="7000" />
+    <create count="150" type="asteroids" startX="49733.0" startY="0.0" startZ="46116.0" endX="97813.0" endY="200.0" endZ="29642.0" randomRange="7000" />
+    <create count="50" type="asteroids" startX="58840.0" startY="200.0" startZ="33794.0" endX="28036.0" endY="300.0" endZ="71294.0" randomRange="7000" />
+    <create count="50" type="asteroids" startX="29257.0" startY="300.0" startZ="99442.0" endX="40090.0" endY="400.0" endZ="72232.0" randomRange="7000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Ashia System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="39fdb169-3182-42c8-a668-d97d83279344" parent_id_arme="e6ace131-8b8b-4839-b9b7-7ffceaa2d0b3" />
+  <event name="Transition to Sector III" id_arme="8ae52fbe-0ab4-4f43-a6b7-a8a9a6f80c55" parent_id_arme="39fdb169-3182-42c8-a668-d97d83279344">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="c80da102-e3a5-4105-add1-0bc9563a92af" parent_id_arme="39fdb169-3182-42c8-a668-d97d83279344">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="d16e3ae0-ec94-4b28-862f-3a50e941f53a" parent_id_arme="39fdb169-3182-42c8-a668-d97d83279344">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="4908d407-c5f5-4388-b9a2-58b9dba82f2d" parent_id_arme="39fdb169-3182-42c8-a668-d97d83279344">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="1580bbe7-0b7c-4ae8-b84f-61ed306ff5e3" parent_id_arme="39fdb169-3182-42c8-a668-d97d83279344">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="45350d84-db06-42be-ba87-5b8ea5bae4a8" parent_id_arme="e6ace131-8b8b-4839-b9b7-7ffceaa2d0b3" />
+  <event name="Generate Sector Entities" id_arme="37572e12-bcc5-4d25-bbc5-5514a5f604e0" parent_id_arme="45350d84-db06-42be-ba87-5b8ea5bae4a8">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="80670.0" y="0.0" z="58571.0" name="DS-311" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="60179.0" y="0.0" z="80267.0" name="DS-189" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="31518.0" y="0.0" z="32857.0" name="DS-277" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="17322.0" y="0.0" z="76517.0" name="Franklin" hullID="1004" sideValue="sectorSide" />
+    <create type="station" x="49867.0" y="0.0" z="46919.0" name="Casey" hullID="1003" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="318ddd27-7433-4212-b619-eb901164dbeb" parent_id_arme="45350d84-db06-42be-ba87-5b8ea5bae4a8">
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e4335130-d098-4d0d-a915-482ebab5887c" parent_id_arme="45350d84-db06-42be-ba87-5b8ea5bae4a8">
+    <if_variable name="Ashia System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-311" />
+    <destroy name="DS-189" />
+    <destroy name="DS-277" />
+    <destroy name="Franklin" />
+    <destroy name="Casey" />
+    <destroy name="Ashia II" />
+    <set_variable name="Ashia System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Ashia Sector III" id_arme="92fe925d-183a-45ef-9c48-39faf3f53fea" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <event name="Create Ashia Sector III" id_arme="94f1e105-8571-4d0b-9733-c9a49959c2cd" parent_id_arme="92fe925d-183a-45ef-9c48-39faf3f53fea">
+    <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="120" type="nebulas" startX="71965.0" startY="200.0" startZ="23616.0" endX="48125.0" endY="200.0" endZ="64866.0" randomRange="8000" />
+    <create count="100" type="nebulas" nebType="2" startX="72500.0" startY="-200.0" startZ="25625.0" endX="38215.0" endY="-200.0" endZ="63794.0" randomRange="7000" />
+    <create count="150" type="asteroids" startX="50402.0" startY="-250.0" startZ="14241.0" endX="10492.0" endY="-250.0" endZ="35267.0" randomRange="12000" />
+    <create count="150" type="asteroids" startX="53884.0" startY="250.0" startZ="18660.0" endX="7545.0" endY="250.0" endZ="30982.0" randomRange="12000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Ashia System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="94e2df63-a93f-487e-b77f-948eed177975" parent_id_arme="92fe925d-183a-45ef-9c48-39faf3f53fea" />
+  <event name="Transition to Sector II" id_arme="dae53903-6aef-43c7-a976-6b2ef1c253f9" parent_id_arme="94e2df63-a93f-487e-b77f-948eed177975">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="3a820505-16ef-405c-a50e-c21ce32d791e" parent_id_arme="94e2df63-a93f-487e-b77f-948eed177975">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="8dfb0b9d-0494-44d0-a6b6-933252d1d3d3" parent_id_arme="94e2df63-a93f-487e-b77f-948eed177975">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="877e4661-de9d-4231-8cae-b7f55a82b6a8" parent_id_arme="92fe925d-183a-45ef-9c48-39faf3f53fea" />
+  <event name="Generate Sector Entities" id_arme="eada7a33-ea2e-4f0c-b90a-f03d3efd7b2e" parent_id_arme="877e4661-de9d-4231-8cae-b7f55a82b6a8">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="81608.0" y="0.0" z="62187.0" name="DS-201" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="41295.0" y="0.0" z="78928.0" name="DS-505" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="30849.0" y="0.0" z="29241.0" angle="0" name="Indigo Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="01ebb1b6-e71c-49f0-ada9-d570f4618707" parent_id_arme="877e4661-de9d-4231-8cae-b7f55a82b6a8">
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="533c3582-0411-41c4-b604-d59d1d2e8863" parent_id_arme="877e4661-de9d-4231-8cae-b7f55a82b6a8">
+    <if_variable name="Ashia System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-201" />
+    <destroy name="DS-505" />
+    <destroy name="Indigo Mining" />
+    <destroy name="Ashia III" />
+    <set_variable name="Ashia System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Ashia Sector IV" id_arme="485f6b4c-ee8f-4c01-a316-c5bb6a41340a" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <event name="Create Ashia Sector IV" id_arme="3f1c6d15-a1fa-4575-a496-c08cbfba62a9" parent_id_arme="485f6b4c-ee8f-4c01-a316-c5bb6a41340a">
+    <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create type="genericMesh" x="7844.0" y="0.0" z="7992.0" angle="0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.0" colorGreen="0.8" colorBlue="0.0" />
+    <create count="100" type="nebulas" startX="91562.0" startY="250.0" startZ="1895.0" endX="69554.0" endY="-250.0" endZ="83531.0" randomRange="15000" />
+    <create count="100" type="nebulas" nebType="2" startX="79071.0" startY="-250.0" startZ="16765.0" endX="83383.0" endY="250.0" endZ="76988.0" randomRange="20000" />
+    <create count="100" type="nebulas" startX="15849.0" startY="250.0" startZ="79732.0" endX="63929.0" endY="-250.0" endZ="62187.0" randomRange="15000" />
+    <create count="100" type="nebulas" nebType="2" startX="16384.0" startY="-250.0" startZ="73437.0" endX="67009.0" endY="250.0" endZ="74375.0" randomRange="20000" />
+    <create count="50" type="asteroids" startX="59242.0" startY="0.0" startZ="17187.0" endX="77188.0" endY="0.0" endZ="71294.0" randomRange="15000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Ashia System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="036b19d3-35dc-4237-9537-504ef68100ce" parent_id_arme="485f6b4c-ee8f-4c01-a316-c5bb6a41340a" />
+  <event name="Transition to Sector V" id_arme="a9e1256a-fe75-4334-908c-f2d9792bc00c" parent_id_arme="036b19d3-35dc-4237-9537-504ef68100ce">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="823a0d53-c3ad-49bc-9723-18564bd77fe2" parent_id_arme="036b19d3-35dc-4237-9537-504ef68100ce">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="15bca67c-7e16-4977-b45d-7b45d5d43456" parent_id_arme="036b19d3-35dc-4237-9537-504ef68100ce">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="bee14a0a-4956-401a-9a40-9b48d01bb1d4" parent_id_arme="036b19d3-35dc-4237-9537-504ef68100ce">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="bedfdfda-8ed8-41be-9e67-99d36c7292bc" parent_id_arme="036b19d3-35dc-4237-9537-504ef68100ce">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="48a23ed2-26a5-400f-a43e-3c3a50a9d3b4" parent_id_arme="485f6b4c-ee8f-4c01-a316-c5bb6a41340a" />
+  <event name="Generate Sector Entities" id_arme="d2cd3a3d-3a51-49b1-8d8b-28e6220fe5d8" parent_id_arme="48a23ed2-26a5-400f-a43e-3c3a50a9d3b4">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="CustomPlanet" value="1.0" integer="yes" />
+    <create type="station" x="30849.0" y="0.0" z="44508.0" name="Valti" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="24018.0" y="0.0" z="58571.0" name="DS-229" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="51474.0" y="0.0" z="22678.0" name="DS-303" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="73036.0" y="0.0" z="68348.0" name="DS-661" hullID="1000" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="bff9b8f1-db32-4fa4-978a-099d9f7b7d58" parent_id_arme="48a23ed2-26a5-400f-a43e-3c3a50a9d3b4">
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Custom Planet Data" id_arme="49a314c1-9285-4fcb-ad6b-03f39c6cc8d9" parent_id_arme="48a23ed2-26a5-400f-a43e-3c3a50a9d3b4">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="CustomPlanet" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="CustomPlanet" />
+    <set_ship_text name="PA" newname=" " />
+    <set_ship_text name="PB" newname=" " />
+    <set_ship_text name="PC" newname=" " />
+    <set_ship_text name="PD" newname=" " />
+    <set_ship_text name="PE" newname=" " />
+    <set_ship_text name="PF" newname=" " />
+    <set_ship_text name="PG" newname=" " />
+    <set_ship_text name="PH" newname=" " />
+    <set_ship_text name="Planet" newname="Venga" class="Class P Planet" />
+    <set_variable name="CustomPlanet" value="0.0" integer="yes" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="bca2f9f2-e0cc-442d-afec-0dfbbd6477de" parent_id_arme="48a23ed2-26a5-400f-a43e-3c3a50a9d3b4">
+    <if_variable name="Ashia System" comparator="EQUALS" value="3.0" />
+    <destroy name="Valti" />
+    <destroy name="DS-229" />
+    <destroy name="DS-303" />
+    <destroy name="DS-661" />
+    <destroy name="Venga" />
+    <destroy name="Ashia IV" />
+    <set_variable name="DestroyPlanet" value="1.0" integer="yes" />
+    <set_variable name="Ashia System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Ashia Sector V" id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <event name="Create Ashia Sector V" id_arme="5e199dbf-2fe1-4670-bbf8-5074872409c9" parent_id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c">
+    <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="120" type="nebulas" startX="31250.0" startY="400.0" startZ="1383.0" endX="45045.0" endY="-200.0" endZ="50803.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="34197.0" startY="400.0" startZ="1919.0" endX="40090.0" endY="-200.0" endZ="48392.0" randomRange="10000" />
+    <create count="70" type="nebulas" nebType="2" startX="64599.0" startY="400.0" startZ="86964.0" endX="46518.0" endY="-200.0" endZ="34732.0" randomRange="10000" />
+    <create count="120" type="nebulas" startX="86027.0" startY="400.0" startZ="84821.0" endX="41965.0" endY="-200.0" endZ="45178.0" randomRange="10000" />
+    <create count="150" type="asteroids" startX="34197.0" startY="400.0" startZ="982.0" endX="50134.0" endY="-200.0" endZ="69151.0" randomRange="10000" />
+    <create count="70" type="asteroids" startX="78259.0" startY="400.0" startZ="74910.0" endX="33393.0" endY="-200.0" endZ="43705.0" randomRange="15000" />
+    <create count="50" type="mines" startAngle="80" endAngle="180" startX="75045.0" startY="0.0" startZ="28437.0" radius="12000" />
+    <create count="50" type="mines" startAngle="80" endAngle="180" startX="92724.0" startY="0.0" startZ="48258.0" radius="12000" />
+    <create count="50" type="mines" startAngle="80" endAngle="180" startX="59509.0" startY="0.0" startZ="9553.0" radius="12000" />
+    <create count="50" type="mines" startAngle="0" endAngle="-100" startX="22545.0" startY="0.0" startZ="71294.0" radius="12000" />
+    <create count="50" type="mines" startAngle="0" endAngle="-100" startX="7679.0" startY="0.0" startZ="52142.0" radius="12000" />
+    <create count="50" type="mines" startAngle="0" endAngle="-100" startX="38884.0" startY="0.0" startZ="91116.0" radius="12000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Ashia System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950" parent_id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c" />
+  <event name="Transition to Sector VI" id_arme="b4ad0195-2f42-4814-a192-3f1227418413" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="c250f785-b50f-4753-af05-0d254b863eb9" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="ce6ea446-8e6d-419e-84c0-592c9f56c992" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="b7a68414-1a3f-4db9-87a0-6d8182610c9f" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="385303bb-7260-498f-9077-c375d04cecda" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="79d63595-8045-447a-9cd9-fd7ea3c1f6e5" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="7d0f6699-ddb0-4ba2-a5cf-f7eae04d1eb1" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="da2964a7-9515-4015-8cf1-943fbe1b804b" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="ac548ba6-7088-4636-a92a-73b2b6ce1731" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950" />
+  <event name="Gate Offline" id_arme="998e406b-2cdb-4fe1-aa06-890ef9b6fe38" parent_id_arme="ac548ba6-7088-4636-a92a-73b2b6ce1731">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Acantha Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107" parent_id_arme="ac548ba6-7088-4636-a92a-73b2b6ce1731" />
+  <event name="Ship1 Activation Range" id_arme="44910ce0-6a30-4abd-b8b5-fce410a791a3" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Acantha Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="a58d9f3b-32ce-499a-8179-9dac61884f47" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Acantha Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="edb9bdd8-c31a-40b8-b371-e31d148a614f" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Acantha Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="d198e580-69d4-4670-8d59-6883d465e83f" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Acantha Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="6e1eb054-8f06-431f-b7af-38b31d182c32" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Acantha Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="9fb0e4f8-167b-43dc-afd6-5756fb15f5aa" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Acantha Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="fa3988a7-a0b0-4597-b819-9df5078cf7a3" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Acantha Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="451cddba-8fda-4c42-b424-5badb29f80e5" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Acantha Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="0bf94ad8-17f9-4bba-8642-8c323e45d0d9" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Acantha Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="43bcbe9b-e875-4dbb-939f-154007f5dde2" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Acantha Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="b536218b-55a1-4e7c-b7d5-9496439f2f20" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Acantha Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="e1300d20-da51-4c89-89c7-a4a6b64a0e48" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Acantha Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="55276aa9-127e-41b6-a754-de79d62ad8d5" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Acantha Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="aa24b21e-a0a8-4a9e-80cf-2981afcf0bbf" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Acantha Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="dbfc0c04-f4a8-43f5-9ac2-896b66d8a4e9" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Acantha Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="d33d2dc0-7947-4abd-a08e-567325f9096a" parent_id_arme="d48e4a01-6d95-4c0c-9493-e97392a41107">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Acantha Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="5c92af87-6d42-493c-ba77-035a40225360" parent_id_arme="ac548ba6-7088-4636-a92a-73b2b6ce1731">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Acantha Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="c48e6cde-42aa-4f6b-bd85-22de192dc549" parent_id_arme="ac548ba6-7088-4636-a92a-73b2b6ce1731">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Acantha Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Ashia to Acantha" value="1.0" />
+    <set_variable name="Acantha System" value="1.0" />
+    <set_variable name="Sector" value="5" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e22191f0-f465-4f39-b4d5-18dca47ebf5c" parent_id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c" />
+  <event name="Generate Sector Entities" id_arme="f902c4a4-c2fd-4e53-8333-dba863db6ab1" parent_id_arme="e22191f0-f465-4f39-b4d5-18dca47ebf5c">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="50938.0" y="0.0" z="53348.0" name="Acantha Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="78661.0" y="0.0" z="26160.0" name="DS-31R" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="62188.0" y="0.0" z="8080.0" name="DS-42A" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="95268.0" y="0.0" z="46785.0" name="DS-67E" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="39822.0" y="0.0" z="89642.0" name="DS-88P" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="22545.0" y="0.0" z="70089.0" name="DS-29X" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="9152.0" y="0.0" z="50401.0" name="DS-03T" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="13304.0" y="0.0" z="81741.0" name="Ashia Transit" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="35800.0" y="0.0" z="78327.0" angle="0" name="WP-262" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="18997.0" y="0.0" z="58550.0" angle="0" name="WP-285" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="63160.0" y="0.0" z="22713.0" angle="0" name="WP-247" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="80409.0" y="0.0" z="41152.0" angle="0" name="WP-221" hullID="1052" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="9063adfc-ceb7-4d3a-8104-6b9826de384d" parent_id_arme="e22191f0-f465-4f39-b4d5-18dca47ebf5c">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Acantha Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Acantha Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Acantha Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Acantha Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e166c92c-e44d-408f-958d-ecf44d4dfa2f" parent_id_arme="e22191f0-f465-4f39-b4d5-18dca47ebf5c">
+    <if_variable name="Ashia System" comparator="EQUALS" value="3.0" />
+    <destroy name="Acantha Gate" />
+    <destroy name="DS-31R" />
+    <destroy name="DS-42A" />
+    <destroy name="DS-67E" />
+    <destroy name="DS-88P" />
+    <destroy name="DS-29X" />
+    <destroy name="DS-03T" />
+    <destroy name="Ashia Transit" />
+    <destroy name="WP-262" />
+    <destroy name="WP-285" />
+    <destroy name="WP-247" />
+    <destroy name="WP-221" />
+    <destroy name="Ashia V" />
+    <set_variable name="Ashia System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Acantha" id_arme="94866a0a-8d38-46a9-8183-73ff3620a57f" parent_id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Acantha to Ashia" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Acantha Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Acantha Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Acantha Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Acantha Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Acantha Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Acantha Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Acantha Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Acantha Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Acantha to Ashia" value="0.0" />
+  </event>
+  <folder_arme name="Ashia Sector VI" id_arme="4c3294a6-2de4-462e-9e7f-326cb9465507" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <event name="Create Ashia Sector VI" id_arme="aeb663cb-a76d-441a-860b-5fe8bab92385" parent_id_arme="4c3294a6-2de4-462e-9e7f-326cb9465507">
+    <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="20" type="nebulas" startX="15983.0" startY="0.0" startZ="87366.0" endX="40759.0" endY="0.0" endZ="78928.0" randomRange="8000" />
+    <create count="20" type="nebulas" nebType="2" startX="23081.0" startY="0.0" startZ="83616.0" endX="35000.0" endY="0.0" endZ="78258.0" randomRange="7000" />
+    <create count="20" type="nebulas" nebType="2" startX="77992.0" startY="0.0" startZ="18928.0" endX="86697.0" endY="0.0" endZ="37008.0" randomRange="7000" />
+    <create count="20" type="nebulas" startX="77724.0" startY="0.0" startZ="30580.0" endX="88706.0" endY="0.0" endZ="23482.0" randomRange="8000" />
+    <create count="150" type="asteroids" startX="44777.0" startY="-500.0" startZ="85491.0" endX="6206.0" endY="0.0" endZ="27366.0" randomRange="10000" />
+    <create count="150" type="asteroids" startX="74911.0" startY="0.0" startZ="90714.0" endX="4331.0" endY="500.0" endZ="47321.0" randomRange="10000" />
+    <create count="100" type="mines" startAngle="-125" endAngle="40" startX="60000.0" startY="-250.0" startZ="40000.0" radius="20000" />
+    <create count="100" type="mines" startAngle="-125" endAngle="40" startX="60000.0" startY="250.0" startZ="40000.0" radius="20000" />
+    <create count="100" type="mines" startAngle="65" endAngle="210" startX="60000.0" startY="-250.0" startZ="40000.0" radius="20000" />
+    <create count="100" type="mines" startAngle="65" endAngle="210" startX="60000.0" startY="250.0" startZ="40000.0" radius="20000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Ashia System" value="2.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="c0b5d6d9-8f32-415a-8154-f2ff95e1782a" parent_id_arme="4c3294a6-2de4-462e-9e7f-326cb9465507" />
+  <event name="Transition to Sector V" id_arme="175a96c5-517e-4ec7-b3d7-bc38eec9b21a" parent_id_arme="c0b5d6d9-8f32-415a-8154-f2ff95e1782a">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="2959d107-3d84-4730-bd6a-560f9f2912e4" parent_id_arme="c0b5d6d9-8f32-415a-8154-f2ff95e1782a">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="20399885-6b01-49c7-96d5-dbccaafd8c4b" parent_id_arme="c0b5d6d9-8f32-415a-8154-f2ff95e1782a">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="aa435225-4675-448c-9ccf-b48d574ca41c" parent_id_arme="c0b5d6d9-8f32-415a-8154-f2ff95e1782a">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="affe88ec-794a-4690-9984-0af565776231" parent_id_arme="c0b5d6d9-8f32-415a-8154-f2ff95e1782a">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="a304cdf1-b48c-4c0e-b441-a9625ae48683" parent_id_arme="4c3294a6-2de4-462e-9e7f-326cb9465507" />
+  <event name="Generate Sector Entities" id_arme="40da0c38-ceb7-4b54-ba12-92f5f2e2d320" parent_id_arme="a304cdf1-b48c-4c0e-b441-a9625ae48683">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="60000.0" y="0.0" z="40000.0" name="Ashia Command" hullID="1002" sideValue="sectorSide" />
+    <create type="station" x="59911.0" y="0.0" z="49598.0" name="Ironmast" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="68215.0" y="0.0" z="30044.0" name="DS-76" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="62992.0" y="0.0" z="27901.0" angle="0" name="SY-716" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="53884.0" y="0.0" z="47321.0" angle="0" name="SY-737" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="73706.0" y="0.0" z="54419.0" angle="0" name="WP-10" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="44375.0" y="0.0" z="28169.0" angle="0" name="WP-40" hullID="1052" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="5c7859e6-7c84-40ba-a40d-88a64962c8e3" parent_id_arme="a304cdf1-b48c-4c0e-b441-a9625ae48683">
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="d35b53da-4eb6-4397-b579-acec5ef6553d" parent_id_arme="a304cdf1-b48c-4c0e-b441-a9625ae48683">
+    <if_variable name="Ashia System" comparator="EQUALS" value="3.0" />
+    <destroy name="Ashia Command" />
+    <destroy name="Ironmast" />
+    <destroy name="DS-76" />
+    <destroy name="SY-716" />
+    <destroy name="SY-737" />
+    <destroy name="WP-10" />
+    <destroy name="WP-40" />
+    <destroy name="Ashia VI" />
+    <set_variable name="Ashia System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Ashia Sector VII" id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <event name="Create Ashia Sector VII" id_arme="d61236f5-4164-4d60-b655-bb69091dfd49" parent_id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f">
+    <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="120" type="nebulas" startX="849.0" startY="0.0" startZ="70491.0" endX="64599.0" endY="0.0" endZ="34732.0" randomRange="12000" />
+    <create count="100" type="nebulas" nebType="2" startX="5000.0" startY="0.0" startZ="74241.0" endX="60581.0" endY="0.0" endZ="30848.0" randomRange="12000" />
+    <create count="50" type="asteroids" startX="65000.0" startY="-300.0" startZ="58705.0" endX="7947.0" endY="-300.0" endZ="26830.0" randomRange="15000" />
+    <create count="50" type="asteroids" startX="69554.0" startY="300.0" startZ="45312.0" endX="6608.0" endY="300.0" endZ="34062.0" randomRange="15000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Ashia System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb" parent_id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f" />
+  <event name="Transition to Sector VIII" id_arme="f5b8a16c-f4fe-457e-9941-1408daa15a22" parent_id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="c8924e31-088e-4a7c-9520-33749637e11d" parent_id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="e9e5cdf9-2eda-40d3-a35a-ce5d16d607df" parent_id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="a1eaf133-3d76-446f-81e6-cd1bc8ed648c" parent_id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb" />
+  <event name="Gate Offline" id_arme="c6c5807d-7f4a-4d01-b64d-3256b390c30e" parent_id_arme="a1eaf133-3d76-446f-81e6-cd1bc8ed648c">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Reema Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="078b4842-c369-47c7-a43f-0b892bf02d16" parent_id_arme="a1eaf133-3d76-446f-81e6-cd1bc8ed648c" />
+  <event name="Ship1 Activation Range" id_arme="148ddabf-6ada-4b8e-9011-fdedf4da2f03" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="e17693b3-20d1-43c8-81d0-226b4b8b63dc" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="c16450a4-05b4-47cb-b483-922e34ceb101" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="b305d011-7923-493c-83fe-67c4a079daa3" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="b1b8eb70-5a4e-4dba-9712-69e98bdc4686" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="643e4341-7a5e-41c0-9196-52cafcac949e" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="9b8fd22a-205e-4483-95dc-00d8f5fcf7c6" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="a371f220-edbe-41d9-8134-e9bee98afdc8" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="e3a7a657-1b0f-4069-a23d-204a10e399c5" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="041807b4-dcba-4178-a397-4b991bbc1c0e" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="f6cb48b9-e031-4d63-8088-9358f500b650" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="2fd7b710-71ee-4cb1-81ca-5518262c1201" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="0f1d4a8a-4d72-4172-9d5d-f676c079dd4e" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="2c3e731b-c8c3-43e4-959a-2a55135a93ab" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="0143ad36-df25-4c74-b24e-2be0e57d6dd9" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Reema Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="9a39268e-e0c8-4da8-b7bf-b83734a3e7cc" parent_id_arme="078b4842-c369-47c7-a43f-0b892bf02d16">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Reema Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="05b23db1-d0e7-4fbe-85f9-515a3724a976" parent_id_arme="a1eaf133-3d76-446f-81e6-cd1bc8ed648c">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Reema Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="be9d7238-f47a-4882-8880-ce22825761d2" parent_id_arme="a1eaf133-3d76-446f-81e6-cd1bc8ed648c">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Reema Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Ashia to Reema" value="1.0" />
+    <set_variable name="Reema System" value="1.0" />
+    <set_variable name="Sector" value="7" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="8521b90d-8b34-4465-b094-92aea12f1da3" parent_id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f" />
+  <event name="Generate Sector Entities" id_arme="8a3874a2-c13f-43fd-958e-1db8722da890" parent_id_arme="8521b90d-8b34-4465-b094-92aea12f1da3">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="50804.0" y="0.0" z="53883.0" name="Reema Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="18259.0" y="0.0" z="38214.0" name="DS-256" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="63606.0" y="0.0" z="23754.0" name="DS-512" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="34465.0" y="0.0" z="75982.0" name="DS-128" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="22009.0" y="0.0" z="57767.0" name="Cenotes Market" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="30149.0" y="0.0" z="19442.0" name="Customs &amp; Immigration" hullID="1001" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="5992dff4-eecb-44d4-ac03-dcc22d6bec62" parent_id_arme="8521b90d-8b34-4465-b094-92aea12f1da3">
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Reema Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Reema Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Reema Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Reema Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="8b94dd90-c9f7-4c5a-8a47-a84dc06b33c5" parent_id_arme="8521b90d-8b34-4465-b094-92aea12f1da3">
+    <if_variable name="Ashia System" comparator="EQUALS" value="3.0" />
+    <destroy name="Reema Gate" />
+    <destroy name="DS-256" />
+    <destroy name="DS-512" />
+    <destroy name="DS-128" />
+    <destroy name="Cenotes Market" />
+    <destroy name="Customs &amp; Immigration" />
+    <destroy name="Ashia VII" />
+    <set_variable name="Ashia System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Reema" id_arme="029a7fc2-44ed-4f42-8df8-5ac72b6506bd" parent_id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Reema to Ashia" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Reema Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Reema Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Reema to Ashia" value="0.0" />
+  </event>
+  <folder_arme name="Ashia Sector VIII" id_arme="fe3a1bab-22fa-42fe-ba15-ae78616d7467" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <event name="Create Ashia Sector VIII" id_arme="04671656-4c8c-4d3b-9a7f-a92bcf92a8a5" parent_id_arme="fe3a1bab-22fa-42fe-ba15-ae78616d7467">
+    <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="60" type="nebulas" startX="95938.0" startY="0.0" startZ="71696.0" endX="31786.0" endY="0.0" endZ="60580.0" randomRange="12000" />
+    <create count="70" type="nebulas" nebType="2" startX="22813.0" startY="0.0" startZ="54151.0" endX="96608.0" endY="0.0" endZ="69821.0" randomRange="12000" />
+    <create count="50" type="asteroids" startX="85893.0" startY="-200.0" startZ="45580.0" endX="10358.0" endY="-200.0" endZ="83616.0" randomRange="14000" />
+    <create count="50" type="asteroids" startX="37679.0" startY="200.0" startZ="36741.0" endX="62590.0" endY="200.0" endZ="91919.0" randomRange="14000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Ashia System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="e7175ebf-d806-4033-aab2-5c20f169acb4" parent_id_arme="fe3a1bab-22fa-42fe-ba15-ae78616d7467" />
+  <event name="Transition to Sector IX" id_arme="fc40b2a5-a826-409b-9d50-7add74e9290a" parent_id_arme="e7175ebf-d806-4033-aab2-5c20f169acb4">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="8428296d-9206-442b-bde9-e80383646165" parent_id_arme="e7175ebf-d806-4033-aab2-5c20f169acb4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="8a1d762a-292f-4add-bf14-dbd3cf79b185" parent_id_arme="e7175ebf-d806-4033-aab2-5c20f169acb4">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="1bd6f648-d393-4be4-a748-08b49e66ee64" parent_id_arme="e7175ebf-d806-4033-aab2-5c20f169acb4">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="8334f8e4-1fba-4d6f-be91-f73b2d88a7d1" parent_id_arme="e7175ebf-d806-4033-aab2-5c20f169acb4">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e37e8b09-ede2-4a8c-836c-6d346b8ae267" parent_id_arme="fe3a1bab-22fa-42fe-ba15-ae78616d7467" />
+  <event name="Generate Sector Entities" id_arme="ec7bfebb-6d01-44dd-bafa-e379b4c98a85" parent_id_arme="e37e8b09-ede2-4a8c-836c-6d346b8ae267">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="70492.0" y="0.0" z="37276.0" name="DS-388" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="24286.0" y="0.0" z="18660.0" name="DS-476" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="29108.0" y="0.0" z="66473.0" name="DS-269" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="70090.0" y="0.0" z="66071.0" name="DS-541" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="55279.0" y="0.0" z="59442.0" angle="0" name="Altun Ha Denabite" hullID="1051" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="1324ccf3-9c9d-4b42-827f-7d88edfa126f" parent_id_arme="e37e8b09-ede2-4a8c-836c-6d346b8ae267">
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="753e13c2-edd7-4d6c-bed4-9512467968bc" parent_id_arme="e37e8b09-ede2-4a8c-836c-6d346b8ae267">
+    <if_variable name="Ashia System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-388" />
+    <destroy name="DS-476" />
+    <destroy name="DS-269" />
+    <destroy name="DS-541" />
+    <destroy name="Ashia VIII" />
+    <destroy name="Altun Ha Denabite" />
+    <set_variable name="Ashia System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Ashia Sector IX" id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <event name="Create Ashia Sector IX" id_arme="39cbbb05-4b2b-4e05-8e05-b60bc1432c82" parent_id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b">
+    <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Ashia System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create type="genericMesh" x="62858.0" y="0.0" z="37678.0" angle="0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.0" colorGreen="0.8" colorBlue="0.0" />
+    <create count="20" type="nebulas" startX="21875.0" startY="0.0" startZ="38348.0" endX="43036.0" endY="0.0" endZ="56964.0" randomRange="8000" />
+    <create count="20" type="nebulas" nebType="2" startX="27768.0" startY="0.0" startZ="31517.0" endX="31250.0" endY="0.0" endZ="54419.0" randomRange="7000" />
+    <create count="15" type="asteroids" startX="40558.0" startY="0.0" startZ="36988.0" endX="54286.0" endY="0.0" endZ="27232.0" randomRange="4000" />
+  </event>
+  <folder_arme name="Navigation" id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7" parent_id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b" />
+  <event name="Transition to Sector VIII" id_arme="e178ba89-8e32-4a41-8e72-30d6a5bb700b" parent_id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="cc151cfc-ab0b-402f-a6dc-a691fa799388" parent_id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="a7a887b6-17e7-4ccd-9488-1b364d5713ca" parent_id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="2c620cf6-2164-44a9-a50a-b74ea6231240" parent_id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7" />
+  <event name="Gate Offline" id_arme="df8140c7-9852-460f-92b1-218af9b8e113" parent_id_arme="2c620cf6-2164-44a9-a50a-b74ea6231240">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Phinmoor Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="e28a618f-79bb-43da-a431-4ede85af04e9" parent_id_arme="2c620cf6-2164-44a9-a50a-b74ea6231240" />
+  <event name="Ship1 Activation Range" id_arme="02046fa8-339f-4ef2-beab-70af3cd4c2cc" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Phinmoor Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="013b5ff0-cea0-4035-aeb3-5e1471e90cc0" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Phinmoor Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="790c2c44-ea00-4d6a-801e-86c5e53ef909" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Phinmoor Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="5b1d90b2-3694-433e-b7f7-635ebd5bdbf8" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Phinmoor Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="84e31f56-6645-45d0-b375-62d635de19c9" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Phinmoor Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="281f31fa-bad9-40d5-b845-22a48a658113" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Phinmoor Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="1209e168-be2c-41c6-a471-2870de3aef8c" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Phinmoor Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="87da33b2-34a6-414d-871f-59fa221b936e" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Phinmoor Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="6fe18b06-644f-41ae-ae59-76e77c085d1c" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Phinmoor Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="76fa70d5-82bb-4304-af67-ed7276f3b159" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Phinmoor Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="d20848e1-1f19-4870-b29a-d8dca386859f" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Phinmoor Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="bd39cc74-110f-44bb-81e4-d1d1889bc32b" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Phinmoor Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="6ed504eb-9c14-4873-962e-7aa5d6b50fd5" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Phinmoor Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="1ac578f0-9140-4ac3-a4a3-4a0c25e60550" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Phinmoor Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="97bb52b8-481d-4672-82c6-5e89234c513d" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Phinmoor Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="182aa76f-7d1c-486d-9f64-a454062f4801" parent_id_arme="e28a618f-79bb-43da-a431-4ede85af04e9">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Phinmoor Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="9cb58315-c353-47b8-b0f9-e2b21d24f466" parent_id_arme="2c620cf6-2164-44a9-a50a-b74ea6231240">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Phinmoor Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="4353724e-40a3-4773-9fe0-59fef729cd04" parent_id_arme="2c620cf6-2164-44a9-a50a-b74ea6231240">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Phinmoor Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Ashia System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Ashia to Phinmoor" value="1.0" />
+    <set_variable name="Phinmoor System" value="1.0" />
+    <set_variable name="Sector" value="targetSector" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d926b786-1d71-43c0-b456-250280a5a696" parent_id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b" />
+  <event name="Generate Sector Entities" id_arme="0153f483-5db5-46c0-9455-91964a08c849" parent_id_arme="d926b786-1d71-43c0-b456-250280a5a696">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="CustomPlanet" value="1.0" integer="yes" />
+    <create type="genericMesh" x="30849.0" y="0.0" z="72500.0" name="Phinmor Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="40707.0" y="0.0" z="47249.0" name="Ashia Authority" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="67679.0" y="0.0" z="57633.0" name="Tazumal Exchange" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="36474.0" y="0.0" z="25357.0" name="DS-819" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="67545.0" y="0.0" z="21875.0" name="DS-781" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="63795.0" y="0.0" z="79330.0" name="DS-567" hullID="1000" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia IX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="d783a6a2-4e66-4d14-be25-c8db565153c9" parent_id_arme="d926b786-1d71-43c0-b456-250280a5a696">
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Phinmoor Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Phinmoor Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Phinmoor Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Phinmoor Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Custom Planet Data" id_arme="d0e50090-3d88-4104-9550-c23818eca879" parent_id_arme="d926b786-1d71-43c0-b456-250280a5a696">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="CustomPlanet" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="CustomPlanet" />
+    <set_ship_text name="PA" newname=" " />
+    <set_ship_text name="PB" newname=" " />
+    <set_ship_text name="PC" newname=" " />
+    <set_ship_text name="PD" newname=" " />
+    <set_ship_text name="PE" newname=" " />
+    <set_ship_text name="PF" newname=" " />
+    <set_ship_text name="PG" newname=" " />
+    <set_ship_text name="PH" newname=" " />
+    <set_ship_text name="Planet" newname="Ashia" class="Class P Planet" />
+    <set_variable name="CustomPlanet" value="0.0" integer="yes" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="0b9b4e0e-5d5c-4699-b2d5-438a27df8b0e" parent_id_arme="d926b786-1d71-43c0-b456-250280a5a696">
+    <if_variable name="Ashia System" comparator="EQUALS" value="3.0" />
+    <destroy name="Phinmor Gate" />
+    <set_variable name="DestroyPlanet" value="1.0" integer="yes" />
+    <destroy name="Ashia" />
+    <destroy name="Ashia Authority" />
+    <destroy name="Tazumal Exchange" />
+    <destroy name="DS-819" />
+    <destroy name="DS-781" />
+    <destroy name="DS-567" />
+    <destroy name="Ashia IX" />
+    <set_variable name="Ashia System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Phinmoor" id_arme="c55c181b-b8d8-488e-ba34-71eea9a9b221" parent_id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b">
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmoor to Ashia" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Phinmoor Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Phinmoor Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Phinmoor Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Phinmoor Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Phinmoor Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Phinmoor Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Phinmoor Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Phinmoor Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Phinmoor to Ashia" value="0.0" />
+  </event>
+</mission_data>

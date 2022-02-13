@@ -1,0 +1,1963 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="507.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="234.0" integer="yes" />
+    <set_variable name="Alignment" value="Neutral" integer="yes" />
+  </start>
+  <folder_arme name="Cronus System" id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <folder_arme name="Cronus Settings" id_arme="d18e2bc9-dfb4-4bc0-be7b-5dbbf35cdc08" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <folder_arme name="Cronus Menu" id_arme="f7fa703d-0af4-4ead-a44a-7916e19832fb" parent_id_arme="d18e2bc9-dfb4-4bc0-be7b-5dbbf35cdc08" />
+  <event name="Cronus Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="f7fa703d-0af4-4ead-a44a-7916e19832fb">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Cronus System" />
+    <set_variable name="Cronus Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="f7fa703d-0af4-4ead-a44a-7916e19832fb">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Cronus System" />
+  </event>
+  <event name="Cronus System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="f7fa703d-0af4-4ead-a44a-7916e19832fb">
+    <if_gm_button text="Lower Arc/Cronus System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="104.0" integer="yes" />
+    <set_variable name="Cronus System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="d18e2bc9-dfb4-4bc0-be7b-5dbbf35cdc08">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="d18e2bc9-dfb4-4bc0-be7b-5dbbf35cdc08">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="d18e2bc9-dfb4-4bc0-be7b-5dbbf35cdc08">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="d18e2bc9-dfb4-4bc0-be7b-5dbbf35cdc08">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="d18e2bc9-dfb4-4bc0-be7b-5dbbf35cdc08">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Cronus Sector I" id_arme="d6a1852c-e4a2-4ee2-a66b-75e357af2d60" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector I" id_arme="a7e80f2a-e35c-4ffc-9973-8625d2712b9c" parent_id_arme="d6a1852c-e4a2-4ee2-a66b-75e357af2d60">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="140" type="nebulas" startX="51130.0" startY="0.0" startZ="13789.0" endX="80339.0" endY="0.0" endZ="37427.0" randomRange="6537" />
+    <create count="70" type="asteroids" startX="52635.0" startY="0.0" startZ="22823.0" endX="16650.0" endY="0.0" endZ="15595.0" randomRange="5622" />
+    <create count="70" type="asteroids" startX="37579.0" startY="0.0" startZ="22823.0" endX="5960.0" endY="0.0" endZ="11982.0" randomRange="5622" />
+    <create count="90" type="asteroids" startX="41795.0" startY="0.0" startZ="16047.0" endX="10628.0" endY="0.0" endZ="4454.0" randomRange="5198" />
+    <create count="11" type="nebulas" startX="81243.0" startY="0.0" startZ="91781.0" endX="50226.0" endY="0.0" endZ="82898.0" randomRange="3437" />
+    <create count="4" type="mines" startX="34718.0" startY="0.0" startZ="64529.0" endX="34718.0" endY="0.0" endZ="64529.0" randomRange="29185" />
+    <create count="3" type="mines" startX="88319.0" startY="0.0" startZ="65432.0" endX="51280.0" endY="0.0" endZ="80639.0" randomRange="11506" />
+    <create count="70" type="nebulas" startX="22979.0" startY="0.0" startZ="43753.0" endX="9613.0" endY="0.0" endZ="68886.0" randomRange="3933" />
+    <create count="20" type="asteroids" startX="74553.0" startY="0.0" startZ="88789.0" endX="55521.0" endY="0.0" endZ="80072.0" randomRange="3517" />
+    <create count="10" type="nebulas" startX="70485.0" startY="0.0" startZ="84140.0" endX="65981.0" endY="0.0" endZ="80799.0" randomRange="1198" />
+    <create count="10" type="nebulas" startX="75424.0" startY="0.0" startZ="84140.0" endX="71938.0" endY="0.0" endZ="80799.0" randomRange="2508" />
+    <create count="10" type="asteroids" startX="54940.0" startY="0.0" startZ="23268.0" endX="64528.0" endY="0.0" endZ="26900.0" randomRange="4115" />
+    <create count="50" type="asteroids" startX="64238.0" startY="250.0" startZ="75278.0" endX="35618.0" endY="-100.0" endZ="67433.0" randomRange="5378" />
+    <create count="30" type="asteroids" startX="57119.0" startY="300.0" startZ="82106.0" endX="29662.0" endY="-350.0" endZ="69757.0" randomRange="3054" />
+    <create count="50" type="asteroids" startX="74262.0" startY="400.0" startZ="83849.0" endX="33584.0" endY="-200.0" endZ="66997.0" randomRange="5378" />
+  </event>
+  <folder_arme name="Navigation" id_arme="c9dad05e-5e55-4c99-b5f9-1c8bdfd8d6e6" parent_id_arme="d6a1852c-e4a2-4ee2-a66b-75e357af2d60" />
+  <event name="Transition to Sector II" id_arme="6f26c1c6-20c2-4548-8f33-07ad7311ee31" parent_id_arme="c9dad05e-5e55-4c99-b5f9-1c8bdfd8d6e6">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="03053a26-0246-4fff-8420-ca9713e92232" parent_id_arme="c9dad05e-5e55-4c99-b5f9-1c8bdfd8d6e6">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="8354bbf2-3c32-4ad9-87bf-568d51a06c25" parent_id_arme="c9dad05e-5e55-4c99-b5f9-1c8bdfd8d6e6">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="1d50ad86-7d7a-451a-b168-b4925e3b9c46" parent_id_arme="c9dad05e-5e55-4c99-b5f9-1c8bdfd8d6e6" />
+  <event name="Gate Offline" id_arme="3960cdbc-b054-49b2-939b-d48f1a480e0a" parent_id_arme="1d50ad86-7d7a-451a-b168-b4925e3b9c46">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Promethean Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b" parent_id_arme="1d50ad86-7d7a-451a-b168-b4925e3b9c46" />
+  <event name="Ship1 Activation Range" id_arme="acf78fe9-a213-4cd3-876c-0e525d63649f" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="268ca9a9-1d84-4ac5-a82d-12b0418246c0" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="d7257ffd-5057-4a9d-94e3-281f6fef49d0" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="47898085-c9f4-47f2-ae0c-a6b248768c03" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="08bbcc27-785a-433f-8dc9-2b4ac17cf40d" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="67acfa53-e32a-4be9-a904-40024c67cd1c" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="55b9ca9b-fbf7-4cfa-aa9a-59e70826542b" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="c6ee4684-6159-46e4-b8df-ece8bc642294" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="a5f7c897-8e46-4dda-a0ff-77e725b52da5" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="a863a8c6-2479-4f28-929d-9baca6c1093f" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="d8e3623c-606e-4efe-9efc-4cddef38779c" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="7203815b-c2c7-43bf-b2e5-6e14acf1365a" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="79b6c75a-ec56-437a-b3cf-ed1aaedb62c6" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="56a485e8-1638-4795-b2e0-d48d92637a9c" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="fd64a549-9121-4001-80f6-a4560de2c13b" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="6290289c-55d8-4ae6-9da9-5b3ab8b14b3f" parent_id_arme="f3bf9bad-2f51-4b98-8fff-ef4b6ab9930b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="4f538261-e05e-4ac4-aa1e-6a5f1bd7b4d7" parent_id_arme="1d50ad86-7d7a-451a-b168-b4925e3b9c46">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Promethean Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="6522dc19-4c40-4db8-b832-c98bcdcc4818" parent_id_arme="1d50ad86-7d7a-451a-b168-b4925e3b9c46">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Cronus to Promethean" value="1.0" />
+    <set_variable name="Promethean System" value="1.0" />
+    <set_variable name="Sector" value="11" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="9baa34c7-b3b8-4b6b-9217-6141b33f75c8" parent_id_arme="d6a1852c-e4a2-4ee2-a66b-75e357af2d60" />
+  <event name="Generate Sector Entities" id_arme="d45b5398-aaab-4556-be02-4734f54bd2f5" parent_id_arme="9baa34c7-b3b8-4b6b-9217-6141b33f75c8">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="62723.0" y="0.0" z="37578.0" angle="0" name="Promethean Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="8c2cf80f-51f1-41b6-ad97-fddb0aba33c8" parent_id_arme="9baa34c7-b3b8-4b6b-9217-6141b33f75c8">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Promethean Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Promethean Gate" />
+    <set_object_property property="angle" value="5.497787144" name="Promethean Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Promethean Gate" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="9e512ad3-63f9-480d-97e6-343844903d05" parent_id_arme="9baa34c7-b3b8-4b6b-9217-6141b33f75c8">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <destroy name="Promethean Gate" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Promethean" id_arme="4f189fff-f996-41cc-b435-d458aecabad9" parent_id_arme="d6a1852c-e4a2-4ee2-a66b-75e357af2d60">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Promethean to Cronus" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Promethean Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Promethean to Cronus" value="0.0" />
+  </event>
+  <folder_arme name="Cronus Sector II" id_arme="98ca387b-f97d-4683-ae99-e80608269906" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector II" id_arme="3686512a-1d87-44f3-b3d6-3939ba380c7c" parent_id_arme="98ca387b-f97d-4683-ae99-e80608269906">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="70" type="nebulas" startX="89975.0" startY="0.0" startZ="13488.0" endX="67240.0" endY="0.0" endZ="31706.0" randomRange="4476" />
+    <create count="140" type="nebulas" startX="64831.0" startY="0.0" startZ="33964.0" endX="39687.0" endY="0.0" endZ="53086.0" randomRange="6615" />
+    <create count="40" type="nebulas" startX="37579.0" startY="0.0" startZ="52936.0" endX="17704.0" endY="0.0" endZ="69196.0" randomRange="4390" />
+    <create count="80" type="asteroids" startX="76123.0" startY="0.0" startZ="7616.0" endX="93589.0" endY="0.0" endZ="15294.0" randomRange="6532" />
+    <create count="40" type="asteroids" startX="97805.0" startY="0.0" startZ="14542.0" endX="87717.0" endY="0.0" endZ="2647.0" randomRange="4783" />
+    <create count="30" type="nebulas" startX="90879.0" startY="0.0" startZ="57452.0" endX="80791.0" endY="0.0" endZ="74015.0" randomRange="5005" />
+    <create count="10" type="nebulas" startX="86211.0" startY="0.0" startZ="65131.0" endX="75973.0" endY="0.0" endZ="76875.0" randomRange="6515" />
+    <create count="4" type="mines" startX="52184.0" startY="0.0" startZ="41041.0" endX="52184.0" endY="-30.0" endZ="41041.0" randomRange="38972" />
+    <create count="40" type="asteroids" startX="45709.0" startY="0.0" startZ="54291.0" endX="17102.0" endY="0.0" endZ="70552.0" randomRange="3132" />
+    <create count="50" type="asteroids" startX="74843.0" startY="0.0" startZ="77021.0" endX="74843.0" endY="0.0" endZ="77021.0" randomRange="8188" />
+    <create count="10" type="asteroids" startX="79347.0" startY="0.0" startZ="72953.0" endX="83560.0" endY="0.0" endZ="65980.0" randomRange="2536" />
+    <create count="40" type="asteroids" startX="75134.0" startY="0.0" startZ="77167.0" endX="59298.0" endY="0.0" endZ="91694.0" randomRange="3215" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3f842e8f-01cf-4000-bb4a-4d80c67e85ee" parent_id_arme="98ca387b-f97d-4683-ae99-e80608269906" />
+  <event name="Transition to Sector III" id_arme="0e29f9ab-db5b-418a-8bb1-0f65b04982c7" parent_id_arme="3f842e8f-01cf-4000-bb4a-4d80c67e85ee">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="806a0faa-7531-475f-b058-eea3f77e4cd2" parent_id_arme="3f842e8f-01cf-4000-bb4a-4d80c67e85ee">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="82977689-a4dc-4a17-bb2e-bf814c60b0e8" parent_id_arme="3f842e8f-01cf-4000-bb4a-4d80c67e85ee">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="80348be8-76a6-42d8-9d88-4c1825b92a82" parent_id_arme="3f842e8f-01cf-4000-bb4a-4d80c67e85ee">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="3df7e979-e669-4aa3-831d-3a35813676ad" parent_id_arme="3f842e8f-01cf-4000-bb4a-4d80c67e85ee">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="22b4695b-325f-402a-b1cf-6d2f1c0eaf15" parent_id_arme="98ca387b-f97d-4683-ae99-e80608269906" />
+  <event name="Generate Sector Entities" id_arme="8e6185d8-d592-410f-9963-d0f639831d90" parent_id_arme="22b4695b-325f-402a-b1cf-6d2f1c0eaf15">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="68288c1d-8b2f-42d7-89ed-9d19c85d5e32" parent_id_arme="22b4695b-325f-402a-b1cf-6d2f1c0eaf15">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="80ff1f72-63a8-448e-ae7c-106bb31c6e62" parent_id_arme="22b4695b-325f-402a-b1cf-6d2f1c0eaf15">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Cronus Sector III" id_arme="7fc0be19-e05e-466e-bac2-6b857b546bd1" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector III" id_arme="52715d73-9991-41cb-a6ec-ff4abf1ada12" parent_id_arme="7fc0be19-e05e-466e-bac2-6b857b546bd1">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="30" type="nebulas" startX="74698.0" startY="0.0" startZ="17167.0" endX="68741.0" endY="0.0" endZ="21525.0" randomRange="4243" />
+    <create count="140" type="nebulas" startX="47821.0" startY="0.0" startZ="36198.0" endX="47821.0" endY="0.0" endZ="36198.0" randomRange="16539" />
+    <create count="30" type="nebulas" startX="72954.0" startY="0.0" startZ="22542.0" endX="63076.0" endY="0.0" endZ="34309.0" randomRange="4615" />
+    <create count="50" type="nebulas" startX="32131.0" startY="0.0" startZ="28498.0" endX="7434.0" endY="0.0" endZ="58571.0" randomRange="9012" />
+    <create count="40" type="nebulas" startX="31114.0" startY="0.0" startZ="42300.0" endX="16296.0" endY="0.0" endZ="57118.0" randomRange="6962" />
+    <create count="50" type="asteroids" startX="70339.0" startY="0.0" startZ="18184.0" endX="35473.0" endY="0.0" endZ="24866.0" randomRange="4235" />
+    <create count="50" type="nebulas" startX="70485.0" startY="0.0" startZ="13099.0" endX="47676.0" endY="0.0" endZ="17312.0" randomRange="3454" />
+    <create count="40" type="nebulas" startX="87773.0" startY="0.0" startZ="7578.0" endX="71356.0" endY="0.0" endZ="17021.0" randomRange="3379" />
+    <create count="40" type="nebulas" startX="80509.0" startY="0.0" startZ="17167.0" endX="60606.0" endY="0.0" endZ="43607.0" randomRange="2806" />
+    <create count="30" type="nebulas" startX="71502.0" startY="0.0" startZ="79927.0" endX="64819.0" endY="0.0" endZ="85593.0" randomRange="1975" />
+    <create count="10" type="nebulas" startX="73245.0" startY="0.0" startZ="78910.0" endX="79056.0" endY="0.0" endZ="74406.0" randomRange="2795" />
+    <create count="70" type="asteroids" startX="74988.0" startY="0.0" startZ="82542.0" endX="77458.0" endY="0.0" endZ="72663.0" randomRange="4510" />
+    <create count="10" type="asteroids" startX="78330.0" startY="0.0" startZ="70484.0" endX="79056.0" endY="0.0" endZ="59297.0" randomRange="1700" />
+    <create count="50" type="nebulas" startX="19637.0" startY="0.0" startZ="34164.0" endX="2930.0" endY="0.0" endZ="50145.0" randomRange="3911" />
+    <create count="30" type="nebulas" startX="52616.0" startY="0.0" startZ="46949.0" endX="32858.0" endY="0.0" endZ="61331.0" randomRange="5569" />
+    <create count="30" type="nebulas" startX="33584.0" startY="0.0" startZ="55811.0" endX="8741.0" endY="0.0" endZ="62348.0" randomRange="4743" />
+    <create count="7" type="mines" startX="73245.0" startY="0.0" startZ="15423.0" endX="55521.0" endY="0.0" endZ="27917.0" randomRange="7797" />
+    <create count="3" type="mines" startX="49419.0" startY="0.0" startZ="72372.0" endX="38669.0" endY="0.0" endZ="79200.0" randomRange="4678" />
+  </event>
+  <folder_arme name="Navigation" id_arme="90282c13-37bf-4987-ab71-7ec5bd8a91ff" parent_id_arme="7fc0be19-e05e-466e-bac2-6b857b546bd1" />
+  <event name="Transition to Sector IV" id_arme="1a2b7b2c-b1e1-410b-b05c-94275e6070be" parent_id_arme="90282c13-37bf-4987-ab71-7ec5bd8a91ff">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="f48ef4e0-4bc6-4038-baf6-f3e6484c981a" parent_id_arme="90282c13-37bf-4987-ab71-7ec5bd8a91ff">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="adf98829-19e5-4c42-9650-551f1f70f1c8" parent_id_arme="90282c13-37bf-4987-ab71-7ec5bd8a91ff">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="d9f33597-1cc2-409b-8bb3-fe0f66dada43" parent_id_arme="90282c13-37bf-4987-ab71-7ec5bd8a91ff">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="a656d60d-ef04-40e0-9e67-1502bb1f78c0" parent_id_arme="90282c13-37bf-4987-ab71-7ec5bd8a91ff">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="0fb35365-3c2f-4aeb-925a-e19d19bf7e45" parent_id_arme="7fc0be19-e05e-466e-bac2-6b857b546bd1" />
+  <event name="Generate Sector Entities" id_arme="2ec5f217-9a04-4ac4-acec-83b49c6ed49a" parent_id_arme="0fb35365-3c2f-4aeb-925a-e19d19bf7e45">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="d6303fd9-0e4c-4eec-82e2-0c83c7869cbf" parent_id_arme="0fb35365-3c2f-4aeb-925a-e19d19bf7e45">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="015e1533-438e-4a45-a4bb-ceb8c4306255" parent_id_arme="0fb35365-3c2f-4aeb-925a-e19d19bf7e45">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Cronus Sector IV" id_arme="d3484ad4-2479-4278-b2ce-28c6f63d05c8" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector IV" id_arme="088b7881-9631-47dc-91ed-c4b8cd47ea8a" parent_id_arme="d3484ad4-2479-4278-b2ce-28c6f63d05c8">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <create count="153" type="nebulas" startX="57991.0" startY="0.0" startZ="72663.0" endX="97797.0" endY="0.0" endZ="53777.0" randomRange="6110" />
+    <create count="50" type="nebulas" startX="98814.0" startY="0.0" startZ="68450.0" endX="80364.0" endY="0.0" endZ="68886.0" randomRange="4447" />
+    <create count="3" type="mines" startX="78330.0" startY="0.0" startZ="32130.0" endX="51308.0" endY="0.0" endZ="31985.0" randomRange="14152" />
+    <create count="60" type="asteroids" startX="82979.0" startY="0.0" startZ="19927.0" endX="37652.0" endY="0.0" endZ="32566.0" randomRange="7498" />
+    <create count="30" type="asteroids" startX="66272.0" startY="0.0" startZ="24285.0" endX="13245.0" endY="0.0" endZ="38668.0" randomRange="3724" />
+    <create count="70" type="asteroids" startX="56538.0" startY="0.0" startZ="28498.0" endX="87192.0" endY="0.0" endZ="6997.0" randomRange="8596" />
+    <create count="10" type="nebulas" startX="80654.0" startY="0.0" startZ="9031.0" endX="23850.0" endY="0.0" endZ="34455.0" randomRange="7194" />
+    <create count="15" type="nebulas" startX="60896.0" startY="0.0" startZ="69612.0" endX="15424.0" endY="0.0" endZ="81670.0" randomRange="3119" />
+  </event>
+  <folder_arme name="Navigation" id_arme="4c756b31-ddbd-44dc-8ac7-5f5790292189" parent_id_arme="d3484ad4-2479-4278-b2ce-28c6f63d05c8" />
+  <event name="Transition to Sector III" id_arme="bc9a5772-17cb-4e83-8e39-f8adf0e95b8b" parent_id_arme="4c756b31-ddbd-44dc-8ac7-5f5790292189">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="2696c1a1-8fac-4592-9703-2704766626f0" parent_id_arme="4c756b31-ddbd-44dc-8ac7-5f5790292189">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="5a7bf425-733a-4052-825f-69df53ef3db0" parent_id_arme="4c756b31-ddbd-44dc-8ac7-5f5790292189">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e6d2adf1-3cbe-4271-ac04-73f8d480f32c" parent_id_arme="d3484ad4-2479-4278-b2ce-28c6f63d05c8" />
+  <event name="Generate Sector Entities" id_arme="f72c46c9-bc61-4833-a602-cefad9c1d045" parent_id_arme="e6d2adf1-3cbe-4271-ac04-73f8d480f32c">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="ed8983c1-9cd1-4ba1-9cd2-bf905de1563b" parent_id_arme="e6d2adf1-3cbe-4271-ac04-73f8d480f32c">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="HegemonyIncursion" value="1.0" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="d41ca3cb-9f6a-4157-8ce1-5012eb3123c3" parent_id_arme="e6d2adf1-3cbe-4271-ac04-73f8d480f32c">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Cronus Sector V" id_arme="7f7115a3-9097-4291-b930-c6c293ba7386" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector V" id_arme="38c7fe59-be8d-4305-9f05-ee9a696db730" parent_id_arme="7f7115a3-9097-4291-b930-c6c293ba7386">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="303" type="nebulas" startX="56538.0" startY="0.0" startZ="27046.0" endX="78185.0" endY="0.0" endZ="56828.0" randomRange="20218" />
+    <create count="50" type="asteroids" startX="81816.0" startY="0.0" startZ="67433.0" endX="47967.0" endY="0.0" endZ="21670.0" randomRange="16555" />
+    <create count="30" type="nebulas" startX="17022.0" startY="0.0" startZ="75278.0" endX="23996.0" endY="0.0" endZ="83414.0" randomRange="6963" />
+    <create count="6" type="mines" startX="56102.0" startY="0.0" startZ="47530.0" endX="56102.0" endY="0.0" endZ="47530.0" randomRange="43044" />
+  </event>
+  <folder_arme name="Navigation" id_arme="232e1ed2-cb9e-4d5f-9cae-753c50cdea6b" parent_id_arme="7f7115a3-9097-4291-b930-c6c293ba7386" />
+  <event name="Transition to Sector VI" id_arme="0eca6c3a-fe02-4a97-bca6-f0acbf49d1b9" parent_id_arme="232e1ed2-cb9e-4d5f-9cae-753c50cdea6b">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="b6974d0c-cd6b-4bcb-99cb-23f561dad402" parent_id_arme="232e1ed2-cb9e-4d5f-9cae-753c50cdea6b">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="9db36fa1-048a-4469-aa6c-c1c2e753756c" parent_id_arme="232e1ed2-cb9e-4d5f-9cae-753c50cdea6b">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="9661db79-4f43-4193-aa44-3461af6a8c64" parent_id_arme="232e1ed2-cb9e-4d5f-9cae-753c50cdea6b">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="993372e0-230a-4d6e-891e-f0efde5f2ed0" parent_id_arme="232e1ed2-cb9e-4d5f-9cae-753c50cdea6b">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="c00b395a-331c-423d-a945-cd20153a2324" parent_id_arme="7f7115a3-9097-4291-b930-c6c293ba7386" />
+  <event name="Generate Sector Entities" id_arme="e3a629c9-c62e-45c5-93e7-47112b84c1a7" parent_id_arme="c00b395a-331c-423d-a945-cd20153a2324">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="08a572ff-1891-43e9-8f3a-ef47d22226e3" parent_id_arme="c00b395a-331c-423d-a945-cd20153a2324">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="d033f605-3b5f-4f21-932d-b2e53a3765bd" parent_id_arme="c00b395a-331c-423d-a945-cd20153a2324">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Cronus Sector VI" id_arme="a624dba9-d158-490c-8cab-e9e878d290f7" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector VI" id_arme="d9624609-3266-4739-81cd-340e1c6771ee" parent_id_arme="a624dba9-d158-490c-8cab-e9e878d290f7">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="70" type="asteroids" startX="71502.0" startY="-400.0" startZ="7869.0" endX="40703.0" endY="400.0" endZ="24430.0" randomRange="4039" />
+    <create count="87" type="asteroids" startX="71356.0" startY="400.0" startZ="9176.0" endX="41865.0" endY="-400.0" endZ="21815.0" randomRange="4039" />
+    <create count="87" type="asteroids" startX="71938.0" startY="-100.0" startZ="8740.0" endX="42591.0" endY="100.0" endZ="21961.0" randomRange="4039" />
+    <create count="97" type="nebulas" startX="71502.0" startY="0.0" startZ="59878.0" endX="30243.0" endY="0.0" endZ="78038.0" randomRange="9370" />
+    <create count="40" type="nebulas" startX="66853.0" startY="0.0" startZ="63946.0" endX="86030.0" endY="0.0" endZ="43607.0" randomRange="4334" />
+    <create count="30" type="nebulas" startX="29371.0" startY="0.0" startZ="74987.0" endX="12228.0" endY="0.0" endZ="88062.0" randomRange="6006" />
+    <create count="120" type="nebulas" startX="37361.0" startY="0.0" startZ="27481.0" endX="37361.0" endY="0.0" endZ="27481.0" randomRange="12218" />
+    <create count="23" type="nebulas" startX="48257.0" startY="0.0" startZ="29079.0" endX="56683.0" endY="0.0" endZ="15569.0" randomRange="1657" />
+    <create count="40" type="nebulas" startX="26611.0" startY="0.0" startZ="18910.0" endX="10049.0" endY="0.0" endZ="48983.0" randomRange="6766" />
+    <create count="10" type="nebulas" startX="37942.0" startY="0.0" startZ="39830.0" endX="9323.0" endY="0.0" endZ="45496.0" randomRange="3593" />
+    <create count="19" type="nebulas" startX="30097.0" startY="0.0" startZ="31113.0" endX="8306.0" endY="0.0" endZ="43753.0" randomRange="3593" />
+    <create count="40" type="asteroids" startX="75715.0" startY="0.0" startZ="47384.0" endX="51599.0" endY="0.0" endZ="61622.0" randomRange="3288" />
+  </event>
+  <folder_arme name="Navigation" id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e" parent_id_arme="a624dba9-d158-490c-8cab-e9e878d290f7" />
+  <event name="Transition to Sector VII" id_arme="3c2a62df-5429-4fb0-b9f7-82ba6250300c" parent_id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="245690d4-d56f-4fcf-a8fe-18901647690a" parent_id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="817a408a-a54c-444c-a85a-fe44b6526ea5" parent_id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="3a6a52a3-07ab-4488-863b-c90071c2010c" parent_id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="d5887c2a-4753-43f5-ba26-ffb575eb1736" parent_id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="b6dbcce7-5042-4c62-8146-5cdf8a059026" parent_id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="543de23b-43c4-4a9e-8e0d-a0a7946de223" parent_id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="38ddcbb6-23f8-4e62-9ada-ff0858f025a3" parent_id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="67cb7fe3-07e9-4fdb-a831-121419d04313" parent_id_arme="a624dba9-d158-490c-8cab-e9e878d290f7" />
+  <event name="Generate Sector Entities" id_arme="80b33cef-ddd8-4658-828d-331cded70513" parent_id_arme="67cb7fe3-07e9-4fdb-a831-121419d04313">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="a1dee1c5-42f8-4a3a-a7cf-cdf67eb79b4e" parent_id_arme="67cb7fe3-07e9-4fdb-a831-121419d04313">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="cb179ad8-1f66-4af4-9781-9f40ca4f6b18" parent_id_arme="67cb7fe3-07e9-4fdb-a831-121419d04313">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Cronus Sector VII" id_arme="6d20f23c-7229-4076-9f7a-4f8ab13e9309" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector VII" id_arme="4160980e-367a-47c4-9d77-4060b7fcc20b" parent_id_arme="6d20f23c-7229-4076-9f7a-4f8ab13e9309">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="20" type="nebulas" startX="97652.0" startY="0.0" startZ="46803.0" endX="74698.0" endY="0.0" endZ="58571.0" randomRange="1895" />
+    <create count="80" type="nebulas" startX="83560.0" startY="0.0" startZ="50871.0" endX="24431.0" endY="0.0" endZ="74842.0" randomRange="8581" />
+    <create count="70" type="nebulas" startX="69032.0" startY="0.0" startZ="56246.0" endX="38669.0" endY="0.0" endZ="70484.0" randomRange="3632" />
+    <create count="60" type="asteroids" startX="81816.0" startY="0.0" startZ="43026.0" endX="27047.0" endY="0.0" endZ="64673.0" randomRange="2906" />
+    <create count="90" type="asteroids" startX="88354.0" startY="0.0" startZ="55230.0" endX="32567.0" endY="0.0" endZ="78619.0" randomRange="1134" />
+    <create count="30" type="asteroids" startX="85303.0" startY="0.0" startZ="49273.0" endX="28354.0" endY="0.0" endZ="72082.0" randomRange="6653" />
+    <create count="60" type="asteroids" startX="83124.0" startY="0.0" startZ="41428.0" endX="22833.0" endY="0.0" endZ="67142.0" randomRange="3658" />
+    <create count="72" type="asteroids" startX="45206.0" startY="0.0" startZ="22687.0" endX="45206.0" endY="0.0" endZ="22687.0" randomRange="11699" />
+    <create count="30" type="nebulas" startX="47240.0" startY="0.0" startZ="12227.0" endX="30969.0" endY="0.0" endZ="29079.0" randomRange="3143" />
+    <create count="10" type="mines" startX="61332.0" startY="0.0" startZ="42300.0" endX="61332.0" endY="0.0" endZ="42300.0" randomRange="37748" />
+  </event>
+  <folder_arme name="Navigation" id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933" parent_id_arme="6d20f23c-7229-4076-9f7a-4f8ab13e9309" />
+  <event name="Transition to Sector VIII" id_arme="c1784873-c6cc-45e7-8c0c-93dff3dfbd1e" parent_id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="7af91dcb-6a40-4f05-b9c2-70788d7d227a" parent_id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="98e3baf0-0667-4466-9986-494acfef42ed" parent_id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="e76cfac6-aeef-4146-ad06-4994af65a930" parent_id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="d9a878ee-0ae1-4690-93b5-da417c6ea3f1" parent_id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="1adf7f1b-7d3d-4017-97e6-f44780bff656" parent_id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="0a7c6db4-4fd1-4ead-b909-44269955fbea" parent_id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="f2ab18e2-d6df-4210-8758-334dffe543fb" parent_id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d95b0853-09e1-42af-8558-e614bbf069c9" parent_id_arme="6d20f23c-7229-4076-9f7a-4f8ab13e9309" />
+  <event name="Generate Sector Entities" id_arme="449b7ca5-28e0-4940-a936-13cab435e930" parent_id_arme="d95b0853-09e1-42af-8558-e614bbf069c9">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="45019e2c-de05-422e-8ec3-ea965ab64c93" parent_id_arme="d95b0853-09e1-42af-8558-e614bbf069c9">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="HegemonyIncursion" value="1.0" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="bdaade1b-9882-4258-9a50-7e622b7c7857" parent_id_arme="d95b0853-09e1-42af-8558-e614bbf069c9">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Cronus Sector VIII" id_arme="32170489-a907-4358-a287-3e541cf5f48d" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector VIII" id_arme="c188fb37-4170-41f4-bd27-1d1514370bf7" parent_id_arme="32170489-a907-4358-a287-3e541cf5f48d">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="100" type="nebulas" startX="46659.0" startY="0.0" startZ="34891.0" endX="46659.0" endY="0.0" endZ="34891.0" randomRange="15723" />
+    <create count="40" type="nebulas" startX="57991.0" startY="0.0" startZ="23704.0" endX="77894.0" endY="0.0" endZ="46077.0" randomRange="8363" />
+    <create count="50" type="nebulas" startX="63802.0" startY="0.0" startZ="47384.0" endX="29807.0" endY="0.0" endZ="74261.0" randomRange="4942" />
+    <create count="50" type="nebulas" startX="34601.0" startY="0.0" startZ="21380.0" endX="7143.0" endY="0.0" endZ="51598.0" randomRange="8905" />
+    <create count="21" type="nebulas" startX="68596.0" startY="0.0" startZ="31113.0" endX="83996.0" endY="0.0" endZ="16876.0" randomRange="6703" />
+    <create count="20" type="nebulas" startX="79928.0" startY="0.0" startZ="72227.0" endX="61623.0" endY="0.0" endZ="84576.0" randomRange="2924" />
+    <create count="90" type="asteroids" startX="71647.0" startY="0.0" startZ="15133.0" endX="27192.0" endY="0.0" endZ="39104.0" randomRange="7810" />
+    <create count="4" type="mines" startX="55521.0" startY="0.0" startZ="40266.0" endX="58427.0" endY="0.0" endZ="43026.0" randomRange="25936" />
+  </event>
+  <folder_arme name="Navigation" id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1" parent_id_arme="32170489-a907-4358-a287-3e541cf5f48d" />
+  <event name="Transition to Sector VII" id_arme="b614489e-9c0b-492c-8f50-83151869b2de" parent_id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="08079458-6acb-4656-a2c9-2bc9b17a945e" parent_id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="0b3c424b-c95c-402f-bbdc-09245d26e9cb" parent_id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="2d622a3e-797b-4aeb-be53-e0fe866bc1ff" parent_id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="f4e10c5f-7425-4274-9c6d-9f2ff2b52b25" parent_id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="3935bd59-5739-406a-b851-b0e494df76a4" parent_id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1" />
+  <event name="Gate Offline" id_arme="d70556f6-6ebf-41b9-be5e-5a64edb84f28" parent_id_arme="3935bd59-5739-406a-b851-b0e494df76a4">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Erebus Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78" parent_id_arme="3935bd59-5739-406a-b851-b0e494df76a4" />
+  <event name="Ship1 Activation Range" id_arme="ba8dd73c-c18a-4fab-9922-458936ab27ad" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Erebus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="19fb855a-433b-4170-b4f4-d4fdbf6876fe" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Erebus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="2e6194fd-eca5-4d1d-a08b-32761315d7ef" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Erebus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="8ed9811f-26e4-40ef-b575-5c8dd1eff619" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Erebus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="b5cc9b49-adca-4eaf-90c7-7860d09e1f22" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Erebus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="2d97c24d-3f04-4620-9146-127523752748" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Erebus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="2b9af3f6-8e6a-44fa-bc02-d0dd211e14d4" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Erebus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="c6c0d877-cbbf-4101-9caf-324cfa1c536a" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Erebus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="8d4f2837-5a8b-407b-b7ca-03316d013dee" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Erebus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="37792836-20aa-440a-a2fb-1e2206c02e25" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Erebus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="04329735-58fb-4ae8-8618-efb7374cb12b" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Erebus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="4b433807-9087-413d-a027-2043bbe1f294" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Erebus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="369bb315-1db9-4cd8-9642-07eebd567167" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Erebus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="fb8e9393-4c6a-491d-98d0-5024c28f0f9e" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Erebus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="7b1cff3d-04ba-406d-91a5-d79b4e8e0c15" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Erebus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="f121fb7e-9728-41ab-ae29-b6d96c5e6307" parent_id_arme="35aaa78a-0066-415d-9a79-d91a9e47cc78">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Erebus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="43471b7b-d15c-4082-876c-6cf025419bd7" parent_id_arme="3935bd59-5739-406a-b851-b0e494df76a4">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Erebus Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="7f3f33f6-7d85-4a3f-87a2-c632a32768b9" parent_id_arme="3935bd59-5739-406a-b851-b0e494df76a4">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Erebus Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Cronus to Erebus" value="1.0" />
+    <set_variable name="Erebus System" value="1.0" />
+    <set_variable name="Sector" value="2" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="55097737-025c-4d83-b499-dee81aa00c48" parent_id_arme="32170489-a907-4358-a287-3e541cf5f48d" />
+  <event name="Generate Sector Entities" id_arme="6e8ae0b0-6e74-4c3d-a090-e6d73cf884f1" parent_id_arme="55097737-025c-4d83-b499-dee81aa00c48">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="42155.0" y="0.0" z="52905.0" angle="0" name="Erebus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="705b088d-64e7-4558-8494-73608014fb56" parent_id_arme="55097737-025c-4d83-b499-dee81aa00c48">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Erebus Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Erebus Gate" />
+    <set_object_property property="angle" value="1.221730476" name="Erebus Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Erebus Gate" />
+    <set_variable name="HegemonyIncursion" value="1.0" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="516bf3b2-79e0-4899-9c50-77e93e354c50" parent_id_arme="55097737-025c-4d83-b499-dee81aa00c48">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <destroy name="Erebus Gate" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Erebus" id_arme="7ced1249-1970-48c9-bb45-caf77eba08ed" parent_id_arme="32170489-a907-4358-a287-3e541cf5f48d">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Erebus to Cronus" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Erebus Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Erebus Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Erebus Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Erebus Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Erebus Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Erebus Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Erebus Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Erebus Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Erebus to Cronus" value="0.0" />
+  </event>
+  <folder_arme name="Cronus Sector IX" id_arme="1c12403b-57dd-4695-99a0-28a91f1b7206" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector IX" id_arme="7d474bbb-4f65-4123-a3fa-e6f2aa9ae4ae" parent_id_arme="1c12403b-57dd-4695-99a0-28a91f1b7206">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="80" type="nebulas" startX="58862.0" startY="0.0" startZ="81089.0" endX="44770.0" endY="0.0" endZ="48401.0" randomRange="7711" />
+    <create count="90" type="nebulas" startX="45787.0" startY="0.0" startZ="46803.0" endX="76441.0" endY="0.0" endZ="21089.0" randomRange="7154" />
+    <create count="50" type="nebulas" startX="38814.0" startY="0.0" startZ="53777.0" endX="13100.0" endY="0.0" endZ="73970.0" randomRange="5037" />
+    <create count="90" type="nebulas" startX="79637.0" startY="0.0" startZ="31113.0" endX="66272.0" endY="0.0" endZ="76876.0" randomRange="7501" />
+    <create count="80" type="nebulas" startX="54068.0" startY="0.0" startZ="27336.0" endX="26465.0" endY="0.0" endZ="51016.0" randomRange="5341" />
+    <create count="72" type="nebulas" startX="82543.0" startY="0.0" startZ="84140.0" endX="82543.0" endY="0.0" endZ="84140.0" randomRange="18287" />
+    <create count="40" type="nebulas" startX="86611.0" startY="0.0" startZ="46949.0" endX="86465.0" endY="0.0" endZ="61622.0" randomRange="5109" />
+    <create count="50" type="nebulas" startX="35182.0" startY="0.0" startZ="65835.0" endX="59879.0" endY="0.0" endZ="96198.0" randomRange="3078" />
+    <create count="59" type="nebulas" startX="27482.0" startY="0.0" startZ="81815.0" endX="27482.0" endY="0.0" endZ="81815.0" randomRange="18746" />
+    <create count="30" type="asteroids" startX="84867.0" startY="0.0" startZ="28498.0" endX="84867.0" endY="0.0" endZ="28498.0" randomRange="12983" />
+    <create count="50" type="asteroids" startX="90243.0" startY="0.0" startZ="34309.0" endX="59153.0" endY="0.0" endZ="46949.0" randomRange="5612" />
+    <create count="90" type="asteroids" startX="81816.0" startY="0.0" startZ="27481.0" endX="36925.0" endY="0.0" endZ="60460.0" randomRange="7084" />
+    <create count="50" type="asteroids" startX="45206.0" startY="0.0" startZ="56537.0" endX="24577.0" endY="0.0" endZ="89079.0" randomRange="5856" />
+  </event>
+  <folder_arme name="Navigation" id_arme="07ce28ed-a1dd-44cd-adcf-3c3d06fb8c5a" parent_id_arme="1c12403b-57dd-4695-99a0-28a91f1b7206" />
+  <event name="Transition to Sector X" id_arme="e0da0d8c-f8d1-4036-81d8-7d990fe70961" parent_id_arme="07ce28ed-a1dd-44cd-adcf-3c3d06fb8c5a">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="13371ac8-ce83-4649-a3da-1ed623bfd359" parent_id_arme="07ce28ed-a1dd-44cd-adcf-3c3d06fb8c5a">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="2dfece87-2eac-4b27-9884-ee63881ffedb" parent_id_arme="07ce28ed-a1dd-44cd-adcf-3c3d06fb8c5a">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="fa52196b-01ea-4678-a9ea-5c56ec18a8b3" parent_id_arme="1c12403b-57dd-4695-99a0-28a91f1b7206" />
+  <event name="Generate Sector Entities" id_arme="3e1db7e9-0aca-4e76-9610-615e44455b95" parent_id_arme="fa52196b-01ea-4678-a9ea-5c56ec18a8b3">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="99a03d77-54d6-4db7-b4ba-3065a1ddf6eb" parent_id_arme="fa52196b-01ea-4678-a9ea-5c56ec18a8b3">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="8dd7461a-d27b-4123-8a3e-0d6a9f7f0e2c" parent_id_arme="fa52196b-01ea-4678-a9ea-5c56ec18a8b3">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Cronus Sector X" id_arme="7bea1ea1-9965-457e-acdd-3ca2a269a4dd" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector X" id_arme="1bcc0235-e1ff-41e3-84c9-c918c1595b6c" parent_id_arme="7bea1ea1-9965-457e-acdd-3ca2a269a4dd">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="70" type="nebulas" startX="68746.0" startY="0.0" startZ="24178.0" endX="25684.0" endY="0.0" endZ="53086.0" randomRange="3767" />
+    <create count="150" type="nebulas" startX="77930.0" startY="0.0" startZ="56700.0" endX="12736.0" endY="0.0" endZ="65131.0" randomRange="8191" />
+    <create count="129" type="nebulas" startX="66939.0" startY="0.0" startZ="83500.0" endX="20565.0" endY="0.0" endZ="85608.0" randomRange="13005" />
+    <create count="90" type="asteroids" startX="24329.0" startY="0.0" startZ="77628.0" endX="42096.0" endY="0.0" endZ="30351.0" randomRange="16969" />
+    <create count="20" type="nebulas" startX="65885.0" startY="0.0" startZ="43601.0" endX="65885.0" endY="0.0" endZ="43601.0" randomRange="19060" />
+    <create count="50" type="nebulas" startX="5358.0" startY="0.0" startZ="58356.0" endX="8671.0" endY="0.0" endZ="94642.0" randomRange="6476" />
+    <create count="19" type="nebulas" startX="33965.0" startY="0.0" startZ="92383.0" endX="8520.0" endY="0.0" endZ="91480.0" randomRange="7383" />
+    <create count="25" type="nebulas" startX="41644.0" startY="0.0" startZ="24027.0" endX="37880.0" endY="0.0" endZ="33964.0" randomRange="10436" />
+    <create count="20" type="nebulas" startX="25835.0" startY="0.0" startZ="35621.0" endX="13338.0" endY="0.0" endZ="54441.0" randomRange="2860" />
+  </event>
+  <folder_arme name="Navigation" id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91" parent_id_arme="7bea1ea1-9965-457e-acdd-3ca2a269a4dd" />
+  <event name="Transition to Sector XI" id_arme="a1c192a4-5d1d-4469-bb2c-c833a4316d7c" parent_id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="13723ea0-2437-47c7-84c3-e2e9af908ae8" parent_id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="1d73c423-616d-41ee-a49b-30c4014880ba" parent_id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="a1b40b85-ad6b-45ef-97ca-d65b3edda63d" parent_id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="a49c490c-7ae8-42a0-987c-a7bdfc6e5482" parent_id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="f035cdaf-6ef6-46e9-b33f-4024680ba1cd" parent_id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91" />
+  <event name="Gate Offline" id_arme="9fd97ca4-1c2e-4f68-aba7-c7722a6a67ac" parent_id_arme="f035cdaf-6ef6-46e9-b33f-4024680ba1cd">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Kalixa Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d" parent_id_arme="f035cdaf-6ef6-46e9-b33f-4024680ba1cd" />
+  <event name="Ship1 Activation Range" id_arme="bfd45d02-19c4-4a5d-83eb-276428f88bad" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="25fbffde-65d2-4ca4-9b26-3674765ae14b" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="a1a29616-18f1-4dcc-b724-16731db40b19" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="2c691709-b3cb-40ed-a93c-cd20cb41c82f" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="643a6a14-09ea-478f-837a-2b8a7cf7670e" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="5aef2667-9407-40e8-9f34-c0c297219273" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="55e838ac-fb2c-41df-90c3-22aa05d6ff1e" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="09905e6c-5ab5-4c3a-b966-af69628203a6" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="0b8bfea1-1f6f-40c3-9c6e-95e73b090e75" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="24270744-dfdb-4bfd-b643-5c1d874121c9" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="c62cbcd7-e780-4ed4-a2a1-51baf85b37f5" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="90a29644-a49b-4a04-9a5e-2658dbb5769d" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="f27990fe-b3db-44c0-b3bb-11cf5dabbe07" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="dda9bb90-2983-4594-afa6-f489dbd9eb46" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="8439bb0e-93fc-4719-9f6d-c0fb68ca0aab" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Kalixa Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="755624e9-0b1f-4365-b0a9-1dee45cd3a31" parent_id_arme="086b87b4-336e-4862-a2d4-50ee3168c09d">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Kalixa Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="69227022-ca16-49fa-8ca1-d3defcd5c5a1" parent_id_arme="f035cdaf-6ef6-46e9-b33f-4024680ba1cd">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Kalixa Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="53fc1b2e-b783-48eb-abd9-c20d8e3127b8" parent_id_arme="f035cdaf-6ef6-46e9-b33f-4024680ba1cd">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Kalixa Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Cronus to Kalixa" value="1.0" />
+    <set_variable name="Kalixa System" value="1.0" />
+    <set_variable name="Sector" value="11" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e9d14eed-1665-42da-91af-cd0c72f5f8b3" parent_id_arme="7bea1ea1-9965-457e-acdd-3ca2a269a4dd" />
+  <event name="Generate Sector Entities" id_arme="ac7a0d25-021b-4880-b4cf-a1be1b0be3b5" parent_id_arme="e9d14eed-1665-42da-91af-cd0c72f5f8b3">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="66036.0" y="0.0" z="46010.0" angle="0" name="Kalixa Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="ef5e8e3b-67de-4fe1-98db-16c767e3247e" parent_id_arme="e9d14eed-1665-42da-91af-cd0c72f5f8b3">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Kalixa Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Kalixa Gate" />
+    <set_object_property property="angle" value="1.919862177" name="Kalixa Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Kalixa Gate" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="dc0b51f9-8570-4547-8954-aa8c667ff9c7" parent_id_arme="e9d14eed-1665-42da-91af-cd0c72f5f8b3">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <destroy name="Kalixa Gate" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Kalixa" id_arme="e56f6e23-0bc6-456b-932a-f30f55ac451a" parent_id_arme="7bea1ea1-9965-457e-acdd-3ca2a269a4dd">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Kalixa to Cronus" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Kalixa Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Kalixa Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Kalixa to Cronus" value="0.0" />
+  </event>
+  <folder_arme name="Cronus Sector XI" id_arme="a1eff35a-6f64-4443-948d-2ed86bae77b5" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector XI" id_arme="f7b6e590-b578-46c6-bcc5-ffd6cda8a0ce" parent_id_arme="a1eff35a-6f64-4443-948d-2ed86bae77b5">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="65" type="nebulas" startX="85158.0" startY="0.0" startZ="77312.0" endX="85158.0" endY="0.0" endZ="77312.0" randomRange="16136" />
+    <create count="40" type="nebulas" startX="93439.0" startY="0.0" startZ="94309.0" endX="46950.0" endY="0.0" endZ="95036.0" randomRange="3876" />
+    <create count="50" type="nebulas" startX="68596.0" startY="0.0" startZ="66997.0" endX="36780.0" endY="0.0" endZ="90096.0" randomRange="5835" />
+    <create count="40" type="asteroids" startX="82398.0" startY="0.0" startZ="67433.0" endX="48693.0" endY="0.0" endZ="80508.0" randomRange="2383" />
+    <create count="20" type="asteroids" startX="83415.0" startY="0.0" startZ="89515.0" endX="61477.0" endY="0.0" endZ="94455.0" randomRange="1135" />
+    <create count="20" type="asteroids" startX="82688.0" startY="0.0" startZ="75423.0" endX="84141.0" endY="0.0" endZ="79636.0" randomRange="3444" />
+    <create count="30" type="asteroids" startX="48838.0" startY="0.0" startZ="84140.0" endX="47095.0" endY="0.0" endZ="92857.0" randomRange="3899" />
+    <create count="20" type="asteroids" startX="58136.0" startY="0.0" startZ="92711.0" endX="52470.0" endY="0.0" endZ="90532.0" randomRange="3546" />
+    <create count="80" type="nebulas" startX="65981.0" startY="0.0" startZ="20944.0" endX="1042.0" endY="0.0" endZ="48837.0" randomRange="5491" />
+    <create count="60" type="nebulas" startX="48984.0" startY="0.0" startZ="16004.0" endX="14553.0" endY="0.0" endZ="28789.0" randomRange="6698" />
+    <create count="40" type="nebulas" startX="54649.0" startY="0.0" startZ="15569.0" endX="82688.0" endY="0.0" endZ="12372.0" randomRange="3968" />
+    <create count="27" type="asteroids" startX="61187.0" startY="0.0" startZ="15714.0" endX="17749.0" endY="0.0" endZ="36634.0" randomRange="5341" />
+  </event>
+  <folder_arme name="Navigation" id_arme="435d1131-8107-411f-aaf8-eaeb811cf07c" parent_id_arme="a1eff35a-6f64-4443-948d-2ed86bae77b5" />
+  <event name="Transition to Sector XII" id_arme="fa21ed49-c19c-4b79-a4c8-bd7c376b6712" parent_id_arme="435d1131-8107-411f-aaf8-eaeb811cf07c">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="688e7f4f-977a-4ccf-b333-d9d2b353df5d" parent_id_arme="435d1131-8107-411f-aaf8-eaeb811cf07c">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="de73a5f8-3106-488c-8097-3b8b3ec47d35" parent_id_arme="435d1131-8107-411f-aaf8-eaeb811cf07c">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="fe49a801-1f32-4dd8-b419-9da6b7e61455" parent_id_arme="435d1131-8107-411f-aaf8-eaeb811cf07c">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="0bbb5ff8-a617-4969-b105-37ff1537af64" parent_id_arme="435d1131-8107-411f-aaf8-eaeb811cf07c">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="4a00aa70-7ad1-4ef1-a2a4-3e5a09c8e214" parent_id_arme="a1eff35a-6f64-4443-948d-2ed86bae77b5" />
+  <event name="Generate Sector Entities" id_arme="e42ebffd-7709-48c9-9f32-ace2d8839ca6" parent_id_arme="4a00aa70-7ad1-4ef1-a2a4-3e5a09c8e214">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="e52718c9-4176-4a49-b44a-8e2c02ad9053" parent_id_arme="4a00aa70-7ad1-4ef1-a2a4-3e5a09c8e214">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="32abb48d-968a-47ba-a13a-1461c4c94430" parent_id_arme="4a00aa70-7ad1-4ef1-a2a4-3e5a09c8e214">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Cronus Sector XII" id_arme="6491fc30-b5b4-4326-b485-6f3990532227" parent_id_arme="b27db4de-e1ff-4e30-9e7c-fc034cb7f418" />
+  <event name="Create Cronus Sector XII" id_arme="a105350a-e166-47d6-ae12-718db819e2f5" parent_id_arme="6491fc30-b5b4-4326-b485-6f3990532227">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <set_skybox_index index="29" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cronus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="30" type="nebulas" startX="97652.0" startY="0.0" startZ="44915.0" endX="65545.0" endY="0.0" endZ="62493.0" randomRange="4651" />
+    <create count="50" type="nebulas" startX="69904.0" startY="0.0" startZ="54358.0" endX="15424.0" endY="0.0" endZ="66852.0" randomRange="9254" />
+    <create count="40" type="nebulas" startX="72228.0" startY="0.0" startZ="61767.0" endX="18185.0" endY="0.0" endZ="76876.0" randomRange="6249" />
+    <create count="40" type="nebulas" startX="5109.0" startY="0.0" startZ="63801.0" endX="12083.0" endY="0.0" endZ="83995.0" randomRange="6249" />
+    <create count="30" type="nebulas" startX="32567.0" startY="0.0" startZ="28498.0" endX="32567.0" endY="0.0" endZ="28498.0" randomRange="7555" />
+    <create count="30" type="nebulas" startX="26320.0" startY="0.0" startZ="27481.0" endX="13826.0" endY="0.0" endZ="40121.0" randomRange="5477" />
+    <create count="120" type="asteroids" startX="71938.0" startY="0.0" startZ="28353.0" endX="13245.0" endY="0.0" endZ="52324.0" randomRange="3789" />
+    <create count="60" type="asteroids" startX="74553.0" startY="0.0" startZ="48837.0" endX="74553.0" endY="0.0" endZ="48837.0" randomRange="16173" />
+    <create count="10" type="nebulas" startX="65109.0" startY="0.0" startZ="33728.0" endX="49274.0" endY="0.0" endZ="38523.0" randomRange="5439" />
+    <create count="40" type="asteroids" startX="56974.0" startY="0.0" startZ="90532.0" endX="16296.0" endY="0.0" endZ="92711.0" randomRange="6753" />
+  </event>
+  <folder_arme name="Navigation" id_arme="4b9da6dd-2dd9-4e20-9701-9d861668c18f" parent_id_arme="6491fc30-b5b4-4326-b485-6f3990532227" />
+  <event name="Transition to Sector XI" id_arme="189959c6-f865-4dbc-b5c0-94fab6636dbf" parent_id_arme="4b9da6dd-2dd9-4e20-9701-9d861668c18f">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="9eb42600-4a66-41b8-93dd-73017b3ba475" parent_id_arme="4b9da6dd-2dd9-4e20-9701-9d861668c18f">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="9173aa64-c9f8-4c5f-8d10-f2841ad8ad1b" parent_id_arme="4b9da6dd-2dd9-4e20-9701-9d861668c18f">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cronus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="7dab9fb1-ae7f-4339-a9e5-e05fefd84675" parent_id_arme="6491fc30-b5b4-4326-b485-6f3990532227" />
+  <event name="Generate Sector Entities" id_arme="2f10de4a-a8cb-4533-9318-b2929397eabc" parent_id_arme="7dab9fb1-ae7f-4339-a9e5-e05fefd84675">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="1763b1c1-ee87-4b65-9d5a-f009b6048969" parent_id_arme="7dab9fb1-ae7f-4339-a9e5-e05fefd84675">
+    <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="HegemonyIncursion" value="1.0" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="0d01971b-a620-43ca-9188-b650e9079ee7" parent_id_arme="7dab9fb1-ae7f-4339-a9e5-e05fefd84675">
+    <if_variable name="Cronus System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Cronus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

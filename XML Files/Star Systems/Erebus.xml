@@ -1,0 +1,1809 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="655.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="169.0" integer="yes" />
+    <set_variable name="Alignment" value="Hegemony" integer="yes" />
+  </start>
+  <folder_arme name="Erebus System" id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <folder_arme name="Erebus Settings" id_arme="12aa1282-8949-4c44-84e0-264d16ea10f1" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <folder_arme name="Erebus Menu" id_arme="80da5600-2f4d-4d45-bc35-17fb592be1b2" parent_id_arme="12aa1282-8949-4c44-84e0-264d16ea10f1" />
+  <event name="Erebus Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="80da5600-2f4d-4d45-bc35-17fb592be1b2">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Erebus System" />
+    <set_variable name="Erebus Gate" value="1.0" integer="yes" />
+    <!--320,272-->
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="80da5600-2f4d-4d45-bc35-17fb592be1b2">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Erebus System" />
+  </event>
+  <event name="Erebus System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="80da5600-2f4d-4d45-bc35-17fb592be1b2">
+    <if_gm_button text="Lower Arc/Erebus System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="104.0" integer="yes" />
+    <set_variable name="Erebus System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="12aa1282-8949-4c44-84e0-264d16ea10f1">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="12aa1282-8949-4c44-84e0-264d16ea10f1">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="12aa1282-8949-4c44-84e0-264d16ea10f1">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="12aa1282-8949-4c44-84e0-264d16ea10f1">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="12aa1282-8949-4c44-84e0-264d16ea10f1">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Erebus Sector I" id_arme="49b3d5a1-4119-42fc-95d0-ca6652627ec4" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector I" id_arme="2d075d5b-b7c1-4383-9c60-1017c230d617" parent_id_arme="49b3d5a1-4119-42fc-95d0-ca6652627ec4">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="39" type="nebulas" startX="35453.0" startY="0.0" startZ="15910.0" endX="25031.0" endY="0.0" endZ="36899.0" randomRange="9971" />
+    <create count="27" type="nebulas" startX="78155.0" startY="0.0" startZ="26332.0" endX="90604.0" endY="0.0" endZ="45440.0" randomRange="10134" />
+    <create count="18" type="asteroids" startX="75115.0" startY="0.0" startZ="24161.0" endX="85393.0" endY="0.0" endZ="42545.0" randomRange="2909" />
+    <create count="28" type="nebulas" startX="53836.0" startY="0.0" startZ="75114.0" endX="53836.0" endY="0.0" endZ="75114.0" randomRange="8749" />
+    <create count="10" type="asteroids" startX="58469.0" startY="0.0" startZ="67732.0" endX="61653.0" endY="0.0" endZ="76417.0" randomRange="2465" />
+  </event>
+  <folder_arme name="Navigation" id_arme="485d2e8d-135c-4577-9172-2cb212fde714" parent_id_arme="49b3d5a1-4119-42fc-95d0-ca6652627ec4" />
+  <event name="Transition to Sector II" id_arme="b9a22f7d-39ba-4973-ac40-129c98121e09" parent_id_arme="485d2e8d-135c-4577-9172-2cb212fde714">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="6d726c50-17c5-4650-9e0c-ceb455f905dc" parent_id_arme="485d2e8d-135c-4577-9172-2cb212fde714">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="f726c174-0f34-41d6-960b-579d8ca3cecb" parent_id_arme="485d2e8d-135c-4577-9172-2cb212fde714">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d9b63485-db01-41e5-b903-5fa8b7777157" parent_id_arme="49b3d5a1-4119-42fc-95d0-ca6652627ec4" />
+  <event name="Generate Sector Entities" id_arme="29818513-eb26-4b60-b3c4-9d69816db5e5" parent_id_arme="d9b63485-db01-41e5-b903-5fa8b7777157">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+    <create type="station" x="46309.0" y="0.0" z="24306.0" angle="0" name="S-05" hullID="1006" sideValue="1" />
+    <create type="station" x="49060.0" y="0.0" z="37044.0" angle="0" name="D-17" hullID="1006" sideValue="1" />
+    <create type="station" x="57021.0" y="0.0" z="49638.0" angle="0" name="H-80" hullID="1006" sideValue="1" />
+    <create type="station" x="65851.0" y="0.0" z="60060.0" angle="0" name="F-53" hullID="1006" sideValue="1" />
+    <create type="station" x="51231.0" y="0.0" z="75838.0" angle="0" name="C-12" hullID="1005" sideValue="1" />
+    <create type="station" x="49928.0" y="0.0" z="78733.0" angle="0" name="L-28" hullID="1005" sideValue="1" />
+    <create type="station" x="53257.0" y="0.0" z="78588.0" angle="0" name="P-01" hullID="1005" sideValue="1" />
+  </event>
+  <event name="Settings" id_arme="97196820-ec26-4ae1-a119-874bafdb42b4" parent_id_arme="d9b63485-db01-41e5-b903-5fa8b7777157">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="HeavyIncursion" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="103f0f4f-a8eb-4e6b-a669-cff2caec6bc4" parent_id_arme="d9b63485-db01-41e5-b903-5fa8b7777157">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="S-05" />
+    <destroy name="D-17" />
+    <destroy name="H-80" />
+    <destroy name="F-53" />
+    <destroy name="C-12" />
+    <destroy name="L-28" />
+    <destroy name="P-01" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erebus Sector II" id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector II" id_arme="eb102f50-488c-45f5-8c63-0efaa4cde4b2" parent_id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="40" type="nebulas" startX="49274.0" startY="0.0" startZ="26755.0" endX="40267.0" endY="0.0" endZ="35036.0" randomRange="8382" />
+    <create count="30" type="nebulas" startX="81381.0" startY="0.0" startZ="38087.0" endX="82252.0" endY="0.0" endZ="71355.0" randomRange="3186" />
+    <create count="35" type="nebulas" startX="79347.0" startY="0.0" startZ="69322.0" endX="50436.0" endY="0.0" endZ="78765.0" randomRange="5060" />
+    <create count="35" type="nebulas" startX="75279.0" startY="0.0" startZ="53050.0" endX="67143.0" endY="0.0" endZ="63946.0" randomRange="5060" />
+    <create count="20" type="mines" startX="53051.0" startY="0.0" startZ="18910.0" endX="47821.0" endY="0.0" endZ="22832.0" />
+    <create count="20" type="mines" startX="42591.0" startY="0.0" startZ="26755.0" endX="38088.0" endY="0.0" endZ="30096.0" />
+    <create count="36" type="asteroids" startX="73100.0" startY="0.0" startZ="33147.0" endX="71742.0" endY="0.0" endZ="46235.0" randomRange="6436" />
+    <create count="10" type="nebulas" startX="26623.0" startY="0.0" startZ="54414.0" endX="18517.0" endY="0.0" endZ="68166.0" randomRange="9214" />
+  </event>
+  <folder_arme name="Navigation" id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969" parent_id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf" />
+  <event name="Transition to Sector III" id_arme="e04c83bc-0248-4d71-97d0-adbbcaf2b4db" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="fb88c430-e065-4274-9b3d-8bce9e88642d" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="74f82694-34b5-41e5-aead-659c476d8d5c" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="1978bb30-3712-4283-932e-0d1677b9cda4" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="8f922b4a-3abc-4ccb-941b-e7e0bb00e860" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="8e85790b-6991-45ad-bb7c-9c27771e2ab2" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969" />
+  <event name="Gate Offline" id_arme="00068d28-b9dc-4ee1-ab6d-4beeb52a52f0" parent_id_arme="8e85790b-6991-45ad-bb7c-9c27771e2ab2">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Cronus Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="0d56d196-f560-4907-a360-007d1febf930" parent_id_arme="8e85790b-6991-45ad-bb7c-9c27771e2ab2" />
+  <event name="Ship1 Activation Range" id_arme="42261aef-101f-49f9-923f-3ab3ce18f29e" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="242ce32b-e96f-45de-a7f8-1a66d4681173" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="325aece0-8e1c-41c1-9b9e-9d72729c2030" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="f1a2faa3-3674-478f-91ad-0392e3cb81b6" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="40bd009d-9f43-4ce9-b0ff-67c66693e318" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="a1c3092c-7ade-42a7-9ed1-fed157a7a33c" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="fdaae0f1-45c6-4f59-a460-2d6eb266baba" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="b6f49df9-096e-4361-af59-481966652b60" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="899a929a-1616-44a4-bcc0-8d8636b1ff26" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="5e0d0ba6-0f49-446d-808d-41207e06ab24" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="46170537-d7ac-4768-b5b0-1ed91173801e" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="6ec6b6c4-b01f-4b7e-90b1-dc565edf5b4a" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="d69b06f4-30de-421f-b8e1-a09ff46bdc57" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="745809cb-c3a9-4d82-816d-f5d395f6cd7a" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="e6dfbc68-92db-42b5-a4bb-1739a09bebfc" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Cronus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="2e798e08-83bc-477f-a324-2c62a954ac02" parent_id_arme="0d56d196-f560-4907-a360-007d1febf930">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Cronus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="75afd821-8d39-4552-90ce-5fb09a3391c9" parent_id_arme="8e85790b-6991-45ad-bb7c-9c27771e2ab2">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Cronus Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="70f43d32-5b00-47de-a16f-06551bedb635" parent_id_arme="8e85790b-6991-45ad-bb7c-9c27771e2ab2">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Erebus to Cronus" value="1.0" />
+    <set_variable name="Cronus System" value="1.0" />
+    <set_variable name="Sector" value="8" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="cf67a650-0957-4b15-89a9-8c56aea89bd5" parent_id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf" />
+  <event name="Generate Sector Entities" id_arme="3c5706a7-923f-4a08-b472-742db89096b7" parent_id_arme="cf67a650-0957-4b15-89a9-8c56aea89bd5">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="37361.0" y="0.0" z="17457.0" angle="0" name="Cronus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="56070.0" y="0.0" z="28412.0" angle="0" name="N-10" hullID="1007" sideValue="1" />
+    <create type="station" x="44700.0" y="0.0" z="35326.0" angle="0" name="Z-142" hullID="1007" sideValue="1" />
+    <create type="station" x="73586.0" y="0.0" z="43777.0" angle="0" name="X-11" hullID="1005" sideValue="1" />
+    <create type="station" x="56684.0" y="0.0" z="66517.0" angle="0" name="F-56" hullID="1006" sideValue="1" />
+    <create type="station" x="27952.0" y="0.0" z="67131.0" angle="0" name="P-92" hullID="1007" sideValue="1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="7f8edc88-fa75-4941-b859-090b01f0b265" parent_id_arme="cf67a650-0957-4b15-89a9-8c56aea89bd5">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Cronus Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Cronus Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Cronus Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Cronus Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_variable name="HegemonyIncursion" value="1.0" />
+    <set_variable name="HeavyIncursion" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="14857bc4-5569-429c-b42d-03279488d0ed" parent_id_arme="cf67a650-0957-4b15-89a9-8c56aea89bd5">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="Cronus Gate" />
+    <destroy name="N-10" />
+    <destroy name="Z-142" />
+    <destroy name="X-11" />
+    <destroy name="F-56" />
+    <destroy name="P-92" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Cronus" id_arme="d1af09b6-4584-4fcd-8c86-563e6180fab7" parent_id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Cronus to Erebus" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Cronus Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Cronus Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Cronus to Erebus" value="0.0" />
+  </event>
+  <folder_arme name="Erebus Sector III" id_arme="d1e9b8ee-0ce3-43c3-8bb7-bf77798f4eeb" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector III" id_arme="86209fb0-e244-4f69-b8bb-673a99614da2" parent_id_arme="d1e9b8ee-0ce3-43c3-8bb7-bf77798f4eeb">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="38" type="nebulas" startX="82787.0" startY="0.0" startZ="18950.0" endX="69325.0" endY="0.0" endZ="31978.0" randomRange="4014" />
+    <create count="58" type="nebulas" startX="43269.0" startY="0.0" startZ="49203.0" endX="18951.0" endY="0.0" endZ="66863.0" randomRange="6158" />
+    <create count="43" type="nebulas" startX="28649.0" startY="0.0" startZ="16779.0" endX="31689.0" endY="0.0" endZ="27056.0" randomRange="6226" />
+    <create count="10" type="nebulas" startX="73668.0" startY="0.0" startZ="71495.0" endX="60061.0" endY="0.0" endZ="81483.0" randomRange="3756" />
+    <create count="71" type="asteroids" startX="63824.0" startY="0.0" startZ="27490.0" endX="44428.0" endY="0.0" endZ="42834.0" randomRange="4297" />
+    <create count="10" type="asteroids" startX="42835.0" startY="0.0" startZ="42400.0" endX="33716.0" endY="0.0" endZ="48335.0" randomRange="3619" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b3781bee-17a7-4aea-8f1e-7d3de8b1b8c9" parent_id_arme="d1e9b8ee-0ce3-43c3-8bb7-bf77798f4eeb" />
+  <event name="Transition to Sector IV" id_arme="292cba88-03df-493f-8c49-5b1e8efc46a6" parent_id_arme="b3781bee-17a7-4aea-8f1e-7d3de8b1b8c9">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="353715d3-072e-4fd4-b245-e866e9b470e4" parent_id_arme="b3781bee-17a7-4aea-8f1e-7d3de8b1b8c9">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="6614da64-b422-4694-aca0-fb58f8150f7e" parent_id_arme="b3781bee-17a7-4aea-8f1e-7d3de8b1b8c9">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="47737130-a695-4a16-ba19-b61c0642ec55" parent_id_arme="b3781bee-17a7-4aea-8f1e-7d3de8b1b8c9">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="a6b3e7e7-d398-4847-b3b6-dad9aa5a999a" parent_id_arme="b3781bee-17a7-4aea-8f1e-7d3de8b1b8c9">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="49a5915b-cb86-4a91-87bb-16d03aaff3ff" parent_id_arme="d1e9b8ee-0ce3-43c3-8bb7-bf77798f4eeb" />
+  <event name="Generate Sector Entities" id_arme="e3ac2c7a-718f-4e74-9016-d02125b07e0a" parent_id_arme="49a5915b-cb86-4a91-87bb-16d03aaff3ff">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="51520.0" y="0.0" z="28069.0" angle="0" name="J-48" hullID="1007" sideValue="1" />
+    <create type="station" x="38637.0" y="0.0" z="37478.0" angle="0" name="G-66" hullID="1007" sideValue="1" />
+    <create type="station" x="52244.0" y="0.0" z="45729.0" angle="0" name="Q-09" hullID="1007" sideValue="1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="1bfb1d4c-a286-43da-9dc0-2281d35f7e33" parent_id_arme="49a5915b-cb86-4a91-87bb-16d03aaff3ff">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_variable name="HeavyIncursion" value="1.0" />
+    <set_variable name="HegemonyIncursion" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="ee38b54b-bf7b-481f-8096-b920b78c24fc" parent_id_arme="49a5915b-cb86-4a91-87bb-16d03aaff3ff">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="J-48" />
+    <destroy name="G-66" />
+    <destroy name="Q-09" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erebus Sector IV" id_arme="22d6d3d7-048f-409c-97c2-14684431e0e8" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector IV" id_arme="92d2c7f7-5ba3-4be0-beeb-96dc0f7c6333" parent_id_arme="22d6d3d7-048f-409c-97c2-14684431e0e8">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <create count="90" type="nebulas" startX="71062.0" startY="0.0" startZ="18516.0" endX="72075.0" endY="0.0" endZ="38057.0" randomRange="11913" />
+    <create count="40" type="nebulas" startX="30097.0" startY="0.0" startZ="30096.0" endX="36177.0" endY="0.0" endZ="68021.0" randomRange="7239" />
+    <create count="45" type="asteroids" startX="34150.0" startY="0.0" startZ="46887.0" endX="36177.0" endY="0.0" endZ="63823.0" randomRange="4033" />
+    <create count="23" type="asteroids" startX="38782.0" startY="0.0" startZ="80180.0" endX="36177.0" endY="0.0" endZ="63823.0" randomRange="1887" />
+  </event>
+  <folder_arme name="Navigation" id_arme="54e59761-18e7-4ffd-9821-e85fcf1eacda" parent_id_arme="22d6d3d7-048f-409c-97c2-14684431e0e8" />
+  <event name="Transition to Sector III" id_arme="a37c357b-e7b2-4787-bb1a-be2fed50328c" parent_id_arme="54e59761-18e7-4ffd-9821-e85fcf1eacda">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="13696127-684a-4864-be0f-0062be8a8636" parent_id_arme="54e59761-18e7-4ffd-9821-e85fcf1eacda">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="e0d863ff-0b4d-4a09-81fe-482938404b4e" parent_id_arme="54e59761-18e7-4ffd-9821-e85fcf1eacda">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="62a6aff9-e650-4291-8ac3-cff71cec9438" parent_id_arme="22d6d3d7-048f-409c-97c2-14684431e0e8" />
+  <event name="Generate Sector Entities" id_arme="fe0077d9-654f-4dd0-87fb-c38172beba82" parent_id_arme="62a6aff9-e650-4291-8ac3-cff71cec9438">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="19675.0" y="0.0" z="39505.0" angle="0" name="C-29" hullID="1006" sideValue="1" />
+    <create type="station" x="24162.0" y="0.0" z="50506.0" angle="0" name="N-57" hullID="1007" sideValue="1" />
+    <create type="station" x="15043.0" y="0.0" z="46887.0" angle="0" name="V-14" hullID="1005" sideValue="1" />
+    <create type="station" x="31400.0" y="0.0" z="34149.0" angle="0" name="E-82" hullID="1006" sideValue="1" />
+    <create type="station" x="54560.0" y="0.0" z="23727.0" angle="0" name="K-98" hullID="1008" sideValue="1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="3b347a2d-7156-4593-9ed3-c8df832d006a" parent_id_arme="62a6aff9-e650-4291-8ac3-cff71cec9438">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="KralienIncursion" value="1.0" />
+    <set_variable name="HeavyIncursion" value="1.0" />
+    <set_variable name="HegemonyIncursion" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="05726011-48a9-4d74-b9bc-632f2e654abb" parent_id_arme="62a6aff9-e650-4291-8ac3-cff71cec9438">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="C-29" />
+    <destroy name="N-57" />
+    <destroy name="V-14" />
+    <destroy name="E-82" />
+    <destroy name="K-98" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erebus Sector V" id_arme="c40d3304-d9b3-4b14-a2d9-a82e7a489372" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector V" id_arme="f9d272cd-a7ca-4131-ba9d-111a9a9ec60f" parent_id_arme="c40d3304-d9b3-4b14-a2d9-a82e7a489372">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="110" type="nebulas" startX="76074.0" startY="0.0" startZ="28324.0" endX="28702.0" endY="0.0" endZ="65015.0" randomRange="5226" />
+    <create count="60" type="asteroids" startX="68911.0" startY="0.0" startZ="29706.0" endX="31090.0" endY="0.0" endZ="56973.0" randomRange="2161" />
+    <create count="50" type="nebulas" startX="83990.0" startY="0.0" startZ="73937.0" radius="4541" randomRange="5708" />
+    <create count="30" type="asteroids" startX="84618.0" startY="0.0" startZ="65769.0" endX="77582.0" endY="0.0" endZ="66900.0" randomRange="1159" />
+    <create count="40" type="nebulas" startX="29959.0" startY="0.0" startZ="15130.0" endX="29833.0" endY="0.0" endZ="25811.0" randomRange="8269" />
+    <create count="20" type="asteroids" startX="29707.0" startY="0.0" startZ="24303.0" endX="22294.0" endY="0.0" endZ="28827.0" randomRange="5158" />
+  </event>
+  <folder_arme name="Navigation" id_arme="100e3a9b-1a84-4b05-ba66-36ca89c145a2" parent_id_arme="c40d3304-d9b3-4b14-a2d9-a82e7a489372" />
+  <event name="Transition to Sector VI" id_arme="5b86d4c3-83b9-4426-b02c-5f398173dced" parent_id_arme="100e3a9b-1a84-4b05-ba66-36ca89c145a2">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="ac8f459a-8b28-42b9-9553-67189c166564" parent_id_arme="100e3a9b-1a84-4b05-ba66-36ca89c145a2">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="4b114f12-ae3d-4d3d-bcdb-f872bf862fbc" parent_id_arme="100e3a9b-1a84-4b05-ba66-36ca89c145a2">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="f0be38c6-12b0-4328-9c03-b08f07ffa484" parent_id_arme="100e3a9b-1a84-4b05-ba66-36ca89c145a2">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="36323830-20c7-4959-8f4f-7b2d132b3839" parent_id_arme="100e3a9b-1a84-4b05-ba66-36ca89c145a2">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="6be55abe-d189-4cba-96c0-03982ab890c5" parent_id_arme="c40d3304-d9b3-4b14-a2d9-a82e7a489372" />
+  <event name="Generate Sector Entities" id_arme="ee86d647-c5a6-46f4-a74e-378a6a336698" parent_id_arme="6be55abe-d189-4cba-96c0-03982ab890c5">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="62880.0" y="0.0" z="35738.0" angle="0" name="I-34" hullID="1006" sideValue="1" />
+    <create type="station" x="80723.0" y="0.0" z="82230.0" angle="0" name="G-34" hullID="1006" sideValue="1" />
+    <create type="station" x="73184.0" y="0.0" z="68282.0" angle="0" name="B-88" hullID="1006" sideValue="1" />
+    <create type="station" x="75194.0" y="0.0" z="77581.0" angle="0" name="J-92" hullID="1006" sideValue="1" />
+    <create type="station" x="51822.0" y="0.0" z="43277.0" angle="0" name="K-55" hullID="1005" sideValue="1" />
+    <create type="station" x="41142.0" y="0.0" z="51319.0" angle="0" name="N-01" hullID="1005" sideValue="1" />
+    <create type="station" x="30587.0" y="0.0" z="58607.0" angle="0" name="X-63" hullID="1005" sideValue="1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="39225d06-261b-4f34-99a0-5b3ade2c6663" parent_id_arme="6be55abe-d189-4cba-96c0-03982ab890c5">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="59939ba7-3900-48c7-8f4d-750553dc6619" parent_id_arme="6be55abe-d189-4cba-96c0-03982ab890c5">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="I-34" />
+    <destroy name="G-34" />
+    <destroy name="B-88" />
+    <destroy name="J-92" />
+    <destroy name="K-55" />
+    <destroy name="N-01" />
+    <destroy name="X-63" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erebus Sector VI" id_arme="d9f57f67-9d1e-4237-bd55-5df99a8f7263" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector VI" id_arme="a14f4264-9615-40f6-ba02-aa4c0df7cdf2" parent_id_arme="d9f57f67-9d1e-4237-bd55-5df99a8f7263">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="93" type="nebulas" startX="57980.0" startY="0.0" startZ="42523.0" endX="27697.0" endY="0.0" endZ="62879.0" randomRange="5716" />
+    <create count="60" type="nebulas" startX="83236.0" startY="0.0" startZ="84869.0" endX="55215.0" endY="0.0" endZ="52324.0" randomRange="3625" />
+    <create count="50" type="nebulas" startX="52576.0" startY="0.0" startZ="57476.0" endX="42147.0" endY="0.0" endZ="81476.0" randomRange="2944" />
+    <create count="154" type="asteroids" startX="48681.0" startY="0.0" startZ="61874.0" radius="16916" randomRange="1309" />
+    <create count="60" type="asteroids" startX="61372.0" startY="0.0" startZ="69162.0" endX="45037.0" endY="0.0" endZ="76575.0" randomRange="2756" />
+    <create count="30" type="asteroids" startX="54838.0" startY="0.0" startZ="44031.0" endX="24555.0" endY="0.0" endZ="47298.0" randomRange="4850" />
+    <create count="30" type="asteroids" startX="41268.0" startY="0.0" startZ="78837.0" endX="26063.0" endY="0.0" endZ="53204.0" randomRange="7224" />
+    <create count="10" type="asteroids" startX="52576.0" startY="0.0" startZ="52198.0" endX="43529.0" endY="0.0" endZ="53581.0" randomRange="3538" />
+    <create count="40" type="nebulas" startX="77959.0" startY="0.0" startZ="20282.0" endX="77959.0" endY="0.0" endZ="20282.0" randomRange="10485" />
+    <create count="20" type="asteroids" startX="77456.0" startY="0.0" startZ="19905.0" endX="77456.0" endY="0.0" endZ="19905.0" randomRange="5970" />
+  </event>
+  <folder_arme name="Navigation" id_arme="797288a5-cecf-47f7-b926-d1a74b53b7f7" parent_id_arme="d9f57f67-9d1e-4237-bd55-5df99a8f7263" />
+  <event name="Transition to Sector VII" id_arme="b5dcd38a-c3ee-4f11-846d-c996a5debe25" parent_id_arme="797288a5-cecf-47f7-b926-d1a74b53b7f7">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="23f10b52-f733-4157-88b9-499bece8e06d" parent_id_arme="797288a5-cecf-47f7-b926-d1a74b53b7f7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="df284734-92d1-44d4-83ba-63a995198b03" parent_id_arme="797288a5-cecf-47f7-b926-d1a74b53b7f7">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="8a4d1b27-d02d-495f-b95d-9231ed350251" parent_id_arme="797288a5-cecf-47f7-b926-d1a74b53b7f7">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="2f907b9d-c36a-4746-9443-a333fe9817af" parent_id_arme="797288a5-cecf-47f7-b926-d1a74b53b7f7">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="fed01092-9de6-4a40-a564-c1bdea506170" parent_id_arme="797288a5-cecf-47f7-b926-d1a74b53b7f7">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="e16886a0-47e9-46b6-9951-e3e360f8868f" parent_id_arme="797288a5-cecf-47f7-b926-d1a74b53b7f7">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="3996173f-e6d9-40b5-b00b-5993fb8f6611" parent_id_arme="797288a5-cecf-47f7-b926-d1a74b53b7f7">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e1f72802-35dc-4ff7-8597-98d45a501b8c" parent_id_arme="d9f57f67-9d1e-4237-bd55-5df99a8f7263" />
+  <event name="Generate Sector Entities" id_arme="ade07234-6eb4-4f43-aa45-e6a3360e02be" parent_id_arme="e1f72802-35dc-4ff7-8597-98d45a501b8c">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="53158.0" y="0.0" z="56170.0" angle="0" name="L-70" hullID="1005" sideValue="1" />
+    <create type="station" x="44316.0" y="0.0" z="59036.0" angle="0" name="CP-16" hullID="1007" sideValue="1" />
+    <create type="station" x="54033.0" y="0.0" z="63991.0" angle="0" name="Q-12" hullID="1006" sideValue="1" />
+    <create type="station" x="79397.0" y="0.0" z="45326.0" angle="0" name="M-09" hullID="1005" sideValue="1" />
+    <create type="station" x="73518.0" y="0.0" z="39899.0" angle="0" name="G-01" hullID="1005" sideValue="1" />
+    <create type="station" x="29046.0" y="0.0" z="38994.0" angle="0" name="S-21" hullID="1007" sideValue="1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="9849a008-4b8b-4b30-8c70-f30a108854d8" parent_id_arme="e1f72802-35dc-4ff7-8597-98d45a501b8c">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="7d1c97e1-79ad-471c-b24d-e273f4785c47" parent_id_arme="e1f72802-35dc-4ff7-8597-98d45a501b8c">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="L-70" />
+    <destroy name="CP-16" />
+    <destroy name="Q-12" />
+    <destroy name="M-09" />
+    <destroy name="G-01" />
+    <destroy name="S-21" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erebus Sector VII" id_arme="51a73262-546d-4529-a439-dc2ee4c0472f" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector VII" id_arme="5940a4ff-bad8-43bd-b8b9-4cf8afa03e4b" parent_id_arme="51a73262-546d-4529-a439-dc2ee4c0472f">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="40" type="nebulas" startX="10357.0" startY="0.0" startZ="35989.0" endX="10357.0" endY="0.0" endZ="35989.0" randomRange="9976" />
+    <create count="20" type="nebulas" startX="19655.0" startY="0.0" startZ="40261.0" endX="30964.0" endY="0.0" endZ="49560.0" randomRange="2545" />
+    <create count="40" type="nebulas" startX="33603.0" startY="0.0" startZ="46167.0" endX="46168.0" endY="0.0" endZ="36743.0" randomRange="5174" />
+    <create count="50" type="nebulas" startX="66775.0" startY="0.0" startZ="65643.0" endX="66775.0" endY="0.0" endZ="65643.0" randomRange="16311" />
+    <create count="30" type="asteroids" startX="59739.0" startY="0.0" startZ="38125.0" endX="25309.0" endY="0.0" endZ="65643.0" randomRange="1914" />
+    <create count="30" type="asteroids" startX="52325.0" startY="0.0" startZ="53581.0" endX="37498.0" endY="0.0" endZ="61371.0" randomRange="2513" />
+    <create count="20" type="asteroids" startX="25686.0" startY="0.0" startZ="65141.0" endX="23299.0" endY="0.0" endZ="80973.0" randomRange="2265" />
+    <create count="20" type="nebulas" startX="52074.0" startY="0.0" startZ="64010.0" endX="44786.0" endY="0.0" endZ="76198.0" randomRange="2266" />
+    <create count="20" type="nebulas" startX="50315.0" startY="0.0" startZ="77078.0" endX="31718.0" endY="0.0" endZ="83109.0" randomRange="2224" />
+  </event>
+  <folder_arme name="Navigation" id_arme="93724c22-9012-4f09-ad55-2fffa3ad484e" parent_id_arme="51a73262-546d-4529-a439-dc2ee4c0472f" />
+  <event name="Transition to Sector VIII" id_arme="35a166c4-3e82-4534-94a9-eccad0c52a8f" parent_id_arme="93724c22-9012-4f09-ad55-2fffa3ad484e">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="7e6fa9bb-b598-4c61-a88b-6eb570efa21d" parent_id_arme="93724c22-9012-4f09-ad55-2fffa3ad484e">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="ab26007a-d90e-4a93-8a78-a94126f23edb" parent_id_arme="93724c22-9012-4f09-ad55-2fffa3ad484e">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="e024d39e-99d2-48fe-b337-478e2de75411" parent_id_arme="93724c22-9012-4f09-ad55-2fffa3ad484e">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="b35d1adb-6f8f-4ba9-8cbc-18b9ce036fe0" parent_id_arme="93724c22-9012-4f09-ad55-2fffa3ad484e">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="3e48104a-0ab9-43a7-8d6b-8bd035ab5110" parent_id_arme="93724c22-9012-4f09-ad55-2fffa3ad484e">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="262f9dc8-4c34-41a1-8556-708bc07b7104" parent_id_arme="93724c22-9012-4f09-ad55-2fffa3ad484e">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="259e9325-3157-45b5-975e-ab6b2918b3ee" parent_id_arme="93724c22-9012-4f09-ad55-2fffa3ad484e">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="6dcbdf92-9714-466a-a7cb-2d0040c30f96" parent_id_arme="51a73262-546d-4529-a439-dc2ee4c0472f" />
+  <event name="Generate Sector Entities" id_arme="5e61d701-0d94-43d1-91b2-d6338625be98" parent_id_arme="6dcbdf92-9714-466a-a7cb-2d0040c30f96">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="47299.0" y="0.0" z="62376.0" angle="0" name="L-43" hullID="1006" sideValue="1" />
+    <create type="station" x="41393.0" y="0.0" z="63884.0" angle="0" name="X-08" hullID="1006" sideValue="1" />
+    <create type="station" x="43906.0" y="0.0" z="67528.0" angle="0" name="G-23" hullID="1006" sideValue="1" />
+    <create type="station" x="28074.0" y="0.0" z="36115.0" angle="0" name="C-25" hullID="1005" sideValue="1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="7156b19e-89e2-4e27-9467-506ea3a0b219" parent_id_arme="6dcbdf92-9714-466a-a7cb-2d0040c30f96">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="369d4660-2409-4fc9-bc0f-9da752713d42" parent_id_arme="6dcbdf92-9714-466a-a7cb-2d0040c30f96">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="L-43" />
+    <destroy name="X-08" />
+    <destroy name="G-23" />
+    <destroy name="C-25" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erebus Sector VIII" id_arme="b0571847-a5a1-4b81-b122-81afdedc5059" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector VIII" id_arme="ec62aaaa-7480-4973-865f-3f94097ee563" parent_id_arme="b0571847-a5a1-4b81-b122-81afdedc5059">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="11" type="nebulas" startX="96681.0" startY="0.0" startZ="29329.0" endX="97058.0" endY="0.0" endZ="44031.0" randomRange="2965" />
+    <create count="30" type="nebulas" startX="94671.0" startY="0.0" startZ="28827.0" endX="49309.0" endY="0.0" endZ="35738.0" randomRange="6283" />
+    <create count="20" type="nebulas" startX="90398.0" startY="0.0" startZ="37497.0" endX="67529.0" endY="0.0" endZ="35235.0" randomRange="3269" />
+    <create count="30" type="nebulas" startX="51822.0" startY="0.0" startZ="37246.0" endX="28199.0" endY="0.0" endZ="57476.0" randomRange="1676" />
+    <create count="30" type="nebulas" startX="43404.0" startY="0.0" startZ="31591.0" endX="26692.0" endY="0.0" endZ="49434.0" randomRange="3678" />
+    <create count="40" type="asteroids" startX="69917.0" startY="0.0" startZ="39130.0" endX="47425.0" endY="0.0" endZ="42272.0" randomRange="5565" />
+    <create count="50" type="asteroids" startX="68283.0" startY="0.0" startZ="69790.0" endX="38252.0" endY="0.0" endZ="79465.0" randomRange="3467" />
+    <create count="40" type="asteroids" startX="36367.0" startY="0.0" startZ="78963.0" endX="15131.0" endY="0.0" endZ="72806.0" randomRange="3395" />
+    <create count="30" type="asteroids" startX="16388.0" startY="0.0" startZ="68910.0" endX="10357.0" endY="0.0" endZ="52701.0" randomRange="3846" />
+    <create count="20" type="nebulas" startX="58985.0" startY="0.0" startZ="96303.0" endX="1812.0" endY="0.0" endZ="96680.0" randomRange="2759" />
+    <create count="10" type="nebulas" startX="7090.0" startY="0.0" startZ="91780.0" endX="51571.0" endY="0.0" endZ="90020.0" randomRange="2347" />
+  </event>
+  <folder_arme name="Navigation" id_arme="9ececb64-3a90-4b1d-9eed-18f08ac35817" parent_id_arme="b0571847-a5a1-4b81-b122-81afdedc5059" />
+  <event name="Transition to Sector VII" id_arme="4345095b-dbbf-46e9-ab5c-7342e7612ebc" parent_id_arme="9ececb64-3a90-4b1d-9eed-18f08ac35817">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="2a8b36c3-c7f0-47ee-a504-5b445de7c06e" parent_id_arme="9ececb64-3a90-4b1d-9eed-18f08ac35817">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="18f63d97-8c03-4007-bad4-55d81d60fd61" parent_id_arme="9ececb64-3a90-4b1d-9eed-18f08ac35817">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="3f5d7e9a-dac0-402e-ae94-fb2397a31758" parent_id_arme="9ececb64-3a90-4b1d-9eed-18f08ac35817">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="3d521a3e-4667-4d8f-ba23-bfd22c926a3d" parent_id_arme="9ececb64-3a90-4b1d-9eed-18f08ac35817">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="fed7ebd0-b508-49f9-8306-7f6601aa620e" parent_id_arme="b0571847-a5a1-4b81-b122-81afdedc5059" />
+  <event name="Generate Sector Entities" id_arme="a1b3b04f-c18d-40d1-8f3f-b6b6fe54ea9c" parent_id_arme="fed7ebd0-b508-49f9-8306-7f6601aa620e">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="60116.0" y="0.0" z="53832.0" angle="0" name="J-11" hullID="1005" sideValue="1" />
+    <create type="station" x="65770.0" y="0.0" z="36617.0" angle="0" name="S-34" hullID="1008" sideValue="1" />
+    <create type="station" x="56472.0" y="0.0" z="57979.0" angle="0" name="D-47" hullID="1005" sideValue="1" />
+    <create type="station" x="28074.0" y="0.0" z="24931.0" angle="0" name="N-05" hullID="1007" sideValue="1" />
+    <create type="station" x="25058.0" y="0.0" z="29204.0" angle="0" name="Z-77" hullID="1007" sideValue="1" />
+    <create type="station" x="30587.0" y="0.0" z="30083.0" angle="0" name="V-66" hullID="1007" sideValue="1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="ffb06c13-2110-4914-888c-e79c9d6365ff" parent_id_arme="fed7ebd0-b508-49f9-8306-7f6601aa620e">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="a8ac96d9-39f5-498e-a396-b902430fce99" parent_id_arme="fed7ebd0-b508-49f9-8306-7f6601aa620e">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="J-11" />
+    <destroy name="S-34" />
+    <destroy name="D-47" />
+    <destroy name="N-05" />
+    <destroy name="Z-77" />
+    <destroy name="V-66" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erebus Sector IX" id_arme="4e55e744-c37c-4968-844c-da1df79ab660" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector IX" id_arme="4d7c8c0b-e550-4b43-835c-f724b6a417f4" parent_id_arme="4e55e744-c37c-4968-844c-da1df79ab660">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="20" type="nebulas" startX="44535.0" startY="0.0" startZ="30963.0" endX="44535.0" endY="0.0" endZ="30963.0" randomRange="16353" />
+    <create count="20" type="nebulas" startX="46419.0" startY="0.0" startZ="27947.0" endX="46419.0" endY="0.0" endZ="27947.0" randomRange="7197" />
+    <create count="30" type="nebulas" startX="81351.0" startY="0.0" startZ="75445.0" endX="73309.0" endY="0.0" endZ="65769.0" randomRange="6790" />
+    <create count="20" type="asteroids" startX="63383.0" startY="0.0" startZ="43528.0" endX="63383.0" endY="0.0" endZ="43528.0" randomRange="5486" />
+    <create count="20" type="asteroids" startX="55969.0" startY="0.0" startZ="42397.0" endX="48555.0" endY="0.0" endZ="49183.0" randomRange="2317" />
+    <create count="40" type="asteroids" startX="54461.0" startY="0.0" startZ="86753.0" endX="41268.0" endY="0.0" endZ="73937.0" randomRange="1554" />
+    <create count="30" type="asteroids" startX="49184.0" startY="0.0" startZ="84115.0" endX="40639.0" endY="0.0" endZ="78209.0" randomRange="3663" />
+  </event>
+  <folder_arme name="Navigation" id_arme="4d1c9473-d881-45f2-8256-7c39bd180256" parent_id_arme="4e55e744-c37c-4968-844c-da1df79ab660" />
+  <event name="Transition to Sector X" id_arme="9427466e-bd1c-4393-bf38-bde23001cbe9" parent_id_arme="4d1c9473-d881-45f2-8256-7c39bd180256">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="4cd85729-b0b9-4745-b2ab-3c29283747ca" parent_id_arme="4d1c9473-d881-45f2-8256-7c39bd180256">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="6b593851-ed29-4e29-854e-7409acc6866c" parent_id_arme="4d1c9473-d881-45f2-8256-7c39bd180256">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="31750c24-e2aa-4289-ae98-34d80a500771" parent_id_arme="4e55e744-c37c-4968-844c-da1df79ab660" />
+  <event name="Generate Sector Entities" id_arme="b40024b7-2f3e-4b58-9af3-564bdc33ac94" parent_id_arme="31750c24-e2aa-4289-ae98-34d80a500771">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="47550.0" y="0.0" z="73685.0" angle="0" name="L-04" hullID="1007" sideValue="1" />
+    <create type="station" x="51697.0" y="0.0" z="77204.0" angle="0" name="G-91" hullID="1007" sideValue="1" />
+    <create type="station" x="54713.0" y="0.0" z="80596.0" angle="0" name="B-70" hullID="1007" sideValue="1" />
+    <create type="station" x="61875.0" y="0.0" z="42523.0" angle="0" name="D-50" hullID="1008" sideValue="1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="041f6637-3b5d-43b9-971c-5d3f9099c7e5" parent_id_arme="31750c24-e2aa-4289-ae98-34d80a500771">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="4c040693-129b-473b-ad46-2f51d08b46da" parent_id_arme="31750c24-e2aa-4289-ae98-34d80a500771">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="L-04" />
+    <destroy name="G-91" />
+    <destroy name="B-70" />
+    <destroy name="D-50" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erebus Sector X" id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector X" id_arme="67a8c664-ab93-4780-8135-0d6a85573aa0" parent_id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="40" type="asteroids" startX="2817.0" startY="0.0" startZ="12115.0" endX="2943.0" endY="0.0" endZ="57602.0" randomRange="2893" />
+    <create count="60" type="asteroids" startX="7090.0" startY="0.0" startZ="14125.0" endX="61372.0" endY="0.0" endZ="31842.0" randomRange="3846" />
+    <create count="40" type="asteroids" startX="49938.0" startY="0.0" startZ="35612.0" endX="7843.0" endY="0.0" endZ="24052.0" randomRange="3327" />
+    <create count="30" type="asteroids" startX="7215.0" startY="0.0" startZ="50565.0" endX="33351.0" endY="0.0" endZ="37120.0" randomRange="3749" />
+    <create count="30" type="asteroids" startX="13749.0" startY="0.0" startZ="35361.0" endX="13749.0" endY="0.0" endZ="35361.0" randomRange="7932" />
+    <create count="30" type="asteroids" startX="54461.0" startY="0.0" startZ="34858.0" endX="67655.0" endY="0.0" endZ="43151.0" randomRange="3204" />
+    <create count="20" type="asteroids" startX="66650.0" startY="0.0" startZ="44282.0" endX="71676.0" endY="0.0" endZ="58607.0" randomRange="4023" />
+    <create count="20" type="nebulas" startX="64891.0" startY="0.0" startZ="58104.0" endX="48807.0" endY="0.0" endZ="42272.0" randomRange="5766" />
+    <create count="30" type="nebulas" startX="42021.0" startY="0.0" startZ="41518.0" endX="19152.0" endY="0.0" endZ="47047.0" randomRange="4146" />
+    <create count="40" type="nebulas" startX="83362.0" startY="0.0" startZ="77832.0" endX="58859.0" endY="0.0" endZ="92910.0" randomRange="7675" />
+    <create count="10" type="nebulas" startX="75948.0" startY="0.0" startZ="24178.0" endX="75948.0" endY="0.0" endZ="24178.0" randomRange="8564" />
+  </event>
+  <folder_arme name="Navigation" id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45" parent_id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147" />
+  <event name="Transition to Sector XI" id_arme="d19584ac-c927-4d85-a8f3-2fd4cae99eaa" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="ed4b4b9c-0304-4d80-89d1-486a75c4b83d" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="ad26ec24-4302-4793-b4ca-bde3456a15eb" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="c4c957ae-37b6-4a4b-aa8a-97e0f29c5c2b" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="f3e02a1a-2941-4a3b-8e2d-181012d0cf12" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="645dc0af-c04a-4407-becb-232f36b36757" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45" />
+  <event name="Gate Offline" id_arme="e7c63da4-e411-407a-a9ae-d54dd7c452c7" parent_id_arme="645dc0af-c04a-4407-becb-232f36b36757">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Sierra Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa" parent_id_arme="645dc0af-c04a-4407-becb-232f36b36757" />
+  <event name="Ship1 Activation Range" id_arme="ee0de158-5aaf-4843-aa2b-3207044b31d2" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Sierra Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="7d1f4ab5-84d1-4b88-ac46-7d98360ff2ae" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Sierra Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="6059ee74-ba32-4ec1-8c1b-6c76083d6160" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Sierra Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="705b4ee6-a568-4bb8-86e2-8c55500b600a" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Sierra Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="8b9e1e8f-3ea5-497d-8ed0-824b9d65232b" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Sierra Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="2bef8205-eee0-4f0c-b25a-c76e0ac63618" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Sierra Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="6353a01c-3338-4fbf-9085-54eef5af61a4" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Sierra Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="464cfe6f-02df-4e12-9283-1e767afe3746" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Sierra Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="660cbad3-bfd8-43c5-9a69-cc9f38fd83af" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Sierra Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="aad3ce4e-5a65-4df1-a736-3d6efee628ba" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Sierra Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="89c2b151-63ab-4ce8-a1aa-7759d077cf7b" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Sierra Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="08359c3a-1fc1-4541-ab53-ddb41e6d777b" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Sierra Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="7f39ab18-38ee-4746-b9e4-b1c27bbf53cc" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Sierra Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="d916ee5a-2675-4338-b17d-bc2cc1329173" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Sierra Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="b3f090bc-fc2c-4ee0-860d-a528045a4d2e" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Sierra Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="d0d2d803-dfb1-49e0-9116-894aae41eb08" parent_id_arme="c61d4354-c5f0-42b2-ae88-e6c86ce002fa">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Sierra Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="2a360bb8-1b02-4a64-b021-e1a0645b3d1c" parent_id_arme="645dc0af-c04a-4407-becb-232f36b36757">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Sierra Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="7e3d7338-aef8-47bf-9012-e12324902e2b" parent_id_arme="645dc0af-c04a-4407-becb-232f36b36757">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Erebus to Sierra" value="1.0" />
+    <set_variable name="Sierra System" value="1.0" />
+    <set_variable name="Sector" value="2" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="44d4f726-943b-4ffa-93d7-704eff53d247" parent_id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147" />
+  <event name="Generate Sector Entities" id_arme="0423acb6-f2d2-409c-9fcb-bab5f839dfca" parent_id_arme="44d4f726-943b-4ffa-93d7-704eff53d247">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="42775.0" y="0.0" z="52952.0" angle="0" name="Sierra Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="22671.0" y="0.0" z="25434.0" angle="0" name="H-48" hullID="1005" sideValue="1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="cd40b17e-5fa2-4823-aaf8-16ad87e2419c" parent_id_arme="44d4f726-943b-4ffa-93d7-704eff53d247">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Sierra Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Sierra Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Sierra Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Sierra Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="ac6df178-2b07-40ff-9e87-2d403460e4d5" parent_id_arme="44d4f726-943b-4ffa-93d7-704eff53d247">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="Sierra Gate" />
+    <destroy name="H-48" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Sierra" id_arme="5159ec15-abd2-4a74-8395-4d0acaa9c15c" parent_id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147">
+    <if_variable name="Sector" comparator="EQUALS" value="10" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sierra to Erebus" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Sierra Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Sierra Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Sierra Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Sierra Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Sierra Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Sierra Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Sierra Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Sierra Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Sierra to Erebus" value="0.0" />
+  </event>
+  <folder_arme name="Erebus Sector XI" id_arme="2f522efb-a0c2-49e5-8845-e36f6e2995b6" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector XI" id_arme="edfeaec2-cf42-4332-b79d-c51fec8c76e3" parent_id_arme="2f522efb-a0c2-49e5-8845-e36f6e2995b6">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="10" type="nebulas" startX="2440.0" startY="0.0" startZ="41769.0" endX="3194.0" endY="0.0" endZ="56973.0" randomRange="3557" />
+    <create count="20" type="nebulas" startX="4828.0" startY="0.0" startZ="43403.0" endX="28828.0" endY="0.0" endZ="38376.0" randomRange="3018" />
+    <create count="30" type="nebulas" startX="29205.0" startY="0.0" startZ="38753.0" endX="44535.0" endY="0.0" endZ="44659.0" randomRange="1955" />
+    <create count="20" type="nebulas" startX="41519.0" startY="0.0" startZ="48178.0" endX="37121.0" endY="0.0" endZ="64638.0" randomRange="3171" />
+    <create count="40" type="nebulas" startX="25812.0" startY="0.0" startZ="42146.0" endX="32974.0" endY="0.0" endZ="55089.0" randomRange="2639" />
+    <create count="10" type="nebulas" startX="22294.0" startY="0.0" startZ="36366.0" endX="5833.0" endY="0.0" endZ="55214.0" randomRange="3151" />
+    <create count="30" type="asteroids" startX="38000.0" startY="0.0" startZ="47801.0" endX="38000.0" endY="0.0" endZ="47801.0" randomRange="8028" />
+    <create count="20" type="asteroids" startX="46419.0" startY="0.0" startZ="46921.0" endX="55466.0" endY="0.0" endZ="59989.0" randomRange="3476" />
+    <create count="40" type="asteroids" startX="97938.0" startY="0.0" startZ="12492.0" endX="97184.0" endY="0.0" endZ="57853.0" randomRange="2578" />
+    <create count="60" type="asteroids" startX="93037.0" startY="0.0" startZ="15759.0" endX="75446.0" endY="0.0" endZ="44659.0" randomRange="6795" />
+    <create count="20" type="asteroids" startX="95048.0" startY="0.0" startZ="54083.0" endX="82733.0" endY="0.0" endZ="45036.0" randomRange="5932" />
+    <create count="20" type="asteroids" startX="80220.0" startY="0.0" startZ="47047.0" endX="59236.0" endY="0.0" endZ="62753.0" randomRange="4691" />
+    <create count="20" type="asteroids" startX="71048.0" startY="0.0" startZ="39507.0" endX="51822.0" endY="0.0" endZ="45413.0" randomRange="4334" />
+    <create count="10" type="nebulas" startX="72807.0" startY="0.0" startZ="43905.0" endX="60870.0" endY="0.0" endZ="51821.0" randomRange="5368" />
+    <create count="6" type="nebulas" startX="60618.0" startY="30.0" startZ="53706.0" endX="52953.0" endY="30.0" endZ="48680.0" randomRange="4950" />
+  </event>
+  <folder_arme name="Navigation" id_arme="bcfe0a6f-6132-4783-a7ce-8c0cafcbfbd8" parent_id_arme="2f522efb-a0c2-49e5-8845-e36f6e2995b6" />
+  <event name="Transition to Sector XII" id_arme="acf67411-cc10-4698-a318-cfe38337ff88" parent_id_arme="bcfe0a6f-6132-4783-a7ce-8c0cafcbfbd8">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="3f40e167-d4c6-415b-a5ad-5610293cdc27" parent_id_arme="bcfe0a6f-6132-4783-a7ce-8c0cafcbfbd8">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="c5902159-b0a3-4505-89da-2e5c4a9cb4ca" parent_id_arme="bcfe0a6f-6132-4783-a7ce-8c0cafcbfbd8">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="46664cf4-5545-49a9-aca2-95d123e341b2" parent_id_arme="bcfe0a6f-6132-4783-a7ce-8c0cafcbfbd8">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="fabb3988-2e10-403f-8e1a-d132766073b3" parent_id_arme="bcfe0a6f-6132-4783-a7ce-8c0cafcbfbd8">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="96669934-7d1a-49c6-bc38-bcb4d281b282" parent_id_arme="2f522efb-a0c2-49e5-8845-e36f6e2995b6" />
+  <event name="Generate Sector Entities" id_arme="4bec648f-dca2-4ccd-9ef3-c6a4179e59f0" parent_id_arme="96669934-7d1a-49c6-bc38-bcb4d281b282">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="82608.0" y="0.0" z="35612.0" angle="0" name="F-55" hullID="1007" sideValue="1" />
+    <create type="station" x="36116.0" y="0.0" z="48931.0" angle="0" name="A-17" hullID="1005" sideValue="1" />
+    <create type="station" x="57854.0" y="0.0" z="51193.0" angle="0" name="S-10" hullID="1008" sideValue="1" />
+    <create type="station" x="89770.0" y="0.0" z="23549.0" angle="0" name="Q-49" hullID="1007" sideValue="1" />
+    <create type="station" x="82105.0" y="0.0" z="47047.0" angle="0" name="G-60" hullID="1007" sideValue="1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="72cdef17-0341-49ff-a8ce-113e4b6d361e" parent_id_arme="96669934-7d1a-49c6-bc38-bcb4d281b282">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="20577675-99db-4364-84c4-eec636de3d14" parent_id_arme="96669934-7d1a-49c6-bc38-bcb4d281b282">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="F-55" />
+    <destroy name="A-17" />
+    <destroy name="S-10" />
+    <destroy name="Q-49" />
+    <destroy name="G-60" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Erebus Sector XII" id_arme="96f15203-93fb-49a7-b6df-bdb3b30b0cd1" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <event name="Create Erebus Sector XII" id_arme="f1cc92fc-efb3-41ba-96ac-7deda9552506" parent_id_arme="96f15203-93fb-49a7-b6df-bdb3b30b0cd1">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <set_skybox_index index="21" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Erebus System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <create count="40" type="nebulas" startX="3069.0" startY="0.0" startZ="3193.0" endX="57477.0" endY="0.0" endZ="3068.0" randomRange="2478" />
+    <create count="70" type="nebulas" startX="50817.0" startY="0.0" startZ="6460.0" endX="2566.0" endY="0.0" endZ="24680.0" randomRange="7519" />
+    <create count="20" type="nebulas" startX="25812.0" startY="0.0" startZ="6712.0" endX="4074.0" endY="0.0" endZ="9602.0" randomRange="5857" />
+    <create count="50" type="nebulas" startX="97561.0" startY="0.0" startZ="42523.0" endX="62503.0" endY="0.0" endZ="82104.0" randomRange="4298" />
+    <create count="30" type="nebulas" startX="96807.0" startY="0.0" startZ="54083.0" endX="82985.0" endY="0.0" endZ="61874.0" randomRange="4718" />
+    <create count="20" type="asteroids" startX="68660.0" startY="0.0" startZ="56471.0" endX="56095.0" endY="0.0" endZ="66397.0" randomRange="1777" />
+    <create count="20" type="asteroids" startX="55215.0" startY="0.0" startZ="35109.0" endX="43906.0" endY="0.0" endZ="42649.0" randomRange="1634" />
+    <create count="40" type="asteroids" startX="42273.0" startY="0.0" startZ="43780.0" endX="19152.0" endY="0.0" endZ="58858.0" randomRange="4785" />
+    <create count="30" type="asteroids" startX="17896.0" startY="0.0" startZ="58104.0" endX="932.0" endY="0.0" endZ="69162.0" randomRange="2026" />
+  </event>
+  <folder_arme name="Navigation" id_arme="e83d0424-586a-4e7d-86ce-ceb8953b7263" parent_id_arme="96f15203-93fb-49a7-b6df-bdb3b30b0cd1" />
+  <event name="Transition to Sector XI" id_arme="87568b5c-087f-4040-a6a1-c86b5a0fc56b" parent_id_arme="e83d0424-586a-4e7d-86ce-ceb8953b7263">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="2a1282bb-c180-4014-a15f-6bdc8500a208" parent_id_arme="e83d0424-586a-4e7d-86ce-ceb8953b7263">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="28fd58f4-5227-43e3-ab8c-0e7a1bfece7d" parent_id_arme="e83d0424-586a-4e7d-86ce-ceb8953b7263">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Erebus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="209dffb4-f1d0-4fe2-9711-f535ec6c4f14" parent_id_arme="96f15203-93fb-49a7-b6df-bdb3b30b0cd1" />
+  <event name="Generate Sector Entities" id_arme="09e5530b-ebae-4a8e-bcd1-89076e9b1cce" parent_id_arme="209dffb4-f1d0-4fe2-9711-f535ec6c4f14">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="39131.0" y="0.0" z="40513.0" angle="0" name="E-63" hullID="1005" sideValue="1" />
+    <create type="station" x="43466.0" y="0.0" z="37686.0" angle="0" name="W-33" hullID="1005" sideValue="1" />
+    <create type="station" x="34796.0" y="0.0" z="43340.0" angle="0" name="M-38" hullID="1008" sideValue="1" />
+    <create type="station" x="69414.0" y="0.0" z="25057.0" angle="0" name="C-48" hullID="1006" sideValue="1" />
+    <create type="station" x="67655.0" y="0.0" z="33853.0" angle="0" name="V-01" hullID="1006" sideValue="1" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="9811694f-4912-4da2-92cc-7392ff10ea1f" parent_id_arme="209dffb4-f1d0-4fe2-9711-f535ec6c4f14">
+    <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="196191ac-8588-4b54-b7c3-6a655a468a8a" parent_id_arme="209dffb4-f1d0-4fe2-9711-f535ec6c4f14">
+    <if_variable name="Erebus System" comparator="EQUALS" value="3.0" />
+    <destroy name="E-63" />
+    <destroy name="W-33" />
+    <destroy name="M-38" />
+    <destroy name="C-48" />
+    <destroy name="V-01" />
+    <set_variable name="Erebus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

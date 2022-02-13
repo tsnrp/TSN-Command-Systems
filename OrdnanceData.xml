@@ -1,0 +1,190 @@
+<ordnance_data>
+
+  <vessel type="Artemis Class">
+    <torpedo_storage type="trp" amount="8"/>
+    <torpedo_storage type="nuk" amount="2"/>
+    <torpedo_storage type="min" amount="6"/>
+    <torpedo_storage type="emp" amount="4"/>
+    <torpedo_storage type="shk" amount="4"/>
+    <torpedo_storage type="bea" amount="5"/>
+    <torpedo_storage type="pro" amount="5"/>
+    <torpedo_storage type="tag" amount="5"/>
+  </vessel>
+
+  <vessel type="Scout Class">
+    <torpedo_storage type="trp" amount="6"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="0"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="2"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="2"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="1"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="8"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="8"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="8"/>  <!-- Tag"-->
+  </vessel>
+
+  <vessel type="Battleship Class">
+    <torpedo_storage type="trp" amount="8"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="2"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="6"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="4"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="5"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="2"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="2"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="2"/>  <!-- Tag"-->
+  </vessel>
+
+  <vessel type="Missile Cruiser">
+    <torpedo_storage type="trp" amount="20"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="8"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="14"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="12"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="6"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="2"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="2"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="2"/>  <!-- Tag"-->
+  </vessel>
+
+  <vessel type="Dreadnought Class">
+    <torpedo_storage type="trp" amount="10"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="4"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="8"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="5"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="4"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="2"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="2"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="2"/>  <!-- Tag"-->
+  </vessel>
+
+  <vessel type="Carrier Class">
+    <torpedo_storage type="trp" amount="6"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="1"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="4"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="2"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="2"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="2"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="2"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="2"/>  <!-- Tag"-->
+  </vessel>
+
+  <vessel type="Mine Layer Class">
+    <torpedo_storage type="trp" amount="10"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="0"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="25"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="0"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="0"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="0"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="2"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="0"/>  <!-- Tag"-->
+  </vessel>
+
+  <vessel type="Juggernaut Class">
+    <torpedo_storage type="trp" amount="16"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="7"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="10"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="7"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="6"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="2"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="2"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="2"/>  <!-- Tag"-->
+  </vessel>
+
+  <vessel type="Nemesis Class">
+	<torpedo_storage type="trp" amount="8"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="0"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="1"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="2"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="8"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="4"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="8"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="2"/>  <!-- Tag"-->
+  </vessel>
+  
+  <vessel type="Scout MkII Class">
+    <torpedo_storage type="trp" amount="8"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="0"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="2"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="4"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="3"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="8"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="10"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="8"/>  <!-- Tag"-->
+  </vessel>
+
+  <vessel type="Ares Class">
+	<torpedo_storage type="trp" amount="10"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="2"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="4"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="4"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="10"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="2"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="4"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="1"/>  <!-- Tag"-->
+  </vessel>
+
+  <vessel type="Valkyrie Class">
+	<torpedo_storage type="trp" amount="18"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="4"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="3"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="6"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="18"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="2"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="4"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="1"/>  <!-- Tag"-->
+  </vessel>
+  
+  <vessel type= "Apollo Class">
+  	<torpedo_storage type="trp" amount="10"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="1"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="2"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="6"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="6"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="2"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="4"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="1"/>  <!-- Tag"-->
+  </vessel>
+  
+  <vessel type="Allegiance Class">
+	<torpedo_storage type="trp" amount="10"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="2"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="6"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="4"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="8"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="2"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="2"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="1"/>  <!-- Tag"-->
+  </vessel>
+  
+  <vessel type="Athena Class">
+    <torpedo_storage type="trp" amount="10"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="3"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="3"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="6"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="10"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="2"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="4"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="1"/>  <!-- Tag"-->
+  </vessel>
+  
+  <vessel type="Zeus Class">
+    <torpedo_storage type="trp" amount="20"/>  <!-- Homing"-->
+    <torpedo_storage type="nuk" amount="6"/>  <!-- LR Nuke-->
+    <torpedo_storage type="min" amount="4"/>  <!-- Mine"-->
+    <torpedo_storage type="emp" amount="10"/>  <!-- EMP"-->
+    <torpedo_storage type="shk" amount="15"/>  <!-- Plasma Shock"-->
+    <torpedo_storage type="bea" amount="2"/>  <!-- Beacon"-->
+    <torpedo_storage type="pro" amount="2"/>  <!-- Probe"-->
+    <torpedo_storage type="tag" amount="2"/>  <!-- Tag"-->
+  </vessel>
+    
+  <vessel type="Orion Class">
+	<torpedo_storage type="trp" amount="6"/> <!-- Homing"-->
+	<torpedo_storage type="nuk" amount="0"/> <!-- LR Nuke-->
+	<torpedo_storage type="min" amount="2"/> <!-- Mine"-->
+	<torpedo_storage type="emp" amount="2"/> <!-- EMP"-->
+	<torpedo_storage type="shk" amount="1"/> <!-- Plasma Shock"-->
+	<torpedo_storage type="bea" amount="8"/> <!-- Beacon"-->
+	<torpedo_storage type="pro" amount="8"/> <!-- Probe"-->
+	<torpedo_storage type="tag" amount="8"/> <!-- Tag"-->
+  </vessel>
+
+</ordnance_data>

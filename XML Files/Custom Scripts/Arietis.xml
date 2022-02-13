@@ -1,0 +1,1278 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="604.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="497.0" integer="yes" />
+    <set_variable name="Alignment" value="USFP" integer="yes" />
+  </start>
+  <folder_arme name="Arietis System" id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <folder_arme name="Arietis Settings" id_arme="a5dba461-b284-47ac-955b-3589afa07984" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <folder_arme name="Arietis Menu" id_arme="678e3871-0237-498c-bc2c-a0c3ae561298" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984" />
+  <event name="Arietis Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="678e3871-0237-498c-bc2c-a0c3ae561298">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Upper Arc/Arietis System" />
+    <set_variable name="Arietis Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="678e3871-0237-498c-bc2c-a0c3ae561298">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Upper Arc/Arietis System" />
+  </event>
+  <event name="Arietis System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="678e3871-0237-498c-bc2c-a0c3ae561298">
+    <if_gm_button text="Upper Arc/Arietis System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="101.0" integer="yes" />
+    <set_variable name="Arietis System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Arietis Sector I" id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Arietis Sector I" id_arme="3f891468-1e8e-4606-acd9-c4ce08ec9c6e" parent_id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="90" type="nebulas" startX="63752.0" startY="0.0" startZ="30256.0" radius="25465" randomRange="7447" />
+    <create count="64" type="asteroids" startX="67747.0" startY="0.0" startZ="55915.0" endX="22267.0" endY="0.0" endZ="26722.0" randomRange="8166" />
+    <create count="40" type="nebulas" startX="79271.0" startY="0.0" startZ="62676.0" endX="96172.0" endY="0.0" endZ="71126.0" randomRange="4134" />
+    <create count="38" type="nebulas" startX="32561.0" startY="0.0" startZ="23495.0" endX="13970.0" endY="0.0" endZ="8437.0" randomRange="5306" />
+    <create count="52" type="nebulas" startX="51921.0" startY="0.0" startZ="50076.0" endX="51921.0" endY="0.0" endZ="50076.0" randomRange="60194" />
+    <set_variable name="Arietis System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea" parent_id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246" />
+  <event name="Transition to Sector II" id_arme="e450f899-09ad-407f-8d81-d333578cac19" parent_id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="8e7c22d0-03d5-4a41-8971-151bcdf31e69" parent_id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="ff809e3a-c02f-4301-9ad7-25860360f6cc" parent_id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="91acdb57-6210-4d66-9a20-a4082d37678c" parent_id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246" />
+  <event name="Generate Sector Entities" id_arme="43a2964c-e793-4f24-9099-cd721a0c093c" parent_id_arme="91acdb57-6210-4d66-9a20-a4082d37678c">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Arietis I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="station" x="57145.0" y="0.0" z="31331.0" name="Aliar" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="69130.0" y="0.0" z="34711.0" name="Callee" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="68976.0" y="0.0" z="24724.0" name="Fortir" hullID="1001" sideValue="sectorSide" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="eef4d5af-9da6-4f33-a6fe-f33165d7d2ce" parent_id_arme="91acdb57-6210-4d66-9a20-a4082d37678c">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="3ac6a44b-2500-4ec3-bba5-8d7f632f975b" parent_id_arme="91acdb57-6210-4d66-9a20-a4082d37678c">
+    <if_variable name="Arietis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Aliar" />
+    <destroy name="Callee" />
+    <destroy name="Fortir" />
+    <destroy name="Arietis I" />
+    <set_variable name="Arietis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arietis Sector II" id_arme="42a04c39-e5a4-4f76-83b7-6c44b0b6ed75" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Arietis Sector II" id_arme="8a11ce37-4996-44f2-9963-af5619d2fe6c" parent_id_arme="42a04c39-e5a4-4f76-83b7-6c44b0b6ed75">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <create count="49" type="nebulas" startX="51921.0" startY="0.0" startZ="50076.0" endX="51921.0" endY="0.0" endZ="50076.0" randomRange="60194" />
+    <create count="60" type="nebulas" startX="67286.0" startY="0.0" startZ="16274.0" endX="45775.0" endY="0.0" endZ="21344.0" randomRange="4567" />
+    <create count="30" type="nebulas" startX="43624.0" startY="0.0" startZ="25339.0" endX="27491.0" endY="0.0" endZ="30717.0" randomRange="2345" />
+    <create count="40" type="asteroids" startX="71127.0" startY="0.0" startZ="77272.0" endX="49924.0" endY="0.0" endZ="70665.0" randomRange="3411" />
+    <create count="30" type="nebulas" startX="55455.0" startY="0.0" startZ="72816.0" endX="41319.0" endY="0.0" endZ="64980.0" randomRange="2683" />
+    <set_variable name="Arietis System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6" parent_id_arme="42a04c39-e5a4-4f76-83b7-6c44b0b6ed75" />
+  <event name="Transition to Sector III" id_arme="cecd9a83-5a60-4134-8fa9-e366e25e7ab1" parent_id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="2e122b7a-bd1f-46fd-a224-2ead0691daff" parent_id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="f63685e9-45c2-4ac6-9304-54d07e0c8f8c" parent_id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="6465e855-338e-4263-b264-39e44d06fad2" parent_id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="503aea4a-03d8-4c91-9342-536139ce369d" parent_id_arme="d6c8b5fa-0fb7-4d31-8981-fb49601e4fa6">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="14ef3586-ba7c-4516-9b4f-57f28ca5073e" parent_id_arme="42a04c39-e5a4-4f76-83b7-6c44b0b6ed75" />
+  <event name="Generate Sector Entities" id_arme="b4d6c07f-b554-4fa9-b705-2d113f037c19" parent_id_arme="14ef3586-ba7c-4516-9b4f-57f28ca5073e">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Arietis II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="station" x="48541.0" y="0.0" z="42240.0" name="Arietis Command" hullID="1002" sideValue="sectorSide" />
+    <create type="station" x="69591.0" y="0.0" z="64366.0" name="DS-52" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="78041.0" y="0.0" z="29026.0" name="DS-16" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="24418.0" y="0.0" z="65595.0" name="DS-22" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="38707.0" y="0.0" z="20422.0" name="DS-31" hullID="1000" sideValue="sectorSide" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="8385a649-07d1-4308-8f39-3ace36ee94ca" parent_id_arme="14ef3586-ba7c-4516-9b4f-57f28ca5073e">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="790ffa74-dd43-4841-8d72-eff8e73b668e" parent_id_arme="14ef3586-ba7c-4516-9b4f-57f28ca5073e">
+    <if_variable name="Arietis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Arietis II" />
+    <destroy name="Arietis Command" />
+    <destroy name="DS-52" />
+    <destroy name="DS-16" />
+    <destroy name="DS-22" />
+    <destroy name="DS-31" />
+    <set_variable name="Arietis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arietis Sector III" id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Arietis Sector III" id_arme="79f935b9-9c53-4db9-a765-907636dbc3b2" parent_id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <create count="23" type="nebulas" startX="50077.0" startY="0.0" startZ="50076.0" endX="50077.0" endY="0.0" endZ="50076.0" randomRange="51544" />
+    <create count="30" type="asteroids" startX="51614.0" startY="0.0" startZ="27183.0" endX="19040.0" endY="0.0" endZ="19193.0" randomRange="7990" />
+    <create count="50" type="asteroids" startX="52997.0" startY="0.0" startZ="28412.0" endX="17350.0" endY="0.0" endZ="14583.0" randomRange="3107" />
+    <create count="25" type="nebulas" startX="40244.0" startY="0.0" startZ="80960.0" endX="19808.0" endY="0.0" endZ="57605.0" randomRange="2887" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="Arietis System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="123248e1-d36f-4070-88a1-1bd1d7324198" parent_id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594" />
+  <event name="Transition to Sector II" id_arme="89797f69-10d5-4402-8f31-ec1e1925f9a6" parent_id_arme="123248e1-d36f-4070-88a1-1bd1d7324198">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="a3bb0bba-8438-40ab-804b-7e0568f5f8cf" parent_id_arme="123248e1-d36f-4070-88a1-1bd1d7324198">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="491e0b1c-8be1-4e47-8777-702617db55cd" parent_id_arme="123248e1-d36f-4070-88a1-1bd1d7324198">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="273b1874-bd17-476f-99aa-5db773252779" parent_id_arme="123248e1-d36f-4070-88a1-1bd1d7324198" />
+  <event name="Gate Offline" id_arme="57db0aed-242c-4345-bbd0-0ba08d7119d8" parent_id_arme="273b1874-bd17-476f-99aa-5db773252779">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Poseidon Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631" parent_id_arme="273b1874-bd17-476f-99aa-5db773252779" />
+  <event name="Ship1 Activation Range" id_arme="7b74844c-80a1-4af5-a332-c263c773a07b" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Poseidon Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="233bea1f-f76e-4ed8-81b6-af54ed5fa3fc" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Poseidon Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="20b15141-be44-4ea1-b80f-39f0fcd3a573" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Poseidon Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="8768a86a-20d3-4525-8d2a-0f2668143488" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Poseidon Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="9bb3d8ec-29cc-46e1-b645-e18fd7509969" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Poseidon Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="0c09a754-6dbf-4ce4-a665-8ddb6b79289b" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Poseidon Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="c10b51cb-4757-4000-910d-c568915956aa" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Poseidon Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="2d689ae5-6900-4cba-abcb-007ffc4d3fea" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Poseidon Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="aa85f26b-d5ab-4a5b-8e98-7791c43bee1a" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Poseidon Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="c681d2c0-3e92-4fbb-ba86-0dd256d6e3d5" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Poseidon Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="76b38000-375b-4a6c-9b1f-211cac6ca36e" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Poseidon Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="917ab7a0-c52b-4aaf-a7a7-05155e1876a2" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Poseidon Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="18f33c39-8cbd-4c52-83bb-4a72e4152993" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Poseidon Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="4910098f-4066-4361-8af3-17ca598abaf5" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Poseidon Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="60961e16-9d7f-47fa-8aea-6ccc188eb97e" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Poseidon Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="a5039aaa-6331-4539-9e4b-dfd3afc38b34" parent_id_arme="4a90c0b2-827a-43ff-b60a-61ddda1a3631">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Poseidon Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="55993836-2ef6-4ae8-9a2a-8f74af67e93e" parent_id_arme="273b1874-bd17-476f-99aa-5db773252779">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Poseidon Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="968d49f8-4bc3-48ff-8308-c11180a6fe9d" parent_id_arme="273b1874-bd17-476f-99aa-5db773252779">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arietis to Poseidon" value="1.0" />
+    <set_variable name="Poseidon System" value="1.0" />
+    <set_variable name="Sector" value="1" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="2b9dfa54-865b-4cb4-b7b4-578f337bea97" parent_id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594" />
+  <event name="Generate Sector Entities" id_arme="5ef24497-8bdb-4ed2-b0da-e186f5096f52" parent_id_arme="2b9dfa54-865b-4cb4-b7b4-578f337bea97">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Arietis III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="genericMesh" x="25647.0" y="0.0" z="52842.0" name="Poseidon Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="56531.0" y="0.0" z="38092.0" name="RS-82X" hullID="1004" sideValue="sectorSide" />
+    <create type="station" x="58528.0" y="0.0" z="31024.0" name="RS-48X" hullID="1004" sideValue="sectorSide" />
+    <create type="station" x="70513.0" y="0.0" z="73892.0" name="Kala" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="77427.0" y="0.0" z="57298.0" name="Mira" hullID="1001" sideValue="sectorSide" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="c449f42d-1275-4644-8993-a13777dbf658" parent_id_arme="2b9dfa54-865b-4cb4-b7b4-578f337bea97">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Poseidon Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Poseidon Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Poseidon Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Poseidon Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="d1baf9f9-16e4-4e6d-a887-da9f0c2e4853" parent_id_arme="2b9dfa54-865b-4cb4-b7b4-578f337bea97">
+    <if_variable name="Arietis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Arietis III" />
+    <destroy name="Poseidon Gate" />
+    <destroy name="RS-82X" />
+    <destroy name="RS-48X" />
+    <destroy name="Kala" />
+    <destroy name="Mira" />
+    <set_variable name="Arietis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Poseidon" id_arme="7f85a4d8-dbf3-49d1-8b2a-2c46dd7687cc" parent_id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Poseidon to Arietis" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Poseidon Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Poseidon Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Poseidon Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Poseidon Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Poseidon Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Poseidon Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Poseidon Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Poseidon Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Poseidon to Arietis" value="0.0" />
+  </event>
+  <folder_arme name="Arietis Sector IV" id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Arietis Sector IV" id_arme="ec122f90-212a-4a33-9285-9c92b2de90f4" parent_id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <create count="32" type="nebulas" startX="49616.0" startY="0.0" startZ="50845.0" endX="49616.0" endY="0.0" endZ="50845.0" randomRange="51607" />
+    <create count="23" type="nebulas" startX="73739.0" startY="0.0" startZ="43008.0" endX="73739.0" endY="0.0" endZ="43008.0" randomRange="9042" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <create count="34" type="asteroids" startX="67593.0" startY="0.0" startZ="35326.0" endX="67593.0" endY="0.0" endZ="35326.0" randomRange="7391" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <create count="31" type="asteroids" startX="63752.0" startY="0.0" startZ="35019.0" endX="53765.0" endY="0.0" endZ="28565.0" randomRange="2575" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <create count="110" type="asteroids" startX="16841.0" startY="0.0" startZ="69743.0" endX="40090.0" endY="0.0" endZ="70512.0" randomRange="17055" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <create count="90" type="asteroids" startX="45468.0" startY="0.0" startZ="73277.0" endX="75429.0" endY="0.0" endZ="73431.0" randomRange="5540" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Arietis System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01" parent_id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172" />
+  <event name="Transition to Sector V" id_arme="285b096a-651f-4081-b47f-cdf2988e8743" parent_id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="d212ec07-7da0-46fc-b0c5-723236ef0c73" parent_id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="a12c7c30-a911-4c33-854e-b455847aad2e" parent_id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="e04f86c2-f574-4ce8-8e8a-5535615ae429" parent_id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01" />
+  <event name="Gate Offline" id_arme="1711596c-55be-4c20-8259-a95b14669687" parent_id_arme="e04f86c2-f574-4ce8-8e8a-5535615ae429">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Atlantis Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6" parent_id_arme="e04f86c2-f574-4ce8-8e8a-5535615ae429" />
+  <event name="Ship1 Activation Range" id_arme="a0dab3da-710c-41e3-b00e-26e8325731cf" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="acea9133-28c0-4776-adfe-8a15ef065e7c" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="adb46543-51a3-4ede-8cfb-cf9d942ef0f4" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="d80d7574-44ea-4532-90a4-b50a4d5634bb" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="84fa4f55-aa6e-4852-8f1f-d23b3cf8ed0c" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="49d3e13b-4558-45c5-a4e5-3d37e975c2a1" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="3d38c326-8a21-44bd-bea8-1ca0420d5da1" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="c030a301-2cb9-42cb-a5d3-71544b5a3a60" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="c661ef1a-ec6a-4599-a7cd-aef23cde8c01" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="b643cc20-cfed-424f-8f10-ff7da8af9b61" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="d8b4746c-6f8f-4f8f-8c8b-c51192dd26dd" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="80239f7d-1924-4e3a-b5ad-39f1719079d7" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="bc13aa7b-dbbe-4eb4-b646-9d8a5173eff1" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="03e95b1d-6eb2-4b27-ad1a-927a509db96c" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="2d29de89-4ccc-425c-b79e-c3dc5645a385" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="45b66af0-8df3-4967-86a9-78fdaf98c3df" parent_id_arme="3226117b-2dee-4ce3-b63b-0e77cad5a2b6">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="bd4a82d9-813e-4116-a010-f9573b394edd" parent_id_arme="e04f86c2-f574-4ce8-8e8a-5535615ae429">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Atlantis Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="11859365-f1e2-4043-8ae0-6705aaa62993" parent_id_arme="e04f86c2-f574-4ce8-8e8a-5535615ae429">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arietis to Atlantis" value="1.0" />
+    <set_variable name="Atlantis System" value="1.0" />
+    <set_variable name="Sector" value="18.0" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="bae8cfb4-22c6-4e5f-9d3e-01beb1742504" parent_id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172" />
+  <event name="Generate Sector Entities" id_arme="d9eb6ce0-b342-474d-85ce-1b17047d2c7c" parent_id_arme="bae8cfb4-22c6-4e5f-9d3e-01beb1742504">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Arietis IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="genericMesh" x="52997.0" y="0.0" z="69590.0" name="Atlantis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="67132.0" y="0.0" z="19961.0" name="Tallith" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="31793.0" y="0.0" z="34404.0" name="Rannar" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="73586.0" y="0.0" z="59295.0" name="DS-37" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="34251.0" y="0.0" z="84494.0" name="M-552" hullID="1003" sideValue="sectorSide" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="04444f12-d2e9-4fb1-8a03-17ad8e0dc1d8" parent_id_arme="bae8cfb4-22c6-4e5f-9d3e-01beb1742504">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Atlantis Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Atlantis Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Atlantis Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Atlantis Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="8e4c66ce-4ab9-42dc-a40d-d61fc4042842" parent_id_arme="bae8cfb4-22c6-4e5f-9d3e-01beb1742504">
+    <if_variable name="Arietis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Arietis IV" />
+    <destroy name="Atlantis Gate" />
+    <destroy name="Tallith" />
+    <destroy name="Rannar" />
+    <destroy name="DS-37" />
+    <destroy name="M-552" />
+    <set_variable name="Arietis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Atlantis" id_arme="5b9c1318-dec7-4463-a674-66c05b33058e" parent_id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Atlantis to Arietis" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Atlantis Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Atlantis to Arietis" value="0.0" />
+  </event>
+  <folder_arme name="Arietis Sector V" id_arme="3bea3bd9-b6ce-446a-9f13-c784edaa29c3" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Arietis Sector V" id_arme="b3bf3ecc-3be4-459a-a8b4-b4ff655005d6" parent_id_arme="3bea3bd9-b6ce-446a-9f13-c784edaa29c3">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <create count="10" type="nebulas" startX="49924.0" startY="0.0" startZ="51613.0" endX="49924.0" endY="0.0" endZ="51613.0" randomRange="52502" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <create count="150" type="asteroids" startX="78041.0" startY="0.0" startZ="69743.0" endX="78041.0" endY="0.0" endZ="69743.0" randomRange="17055" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <create count="40" type="asteroids" startX="61601.0" startY="0.0" startZ="60524.0" endX="26108.0" endY="0.0" endZ="75889.0" randomRange="4822" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <create count="35" type="asteroids" startX="58682.0" startY="0.0" startZ="79116.0" endX="35327.0" endY="0.0" endZ="77733.0" randomRange="8136" />
+    <create count="20" type="asteroids" startX="33330.0" startY="0.0" startZ="78194.0" endX="13355.0" endY="0.0" endZ="82189.0" randomRange="4007" />
+    <create count="10" type="asteroids" startX="96787.0" startY="0.0" startZ="52227.0" endX="96787.0" endY="0.0" endZ="83572.0" randomRange="2834" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Arietis System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3" parent_id_arme="3bea3bd9-b6ce-446a-9f13-c784edaa29c3" />
+  <event name="Transition to Sector VI" id_arme="61954ed9-5dce-4258-b9e4-cb159bd5018b" parent_id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="e76d7650-4dca-4afb-a0da-2dcec5d85a86" parent_id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="9602abcc-62ac-4b84-85a3-6f9873dc73fe" parent_id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="0a10c239-ed7d-48e8-8201-2b80cd3b387f" parent_id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="537e5518-40f5-4fce-a338-1b91ad461f4d" parent_id_arme="3febc72c-2ecc-4f6b-8bfb-bc9f7af918e3">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d065efb2-4bc7-4e7a-bbe5-f72bff47506c" parent_id_arme="3bea3bd9-b6ce-446a-9f13-c784edaa29c3" />
+  <event name="Generate Sector Entities" id_arme="54d9a1d4-6c4a-4838-8bce-6a20e6d7fe8a" parent_id_arme="d065efb2-4bc7-4e7a-bbe5-f72bff47506c">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Arietis V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="station" x="65750.0" y="0.0" z="89564.0" name="M-142" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="46543.0" y="0.0" z="80345.0" name="M-080" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="47004.0" y="0.0" z="30409.0" name="Aram" hullID="1001" sideValue="sectorSide" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="7aeec7b0-4c3b-437f-95fc-443a03ad5c0c" parent_id_arme="d065efb2-4bc7-4e7a-bbe5-f72bff47506c">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="035a667f-824f-4a8d-afed-2faaedc2207b" parent_id_arme="d065efb2-4bc7-4e7a-bbe5-f72bff47506c">
+    <if_variable name="Arietis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Arietis V" />
+    <destroy name="M-142" />
+    <destroy name="M-080" />
+    <destroy name="Aram" />
+    <set_variable name="Arietis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Arietis Sector VI" id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <event name="Create Arietis Sector VI" id_arme="d1f648ed-607d-4f9b-9619-1550fdd1fe70" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="11" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <create count="50" type="nebulas" startX="51153.0" startY="0.0" startZ="51613.0" endX="51153.0" endY="0.0" endZ="51613.0" randomRange="51999" />
+    <create count="30" type="asteroids" startX="38246.0" startY="0.0" startZ="29641.0" endX="20269.0" endY="0.0" endZ="35172.0" randomRange="6180" />
+    <create count="40" type="nebulas" startX="33176.0" startY="0.0" startZ="31792.0" endX="20116.0" endY="0.0" endZ="37170.0" randomRange="3966" />
+    <create count="60" type="nebulas" startX="32408.0" startY="0.0" startZ="86184.0" endX="22728.0" endY="0.0" endZ="79270.0" randomRange="3597" />
+    <create count="10" type="nebulas" startX="20269.0" startY="0.0" startZ="79423.0" endX="12433.0" endY="0.0" endZ="73892.0" randomRange="3616" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Arietis System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" />
+  <event name="Transition to Sector V" id_arme="e70edfd4-10cc-44d3-aeb3-ade938c24a0c" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="cd733437-9156-48f8-82f9-ac5ad5130b57" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="ef7a40b7-0244-4570-b791-08da615c6969" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="87a4de61-b837-4fb1-aa49-f65b19c58881" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" />
+  <event name="Gate Offline" id_arme="23aa5a9f-35bb-4886-8a99-87c392a70f3a" parent_id_arme="87a4de61-b837-4fb1-aa49-f65b19c58881">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Waypoint 89 Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd" parent_id_arme="87a4de61-b837-4fb1-aa49-f65b19c58881" />
+  <event name="Ship1 Activation Range" id_arme="425b9ed2-9357-4e94-9fff-34605f206498" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Waypoint 89 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="0f2275e8-6565-436c-aac1-b1134baf5b33" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Waypoint 89 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="d4786640-8027-4dd6-aab7-60197ed43230" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Waypoint 89 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="982311e9-555b-4658-bd23-893ba4dc8c39" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Waypoint 89 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="825744e4-7690-4ed3-90f4-f6e1c82159dc" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Waypoint 89 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="4a914a1d-0a96-4aa6-84cd-16ad6ef5276f" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Waypoint 89 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="b73b2334-d7fe-4e3b-adf6-de5a97139b92" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Waypoint 89 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="bee99a27-a954-4e24-ae62-e7665d186ee1" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Waypoint 89 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="64af0c37-9592-4f6e-822d-1babeecf431d" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Waypoint 89 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="f45dc416-b029-4dc4-9a67-63882a73b94e" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Waypoint 89 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="d1f72b0e-2308-447e-83b0-b440248011db" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Waypoint 89 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="a7e76f1a-3d6a-4eee-b9b5-a5dc9a27c17e" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Waypoint 89 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="cb92b27c-4606-45cb-9025-d7dba5300a1c" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Waypoint 89 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="48a9e298-52f8-473e-ae12-04f74afdf923" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Waypoint 89 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="4b0b6453-f8af-493a-ada3-b469b0503c21" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Waypoint 89 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="936061e9-f427-44b5-b790-ee6464752cc3" parent_id_arme="a13f7a7a-b523-4122-8a84-47774bd405bd">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Waypoint 89 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="bf438acc-0072-4afe-9638-677fa0aa5954" parent_id_arme="87a4de61-b837-4fb1-aa49-f65b19c58881">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Waypoint 89 Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="4f5cfe21-4fec-43d0-bc15-a80a507dea08" parent_id_arme="87a4de61-b837-4fb1-aa49-f65b19c58881">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Arietis System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Arietis to Waypoint 89" value="1.0" />
+    <set_variable name="Waypoint 89" value="1.0" />
+    <set_variable name="Sector" value="3" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="bde8d601-a8e9-4c6e-a297-d5b20d6abcdb" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" />
+  <event name="Generate Sector Entities" id_arme="2630e448-64d0-4042-98b0-21f7b7d90656" parent_id_arme="bde8d601-a8e9-4c6e-a297-d5b20d6abcdb">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Arietis VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="genericMesh" x="27660.0" y="0.0" z="18595.0" name="Waypoint 89 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="66273.0" y="0.0" z="34356.0" name="Medusa" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="64011.0" y="0.0" z="61371.0" name="Ashima" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="35864.0" y="0.0" z="47549.0" name="Aries" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="23048.0" y="0.0" z="68157.0" name="Draeka" hullID="1001" sideValue="sectorSide" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="d473c86f-5148-4014-82ac-efd0415314b2" parent_id_arme="bde8d601-a8e9-4c6e-a297-d5b20d6abcdb">
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Waypoint 89 Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Waypoint 89 Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Waypoint 89 Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Waypoint 89 Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="1adb59af-690b-4641-ab92-c48257004899" parent_id_arme="bde8d601-a8e9-4c6e-a297-d5b20d6abcdb">
+    <if_variable name="Arietis System" comparator="EQUALS" value="3.0" />
+    <destroy name="Arietis VI" />
+    <destroy name="Waypoint 89 Gate" />
+    <destroy name="Medusa" />
+    <destroy name="Ashima" />
+    <destroy name="Aries" />
+    <destroy name="Draeka" />
+    <set_variable name="Arietis System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Waypoint 89" id_arme="308e90fa-f153-47e8-a404-42d3ad20f814" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae">
+    <if_variable name="Sector" comparator="EQUALS" value="6" />
+    <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Waypoint 89 to Arietis" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Waypoint 89 Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Waypoint 89 Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Waypoint 89 Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Waypoint 89 Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Waypoint 89 Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Waypoint 89 Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Waypoint 89 Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Waypoint 89 Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Waypoint 89 to Arietis" value="0.0" />
+  </event>
+</mission_data>

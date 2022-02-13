@@ -1,0 +1,875 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="1320.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="272.0" integer="yes" />
+    <set_variable name="Alignment" value="Neutral" integer="yes" />
+  </start>
+  <folder_arme name="G'Torin System" id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
+  <folder_arme name="G'Torin Settings" id_arme="7de4ecf1-627e-4c41-8741-4ff2f82f7862" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
+  <folder_arme name="G'Torin Menu" id_arme="725d51eb-6e6c-4c70-85c3-0f2b1cf29960" parent_id_arme="7de4ecf1-627e-4c41-8741-4ff2f82f7862" />
+  <event name="G'Torin Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="725d51eb-6e6c-4c70-85c3-0f2b1cf29960">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/G'Torin System" />
+    <set_variable name="G'Torin Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="725d51eb-6e6c-4c70-85c3-0f2b1cf29960">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/G'Torin System" />
+  </event>
+  <event name="G'Torin System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="725d51eb-6e6c-4c70-85c3-0f2b1cf29960">
+    <if_gm_button text="Lower Arc/G'Torin System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="101.0" integer="yes" />
+    <set_variable name="G'Torin System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="7de4ecf1-627e-4c41-8741-4ff2f82f7862">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="7de4ecf1-627e-4c41-8741-4ff2f82f7862">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="7de4ecf1-627e-4c41-8741-4ff2f82f7862">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="7de4ecf1-627e-4c41-8741-4ff2f82f7862">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="7de4ecf1-627e-4c41-8741-4ff2f82f7862">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="G'Torin Sector I" id_arme="53562147-a934-4621-9bd7-4b7cc3e2c635" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
+  <event name="Create G'Torin Sector I" id_arme="112b65d6-604d-460d-a801-97f68a9ca8cc" parent_id_arme="53562147-a934-4621-9bd7-4b7cc3e2c635">
+    <if_timer_finished name="Transition" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <set_skybox_index index="11" />
+    <create count="100" type="nebulas" nebType="1" startX="35944.0" startY="-200.0" startZ="67269.0" endX="61326.0" endY="0.0" endZ="87028.0" randomRange="15000" />
+    <create count="100" type="nebulas" nebType="1" startX="37551.0" startY="-200.0" startZ="78032.0" endX="9920.0" endY="0.0" endZ="52168.0" randomRange="15000" />
+    <create count="100" type="asteroids" startX="62772.0" startY="200.0" startZ="88795.0" endX="31446.0" endY="0.0" endZ="58594.0" randomRange="15000" />
+    <create count="100" type="asteroids" startX="9920.0" startY="200.0" startZ="57630.0" endX="37069.0" endY="0.0" endZ="69839.0" randomRange="15000" />
+    <create count="100" type="nebulas" nebType="2" startX="62611.0" startY="-200.0" startZ="81244.0" endX="3494.0" endY="0.0" endZ="57951.0" randomRange="15000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="G'Torin System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b1f56698-e9bb-4d77-9c82-b31719d66834" parent_id_arme="53562147-a934-4621-9bd7-4b7cc3e2c635" />
+  <event name="Transition to Sector II" id_arme="c3a7bed1-f3dc-4e43-b91e-c65efcf540da" parent_id_arme="b1f56698-e9bb-4d77-9c82-b31719d66834">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="839f6398-9882-4cb4-a4da-784a76d77d15" parent_id_arme="b1f56698-e9bb-4d77-9c82-b31719d66834">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="1b6d02d0-192f-4280-b52a-5e20e823188b" parent_id_arme="b1f56698-e9bb-4d77-9c82-b31719d66834">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="c5c3fec3-7b8c-4949-a26e-e999ad0e9ec3" parent_id_arme="53562147-a934-4621-9bd7-4b7cc3e2c635" />
+  <event name="Generate Sector Entities" id_arme="210a23c7-1cba-49c9-acbe-a3253870552f" parent_id_arme="c5c3fec3-7b8c-4949-a26e-e999ad0e9ec3">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="G'Torin I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="0218330f-008a-4138-839c-56ee5991cb65" parent_id_arme="c5c3fec3-7b8c-4949-a26e-e999ad0e9ec3">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="b050a3ef-51b1-4331-a7de-ff95404c9159" parent_id_arme="c5c3fec3-7b8c-4949-a26e-e999ad0e9ec3">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="3.0" />
+    <destroy name="G'Torin I" />
+    <set_variable name="G'Torin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="G'Torin Sector II" id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
+  <event name="Create G'Torin Sector II" id_arme="7fe962e1-43d6-4e96-8699-43d1a089b7f5" parent_id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f">
+    <if_timer_finished name="Transition" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <set_skybox_index index="11" />
+    <create count="100" type="nebulas" nebType="1" startX="50563.0" startY="-200.0" startZ="50401.0" endX="96988.0" endY="0.0" endZ="59076.0" randomRange="15000" />
+    <create count="150" type="nebulas" nebType="1" startX="3655.0" startY="-200.0" startZ="52489.0" endX="51527.0" endY="0.0" endZ="47349.0" randomRange="15000" />
+    <create count="100" type="nebulas" nebType="2" startX="56346.0" startY="-300.0" startZ="44618.0" endX="95864.0" endY="300.0" endZ="56506.0" randomRange="15000" />
+    <create count="100" type="asteroids" startX="93615.0" startY="0.0" startZ="49759.0" endX="44619.0" endY="0.0" endZ="55542.0" randomRange="7000" />
+    <create count="100" type="asteroids" startX="99559.0" startY="200.0" startZ="93935.0" endX="59398.0" endY="0.0" endZ="89116.0" randomRange="7000" />
+    <create count="40" type="nebulas" startX="5904.0" startY="0.0" startZ="96345.0" endX="55221.0" endY="0.0" endZ="99558.0" randomRange="10000" />
+    <create count="40" type="nebulas" nebType="2" startX="10081.0" startY="0.0" startZ="98433.0" endX="51205.0" endY="0.0" endZ="97469.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="9599.0" startY="-300.0" startZ="45582.0" endX="39157.0" endY="300.0" endZ="45903.0" randomRange="15000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="G'Torin System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160" parent_id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f" />
+  <event name="Transition to Sector III" id_arme="33b449bb-63fc-4f47-b1dc-d8ebf312dc15" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="38d63319-7e0c-480f-8292-97e1058e2d31" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="64cd8a73-5882-49a0-a9da-b86bc186f319" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="865d042f-02c6-48a1-a779-2394cdfd9345" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="fd4d6375-cc67-4823-83c7-d245402a0575" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="b7376bbb-8de2-48f3-9813-aa2542f09f1d" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160" />
+  <event name="Gate Offline" id_arme="84a3148d-cbd0-4939-a323-c16f0a002357" parent_id_arme="b7376bbb-8de2-48f3-9813-aa2542f09f1d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Sumri Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5" parent_id_arme="b7376bbb-8de2-48f3-9813-aa2542f09f1d" />
+  <event name="Ship1 Activation Range" id_arme="5004afa8-6f45-4c98-9527-bcda709a3182" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="4b25a45b-6452-43f7-8e4e-5ee0c35a25d3" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="5802d4f6-27e6-4ac0-8e27-080221f36943" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="2bd22b3e-a017-49a6-ac27-384a801bbe99" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="b2d490f8-a5fb-4e0f-b8f3-a4cef4a8dc90" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="cc42976d-3a19-44a8-8756-b506b2ce75c7" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="c83c02e3-0fa1-4fb1-9a54-306a836dd742" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="fb076277-ced8-44c8-9eb2-93237f8946a2" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="9dddc396-41f0-4d64-8680-e21870f65cfb" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="382879cc-a442-4f3f-94a0-6e27faeef90a" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="e21a97ed-9aff-48f5-8cad-cf6e79a2cd3a" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="7db51dbe-d652-4318-bd35-bb58fb1712e1" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="f60fd83a-700e-4ab1-8179-d8c89c3ba9aa" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="6f063119-c579-4bca-8787-e0a607f8464d" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="66dd627a-4100-4cda-8731-01d4ee7bee83" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Sumri Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="0ccda21d-5554-4629-a8c1-55c038a7196e" parent_id_arme="da1942d1-f7bd-49d8-9e61-f9b4fd38c4a5">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Sumri Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="ee90a517-5934-4fd7-9014-ba27e038336c" parent_id_arme="b7376bbb-8de2-48f3-9813-aa2542f09f1d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Sumri Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="be3fb03d-774e-45d1-95ef-dd7ce235dbd4" parent_id_arme="b7376bbb-8de2-48f3-9813-aa2542f09f1d">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sumri Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="G'Torin to Sumri" value="1.0" />
+    <set_variable name="Sumri System" value="1.0" />
+    <set_variable name="Sector" value="1" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="207a569f-be83-472f-9203-ceee4c374e1a" parent_id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f" />
+  <event name="Generate Sector Entities" id_arme="15af21b4-9055-43d7-a796-a884dfc0e3f6" parent_id_arme="207a569f-be83-472f-9203-ceee4c374e1a">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="G'Torin II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="genericMesh" x="50884.0" y="0.0" z="29036.0" name="Sumri Gate" meshFileName="dat\TSN\Gates\NeutralGate1.dxs" textureFileName="dat\TSN\Gates\neutralgate1diff.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="70161.0" y="0.0" z="76265.0" name="G'Torin Commerce" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="56133.0" y="0.0" z="74861.0" angle="0" name="G'Torin Shipyard" hullID="1053" sideValue="sectorSide" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="a3c24b5a-e8c2-4457-ab94-6e45c8e678d9" parent_id_arme="207a569f-be83-472f-9203-ceee4c374e1a">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Sumri Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Sumri Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Sumri Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Sumri Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="b51ab8df-ff75-4ba0-837e-04dd6f2650d7" parent_id_arme="207a569f-be83-472f-9203-ceee4c374e1a">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="3.0" />
+    <destroy name="G'Torin II" />
+    <destroy name="Sumri Gate" />
+    <destroy name="G'Torin Commerce" />
+    <destroy name="G'Torin Shipyard" />
+    <set_variable name="G'Torin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Sumri" id_arme="7cc4b4d3-cd28-42bd-ad06-d2c9ec67d607" parent_id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sumri to G'Torin" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Sumri Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Sumri Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Sumri to G'Torin" value="0.0" />
+  </event>
+  <folder_arme name="G'Torin Sector III" id_arme="66ebaf71-836f-41de-a873-0d9a427a2a9c" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
+  <event name="Create G'Torin Sector III" id_arme="05c58bca-d529-45d0-8f3d-3cf774b5b297" parent_id_arme="66ebaf71-836f-41de-a873-0d9a427a2a9c">
+    <if_timer_finished name="Transition" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <set_skybox_index index="11" />
+    <create count="100" type="nebulas" startX="93294.0" startY="0.0" startZ="50562.0" endX="67912.0" endY="200.0" endZ="52971.0" randomRange="17000" />
+    <create count="100" type="nebulas" startX="31446.0" startY="0.0" startZ="75943.0" endX="67912.0" endY="200.0" endZ="52971.0" randomRange="20000" />
+    <create count="100" type="nebulas" nebType="2" startX="96346.0" startY="200.0" startZ="50080.0" endX="53936.0" endY="-200.0" endZ="59236.0" randomRange="17000" />
+    <create count="100" type="nebulas" nebType="2" startX="57631.0" startY="200.0" startZ="56987.0" endX="31286.0" endY="-200.0" endZ="77068.0" randomRange="20000" />
+    <create count="50" type="asteroids" startX="57149.0" startY="-200.0" startZ="46064.0" endX="89920.0" endY="200.0" endZ="48152.0" randomRange="5000" />
+    <create count="50" type="asteroids" startX="24539.0" startY="-200.0" startZ="67590.0" endX="80603.0" endY="200.0" endZ="59076.0" randomRange="5000" />
+    <create count="50" type="asteroids" startX="21165.0" startY="-200.0" startZ="82530.0" endX="62611.0" endY="200.0" endZ="74176.0" randomRange="5000" />
+    <create count="10" type="nebulas" startX="98595.0" startY="0.0" startZ="98433.0" endX="98595.0" endY="0.0" endZ="98433.0" randomRange="5000" />
+    <create count="10" type="nebulas" nebType="2" startX="96025.0" startY="0.0" startZ="97148.0" endX="96025.0" endY="0.0" endZ="97148.0" randomRange="5000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="G'Torin System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3f855662-0d4f-421e-81c3-18fd28f81be1" parent_id_arme="66ebaf71-836f-41de-a873-0d9a427a2a9c" />
+  <event name="Transition to Sector II" id_arme="16a1a856-870e-4cb5-8913-b6faaa27d1b0" parent_id_arme="3f855662-0d4f-421e-81c3-18fd28f81be1">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="52ef30d9-c795-493c-9464-402a0dda4882" parent_id_arme="3f855662-0d4f-421e-81c3-18fd28f81be1">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="0f760183-0204-4553-a22b-aa5f340f12d6" parent_id_arme="3f855662-0d4f-421e-81c3-18fd28f81be1">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="dc5aa659-b72f-4dc1-af71-87c5cc4f1bca" parent_id_arme="66ebaf71-836f-41de-a873-0d9a427a2a9c" />
+  <event name="Generate Sector Entities" id_arme="982567fa-af8b-4520-a308-0479ba13e024" parent_id_arme="dc5aa659-b72f-4dc1-af71-87c5cc4f1bca">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="24699.0" y="0.0" z="58273.0" name="G'Torin Manufacturing" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="48314.0" y="0.0" z="43815.0" name="Caska" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="39639.0" y="0.0" z="71606.0" angle="0" name="Shorin Refinery" hullID="1051" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="G'Torin III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="58711550-2823-4886-9023-169d73af6fb4" parent_id_arme="dc5aa659-b72f-4dc1-af71-87c5cc4f1bca">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="63204f05-10de-4a3d-bae7-dcb6334a50d4" parent_id_arme="dc5aa659-b72f-4dc1-af71-87c5cc4f1bca">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="3.0" />
+    <destroy name="G'Torin III" />
+    <destroy name="G'Torin Manufacturing" />
+    <destroy name="Caska" />
+    <destroy name="Shorin Refinery" />
+    <set_variable name="G'Torin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="G'Torin Sector IV" id_arme="73a0be63-1042-4657-8b58-f3b9e8831dfd" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
+  <event name="Create G'Torin Sector IV" id_arme="e9c6500e-483c-4852-b158-9e75919ee685" parent_id_arme="73a0be63-1042-4657-8b58-f3b9e8831dfd">
+    <if_timer_finished name="Transition" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <set_skybox_index index="11" />
+    <create count="30" type="asteroids" startX="603.0" startY="-300.0" startZ="3172.0" endX="12490.0" endY="0.0" endZ="1726.0" randomRange="5000" />
+    <create count="30" type="asteroids" startX="1406.0" startY="0.0" startZ="7670.0" endX="16828.0" endY="300.0" endZ="2690.0" randomRange="5000" />
+    <create count="300" type="asteroids" startX="71706.0" startY="0.0" startZ="36041.0" endX="37650.0" endY="300.0" endZ="76820.0" randomRange="15000" />
+    <create count="100" type="nebulas" startX="73021.0" startY="-200.0" startZ="19817.0" endX="48173.0" endY="200.0" endZ="77844.0" randomRange="15000" />
+    <create count="100" type="nebulas" nebType="2" startX="76675.0" startY="200.0" startZ="31218.0" endX="35457.0" endY="-200.0" endZ="83690.0" randomRange="15000" />
+    <create count="100" type="nebulas" startX="65567.0" startY="-200.0" startZ="30487.0" endX="55335.0" endY="200.0" endZ="3008.0" randomRange="13000" />
+    <create count="100" type="nebulas" nebType="2" startX="78137.0" startY="200.0" startZ="54896.0" endX="57528.0" endY="-200.0" endZ="7978.0" randomRange="13000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="G'Torin System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="e381dd33-d9b6-467e-9b7b-b0615b3400f9" parent_id_arme="73a0be63-1042-4657-8b58-f3b9e8831dfd" />
+  <event name="Transition to Sector V" id_arme="7e1d1717-235f-45c6-b878-9c159f2706b4" parent_id_arme="e381dd33-d9b6-467e-9b7b-b0615b3400f9">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="cf35fe2f-30f8-4eb6-b224-e552ef9ceda5" parent_id_arme="e381dd33-d9b6-467e-9b7b-b0615b3400f9">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="450b7383-035a-485b-a8e6-bdea8a6d5252" parent_id_arme="e381dd33-d9b6-467e-9b7b-b0615b3400f9">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="fdaaafc4-54e0-4985-8b2e-7cae22089ae2" parent_id_arme="73a0be63-1042-4657-8b58-f3b9e8831dfd" />
+  <event name="Generate Sector Entities" id_arme="c766a5f5-9b56-4bcd-b6de-07a3cb89b79d" parent_id_arme="fdaaafc4-54e0-4985-8b2e-7cae22089ae2">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="33094.0" y="0.0" z="33756.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="23315.0" y="0.0" z="20331.0" name="G'Torin Center" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="50366.0" y="0.0" z="29464.0" name="Maansta" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="37650.0" y="0.0" z="51827.0" name="Rishondi" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="74862.0" y="0.0" z="77182.0" name="Purrino" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="67901.0" y="0.0" z="54143.0" angle="0" name="Alrin Factory" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="49343.0" y="0.0" z="71412.0" angle="0" name="Kiquin Foundry" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="61474.0" y="0.0" z="59719.0" angle="0" name="Libeth Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="G'Torin IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="CustomPlanet" value="1.0" integer="yes" />
+    <set_variable name="Moon" value="4.0" integer="yes" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="3eb9ac1e-da38-42a0-b2af-76d416390db0" parent_id_arme="fdaaafc4-54e0-4985-8b2e-7cae22089ae2">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Custom Planet Data" id_arme="4bc71132-f5ba-471a-9fe3-451051205763" parent_id_arme="fdaaafc4-54e0-4985-8b2e-7cae22089ae2">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="CustomPlanet" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="CustomPlanet" />
+    <set_ship_text name="PA" newname=" " />
+    <set_ship_text name="PB" newname=" " />
+    <set_ship_text name="PC" newname=" " />
+    <set_ship_text name="PD" newname=" " />
+    <set_ship_text name="PE" newname=" " />
+    <set_ship_text name="PF" newname=" " />
+    <set_ship_text name="PG" newname=" " />
+    <set_ship_text name="PH" newname=" " />
+    <set_ship_text name="Planet" newname="G'TORIN" class="Class P Planet" />
+    <set_object_property property="angleDelta" value="0.2" name="Planet" />
+    <set_variable name="CustomPlanet" value="0.0" integer="yes" />
+  </event>
+  <event name="Custom Moon Orbit" id_arme="b51fe9b3-73a9-477c-85f3-b2dc60878329" parent_id_arme="fdaaafc4-54e0-4985-8b2e-7cae22089ae2">
+    <if_variable name="Moon" comparator="EQUALS" value="10.0" />
+    <set_relative_position name2="Moon" distance="6000" angle="0" name1="G'TORIN" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="83fccaf7-35bf-4fc4-8adc-5cc95e665738" parent_id_arme="fdaaafc4-54e0-4985-8b2e-7cae22089ae2">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="3.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="G'Torin IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <destroy name="G'TORIN" />
+    <set_variable name="DestroyPlanet" value="1.0" integer="yes" />
+    <destroy name="G'Torin Center" />
+    <destroy name="Maansta" />
+    <destroy name="Rishondi" />
+    <destroy name="Purrino" />
+    <destroy name="Alrin Factory" />
+    <destroy name="Kiquin Foundry" />
+    <destroy name="Libeth Mining" />
+    <set_variable name="G'Torin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="G'Torin Sector V" id_arme="9c4021f5-ca14-4407-8587-2919106c8574" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
+  <event name="Create G'Torin Sector V" id_arme="44e0c026-19ce-4d0f-af2d-7fb1d5ab2650" parent_id_arme="9c4021f5-ca14-4407-8587-2919106c8574">
+    <if_timer_finished name="Transition" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <set_skybox_index index="11" />
+    <create count="150" type="nebulas" startX="15864.0" startY="0.0" startZ="85100.0" endX="12812.0" endY="0.0" endZ="51847.0" randomRange="5000" />
+    <create count="150" type="nebulas" startX="23575.0" startY="0.0" startZ="92811.0" endX="63896.0" endY="0.0" endZ="88795.0" randomRange="6000" />
+    <create count="150" type="nebulas" startX="85904.0" startY="0.0" startZ="48795.0" endX="66788.0" endY="0.0" endZ="90080.0" randomRange="10000" />
+    <create count="150" type="nebulas" startX="85904.0" startY="0.0" startZ="48795.0" endX="63575.0" endY="0.0" endZ="13935.0" randomRange="10000" />
+    <create count="150" type="nebulas" startX="18113.0" startY="0.0" startZ="10883.0" endX="63575.0" endY="0.0" endZ="13935.0" randomRange="10000" />
+    <create count="100" type="nebulas" startX="38515.0" startY="0.0" startZ="37389.0" endX="17631.0" endY="0.0" endZ="53293.0" randomRange="5000" />
+    <create count="100" type="nebulas" startX="58756.0" startY="0.0" startZ="44457.0" endX="21968.0" endY="0.0" endZ="40763.0" randomRange="5000" />
+    <create count="70" type="nebulas" nebType="2" startX="61165.0" startY="0.0" startZ="49759.0" endX="37390.0" endY="0.0" endZ="39317.0" randomRange="5000" />
+    <create count="120" type="nebulas" nebType="2" startX="19077.0" startY="0.0" startZ="85742.0" endX="60844.0" endY="0.0" endZ="93453.0" randomRange="7000" />
+    <create count="150" type="nebulas" nebType="2" startX="91045.0" startY="0.0" startZ="38995.0" endX="60844.0" endY="0.0" endZ="93453.0" randomRange="10000" />
+    <create count="150" type="nebulas" nebType="2" startX="91045.0" startY="0.0" startZ="38995.0" endX="35623.0" endY="0.0" endZ="1405.0" randomRange="10000" />
+    <create count="70" type="nebulas" nebType="2" startX="11527.0" startY="0.0" startZ="77389.0" endX="26145.0" endY="0.0" endZ="38353.0" randomRange="5000" />
+    <create count="30" type="nebulas" startX="59398.0" startY="0.0" startZ="44779.0" endX="61486.0" endY="0.0" endZ="60040.0" randomRange="3000" />
+    <create count="20" type="nebulas" nebType="2" startX="59398.0" startY="0.0" startZ="63895.0" endX="61326.0" endY="0.0" endZ="48152.0" randomRange="4000" />
+    <create count="100" type="asteroids" startX="13294.0" startY="-200.0" startZ="56506.0" endX="35784.0" endY="200.0" endZ="36425.0" randomRange="5000" />
+    <create count="50" type="asteroids" startX="12972.0" startY="200.0" startZ="67269.0" endX="22932.0" endY="-200.0" endZ="93453.0" randomRange="5000" />
+    <create count="50" type="asteroids" startX="70161.0" startY="200.0" startZ="82208.0" endX="36908.0" endY="-200.0" endZ="92329.0" randomRange="7000" />
+    <create count="50" type="asteroids" startX="70161.0" startY="-200.0" startZ="82208.0" endX="81245.0" endY="200.0" endZ="54578.0" randomRange="8000" />
+    <create count="50" type="asteroids" startX="69840.0" startY="-200.0" startZ="22449.0" endX="81245.0" endY="200.0" endZ="54578.0" randomRange="10000" />
+    <create count="50" type="asteroids" startX="69840.0" startY="200.0" startZ="22449.0" endX="19077.0" endY="-200.0" endZ="9277.0" randomRange="10000" />
+    <create count="10" type="asteroids" startX="60362.0" startY="0.0" startZ="50240.0" endX="55382.0" endY="0.0" endZ="64859.0" randomRange="3000" />
+    <create count="40" type="nebulas" nebType="2" startX="15543.0" startY="0.0" startZ="57630.0" endX="37390.0" endY="0.0" endZ="39317.0" randomRange="5000" />
+    <create count="30" type="nebulas" startX="16667.0" startY="0.0" startZ="19397.0" endX="5262.0" endY="0.0" endZ="32409.0" randomRange="10000" />
+    <create count="30" type="nebulas" nebType="2" startX="29358.0" startY="0.0" startZ="12168.0" endX="4298.0" endY="0.0" endZ="30321.0" randomRange="10000" />
+    <create count="30" type="nebulas" startX="30482.0" startY="0.0" startZ="87991.0" endX="18434.0" endY="0.0" endZ="77228.0" randomRange="5000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="G'Torin System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="4108d1ae-cc99-44eb-aab6-eeb7c1ca046c" parent_id_arme="9c4021f5-ca14-4407-8587-2919106c8574" />
+  <event name="Transition to Sector VI" id_arme="946d4c5b-c39a-4f15-b956-966b04207247" parent_id_arme="4108d1ae-cc99-44eb-aab6-eeb7c1ca046c">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="e5bc192e-e3f4-496a-8d2e-b7991a4e7bdc" parent_id_arme="4108d1ae-cc99-44eb-aab6-eeb7c1ca046c">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="97d4f91c-c525-48b2-bcf9-3355a3afa8db" parent_id_arme="4108d1ae-cc99-44eb-aab6-eeb7c1ca046c">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="661c51d5-1e11-41f1-8343-b68954e9d3b6" parent_id_arme="4108d1ae-cc99-44eb-aab6-eeb7c1ca046c">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="2de26883-1ac2-4d6f-9090-080acaa458b1" parent_id_arme="4108d1ae-cc99-44eb-aab6-eeb7c1ca046c">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="b2a5ef87-da1b-4433-a233-ec9d04fd7906" parent_id_arme="9c4021f5-ca14-4407-8587-2919106c8574" />
+  <event name="Generate Sector Entities" id_arme="30e8b98a-a93e-4d57-a50e-08f8e6fdc23e" parent_id_arme="b2a5ef87-da1b-4433-a233-ec9d04fd7906">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="blackHole" x="33695.0" y="0.0" z="72570.0" name="Elika" />
+    <create type="blackHole" x="44940.0" y="0.0" z="59718.0" name="Ezati" />
+    <create type="station" x="38996.0" y="0.0" z="66305.0" name="Initi" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="19237.0" y="0.0" z="51044.0" angle="0" name="Magrath Mining" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="62129.0" y="0.0" z="85261.0" angle="0" name="Kalange Ores" hullID="1050" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="G'Torin V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="f5d9a273-1327-4eba-a901-388128e5aacf" parent_id_arme="b2a5ef87-da1b-4433-a233-ec9d04fd7906">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <clear_ai name="Magrath Mining" />
+    <set_object_property property="topSpeed" value="0.0" name="Magrath Mining" />
+    <set_object_property property="turnRate" value="0.3" name="Magrath Mining" />
+    <set_object_property property="angleDelta" value="0.3" name="Magrath Mining" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="61e35c32-477d-4553-8d1a-83fc12d50d8d" parent_id_arme="b2a5ef87-da1b-4433-a233-ec9d04fd7906">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="3.0" />
+    <destroy name="Elika" />
+    <destroy name="Ezati" />
+    <destroy name="Initi" />
+    <destroy name="Magrath Mining" />
+    <destroy name="Kalange Ores" />
+    <destroy name="G'Torin V" />
+    <set_variable name="G'Torin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="G'Torin Sector VI" id_arme="7518eca2-cfe7-418e-9fd8-36655fb34660" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
+  <event name="Create G'Torin Sector VI" id_arme="3871cd76-5948-4589-a46f-975e10f28426" parent_id_arme="7518eca2-cfe7-418e-9fd8-36655fb34660">
+    <if_timer_finished name="Transition" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="11" />
+    <create count="50" type="nebulas" startX="97310.0" startY="0.0" startZ="25983.0" endX="66298.0" endY="-300.0" endZ="50803.0" randomRange="15000" />
+    <create count="50" type="nebulas" nebType="2" startX="96553.0" startY="0.0" startZ="33118.0" endX="61326.0" endY="-300.0" endZ="44457.0" randomRange="12000" />
+    <create count="70" type="nebulas" startX="25181.0" startY="0.0" startZ="91204.0" endX="57310.0" endY="-300.0" endZ="47188.0" randomRange="17000" />
+    <create count="70" type="nebulas" nebType="2" startX="50884.0" startY="0.0" startZ="47510.0" endX="26788.0" endY="-300.0" endZ="96184.0" randomRange="15000" />
+    <create count="100" type="asteroids" startX="87671.0" startY="0.0" startZ="30160.0" endX="55703.0" endY="300.0" endZ="49277.0" randomRange="7000" />
+    <create count="100" type="asteroids" startX="32089.0" startY="0.0" startZ="91044.0" endX="51848.0" endY="300.0" endZ="55060.0" randomRange="15000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="G'Torin System" value="2.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="ea7f0ff2-3ce3-4085-9fff-39234d1295e5" parent_id_arme="7518eca2-cfe7-418e-9fd8-36655fb34660" />
+  <event name="Transition to Sector V" id_arme="6659f382-e79a-4a21-a3ba-60dd7c24ff9a" parent_id_arme="ea7f0ff2-3ce3-4085-9fff-39234d1295e5">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="11f0487a-f188-4d21-95e0-dd9792054150" parent_id_arme="ea7f0ff2-3ce3-4085-9fff-39234d1295e5">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="3335924b-bb2f-4e03-bd7f-02de8d5d5614" parent_id_arme="ea7f0ff2-3ce3-4085-9fff-39234d1295e5">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="G'Torin System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="b4ea1932-a837-4dd1-b0b5-c4fa85232ab5" parent_id_arme="7518eca2-cfe7-418e-9fd8-36655fb34660" />
+  <event name="Generate Sector Entities" id_arme="9ebcb515-c37a-4cc3-8667-f38573ecbfe2" parent_id_arme="b4ea1932-a837-4dd1-b0b5-c4fa85232ab5">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="G'Torin VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="86f00017-715b-4f74-989b-fe38b4f983a1" parent_id_arme="b4ea1932-a837-4dd1-b0b5-c4fa85232ab5">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="3182c041-ffc0-42ed-bfba-6e18b55a5360" parent_id_arme="b4ea1932-a837-4dd1-b0b5-c4fa85232ab5">
+    <if_variable name="G'Torin System" comparator="EQUALS" value="3.0" />
+    <destroy name="G'Torin VI" />
+    <set_variable name="G'Torin System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

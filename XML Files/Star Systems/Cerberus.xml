@@ -1,0 +1,1744 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="392.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="356.0" integer="yes" />
+    <set_variable name="Alignment" value="USFP" integer="yes" />
+  </start>
+  <folder_arme name="Cerberus System" id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Cerberus Settings" id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Cerberus Menu" id_arme="05b9aacb-9a69-4b30-8c67-13c26cec06bf" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe" />
+  <event name="Cerberus Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="05b9aacb-9a69-4b30-8c67-13c26cec06bf">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Upper Arc/Cerberus System" />
+    <set_variable name="Cerberus Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="05b9aacb-9a69-4b30-8c67-13c26cec06bf">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Upper Arc/Cerberus System" />
+  </event>
+  <event name="Cerberus System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="05b9aacb-9a69-4b30-8c67-13c26cec06bf">
+    <if_gm_button text="Upper Arc/Cerberus System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="103.0" integer="yes" />
+    <set_variable name="Cerberus System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Cerberus Sector I" id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Cerberus Sector I" id_arme="cfd6bb8c-981a-4f8b-a085-eb3820b54c3c" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" integer="yes" />
+    <set_variable name="Cerberus System" value="2.0" integer="yes" />
+    <create count="110" type="nebulas" startX="12133.0" startY="0.0" startZ="11982.0" endX="16500.0" endY="0.0" endZ="38933.0" randomRange="9146" />
+    <create count="50" type="nebulas" startX="78834.0" startY="0.0" startZ="35621.0" endX="71607.0" endY="0.0" endZ="54893.0" randomRange="3578" />
+    <create count="420" type="nebulas" startX="60465.0" startY="0.0" startZ="87114.0" endX="94643.0" endY="0.0" endZ="42547.0" randomRange="28258" />
+    <create count="120" type="asteroids" startAngle="331" endAngle="198" startX="67090.0" startY="0.0" startZ="39234.0" radius="22962" randomRange="6687" />
+    <create count="50" type="mines" startAngle="280" endAngle="220" startX="40221.0" startY="0.0" startZ="54889.0" radius="17579" />
+    <create count="50" type="mines" startAngle="280" endAngle="220" startX="54494.0" startY="0.0" startZ="28061.0" radius="17579" />
+    <create count="50" type="mines" startAngle="280" endAngle="220" startX="27798.0" startY="0.0" startZ="79074.0" radius="17579" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" integer="yes" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" integer="yes" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" integer="yes" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" integer="yes" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" integer="yes" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" integer="yes" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" integer="yes" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Navigation" id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" />
+  <event name="Transition to Sector II" id_arme="8540873b-f13d-44d2-bfb6-592af29e6862" parent_id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="6324b0dd-a4bb-4a65-b930-d4b67727a016" parent_id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="2694b4e6-d97c-4a9c-864e-a1c34b8c1fed" parent_id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="ab54c32b-b17f-49ef-bb20-31eb86000c59" parent_id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de" expanded_arme="" />
+  <event name="Gate Offline" id_arme="8834a67c-b252-44e5-84c7-216c4226aee9" parent_id_arme="ab54c32b-b17f-49ef-bb20-31eb86000c59">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Krisenda Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc" parent_id_arme="ab54c32b-b17f-49ef-bb20-31eb86000c59" expanded_arme="" />
+  <event name="Ship1 Activation Range" id_arme="8c951ae3-b27d-4dd5-8a81-f53f3e47893c" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Krisenda Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="63383726-8693-4ab3-888e-d9ffad9eb5b3" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Krisenda Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="e4faf4c9-99a5-4f22-8b41-93f42205061a" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Krisenda Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="609e3a50-b9e2-417e-9dc5-23001b1e8e43" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Krisenda Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="f078a6cf-8f12-4ea2-82e3-e233ea4b8638" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Krisenda Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="0ad4a965-be46-403e-aeca-f534f23ac7bf" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Krisenda Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="dab43add-64af-41dd-85bd-41d77f49bf05" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Krisenda Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="9189e5c7-de6d-4b01-b10c-d445fafec2f0" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Krisenda Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="9d61aa34-a3db-4673-bf8f-1ac1dde93d5b" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Krisenda Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="93c5b1db-e4b8-444f-b860-4c4d8293b7fe" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Krisenda Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="deea2cc7-cb4f-4690-8226-6ed3a3c059b5" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Krisenda Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="d2aaa58d-ea8f-4448-b6e8-32d0dbd4a3f6" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Krisenda Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="b003165a-ee19-4b0d-a9d8-6b916db42dab" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Krisenda Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="7836fc4e-6a1a-426f-a370-70c2d062a4f6" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Krisenda Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="36d49c51-cabf-4b55-a6c3-ce7e1cb21580" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Krisenda Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="eeb77ee4-08bb-4875-8f08-1fbb4cb0e41e" parent_id_arme="37f4bd62-f21e-4265-8ecb-4577487960cc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Krisenda Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="6b73476e-cf54-4e4c-a62c-c148738e6dd4" parent_id_arme="ab54c32b-b17f-49ef-bb20-31eb86000c59">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Krisenda Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="d9559058-2c87-41f2-9f4b-dcfa90133337" parent_id_arme="ab54c32b-b17f-49ef-bb20-31eb86000c59">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Cerberus to Krisenda" value="1.0" />
+    <set_variable name="Krisenda System" value="1.0" />
+    <set_variable name="Sector" value="2" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="a02ff657-1c8f-4c54-a604-8f70f4f9899b" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" />
+  <event name="Generate Sector Entities" id_arme="2ec3ef61-3fb4-4e0b-8e21-1ce6c235638b" parent_id_arme="a02ff657-1c8f-4c54-a604-8f70f4f9899b">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="40221.0" y="0.0" z="25682.0" name="DS-12" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="21058.0" y="0.0" z="42863.0" name="Forward Command" hullID="1002" sideValue="sectorSide" />
+    <create type="station" x="16432.0" y="0.0" z="64140.0" name="DS-48" hullID="1000" sideValue="sectorSide" />
+    <create type="genericMesh" x="14844.0" y="0.0" z="12132.0" name="Krisenda Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Cerberus I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" integer="yes" />
+    <set_variable name="Sector Entities" value="2.0" integer="yes" />
+    <set_variable name="MissionCode" value="1.0" integer="yes" />
+  </event>
+  <event name="Settings" id_arme="7abb2479-a8b7-4261-affd-2c324c547485" parent_id_arme="a02ff657-1c8f-4c54-a604-8f70f4f9899b">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Krisenda Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Krisenda Gate" />
+    <set_object_property property="angle" value="1.047197551" name="Krisenda Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Krisenda Gate" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Entry Grid 1" value="1.0" />
+    <set_timer name="Entry Grid 1" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="07be21b4-ad61-4ea2-a983-406278745125" parent_id_arme="a02ff657-1c8f-4c54-a604-8f70f4f9899b">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-12" />
+    <destroy name="Forward Command" />
+    <destroy name="DS-48" />
+    <destroy name="Krisenda Gate" />
+    <destroy name="Cerberus I" />
+    <set_variable name="Cerberus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Krisenda" id_arme="29f68d72-ad15-48fe-b297-93a0faefbc22" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Krisenda to Cerberus" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Krisenda Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Krisenda Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Krisenda Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Krisenda Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Krisenda Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Krisenda Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Krisenda Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Krisenda Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Krisenda to Cerberus" value="0.0" />
+  </event>
+  <folder_arme name="Cerberus Sector II" id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Cerberus Sector II" id_arme="d2feb10d-8a52-4356-9232-0ff6d9485293" parent_id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="20" />
+    <create count="70" type="asteroids" startX="14510.0" startY="0.0" startZ="39496.0" endX="21672.0" endY="0.0" endZ="57002.0" randomRange="3505" />
+    <create count="50" type="nebulas" startX="61300.0" startY="0.0" startZ="30265.0" endX="51751.0" endY="0.0" endZ="38381.0" randomRange="10772" />
+    <create count="70" type="asteroids" startX="7985.0" startY="0.0" startZ="94721.0" endX="7985.0" endY="0.0" endZ="94721.0" randomRange="8166" />
+    <create count="10" type="nebulas" startX="7985.0" startY="0.0" startZ="93607.0" endX="11168.0" endY="0.0" endZ="96790.0" randomRange="5290" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cerberus System" value="2.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7" parent_id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6" />
+  <event name="Transition to Sector I" id_arme="3d334c07-dfc5-42ea-8a82-7cdd5febbdd5" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="d13c85db-2690-4429-ad8b-13c299b8e5ab" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="e9804ee9-7ac1-40d3-ba14-54c44a6baf09" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="25b4c7b2-1705-4bc7-8d72-0247c662460d" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="f3cd1e5d-0980-4949-a6c6-933e679721b3" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="4744c8ef-fee6-4c7f-b369-4f8ee9459dd0" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7" />
+  <event name="Gate Offline" id_arme="5961b64b-5020-446c-b741-419ec785c884" parent_id_arme="4744c8ef-fee6-4c7f-b369-4f8ee9459dd0">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Atlantis Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b" parent_id_arme="4744c8ef-fee6-4c7f-b369-4f8ee9459dd0" />
+  <event name="Ship1 Activation Range" id_arme="7ef489c4-24c6-474a-9e3a-11fc5851e1e7" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="26ae00bd-ee1a-458c-938a-e992d688a88c" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="d76d6058-d0cf-4ff6-b5df-527e9908c10f" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="8847491b-ebd8-45de-92ba-9ab0d4148019" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="aa9fafb9-4439-40e2-a756-3431a340f635" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="03349bd5-bf7a-4c2a-9209-a1b0fd40f15c" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="c5580c5c-98b9-4c88-abd2-1448669765cc" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="cd1bcba7-b3aa-4679-a148-c9eabc2442f6" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="9864a516-821f-4161-a853-2a9247f23e06" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="0e50fde6-9ad8-473e-a528-c394e74bd70a" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="3cb74bd3-9820-426c-8995-fd98f746d765" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="17cf808e-af21-4dcd-90e1-fc71c8f7335e" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="46858b2b-edd5-43df-8860-d13413554277" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="464c984b-aa97-4287-aa03-d72ed500bd31" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="881a519b-709c-489e-9e5d-35081cc10015" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Atlantis Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="178ed8a2-c9a0-4aba-8e69-8d7f6f9e8757" parent_id_arme="f24be7ce-ac75-4995-afb4-415e5892ff3b">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Atlantis Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="0cdb606d-4783-4587-84d1-ac0e9d45b64e" parent_id_arme="4744c8ef-fee6-4c7f-b369-4f8ee9459dd0">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Atlantis Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="2b829a37-beda-4500-9979-423696658e1f" parent_id_arme="4744c8ef-fee6-4c7f-b369-4f8ee9459dd0">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Cerberus to Atlantis" value="1.0" />
+    <set_variable name="Atlantis System" value="1.0" />
+    <set_variable name="Sector" value="16" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="7a8d296c-c29a-4fe5-889b-118e31aa5500" parent_id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6" />
+  <event name="Generate Sector Entities" id_arme="ed5a2239-358b-460b-a6d0-66f01b4e7012" parent_id_arme="7a8d296c-c29a-4fe5-889b-118e31aa5500">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="27792.0" y="0.0" z="23877.0" name="Atlantis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="84254.0" y="0.0" z="26737.0" name="Shanari" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="77479.0" y="0.0" z="74918.0" name="Dalton" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="53689.0" y="0.0" z="54441.0" name="Arden" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="25233.0" y="0.0" z="68293.0" name="Cordell" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="9423.0" y="0.0" z="81543.0" name="M-572" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="26588.0" y="0.0" z="50526.0" name="M-331" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="54442.0" y="0.0" z="34416.0" name="RS-230" hullID="1004" sideValue="sectorSide" />
+    <create type="station" x="40139.0" y="0.0" z="15746.0" name="Gate Control" hullID="1000" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Cerberus II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="ff889b0f-d3ba-4147-b6c2-f25c74d54619" parent_id_arme="7a8d296c-c29a-4fe5-889b-118e31aa5500">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Atlantis Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Atlantis Gate" />
+    <set_object_property property="angle" value="0.174532925" name="Atlantis Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Atlantis Gate" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="c0075865-9f21-488a-b3e0-7cafe2020c72" parent_id_arme="7a8d296c-c29a-4fe5-889b-118e31aa5500">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="3.0" />
+    <destroy name="Atlantis Gate" />
+    <destroy name="M-572" />
+    <destroy name="M-331" />
+    <destroy name="RS-230" />
+    <destroy name="Gate Control" />
+    <destroy name="Shanari" />
+    <destroy name="Dalton" />
+    <destroy name="Arden" />
+    <destroy name="Cordell" />
+    <destroy name="Cerberus II" />
+    <set_variable name="Cerberus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Atlantis" id_arme="3b02808c-f462-4e39-9fa4-c2a63981df82" parent_id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Atlantis to Cerberus" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Atlantis Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Atlantis Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Atlantis to Cerberus" value="0.0" />
+  </event>
+  <folder_arme name="Cerberus Sector III" id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Cerberus Sector III" id_arme="2a5eb676-88e2-4daa-bdfb-dee667e0ca67" parent_id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cerberus System" value="2.0" />
+    <create count="60" type="asteroids" startX="96901.0" startY="0.0" startZ="92233.0" endX="89524.0" endY="0.0" endZ="88469.0" randomRange="4184" />
+    <create count="30" type="nebulas" startX="96450.0" startY="0.0" startZ="91781.0" endX="70553.0" endY="0.0" endZ="87565.0" randomRange="5439" />
+    <create count="40" type="nebulas" startX="88620.0" startY="0.0" startZ="81242.0" endX="64831.0" endY="0.0" endZ="68594.0" randomRange="13986" />
+    <create count="80" type="nebulas" startX="55496.0" startY="0.0" startZ="4454.0" endX="11230.0" endY="0.0" endZ="33513.0" randomRange="6011" />
+    <create count="80" type="nebulas" startX="35320.0" startY="0.0" startZ="83801.0" endX="15596.0" endY="0.0" endZ="60012.0" randomRange="6011" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93" parent_id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20" />
+  <event name="Transition to Sector IV" id_arme="aef204eb-4b29-4040-a9cb-324d33cd3d49" parent_id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="59bd45fe-8e16-403f-a010-53589224652e" parent_id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="8dcaf945-f677-40d7-a6f9-36c1db134aa4" parent_id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="c292053f-bff7-4ced-894a-5173daf34379" parent_id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="34e9bee1-0fbd-4f91-8277-cae8861c396f" parent_id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="c3f36fcc-d17f-4fde-93fb-62dcd1fc5c85" parent_id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20" />
+  <event name="Generate Sector Entities" id_arme="48559617-6d6a-4e6d-bc80-ee37a57d2895" parent_id_arme="c3f36fcc-d17f-4fde-93fb-62dcd1fc5c85">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="38783.0" y="0.0" z="20865.0" name="RS-90" hullID="1004" sideValue="sectorSide" />
+    <create type="station" x="59712.0" y="0.0" z="60163.0" name="RS-557" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="25684.0" y="0.0" z="73713.0" name="SY-14" hullID="1053" sideValue="sectorSide" />
+    <create type="station" x="34417.0" y="0.0" z="70401.0" name="Cerberus Command" hullID="1002" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Cerberus III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="074dcd28-ad53-4095-97e8-01b356ef0124" parent_id_arme="c3f36fcc-d17f-4fde-93fb-62dcd1fc5c85">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+    <set_object_property property="artScale" value="0.6" name="Cerberus Command" />
+    <clear_ai name="SY-14" />
+    <add_ai type="DIR_THROTTLE" value1="0" value2="0.0" name="SY-14" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="d78b097e-dd4c-4611-8565-8dc4d25939ed" parent_id_arme="c3f36fcc-d17f-4fde-93fb-62dcd1fc5c85">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="3.0" />
+    <destroy name="RS-90" />
+    <destroy name="RS-557" />
+    <destroy name="SY-14" />
+    <destroy name="Cerberus Command" />
+    <destroy name="Cerberus III" />
+    <set_variable name="Cerberus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Cerberus Sector IV" id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Cerberus Sector IV" id_arme="817121da-14dc-47de-9f78-ee5ae7ea48e3" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Cerberus System" value="2.0" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <create count="50" type="nebulas" startX="83802.0" startY="0.0" startZ="41342.0" endX="35170.0" endY="0.0" endZ="47967.0" randomRange="10142" />
+    <create count="30" type="nebulas" startX="85760.0" startY="0.0" startZ="66185.0" endX="57303.0" endY="0.0" endZ="53237.0" randomRange="11822" />
+    <create count="40" type="asteroids" startX="47215.0" startY="0.0" startZ="20865.0" endX="26136.0" endY="0.0" endZ="43751.0" randomRange="4096" />
+    <create count="50" type="asteroids" startX="51883.0" startY="0.0" startZ="91480.0" endX="74618.0" endY="0.0" endZ="55947.0" randomRange="17648" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" />
+  <event name="Transition to Sector III" id_arme="2acbd4c8-ca89-4bbe-805b-617ea775300e" parent_id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="8e7fb455-a666-42b1-af83-a8003d25ea89" parent_id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="ed23a091-d810-4741-b1d8-f40a8b2942c9" parent_id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="20d40d4e-5e97-4bbd-9d03-6f32e12e00a9" parent_id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f" />
+  <event name="Gate Offline" id_arme="1f273a88-d7c2-49e0-80fc-60187167a8af" parent_id_arme="20d40d4e-5e97-4bbd-9d03-6f32e12e00a9">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Promethean Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a" parent_id_arme="20d40d4e-5e97-4bbd-9d03-6f32e12e00a9" />
+  <event name="Ship1 Activation Range" id_arme="ec50438e-2385-41ce-a561-492ddf1d89c0" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="83eea339-e55b-413b-8a38-475216229382" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="75044531-1818-4a43-8b31-ea16ce4e49d1" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="a1b00dde-ad33-4ea9-bb6a-84be945a68c0" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="1325d884-8c40-4e24-86f2-5b6034abc2b8" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="5d5ac0f6-d461-47ac-b50d-645c93159342" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="3c901669-990d-4efb-8c1f-43d123e7de46" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="aadd413e-6778-4b28-ab8a-c078319b00c4" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="cfa1b51d-167e-4c29-ba5e-0c7ac5cc687e" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="54db2be9-ae64-474b-b246-9664641c7eeb" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="b86fe1da-c331-47a7-911b-6c9d4cd67881" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="ca1dc2db-d03a-478e-ab46-303be07d8561" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="83cf5b90-39da-4ef8-a3a6-f69d435a6c48" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="3ab77aec-fc29-435e-ad95-f549e91a5294" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="b740a3e4-1d75-42e5-b0e1-930fa871494a" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Promethean Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="ceddab9d-3771-467c-bb27-8a92eb88ebe2" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Promethean Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="e8554dcc-0908-4343-aa07-580928cc6426" parent_id_arme="20d40d4e-5e97-4bbd-9d03-6f32e12e00a9">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Promethean Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="1abb7132-36f5-49a5-b5c9-8c9a8eb45829" parent_id_arme="20d40d4e-5e97-4bbd-9d03-6f32e12e00a9">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Cerberus to Promethean" value="1.0" />
+    <set_variable name="Promethean System" value="1.0" />
+    <set_variable name="Sector" value="6" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" />
+  <event name="Generate Sector Entities" id_arme="be34843d-3b9a-46ab-b420-99938d49dc40" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="blackHole" x="25534.0" y="0.0" z="18456.0" name="A-0223" />
+    <create type="station" x="18006.0" y="0.0" z="33061.0" name="RS-0223" hullID="1004" sideValue="sectorSide" />
+    <create type="genericMesh" x="71757.0" y="0.0" z="23726.0" name="Promethean Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Cerberus IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="64d1a1d7-e112-4059-84c9-136ffb07605e" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Promethean Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Promethean Gate" />
+    <set_object_property property="angle" value="5.585053606" name="Promethean Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Promethean Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e52034ec-c11b-4f29-86b2-cd1de4df5445" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="3.0" />
+    <destroy name="A-0223" />
+    <destroy name="RS-0223" />
+    <destroy name="Promethean Gate" />
+    <destroy name="Cerberus IV" />
+    <set_variable name="Cerberus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Promethean" id_arme="cbd9cc8f-d507-4f40-9ddf-799e6beebd05" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Promethean to Cerberus" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Promethean Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Promethean Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Promethean to Cerberus" value="0.0" />
+  </event>
+  <folder_arme name="Cerberus Sector V" id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Cerberus Sector V" id_arme="cd534796-7ca7-45de-816a-c0590a6703ec" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cerberus System" value="2.0" />
+    <create count="50" type="mines" startAngle="300" endAngle="240" startX="11792.0" startY="0.0" startZ="18038.0" radius="17579" />
+    <create count="50" type="mines" startAngle="300" endAngle="240" startX="10921.0" startY="0.0" startZ="53341.0" radius="17579" />
+    <create count="50" type="mines" startAngle="260" endAngle="200" startX="4528.0" startY="0.0" startZ="71210.0" radius="17579" />
+    <create count="107" type="nebulas" startX="60896.0" startY="0.0" startZ="750.0" endX="87047.0" endY="0.0" endZ="-2737.0" randomRange="24700" />
+    <create count="80" type="nebulas" startX="85158.0" startY="0.0" startZ="32566.0" endX="77313.0" endY="0.0" endZ="73099.0" randomRange="9032" />
+    <create count="90" type="nebulas" startX="93584.0" startY="0.0" startZ="77312.0" endX="69758.0" endY="0.0" endZ="90823.0" randomRange="5551" />
+    <create count="30" type="nebulas" startX="58136.0" startY="0.0" startZ="24576.0" endX="46514.0" endY="0.0" endZ="65690.0" randomRange="24078" />
+    <create count="60" type="nebulas" startX="63657.0" startY="0.0" startZ="63220.0" endX="26901.0" endY="0.0" endZ="89079.0" randomRange="5844" />
+    <create count="40" type="nebulas" startX="56393.0" startY="0.0" startZ="86029.0" endX="39105.0" endY="0.0" endZ="95762.0" randomRange="5763" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" />
+  <event name="Transition to Sector I" id_arme="5845fa59-2742-4e6b-b0eb-72da68c7a6bb" parent_id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="0aa20b95-ad47-42a3-aa1a-dbdc7a935a7e" parent_id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="f7ec5084-1491-4790-a268-a8b64d44b483" parent_id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="0fa59167-5195-4b77-8677-90e1a93a54ce" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" />
+  <event name="Generate Sector Entities" id_arme="daea5bb1-d78c-44de-a05f-e6591d6073b5" parent_id_arme="0fa59167-5195-4b77-8677-90e1a93a54ce">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="21792.0" y="0.0" z="17699.0" name="DS-31" hullID="1000" sideValue="sectorSide" />
+    <create type="station" x="19458.0" y="0.0" z="54688.0" name="DS-67" hullID="1000" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Cerberus V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="93a74f46-5353-45a1-a498-4fdf7ecd04f9" parent_id_arme="0fa59167-5195-4b77-8677-90e1a93a54ce">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="b2a3e98f-ff2f-4f89-907b-b35de2486a2e" parent_id_arme="0fa59167-5195-4b77-8677-90e1a93a54ce">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="3.0" />
+    <destroy name="DS-31" />
+    <destroy name="DS-67" />
+    <destroy name="Cerberus V" />
+    <set_variable name="Cerberus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Cerberus Sector VI" id_arme="f472a500-58ab-4130-91ec-312faaf2f127" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Cerberus Sector VI" id_arme="e34609ea-464f-43c2-a780-7c1bd1d05ddf" parent_id_arme="f472a500-58ab-4130-91ec-312faaf2f127">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cerberus System" value="2.0" />
+    <create count="50" type="nebulas" startX="72510.0" startY="0.0" startZ="39084.0" endX="65735.0" endY="0.0" endZ="55194.0" randomRange="17564" />
+    <create count="160" type="nebulas" startX="25985.0" startY="0.0" startZ="79435.0" endX="4756.0" endY="0.0" endZ="41191.0" randomRange="8520" />
+    <create count="30" type="asteroids" startX="85308.0" startY="0.0" startZ="29749.0" endX="79586.0" endY="0.0" endZ="56097.0" randomRange="8328" />
+    <create count="30" type="asteroids" startX="79888.0" startY="0.0" startZ="55495.0" endX="66487.0" endY="0.0" endZ="65884.0" randomRange="1388" />
+    <create count="30" type="nebulas" startX="83953.0" startY="0.0" startZ="42547.0" endX="83953.0" endY="0.0" endZ="42547.0" randomRange="8740" />
+    <create count="70" type="asteroids" startX="77027.0" startY="0.0" startZ="15897.0" endX="80942.0" endY="0.0" endZ="36524.0" randomRange="3641" />
+    <create count="30" type="asteroids" startX="83200.0" startY="0.0" startZ="37427.0" endX="82297.0" endY="0.0" endZ="51580.0" randomRange="4110" />
+    <create count="7" type="asteroids" startX="7767.0" startY="0.0" startZ="6562.0" endX="7767.0" endY="0.0" endZ="6562.0" randomRange="7040" />
+    <create count="10" type="nebulas" startX="6111.0" startY="0.0" startZ="4002.0" endX="6111.0" endY="0.0" endZ="4002.0" randomRange="6114" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="87d8c4e3-0829-4091-897d-284e07c18b30" parent_id_arme="f472a500-58ab-4130-91ec-312faaf2f127" />
+  <event name="Transition to Sector V" id_arme="132d68cc-4dd3-445e-bd83-9b1497dfcdbd" parent_id_arme="87d8c4e3-0829-4091-897d-284e07c18b30">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="a0dbec04-5b53-4849-bb5f-649536ca557d" parent_id_arme="87d8c4e3-0829-4091-897d-284e07c18b30">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="b3af745d-070b-4cb8-945e-d48bded9bb88" parent_id_arme="87d8c4e3-0829-4091-897d-284e07c18b30">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="82d4dfeb-3e86-4895-a710-d5bd435cd201" parent_id_arme="87d8c4e3-0829-4091-897d-284e07c18b30">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="c80af7e0-896e-478b-9687-ebd6b4ae8887" parent_id_arme="87d8c4e3-0829-4091-897d-284e07c18b30">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="ac9985f7-2b6a-4474-8153-be35edff1b08" parent_id_arme="f472a500-58ab-4130-91ec-312faaf2f127" />
+  <event name="Generate Sector Entities" id_arme="ce23a429-48a1-4b2b-bff8-5d543089d881" parent_id_arme="ac9985f7-2b6a-4474-8153-be35edff1b08">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="45709.0" y="0.0" z="14692.0" name="Morbek" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="39687.0" y="0.0" z="44654.0" name="Quesenc" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="20565.0" y="0.0" z="25232.0" name="Ltaris" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="38181.0" y="0.0" z="67841.0" name="Scolcha" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="78984.0" y="0.0" z="40439.0" name="M-218" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="74618.0" y="0.0" z="54893.0" name="M-243" hullID="1003" sideValue="sectorSide" />
+    <create type="station" x="16199.0" y="0.0" z="59259.0" name="RS-45" hullID="1004" sideValue="sectorSide" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Cerberus VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="5c40029c-9eba-49a1-a2f5-8ad156eb27b3" parent_id_arme="ac9985f7-2b6a-4474-8153-be35edff1b08">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="261905bb-8a46-4739-a221-64cde492e259" parent_id_arme="ac9985f7-2b6a-4474-8153-be35edff1b08">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="3.0" />
+    <destroy name="Morbek" />
+    <destroy name="Quesenc" />
+    <destroy name="Scolcha" />
+    <destroy name="Ltaris" />
+    <destroy name="M-218" />
+    <destroy name="M-243" />
+    <destroy name="RS-45" />
+    <destroy name="Cerberus VI" />
+    <set_variable name="Cerberus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Cerberus Sector VII" id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Cerberus Sector VII" id_arme="37b50a25-6fa8-47c4-817b-227c9c02b14b" parent_id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cerberus System" value="2.0" />
+    <create count="30" type="asteroids" startX="97805.0" startY="0.0" startZ="3400.0" endX="85760.0" endY="0.0" endZ="2496.0" randomRange="6538" />
+    <create count="10" type="nebulas" startX="98558.0" startY="0.0" startZ="1141.0" endX="91933.0" endY="0.0" endZ="6562.0" randomRange="2414" />
+    <create count="50" type="nebulas" startX="98708.0" startY="0.0" startZ="53839.0" endX="85458.0" endY="0.0" endZ="38933.0" randomRange="8215" />
+    <create count="30" type="nebulas" startX="44957.0" startY="0.0" startZ="83350.0" endX="9574.0" endY="0.0" endZ="77929.0" randomRange="4408" />
+    <create count="82" type="asteroids" startAngle="-20" endAngle="90.6" startX="27491.0" startY="0.0" startZ="27641.0" radius="15354" randomRange="6046" />
+    <create count="30" type="asteroids" startX="16176.0" startY="0.0" startZ="31359.0" endX="17196.0" endY="0.0" endZ="43484.0" randomRange="5543" />
+    <create count="20" type="nebulas" startX="32267.0" startY="0.0" startZ="13682.0" endX="13457.0" endY="0.0" endZ="25807.0" randomRange="2616" />
+    <create count="19" type="asteroids" startX="11507.0" startY="0.0" startZ="30120.0" endX="7892.0" endY="0.0" endZ="44939.0" randomRange="3963" />
+    <create count="10" type="asteroids" startX="17832.0" startY="0.0" startZ="46024.0" endX="23615.0" endY="0.0" endZ="56867.0" randomRange="2764" />
+    <create count="20" type="asteroids" startX="9338.0" startY="0.0" startZ="40240.0" endX="15302.0" endY="0.0" endZ="50542.0" randomRange="5544" />
+    <create count="20" type="asteroids" startX="15121.0" startY="0.0" startZ="50000.0" endX="33193.0" endY="0.0" endZ="71144.0" randomRange="3863" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0" parent_id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6" />
+  <event name="Transition to Sector VIII" id_arme="ba68e714-dfe7-4cbf-8ad9-98341cde296d" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="351da0df-8b4f-405a-be02-5debd1996bc5" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="d62b1ce2-5b5b-4949-87a0-64a4c2c04ade" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="ed89974e-c01a-4ba3-beaa-a7a1ccac068f" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="395ec2fb-76dd-4ec4-bb14-29c868e10f55" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="086a4c08-9ddc-4a47-b0cc-beb3b455d775" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0" />
+  <event name="Gate Offline" id_arme="24f83962-736e-4dfe-a3bd-7fd2aeab6e12" parent_id_arme="086a4c08-9ddc-4a47-b0cc-beb3b455d775">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Hjorden Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca" parent_id_arme="086a4c08-9ddc-4a47-b0cc-beb3b455d775" />
+  <event name="Ship1 Activation Range" id_arme="b2b834c0-2cb4-49d9-9614-450c09b3b154" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="58b102b7-259b-403d-a7d2-2863cddd4ce9" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="33cbb956-77e5-4136-b6d1-b4f1cbda1579" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="495c95ca-750a-4bee-908c-44a946a93a06" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="e381661e-9250-4c82-8874-d56ba2a005b6" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="53e1093c-b7b4-4b8f-abff-5b9f1ba3d1cd" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="9bf4d6f8-220f-4505-a887-250a5df3320f" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="dddfc962-724c-47b6-9126-a31ba62366c3" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="5244c5ea-5bd7-4c22-b4d4-ef9db775f081" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="d3e1f189-186c-45ad-ba5f-b6e7d567795f" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="f9a85c4a-11c0-4121-8d46-1dcaf51c8772" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="4627e3b9-583c-4239-8ef3-81a80310da50" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="495aeeb5-ea39-476d-9015-d94e60e1ba06" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="9cdcdaa3-ab73-4fff-a496-30a10854d417" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="e80b25af-0afb-4fbe-ab80-ed6a869a4f56" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Hjorden Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="0da58dfa-0f50-4c29-bdf0-1bd2888813c9" parent_id_arme="8aa4e828-962a-43d2-b2c0-3998eb22bcca">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Hjorden Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Jump Initiated" id_arme="2630956e-7abd-44a8-b27b-0dedf68d0eb1" parent_id_arme="086a4c08-9ddc-4a47-b0cc-beb3b455d775">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+    <set_variable name="System" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Cerberus to Hjorden" value="1.0" />
+    <set_variable name="Hjorden System" value="1.0" />
+    <set_variable name="Sector" value="6" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <event name="Gate Online" id_arme="b7ac587b-c487-41bf-ae16-99ce753d3ce2" parent_id_arme="086a4c08-9ddc-4a47-b0cc-beb3b455d775">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Hjorden Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="c510f719-b67f-4a54-adef-5757b40206e2" parent_id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6" />
+  <event name="Generate Sector Entities" id_arme="3c2d94d8-9b5e-4d81-b515-34a1637cecfe" parent_id_arme="c510f719-b67f-4a54-adef-5757b40206e2">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="26145.0" y="0.0" z="56144.0" name="Jgoran" hullID="1100" sideValue="sectorSide" />
+    <create type="station" x="51446.0" y="0.0" z="73674.0" name="Tyron" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="65543.0" y="0.0" z="33915.0" name="Serena" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="64820.0" y="0.0" z="61204.0" name="Halima" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="22350.0" y="0.0" z="45662.0" name="Dlana" hullID="1100" sideValue="sectorSide" />
+    <create type="genericMesh" x="32008.0" y="0.0" z="48117.0" name="Hjorden Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Cerberus VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="0daf664c-70f4-470d-97bb-39a60fb3f977" parent_id_arme="c510f719-b67f-4a54-adef-5757b40206e2">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Hjorden Gate" />
+    <set_object_property property="angle" value="2.181661565" name="Hjorden Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Hjorden Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Hjorden Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="5a090e1e-0263-4194-af17-e708394e6ecb" parent_id_arme="c510f719-b67f-4a54-adef-5757b40206e2">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="3.0" />
+    <destroy name="Jgoran" />
+    <destroy name="Tyron" />
+    <destroy name="Serena" />
+    <destroy name="Halima" />
+    <destroy name="Dlana" />
+    <destroy name="Hjorden Gate" />
+    <destroy name="Cerberus VII" />
+    <set_variable name="Cerberus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Hjorden" id_arme="fb3c9213-c288-4b5c-9b82-68fced4928c8" parent_id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Hjorden to Cerberus" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Hjorden Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Hjorden Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Hjorden to Cerberus" value="0.0" />
+  </event>
+  <folder_arme name="Cerberus Sector VIII" id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Cerberus Sector VIII" id_arme="a7c1436d-766a-47b8-8700-9b0c42ba81b6" parent_id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Cerberus System" value="2.0" />
+    <create count="90" type="asteroids" startAngle="-358.1" endAngle="-231.8" startX="66487.0" startY="0.0" startZ="49774.0" radius="45194" randomRange="9580" />
+    <create count="20" type="asteroids" startX="31255.0" startY="0.0" startZ="78230.0" endX="55797.0" endY="0.0" endZ="93437.0" randomRange="5324" />
+    <create count="280" type="nebulas" startX="34718.0" startY="0.0" startZ="93437.0" endX="3250.0" endY="0.0" endZ="50978.0" randomRange="18110" />
+    <create count="20" type="nebulas" startX="87482.0" startY="0.0" startZ="37215.0" radius="4358" randomRange="3632" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0" parent_id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63" />
+  <event name="Transition to Sector IV" id_arme="1186b48b-5113-4ca0-9709-1a373400cb3c" parent_id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="84e39585-29f5-488f-852e-5bef7cac3f38" parent_id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="7d4cecf6-020e-4eff-8474-ed814edeae84" parent_id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Cerberus System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="10200616-5397-4f3e-bb09-f457de4cd3a7" parent_id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63" />
+  <event name="Generate Sector Entities" id_arme="71f2a0e8-a76a-4c41-a0bd-dddcd57953e0" parent_id_arme="10200616-5397-4f3e-bb09-f457de4cd3a7">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="10327.0" y="0.0" z="66486.0" name="RS-484" hullID="1004" sideValue="sectorSide" />
+    <create type="station" x="26588.0" y="0.0" z="62873.0" name="Kolaris" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="40289.0" y="0.0" z="17854.0" name="Noreel" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="26437.0" y="0.0" z="36524.0" name="Emora" hullID="1001" sideValue="sectorSide" />
+    <create type="station" x="41644.0" y="0.0" z="84705.0" name="Olnara" hullID="1001" sideValue="sectorSide" />
+    <create type="genericMesh" x="50226.0" y="0.0" z="71003.0" name="Antara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Cerberus VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="c59f089d-a9e1-45ee-b47b-99712edbff66" parent_id_arme="10200616-5397-4f3e-bb09-f457de4cd3a7">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Antara Gate" />
+    <set_object_property property="angle" value="2.35619449" name="Antara Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Antara Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Antara Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="USFPTraffic1" value="1.0" />
+    <set_variable name="USFPTraffic2" value="1.0" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="6871c72c-7040-4066-a7e9-0a47f8f56b0e" parent_id_arme="10200616-5397-4f3e-bb09-f457de4cd3a7">
+    <if_variable name="Cerberus System" comparator="EQUALS" value="3.0" />
+    <destroy name="RS-484" />
+    <destroy name="Kolaris" />
+    <destroy name="Noreel" />
+    <destroy name="Emora" />
+    <destroy name="Olnara" />
+    <destroy name="Antara Gate" />
+    <destroy name="Cerberus VIII" />
+    <set_variable name="Cerberus System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>
