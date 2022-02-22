@@ -6853,7 +6853,7 @@
     <set_object_property property="missileStoresProbe" value="30" name="--" />
   </event>
   <folder_arme name="Random Name System" id_arme="bfe4e4ff-aa5d-4c48-926a-056476e155d5" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
-  <folder_arme name="Generate Fleet Names" id_arme="2dd8bf7f-9203-4c1a-9bea-2a4d2d3c05a6" parent_id_arme="bfe4e4ff-aa5d-4c48-926a-056476e155d5" expanded_arme="" />
+  <folder_arme name="Generate Fleet Names" id_arme="2dd8bf7f-9203-4c1a-9bea-2a4d2d3c05a6" parent_id_arme="bfe4e4ff-aa5d-4c48-926a-056476e155d5" />
   <event name="Restart Letter Cycle" id_arme="8e028e49-f46e-44b3-b585-c88fe25d4c62" parent_id_arme="2dd8bf7f-9203-4c1a-9bea-2a4d2d3c05a6">
     <if_not_exists name="--" />
     <if_variable name="LetterPrefix" comparator="GREATER_EQUAL" value="26.0" />
@@ -7231,6 +7231,7 @@
     <set_comms_button text="-Shuttle Operations" player_slot="0" />
     <set_comms_button text="-Resupply Operations" player_slot="0" />
     <set_variable name="Ship1CommsMenu" value="1.0" integer="yes" />
+    <set_variable name="Ship1Modules" value="0.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="3fd8339b-3829-472d-a4e1-8cce54da10e2" parent_id_arme="11974bdf-b216-46f4-a7b9-5c50936650d3">
     <if_not_exists player_slot="0" />
@@ -7254,6 +7255,7 @@
     <clear_comms_button text="-Load Sensor Buoy" player_slot="0" />
     <!---->
     <set_variable name="Ship1CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship1Modules" value="3.0" integer="yes" />
   </event>
   <folder_arme name="Cargo and Personnel" id_arme="8f8b7441-2bd4-4d47-91bf-956b4cc82963" parent_id_arme="11974bdf-b216-46f4-a7b9-5c50936650d3" />
   <event name="Inventory Status Request" id_arme="adaf418e-b4ab-4df1-92cd-01f375f8e390" parent_id_arme="8f8b7441-2bd4-4d47-91bf-956b4cc82963">
@@ -7529,6 +7531,7 @@
     <set_comms_button text="*Shuttle Operations" player_slot="1" />
     <set_comms_button text="*Resupply Operations" player_slot="1" />
     <set_variable name="Ship2CommsMenu" value="1.0" integer="yes" />
+    <set_variable name="Ship2Modules" value="0.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="dfd9dea7-e4a8-431c-9dd0-f45b891389d7" parent_id_arme="5bb8bb2b-3dbd-4dfd-949a-3cd406d51bae">
     <if_not_exists player_slot="1" />
@@ -7552,6 +7555,7 @@
     <clear_comms_button text="*Load Sensor Buoy" player_slot="1" />
     <!---->
     <set_variable name="Ship2CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship2Modules" value="3.0" integer="yes" />
   </event>
   <folder_arme name="Cargo and Personnel" id_arme="93d43161-228a-48fe-a4e6-d03e20a5c6f7" parent_id_arme="5bb8bb2b-3dbd-4dfd-949a-3cd406d51bae" />
   <event name="Inventory Status Request" id_arme="43b9f285-bb10-43e8-a0b7-08646f08d06f" parent_id_arme="93d43161-228a-48fe-a4e6-d03e20a5c6f7">
@@ -7827,6 +7831,7 @@
     <set_comms_button text="**Shuttle Operations" player_slot="2" />
     <set_comms_button text="**Resupply Operations" player_slot="2" />
     <set_variable name="Ship3CommsMenu" value="1.0" integer="yes" />
+    <set_variable name="Ship3Modules" value="0.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="c89d9df8-673e-41e9-b7e3-fafe554fa3a4" parent_id_arme="2d9df97e-ffbc-4782-9594-4f80608a38f5">
     <if_not_exists player_slot="2" />
@@ -7850,6 +7855,7 @@
     <clear_comms_button text="**Load Sensor Buoy" player_slot="2" />
     <!---->
     <set_variable name="Ship3CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship3Modules" value="3.0" integer="yes" />
   </event>
   <folder_arme name="Cargo and Personnel" id_arme="506ea0ab-a872-45ff-98fe-5045d9e4c736" parent_id_arme="2d9df97e-ffbc-4782-9594-4f80608a38f5" />
   <event name="Inventory Status Request" id_arme="8046a3c2-38b5-4a42-bab2-932cd8f93f0e" parent_id_arme="506ea0ab-a872-45ff-98fe-5045d9e4c736">
@@ -8125,6 +8131,7 @@
     <set_comms_button text="--Shuttle Operations" player_slot="3" />
     <set_comms_button text="--Resupply Operations" player_slot="3" />
     <set_variable name="Ship4CommsMenu" value="1.0" integer="yes" />
+    <set_variable name="Ship4Modules" value="0.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="2a927dbf-7156-4a38-a668-449f46b1e6f2" parent_id_arme="3e34f8c7-7750-4a1d-bee5-0e96e4e39a46">
     <if_not_exists player_slot="3" />
@@ -8148,6 +8155,7 @@
     <clear_comms_button text="--Load Sensor Buoy" player_slot="3" />
     <!---->
     <set_variable name="Ship4CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship4Modules" value="3.0" integer="yes" />
   </event>
   <folder_arme name="Cargo and Personnel" id_arme="75a3aa64-e844-4b59-a028-fc97e3b22fe5" parent_id_arme="3e34f8c7-7750-4a1d-bee5-0e96e4e39a46" />
   <event name="Inventory Status Request" id_arme="2c57ee97-a516-4d19-a446-837ea9bb5ac5" parent_id_arme="75a3aa64-e844-4b59-a028-fc97e3b22fe5">
@@ -8422,6 +8430,7 @@
     <set_comms_button text="*-Shuttle Operations" player_slot="4" />
     <set_comms_button text="*-Resupply Operations" player_slot="4" />
     <set_variable name="Ship5CommsMenu" value="1.0" integer="yes" />
+    <set_variable name="Ship5Modules" value="0.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="45bd2f44-0ad7-4fb1-9657-36cf8a0fcdfe" parent_id_arme="fb034650-149b-4f8a-a6b8-34a43ff377f5">
     <if_not_exists player_slot="4" />
@@ -8445,6 +8454,7 @@
     <clear_comms_button text="*-Load Sensor Buoy" player_slot="4" />
     <!---->
     <set_variable name="Ship5CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship5Modules" value="3.0" integer="yes" />
   </event>
   <folder_arme name="Cargo and Personnel" id_arme="9f6f7ca3-8605-4eb8-815f-0fe422d21307" parent_id_arme="fb034650-149b-4f8a-a6b8-34a43ff377f5" />
   <event name="Inventory Status Request" id_arme="14db95cb-a317-48fa-925d-72ab3a8aa6d5" parent_id_arme="9f6f7ca3-8605-4eb8-815f-0fe422d21307">
@@ -8720,6 +8730,7 @@
     <set_comms_button text="-*Shuttle Operations" player_slot="5" />
     <set_comms_button text="-*Resupply Operations" player_slot="5" />
     <set_variable name="Ship6CommsMenu" value="1.0" integer="yes" />
+    <set_variable name="Ship6Modules" value="0.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="e1308645-7160-4947-9252-ca296345052f" parent_id_arme="9af40a39-82e7-46b8-8029-d42f3a9362cb">
     <if_not_exists player_slot="5" />
@@ -8743,6 +8754,7 @@
     <clear_comms_button text="-*Load Sensor Buoy" player_slot="5" />
     <!---->
     <set_variable name="Ship6CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship6Modules" value="3.0" integer="yes" />
   </event>
   <folder_arme name="Cargo and Personnel" id_arme="611e1b96-8be5-440a-8f66-eb54526a10f5" parent_id_arme="9af40a39-82e7-46b8-8029-d42f3a9362cb" />
   <event name="Inventory Status Request" id_arme="35985e6e-35bf-4896-8c94-274036a560c1" parent_id_arme="611e1b96-8be5-440a-8f66-eb54526a10f5">
@@ -9018,6 +9030,7 @@
     <set_comms_button text="_Shuttle Operations" player_slot="6" />
     <set_comms_button text="_Resupply Operations" player_slot="6" />
     <set_variable name="Ship7CommsMenu" value="1.0" integer="yes" />
+    <set_variable name="Ship7Modules" value="0.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="1e7d16a3-bd98-4b5b-8436-d192d0c0075c" parent_id_arme="443153c2-8211-4887-a857-f6afbe7d8d8d">
     <if_not_exists player_slot="6" />
@@ -9041,6 +9054,7 @@
     <clear_comms_button text="_Load Sensor Buoy" player_slot="6" />
     <!---->
     <set_variable name="Ship7CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship7Modules" value="3.0" integer="yes" />
   </event>
   <folder_arme name="Cargo and Personnel" id_arme="b1625d82-7f83-412c-891a-bf45c42cb77e" parent_id_arme="443153c2-8211-4887-a857-f6afbe7d8d8d" />
   <event name="Inventory Status Request" id_arme="fa32535d-cde8-4930-9be9-8eb412740921" parent_id_arme="b1625d82-7f83-412c-891a-bf45c42cb77e">
@@ -9315,6 +9329,7 @@
     <set_comms_button text="__Shuttle Operations" player_slot="7" />
     <set_comms_button text="__Resupply Operations" player_slot="7" />
     <set_variable name="Ship8CommsMenu" value="1.0" integer="yes" />
+    <set_variable name="Ship8Modules" value="0.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="56427e24-a115-451b-a4ca-ed684d4f450c" parent_id_arme="f693b0b1-adc0-47b6-b056-6b67750fd563">
     <if_not_exists player_slot="7" />
@@ -9338,6 +9353,7 @@
     <clear_comms_button text="__Load Sensor Buoy" player_slot="7" />
     <!---->
     <set_variable name="Ship8CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship8Modules" value="3.0" integer="yes" />
   </event>
   <folder_arme name="Cargo and Personnel" id_arme="02089ddc-6f70-4bf4-985c-775a9d567bc3" parent_id_arme="f693b0b1-adc0-47b6-b056-6b67750fd563" />
   <event name="Inventory Status Request" id_arme="33b534d2-3a6b-4b8f-824b-05faa68851db" parent_id_arme="02089ddc-6f70-4bf4-985c-775a9d567bc3">
