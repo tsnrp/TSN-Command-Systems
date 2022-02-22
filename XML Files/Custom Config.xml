@@ -222,6 +222,7 @@
   <event name="Main Menu" id_arme="8ebace6c-3c5b-4d44-b59f-7b165e84d9b3" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089">
     <if_exists player_slot="0" />
     <if_variable name="Ship1Modules" comparator="EQUALS" value="3.0" />
+    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Deploy Cluster" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Activate Cluster" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Activate Shields" player_slot="0" sideValue="playerSide" />
@@ -233,6 +234,7 @@
     <if_comms_button text="-Modules" />
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship1Cluster" comparator="LESS" value="1.0" />
+    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Shuttle Operations" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Resupply Operations" player_slot="0" sideValue="playerSide" />
@@ -245,6 +247,7 @@
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship1Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship1Cluster" comparator="LESS" value="3.0" />
+    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Shuttle Operations" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Resupply Operations" player_slot="0" sideValue="playerSide" />
@@ -284,6 +287,7 @@
     <if_comms_button text="-Modules" />
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship1Decoy" comparator="LESS" value="1.0" />
+    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Shuttle Operations" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Resupply Operations" player_slot="0" sideValue="playerSide" />
@@ -321,6 +325,7 @@
     <if_comms_button text="-Modules" />
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship1Shields" comparator="LESS" value="1.0" />
+    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Shuttle Operations" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Resupply Operations" player_slot="0" sideValue="playerSide" />
@@ -333,6 +338,7 @@
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship1Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship1Shields" comparator="LESS_EQUAL" value="3.0" />
+    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Shuttle Operations" player_slot="0" sideValue="playerSide" />
     <clear_comms_button text="-Resupply Operations" player_slot="0" sideValue="playerSide" />
@@ -405,6 +411,7 @@
   <event name="Main Menu" id_arme="10751b9c-7902-495d-ae8c-6dfa353fcbe3" parent_id_arme="5ce2907d-e5b7-47d3-950e-8199e55c539d">
     <if_exists player_slot="1" />
     <if_variable name="Ship2Modules" comparator="EQUALS" value="3.0" />
+    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Deploy Cluster" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Activate Cluster" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Activate Shields" player_slot="1" sideValue="playerSide" />
@@ -416,6 +423,7 @@
     <if_comms_button text="*Modules" />
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship2Cluster" comparator="LESS" value="1.0" />
+    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Shuttle Operations" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Resupply Operations" player_slot="1" sideValue="playerSide" />
@@ -428,6 +436,7 @@
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship2Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship2Cluster" comparator="LESS" value="3.0" />
+    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Shuttle Operations" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Resupply Operations" player_slot="1" sideValue="playerSide" />
@@ -467,6 +476,7 @@
     <if_comms_button text="*Modules" />
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship2Decoy" comparator="LESS" value="1.0" />
+    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Shuttle Operations" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Resupply Operations" player_slot="1" sideValue="playerSide" />
@@ -504,6 +514,7 @@
     <if_comms_button text="*Modules" />
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship2Shields" comparator="LESS" value="1.0" />
+    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Shuttle Operations" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Resupply Operations" player_slot="1" sideValue="playerSide" />
@@ -516,6 +527,7 @@
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship2Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship2Shields" comparator="LESS_EQUAL" value="3.0" />
+    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Shuttle Operations" player_slot="1" sideValue="playerSide" />
     <clear_comms_button text="*Resupply Operations" player_slot="1" sideValue="playerSide" />
@@ -588,6 +600,7 @@
   <event name="Main Menu" id_arme="bbe00cf8-601f-483f-bb64-02a226a404b7" parent_id_arme="53a51d66-70ea-4fef-a978-3d049200c8d3">
     <if_exists player_slot="2" />
     <if_variable name="Ship3Modules" comparator="EQUALS" value="3.0" />
+    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Deploy Cluster" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Activate Cluster" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Activate Shields" player_slot="2" sideValue="playerSide" />
@@ -599,6 +612,7 @@
     <if_comms_button text="**Modules" />
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship3Cluster" comparator="LESS" value="1.0" />
+    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Shuttle Operations" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Resupply Operations" player_slot="2" sideValue="playerSide" />
@@ -611,6 +625,7 @@
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship3Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship3Cluster" comparator="LESS" value="3.0" />
+    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Shuttle Operations" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Resupply Operations" player_slot="2" sideValue="playerSide" />
@@ -650,6 +665,7 @@
     <if_comms_button text="**Modules" />
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship3Decoy" comparator="LESS" value="1.0" />
+    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Shuttle Operations" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Resupply Operations" player_slot="2" sideValue="playerSide" />
@@ -687,6 +703,7 @@
     <if_comms_button text="**Modules" />
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship3Shields" comparator="LESS" value="1.0" />
+    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Shuttle Operations" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Resupply Operations" player_slot="2" sideValue="playerSide" />
@@ -699,6 +716,7 @@
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship3Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship3Shields" comparator="LESS_EQUAL" value="3.0" />
+    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Shuttle Operations" player_slot="2" sideValue="playerSide" />
     <clear_comms_button text="**Resupply Operations" player_slot="2" sideValue="playerSide" />
@@ -771,6 +789,7 @@
   <event name="Main Menu" id_arme="fc39755e-068e-4858-86bc-46aa23d58da1" parent_id_arme="f97468dd-f9a6-4dfd-8060-a1c5cbc4fe46">
     <if_exists player_slot="3" />
     <if_variable name="Ship4Modules" comparator="EQUALS" value="3.0" />
+    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Deploy Cluster" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Activate Cluster" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Activate Shields" player_slot="3" sideValue="playerSide" />
@@ -782,6 +801,7 @@
     <if_comms_button text="--Modules" />
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship4Cluster" comparator="LESS" value="1.0" />
+    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Shuttle Operations" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Resupply Operations" player_slot="3" sideValue="playerSide" />
@@ -794,6 +814,7 @@
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship4Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship4Cluster" comparator="LESS" value="3.0" />
+    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Shuttle Operations" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Resupply Operations" player_slot="3" sideValue="playerSide" />
@@ -833,6 +854,7 @@
     <if_comms_button text="--Modules" />
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship4Decoy" comparator="LESS" value="1.0" />
+    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Shuttle Operations" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Resupply Operations" player_slot="3" sideValue="playerSide" />
@@ -870,6 +892,7 @@
     <if_comms_button text="--Modules" />
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship4Shields" comparator="LESS" value="1.0" />
+    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Shuttle Operations" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Resupply Operations" player_slot="3" sideValue="playerSide" />
@@ -882,6 +905,7 @@
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship4Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship4Shields" comparator="LESS_EQUAL" value="3.0" />
+    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Shuttle Operations" player_slot="3" sideValue="playerSide" />
     <clear_comms_button text="--Resupply Operations" player_slot="3" sideValue="playerSide" />
@@ -954,6 +978,7 @@
   <event name="Main Menu" id_arme="f3836319-6c1d-4b26-8642-e37c21d7c93b" parent_id_arme="80a7dc88-68d7-497f-9d5d-cac376e8e4b4">
     <if_exists player_slot="4" />
     <if_variable name="Ship5Modules" comparator="EQUALS" value="3.0" />
+    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Deploy Cluster" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Activate Cluster" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Activate Shields" player_slot="4" sideValue="playerSide" />
@@ -965,6 +990,7 @@
     <if_comms_button text="*-Modules" />
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship5Cluster" comparator="LESS" value="1.0" />
+    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Shuttle Operations" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Resupply Operations" player_slot="4" sideValue="playerSide" />
@@ -977,6 +1003,7 @@
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship5Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship5Cluster" comparator="LESS" value="3.0" />
+    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Shuttle Operations" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Resupply Operations" player_slot="4" sideValue="playerSide" />
@@ -1016,6 +1043,7 @@
     <if_comms_button text="*-Modules" />
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship5Decoy" comparator="LESS" value="1.0" />
+    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Shuttle Operations" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Resupply Operations" player_slot="4" sideValue="playerSide" />
@@ -1053,6 +1081,7 @@
     <if_comms_button text="*-Modules" />
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship5Shields" comparator="LESS" value="1.0" />
+    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Shuttle Operations" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Resupply Operations" player_slot="4" sideValue="playerSide" />
@@ -1065,6 +1094,7 @@
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship5Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship5Shields" comparator="LESS_EQUAL" value="3.0" />
+    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Shuttle Operations" player_slot="4" sideValue="playerSide" />
     <clear_comms_button text="*-Resupply Operations" player_slot="4" sideValue="playerSide" />
@@ -1137,6 +1167,7 @@
   <event name="Main Menu" id_arme="6454dbcd-e583-40cc-bc4e-6f9aeeffbf89" parent_id_arme="ce76b09e-f306-41c0-bb04-3a7761eac13f">
     <if_exists player_slot="5" />
     <if_variable name="Ship6Modules" comparator="EQUALS" value="3.0" />
+    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Deploy Cluster" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Activate Cluster" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Activate Shields" player_slot="5" sideValue="playerSide" />
@@ -1148,6 +1179,7 @@
     <if_comms_button text="-*Modules" />
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship6Cluster" comparator="LESS" value="1.0" />
+    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Shuttle Operations" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Resupply Operations" player_slot="5" sideValue="playerSide" />
@@ -1160,6 +1192,7 @@
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship6Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship6Cluster" comparator="LESS" value="3.0" />
+    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Shuttle Operations" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Resupply Operations" player_slot="5" sideValue="playerSide" />
@@ -1199,6 +1232,7 @@
     <if_comms_button text="-*Modules" />
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship6Decoy" comparator="LESS" value="1.0" />
+    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Shuttle Operations" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Resupply Operations" player_slot="5" sideValue="playerSide" />
@@ -1236,6 +1270,7 @@
     <if_comms_button text="-*Modules" />
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship6Shields" comparator="LESS" value="1.0" />
+    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Shuttle Operations" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Resupply Operations" player_slot="5" sideValue="playerSide" />
@@ -1248,6 +1283,7 @@
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship6Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship6Shields" comparator="LESS_EQUAL" value="3.0" />
+    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Shuttle Operations" player_slot="5" sideValue="playerSide" />
     <clear_comms_button text="-*Resupply Operations" player_slot="5" sideValue="playerSide" />
@@ -1320,6 +1356,7 @@
   <event name="Main Menu" id_arme="f0b34dcb-54bb-4fb1-b033-5ebee3f24e46" parent_id_arme="6e3851fd-4ac6-4ce0-a927-e5961e4ee0bd">
     <if_exists player_slot="6" />
     <if_variable name="Ship7Modules" comparator="EQUALS" value="3.0" />
+    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Deploy Cluster" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Activate Cluster" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Activate Shields" player_slot="6" sideValue="playerSide" />
@@ -1331,6 +1368,7 @@
     <if_comms_button text="_Modules" />
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship7Cluster" comparator="LESS" value="1.0" />
+    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Shuttle Operations" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Resupply Operations" player_slot="6" sideValue="playerSide" />
@@ -1343,6 +1381,7 @@
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship7Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship7Cluster" comparator="LESS" value="3.0" />
+    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Shuttle Operations" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Resupply Operations" player_slot="6" sideValue="playerSide" />
@@ -1382,6 +1421,7 @@
     <if_comms_button text="_Modules" />
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship7Decoy" comparator="LESS" value="1.0" />
+    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Shuttle Operations" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Resupply Operations" player_slot="6" sideValue="playerSide" />
@@ -1419,6 +1459,7 @@
     <if_comms_button text="_Modules" />
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship7Shields" comparator="LESS" value="1.0" />
+    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Shuttle Operations" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Resupply Operations" player_slot="6" sideValue="playerSide" />
@@ -1431,6 +1472,7 @@
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship7Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship7Shields" comparator="LESS_EQUAL" value="3.0" />
+    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Shuttle Operations" player_slot="6" sideValue="playerSide" />
     <clear_comms_button text="_Resupply Operations" player_slot="6" sideValue="playerSide" />
@@ -1503,6 +1545,7 @@
   <event name="Main Menu" id_arme="bcba53c4-5f36-4cbc-84e6-342e1614c8bb" parent_id_arme="6a2051d5-0c04-4f0e-964d-529915d793ed">
     <if_exists player_slot="7" />
     <if_variable name="Ship8Modules" comparator="EQUALS" value="3.0" />
+    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Deploy Cluster" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Activate Cluster" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Activate Shields" player_slot="7" sideValue="playerSide" />
@@ -1514,6 +1557,7 @@
     <if_comms_button text="__Modules" />
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship8Cluster" comparator="LESS" value="1.0" />
+    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Shuttle Operations" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Resupply Operations" player_slot="7" sideValue="playerSide" />
@@ -1526,6 +1570,7 @@
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship8Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship8Cluster" comparator="LESS" value="3.0" />
+    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Shuttle Operations" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Resupply Operations" player_slot="7" sideValue="playerSide" />
@@ -1565,6 +1610,7 @@
     <if_comms_button text="__Modules" />
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship8Decoy" comparator="LESS" value="1.0" />
+    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Shuttle Operations" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Resupply Operations" player_slot="7" sideValue="playerSide" />
@@ -1602,6 +1648,7 @@
     <if_comms_button text="__Modules" />
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship8Shields" comparator="LESS" value="1.0" />
+    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Shuttle Operations" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Resupply Operations" player_slot="7" sideValue="playerSide" />
@@ -1614,6 +1661,7 @@
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship8Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship8Shields" comparator="LESS_EQUAL" value="3.0" />
+    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Shuttle Operations" player_slot="7" sideValue="playerSide" />
     <clear_comms_button text="__Resupply Operations" player_slot="7" sideValue="playerSide" />
