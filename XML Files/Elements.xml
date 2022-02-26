@@ -7670,7 +7670,7 @@
     <if_comms_button text="*Unload Shuttle" />
     <incoming_comms_text from="CHANNEL 2" sideValue="playerSide" type="STATUS">Orders received. Stand by whilst we configure Theseus as requested.</incoming_comms_text>
     <warning_popup_message message="Loading Theseus" consoles="MC" player_slot="1" />
-    <set_variable name="ShuttleSelect" value="1.0" integer="yes" />
+    <set_variable name="ShuttleSelect" value="2.0" integer="yes" />
     <set_timer name="ShuttleOps" seconds="2" />
     <set_variable name="OperationType" value="1.0" integer="yes" />
   </event>
@@ -7680,7 +7680,7 @@
     <if_comms_button text="*Load Marines" />
     <incoming_comms_text from="CHANNEL 2" sideValue="playerSide" type="STATUS">Orders received. Stand by whilst we configure Theseus as requested.</incoming_comms_text>
     <warning_popup_message message="Loading Theseus" consoles="MC" player_slot="1" />
-    <set_variable name="ShuttleSelect" value="1.0" integer="yes" />
+    <set_variable name="ShuttleSelect" value="2.0" integer="yes" />
     <set_timer name="ShuttleOps" seconds="2" />
     <set_variable name="OperationType" value="2.0" integer="yes" />
   </event>
@@ -7690,7 +7690,7 @@
     <if_comms_button text="*Load Cargo" />
     <incoming_comms_text from="CHANNEL 2" sideValue="playerSide" type="STATUS">Orders received. Stand by whilst we configure Theseus as requested.</incoming_comms_text>
     <warning_popup_message message="Loading Theseus" consoles="MC" player_slot="1" />
-    <set_variable name="ShuttleSelect" value="1.0" integer="yes" />
+    <set_variable name="ShuttleSelect" value="2.0" integer="yes" />
     <set_timer name="ShuttleOps" seconds="2" />
     <set_variable name="OperationType" value="3.0" integer="yes" />
   </event>
@@ -7700,7 +7700,7 @@
     <if_comms_button text="*Load Medical Team" />
     <incoming_comms_text from="CHANNEL 2" sideValue="playerSide" type="STATUS">Orders received. Stand by whilst we configure Theseus as requested.</incoming_comms_text>
     <warning_popup_message message="Loading Theseus" consoles="MC" player_slot="1" />
-    <set_variable name="ShuttleSelect" value="1.0" integer="yes" />
+    <set_variable name="ShuttleSelect" value="2.0" integer="yes" />
     <set_timer name="ShuttleOps" seconds="2" />
     <set_variable name="OperationType" value="4.0" integer="yes" />
   </event>
@@ -7710,7 +7710,7 @@
     <if_comms_button text="*Load Engineering Team" />
     <incoming_comms_text from="CHANNEL 2" sideValue="playerSide" type="STATUS">Orders received. Stand by whilst we configure Theseus as requested.</incoming_comms_text>
     <warning_popup_message message="Loading Theseus" consoles="MC" player_slot="1" />
-    <set_variable name="ShuttleSelect" value="1.0" integer="yes" />
+    <set_variable name="ShuttleSelect" value="2.0" integer="yes" />
     <set_timer name="ShuttleOps" seconds="2" />
     <set_variable name="OperationType" value="5.0" integer="yes" />
   </event>
@@ -7720,7 +7720,7 @@
     <if_comms_button text="*Load Comms Relay" />
     <incoming_comms_text from="CHANNEL 2" sideValue="playerSide" type="STATUS">Orders received. Stand by whilst we configure Theseus as requested.</incoming_comms_text>
     <warning_popup_message message="Loading Theseus" consoles="MC" player_slot="1" />
-    <set_variable name="ShuttleSelect" value="1.0" integer="yes" />
+    <set_variable name="ShuttleSelect" value="2.0" integer="yes" />
     <set_timer name="ShuttleOps" seconds="2" />
     <set_variable name="OperationType" value="6.0" integer="yes" />
   </event>
@@ -7730,7 +7730,7 @@
     <if_comms_button text="*Load Sensor Buoy" />
     <incoming_comms_text from="CHANNEL 2" sideValue="playerSide" type="STATUS">Orders received. Stand by whilst we configure Theseus as requested.</incoming_comms_text>
     <warning_popup_message message="Loading Theseus" consoles="MC" player_slot="1" />
-    <set_variable name="ShuttleSelect" value="1.0" integer="yes" />
+    <set_variable name="ShuttleSelect" value="2.0" integer="yes" />
     <set_timer name="ShuttleOps" seconds="2" />
     <set_variable name="OperationType" value="7.0" integer="yes" />
   </event>

@@ -257,7 +257,7 @@
     <if_timer_finished name="Destroy Objects" />
     <set_timer name="Destroy Objects" seconds="1" />
   </disabled_event>
-  <folder_arme name="Sandbox Activation" id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" />
+  <folder_arme name="Sandbox Activation" id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" expanded_arme="" />
   <folder_arme name="Reset Activation" id_arme="dec1f604-a38a-449a-b80b-d630ce45845c" parent_id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" />
   <event name="Reset All Buttons" id_arme="4db38589-05f0-4387-9dd4-ef08c201581c" parent_id_arme="dec1f604-a38a-449a-b80b-d630ce45845c">
     <if_gm_button text="Restart Sandbox" />
@@ -304,7 +304,7 @@
     <set_gm_button text="Ship6 Config Disabled" x="700" y="425" h="30" w="120" />
     <set_gm_button text="Ship7 Config Disabled" x="700" y="490" h="30" w="120" />
     <set_gm_button text="Ship8 Config Disabled" x="700" y="555" h="30" w="120" />
-    <set_variable name="Custom Config" value="0.0" integer="yes" />
+    <set_variable name="Custom Config" value="1.0" integer="yes" />
     <set_variable name="GM Mode" value="1.0" integer="yes" />
   </event>
   <folder_arme name="GM Mode" id_arme="10a3b890-07b8-4df7-8bb8-5ec4c9750c28" parent_id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" />
