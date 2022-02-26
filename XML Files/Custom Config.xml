@@ -206,27 +206,27 @@
   <event name="Add Menu Item" id_arme="587f2c58-7302-4358-ad12-cad6b0101247" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089">
     <if_exists player_slot="0" />
     <if_variable name="Ship1Modules" comparator="EQUALS" value="0.0" />
-    <set_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
+    <set_comms_button text="-Modules" player_slot="0" />
     <set_variable name="Ship1Modules" value="1.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="89ad5cdd-dac2-40d6-89bf-1e12a6c59a31" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089">
     <if_not_exists player_slot="0" />
     <if_variable name="Ship1Modules" comparator="GREATER" value="0.0" />
-    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Deploy Cluster" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Activate Cluster" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Activate Shields" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Deactivate Shields" player_slot="0" sideValue="playerSide" />
+    <clear_comms_button text="-Modules" player_slot="0" />
+    <clear_comms_button text="-Deploy Cluster" player_slot="0" />
+    <clear_comms_button text="-Activate Cluster" player_slot="0" />
+    <clear_comms_button text="-Activate Shields" player_slot="0" />
+    <clear_comms_button text="-Deactivate Shields" player_slot="0" />
     <set_variable name="Ship1Modules" value="0.0" integer="yes" />
   </event>
   <event name="Main Menu" id_arme="8ebace6c-3c5b-4d44-b59f-7b165e84d9b3" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089">
     <if_exists player_slot="0" />
     <if_variable name="Ship1Modules" comparator="EQUALS" value="3.0" />
-    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Deploy Cluster" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Activate Cluster" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Activate Shields" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Deactivate Shields" player_slot="0" sideValue="playerSide" />
+    <clear_comms_button text="-Modules" player_slot="0" />
+    <clear_comms_button text="-Deploy Cluster" player_slot="0" />
+    <clear_comms_button text="-Activate Cluster" player_slot="0" />
+    <clear_comms_button text="-Activate Shields" player_slot="0" />
+    <clear_comms_button text="-Deactivate Shields" player_slot="0" />
     <set_variable name="Ship1Modules" value="0.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Module" id_arme="1ce6ddc0-a4cd-434c-ba27-12638524c685" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" />
@@ -234,12 +234,12 @@
     <if_comms_button text="-Modules" />
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship1Cluster" comparator="LESS" value="1.0" />
-    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Shuttle Operations" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Resupply Operations" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Main Menu" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Deploy Cluster" player_slot="0" sideValue="playerSide" />
+    <clear_comms_button text="-Modules" player_slot="0" />
+    <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" />
+    <clear_comms_button text="-Shuttle Operations" player_slot="0" />
+    <clear_comms_button text="-Resupply Operations" player_slot="0" />
+    <set_comms_button text="-Main Menu" player_slot="0" />
+    <set_comms_button text="-Deploy Cluster" player_slot="0" />
     <set_variable name="Ship1Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship1 Cluster Module (Activate)" id_arme="383ab464-1e37-4c82-a77d-a579a249446c" parent_id_arme="1ce6ddc0-a4cd-434c-ba27-12638524c685">
@@ -247,19 +247,19 @@
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship1Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship1Cluster" comparator="LESS" value="3.0" />
-    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Shuttle Operations" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Resupply Operations" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Main Menu" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Activate Cluster" player_slot="0" sideValue="playerSide" />
+    <clear_comms_button text="-Modules" player_slot="0" />
+    <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" />
+    <clear_comms_button text="-Shuttle Operations" player_slot="0" />
+    <clear_comms_button text="-Resupply Operations" player_slot="0" />
+    <set_comms_button text="-Main Menu" player_slot="0" />
+    <set_comms_button text="-Activate Cluster" player_slot="0" />
     <set_variable name="Ship1Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Deploy" id_arme="a66f35dc-cc67-47d4-a1c4-76b676617552" parent_id_arme="1ce6ddc0-a4cd-434c-ba27-12638524c685" />
   <event name="Spawn Mine Point" id_arme="f0e2d1a6-0324-43be-98d7-18ae460d3417" parent_id_arme="a66f35dc-cc67-47d4-a1c4-76b676617552">
     <if_comms_button text="-Deploy Cluster" />
     <create type="genericMesh" x="10.0" y="20.0" z="10.0" name="CL.10" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <clear_comms_button text="-Deploy Cluster" player_slot="0" sideValue="playerSide" />
+    <clear_comms_button text="-Deploy Cluster" player_slot="0" />
     <set_variable name="Ship1Cluster" value="1.0" integer="yes" />
   </event>
   <event name="Set Mine Point" id_arme="4ba7ce89-2526-4950-81b8-8101964bbe39" parent_id_arme="a66f35dc-cc67-47d4-a1c4-76b676617552">
@@ -279,7 +279,7 @@
     <create count="1" type="mines" startX="CL.10MinePositionX" startY="0.0" startZ="CL.10MinePositionZ" radius="1" />
     <create count="8" type="mines" startX="CL.10MinePositionX" startY="0.0" startZ="CL.10MinePositionZ" radius="500" />
     <destroy name="CL.10" />
-    <clear_comms_button text="-Activate Cluster" player_slot="0" sideValue="playerSide" />
+    <clear_comms_button text="-Activate Cluster" player_slot="0" />
     <set_variable name="Ship1Cluster" value="4.0" integer="yes" />
   </event>
   <folder_arme name="Decoy Module" id_arme="419ca3d9-821f-40c5-b18f-26a5f0f40c2b" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" />
@@ -287,19 +287,19 @@
     <if_comms_button text="-Modules" />
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship1Decoy" comparator="LESS" value="1.0" />
-    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Shuttle Operations" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Resupply Operations" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Main Menu" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Deploy Decoy" player_slot="0" sideValue="playerSide" />
+    <clear_comms_button text="-Modules" player_slot="0" />
+    <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" />
+    <clear_comms_button text="-Shuttle Operations" player_slot="0" />
+    <clear_comms_button text="-Resupply Operations" player_slot="0" />
+    <set_comms_button text="-Main Menu" player_slot="0" />
+    <set_comms_button text="-Deploy Decoy" player_slot="0" />
     <set_variable name="Ship1Modules" value="2.0" integer="yes" />
   </event>
   <event name="Spawn Decoy Point" id_arme="6bf9635e-93d0-4085-98da-e4f53757b23d" parent_id_arme="419ca3d9-821f-40c5-b18f-26a5f0f40c2b">
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="2.0" />
     <if_comms_button text="-Deploy Decoy" />
-    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.10" hullID="1054" sideValue="playerSide" />
-    <clear_comms_button text="-Deploy Decoy" player_slot="0" sideValue="playerSide" />
+    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.10" hullID="1054" sideValue="playerside" />
+    <clear_comms_button text="-Deploy Decoy" player_slot="0" />
     <set_variable name="Ship1Decoy" value="2.0" integer="yes" />
   </event>
   <event name="Set Decoy Point" id_arme="1ba257c3-52c5-41b6-9034-ce793b8755a7" parent_id_arme="419ca3d9-821f-40c5-b18f-26a5f0f40c2b">
@@ -325,12 +325,12 @@
     <if_comms_button text="-Modules" />
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship1Shields" comparator="LESS" value="1.0" />
-    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Shuttle Operations" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Resupply Operations" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Main Menu" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Activate Shields" player_slot="0" sideValue="playerSide" />
+    <clear_comms_button text="-Modules" player_slot="0" />
+    <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" />
+    <clear_comms_button text="-Shuttle Operations" player_slot="0" />
+    <clear_comms_button text="-Resupply Operations" player_slot="0" />
+    <set_comms_button text="-Main Menu" player_slot="0" />
+    <set_comms_button text="-Activate Shields" player_slot="0" />
     <set_variable name="Ship1Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship1 Shield Module (Dectivate)" id_arme="067d440f-ba12-454f-b742-d339631ea0e5" parent_id_arme="f2749eda-294b-4571-866e-37f8cee4c8be">
@@ -338,28 +338,28 @@
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship1Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship1Shields" comparator="LESS_EQUAL" value="3.0" />
-    <clear_comms_button text="-Modules" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Shuttle Operations" player_slot="0" sideValue="playerSide" />
-    <clear_comms_button text="-Resupply Operations" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Main Menu" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Deactivate Shields" player_slot="0" sideValue="playerSide" />
+    <clear_comms_button text="-Modules" player_slot="0" />
+    <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" />
+    <clear_comms_button text="-Shuttle Operations" player_slot="0" />
+    <clear_comms_button text="-Resupply Operations" player_slot="0" />
+    <set_comms_button text="-Main Menu" player_slot="0" />
+    <set_comms_button text="-Deactivate Shields" player_slot="0" />
     <set_variable name="Ship1Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Shield Enhancement" id_arme="0f1b1577-796c-42fe-a08f-5316dfda1362" parent_id_arme="f2749eda-294b-4571-866e-37f8cee4c8be" />
   <event name="Shields Active" id_arme="92dc46cb-aba0-44db-a1f1-a146ad7e8fb8" parent_id_arme="0f1b1577-796c-42fe-a08f-5316dfda1362">
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="-Activate Shields" />
-    <clear_comms_button text="-Activate Shields" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Deactivate Shields" player_slot="0" sideValue="playerSide" />
+    <clear_comms_button text="-Activate Shields" player_slot="0" />
+    <set_comms_button text="-Deactivate Shields" player_slot="0" />
     <set_timer name="Ship1Shields" seconds="5" />
     <set_variable name="Ship1Shields" value="2.0" integer="yes" />
   </event>
   <event name="Deactivate Shields" id_arme="088aa1d6-dfa7-4d4d-a354-226774b948e4" parent_id_arme="0f1b1577-796c-42fe-a08f-5316dfda1362">
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="-Deactivate Shields" />
-    <clear_comms_button text="-Deactivate Shields" player_slot="0" sideValue="playerSide" />
-    <set_comms_button text="-Activate Shields" player_slot="0" sideValue="playerSide" />
+    <clear_comms_button text="-Deactivate Shields" player_slot="0" />
+    <set_comms_button text="-Activate Shields" player_slot="0" />
     <set_variable name="Ship1Shields" value="0.0" integer="yes" />
     <set_timer name="Ship1Shields" seconds="0" />
   </event>
@@ -395,27 +395,27 @@
   <event name="Add Menu Item" id_arme="27b2b106-d57d-46b2-8a7a-db7d40546b79" parent_id_arme="5ce2907d-e5b7-47d3-950e-8199e55c539d">
     <if_exists player_slot="1" />
     <if_variable name="Ship2Modules" comparator="EQUALS" value="0.0" />
-    <set_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
+    <set_comms_button text="*Modules" player_slot="1" />
     <set_variable name="Ship2Modules" value="1.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="e73dfc9a-41ce-41f1-9dd3-c2de96d993b0" parent_id_arme="5ce2907d-e5b7-47d3-950e-8199e55c539d">
     <if_not_exists player_slot="1" />
     <if_variable name="Ship2Modules" comparator="GREATER" value="0.0" />
-    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Deploy Cluster" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Activate Cluster" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Activate Shields" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Deactivate Shields" player_slot="1" sideValue="playerSide" />
+    <clear_comms_button text="*Modules" player_slot="1" />
+    <clear_comms_button text="*Deploy Cluster" player_slot="1" />
+    <clear_comms_button text="*Activate Cluster" player_slot="1" />
+    <clear_comms_button text="*Activate Shields" player_slot="1" />
+    <clear_comms_button text="*Deactivate Shields" player_slot="1" />
     <set_variable name="Ship2Modules" value="0.0" integer="yes" />
   </event>
   <event name="Main Menu" id_arme="10751b9c-7902-495d-ae8c-6dfa353fcbe3" parent_id_arme="5ce2907d-e5b7-47d3-950e-8199e55c539d">
     <if_exists player_slot="1" />
     <if_variable name="Ship2Modules" comparator="EQUALS" value="3.0" />
-    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Deploy Cluster" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Activate Cluster" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Activate Shields" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Deactivate Shields" player_slot="1" sideValue="playerSide" />
+    <clear_comms_button text="*Modules" player_slot="1" />
+    <clear_comms_button text="*Deploy Cluster" player_slot="1" />
+    <clear_comms_button text="*Activate Cluster" player_slot="1" />
+    <clear_comms_button text="*Activate Shields" player_slot="1" />
+    <clear_comms_button text="*Deactivate Shields" player_slot="1" />
     <set_variable name="Ship2Modules" value="0.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Module" id_arme="654b9a43-726c-4791-b358-216fea6331c2" parent_id_arme="5ce2907d-e5b7-47d3-950e-8199e55c539d" />
@@ -423,12 +423,12 @@
     <if_comms_button text="*Modules" />
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship2Cluster" comparator="LESS" value="1.0" />
-    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Shuttle Operations" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Resupply Operations" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Main Menu" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Deploy Cluster" player_slot="1" sideValue="playerSide" />
+    <clear_comms_button text="*Modules" player_slot="1" />
+    <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" />
+    <clear_comms_button text="*Shuttle Operations" player_slot="1" />
+    <clear_comms_button text="*Resupply Operations" player_slot="1" />
+    <set_comms_button text="*Main Menu" player_slot="1" />
+    <set_comms_button text="*Deploy Cluster" player_slot="1" />
     <set_variable name="Ship2Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship2 Cluster Module (Activate)" id_arme="42befbb7-05b0-4c1e-bb6a-bbd2f2394a1b" parent_id_arme="654b9a43-726c-4791-b358-216fea6331c2">
@@ -436,19 +436,19 @@
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship2Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship2Cluster" comparator="LESS" value="3.0" />
-    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Shuttle Operations" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Resupply Operations" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Main Menu" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Activate Cluster" player_slot="1" sideValue="playerSide" />
+    <clear_comms_button text="*Modules" player_slot="1" />
+    <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" />
+    <clear_comms_button text="*Shuttle Operations" player_slot="1" />
+    <clear_comms_button text="*Resupply Operations" player_slot="1" />
+    <set_comms_button text="*Main Menu" player_slot="1" />
+    <set_comms_button text="*Activate Cluster" player_slot="1" />
     <set_variable name="Ship2Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Deploy" id_arme="7ef02985-355e-4fd3-bc80-acd536f3eafb" parent_id_arme="654b9a43-726c-4791-b358-216fea6331c2" />
   <event name="Spawn Mine Point" id_arme="f18710a2-6468-4299-b751-eca13f13d4e8" parent_id_arme="7ef02985-355e-4fd3-bc80-acd536f3eafb">
     <if_comms_button text="*Deploy Cluster" />
     <create type="genericMesh" x="10.0" y="20.0" z="10.0" name="CL.20" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <clear_comms_button text="*Deploy Cluster" player_slot="1" sideValue="playerSide" />
+    <clear_comms_button text="*Deploy Cluster" player_slot="1" />
     <set_variable name="Ship2Cluster" value="1.0" integer="yes" />
   </event>
   <event name="Set Mine Point" id_arme="670b57b2-5fd5-42df-9430-2c838e064abc" parent_id_arme="7ef02985-355e-4fd3-bc80-acd536f3eafb">
@@ -468,7 +468,7 @@
     <create count="1" type="mines" startX="CL.20MinePositionX" startY="0.0" startZ="CL.20MinePositionZ" radius="1" />
     <create count="8" type="mines" startX="CL.20MinePositionX" startY="0.0" startZ="CL.20MinePositionZ" radius="500" />
     <destroy name="CL.20" />
-    <clear_comms_button text="*Activate Cluster" player_slot="1" sideValue="playerSide" />
+    <clear_comms_button text="*Activate Cluster" player_slot="1" />
     <set_variable name="Ship2Cluster" value="4.0" integer="yes" />
   </event>
   <folder_arme name="Decoy Module" id_arme="698f8d36-7f8b-486a-8a5e-88621a687e45" parent_id_arme="5ce2907d-e5b7-47d3-950e-8199e55c539d" />
@@ -476,19 +476,19 @@
     <if_comms_button text="*Modules" />
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship2Decoy" comparator="LESS" value="1.0" />
-    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Shuttle Operations" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Resupply Operations" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Main Menu" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Deploy Decoy" player_slot="1" sideValue="playerSide" />
+    <clear_comms_button text="*Modules" player_slot="1" />
+    <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" />
+    <clear_comms_button text="*Shuttle Operations" player_slot="1" />
+    <clear_comms_button text="*Resupply Operations" player_slot="1" />
+    <set_comms_button text="*Main Menu" player_slot="1" />
+    <set_comms_button text="*Deploy Decoy" player_slot="1" />
     <set_variable name="Ship2Modules" value="2.0" integer="yes" />
   </event>
   <event name="Spawn Decoy Point" id_arme="9e439d48-e4b6-4187-a85b-d4fd721a3b69" parent_id_arme="698f8d36-7f8b-486a-8a5e-88621a687e45">
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="2.0" />
     <if_comms_button text="*Deploy Decoy" />
-    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.20" hullID="1054" sideValue="playerSide" />
-    <clear_comms_button text="*Deploy Decoy" player_slot="1" sideValue="playerSide" />
+    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.20" hullID="1054" sideValue="playerside" />
+    <clear_comms_button text="*Deploy Decoy" player_slot="1" />
     <set_variable name="Ship2Decoy" value="2.0" integer="yes" />
   </event>
   <event name="Set Decoy Point" id_arme="bc8e8dbd-c130-45c9-8348-48e8941228a2" parent_id_arme="698f8d36-7f8b-486a-8a5e-88621a687e45">
@@ -514,12 +514,12 @@
     <if_comms_button text="*Modules" />
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship2Shields" comparator="LESS" value="1.0" />
-    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Shuttle Operations" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Resupply Operations" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Main Menu" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Activate Shields" player_slot="1" sideValue="playerSide" />
+    <clear_comms_button text="*Modules" player_slot="1" />
+    <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" />
+    <clear_comms_button text="*Shuttle Operations" player_slot="1" />
+    <clear_comms_button text="*Resupply Operations" player_slot="1" />
+    <set_comms_button text="*Main Menu" player_slot="1" />
+    <set_comms_button text="*Activate Shields" player_slot="1" />
     <set_variable name="Ship2Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship2 Shield Module (Dectivate)" id_arme="e4d886cc-e706-4ff1-9bf8-d54297d4b572" parent_id_arme="e8c14a28-6c5d-4eed-9f21-3deb41cd1b45">
@@ -527,28 +527,28 @@
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship2Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship2Shields" comparator="LESS_EQUAL" value="3.0" />
-    <clear_comms_button text="*Modules" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Shuttle Operations" player_slot="1" sideValue="playerSide" />
-    <clear_comms_button text="*Resupply Operations" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Main Menu" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Deactivate Shields" player_slot="1" sideValue="playerSide" />
+    <clear_comms_button text="*Modules" player_slot="1" />
+    <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" />
+    <clear_comms_button text="*Shuttle Operations" player_slot="1" />
+    <clear_comms_button text="*Resupply Operations" player_slot="1" />
+    <set_comms_button text="*Main Menu" player_slot="1" />
+    <set_comms_button text="*Deactivate Shields" player_slot="1" />
     <set_variable name="Ship2Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Shield Enhancement" id_arme="ba3aebf0-bb62-4ad0-a938-863c6617a8f8" parent_id_arme="e8c14a28-6c5d-4eed-9f21-3deb41cd1b45" />
   <event name="Shields Active" id_arme="fa1e8672-1f09-4125-9cbc-12586c502a71" parent_id_arme="ba3aebf0-bb62-4ad0-a938-863c6617a8f8">
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="*Activate Shields" />
-    <clear_comms_button text="*Activate Shields" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Deactivate Shields" player_slot="1" sideValue="playerSide" />
+    <clear_comms_button text="*Activate Shields" player_slot="1" />
+    <set_comms_button text="*Deactivate Shields" player_slot="1" />
     <set_timer name="Ship2Shields" seconds="5" />
     <set_variable name="Ship2Shields" value="2.0" integer="yes" />
   </event>
   <event name="Deactivate Shields" id_arme="f57549a1-1617-4a0c-9564-a69f1fd5386f" parent_id_arme="ba3aebf0-bb62-4ad0-a938-863c6617a8f8">
     <if_variable name="Ship2ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="*Deactivate Shields" />
-    <clear_comms_button text="*Deactivate Shields" player_slot="1" sideValue="playerSide" />
-    <set_comms_button text="*Activate Shields" player_slot="1" sideValue="playerSide" />
+    <clear_comms_button text="*Deactivate Shields" player_slot="1" />
+    <set_comms_button text="*Activate Shields" player_slot="1" />
     <set_variable name="Ship2Shields" value="0.0" integer="yes" />
     <set_timer name="Ship2Shields" seconds="0" />
   </event>
@@ -584,27 +584,27 @@
   <event name="Add Menu Item" id_arme="77faed02-a2e9-40c8-a991-6f9cff58d34d" parent_id_arme="53a51d66-70ea-4fef-a978-3d049200c8d3">
     <if_exists player_slot="2" />
     <if_variable name="Ship3Modules" comparator="EQUALS" value="0.0" />
-    <set_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
+    <set_comms_button text="**Modules" player_slot="2" />
     <set_variable name="Ship3Modules" value="1.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="956ce816-e95a-46ad-805d-de5e2cd7f143" parent_id_arme="53a51d66-70ea-4fef-a978-3d049200c8d3">
     <if_not_exists player_slot="2" />
     <if_variable name="Ship3Modules" comparator="GREATER" value="0.0" />
-    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Deploy Cluster" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Activate Cluster" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Activate Shields" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Deactivate Shields" player_slot="2" sideValue="playerSide" />
+    <clear_comms_button text="**Modules" player_slot="2" />
+    <clear_comms_button text="**Deploy Cluster" player_slot="2" />
+    <clear_comms_button text="**Activate Cluster" player_slot="2" />
+    <clear_comms_button text="**Activate Shields" player_slot="2" />
+    <clear_comms_button text="**Deactivate Shields" player_slot="2" />
     <set_variable name="Ship3Modules" value="0.0" integer="yes" />
   </event>
   <event name="Main Menu" id_arme="bbe00cf8-601f-483f-bb64-02a226a404b7" parent_id_arme="53a51d66-70ea-4fef-a978-3d049200c8d3">
     <if_exists player_slot="2" />
     <if_variable name="Ship3Modules" comparator="EQUALS" value="3.0" />
-    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Deploy Cluster" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Activate Cluster" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Activate Shields" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Deactivate Shields" player_slot="2" sideValue="playerSide" />
+    <clear_comms_button text="**Modules" player_slot="2" />
+    <clear_comms_button text="**Deploy Cluster" player_slot="2" />
+    <clear_comms_button text="**Activate Cluster" player_slot="2" />
+    <clear_comms_button text="**Activate Shields" player_slot="2" />
+    <clear_comms_button text="**Deactivate Shields" player_slot="2" />
     <set_variable name="Ship3Modules" value="0.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Module" id_arme="28d50439-1bb6-4d26-98f5-7ef7cea1e2ef" parent_id_arme="53a51d66-70ea-4fef-a978-3d049200c8d3" />
@@ -612,12 +612,12 @@
     <if_comms_button text="**Modules" />
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship3Cluster" comparator="LESS" value="1.0" />
-    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Shuttle Operations" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Resupply Operations" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Main Menu" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Deploy Cluster" player_slot="2" sideValue="playerSide" />
+    <clear_comms_button text="**Modules" player_slot="2" />
+    <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" />
+    <clear_comms_button text="**Shuttle Operations" player_slot="2" />
+    <clear_comms_button text="**Resupply Operations" player_slot="2" />
+    <set_comms_button text="**Main Menu" player_slot="2" />
+    <set_comms_button text="**Deploy Cluster" player_slot="2" />
     <set_variable name="Ship3Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship3 Cluster Module (Activate)" id_arme="e8eade9e-3a66-4d15-8519-58977bc9e7f4" parent_id_arme="28d50439-1bb6-4d26-98f5-7ef7cea1e2ef">
@@ -625,19 +625,19 @@
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship3Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship3Cluster" comparator="LESS" value="3.0" />
-    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Shuttle Operations" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Resupply Operations" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Main Menu" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Activate Cluster" player_slot="2" sideValue="playerSide" />
+    <clear_comms_button text="**Modules" player_slot="2" />
+    <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" />
+    <clear_comms_button text="**Shuttle Operations" player_slot="2" />
+    <clear_comms_button text="**Resupply Operations" player_slot="2" />
+    <set_comms_button text="**Main Menu" player_slot="2" />
+    <set_comms_button text="**Activate Cluster" player_slot="2" />
     <set_variable name="Ship3Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Deploy" id_arme="acc87f80-d1f7-44cf-9bae-b32cca72ef5d" parent_id_arme="28d50439-1bb6-4d26-98f5-7ef7cea1e2ef" />
   <event name="Spawn Mine Point" id_arme="634dbcb0-436b-42ff-b476-0cac230795c6" parent_id_arme="acc87f80-d1f7-44cf-9bae-b32cca72ef5d">
     <if_comms_button text="**Deploy Cluster" />
     <create type="genericMesh" x="10.0" y="20.0" z="10.0" name="CL.30" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <clear_comms_button text="**Deploy Cluster" player_slot="2" sideValue="playerSide" />
+    <clear_comms_button text="**Deploy Cluster" player_slot="2" />
     <set_variable name="Ship3Cluster" value="1.0" integer="yes" />
   </event>
   <event name="Set Mine Point" id_arme="f3c038fe-354e-4283-9d57-ad11a970a500" parent_id_arme="acc87f80-d1f7-44cf-9bae-b32cca72ef5d">
@@ -657,7 +657,7 @@
     <create count="1" type="mines" startX="CL.30MinePositionX" startY="0.0" startZ="CL.30MinePositionZ" radius="1" />
     <create count="8" type="mines" startX="CL.30MinePositionX" startY="0.0" startZ="CL.30MinePositionZ" radius="500" />
     <destroy name="CL.30" />
-    <clear_comms_button text="**Activate Cluster" player_slot="2" sideValue="playerSide" />
+    <clear_comms_button text="**Activate Cluster" player_slot="2" />
     <set_variable name="Ship3Cluster" value="4.0" integer="yes" />
   </event>
   <folder_arme name="Decoy Module" id_arme="842d2cd4-bf84-440a-952f-2a07ac438055" parent_id_arme="53a51d66-70ea-4fef-a978-3d049200c8d3" />
@@ -665,19 +665,19 @@
     <if_comms_button text="**Modules" />
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship3Decoy" comparator="LESS" value="1.0" />
-    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Shuttle Operations" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Resupply Operations" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Main Menu" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Deploy Decoy" player_slot="2" sideValue="playerSide" />
+    <clear_comms_button text="**Modules" player_slot="2" />
+    <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" />
+    <clear_comms_button text="**Shuttle Operations" player_slot="2" />
+    <clear_comms_button text="**Resupply Operations" player_slot="2" />
+    <set_comms_button text="**Main Menu" player_slot="2" />
+    <set_comms_button text="**Deploy Decoy" player_slot="2" />
     <set_variable name="Ship3Modules" value="2.0" integer="yes" />
   </event>
   <event name="Spawn Decoy Point" id_arme="288f0c03-1939-467b-bb21-b97c66b628f1" parent_id_arme="842d2cd4-bf84-440a-952f-2a07ac438055">
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="2.0" />
     <if_comms_button text="**Deploy Decoy" />
-    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.30" hullID="1054" sideValue="playerSide" />
-    <clear_comms_button text="**Deploy Decoy" player_slot="2" sideValue="playerSide" />
+    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.30" hullID="1054" sideValue="playerside" />
+    <clear_comms_button text="**Deploy Decoy" player_slot="2" />
     <set_variable name="Ship3Decoy" value="2.0" integer="yes" />
   </event>
   <event name="Set Decoy Point" id_arme="134c21a9-56f0-419a-8286-5e7a03a5cb6c" parent_id_arme="842d2cd4-bf84-440a-952f-2a07ac438055">
@@ -703,12 +703,12 @@
     <if_comms_button text="**Modules" />
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship3Shields" comparator="LESS" value="1.0" />
-    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Shuttle Operations" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Resupply Operations" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Main Menu" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Activate Shields" player_slot="2" sideValue="playerSide" />
+    <clear_comms_button text="**Modules" player_slot="2" />
+    <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" />
+    <clear_comms_button text="**Shuttle Operations" player_slot="2" />
+    <clear_comms_button text="**Resupply Operations" player_slot="2" />
+    <set_comms_button text="**Main Menu" player_slot="2" />
+    <set_comms_button text="**Activate Shields" player_slot="2" />
     <set_variable name="Ship3Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship3 Shield Module (Dectivate)" id_arme="bcaf3807-3041-4412-b621-5b5d6d0a101d" parent_id_arme="f8bc8aa9-4711-48cb-8d6b-c5f8e5bee240">
@@ -716,28 +716,28 @@
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship3Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship3Shields" comparator="LESS_EQUAL" value="3.0" />
-    <clear_comms_button text="**Modules" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Shuttle Operations" player_slot="2" sideValue="playerSide" />
-    <clear_comms_button text="**Resupply Operations" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Main Menu" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Deactivate Shields" player_slot="2" sideValue="playerSide" />
+    <clear_comms_button text="**Modules" player_slot="2" />
+    <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" />
+    <clear_comms_button text="**Shuttle Operations" player_slot="2" />
+    <clear_comms_button text="**Resupply Operations" player_slot="2" />
+    <set_comms_button text="**Main Menu" player_slot="2" />
+    <set_comms_button text="**Deactivate Shields" player_slot="2" />
     <set_variable name="Ship3Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Shield Enhancement" id_arme="100b8d9f-234a-4633-a9c1-52709cfb91af" parent_id_arme="f8bc8aa9-4711-48cb-8d6b-c5f8e5bee240" />
   <event name="Shields Active" id_arme="fb8d979a-349d-4ab7-86fa-02f343afb9a5" parent_id_arme="100b8d9f-234a-4633-a9c1-52709cfb91af">
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="**Activate Shields" />
-    <clear_comms_button text="**Activate Shields" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Deactivate Shields" player_slot="2" sideValue="playerSide" />
+    <clear_comms_button text="**Activate Shields" player_slot="2" />
+    <set_comms_button text="**Deactivate Shields" player_slot="2" />
     <set_timer name="Ship3Shields" seconds="5" />
     <set_variable name="Ship3Shields" value="2.0" integer="yes" />
   </event>
   <event name="Deactivate Shields" id_arme="f8b41a46-9c15-4842-945c-1766276fcb91" parent_id_arme="100b8d9f-234a-4633-a9c1-52709cfb91af">
     <if_variable name="Ship3ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="**Deactivate Shields" />
-    <clear_comms_button text="**Deactivate Shields" player_slot="2" sideValue="playerSide" />
-    <set_comms_button text="**Activate Shields" player_slot="2" sideValue="playerSide" />
+    <clear_comms_button text="**Deactivate Shields" player_slot="2" />
+    <set_comms_button text="**Activate Shields" player_slot="2" />
     <set_variable name="Ship3Shields" value="0.0" integer="yes" />
     <set_timer name="Ship3Shields" seconds="0" />
   </event>
@@ -773,27 +773,27 @@
   <event name="Add Menu Item" id_arme="043ef548-4baa-4941-baee-900e7b71e875" parent_id_arme="f97468dd-f9a6-4dfd-8060-a1c5cbc4fe46">
     <if_exists player_slot="3" />
     <if_variable name="Ship4Modules" comparator="EQUALS" value="0.0" />
-    <set_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
+    <set_comms_button text="--Modules" player_slot="3" />
     <set_variable name="Ship4Modules" value="1.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="6caf1c6e-7b5c-4307-8653-9127f0702f1c" parent_id_arme="f97468dd-f9a6-4dfd-8060-a1c5cbc4fe46">
     <if_not_exists player_slot="3" />
     <if_variable name="Ship4Modules" comparator="GREATER" value="0.0" />
-    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Deploy Cluster" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Activate Cluster" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Activate Shields" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Deactivate Shields" player_slot="3" sideValue="playerSide" />
+    <clear_comms_button text="--Modules" player_slot="3" />
+    <clear_comms_button text="--Deploy Cluster" player_slot="3" />
+    <clear_comms_button text="--Activate Cluster" player_slot="3" />
+    <clear_comms_button text="--Activate Shields" player_slot="3" />
+    <clear_comms_button text="--Deactivate Shields" player_slot="3" />
     <set_variable name="Ship4Modules" value="0.0" integer="yes" />
   </event>
   <event name="Main Menu" id_arme="fc39755e-068e-4858-86bc-46aa23d58da1" parent_id_arme="f97468dd-f9a6-4dfd-8060-a1c5cbc4fe46">
     <if_exists player_slot="3" />
     <if_variable name="Ship4Modules" comparator="EQUALS" value="3.0" />
-    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Deploy Cluster" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Activate Cluster" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Activate Shields" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Deactivate Shields" player_slot="3" sideValue="playerSide" />
+    <clear_comms_button text="--Modules" player_slot="3" />
+    <clear_comms_button text="--Deploy Cluster" player_slot="3" />
+    <clear_comms_button text="--Activate Cluster" player_slot="3" />
+    <clear_comms_button text="--Activate Shields" player_slot="3" />
+    <clear_comms_button text="--Deactivate Shields" player_slot="3" />
     <set_variable name="Ship4Modules" value="0.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Module" id_arme="e46983d7-4c6a-43d6-98c7-cde2c7ccb44f" parent_id_arme="f97468dd-f9a6-4dfd-8060-a1c5cbc4fe46" />
@@ -801,12 +801,12 @@
     <if_comms_button text="--Modules" />
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship4Cluster" comparator="LESS" value="1.0" />
-    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Shuttle Operations" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Resupply Operations" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Main Menu" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Deploy Cluster" player_slot="3" sideValue="playerSide" />
+    <clear_comms_button text="--Modules" player_slot="3" />
+    <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" />
+    <clear_comms_button text="--Shuttle Operations" player_slot="3" />
+    <clear_comms_button text="--Resupply Operations" player_slot="3" />
+    <set_comms_button text="--Main Menu" player_slot="3" />
+    <set_comms_button text="--Deploy Cluster" player_slot="3" />
     <set_variable name="Ship4Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship4 Cluster Module (Activate)" id_arme="640041b1-18e0-4c82-beae-41e5c739b47d" parent_id_arme="e46983d7-4c6a-43d6-98c7-cde2c7ccb44f">
@@ -814,19 +814,19 @@
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship4Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship4Cluster" comparator="LESS" value="3.0" />
-    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Shuttle Operations" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Resupply Operations" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Main Menu" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Activate Cluster" player_slot="3" sideValue="playerSide" />
+    <clear_comms_button text="--Modules" player_slot="3" />
+    <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" />
+    <clear_comms_button text="--Shuttle Operations" player_slot="3" />
+    <clear_comms_button text="--Resupply Operations" player_slot="3" />
+    <set_comms_button text="--Main Menu" player_slot="3" />
+    <set_comms_button text="--Activate Cluster" player_slot="3" />
     <set_variable name="Ship4Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Deploy" id_arme="7300d1f5-fa7d-40b4-a3e3-67e1dffeba25" parent_id_arme="e46983d7-4c6a-43d6-98c7-cde2c7ccb44f" />
   <event name="Spawn Mine Point" id_arme="1a9ddbff-ac8c-4143-95ef-f640302f2033" parent_id_arme="7300d1f5-fa7d-40b4-a3e3-67e1dffeba25">
     <if_comms_button text="--Deploy Cluster" />
     <create type="genericMesh" x="10.0" y="20.0" z="10.0" name="CL.40" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <clear_comms_button text="--Deploy Cluster" player_slot="3" sideValue="playerSide" />
+    <clear_comms_button text="--Deploy Cluster" player_slot="3" />
     <set_variable name="Ship4Cluster" value="1.0" integer="yes" />
   </event>
   <event name="Set Mine Point" id_arme="91f8935a-2f06-48d6-b2e6-147f2a26fff6" parent_id_arme="7300d1f5-fa7d-40b4-a3e3-67e1dffeba25">
@@ -846,7 +846,7 @@
     <create count="1" type="mines" startX="CL.40MinePositionX" startY="0.0" startZ="CL.40MinePositionZ" radius="1" />
     <create count="8" type="mines" startX="CL.40MinePositionX" startY="0.0" startZ="CL.40MinePositionZ" radius="500" />
     <destroy name="CL.40" />
-    <clear_comms_button text="--Activate Cluster" player_slot="3" sideValue="playerSide" />
+    <clear_comms_button text="--Activate Cluster" player_slot="3" />
     <set_variable name="Ship4Cluster" value="4.0" integer="yes" />
   </event>
   <folder_arme name="Decoy Module" id_arme="70734317-2405-4d2f-a377-685d40174da9" parent_id_arme="f97468dd-f9a6-4dfd-8060-a1c5cbc4fe46" />
@@ -854,19 +854,19 @@
     <if_comms_button text="--Modules" />
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship4Decoy" comparator="LESS" value="1.0" />
-    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Shuttle Operations" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Resupply Operations" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Main Menu" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Deploy Decoy" player_slot="3" sideValue="playerSide" />
+    <clear_comms_button text="--Modules" player_slot="3" />
+    <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" />
+    <clear_comms_button text="--Shuttle Operations" player_slot="3" />
+    <clear_comms_button text="--Resupply Operations" player_slot="3" />
+    <set_comms_button text="--Main Menu" player_slot="3" />
+    <set_comms_button text="--Deploy Decoy" player_slot="3" />
     <set_variable name="Ship4Modules" value="2.0" integer="yes" />
   </event>
   <event name="Spawn Decoy Point" id_arme="0489c516-3203-48b9-800a-bcfebd6b4b7e" parent_id_arme="70734317-2405-4d2f-a377-685d40174da9">
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="2.0" />
     <if_comms_button text="--Deploy Decoy" />
-    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.40" hullID="1054" sideValue="playerSide" />
-    <clear_comms_button text="--Deploy Decoy" player_slot="3" sideValue="playerSide" />
+    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.40" hullID="1054" sideValue="playerside" />
+    <clear_comms_button text="--Deploy Decoy" player_slot="3" />
     <set_variable name="Ship4Decoy" value="2.0" integer="yes" />
   </event>
   <event name="Set Decoy Point" id_arme="6baf66bf-9086-4946-9fc5-cb4fc4d04091" parent_id_arme="70734317-2405-4d2f-a377-685d40174da9">
@@ -892,12 +892,12 @@
     <if_comms_button text="--Modules" />
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship4Shields" comparator="LESS" value="1.0" />
-    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Shuttle Operations" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Resupply Operations" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Main Menu" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Activate Shields" player_slot="3" sideValue="playerSide" />
+    <clear_comms_button text="--Modules" player_slot="3" />
+    <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" />
+    <clear_comms_button text="--Shuttle Operations" player_slot="3" />
+    <clear_comms_button text="--Resupply Operations" player_slot="3" />
+    <set_comms_button text="--Main Menu" player_slot="3" />
+    <set_comms_button text="--Activate Shields" player_slot="3" />
     <set_variable name="Ship4Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship4 Shield Module (Dectivate)" id_arme="10385008-0c82-4248-bfdf-0ef59337f06a" parent_id_arme="48211989-0224-4dcc-8dc6-b06341f2bf95">
@@ -905,28 +905,28 @@
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship4Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship4Shields" comparator="LESS_EQUAL" value="3.0" />
-    <clear_comms_button text="--Modules" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Shuttle Operations" player_slot="3" sideValue="playerSide" />
-    <clear_comms_button text="--Resupply Operations" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Main Menu" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Deactivate Shields" player_slot="3" sideValue="playerSide" />
+    <clear_comms_button text="--Modules" player_slot="3" />
+    <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" />
+    <clear_comms_button text="--Shuttle Operations" player_slot="3" />
+    <clear_comms_button text="--Resupply Operations" player_slot="3" />
+    <set_comms_button text="--Main Menu" player_slot="3" />
+    <set_comms_button text="--Deactivate Shields" player_slot="3" />
     <set_variable name="Ship4Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Shield Enhancement" id_arme="c4bf279b-dd03-4589-be61-1da4bc21e488" parent_id_arme="48211989-0224-4dcc-8dc6-b06341f2bf95" />
   <event name="Shields Active" id_arme="cf8ec489-abec-4d53-8809-05658bc06165" parent_id_arme="c4bf279b-dd03-4589-be61-1da4bc21e488">
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="--Activate Shields" />
-    <clear_comms_button text="--Activate Shields" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Deactivate Shields" player_slot="3" sideValue="playerSide" />
+    <clear_comms_button text="--Activate Shields" player_slot="3" />
+    <set_comms_button text="--Deactivate Shields" player_slot="3" />
     <set_timer name="Ship4Shields" seconds="5" />
     <set_variable name="Ship4Shields" value="2.0" integer="yes" />
   </event>
   <event name="Deactivate Shields" id_arme="3487ec0b-07f0-4465-bf68-fcd2b3851fd6" parent_id_arme="c4bf279b-dd03-4589-be61-1da4bc21e488">
     <if_variable name="Ship4ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="--Deactivate Shields" />
-    <clear_comms_button text="--Deactivate Shields" player_slot="3" sideValue="playerSide" />
-    <set_comms_button text="--Activate Shields" player_slot="3" sideValue="playerSide" />
+    <clear_comms_button text="--Deactivate Shields" player_slot="3" />
+    <set_comms_button text="--Activate Shields" player_slot="3" />
     <set_variable name="Ship4Shields" value="0.0" integer="yes" />
     <set_timer name="Ship4Shields" seconds="0" />
   </event>
@@ -962,27 +962,27 @@
   <event name="Add Menu Item" id_arme="fe754295-af4b-4909-af67-8c726bde4f0e" parent_id_arme="80a7dc88-68d7-497f-9d5d-cac376e8e4b4">
     <if_exists player_slot="4" />
     <if_variable name="Ship5Modules" comparator="EQUALS" value="0.0" />
-    <set_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
+    <set_comms_button text="*-Modules" player_slot="4" />
     <set_variable name="Ship5Modules" value="1.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="84f44b97-3682-4b9f-9bab-b614dc0c1a2e" parent_id_arme="80a7dc88-68d7-497f-9d5d-cac376e8e4b4">
     <if_not_exists player_slot="4" />
     <if_variable name="Ship5Modules" comparator="GREATER" value="0.0" />
-    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Deploy Cluster" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Activate Cluster" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Activate Shields" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Deactivate Shields" player_slot="4" sideValue="playerSide" />
+    <clear_comms_button text="*-Modules" player_slot="4" />
+    <clear_comms_button text="*-Deploy Cluster" player_slot="4" />
+    <clear_comms_button text="*-Activate Cluster" player_slot="4" />
+    <clear_comms_button text="*-Activate Shields" player_slot="4" />
+    <clear_comms_button text="*-Deactivate Shields" player_slot="4" />
     <set_variable name="Ship5Modules" value="0.0" integer="yes" />
   </event>
   <event name="Main Menu" id_arme="f3836319-6c1d-4b26-8642-e37c21d7c93b" parent_id_arme="80a7dc88-68d7-497f-9d5d-cac376e8e4b4">
     <if_exists player_slot="4" />
     <if_variable name="Ship5Modules" comparator="EQUALS" value="3.0" />
-    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Deploy Cluster" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Activate Cluster" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Activate Shields" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Deactivate Shields" player_slot="4" sideValue="playerSide" />
+    <clear_comms_button text="*-Modules" player_slot="4" />
+    <clear_comms_button text="*-Deploy Cluster" player_slot="4" />
+    <clear_comms_button text="*-Activate Cluster" player_slot="4" />
+    <clear_comms_button text="*-Activate Shields" player_slot="4" />
+    <clear_comms_button text="*-Deactivate Shields" player_slot="4" />
     <set_variable name="Ship5Modules" value="0.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Module" id_arme="a4720798-34f3-46ae-aa63-21852a52c3ea" parent_id_arme="80a7dc88-68d7-497f-9d5d-cac376e8e4b4" />
@@ -990,12 +990,12 @@
     <if_comms_button text="*-Modules" />
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship5Cluster" comparator="LESS" value="1.0" />
-    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Shuttle Operations" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Resupply Operations" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Main Menu" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Deploy Cluster" player_slot="4" sideValue="playerSide" />
+    <clear_comms_button text="*-Modules" player_slot="4" />
+    <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" />
+    <clear_comms_button text="*-Shuttle Operations" player_slot="4" />
+    <clear_comms_button text="*-Resupply Operations" player_slot="4" />
+    <set_comms_button text="*-Main Menu" player_slot="4" />
+    <set_comms_button text="*-Deploy Cluster" player_slot="4" />
     <set_variable name="Ship5Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship5 Cluster Module (Activate)" id_arme="9e7f3c2c-0443-4cb6-9d41-bf5b393f876d" parent_id_arme="a4720798-34f3-46ae-aa63-21852a52c3ea">
@@ -1003,19 +1003,19 @@
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship5Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship5Cluster" comparator="LESS" value="3.0" />
-    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Shuttle Operations" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Resupply Operations" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Main Menu" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Activate Cluster" player_slot="4" sideValue="playerSide" />
+    <clear_comms_button text="*-Modules" player_slot="4" />
+    <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" />
+    <clear_comms_button text="*-Shuttle Operations" player_slot="4" />
+    <clear_comms_button text="*-Resupply Operations" player_slot="4" />
+    <set_comms_button text="*-Main Menu" player_slot="4" />
+    <set_comms_button text="*-Activate Cluster" player_slot="4" />
     <set_variable name="Ship5Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Deploy" id_arme="accacd90-9f2c-43b4-acac-d176c3656a6c" parent_id_arme="a4720798-34f3-46ae-aa63-21852a52c3ea" />
   <event name="Spawn Mine Point" id_arme="a3f77b17-37a2-4a3c-9a9c-28a97c100980" parent_id_arme="accacd90-9f2c-43b4-acac-d176c3656a6c">
     <if_comms_button text="*-Deploy Cluster" />
     <create type="genericMesh" x="10.0" y="20.0" z="10.0" name="CL.50" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <clear_comms_button text="*-Deploy Cluster" player_slot="4" sideValue="playerSide" />
+    <clear_comms_button text="*-Deploy Cluster" player_slot="4" />
     <set_variable name="Ship5Cluster" value="1.0" integer="yes" />
   </event>
   <event name="Set Mine Point" id_arme="2daeabfe-2109-46e6-a345-e6977d69ff87" parent_id_arme="accacd90-9f2c-43b4-acac-d176c3656a6c">
@@ -1035,7 +1035,7 @@
     <create count="1" type="mines" startX="CL.50MinePositionX" startY="0.0" startZ="CL.50MinePositionZ" radius="1" />
     <create count="8" type="mines" startX="CL.50MinePositionX" startY="0.0" startZ="CL.50MinePositionZ" radius="500" />
     <destroy name="CL.50" />
-    <clear_comms_button text="*-Activate Cluster" player_slot="4" sideValue="playerSide" />
+    <clear_comms_button text="*-Activate Cluster" player_slot="4" />
     <set_variable name="Ship5Cluster" value="4.0" integer="yes" />
   </event>
   <folder_arme name="Decoy Module" id_arme="b52f71aa-7d8c-422a-9015-b44f4c4520f0" parent_id_arme="80a7dc88-68d7-497f-9d5d-cac376e8e4b4" />
@@ -1043,19 +1043,19 @@
     <if_comms_button text="*-Modules" />
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship5Decoy" comparator="LESS" value="1.0" />
-    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Shuttle Operations" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Resupply Operations" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Main Menu" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Deploy Decoy" player_slot="4" sideValue="playerSide" />
+    <clear_comms_button text="*-Modules" player_slot="4" />
+    <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" />
+    <clear_comms_button text="*-Shuttle Operations" player_slot="4" />
+    <clear_comms_button text="*-Resupply Operations" player_slot="4" />
+    <set_comms_button text="*-Main Menu" player_slot="4" />
+    <set_comms_button text="*-Deploy Decoy" player_slot="4" />
     <set_variable name="Ship5Modules" value="2.0" integer="yes" />
   </event>
   <event name="Spawn Decoy Point" id_arme="2514f2f9-9ef6-4ae0-b54a-4e16188e12d2" parent_id_arme="b52f71aa-7d8c-422a-9015-b44f4c4520f0">
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="2.0" />
     <if_comms_button text="*-Deploy Decoy" />
-    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.50" hullID="1054" sideValue="playerSide" />
-    <clear_comms_button text="*-Deploy Decoy" player_slot="4" sideValue="playerSide" />
+    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.50" hullID="1054" sideValue="playerside" />
+    <clear_comms_button text="*-Deploy Decoy" player_slot="4" />
     <set_variable name="Ship5Decoy" value="2.0" integer="yes" />
   </event>
   <event name="Set Decoy Point" id_arme="ce16062a-0ec0-44e8-9063-5e8634010c4b" parent_id_arme="b52f71aa-7d8c-422a-9015-b44f4c4520f0">
@@ -1081,12 +1081,12 @@
     <if_comms_button text="*-Modules" />
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship5Shields" comparator="LESS" value="1.0" />
-    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Shuttle Operations" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Resupply Operations" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Main Menu" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Activate Shields" player_slot="4" sideValue="playerSide" />
+    <clear_comms_button text="*-Modules" player_slot="4" />
+    <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" />
+    <clear_comms_button text="*-Shuttle Operations" player_slot="4" />
+    <clear_comms_button text="*-Resupply Operations" player_slot="4" />
+    <set_comms_button text="*-Main Menu" player_slot="4" />
+    <set_comms_button text="*-Activate Shields" player_slot="4" />
     <set_variable name="Ship5Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship5 Shield Module (Dectivate)" id_arme="9cd4fcbd-1db5-4b24-b02f-0304c4c7500d" parent_id_arme="ad226c03-8413-4c26-a9b3-61ecc41dab71">
@@ -1094,28 +1094,28 @@
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship5Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship5Shields" comparator="LESS_EQUAL" value="3.0" />
-    <clear_comms_button text="*-Modules" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Shuttle Operations" player_slot="4" sideValue="playerSide" />
-    <clear_comms_button text="*-Resupply Operations" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Main Menu" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Deactivate Shields" player_slot="4" sideValue="playerSide" />
+    <clear_comms_button text="*-Modules" player_slot="4" />
+    <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" />
+    <clear_comms_button text="*-Shuttle Operations" player_slot="4" />
+    <clear_comms_button text="*-Resupply Operations" player_slot="4" />
+    <set_comms_button text="*-Main Menu" player_slot="4" />
+    <set_comms_button text="*-Deactivate Shields" player_slot="4" />
     <set_variable name="Ship5Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Shield Enhancement" id_arme="6ceaba0f-9931-4ff3-8b07-edd167b0623c" parent_id_arme="ad226c03-8413-4c26-a9b3-61ecc41dab71" />
   <event name="Shields Active" id_arme="ce804317-0646-4fac-b7b4-ceca534038d3" parent_id_arme="6ceaba0f-9931-4ff3-8b07-edd167b0623c">
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="*-Activate Shields" />
-    <clear_comms_button text="*-Activate Shields" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Deactivate Shields" player_slot="4" sideValue="playerSide" />
+    <clear_comms_button text="*-Activate Shields" player_slot="4" />
+    <set_comms_button text="*-Deactivate Shields" player_slot="4" />
     <set_timer name="Ship5Shields" seconds="5" />
     <set_variable name="Ship5Shields" value="2.0" integer="yes" />
   </event>
   <event name="Deactivate Shields" id_arme="f1ae9437-4bdf-46e4-83bc-fa46f2e28198" parent_id_arme="6ceaba0f-9931-4ff3-8b07-edd167b0623c">
     <if_variable name="Ship5ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="*-Deactivate Shields" />
-    <clear_comms_button text="*-Deactivate Shields" player_slot="4" sideValue="playerSide" />
-    <set_comms_button text="*-Activate Shields" player_slot="4" sideValue="playerSide" />
+    <clear_comms_button text="*-Deactivate Shields" player_slot="4" />
+    <set_comms_button text="*-Activate Shields" player_slot="4" />
     <set_variable name="Ship5Shields" value="0.0" integer="yes" />
     <set_timer name="Ship5Shields" seconds="0" />
   </event>
@@ -1151,27 +1151,27 @@
   <event name="Add Menu Item" id_arme="3c71761c-0105-44f8-b3e7-25600bfd1739" parent_id_arme="ce76b09e-f306-41c0-bb04-3a7761eac13f">
     <if_exists player_slot="5" />
     <if_variable name="Ship6Modules" comparator="EQUALS" value="0.0" />
-    <set_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
+    <set_comms_button text="-*Modules" player_slot="5" />
     <set_variable name="Ship6Modules" value="1.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="ef2e90d4-c96b-4f8c-afc9-e10d881d2e9c" parent_id_arme="ce76b09e-f306-41c0-bb04-3a7761eac13f">
     <if_not_exists player_slot="5" />
     <if_variable name="Ship6Modules" comparator="GREATER" value="0.0" />
-    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Deploy Cluster" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Activate Cluster" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Activate Shields" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Deactivate Shields" player_slot="5" sideValue="playerSide" />
+    <clear_comms_button text="-*Modules" player_slot="5" />
+    <clear_comms_button text="-*Deploy Cluster" player_slot="5" />
+    <clear_comms_button text="-*Activate Cluster" player_slot="5" />
+    <clear_comms_button text="-*Activate Shields" player_slot="5" />
+    <clear_comms_button text="-*Deactivate Shields" player_slot="5" />
     <set_variable name="Ship6Modules" value="0.0" integer="yes" />
   </event>
   <event name="Main Menu" id_arme="6454dbcd-e583-40cc-bc4e-6f9aeeffbf89" parent_id_arme="ce76b09e-f306-41c0-bb04-3a7761eac13f">
     <if_exists player_slot="5" />
     <if_variable name="Ship6Modules" comparator="EQUALS" value="3.0" />
-    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Deploy Cluster" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Activate Cluster" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Activate Shields" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Deactivate Shields" player_slot="5" sideValue="playerSide" />
+    <clear_comms_button text="-*Modules" player_slot="5" />
+    <clear_comms_button text="-*Deploy Cluster" player_slot="5" />
+    <clear_comms_button text="-*Activate Cluster" player_slot="5" />
+    <clear_comms_button text="-*Activate Shields" player_slot="5" />
+    <clear_comms_button text="-*Deactivate Shields" player_slot="5" />
     <set_variable name="Ship6Modules" value="0.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Module" id_arme="2ea70662-b66d-4713-9232-7ab36ec6d9d7" parent_id_arme="ce76b09e-f306-41c0-bb04-3a7761eac13f" />
@@ -1179,12 +1179,12 @@
     <if_comms_button text="-*Modules" />
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship6Cluster" comparator="LESS" value="1.0" />
-    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Shuttle Operations" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Resupply Operations" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Main Menu" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Deploy Cluster" player_slot="5" sideValue="playerSide" />
+    <clear_comms_button text="-*Modules" player_slot="5" />
+    <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" />
+    <clear_comms_button text="-*Shuttle Operations" player_slot="5" />
+    <clear_comms_button text="-*Resupply Operations" player_slot="5" />
+    <set_comms_button text="-*Main Menu" player_slot="5" />
+    <set_comms_button text="-*Deploy Cluster" player_slot="5" />
     <set_variable name="Ship6Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship6 Cluster Module (Activate)" id_arme="a8e7d33a-d51d-43b8-b3b3-e4504b25d80e" parent_id_arme="2ea70662-b66d-4713-9232-7ab36ec6d9d7">
@@ -1192,19 +1192,19 @@
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship6Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship6Cluster" comparator="LESS" value="3.0" />
-    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Shuttle Operations" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Resupply Operations" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Main Menu" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Activate Cluster" player_slot="5" sideValue="playerSide" />
+    <clear_comms_button text="-*Modules" player_slot="5" />
+    <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" />
+    <clear_comms_button text="-*Shuttle Operations" player_slot="5" />
+    <clear_comms_button text="-*Resupply Operations" player_slot="5" />
+    <set_comms_button text="-*Main Menu" player_slot="5" />
+    <set_comms_button text="-*Activate Cluster" player_slot="5" />
     <set_variable name="Ship6Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Deploy" id_arme="94018598-5c80-444c-8014-55bcfb0c972d" parent_id_arme="2ea70662-b66d-4713-9232-7ab36ec6d9d7" />
   <event name="Spawn Mine Point" id_arme="48c481da-8ca4-48be-823c-6bb55a5c4ad1" parent_id_arme="94018598-5c80-444c-8014-55bcfb0c972d">
     <if_comms_button text="-*Deploy Cluster" />
     <create type="genericMesh" x="10.0" y="20.0" z="10.0" name="CL.60" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <clear_comms_button text="-*Deploy Cluster" player_slot="5" sideValue="playerSide" />
+    <clear_comms_button text="-*Deploy Cluster" player_slot="5" />
     <set_variable name="Ship6Cluster" value="1.0" integer="yes" />
   </event>
   <event name="Set Mine Point" id_arme="365949d9-fe1f-4e79-bce5-c88500c3204b" parent_id_arme="94018598-5c80-444c-8014-55bcfb0c972d">
@@ -1224,7 +1224,7 @@
     <create count="1" type="mines" startX="CL.60MinePositionX" startY="0.0" startZ="CL.60MinePositionZ" radius="1" />
     <create count="8" type="mines" startX="CL.60MinePositionX" startY="0.0" startZ="CL.60MinePositionZ" radius="500" />
     <destroy name="CL.60" />
-    <clear_comms_button text="-*Activate Cluster" player_slot="5" sideValue="playerSide" />
+    <clear_comms_button text="-*Activate Cluster" player_slot="5" />
     <set_variable name="Ship6Cluster" value="4.0" integer="yes" />
   </event>
   <folder_arme name="Decoy Module" id_arme="e5b32638-187e-4701-94e4-de83e746581f" parent_id_arme="ce76b09e-f306-41c0-bb04-3a7761eac13f" />
@@ -1232,19 +1232,19 @@
     <if_comms_button text="-*Modules" />
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship6Decoy" comparator="LESS" value="1.0" />
-    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Shuttle Operations" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Resupply Operations" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Main Menu" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Deploy Decoy" player_slot="5" sideValue="playerSide" />
+    <clear_comms_button text="-*Modules" player_slot="5" />
+    <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" />
+    <clear_comms_button text="-*Shuttle Operations" player_slot="5" />
+    <clear_comms_button text="-*Resupply Operations" player_slot="5" />
+    <set_comms_button text="-*Main Menu" player_slot="5" />
+    <set_comms_button text="-*Deploy Decoy" player_slot="5" />
     <set_variable name="Ship6Modules" value="2.0" integer="yes" />
   </event>
   <event name="Spawn Decoy Point" id_arme="3d0f69b8-2f25-4e9d-b30e-9c7d0cdd1ada" parent_id_arme="e5b32638-187e-4701-94e4-de83e746581f">
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="2.0" />
     <if_comms_button text="-*Deploy Decoy" />
-    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.60" hullID="1054" sideValue="playerSide" />
-    <clear_comms_button text="-*Deploy Decoy" player_slot="5" sideValue="playerSide" />
+    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.60" hullID="1054" sideValue="playerside" />
+    <clear_comms_button text="-*Deploy Decoy" player_slot="5" />
     <set_variable name="Ship6Decoy" value="2.0" integer="yes" />
   </event>
   <event name="Set Decoy Point" id_arme="1fafdb94-1518-4737-8de3-b23817e30b62" parent_id_arme="e5b32638-187e-4701-94e4-de83e746581f">
@@ -1270,12 +1270,12 @@
     <if_comms_button text="-*Modules" />
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship6Shields" comparator="LESS" value="1.0" />
-    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Shuttle Operations" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Resupply Operations" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Main Menu" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Activate Shields" player_slot="5" sideValue="playerSide" />
+    <clear_comms_button text="-*Modules" player_slot="5" />
+    <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" />
+    <clear_comms_button text="-*Shuttle Operations" player_slot="5" />
+    <clear_comms_button text="-*Resupply Operations" player_slot="5" />
+    <set_comms_button text="-*Main Menu" player_slot="5" />
+    <set_comms_button text="-*Activate Shields" player_slot="5" />
     <set_variable name="Ship6Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship6 Shield Module (Dectivate)" id_arme="68b48212-448d-408c-83a8-aab1415ae4b1" parent_id_arme="93c8556a-fa7f-4d11-9614-43b107367e75">
@@ -1283,28 +1283,28 @@
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship6Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship6Shields" comparator="LESS_EQUAL" value="3.0" />
-    <clear_comms_button text="-*Modules" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Shuttle Operations" player_slot="5" sideValue="playerSide" />
-    <clear_comms_button text="-*Resupply Operations" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Main Menu" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Deactivate Shields" player_slot="5" sideValue="playerSide" />
+    <clear_comms_button text="-*Modules" player_slot="5" />
+    <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" />
+    <clear_comms_button text="-*Shuttle Operations" player_slot="5" />
+    <clear_comms_button text="-*Resupply Operations" player_slot="5" />
+    <set_comms_button text="-*Main Menu" player_slot="5" />
+    <set_comms_button text="-*Deactivate Shields" player_slot="5" />
     <set_variable name="Ship6Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Shield Enhancement" id_arme="dbb80410-6164-4535-83c6-6c782eb15242" parent_id_arme="93c8556a-fa7f-4d11-9614-43b107367e75" />
   <event name="Shields Active" id_arme="8ca48037-9904-4d0a-9324-f3c68662cc2b" parent_id_arme="dbb80410-6164-4535-83c6-6c782eb15242">
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="-*Activate Shields" />
-    <clear_comms_button text="-*Activate Shields" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Deactivate Shields" player_slot="5" sideValue="playerSide" />
+    <clear_comms_button text="-*Activate Shields" player_slot="5" />
+    <set_comms_button text="-*Deactivate Shields" player_slot="5" />
     <set_timer name="Ship6Shields" seconds="5" />
     <set_variable name="Ship6Shields" value="2.0" integer="yes" />
   </event>
   <event name="Deactivate Shields" id_arme="5feb7af4-48f5-4c01-8e8e-759c1f9cfe27" parent_id_arme="dbb80410-6164-4535-83c6-6c782eb15242">
     <if_variable name="Ship6ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="-*Deactivate Shields" />
-    <clear_comms_button text="-*Deactivate Shields" player_slot="5" sideValue="playerSide" />
-    <set_comms_button text="-*Activate Shields" player_slot="5" sideValue="playerSide" />
+    <clear_comms_button text="-*Deactivate Shields" player_slot="5" />
+    <set_comms_button text="-*Activate Shields" player_slot="5" />
     <set_variable name="Ship6Shields" value="0.0" integer="yes" />
     <set_timer name="Ship6Shields" seconds="0" />
   </event>
@@ -1340,27 +1340,27 @@
   <event name="Add Menu Item" id_arme="9db918c7-5e7b-4cb1-b9ae-24171032e87a" parent_id_arme="6e3851fd-4ac6-4ce0-a927-e5961e4ee0bd">
     <if_exists player_slot="6" />
     <if_variable name="Ship7Modules" comparator="EQUALS" value="0.0" />
-    <set_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
+    <set_comms_button text="_Modules" player_slot="6" />
     <set_variable name="Ship7Modules" value="1.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="b1845ef4-0956-4898-90a5-129b9c789c02" parent_id_arme="6e3851fd-4ac6-4ce0-a927-e5961e4ee0bd">
     <if_not_exists player_slot="6" />
     <if_variable name="Ship7Modules" comparator="GREATER" value="0.0" />
-    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Deploy Cluster" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Activate Cluster" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Activate Shields" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Deactivate Shields" player_slot="6" sideValue="playerSide" />
+    <clear_comms_button text="_Modules" player_slot="6" />
+    <clear_comms_button text="_Deploy Cluster" player_slot="6" />
+    <clear_comms_button text="_Activate Cluster" player_slot="6" />
+    <clear_comms_button text="_Activate Shields" player_slot="6" />
+    <clear_comms_button text="_Deactivate Shields" player_slot="6" />
     <set_variable name="Ship7Modules" value="0.0" integer="yes" />
   </event>
   <event name="Main Menu" id_arme="f0b34dcb-54bb-4fb1-b033-5ebee3f24e46" parent_id_arme="6e3851fd-4ac6-4ce0-a927-e5961e4ee0bd">
     <if_exists player_slot="6" />
     <if_variable name="Ship7Modules" comparator="EQUALS" value="3.0" />
-    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Deploy Cluster" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Activate Cluster" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Activate Shields" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Deactivate Shields" player_slot="6" sideValue="playerSide" />
+    <clear_comms_button text="_Modules" player_slot="6" />
+    <clear_comms_button text="_Deploy Cluster" player_slot="6" />
+    <clear_comms_button text="_Activate Cluster" player_slot="6" />
+    <clear_comms_button text="_Activate Shields" player_slot="6" />
+    <clear_comms_button text="_Deactivate Shields" player_slot="6" />
     <set_variable name="Ship7Modules" value="0.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Module" id_arme="28bac29b-469f-40bd-a2b7-eea82ab26326" parent_id_arme="6e3851fd-4ac6-4ce0-a927-e5961e4ee0bd" />
@@ -1368,12 +1368,12 @@
     <if_comms_button text="_Modules" />
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship7Cluster" comparator="LESS" value="1.0" />
-    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Shuttle Operations" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Resupply Operations" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Main Menu" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Deploy Cluster" player_slot="6" sideValue="playerSide" />
+    <clear_comms_button text="_Modules" player_slot="6" />
+    <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" />
+    <clear_comms_button text="_Shuttle Operations" player_slot="6" />
+    <clear_comms_button text="_Resupply Operations" player_slot="6" />
+    <set_comms_button text="_Main Menu" player_slot="6" />
+    <set_comms_button text="_Deploy Cluster" player_slot="6" />
     <set_variable name="Ship7Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship7 Cluster Module (Activate)" id_arme="070228d0-c279-4498-9c27-0120fa30a2b6" parent_id_arme="28bac29b-469f-40bd-a2b7-eea82ab26326">
@@ -1381,19 +1381,19 @@
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship7Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship7Cluster" comparator="LESS" value="3.0" />
-    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Shuttle Operations" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Resupply Operations" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Main Menu" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Activate Cluster" player_slot="6" sideValue="playerSide" />
+    <clear_comms_button text="_Modules" player_slot="6" />
+    <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" />
+    <clear_comms_button text="_Shuttle Operations" player_slot="6" />
+    <clear_comms_button text="_Resupply Operations" player_slot="6" />
+    <set_comms_button text="_Main Menu" player_slot="6" />
+    <set_comms_button text="_Activate Cluster" player_slot="6" />
     <set_variable name="Ship7Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Deploy" id_arme="47c7cec4-f1b8-4cf0-b7c5-53b8c4af7296" parent_id_arme="28bac29b-469f-40bd-a2b7-eea82ab26326" />
   <event name="Spawn Mine Point" id_arme="18f71fbd-eb8e-4cd0-a858-13b8081f07ea" parent_id_arme="47c7cec4-f1b8-4cf0-b7c5-53b8c4af7296">
     <if_comms_button text="_Deploy Cluster" />
     <create type="genericMesh" x="10.0" y="20.0" z="10.0" name="CL.70" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <clear_comms_button text="_Deploy Cluster" player_slot="6" sideValue="playerSide" />
+    <clear_comms_button text="_Deploy Cluster" player_slot="6" />
     <set_variable name="Ship7Cluster" value="1.0" integer="yes" />
   </event>
   <event name="Set Mine Point" id_arme="b9c21bf3-f3d1-4726-abe7-4ca207cf2ef0" parent_id_arme="47c7cec4-f1b8-4cf0-b7c5-53b8c4af7296">
@@ -1413,7 +1413,7 @@
     <create count="1" type="mines" startX="CL.70MinePositionX" startY="0.0" startZ="CL.70MinePositionZ" radius="1" />
     <create count="8" type="mines" startX="CL.70MinePositionX" startY="0.0" startZ="CL.70MinePositionZ" radius="500" />
     <destroy name="CL.70" />
-    <clear_comms_button text="_Activate Cluster" player_slot="6" sideValue="playerSide" />
+    <clear_comms_button text="_Activate Cluster" player_slot="6" />
     <set_variable name="Ship7Cluster" value="4.0" integer="yes" />
   </event>
   <folder_arme name="Decoy Module" id_arme="924ed547-943e-4ac1-a266-0c6358e79719" parent_id_arme="6e3851fd-4ac6-4ce0-a927-e5961e4ee0bd" />
@@ -1421,19 +1421,19 @@
     <if_comms_button text="_Modules" />
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship7Decoy" comparator="LESS" value="1.0" />
-    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Shuttle Operations" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Resupply Operations" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Main Menu" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Deploy Decoy" player_slot="6" sideValue="playerSide" />
+    <clear_comms_button text="_Modules" player_slot="6" />
+    <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" />
+    <clear_comms_button text="_Shuttle Operations" player_slot="6" />
+    <clear_comms_button text="_Resupply Operations" player_slot="6" />
+    <set_comms_button text="_Main Menu" player_slot="6" />
+    <set_comms_button text="_Deploy Decoy" player_slot="6" />
     <set_variable name="Ship7Modules" value="2.0" integer="yes" />
   </event>
   <event name="Spawn Decoy Point" id_arme="b08e07fc-e4f0-4339-af61-c82439e1187e" parent_id_arme="924ed547-943e-4ac1-a266-0c6358e79719">
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="2.0" />
     <if_comms_button text="_Deploy Decoy" />
-    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.70" hullID="1054" sideValue="playerSide" />
-    <clear_comms_button text="_Deploy Decoy" player_slot="6" sideValue="playerSide" />
+    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.70" hullID="1054" sideValue="playerside" />
+    <clear_comms_button text="_Deploy Decoy" player_slot="6" />
     <set_variable name="Ship7Decoy" value="2.0" integer="yes" />
   </event>
   <event name="Set Decoy Point" id_arme="13e67472-9080-4d49-a3a8-48cba9e8595c" parent_id_arme="924ed547-943e-4ac1-a266-0c6358e79719">
@@ -1459,12 +1459,12 @@
     <if_comms_button text="_Modules" />
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship7Shields" comparator="LESS" value="1.0" />
-    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Shuttle Operations" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Resupply Operations" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Main Menu" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Activate Shields" player_slot="6" sideValue="playerSide" />
+    <clear_comms_button text="_Modules" player_slot="6" />
+    <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" />
+    <clear_comms_button text="_Shuttle Operations" player_slot="6" />
+    <clear_comms_button text="_Resupply Operations" player_slot="6" />
+    <set_comms_button text="_Main Menu" player_slot="6" />
+    <set_comms_button text="_Activate Shields" player_slot="6" />
     <set_variable name="Ship7Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship7 Shield Module (Dectivate)" id_arme="14a5b988-3d16-4f38-9b58-9de941e07d62" parent_id_arme="24acf49c-e3e4-4cd3-87b0-5c5d0b7776f1">
@@ -1472,28 +1472,28 @@
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship7Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship7Shields" comparator="LESS_EQUAL" value="3.0" />
-    <clear_comms_button text="_Modules" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Shuttle Operations" player_slot="6" sideValue="playerSide" />
-    <clear_comms_button text="_Resupply Operations" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Main Menu" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Deactivate Shields" player_slot="6" sideValue="playerSide" />
+    <clear_comms_button text="_Modules" player_slot="6" />
+    <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" />
+    <clear_comms_button text="_Shuttle Operations" player_slot="6" />
+    <clear_comms_button text="_Resupply Operations" player_slot="6" />
+    <set_comms_button text="_Main Menu" player_slot="6" />
+    <set_comms_button text="_Deactivate Shields" player_slot="6" />
     <set_variable name="Ship7Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Shield Enhancement" id_arme="70b9499c-2b48-4875-9fb2-b02a2eb7161e" parent_id_arme="24acf49c-e3e4-4cd3-87b0-5c5d0b7776f1" />
   <event name="Shields Active" id_arme="9e86b583-bded-46b4-b8e9-1f26a68d6c3c" parent_id_arme="70b9499c-2b48-4875-9fb2-b02a2eb7161e">
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="_Activate Shields" />
-    <clear_comms_button text="_Activate Shields" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Deactivate Shields" player_slot="6" sideValue="playerSide" />
+    <clear_comms_button text="_Activate Shields" player_slot="6" />
+    <set_comms_button text="_Deactivate Shields" player_slot="6" />
     <set_timer name="Ship7Shields" seconds="5" />
     <set_variable name="Ship7Shields" value="2.0" integer="yes" />
   </event>
   <event name="Deactivate Shields" id_arme="aaead622-8e0d-4665-b15a-8f155b71607f" parent_id_arme="70b9499c-2b48-4875-9fb2-b02a2eb7161e">
     <if_variable name="Ship7ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="_Deactivate Shields" />
-    <clear_comms_button text="_Deactivate Shields" player_slot="6" sideValue="playerSide" />
-    <set_comms_button text="_Activate Shields" player_slot="6" sideValue="playerSide" />
+    <clear_comms_button text="_Deactivate Shields" player_slot="6" />
+    <set_comms_button text="_Activate Shields" player_slot="6" />
     <set_variable name="Ship7Shields" value="0.0" integer="yes" />
     <set_timer name="Ship7Shields" seconds="0" />
   </event>
@@ -1529,27 +1529,27 @@
   <event name="Add Menu Item" id_arme="dbe16fd8-68d2-4d5f-ad49-d83bcfe24607" parent_id_arme="6a2051d5-0c04-4f0e-964d-529915d793ed">
     <if_exists player_slot="7" />
     <if_variable name="Ship8Modules" comparator="EQUALS" value="0.0" />
-    <set_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
+    <set_comms_button text="__Modules" player_slot="7" />
     <set_variable name="Ship8Modules" value="1.0" integer="yes" />
   </event>
   <event name="Disable Menu" id_arme="12a87d72-2b92-4697-8ffc-cb07c292e94a" parent_id_arme="6a2051d5-0c04-4f0e-964d-529915d793ed">
     <if_not_exists player_slot="7" />
     <if_variable name="Ship8Modules" comparator="GREATER" value="0.0" />
-    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Deploy Cluster" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Activate Cluster" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Activate Shields" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Deactivate Shields" player_slot="7" sideValue="playerSide" />
+    <clear_comms_button text="__Modules" player_slot="7" />
+    <clear_comms_button text="__Deploy Cluster" player_slot="7" />
+    <clear_comms_button text="__Activate Cluster" player_slot="7" />
+    <clear_comms_button text="__Activate Shields" player_slot="7" />
+    <clear_comms_button text="__Deactivate Shields" player_slot="7" />
     <set_variable name="Ship8Modules" value="0.0" integer="yes" />
   </event>
   <event name="Main Menu" id_arme="bcba53c4-5f36-4cbc-84e6-342e1614c8bb" parent_id_arme="6a2051d5-0c04-4f0e-964d-529915d793ed">
     <if_exists player_slot="7" />
     <if_variable name="Ship8Modules" comparator="EQUALS" value="3.0" />
-    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Deploy Cluster" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Activate Cluster" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Activate Shields" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Deactivate Shields" player_slot="7" sideValue="playerSide" />
+    <clear_comms_button text="__Modules" player_slot="7" />
+    <clear_comms_button text="__Deploy Cluster" player_slot="7" />
+    <clear_comms_button text="__Activate Cluster" player_slot="7" />
+    <clear_comms_button text="__Activate Shields" player_slot="7" />
+    <clear_comms_button text="__Deactivate Shields" player_slot="7" />
     <set_variable name="Ship8Modules" value="0.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Module" id_arme="2ec50311-308c-4162-b1e6-56679982477e" parent_id_arme="6a2051d5-0c04-4f0e-964d-529915d793ed" />
@@ -1557,12 +1557,12 @@
     <if_comms_button text="__Modules" />
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship8Cluster" comparator="LESS" value="1.0" />
-    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Shuttle Operations" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Resupply Operations" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Main Menu" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Deploy Cluster" player_slot="7" sideValue="playerSide" />
+    <clear_comms_button text="__Modules" player_slot="7" />
+    <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" />
+    <clear_comms_button text="__Shuttle Operations" player_slot="7" />
+    <clear_comms_button text="__Resupply Operations" player_slot="7" />
+    <set_comms_button text="__Main Menu" player_slot="7" />
+    <set_comms_button text="__Deploy Cluster" player_slot="7" />
     <set_variable name="Ship8Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship8 Cluster Module (Activate)" id_arme="639e303b-eca1-4b87-97a8-7cb033563856" parent_id_arme="2ec50311-308c-4162-b1e6-56679982477e">
@@ -1570,19 +1570,19 @@
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship8Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship8Cluster" comparator="LESS" value="3.0" />
-    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Shuttle Operations" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Resupply Operations" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Main Menu" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Activate Cluster" player_slot="7" sideValue="playerSide" />
+    <clear_comms_button text="__Modules" player_slot="7" />
+    <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" />
+    <clear_comms_button text="__Shuttle Operations" player_slot="7" />
+    <clear_comms_button text="__Resupply Operations" player_slot="7" />
+    <set_comms_button text="__Main Menu" player_slot="7" />
+    <set_comms_button text="__Activate Cluster" player_slot="7" />
     <set_variable name="Ship8Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Cluster Deploy" id_arme="331c742e-b03f-4ce9-b497-01e315098b01" parent_id_arme="2ec50311-308c-4162-b1e6-56679982477e" />
   <event name="Spawn Mine Point" id_arme="2ff1ef86-da80-40a3-89aa-2fe042f1d867" parent_id_arme="331c742e-b03f-4ce9-b497-01e315098b01">
     <if_comms_button text="__Deploy Cluster" />
     <create type="genericMesh" x="10.0" y="20.0" z="10.0" name="CL.80" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <clear_comms_button text="__Deploy Cluster" player_slot="7" sideValue="playerSide" />
+    <clear_comms_button text="__Deploy Cluster" player_slot="7" />
     <set_variable name="Ship8Cluster" value="1.0" integer="yes" />
   </event>
   <event name="Set Mine Point" id_arme="f84256c5-7492-4831-9ac6-a7f8224ec155" parent_id_arme="331c742e-b03f-4ce9-b497-01e315098b01">
@@ -1602,7 +1602,7 @@
     <create count="1" type="mines" startX="CL.80MinePositionX" startY="0.0" startZ="CL.80MinePositionZ" radius="1" />
     <create count="8" type="mines" startX="CL.80MinePositionX" startY="0.0" startZ="CL.80MinePositionZ" radius="500" />
     <destroy name="CL.80" />
-    <clear_comms_button text="__Activate Cluster" player_slot="7" sideValue="playerSide" />
+    <clear_comms_button text="__Activate Cluster" player_slot="7" />
     <set_variable name="Ship8Cluster" value="4.0" integer="yes" />
   </event>
   <folder_arme name="Decoy Module" id_arme="c0bfeb17-0725-442e-ae74-699f19f0ed4d" parent_id_arme="6a2051d5-0c04-4f0e-964d-529915d793ed" />
@@ -1610,19 +1610,19 @@
     <if_comms_button text="__Modules" />
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship8Decoy" comparator="LESS" value="1.0" />
-    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Shuttle Operations" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Resupply Operations" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Main Menu" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Deploy Decoy" player_slot="7" sideValue="playerSide" />
+    <clear_comms_button text="__Modules" player_slot="7" />
+    <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" />
+    <clear_comms_button text="__Shuttle Operations" player_slot="7" />
+    <clear_comms_button text="__Resupply Operations" player_slot="7" />
+    <set_comms_button text="__Main Menu" player_slot="7" />
+    <set_comms_button text="__Deploy Decoy" player_slot="7" />
     <set_variable name="Ship8Modules" value="2.0" integer="yes" />
   </event>
   <event name="Spawn Decoy Point" id_arme="a025c889-4189-4fe8-b946-3d9c529914a0" parent_id_arme="c0bfeb17-0725-442e-ae74-699f19f0ed4d">
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="2.0" />
     <if_comms_button text="__Deploy Decoy" />
-    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.80" hullID="1054" sideValue="playerSide" />
-    <clear_comms_button text="__Deploy Decoy" player_slot="7" sideValue="playerSide" />
+    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.80" hullID="1054" />
+    <clear_comms_button text="__Deploy Decoy" player_slot="7" />
     <set_variable name="Ship8Decoy" value="2.0" integer="yes" />
   </event>
   <event name="Set Decoy Point" id_arme="1c3770d6-c988-496a-921e-a0b31e28fb3d" parent_id_arme="c0bfeb17-0725-442e-ae74-699f19f0ed4d">
@@ -1648,12 +1648,12 @@
     <if_comms_button text="__Modules" />
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship8Shields" comparator="LESS" value="1.0" />
-    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Shuttle Operations" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Resupply Operations" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Main Menu" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Activate Shields" player_slot="7" sideValue="playerSide" />
+    <clear_comms_button text="__Modules" player_slot="7" />
+    <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" />
+    <clear_comms_button text="__Shuttle Operations" player_slot="7" />
+    <clear_comms_button text="__Resupply Operations" player_slot="7" />
+    <set_comms_button text="__Main Menu" player_slot="7" />
+    <set_comms_button text="__Activate Shields" player_slot="7" />
     <set_variable name="Ship8Modules" value="2.0" integer="yes" />
   </event>
   <event name="Ship8 Shield Module (Dectivate)" id_arme="d6052a6b-00c8-4eea-b1b4-9054c1dbedc4" parent_id_arme="f02066d7-cc56-4898-9897-c95934214a0b">
@@ -1661,28 +1661,28 @@
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship8Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship8Shields" comparator="LESS_EQUAL" value="3.0" />
-    <clear_comms_button text="__Modules" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Shuttle Operations" player_slot="7" sideValue="playerSide" />
-    <clear_comms_button text="__Resupply Operations" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Main Menu" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Deactivate Shields" player_slot="7" sideValue="playerSide" />
+    <clear_comms_button text="__Modules" player_slot="7" />
+    <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" />
+    <clear_comms_button text="__Shuttle Operations" player_slot="7" />
+    <clear_comms_button text="__Resupply Operations" player_slot="7" />
+    <set_comms_button text="__Main Menu" player_slot="7" />
+    <set_comms_button text="__Deactivate Shields" player_slot="7" />
     <set_variable name="Ship8Modules" value="2.0" integer="yes" />
   </event>
   <folder_arme name="Shield Enhancement" id_arme="a0c416f8-e64b-40d3-a170-51960eca2420" parent_id_arme="f02066d7-cc56-4898-9897-c95934214a0b" />
   <event name="Shields Active" id_arme="6126471f-396b-4673-a3a9-85eece91db37" parent_id_arme="a0c416f8-e64b-40d3-a170-51960eca2420">
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="__Activate Shields" />
-    <clear_comms_button text="__Activate Shields" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Deactivate Shields" player_slot="7" sideValue="playerSide" />
+    <clear_comms_button text="__Activate Shields" player_slot="7" />
+    <set_comms_button text="__Deactivate Shields" player_slot="7" />
     <set_timer name="Ship8Shields" seconds="5" />
     <set_variable name="Ship8Shields" value="2.0" integer="yes" />
   </event>
   <event name="Deactivate Shields" id_arme="62e099c5-99e8-4fb1-89df-af9e481adb0f" parent_id_arme="a0c416f8-e64b-40d3-a170-51960eca2420">
     <if_variable name="Ship8ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="__Deactivate Shields" />
-    <clear_comms_button text="__Deactivate Shields" player_slot="7" sideValue="playerSide" />
-    <set_comms_button text="__Activate Shields" player_slot="7" sideValue="playerSide" />
+    <clear_comms_button text="__Deactivate Shields" player_slot="7" />
+    <set_comms_button text="__Activate Shields" player_slot="7" />
     <set_variable name="Ship8Shields" value="0.0" integer="yes" />
     <set_timer name="Ship8Shields" seconds="0" />
   </event>
@@ -1718,26 +1718,26 @@
   <disabled_event name="Add Menu Item" id_arme="de65961f-fefe-401b-bcf2-511f9cfce89e" parent_id_arme="abd88e57-15f7-484e-8e76-3f6e70288e10">
     <if_exists player_slot="(PSlot)" />
     <if_variable name="Ship(ShipNumber)Modules" comparator="EQUALS" value="0.0" />
-    <set_comms_button text="(ShipIndicator)Modules" player_slot="(PSlot)" sideValue="playerSide" />
+    <set_comms_button text="(ShipIndicator)Modules" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Modules" value="1.0" integer="yes" />
   </disabled_event>
   <disabled_event name="Disable Menu" id_arme="038818d8-7f14-43f0-9d36-c1e0add82dd2" parent_id_arme="abd88e57-15f7-484e-8e76-3f6e70288e10">
     <if_not_exists player_slot="(PSlot)" />
     <if_variable name="Ship(ShipNumber)Modules" comparator="GREATER" value="0.0" />
-    <clear_comms_button text="(ShipIndicator)Modules" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Deploy Cluster" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Activate Cluster" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Activate Shields" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Deactivate Shields" player_slot="(PSlot)" sideValue="playerSide" />
+    <clear_comms_button text="(ShipIndicator)Modules" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Deploy Cluster" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Activate Cluster" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Activate Shields" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Deactivate Shields" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Modules" value="0.0" integer="yes" />
   </disabled_event>
   <disabled_event name="Main Menu" id_arme="91f32116-e8ee-498c-8544-8d667e4169c0" parent_id_arme="abd88e57-15f7-484e-8e76-3f6e70288e10">
     <if_exists player_slot="(PSlot)" />
     <if_variable name="Ship(ShipNumber)Modules" comparator="EQUALS" value="3.0" />
-    <clear_comms_button text="(ShipIndicator)Deploy Cluster" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Activate Cluster" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Activate Shields" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Deactivate Shields" player_slot="(PSlot)" sideValue="playerSide" />
+    <clear_comms_button text="(ShipIndicator)Deploy Cluster" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Activate Cluster" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Activate Shields" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Deactivate Shields" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Modules" value="0.0" integer="yes" />
   </disabled_event>
   <folder_arme name="Cluster Module" id_arme="634f3d74-170f-4e51-bb01-729897dc01f7" parent_id_arme="abd88e57-15f7-484e-8e76-3f6e70288e10" />
@@ -1745,11 +1745,11 @@
     <if_comms_button text="(ShipIndicator)Modules" />
     <if_variable name="Ship(ShipNumber)ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship(ShipNumber)Cluster" comparator="LESS" value="1.0" />
-    <clear_comms_button text="(ShipIndicator)Cargo &amp; Personnel" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Shuttle Operations" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Resupply Operations" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Main Menu" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Deploy Cluster" player_slot="(PSlot)" sideValue="playerSide" />
+    <clear_comms_button text="(ShipIndicator)Cargo &amp; Personnel" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Shuttle Operations" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Resupply Operations" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Main Menu" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Deploy Cluster" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Modules" value="2.0" integer="yes" />
   </disabled_event>
   <disabled_event name="Ship(ShipNumber) Cluster Module (Activate)" id_arme="70529b67-36ea-4b0e-9cc7-53a3c0267c5e" parent_id_arme="634f3d74-170f-4e51-bb01-729897dc01f7">
@@ -1757,18 +1757,18 @@
     <if_variable name="Ship(ShipNumber)ModuleType" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship(ShipNumber)Cluster" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship(ShipNumber)Cluster" comparator="LESS" value="3.0" />
-    <clear_comms_button text="(ShipIndicator)Cargo &amp; Personnel" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Shuttle Operations" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Resupply Operations" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Main Menu" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Activate Cluster" player_slot="(PSlot)" sideValue="playerSide" />
+    <clear_comms_button text="(ShipIndicator)Cargo &amp; Personnel" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Shuttle Operations" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Resupply Operations" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Main Menu" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Activate Cluster" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Modules" value="2.0" integer="yes" />
   </disabled_event>
   <folder_arme name="Cluster Deploy" id_arme="09768c23-a290-4781-92dd-9fc419f4a48c" parent_id_arme="634f3d74-170f-4e51-bb01-729897dc01f7" />
   <disabled_event name="Spawn Mine Point" id_arme="b902e5d8-1ef8-4d7b-b426-f993d8881e00" parent_id_arme="09768c23-a290-4781-92dd-9fc419f4a48c">
     <if_comms_button text="(ShipIndicator)Deploy Cluster" />
     <create type="genericMesh" x="10.0" y="20.0" z="10.0" name="CL.(ShipNumber)0" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <clear_comms_button text="(ShipIndicator)Deploy Cluster" player_slot="(PSlot)" sideValue="playerSide" />
+    <clear_comms_button text="(ShipIndicator)Deploy Cluster" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Cluster" value="1.0" integer="yes" />
   </disabled_event>
   <disabled_event name="Set Mine Point" id_arme="b595b606-b77c-4969-95c5-238eecc407f3" parent_id_arme="09768c23-a290-4781-92dd-9fc419f4a48c">
@@ -1788,7 +1788,7 @@
     <create count="1" type="mines" startX="CL.(ShipNumber)0MinePositionX" startY="0.0" startZ="CL.(ShipNumber)0MinePositionZ" radius="1" />
     <create count="8" type="mines" startX="CL.(ShipNumber)0MinePositionX" startY="0.0" startZ="CL.(ShipNumber)0MinePositionZ" radius="500" />
     <destroy name="CL.(ShipNumber)0" />
-    <clear_comms_button text="(ShipIndicator)Activate Cluster" player_slot="(PSlot)" sideValue="playerSide" />
+    <clear_comms_button text="(ShipIndicator)Activate Cluster" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Cluster" value="4.0" integer="yes" />
   </disabled_event>
   <folder_arme name="Decoy Module" id_arme="c494edd4-f350-4be2-9400-bd7c3208f812" parent_id_arme="abd88e57-15f7-484e-8e76-3f6e70288e10" />
@@ -1796,18 +1796,18 @@
     <if_comms_button text="(ShipIndicator)Modules" />
     <if_variable name="Ship(ShipNumber)ModuleType" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship(ShipNumber)Decoy" comparator="LESS" value="1.0" />
-    <clear_comms_button text="(ShipIndicator)Cargo &amp; Personnel" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Shuttle Operations" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Resupply Operations" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Main Menu" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Deploy Decoy" player_slot="(PSlot)" sideValue="playerSide" />
+    <clear_comms_button text="(ShipIndicator)Cargo &amp; Personnel" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Shuttle Operations" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Resupply Operations" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Main Menu" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Deploy Decoy" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Modules" value="2.0" integer="yes" />
   </disabled_event>
   <disabled_event name="Spawn Decoy Point" id_arme="4c0afcfc-bf4a-4033-9da7-8ed07fafb4d6" parent_id_arme="c494edd4-f350-4be2-9400-bd7c3208f812">
     <if_variable name="Ship(ShipNumber)ModuleType" comparator="EQUALS" value="2.0" />
     <if_comms_button text="(ShipIndicator)Deploy Decoy" />
-    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.(ShipNumber)0" hullID="1054" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Deploy Decoy" player_slot="(PSlot)" sideValue="playerSide" />
+    <create type="neutral" x="10.0" y="20.0" z="10.0" name="D.(ShipNumber)0" hullID="1054" />
+    <clear_comms_button text="(ShipIndicator)Deploy Decoy" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Decoy" value="2.0" integer="yes" />
   </disabled_event>
   <disabled_event name="Set Decoy Point" id_arme="aa44a9a1-0216-44c9-8755-3dcec75aa457" parent_id_arme="c494edd4-f350-4be2-9400-bd7c3208f812">
@@ -1833,11 +1833,11 @@
     <if_comms_button text="(ShipIndicator)Modules" />
     <if_variable name="Ship(ShipNumber)ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship(ShipNumber)Shields" comparator="LESS" value="1.0" />
-    <clear_comms_button text="(ShipIndicator)Cargo &amp; Personnel" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Shuttle Operations" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Resupply Operations" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Main Menu" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Activate Shields" player_slot="(PSlot)" sideValue="playerSide" />
+    <clear_comms_button text="(ShipIndicator)Cargo &amp; Personnel" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Shuttle Operations" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Resupply Operations" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Main Menu" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Activate Shields" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Modules" value="2.0" integer="yes" />
   </disabled_event>
   <disabled_event name="Ship(ShipNumber) Shield Module (Dectivate)" id_arme="4f264f9b-5791-4203-95ba-6af901a1a8af" parent_id_arme="22196525-1163-46d8-81ed-fa9c08c5bcd2">
@@ -1845,27 +1845,27 @@
     <if_variable name="Ship(ShipNumber)ModuleType" comparator="EQUALS" value="3.0" />
     <if_variable name="Ship(ShipNumber)Shields" comparator="GREATER_EQUAL" value="2.0" />
     <if_variable name="Ship(ShipNumber)Shields" comparator="LESS_EQUAL" value="3.0" />
-    <clear_comms_button text="(ShipIndicator)Cargo &amp; Personnel" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Shuttle Operations" player_slot="(PSlot)" sideValue="playerSide" />
-    <clear_comms_button text="(ShipIndicator)Resupply Operations" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Main Menu" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Deactivate Shields" player_slot="(PSlot)" sideValue="playerSide" />
+    <clear_comms_button text="(ShipIndicator)Cargo &amp; Personnel" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Shuttle Operations" player_slot="(PSlot)" />
+    <clear_comms_button text="(ShipIndicator)Resupply Operations" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Main Menu" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Deactivate Shields" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Modules" value="2.0" integer="yes" />
   </disabled_event>
   <folder_arme name="Shield Enhancement" id_arme="4e5b70e5-c4c5-4b75-8928-8336e2989445" parent_id_arme="22196525-1163-46d8-81ed-fa9c08c5bcd2" />
   <disabled_event name="Shields Active" id_arme="cd17b6c4-a6f0-484e-a820-7310bb50236b" parent_id_arme="4e5b70e5-c4c5-4b75-8928-8336e2989445">
     <if_variable name="Ship(ShipNumber)ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="(ShipIndicator)Activate Shields" />
-    <clear_comms_button text="(ShipIndicator)Activate Shields" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Deactivate Shields" player_slot="(PSlot)" sideValue="playerSide" />
+    <clear_comms_button text="(ShipIndicator)Activate Shields" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Deactivate Shields" player_slot="(PSlot)" />
     <set_timer name="Ship(ShipNumber)Shields" seconds="5" />
     <set_variable name="Ship(ShipNumber)Shields" value="2.0" integer="yes" />
   </disabled_event>
   <disabled_event name="Deactivate Shields" id_arme="5f6a8771-e828-462e-8c26-72b89baf9331" parent_id_arme="4e5b70e5-c4c5-4b75-8928-8336e2989445">
     <if_variable name="Ship(ShipNumber)ModuleType" comparator="EQUALS" value="3.0" />
     <if_comms_button text="(ShipIndicator)Deactivate Shields" />
-    <clear_comms_button text="(ShipIndicator)Deactivate Shields" player_slot="(PSlot)" sideValue="playerSide" />
-    <set_comms_button text="(ShipIndicator)Activate Shields" player_slot="(PSlot)" sideValue="playerSide" />
+    <clear_comms_button text="(ShipIndicator)Deactivate Shields" player_slot="(PSlot)" />
+    <set_comms_button text="(ShipIndicator)Activate Shields" player_slot="(PSlot)" />
     <set_variable name="Ship(ShipNumber)Shields" value="0.0" integer="yes" />
     <set_timer name="Ship(ShipNumber)Shields" seconds="0" />
   </disabled_event>
