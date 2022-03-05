@@ -6,7 +6,7 @@
     <set_variable name="Module" value="Shield Enhancers" integer="yes" />
     <set_variable name="Custom Config" value="0.0" integer="yes" />
   </start>
-  <folder_arme name="Custom Config" id_arme="f9dc6a29-7d1b-4399-9daa-0d993badc837" expanded_arme="" />
+  <folder_arme name="Custom Config" id_arme="f9dc6a29-7d1b-4399-9daa-0d993badc837" />
   <event name="Ship1 Configuration" id_arme="56643add-a468-4dc1-9549-d6ed1e6757ad" parent_id_arme="f9dc6a29-7d1b-4399-9daa-0d993badc837">
     <if_variable name="Custom Config" comparator="EQUALS" value="1.0" />
     <if_variable name="Ship1 Config" comparator="EQUALS" value="1.0" />
@@ -172,7 +172,7 @@
     <set_variable name="Ship8SensorBuoys" value="1" integer="yes" />
     <set_variable name="Custom Config" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="Ship Modules" id_arme="2426f36e-da72-4835-9068-2067f83a12fa" parent_id_arme="f9dc6a29-7d1b-4399-9daa-0d993badc837" expanded_arme="" />
+  <folder_arme name="Ship Modules" id_arme="2426f36e-da72-4835-9068-2067f83a12fa" parent_id_arme="f9dc6a29-7d1b-4399-9daa-0d993badc837" />
   <event name="Enable Modules" id_arme="2a1a89b3-96ff-4195-86bb-7fdc1814c997" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa">
     <if_variable name="Custom Config" comparator="EQUALS" value="2.0" />
     <if_variable name="Modules" comparator="NOT" value="1.0" />
@@ -202,7 +202,7 @@
     <get_object_property property="shieldMaxStateBack" player_slot="7" variable="Ship8MaxShieldLevelBack" />
     <set_variable name="Modules" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Ship1 Modules" id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" expanded_arme="" />
+  <folder_arme name="Ship1 Modules" id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" />
   <event name="Add Menu Item" id_arme="587f2c58-7302-4358-ad12-cad6b0101247" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089">
     <if_exists player_slot="0" />
     <if_variable name="Ship1Modules" comparator="EQUALS" value="0.0" />
@@ -229,7 +229,7 @@
     <clear_comms_button text="-Deactivate Shields" player_slot="0" />
     <set_variable name="Ship1Modules" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Cluster Module" id_arme="1ce6ddc0-a4cd-434c-ba27-12638524c685" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" expanded_arme="" />
+  <folder_arme name="Cluster Module" id_arme="1ce6ddc0-a4cd-434c-ba27-12638524c685" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" />
   <event name="Ship1 Cluster Module (Deploy)" id_arme="7b955eb1-0077-4951-a9c5-e3a568cd6b11" parent_id_arme="1ce6ddc0-a4cd-434c-ba27-12638524c685">
     <if_comms_button text="-Modules" />
     <if_variable name="Ship1ModuleType" comparator="EQUALS" value="1.0" />
@@ -391,6 +391,7 @@
     <set_timer name="Ship1Shields" seconds="5" />
     <set_variable name="Ship1Shields" value="2.0" integer="yes" />
   </event>
+  <folder_arme id_arme="98a9f53c-bc2e-42de-8929-27a29cf07e6d" parent_id_arme="463d9c6e-0f0b-40f3-a5f3-145abb201089" />
   <folder_arme name="Ship2 Modules" id_arme="5ce2907d-e5b7-47d3-950e-8199e55c539d" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa" />
   <event name="Add Menu Item" id_arme="27b2b106-d57d-46b2-8a7a-db7d40546b79" parent_id_arme="5ce2907d-e5b7-47d3-950e-8199e55c539d">
     <if_exists player_slot="1" />

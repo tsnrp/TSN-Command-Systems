@@ -5822,6 +5822,33 @@
   <event name="Set Menu" id_arme="59a04bfe-8a07-494c-8ee6-b5c1af32b6c4" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b">
     <if_gm_button text="AI Cmds Off" />
     <set_gm_button text="AI Cmds On" x="140" y="480" h="28" w="90" />
+    <set_gm_button text="Assign Specials\Add\Shield Drain" />
+    <set_gm_button text="Assign Specials\Add\Tractor" />
+    <set_gm_button text="Assign Specials\Add\Shield Reset" />
+    <set_gm_button text="Assign Specials\Add\Teleback" />
+    <set_gm_button text="Assign Specials\Add\Warp" />
+    <set_gm_button text="Assign Specials\Add\HET" />
+    <set_gm_button text="Assign Specials\Add\Anti-Torp" />
+    <set_gm_button text="Assign Specials\Add\Anti-Mine" />
+    <set_gm_button text="Assign Specials\Add\Cloak" />
+    <set_gm_button text="Assign Specials\Add\Low Vis" />
+    <set_gm_button text="Assign Specials\Add\Teleport" />
+    <set_gm_button text="Assign Specials\Add\Drones" />
+    <set_gm_button text="Assign Specials\Add\Shield Vamp" />
+    <set_gm_button text="Assign Specials\Clear\Shield Drain" />
+    <set_gm_button text="Assign Specials\Clear\Tractor" />
+    <set_gm_button text="Assign Specials\Clear\Shield Reset" />
+    <set_gm_button text="Assign Specials\Clear\Teleback" />
+    <set_gm_button text="Assign Specials\Clear\Warp" />
+    <set_gm_button text="Assign Specials\Clear\HET" />
+    <set_gm_button text="Assign Specials\Clear\Anti-Torp" />
+    <set_gm_button text="Assign Specials\Clear\Anti-Mine" />
+    <set_gm_button text="Assign Specials\Clear\Cloak" />
+    <set_gm_button text="Assign Specials\Clear\Low Vis" />
+    <set_gm_button text="Assign Specials\Clear\Teleport" />
+    <set_gm_button text="Assign Specials\Clear\Drones" />
+    <set_gm_button text="Assign Specials\Clear\Shield Vamp" />
+    <set_gm_button text="Assign Specials\Clear\Clear All" />
     <clear_gm_button text="AI Cmds Off" />
     <set_variable name="AI Commands" value="0.0" integer="yes" />
     <set_variable name="AI Commands Menu" value="1.0" integer="yes" />
@@ -5829,6 +5856,33 @@
   <event name="Close Menu" id_arme="cf066618-8b8b-40b0-b4a4-949a6afff1f7" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b">
     <if_gm_button text="AI Cmds On" />
     <clear_gm_button text="AI Cmds On" />
+    <clear_gm_button text="Assign Specials\Add\Shield Drain" />
+    <clear_gm_button text="Assign Specials\Add\Tractor" />
+    <clear_gm_button text="Assign Specials\Add\Shield Recharge" />
+    <clear_gm_button text="Assign Specials\Add\Teleback" />
+    <clear_gm_button text="Assign Specials\Add\Warp" />
+    <clear_gm_button text="Assign Specials\Add\HET" />
+    <clear_gm_button text="Assign Specials\Add\Anti-Torp" />
+    <clear_gm_button text="Assign Specials\Add\Anti-Mine" />
+    <clear_gm_button text="Assign Specials\Add\Cloak" />
+    <clear_gm_button text="Assign Specials\Add\Low Vis" />
+    <clear_gm_button text="Assign Specials\Add\Teleport" />
+    <clear_gm_button text="Assign Specials\Add\Drones" />
+    <clear_gm_button text="Assign Specials\Add\Shield Vamp" />
+    <clear_gm_button text="Assign Specials\Clear\Shield Drain" />
+    <clear_gm_button text="Assign Specials\Clear\Tractor" />
+    <clear_gm_button text="Assign Specials\Clear\Shield Recharge" />
+    <clear_gm_button text="Assign Specials\Clear\Teleback" />
+    <clear_gm_button text="Assign Specials\Clear\Warp" />
+    <clear_gm_button text="Assign Specials\Clear\HET" />
+    <clear_gm_button text="Assign Specials\Clear\Anti-Torp" />
+    <clear_gm_button text="Assign Specials\Clear\Anti-Mine" />
+    <clear_gm_button text="Assign Specials\Clear\Cloak" />
+    <clear_gm_button text="Assign Specials\Clear\Low Vis" />
+    <clear_gm_button text="Assign Specials\Clear\Teleport" />
+    <clear_gm_button text="Assign Specials\Clear\Drones" />
+    <clear_gm_button text="Assign Specials\Clear\Shield Vamp" />
+    <clear_gm_button text="Assign Specials\Clear\Clear All" />
     <set_gm_button text="AI Cmds Off" x="140" y="480" h="28" w="90" />
     <set_variable name="CycleAICommands" value="1.0" integer="yes" />
     <set_variable name="AI Commands Menu" value="0.0" integer="yes" />
@@ -6165,6 +6219,167 @@
     <if_gm_button text="Engineer Rv" />
     <set_variable name="RvType" value="30.0" integer="yes" />
     <set_variable name="ReassignAI" value="40.0" integer="yes" />
+  </event>
+  <folder_arme name="AI Specials" id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b" />
+  <folder_arme name="Add Special" id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01" parent_id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" />
+  <event name="Shield Drain" id_arme="aa1012f5-fc9c-4641-900d-1be041cb36c2" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Shield Drain" />
+    <set_special use_gm_selection="" ability="ShldDrain" />
+  </event>
+  <event name="Tractor" id_arme="5b80688f-734d-4e13-87cc-e73ffb281d4f" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Tractor" />
+    <set_special use_gm_selection="" ability="Tractor" />
+  </event>
+  <event name="Shield Reset" id_arme="e8b3417a-9616-4971-a395-209bf6530bb9" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Shield Reset" />
+    <set_special use_gm_selection="" ability="ShldReset" />
+  </event>
+  <event name="Teleback" id_arme="e1eba2ce-299d-43a5-9a39-097755d4a306" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Teleback" />
+    <set_special use_gm_selection="" ability="TeleBack" />
+  </event>
+  <event name="Warp" id_arme="ef47a47c-7780-4701-bd68-951507e336ad" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Warp" />
+    <set_special use_gm_selection="" ability="Warp" />
+  </event>
+  <event name="HET" id_arme="0abfba77-ad4e-41cb-b3fa-57b087cfc270" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\HET" />
+    <set_special use_gm_selection="" ability="HET" />
+  </event>
+  <event name="Anti-Torp" id_arme="0abea310-a9b1-4531-a539-a92b6282cde3" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Anti-Torp" />
+    <set_special use_gm_selection="" ability="AntiTorp" />
+  </event>
+  <event name="Anti-Mine" id_arme="ad227efa-c654-4d3e-822e-184da4fac604" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Anti-Mine" />
+    <set_special use_gm_selection="" ability="AntiMine" />
+  </event>
+  <event name="Cloak" id_arme="52a00084-368a-4615-abcf-0474ebe8785b" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Cloak" />
+    <set_special use_gm_selection="" ability="Cloak" />
+  </event>
+  <event name="Low Vis" id_arme="61d5380b-00b9-4878-8789-1db5c920f21a" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Low Vis" />
+    <set_special use_gm_selection="" ability="LowVis" />
+  </event>
+  <event name="Teleport" id_arme="014bacce-8b25-4515-bca5-b03527e3800c" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Teleport" />
+    <set_special use_gm_selection="" ability="Teleport" />
+  </event>
+  <event name="Drones" id_arme="27037964-de26-45e2-852a-3cf49cc3aa8f" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Drones" />
+    <set_special use_gm_selection="" ability="Drones" />
+  </event>
+  <event name="Shield Vamp" id_arme="8af5e962-ac83-4908-8920-832db8afc3c2" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Shield Vamp" />
+    <set_special use_gm_selection="" ability="ShldVamp" />
+  </event>
+  <event name="Anti-Mine" id_arme="57fd04e5-6d71-4d61-afe1-f03a6018a5df" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Shield Drain" />
+    <set_special use_gm_selection="" ability="AntiMine" />
+  </event>
+  <folder_arme name="Clear Special" id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9" parent_id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" />
+  <event name="Shield Drain" id_arme="7894f2ae-8233-4ede-bf62-3fada6d2332b" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Shield Drain" />
+    <set_special use_gm_selection="" clear="yes" ability="ShldDrain" />
+  </event>
+  <event name="Tractor" id_arme="52f6ae0d-8a05-41ff-8348-d1c7917269c3" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Tractor" />
+    <set_special use_gm_selection="" clear="yes" ability="Tractor" />
+  </event>
+  <event name="Shield Reset" id_arme="abedfe3d-efee-4847-a088-44de0599ad9d" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Shield Reset" />
+    <set_special use_gm_selection="" clear="yes" ability="ShldReset" />
+  </event>
+  <event name="Teleback" id_arme="e1e04fef-a505-41bb-8fa4-ce5325c6726c" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Teleback" />
+    <set_special use_gm_selection="" clear="yes" ability="TeleBack" />
+  </event>
+  <event name="Warp" id_arme="6e815389-71b4-4a2e-84c4-8daa0786c8c8" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Warp" />
+    <set_special use_gm_selection="" clear="yes" ability="Warp" />
+  </event>
+  <event name="HET" id_arme="d74932db-7f21-4d08-adcf-d0a0798663be" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\HET" />
+    <set_special use_gm_selection="" clear="yes" ability="HET" />
+  </event>
+  <event name="Anti-Torp" id_arme="c74b084a-0224-4d8b-8611-9a624086d592" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Anti-Torp" />
+    <set_special use_gm_selection="" clear="yes" ability="AntiTorp" />
+  </event>
+  <event name="Anti-Mine" id_arme="a35dc192-fa66-4759-8244-8a9f87852e2f" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Anti-Mine" />
+    <set_special use_gm_selection="" clear="yes" ability="AntiMine" />
+  </event>
+  <event name="Cloak" id_arme="d174b76f-a593-4340-92d1-0a383329b90c" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Cloak" />
+    <set_special use_gm_selection="" clear="yes" ability="Cloak" />
+  </event>
+  <event name="Low Vis" id_arme="15d3b339-0241-478b-ac1c-5a73c44f2aaf" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Low Vis" />
+    <set_special use_gm_selection="" clear="yes" ability="LowVis" />
+  </event>
+  <event name="Teleport" id_arme="bde12366-ea3b-4f8a-befb-baadb37ecc60" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Teleport" />
+    <set_special use_gm_selection="" clear="yes" ability="Teleport" />
+  </event>
+  <event name="Drones" id_arme="c60e0969-cb92-4516-a3b1-48b93cc6e2f0" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Drones" />
+    <set_special use_gm_selection="" clear="yes" ability="Drones" />
+  </event>
+  <event name="Shield Vamp" id_arme="ca812ab8-49e9-48d1-aca5-803a8e6da758" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Shield Vamp" />
+    <set_special use_gm_selection="" clear="yes" ability="ShldVamp" />
+  </event>
+  <event name="Anti-Mine" id_arme="55b0f2b6-a1c6-4c4a-b222-9ffeefe9c3ae" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Anti-Mine" />
+    <set_special use_gm_selection="" clear="yes" ability="AntiMine" />
+  </event>
+  <event name="Clear All" id_arme="b4203b09-49b5-4c85-86e5-10d24b3a1e90" parent_id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Clear All" />
+    <set_special use_gm_selection="" clear="yes" ability="Stealth" />
+    <set_special use_gm_selection="" clear="yes" ability="LowVis" />
+    <set_special use_gm_selection="" clear="yes" ability="Cloak" />
+    <set_special use_gm_selection="" clear="yes" ability="HET" />
+    <set_special use_gm_selection="" clear="yes" ability="Warp" />
+    <set_special use_gm_selection="" clear="yes" ability="Teleport" />
+    <set_special use_gm_selection="" clear="yes" ability="Tractor" />
+    <set_special use_gm_selection="" clear="yes" ability="Drones" />
+    <set_special use_gm_selection="" clear="yes" ability="AntiMine" />
+    <set_special use_gm_selection="" clear="yes" ability="AntiTorp" />
+    <set_special use_gm_selection="" clear="yes" ability="ShldDrain" />
+    <set_special use_gm_selection="" clear="yes" ability="ShldVamp" />
+    <set_special use_gm_selection="" clear="yes" ability="TeleBack" />
+    <set_special use_gm_selection="" clear="yes" ability="ShldReset" />
   </event>
   <folder_arme name="AI Settings" id_arme="1837a576-e840-4375-8a86-d5f20cc9e40d" parent_id_arme="3eb8fb48-1223-46b2-a68b-1694f9160a06" />
   <folder_arme name="Set AI for Group (Lettername)" id_arme="a86e423e-7381-4cb5-b011-7eea3c72b57e" parent_id_arme="1837a576-e840-4375-8a86-d5f20cc9e40d" />
@@ -41204,7 +41419,7 @@
     <set_gm_button text="Coolant" x="200" y="450" h="30" w="100" />
     <set_variable name="Interactions Menu" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Menu Cycle" id_arme="c7d7a8b3-6000-4447-b2a0-2e04c03abfac" parent_id_arme="bf9c65f4-1f28-4a8d-a240-7d0962f1b6fb" expanded_arme="" />
+  <folder_arme name="Menu Cycle" id_arme="c7d7a8b3-6000-4447-b2a0-2e04c03abfac" parent_id_arme="bf9c65f4-1f28-4a8d-a240-7d0962f1b6fb" />
   <event name="Cycle Menu (Remove)" id_arme="cf713c51-6cea-4c9d-97db-ee85196cf5d8" parent_id_arme="c7d7a8b3-6000-4447-b2a0-2e04c03abfac">
     <if_gm_button text="Add Ordn" />
     <clear_gm_button text="Add Ordn" />
@@ -41217,7 +41432,7 @@
     <set_gm_button text="Add Ordn" x="200" y="125" h="30" w="100" />
     <set_variable name="Ordnance" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Ordnance Supply" id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab" parent_id_arme="bf9c65f4-1f28-4a8d-a240-7d0962f1b6fb" expanded_arme="" />
+  <folder_arme name="Ordnance Supply" id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab" parent_id_arme="bf9c65f4-1f28-4a8d-a240-7d0962f1b6fb" />
   <event name="Homing Torpedo" id_arme="47fbfe47-3194-4dd4-8703-e65f9b38f691" parent_id_arme="ff02b402-af80-4ea8-83e1-84bc9ef6d8ab">
     <if_gm_button text="Homing" />
     <addto_object_property value="Ordnance" property="countHoming" use_gm_selection=" " />
@@ -41388,7 +41603,7 @@
     <if_gm_button text="Repair Ship\Heal DamCon 2" />
     <set_damcon_members value="6" team_index="2" use_gm_selection=" " />
   </event>
-  <folder_arme name="Give Damage" id_arme="f6f72731-834e-4195-8981-59ddeb5f7f85" parent_id_arme="209dd9dc-863e-4c29-a1e2-64950acc992e" expanded_arme="" />
+  <folder_arme name="Give Damage" id_arme="f6f72731-834e-4195-8981-59ddeb5f7f85" parent_id_arme="209dd9dc-863e-4c29-a1e2-64950acc992e" />
   <event name="Damage Beams" id_arme="0439df48-f868-44cf-a998-83e754e13d1f" parent_id_arme="f6f72731-834e-4195-8981-59ddeb5f7f85">
     <if_gm_button text="Damage Ship\Damage Beams" />
     <set_player_grid_damage value="1.0" use_gm_selection=" " index="0" systemType="systemBeam" countFrom="front" />
@@ -46691,7 +46906,7 @@
     <set_damcon_members value="0" team_index="0" use_gm_selection=" " />
     <set_damcon_members value="0" team_index="1" use_gm_selection=" " />
     <set_damcon_members value="0" team_index="2" use_gm_selection=" " />
-    <warning_popup_message message="**ALERT** Ship Systems Disable" consoles="MHWESF" use_gm_selection="" />
+    <warning_popup_message message="**ALERT** Ship Systems Disabled" consoles="MHWESF" use_gm_selection="" />
   </event>
   <folder_arme name="Scan Text" id_arme="45d6ee9b-946b-42ef-b2ae-1eeefb3f5462" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" />
   <event name="Scan Text Menu" id_arme="51998164-6682-4508-81a7-3b4338a8cfae" parent_id_arme="45d6ee9b-946b-42ef-b2ae-1eeefb3f5462">
@@ -46789,7 +47004,7 @@
     <if_variable name="GM Menu" comparator="EQUALS" value="12.0" />
     <set_gm_button text="Clear" x="120" y="60" h="30" w="60" />
     <set_gm_button text="Menu 1\Custom 1A" />
-    <!--<set_gm_button text="Menu 1\Custom 1B" />-->
+    <set_gm_button text="Menu 1\Custom 1B" />
     <!--<set_gm_button text="Menu 1\Custom 1C" />-->
     <!--<set_gm_button text="Menu 1\Custom 1D" />-->
     <!--<set_gm_button text="Menu 1\Custom 1E" />-->
@@ -46846,43 +47061,66 @@
   <folder_arme name="Menu 1" id_arme="0fc9dd71-2783-4713-a773-bca1116e079d" parent_id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87" />
   <event name="Custom 1A" id_arme="7cbbe37d-6ec1-46fe-808c-f304306ad0a4" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_gm_button text="Menu 1\Custom 1A" />
-    <create type="enemy" use_gm_position="" name="TSN Blunderbuss" hullID="4" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" use_gm_position="" angle="0" name="Crooked Star" hullID="7107" sideValue="1" fleetnumber="1" />
     <set_timer name="Custom 1A" seconds="2" />
     <set_variable name="Custom 1A" value="1.0" integer="yes" />
   </event>
   <event name="1A Settings" id_arme="99314d93-be3b-4409-a29b-22d99319add0" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_variable name="Custom 1A" comparator="EQUALS" value="1.0" />
     <if_timer_finished name="Custom 1A" />
-    <clear_ai name="TSN Blunderbuss" />
+    <clear_ai name="Crooked Star" />
+    <set_object_property property="surrenderChance" value="0" name="Crooked Star" />
+    <add_ai type="SPCL_AI" name="Crooked Star" />
+    <add_ai type="TRY_TO_BECOME_LEADER" name="Crooked Star" />
+    <add_ai type="CHASE_PLAYER" name="Crooked Star" />
+    <add_ai type="CHASE_STATION" value1="1000" name="Crooked Star" />
+    <add_ai type="CHASE_AI_SHIP" value1="3000" value2="500" name="Crooked Star" />
+    <add_ai type="CHASE_PLAYER" value1="3000" value2="500" name="Crooked Star" />
+    <add_ai type="CHASE_ANGER" name="Crooked Star" />
+    <add_ai type="LEADER_LEADS" name="Crooked Star" />
+    <add_ai type="FOLLOW_LEADER" name="Crooked Star" />
+    <set_special name="Crooked Star" clear="yes" ability="Stealth" />
+    <set_special name="Crooked Star" clear="yes" ability="LowVis" />
+    <set_special name="Crooked Star" clear="yes" ability="Cloak" />
+    <set_special name="Crooked Star" ability="HET" />
+    <set_special name="Crooked Star" ability="Warp" />
+    <set_special name="Crooked Star" clear="yes" ability="Teleport" />
+    <set_special name="Crooked Star" ability="Tractor" />
+    <set_special name="Crooked Star" clear="yes" ability="Drones" />
+    <set_special name="Crooked Star" clear="yes" ability="AntiMine" />
+    <set_special name="Crooked Star" clear="yes" ability="AntiTorp" />
+    <set_special name="Crooked Star" ability="ShldDrain" />
+    <set_special name="Crooked Star" clear="yes" ability="ShldVamp" />
+    <set_special name="Crooked Star" clear="yes" ability="TeleBack" />
+    <set_special name="Crooked Star" ability="ShldReset" />
     <set_timer name="Custom 1A" seconds="2" />
     <set_variable name="Custom 1A" value="2.0" integer="yes" />
   </event>
-  <disabled_event name="1A Delete" id_arme="fd45c2a4-ff8c-474f-82df-9a900050c249" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
+  <event name="1A Delete" id_arme="fd45c2a4-ff8c-474f-82df-9a900050c249" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_gm_button text="Menu 1\Custom 1A" />
     <if_variable name="Custom 1A" comparator="EQUALS" value="2.0" />
     <if_timer_finished name="Custom 1A" />
     <set_variable name="Custom 1A" value="0.0" />
-  </disabled_event>
-  <disabled_event name="Custom 1B" id_arme="4137bdc3-9d7c-4cd9-9fab-d84e1f1621dd" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
+  </event>
+  <event name="Custom 1B" id_arme="4137bdc3-9d7c-4cd9-9fab-d84e1f1621dd" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_gm_button text="Menu 1\Custom 1B" />
     <if_variable name="Custom 1B" comparator="EQUALS" value="0.0" />
-    <create type="enemy" use_gm_position="" angle="0" name="TEST2" hullID="1352" />
-    <set_object_property property="angleDelta" value="0.2" name="TEST2" />
+    <create type="enemy" use_gm_position="" angle="0" name="TSN Lancer" hullID="17" sideValue="1" fleetnumber="1" />
     <set_timer name="Custom 1B" seconds="1" />
     <set_variable name="Custom 1B" value="1.0" integer="yes" />
-  </disabled_event>
-  <disabled_event name="1B Settings" id_arme="54128249-11c4-4bca-b5fc-fc413165874a" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
+  </event>
+  <event name="1B Settings" id_arme="54128249-11c4-4bca-b5fc-fc413165874a" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_timer_finished name="Custom 1B" />
     <if_variable name="Custom 1B" comparator="EQUALS" value="1.0" />
     <set_timer name="Custom 1B" seconds="1" />
     <set_variable name="Custom 1B" value="2.0" integer="yes" />
-  </disabled_event>
-  <disabled_event name="1B Delete" id_arme="74937219-f0f7-4f6d-9a88-2ebb2d652596" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
+  </event>
+  <event name="1B Delete" id_arme="74937219-f0f7-4f6d-9a88-2ebb2d652596" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_gm_button text="Menu 1\Custom 1B" />
     <if_variable name="Custom 1B" comparator="EQUALS" value="2.0" />
     <if_timer_finished name="Custom 1B" />
     <set_variable name="Custom 1B" value="0.0" />
-  </disabled_event>
+  </event>
   <disabled_event name="Custom 1C" id_arme="50351b29-2783-4fba-a592-81db198c75c9" parent_id_arme="0fc9dd71-2783-4713-a773-bca1116e079d">
     <if_gm_button text="Menu 1\Custom 1C" />
     <if_variable name="Custom 1C" comparator="NOT" value="2.0" />
