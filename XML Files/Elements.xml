@@ -36,6 +36,7 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="1.0" />
     <clear_ai name="--" />
     <set_object_property property="surrenderChance" value="20" name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="TRY_TO_BECOME_LEADER" name="--" />
     <add_ai type="CHASE_PLAYER" name="--" />
     <add_ai type="CHASE_AI_SHIP" name="--" />
@@ -58,6 +59,7 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="2.0" />
     <clear_ai name="--" />
     <set_object_property property="surrenderChance" value="20" name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="TRY_TO_BECOME_LEADER" name="--" />
     <add_ai type="CHASE_AI_SHIP" name="--" />
     <add_ai type="CHASE_STATION" name="--" />
@@ -75,6 +77,7 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="3.0" />
     <clear_ai name="--" />
     <set_object_property property="surrenderChance" value="20" name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="TRY_TO_BECOME_LEADER" name="--" />
     <add_ai type="FOLLOW_COMMS_ORDERS" name="--" />
     <add_ai type="CHASE_AI_SHIP" value1="1000" value2="500" name="--" />
@@ -93,6 +96,7 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="4.0" />
     <clear_ai name="--" />
     <set_object_property property="surrenderChance" value="20" name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="TRY_TO_BECOME_LEADER" name="--" />
     <add_ai type="CHASE_AI_SHIP" name="--" />
     <add_ai type="CHASE_PLAYER" name="--" />
@@ -109,6 +113,7 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="5.0" />
     <clear_ai name="--" />
     <set_object_property property="surrenderChance" value="20" name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="TRY_TO_BECOME_LEADER" name="--" />
     <add_ai type="CHASE_AI_SHIP" name="--" />
     <add_ai type="CHASE_PLAYER" name="--" />
@@ -140,6 +145,7 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="7.0" />
     <clear_ai name="--" />
     <set_object_property property="surrenderChance" value="10" name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="TRY_TO_BECOME_LEADER" name="--" />
     <add_ai type="CHASE_PLAYER" name="--" />
     <add_ai type="CHASE_STATION" value1="1000" name="--" />
@@ -154,6 +160,7 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="8.0" />
     <clear_ai name="--" />
     <set_object_property property="surrenderChance" value="15" name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="TRY_TO_BECOME_LEADER" name="--" />
     <add_ai type="CHASE_PLAYER" name="--" />
     <add_ai type="CHASE_STATION" value1="1000" name="--" />
@@ -230,6 +237,7 @@
     <set_object_property property="surrenderChance" value="20" name="--" />
     <set_object_property property="topSpeed" value="0.6" name="--" />
     <clear_ai name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="TRY_TO_BECOME_LEADER" name="--" />
     <add_ai type="PROCEED_TO_EXIT" name="--" />
     <add_ai type="FOLLOW_COMMS_ORDERS" name="--" />
@@ -242,6 +250,7 @@
     <set_object_property property="surrenderChance" value="20" name="--" />
     <set_object_property property="topSpeed" value="0.6" name="--" />
     <clear_ai name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="TRY_TO_BECOME_LEADER" name="--" />
     <add_ai type="PROCEED_TO_EXIT" name="--" />
     <add_ai type="GUARD_STATION" value1="20" name="--" />
@@ -301,10 +310,12 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="101.0" />
     <set_object_property property="surrenderChance" value="10" name="--" />
     <clear_ai name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="CHASE_AI_SHIP" name="--" />
     <add_ai type="CHASE_PLAYER" value1="3000" value2="500" name="--" />
     <add_ai type="CHASE_STATION" value1="1000" name="--" />
     <add_ai type="CHASE_AI_SHIP" value1="5000" value2="500" name="--" />
+    <add_ai type="CHASE_PLAYER" name="--" />
     <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="--" />
     <add_ai type="CHASE_ANGER" name="--" />
   </event>
@@ -312,6 +323,7 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="102.0" />
     <set_object_property property="surrenderChance" value="0" name="--" />
     <clear_ai name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="DIR_THROTTLE" value1="Degrees" value2="1.0" name="--" />
     <add_ai type="CHASE_STATION" value1="20000" name="--" />
     <add_ai type="CHASE_AI_SHIP" value1="20000" value2="20000" name="--" />
@@ -324,6 +336,7 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="103.0" />
     <set_object_property property="surrenderChance" value="10" name="--" />
     <clear_ai name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="DIR_THROTTLE" value1="Degrees" value2="1.0" name="--" />
     <add_ai type="CHASE_STATION" value1="100000" name="--" />
     <add_ai type="CHASE_AI_SHIP" name="--" />
@@ -336,6 +349,7 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="104.0" />
     <set_object_property property="surrenderChance" value="0" name="--" />
     <clear_ai name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="DIR_THROTTLE" value1="Degrees" value2="1.5" name="--" />
     <add_ai type="CHASE_PLAYER" name="--" />
     <add_ai type="CHASE_PLAYER" value2="4000" name="--" />
@@ -368,6 +382,7 @@
     <if_variable name="Auto AI Type" comparator="EQUALS" value="106.0" />
     <set_object_property property="surrenderChance" value="10" name="--" />
     <clear_ai name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="CHASE_AI_SHIP" name="--" />
     <add_ai type="CHASE_PLAYER" value1="3000" value2="500" name="--" />
     <add_ai type="CHASE_STATION" value1="1000" name="--" />
@@ -6617,6 +6632,7 @@
     <set_object_property property="topSpeed" value="0.6" name="--" />
     <clear_ai name="--" />
     <set_object_property property="surrenderChance" value="20" name="--" />
+    <add_ai type="SPCL_AI" name="--" />
     <add_ai type="PROCEED_TO_EXIT" name="--" />
     <add_ai type="DIR_THROTTLE" value1="convoyDirection" value2="1.0" name="--" />
     <add_ai type="DEFEND" value1="4000" value2="1000" name="--" />
