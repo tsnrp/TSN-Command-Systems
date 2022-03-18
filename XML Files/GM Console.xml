@@ -12,8 +12,8 @@
     <set_variable name="painterRadius" value="2500" integer="yes" />
     <set_variable name="painterRandomRange" value="0.0" integer="yes" />
     <set_variable name="painterLayerCount" value="3.0" integer="yes" />
-    <set_variable name="painterLayerOffset" value="-750.0" integer="yes" />
-    <set_variable name="painterLayerStepSize" value="250.0" integer="yes" />
+    <set_variable name="painterLayerOffset" value="-800.0" integer="yes" />
+    <set_variable name="painterLayerStepSize" value="400.0" integer="yes" />
     <set_variable name="painterArcSpacing" value="0.0" integer="no" />
     <set_variable name="painterLineSpacing" value="0.0" integer="yes" />
     <set_variable name="paintMineFieldIter" value="0.0" integer="yes" />
@@ -184,7 +184,7 @@
     <clear_gm_button text="Mines\Small Minefield (Circ.)" />
     <clear_gm_button text="Mines\Single Mine" />
     <clear_gm_button text="Painter options"/>
-    <clear_gm_button text="PerLayerCount: |painterObjectCount|" />
+    <clear_gm_button text="PerLayer: |painterObjectCount|" />
     <clear_gm_button text="Count+5" />
     <clear_gm_button text="Count-5" />
     <clear_gm_button text="Radius: |painterRadius|" />
@@ -196,9 +196,9 @@
     <clear_gm_button text="ArcStart-10"/>
     <clear_gm_button text="ArcStop+10"/>
     <clear_gm_button text="ArcStop-10"/>
-    <clear_gm_button text="RandomRange: |painterRandomRange|" />
-    <clear_gm_button text="RndRange+250"/>
-    <clear_gm_button text="RndRange-250"/>
+    <clear_gm_button text="RndRange: |painterRandomRange|" />
+    <clear_gm_button text="RRange+250"/>
+    <clear_gm_button text="RRange-250"/>
     <clear_gm_button text="LayerCount: |painterLayerCount|" />
     <clear_gm_button text="1 Lyr"/>
     <clear_gm_button text="3 Lyrs"/>
@@ -213,6 +213,9 @@
     <clear_gm_button text="Painter\Asteroids (line CANCEL)"/>
     <clear_gm_button text="ArcSpacing: |painterArcSpacing|"/>
     <clear_gm_button text="LineSpacing: |painterLineSpacing|"/>
+    <clear_gm_button text="Cmn"/>
+    <clear_gm_button text="Arc"/>
+    <clear_gm_button text="Calc"/>
     <!--Interactions Keys-->
     <clear_gm_button text="Clear" />
     <clear_gm_button text="Messages" />
@@ -40945,36 +40948,6 @@
     <set_gm_button text="Mines\Medium Minefield (Circ.)" />
     <set_gm_button text="Mines\Small Minefield (Circ.)" />
     <set_gm_button text="Mines\Single Mine" />
-
-    <set_gm_button text="Painter options" x="100" y="100" h="30" w="350"/>
-    <set_gm_button text="PerLayerCount: |painterObjectCount|" x="100" y="130" h="30" w="150" />
-    <set_gm_button text="Count+5" x="250" y="130" h="30" w="100" />
-    <set_gm_button text="Count-5" x="350" y="130" h="30" w="100"/>
-    <set_gm_button text="Radius: |painterRadius|" x="100" y="160" h="30" w="150"/>
-    <set_gm_button text="Radius+250" x="250" y="160" h="30" w="100"/>
-    <set_gm_button text="Radius-250" x="350" y="160" h="30" w="100"/>
-    <set_gm_button text="ArcStartDeg: |painterArcStart|" x="100" y="190" h="30" w="150" />
-    <set_gm_button text="ArcStopDeg: |painterArcStop|" x="100" y="220" h="30" w="150" />
-    <set_gm_button text="ArcStart+10" x="250" y="190" h="30" w="100"/>
-    <set_gm_button text="ArcStart-10" x="350" y="190" h="30" w="100"/>
-    <set_gm_button text="ArcStop+10" x="250" y="220" h="30" w="100"/>
-    <set_gm_button text="ArcStop-10" x="350" y="220" h="30" w="100"/>
-    <set_gm_button text="RandomRange: |painterRandomRange|" x="100" y="250" h="30" w="150" />
-    <set_gm_button text="RndRange+250" x="250" y="250" h="30" w="100"/>
-    <set_gm_button text="RndRange-250" x="350" y="250" h="30" w="100"/>
-    <set_gm_button text="LayerCount: |painterLayerCount|" x="100" y="280" h="30" w="150" />
-    <set_gm_button text="1 Lyr" x="250" y="280" h="30" w="66"/>
-    <set_gm_button text="3 Lyrs" x="316" y="280" h="30" w="66"/>
-    <set_gm_button text="5 Lyrs" x="382" y="280" h="30" w="68"/>
-    <set_gm_button text="Painter\Mines (arc)"/>
-    <set_gm_button text="Painter\Asteroid Field (arc)"/>
-    <set_gm_button text="Painter\Mines (line START)"/>
-    <set_gm_button text="Painter\Asteroids (line START)"/>
-    <set_gm_button text="ArcSpacing: |painterArcSpacing|" x="100" y="310" h="30" w="150" />
-    <set_gm_button text="LineSpacing: |painterLineSpacing|" x="100" y="340" h="30" w="150" />
-
-    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
-
     <set_variable name="GM Menu" value="2.0" />
   </event>
   <event name="Clear" id_arme="9c7c3447-31ea-48f3-96cf-cb99c9ac5364" parent_id_arme="043c9bdc-8549-4b00-ab76-1d191d309472">
@@ -41011,7 +40984,7 @@
     <clear_gm_button text="Mines\Small Minefield (Circ.)" />
     <clear_gm_button text="Mines\Single Mine" />
     <clear_gm_button text="Painter options"/>
-    <clear_gm_button text="PerLayerCount: |painterObjectCount|" />
+    <clear_gm_button text="PerLayer: |painterObjectCount|" />
     <clear_gm_button text="Count+5" />
     <clear_gm_button text="Count-5" />
     <clear_gm_button text="Radius: |painterRadius|" />
@@ -41023,9 +40996,9 @@
     <clear_gm_button text="ArcStart-10"/>
     <clear_gm_button text="ArcStop+10"/>
     <clear_gm_button text="ArcStop-10"/>
-    <clear_gm_button text="RandomRange: |painterRandomRange|" />
-    <clear_gm_button text="RndRange+250"/>
-    <clear_gm_button text="RndRange-250"/>
+    <clear_gm_button text="RndRange: |painterRandomRange|" />
+    <clear_gm_button text="RRange+250"/>
+    <clear_gm_button text="RRange-250"/>
     <clear_gm_button text="LayerCount: |painterLayerCount|" />
     <clear_gm_button text="1 Lyr"/>
     <clear_gm_button text="3 Lyrs"/>
@@ -41040,6 +41013,9 @@
     <clear_gm_button text="Painter\Asteroids (line CANCEL)"/>
     <clear_gm_button text="ArcSpacing: |painterArcSpacing|"/>
     <clear_gm_button text="LineSpacing: |painterLineSpacing|"/>
+    <clear_gm_button text="Cmn"/>
+    <clear_gm_button text="Arc"/>
+    <clear_gm_button text="Calc"/>
   </event>
   <folder_arme name="Minefields" id_arme="db3263b3-984a-48c5-b0c0-b1233fae129e" parent_id_arme="043c9bdc-8549-4b00-ab76-1d191d309472" />
   <event name="Single Mine" id_arme="c56d9e38-89c9-4c2f-9822-6a8b31544054" parent_id_arme="db3263b3-984a-48c5-b0c0-b1233fae129e">
@@ -41251,9 +41227,9 @@
     <if_gm_button text="Count+5" />
     <if_variable name="painterObjectCount" comparator="LESS" value="100.0" />
 
-    <clear_gm_button text="PerLayerCount: |painterObjectCount|" />
+    <clear_gm_button text="PerLayer: |painterObjectCount|" />
     <set_variable name="painterObjectCount" value="painterObjectCount+5" integer="yes" />
-    <set_gm_button text="PerLayerCount: |painterObjectCount|"  x="100" y="130" h="30" w="150" />
+    <set_gm_button text="PerLayer: |painterObjectCount|"  x="130" y="130" h="30" w="120"  />
  
     <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
@@ -41261,9 +41237,9 @@
     <if_gm_button text="Count-5" />
     <if_variable name="painterObjectCount" comparator="GREATER" value="5.0" />
 
-    <clear_gm_button text="PerLayerCount: |painterObjectCount|" />
+    <clear_gm_button text="PerLayer: |painterObjectCount|" />
     <set_variable name="painterObjectCount" value="painterObjectCount-5" integer="yes" />
-    <set_gm_button text="PerLayerCount: |painterObjectCount|"  x="100" y="130" h="30" w="150" />
+    <set_gm_button text="PerLayer: |painterObjectCount|"  x="130" y="130" h="30" w="120"  />
     
     <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
@@ -41274,7 +41250,7 @@
 
     <clear_gm_button text="Radius: |painterRadius|" />
     <set_variable name="painterRadius" value="painterRadius+250" integer="yes" />
-    <set_gm_button text="Radius: |painterRadius|"  x="100" y="160" h="30" w="150" />
+    <set_gm_button text="Radius: |painterRadius|"  x="130" y="230" h="30" w="120" />
   
     <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
@@ -41284,7 +41260,7 @@
 
     <clear_gm_button text="Radius: |painterRadius|" />
     <set_variable name="painterRadius" value="painterRadius-250" integer="yes" />
-    <set_gm_button text="Radius: |painterRadius|"  x="100" y="160" h="30" w="150" />
+    <set_gm_button text="Radius: |painterRadius|"  x="130" y="230" h="30" w="120" />
 
     <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
@@ -41294,7 +41270,7 @@
 
     <clear_gm_button text="ArcStartDeg: |painterArcStart|" />
     <set_variable name="painterArcStart" value="painterArcStart+10" integer="yes" />
-    <set_gm_button text="ArcStartDeg: |painterArcStart|"  x="100" y="190" h="30" w="150" />
+    <set_gm_button text="ArcStartDeg: |painterArcStart|" x="130" y="260" h="30" w="120" />
 
     <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
@@ -41303,7 +41279,7 @@
 
     <clear_gm_button text="ArcStartDeg: |painterArcStart|" />
     <set_variable name="painterArcStart" value="painterArcStart-10" integer="yes" />
-    <set_gm_button text="ArcStartDeg: |painterArcStart|"  x="100" y="190" h="30" w="150" />
+    <set_gm_button text="ArcStartDeg: |painterArcStart|" x="130" y="260" h="30" w="120" />
 
     <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
@@ -41313,7 +41289,7 @@
 
     <clear_gm_button text="ArcStopDeg: |painterArcStop|" />
     <set_variable name="painterArcStop" value="painterArcStop+10" integer="yes" />
-    <set_gm_button text="ArcStopDeg: |painterArcStop|"  x="100" y="220" h="30" w="150" />
+    <set_gm_button text="ArcStopDeg: |painterArcStop|" x="130" y="290" h="30" w="120" />
 
     <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
@@ -41322,7 +41298,7 @@
 
     <clear_gm_button text="ArcStopDeg: |painterArcStop|" />
     <set_variable name="painterArcStop" value="painterArcStop-10" integer="yes" />
-    <set_gm_button text="ArcStopDeg: |painterArcStop|"  x="100" y="220" h="30" w="150" />
+    <set_gm_button text="ArcStopDeg: |painterArcStop|" x="130" y="290" h="30" w="120" />
 
     <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
   </event>
@@ -41332,26 +41308,26 @@
 
     <clear_gm_button text="ArcSpacing: |painterArcSpacing|" />
     <set_variable name="painterArcSpacing" value="((painterArcStop - painterArcStart)/360.0) * (2.0 * 3.14 * painterRadius) / painterObjectCount" integer="no" />
-    <set_gm_button text="ArcSpacing: |painterArcSpacing|" x="100" y="310" h="30" w="150" />
+    <set_gm_button text="ArcSpacing: |painterArcSpacing|" x="130" y="330" h="30" w="150" />
 
     <set_variable name="updatePainterArcSpacing" value="0.0" integer="yes" />
   </event>
 
   <event name="Increase painterRandomRange" id_arme="2d2e91d7-4fa4-453a-ae7e-c7ff13c6cd82" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
-    <if_gm_button text="RndRange+250" />
+    <if_gm_button text="RRange+250" />
     <if_variable name="painterRandomRange" comparator="LESS" value="10000.0" />
 
-    <clear_gm_button text="RandomRange: |painterRandomRange|" />
+    <clear_gm_button text="RndRange: |painterRandomRange|" />
     <set_variable name="painterRandomRange" value="painterRandomRange+250" integer="yes" />
-    <set_gm_button text="RandomRange: |painterRandomRange|"  x="100" y="250" h="30" w="150" />
+    <set_gm_button text="RndRange: |painterRandomRange|" x="130" y="160" h="30" w="120" />
   </event>
   <event name="Decrease painterRandomRange" id_arme="45d9fb65-2a74-4234-af36-1edfa7b68670" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
-    <if_gm_button text="RndRange-250" />
+    <if_gm_button text="RRange-250" />
     <if_variable name="painterRandomRange" comparator="GREATER" value="0.0" />
 
-    <clear_gm_button text="RandomRange: |painterRandomRange|" />
+    <clear_gm_button text="RndRange: |painterRandomRange|" />
     <set_variable name="painterRandomRange" value="painterRandomRange-250" integer="yes" />
-    <set_gm_button text="RandomRange: |painterRandomRange|"  x="100" y="250" h="30" w="150" />
+    <set_gm_button text="RndRange: |painterRandomRange|" x="130" y="160" h="30" w="120" />
   </event>
 
   <event name="Set 1 layer" id_arme="2d2e91d7-4fa4-453a-ae7e-c7ff13c6cd82" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
@@ -41361,7 +41337,7 @@
     <set_variable name="painterLayerCount" value="1.0" integer="yes" />
     <set_variable name="painterLayerOffset" value="0.0" integer="yes" />
     <set_variable name="painterLayerStepSize" value="0.0" integer="yes" />
-    <set_gm_button text="LayerCount: |painterLayerCount|"  x="100" y="280" h="30" w="150" />
+    <set_gm_button text="LayerCount: |painterLayerCount|" x="130" y="190" h="30" w="120" />
   </event>
   <event name="Set 3 layers" id_arme="2d2e91d7-4fa4-453a-ae7e-c7ff13c6cd82" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="3 Lyrs" />
@@ -41370,7 +41346,7 @@
     <set_variable name="painterLayerCount" value="3.0" integer="yes" />
     <set_variable name="painterLayerOffset" value="-800.0" integer="yes" />
     <set_variable name="painterLayerStepSize" value="400.0" integer="yes" />
-    <set_gm_button text="LayerCount: |painterLayerCount|"  x="100" y="280" h="30" w="150" />
+    <set_gm_button text="LayerCount: |painterLayerCount|" x="130" y="190" h="30" w="120" />
   </event>
   <event name="Set 5 layers" id_arme="2d2e91d7-4fa4-453a-ae7e-c7ff13c6cd82" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="5 Lyrs" />
@@ -41379,7 +41355,7 @@
     <set_variable name="painterLayerCount" value="5.0" integer="yes" />
     <set_variable name="painterLayerOffset" value="-750.0" integer="yes" />
     <set_variable name="painterLayerStepSize" value="250.0" integer="yes" />
-    <set_gm_button text="LayerCount: |painterLayerCount|"  x="100" y="280" h="30" w="150" />
+    <set_gm_button text="LayerCount: |painterLayerCount|" x="130" y="190" h="30" w="120" />
   </event>
 
   <event name="SpawnField Mines" id_arme="b6f05fa1-5c61-4157-af9a-65257fb2259a" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
@@ -41427,7 +41403,7 @@
 
     <clear_gm_button text="LineSpacing: |painterLineSpacing|" />
     <set_variable name="painterLineSpacing" value="sqrt_ans / painterObjectCount" integer="no" />
-    <set_gm_button text="LineSpacing: |painterLineSpacing|" x="100" y="340" h="30" w="150" />
+    <set_gm_button text="LineSpacing: |painterLineSpacing|" x="130" y="360" h="30" w="150" />
 
     <set_variable name="sqrt_calc" value="0.0" integer="yes" />
 
@@ -47460,7 +47436,7 @@
     <!--<set_gm_button text="Menu 3\Custom 3D" />-->
     <!--<set_gm_button text="Menu 3\Custom 3E" />-->
     <!--<set_gm_button text="Menu 3\Custom 3F" />-->
-    <!--<set_gm_button text="Menu 4\Custom 4A" />-->
+    <set_gm_button text="Menu 4\Custom 4A" />
     <!--<set_gm_button text="Menu 4\Custom 4B" />-->
     <!--<set_gm_button text="Menu 4\Custom 4C" />-->
     <!--<set_gm_button text="Menu 4\Custom 4D" />-->
@@ -47712,6 +47688,49 @@
     <set_timer name="Custom 2F" seconds="2" />
     <set_variable name="Custom 2F" value="1.0" />
   </disabled_event>
+  <event name="Custom 4A" id_arme="56146b76-a6dd-11ec-b909-0242ac120002" parent_id_arme="f0553ebc-7e90-4625-96b1-eb401d56a0ab">
+    <if_gm_button text="Menu 4\Custom 4A" />
+
+    <set_gm_button text="Painter options" x="100" y="100" h="30" w="350"/>
+
+    <set_gm_button text="Cmn" x="100" y="130" h="90" w="40"/>
+
+    <set_gm_button text="PerLayer: |painterObjectCount|" x="130" y="130" h="30" w="120" />
+    <set_gm_button text="Count+5" x="250" y="130" h="30" w="100" />
+    <set_gm_button text="Count-5" x="350" y="130" h="30" w="100"/>
+    <set_gm_button text="RndRange: |painterRandomRange|" x="130" y="160" h="30" w="120" />
+    <set_gm_button text="RRange+250" x="250" y="160" h="30" w="100"/>
+    <set_gm_button text="RRange-250" x="350" y="160" h="30" w="100"/>
+    <set_gm_button text="LayerCount: |painterLayerCount|" x="130" y="190" h="30" w="120" />
+    <set_gm_button text="1 Lyr" x="250" y="190" h="30" w="66"/>
+    <set_gm_button text="3 Lyrs" x="316" y="190" h="30" w="66"/>
+    <set_gm_button text="5 Lyrs" x="382" y="190" h="30" w="68"/>
+
+    <set_gm_button text="Arc" x="100" y="230" h="90" w="40"/>
+
+    <set_gm_button text="Radius: |painterRadius|" x="130" y="230" h="30" w="120"/>
+    <set_gm_button text="Radius+250" x="250" y="230" h="30" w="100"/>
+    <set_gm_button text="Radius-250" x="350" y="230" h="30" w="100"/>
+    <set_gm_button text="ArcStartDeg: |painterArcStart|" x="130" y="260" h="30" w="120" />
+    <set_gm_button text="ArcStart+10" x="250" y="260" h="30" w="100"/>
+    <set_gm_button text="ArcStart-10" x="350" y="260" h="30" w="100"/>
+    <set_gm_button text="ArcStopDeg: |painterArcStop|" x="130" y="290" h="30" w="120" />
+    <set_gm_button text="ArcStop+10" x="250" y="290" h="30" w="100"/>
+    <set_gm_button text="ArcStop-10" x="350" y="290" h="30" w="100"/>
+
+    <set_gm_button text="Calc" x="100" y="330" h="60" w="40"/>
+
+    <set_gm_button text="ArcSpacing: |painterArcSpacing|" x="130" y="330" h="30" w="150" />
+    <set_gm_button text="LineSpacing: |painterLineSpacing|" x="130" y="360" h="30" w="150" />
+
+    <set_gm_button text="Painter\Mines (arc)"/>
+    <set_gm_button text="Painter\Asteroid Field (arc)"/>
+    <set_gm_button text="Painter\Mines (line START)"/>
+    <set_gm_button text="Painter\Asteroids (line START)"/>
+
+    <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
+
+  </event>
   <folder_arme name="Menu 3" id_arme="4f6018cc-8978-493b-b583-f9ef0f8429bf" parent_id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87" expanded_arme="" />
   <folder_arme name="Menu 4" id_arme="467d1d34-f395-42c6-b13f-9fb40c1ea665" parent_id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87" expanded_arme="" />
   <folder_arme name="Delete Enable Disable" id_arme="5db8bbfc-fdc4-4382-9094-b1c3795695b2" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
