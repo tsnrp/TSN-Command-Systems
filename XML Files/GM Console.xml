@@ -41414,9 +41414,9 @@
   <event name="SpawnLine Mines Start" id_arme="706bea52-641f-472e-9418-d7ed9ed35019" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Mines (line START)" />
 
-    <create type="genericMesh" use_gm_position="" name="LineStart" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
-    <get_object_property property="positionX" name="LineStart" variable="LineStartX" />
-    <get_object_property property="positionZ" name="LineStart" variable="LineStartZ" />
+    <create type="genericMesh" use_gm_position="" name="." meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.1" colorGreen="0.1" colorBlue="0.2"  />
+    <get_object_property property="positionX" name="." variable="LineStartX" />
+    <get_object_property property="positionZ" name="." variable="LineStartZ" />
 
     <set_variable name="refreshLineSpacingTimerLoopActive" value="1.0" />
     <set_timer name="refreshLineSpacingTimerLoop" seconds="1.0" />
@@ -41430,7 +41430,7 @@
   <event name="SpawnLine Mines End" id_arme="9cc4c714-fb88-455e-a14b-6b4ba35066" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Mines (line FINISH)" />
 
-    <create type="genericMesh" use_gm_position="" name="LineEnd" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
+    <create type="genericMesh" use_gm_position="" name="LineEnd" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.1" colorGreen="0.1" colorBlue="0.2"  />
     <get_object_property property="positionX" name="LineEnd" variable="LineEndX" />
     <get_object_property property="positionZ" name="LineEnd" variable="LineEndZ" />
 
@@ -41451,7 +41451,7 @@
     <clear_gm_button text="Painter\Mines (line CANCEL)"/>
     <set_gm_button text="Painter\Mines (line START)"/>
     <set_gm_button text="Painter\Asteroids (line START)"/>
-    <destroy name="LineStart" />
+    <destroy name="." />
 
     <set_variable name="paintMineLineIter" value="0.0" integer="yes" />
   </event>
@@ -41466,7 +41466,7 @@
   <event name="SpawnLine Mines Stop" id_arme="5816317b-830a-4b11-8da7-7e49c17a80ed" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_variable name="paintMineLineIter" comparator="GREATER_EQUAL" value="painterLayerCount+1" />
     
-    <destroy name="LineStart" />
+    <destroy name="." />
     <destroy name="LineEnd" />
 
     <set_variable name="paintMineLineIter" value="0.0" integer="yes" />
@@ -41476,9 +41476,9 @@
   <event name="SpawnLine Asteroids Start" id_arme="b1bee9c6-fdc6-4dc4-8b33-a8938b79d6d3" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Asteroids (line START)" />
 
-    <create type="genericMesh" use_gm_position="" name="LineStart" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
-    <get_object_property property="positionX" name="LineStart" variable="LineStartX" />
-    <get_object_property property="positionZ" name="LineStart" variable="LineStartZ" />
+    <create type="genericMesh" use_gm_position="" name="." meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.1" colorGreen="0.1" colorBlue="0.2"  />
+    <get_object_property property="positionX" name="." variable="LineStartX" />
+    <get_object_property property="positionZ" name="." variable="LineStartZ" />
 
     <set_variable name="refreshLineSpacingTimerLoopActive" value="1.0" />
     <set_timer name="refreshLineSpacingTimerLoop" seconds="1.0" />
@@ -41492,7 +41492,7 @@
   <event name="SpawnLine Asteroids End" id_arme="d363d8eb-c977-47cd-8dfc-013587f84755" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Asteroids (line FINISH)" />
 
-    <create type="genericMesh" use_gm_position="" name="LineEnd" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.4" colorGreen="0.4" colorBlue="0.4"  />
+    <create type="genericMesh" use_gm_position="" name="LineEnd" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.1" colorGreen="0.1" colorBlue="0.2"  />
     <get_object_property property="positionX" name="LineEnd" variable="LineEndX" />
     <get_object_property property="positionZ" name="LineEnd" variable="LineEndZ" />
 
@@ -41514,7 +41514,7 @@
     <clear_gm_button text="Painter\Asteroids (line CANCEL)"/>
     <set_gm_button text="Painter\Mines (line START)"/>
     <set_gm_button text="Painter\Asteroids (line START)"/>
-    <destroy name="LineStart" />
+    <destroy name="." />
 
     <set_variable name="paintAsteroidLineIter" value="0.0" integer="yes" />
   </event>
@@ -41529,7 +41529,7 @@
   <event name="SpawnLine Asteroids Stop" id_arme="fb2de260-680d-402f-968f-a231cbd07c18" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_variable name="paintAsteroidLineIter" comparator="GREATER_EQUAL" value="painterLayerCount+1" />
     
-    <destroy name="LineStart" />
+    <destroy name="." />
     <destroy name="LineEnd" />
 
     <set_variable name="paintAsteroidLineIter" value="0.0" integer="yes" />
