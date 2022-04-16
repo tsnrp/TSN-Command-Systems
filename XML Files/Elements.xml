@@ -2,7 +2,7 @@
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!---->
   </start>
-  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
+  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
   <folder_arme name="Random Elements" id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <event name="Random Coordinates" id_arme="7c7265dd-f0de-4d29-9f42-9f23d1e09a4e" parent_id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947">
     <if_variable name="Random Coordinates" comparator="EQUALS" value="1.0" />
@@ -30,7 +30,7 @@
     <set_variable name="randMult" randomIntLow="1" randomIntHigh="5" integer="yes" />
     <set_variable name="Random Multiplier" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="AI Types" id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
+  <folder_arme name="AI Types" id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
   <folder_arme name="Combat AI (1 - 49)" id_arme="d474c83d-3108-49d6-983d-3752ff52be2f" parent_id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" />
   <event name="1 - Standard Attack AI" id_arme="431edf06-7d5a-49dd-86fd-4990b5b16374" parent_id_arme="d474c83d-3108-49d6-983d-3752ff52be2f">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="1.0" />
@@ -286,7 +286,7 @@
     <add_ai type="CHASE_AI_SHIP" value1="1500" value2="500" name="--" />
     <add_ai type="DEFEND" value1="3000" value2="1000" name="--" />
   </event>
-  <folder_arme name="Alien AI (100 - 149)" id_arme="1c478493-8c0e-45f5-ba6a-ecd2b4fbd624" parent_id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" />
+  <folder_arme name="Alien AI (100 - 149)" id_arme="1c478493-8c0e-45f5-ba6a-ecd2b4fbd624" parent_id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" expanded_arme="" />
   <event name="100 - Ximni" id_arme="9ea1a99d-faee-412c-a64f-f9cd7911060d" parent_id_arme="1c478493-8c0e-45f5-ba6a-ecd2b4fbd624">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="305.0" />
     <if_variable name="SideValue" comparator="NOT" value="2.0" />
@@ -311,11 +311,11 @@
     <set_object_property property="surrenderChance" value="10" name="--" />
     <clear_ai name="--" />
     <add_ai type="SPCL_AI" name="--" />
+    <add_ai type="CHASE_PLAYER" name="--" />
     <add_ai type="CHASE_AI_SHIP" name="--" />
     <add_ai type="CHASE_PLAYER" value1="3000" value2="500" name="--" />
     <add_ai type="CHASE_STATION" value1="1000" name="--" />
     <add_ai type="CHASE_AI_SHIP" value1="5000" value2="500" name="--" />
-    <add_ai type="CHASE_PLAYER" name="--" />
     <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="--" />
     <add_ai type="CHASE_ANGER" name="--" />
   </event>

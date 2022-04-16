@@ -2,7 +2,7 @@
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!---->
   </start>
-  <folder_arme name="GM Keys" id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
+  <folder_arme name="GM Keys" id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
   <event name="GM Main Menu" id_arme="605a7c3f-76b5-4953-bb43-aa50abc3f88b" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f">
     <if_variable name="GM Controls" comparator="EQUALS" value="1.0" />
     <if_variable name="GM Menu" comparator="EQUALS" value="1.0" />
@@ -800,7 +800,7 @@
     <set_variable name="sectorSideOverride" value="6.0" integer="yes" />
     <set_variable name="System Settings" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="Spawn Keys" id_arme="047cc0b3-ea2a-4991-98c9-400c3bbcd6c5" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
+  <folder_arme name="Spawn Keys" id_arme="047cc0b3-ea2a-4991-98c9-400c3bbcd6c5" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
   <event name="Ships Keys Menu" id_arme="0f9f65b3-02dc-4e16-ad4e-64dc97c5731a" parent_id_arme="047cc0b3-ea2a-4991-98c9-400c3bbcd6c5">
     <if_variable name="GM Menu" comparator="EQUALS" value="4.0" />
     <if_timer_finished name="GM Menu" />
@@ -3559,9 +3559,9 @@
   </event>
   <event name="Light Fleet" id_arme="8a9e9268-d4d3-423a-8945-8b5c6b255611" parent_id_arme="b0bebfa5-1a24-45fc-9f49-b3bf8a4be1b2">
     <if_gm_button text="Euphini Pirates\Light Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -3569,11 +3569,11 @@
   </event>
   <event name="Medium Fleet" id_arme="9362066b-b32e-4e26-bbc4-41b87954d4a2" parent_id_arme="b0bebfa5-1a24-45fc-9f49-b3bf8a4be1b2">
     <if_gm_button text="Euphini Pirates\Medium Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -3581,13 +3581,13 @@
   </event>
   <event name="Heavy Fleet" id_arme="c2bf5caa-3aa7-4e95-8b10-6fafc38fd069" parent_id_arme="b0bebfa5-1a24-45fc-9f49-b3bf8a4be1b2">
     <if_gm_button text="Euphini Pirates\Heavy Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="small medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Euphini Marauders" hullKeys="medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -3631,9 +3631,9 @@
   </event>
   <event name="Light Fleet" id_arme="94653e92-0aa8-467f-bf91-618086e23e6e" parent_id_arme="a7f8a57f-bc8f-4506-b571-f5a47ff4eeae">
     <if_gm_button text="Skull Pirates\Light Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -3641,11 +3641,11 @@
   </event>
   <event name="Medium Fleet" id_arme="b1aea3a8-5a1e-437e-9fb0-590255b4d13b" parent_id_arme="a7f8a57f-bc8f-4506-b571-f5a47ff4eeae">
     <if_gm_button text="Skull Pirates\Medium Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Longbow Brigantine" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Longbow Brigantine" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Longbow Brigantine" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Longbow Brigantine" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -3653,12 +3653,12 @@
   </event>
   <event name="Heavy Fleet" id_arme="3ea62644-08f8-4eb4-8c89-68bf4f75c3be" parent_id_arme="a7f8a57f-bc8f-4506-b571-f5a47ff4eeae">
     <if_gm_button text="Skull Pirates\Heavy Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow Brigantine" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Brigantine" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Brigantine" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Strongbow Longbow Brigantine" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Brigantine" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" raceKeys="Pirate" hullKeys="Brigantine" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="101.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
