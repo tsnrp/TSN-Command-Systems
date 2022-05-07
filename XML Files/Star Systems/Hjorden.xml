@@ -5,19 +5,19 @@
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
   <folder_arme name="Hjorden System" id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" expanded_arme="" />
-  <folder_arme name="Hjorden Settings" id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
-  <folder_arme name="Hjorden Menu" id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" />
+  <folder_arme name="Hjorden Settings" id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" expanded_arme="" />
+  <folder_arme name="Hjorden Menu" id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" expanded_arme="" />
   <event name="Hjorden Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
-    <set_gm_button text="Lower Arc/Hjorden System" />
+    <set_gm_button text="Upper Arc/Hjorden System" />
     <set_variable name="Hjorden Gate" value="1.0" integer="yes" />
   </event>
   <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227">
     <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
-    <clear_gm_button text="Lower Arc/Hjorden System" />
+    <clear_gm_button text="Upper Arc/Hjorden System" />
   </event>
   <event name="Hjorden System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227">
-    <if_gm_button text="Lower Arc/Hjorden System" />
+    <if_gm_button text="Upper Arc/Hjorden System" />
     <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
     <set_variable name="Sector" value="102.0" integer="yes" />
     <set_variable name="Hjorden System" value="1.0" integer="yes" />
