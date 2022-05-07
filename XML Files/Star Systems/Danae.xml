@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="505.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Danae System" id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <folder_arme name="Danae System" id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" expanded_arme="" />
   <folder_arme name="Danae Settings" id_arme="25d8e749-6769-45c7-a706-192f453c7879" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
   <folder_arme name="Danae Menu" id_arme="ab0980b3-d5d3-43f2-b1c5-1a69fc43a68f" parent_id_arme="25d8e749-6769-45c7-a706-192f453c7879" />
   <event name="Danae Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="ab0980b3-d5d3-43f2-b1c5-1a69fc43a68f">
@@ -239,7 +239,7 @@
     <set_variable name="Danae System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Danae Sector III" id_arme="a382484b-a5d6-4993-9c4b-0906fd46e58e" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <folder_arme name="Danae Sector III" id_arme="a382484b-a5d6-4993-9c4b-0906fd46e58e" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" expanded_arme="" />
   <event name="Create Danae Sector III" id_arme="2ed2cdf9-fb88-4834-8380-ecf68621d83e" parent_id_arme="a382484b-a5d6-4993-9c4b-0906fd46e58e">
     <if_variable name="Danae System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -272,7 +272,7 @@
     <create count="112" type="mines" startAngle="-35.7" endAngle="294.1" startX="39885.0" startY="-300.0" startZ="44910.0" radius="8168" />
     <create count="112" type="mines" startAngle="-35.7" endAngle="294.1" startX="39885.0" startY="0.0" startZ="44910.0" radius="8168" />
   </event>
-  <folder_arme name="Navigation" id_arme="3a5b8df6-b707-4446-8dfe-dc0c70347d68" parent_id_arme="a382484b-a5d6-4993-9c4b-0906fd46e58e" />
+  <folder_arme name="Navigation" id_arme="3a5b8df6-b707-4446-8dfe-dc0c70347d68" parent_id_arme="a382484b-a5d6-4993-9c4b-0906fd46e58e" expanded_arme="" />
   <event name="Transition to Sector II" id_arme="e4133412-3bd2-477d-9dee-4ad5fbabc5fa" parent_id_arme="3a5b8df6-b707-4446-8dfe-dc0c70347d68">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -306,7 +306,7 @@
     <set_variable name="Danae System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="a5b60334-b852-4662-b0c0-6473939e21ea" parent_id_arme="3a5b8df6-b707-4446-8dfe-dc0c70347d68" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="a5b60334-b852-4662-b0c0-6473939e21ea" parent_id_arme="3a5b8df6-b707-4446-8dfe-dc0c70347d68" expanded_arme="" />
   <event name="Gate Offline" id_arme="3c7180c0-61ec-4735-afb6-23d17a5a4c67" parent_id_arme="a5b60334-b852-4662-b0c0-6473939e21ea">
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
@@ -478,7 +478,7 @@
     <if_variable name="Euphini Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Danae System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Danae to Euphini" value="1.0" />
     <set_variable name="Euphini System" value="1.0" />
@@ -649,7 +649,7 @@
     <set_variable name="Danae System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Danae Sector V" id_arme="fb716163-123d-4bdc-afa0-13a0d0598f54" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" />
+  <folder_arme name="Danae Sector V" id_arme="fb716163-123d-4bdc-afa0-13a0d0598f54" parent_id_arme="fc1ca6cd-a6c0-4107-81a7-5a2f5e99a8df" expanded_arme="" />
   <event name="Create Danae Sector V" id_arme="5f231859-9c27-43c8-a30b-4d4d37cdda60" parent_id_arme="fb716163-123d-4bdc-afa0-13a0d0598f54">
     <if_variable name="Danae System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -674,7 +674,7 @@
     <create count="20" type="nebulas" startX="97024.0" startY="0.0" startZ="97302.0" endX="66466.0" endY="0.0" endZ="98139.0" randomRange="5171" />
     <create count="20" type="nebulas" startX="89070.0" startY="0.0" startZ="90744.0" endX="64652.0" endY="0.0" endZ="75534.0" randomRange="6103" />
   </event>
-  <folder_arme name="Navigation" id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58" parent_id_arme="fb716163-123d-4bdc-afa0-13a0d0598f54" />
+  <folder_arme name="Navigation" id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58" parent_id_arme="fb716163-123d-4bdc-afa0-13a0d0598f54" expanded_arme="" />
   <event name="Transition to Sector VI" id_arme="4baf441e-d91a-4d3f-a627-43d4cedec1b9" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -763,7 +763,7 @@
     <set_variable name="Danae System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="4ffd33e2-ef6e-4d6f-80ca-c12a0633b79c" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="4ffd33e2-ef6e-4d6f-80ca-c12a0633b79c" parent_id_arme="e38bed5b-4d1e-4a68-a890-5cb518a58b58" expanded_arme="" />
   <event name="Gate Offline" id_arme="7eb1b17e-27bd-431d-ab18-790b0bf7601a" parent_id_arme="4ffd33e2-ef6e-4d6f-80ca-c12a0633b79c">
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Danae System" comparator="EQUALS" value="2.0" />
@@ -935,7 +935,7 @@
     <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Danae System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Danae to Waypoint 60" value="1.0" />
     <set_variable name="Waypoint 60" value="1.0" />

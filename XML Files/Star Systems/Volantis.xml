@@ -138,7 +138,7 @@
     <set_variable name="Volantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Volantis Sector II" id_arme="d45c2904-9b38-40db-90df-ecd23c711e7c" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" />
+  <folder_arme name="Volantis Sector II" id_arme="d45c2904-9b38-40db-90df-ecd23c711e7c" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" expanded_arme="" />
   <event name="Create Volantis Sector II" id_arme="05e06ddc-7913-462e-ba0b-dc3187f05960" parent_id_arme="d45c2904-9b38-40db-90df-ecd23c711e7c">
     <if_timer_finished name="Transition" />
     <if_variable name="Volantis System" comparator="EQUALS" value="1.0" />
@@ -163,7 +163,7 @@
     <create count="10" type="nebulas" startX="10859.0" startY="0.0" startZ="92785.0" endX="10231.0" endY="0.0" endZ="67026.0" randomRange="13294" />
     <set_variable name="Volantis System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="66e83ed2-a04d-4fdd-96ba-5968185119b6" parent_id_arme="d45c2904-9b38-40db-90df-ecd23c711e7c" />
+  <folder_arme name="Navigation" id_arme="66e83ed2-a04d-4fdd-96ba-5968185119b6" parent_id_arme="d45c2904-9b38-40db-90df-ecd23c711e7c" expanded_arme="" />
   <event name="Transition to Sector III" id_arme="5e687f17-89bd-4a6a-97dc-d9d8263468e1" parent_id_arme="66e83ed2-a04d-4fdd-96ba-5968185119b6">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -219,7 +219,7 @@
     <set_variable name="Volantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="a801f388-94c2-45a8-98b1-d58c1c65763b" parent_id_arme="66e83ed2-a04d-4fdd-96ba-5968185119b6" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="a801f388-94c2-45a8-98b1-d58c1c65763b" parent_id_arme="66e83ed2-a04d-4fdd-96ba-5968185119b6" expanded_arme="" />
   <event name="Gate Offline" id_arme="71e7f25f-db9e-4d2a-a591-28e3eee96fed" parent_id_arme="a801f388-94c2-45a8-98b1-d58c1c65763b">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Volantis System" comparator="EQUALS" value="2.0" />
@@ -391,7 +391,7 @@
     <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Volantis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Volantis to Promethean" value="1.0" />
     <set_variable name="Promethean System" value="1.0" />
@@ -569,7 +569,7 @@
     <set_variable name="Volantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Volantis Sector IV" id_arme="56d1cf80-83dd-414f-821b-cd5059d3b66c" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" />
+  <folder_arme name="Volantis Sector IV" id_arme="56d1cf80-83dd-414f-821b-cd5059d3b66c" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" expanded_arme="" />
   <event name="Create Volantis Sector IV" id_arme="c6f17a3e-bbcc-4628-b626-52025fca8580" parent_id_arme="56d1cf80-83dd-414f-821b-cd5059d3b66c">
     <if_timer_finished name="Transition" />
     <if_variable name="Volantis System" comparator="EQUALS" value="1.0" />
@@ -597,7 +597,7 @@
     <create count="20" type="nebulas" startX="83110.0" startY="0.0" startZ="3068.0" endX="64765.0" endY="0.0" endZ="9225.0" randomRange="4122" />
     <set_variable name="Volantis System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="6f6f1242-f226-432c-b8c4-29a2582dae21" parent_id_arme="56d1cf80-83dd-414f-821b-cd5059d3b66c" />
+  <folder_arme name="Navigation" id_arme="6f6f1242-f226-432c-b8c4-29a2582dae21" parent_id_arme="56d1cf80-83dd-414f-821b-cd5059d3b66c" expanded_arme="" />
   <event name="Transition to Sector III" id_arme="ceb172e4-0701-4017-a7de-c4c2e707da22" parent_id_arme="6f6f1242-f226-432c-b8c4-29a2582dae21">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -631,7 +631,7 @@
     <set_variable name="Volantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="7.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="9441e4fe-343e-4b8f-93e8-4c61d419b13f" parent_id_arme="6f6f1242-f226-432c-b8c4-29a2582dae21" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="9441e4fe-343e-4b8f-93e8-4c61d419b13f" parent_id_arme="6f6f1242-f226-432c-b8c4-29a2582dae21" expanded_arme="" />
   <event name="Gate Offline" id_arme="2e9a6b00-b772-44bf-b67e-c2533077143d" parent_id_arme="9441e4fe-343e-4b8f-93e8-4c61d419b13f">
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Volantis System" comparator="EQUALS" value="2.0" />
@@ -803,7 +803,7 @@
     <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Volantis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Volantis to Sierra" value="1.0" />
     <set_variable name="Sierra System" value="1.0" />
@@ -1131,7 +1131,7 @@
     <set_variable name="Volantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Volantis Sector VII" id_arme="0a96d9c8-057b-480d-8070-1287fe075b9a" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" />
+  <folder_arme name="Volantis Sector VII" id_arme="0a96d9c8-057b-480d-8070-1287fe075b9a" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" expanded_arme="" />
   <event name="Create Volantis Sector VII" id_arme="1a0e6e37-a36e-4d83-9b7f-f1d2dafab607" parent_id_arme="0a96d9c8-057b-480d-8070-1287fe075b9a">
     <if_timer_finished name="Transition" />
     <if_variable name="Volantis System" comparator="EQUALS" value="1.0" />
@@ -1152,7 +1152,7 @@
     <create count="30" type="asteroids" startX="70168.0" startY="0.0" startZ="29204.0" endX="41644.0" endY="0.0" endZ="49811.0" randomRange="5798" />
     <set_variable name="Volantis System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="7425276f-138a-48a1-9495-a5ffcf8e596c" parent_id_arme="0a96d9c8-057b-480d-8070-1287fe075b9a" />
+  <folder_arme name="Navigation" id_arme="7425276f-138a-48a1-9495-a5ffcf8e596c" parent_id_arme="0a96d9c8-057b-480d-8070-1287fe075b9a" expanded_arme="" />
   <event name="Transition to Sector VIII" id_arme="935559c0-8308-4584-af87-86c46974bdc7" parent_id_arme="7425276f-138a-48a1-9495-a5ffcf8e596c">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1241,7 +1241,7 @@
     <set_variable name="Volantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="1a88a0fc-1851-41a2-8198-79bb6aa268e5" parent_id_arme="7425276f-138a-48a1-9495-a5ffcf8e596c" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="1a88a0fc-1851-41a2-8198-79bb6aa268e5" parent_id_arme="7425276f-138a-48a1-9495-a5ffcf8e596c" expanded_arme="" />
   <event name="Gate Offline" id_arme="83c26875-16cc-41a2-acc5-e00100bfd07c" parent_id_arme="1a88a0fc-1851-41a2-8198-79bb6aa268e5">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Volantis System" comparator="EQUALS" value="2.0" />
@@ -1413,7 +1413,7 @@
     <if_variable name="Waypoint 52 Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Volantis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Volantis to Waypoint 52" value="1.0" />
     <set_variable name="Waypoint 52" value="1.0" />

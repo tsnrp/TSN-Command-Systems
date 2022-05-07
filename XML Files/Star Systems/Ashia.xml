@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="500.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Ashia System" id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <folder_arme name="Ashia System" id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" expanded_arme="" />
   <folder_arme name="Ashia Settings" id_arme="11e9ee7d-f5ac-403b-be11-c1aff306d2e6" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
   <folder_arme name="Ashia Menu" id_arme="b26b22e8-d915-4e87-b174-46aae791c78f" parent_id_arme="11e9ee7d-f5ac-403b-be11-c1aff306d2e6" />
   <event name="Ashia Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="b26b22e8-d915-4e87-b174-46aae791c78f">
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ashia Sector I" id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <folder_arme name="Ashia Sector I" id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" expanded_arme="" />
   <event name="Create Ashia Sector I" id_arme="2a7deed8-1f8f-4b4a-b745-eff4dcf12cc4" parent_id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f">
     <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -78,7 +78,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62" parent_id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f" />
+  <folder_arme name="Navigation" id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62" parent_id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f" expanded_arme="" />
   <event name="Transition to Sector II" id_arme="5b108269-5dbb-4867-b7c3-b6c2e68176c9" parent_id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62">
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -112,7 +112,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="6616da75-b3fe-42e9-aa95-779c79e6a575" parent_id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="6616da75-b3fe-42e9-aa95-779c79e6a575" parent_id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62" expanded_arme="" />
   <event name="Gate Offline" id_arme="91e384b0-05d9-42ea-865c-2c72b0878019" parent_id_arme="6616da75-b3fe-42e9-aa95-779c79e6a575">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />

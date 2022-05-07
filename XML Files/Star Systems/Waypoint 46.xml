@@ -4,8 +4,8 @@
     <set_variable name="Coordinate Y" value="522.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Waypoint 46" id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" />
-  <folder_arme name="Sector 1" id_arme="a331e7d4-75fa-44bb-9f60-a04335e37f67" parent_id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" />
+  <folder_arme name="Waypoint 46" id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" expanded_arme="" />
+  <folder_arme name="Sector 1" id_arme="a331e7d4-75fa-44bb-9f60-a04335e37f67" parent_id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" expanded_arme="" />
   <event name="Create Waypoint 46-1" id_arme="94c82133-a201-46dd-b0f8-50c770b5a5ef" parent_id_arme="a331e7d4-75fa-44bb-9f60-a04335e37f67">
     <if_variable name="Waypoint 46" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -26,7 +26,7 @@
     <create count="10" type="asteroids" startX="82054.0" startY="0.0" startZ="68190.0" endX="60269.0" endY="0.0" endZ="63422.0" randomRange="2761" />
     <create count="80" type="asteroids" startX="72445.0" startY="0.0" startZ="66430.0" endX="89903.0" endY="0.0" endZ="54327.0" randomRange="8912" />
   </event>
-  <folder_arme name="Navigation" id_arme="f142b602-63d6-435d-9d25-29177a1c29ab" parent_id_arme="a331e7d4-75fa-44bb-9f60-a04335e37f67" />
+  <folder_arme name="Navigation" id_arme="f142b602-63d6-435d-9d25-29177a1c29ab" parent_id_arme="a331e7d4-75fa-44bb-9f60-a04335e37f67" expanded_arme="" />
   <event name="Transition to (Right)" id_arme="a0578d3c-478a-4afb-b0d0-507708a9cfe2" parent_id_arme="f142b602-63d6-435d-9d25-29177a1c29ab">
     <if_variable name="Waypoint 46" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
@@ -60,7 +60,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="09a2337e-a960-4fce-8e37-37330bee9ec3" parent_id_arme="f142b602-63d6-435d-9d25-29177a1c29ab" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="09a2337e-a960-4fce-8e37-37330bee9ec3" parent_id_arme="f142b602-63d6-435d-9d25-29177a1c29ab" expanded_arme="" />
   <event name="Gate Offline" id_arme="136c6598-a449-4c4c-aece-47ea5ac0147a" parent_id_arme="09a2337e-a960-4fce-8e37-37330bee9ec3">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Waypoint 46" comparator="EQUALS" value="2.0" />
@@ -232,7 +232,7 @@
     <if_variable name="Tethys Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Waypoint 46" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Waypoint 46 to Tethys" value="1.0" />
     <set_variable name="Tethys System" value="1.0" />
@@ -294,7 +294,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Tethys to Waypoint 46" value="0.0" />
   </event>
-  <folder_arme name="Sector 2" id_arme="e4fd2bb1-c38e-4dea-8992-cbc8a3b70558" parent_id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" />
+  <folder_arme name="Sector 2" id_arme="e4fd2bb1-c38e-4dea-8992-cbc8a3b70558" parent_id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" expanded_arme="" />
   <event name="Create Waypoint 46-2" id_arme="963d5e94-9f45-4b12-962e-42bd18a41a33" parent_id_arme="e4fd2bb1-c38e-4dea-8992-cbc8a3b70558">
     <if_variable name="Waypoint 46" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -315,7 +315,7 @@
     <create count="70" type="asteroids" startX="68045.0" startY="0.0" startZ="83227.0" endX="32470.0" endY="0.0" endZ="67530.0" randomRange="5802" />
     <create count="40" type="nebulas" startX="16920.0" startY="0.0" startZ="66650.0" endX="36431.0" endY="0.0" endZ="74425.0" randomRange="10575" />
   </event>
-  <folder_arme name="Navigation" id_arme="b2933b01-c89f-4e92-a13f-1c7a609757e7" parent_id_arme="e4fd2bb1-c38e-4dea-8992-cbc8a3b70558" />
+  <folder_arme name="Navigation" id_arme="b2933b01-c89f-4e92-a13f-1c7a609757e7" parent_id_arme="e4fd2bb1-c38e-4dea-8992-cbc8a3b70558" expanded_arme="" />
   <event name="Transition to (Left)" id_arme="5cb5c105-7a18-42cf-a47d-4e9fb95bb954" parent_id_arme="b2933b01-c89f-4e92-a13f-1c7a609757e7">
     <if_variable name="Waypoint 46" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
@@ -349,7 +349,7 @@
     <set_variable name="Corner E1 Transition" value="0.0" />
     <set_variable name="Waypoint 46" value="3.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="4ff9273f-aad2-444f-8e43-ac10520b9262" parent_id_arme="b2933b01-c89f-4e92-a13f-1c7a609757e7" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="4ff9273f-aad2-444f-8e43-ac10520b9262" parent_id_arme="b2933b01-c89f-4e92-a13f-1c7a609757e7" expanded_arme="" />
   <event name="Gate Offline" id_arme="32048f12-88a9-485c-a927-bfe8b595966b" parent_id_arme="4ff9273f-aad2-444f-8e43-ac10520b9262">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Waypoint 46" comparator="EQUALS" value="2.0" />
@@ -521,7 +521,7 @@
     <if_variable name="Charon Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Waypoint 46" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Waypoint 46 to Charon" value="1.0" />
     <set_variable name="Charon System" value="1.0" />
@@ -581,7 +581,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Charon to Waypoint 46" value="0.0" />
   </event>
-  <folder_arme name="Sector 3" id_arme="6d12fe01-8670-47da-a75c-0aa2e93ef527" parent_id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" />
+  <folder_arme name="Sector 3" id_arme="6d12fe01-8670-47da-a75c-0aa2e93ef527" parent_id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" expanded_arme="" />
   <event name="Create Waypoint 46-3" id_arme="7e629c98-a74f-482c-b9c0-74528b11b69d" parent_id_arme="6d12fe01-8670-47da-a75c-0aa2e93ef527">
     <if_variable name="Waypoint 46" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -604,7 +604,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="5312ddda-14b2-4254-9512-07d31cbcb75b" parent_id_arme="6d12fe01-8670-47da-a75c-0aa2e93ef527" />
+  <folder_arme name="Navigation" id_arme="5312ddda-14b2-4254-9512-07d31cbcb75b" parent_id_arme="6d12fe01-8670-47da-a75c-0aa2e93ef527" expanded_arme="" />
   <event name="Transition to (Right)" id_arme="1942025a-3f73-4dad-ac9b-5c1361a97704" parent_id_arme="5312ddda-14b2-4254-9512-07d31cbcb75b">
     <if_variable name="Waypoint 46" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
@@ -638,7 +638,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner A5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="5bb0a3b4-bf25-4705-aee8-fc2dee953dd8" parent_id_arme="5312ddda-14b2-4254-9512-07d31cbcb75b" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="5bb0a3b4-bf25-4705-aee8-fc2dee953dd8" parent_id_arme="5312ddda-14b2-4254-9512-07d31cbcb75b" expanded_arme="" />
   <event name="Gate Offline" id_arme="b5d4dfce-1a3c-410a-be90-540af5128fc6" parent_id_arme="5bb0a3b4-bf25-4705-aee8-fc2dee953dd8">
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="Waypoint 46" comparator="EQUALS" value="2.0" />
@@ -810,7 +810,7 @@
     <if_variable name="Phinmor Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Waypoint 46" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Waypoint 46 to Phinmor" value="1.0" />
     <set_variable name="Phinmor System" value="1.0" />
@@ -870,7 +870,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Phinmor to Waypoint 46" value="0.0" />
   </event>
-  <folder_arme name="Sector 4" id_arme="017051a3-eabb-4ce3-bad2-ca9199e3ee92" parent_id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" />
+  <folder_arme name="Sector 4" id_arme="017051a3-eabb-4ce3-bad2-ca9199e3ee92" parent_id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" expanded_arme="" />
   <event name="Create Waypoint 46-4" id_arme="a30c2397-0e7b-4577-9c44-c4e09127355b" parent_id_arme="017051a3-eabb-4ce3-bad2-ca9199e3ee92">
     <if_variable name="Waypoint 46" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -891,7 +891,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="2f1836c7-5b42-49be-b7ff-a3b3f7bb4f32" parent_id_arme="017051a3-eabb-4ce3-bad2-ca9199e3ee92" />
+  <folder_arme name="Navigation" id_arme="2f1836c7-5b42-49be-b7ff-a3b3f7bb4f32" parent_id_arme="017051a3-eabb-4ce3-bad2-ca9199e3ee92" expanded_arme="" />
   <event name="Transition to (Left)" id_arme="2ea6938f-52bc-4b10-844f-8571b849c35d" parent_id_arme="2f1836c7-5b42-49be-b7ff-a3b3f7bb4f32">
     <if_variable name="Waypoint 46" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
@@ -925,7 +925,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner A1 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="8b3966c7-c126-4498-ac71-1ab119297a32" parent_id_arme="2f1836c7-5b42-49be-b7ff-a3b3f7bb4f32" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="8b3966c7-c126-4498-ac71-1ab119297a32" parent_id_arme="2f1836c7-5b42-49be-b7ff-a3b3f7bb4f32" expanded_arme="" />
   <event name="Gate Offline" id_arme="b70c435c-b03c-4c46-a965-562877ce5bc3" parent_id_arme="8b3966c7-c126-4498-ac71-1ab119297a32">
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Waypoint 46" comparator="EQUALS" value="2.0" />
@@ -1097,7 +1097,7 @@
     <if_variable name="Oberon Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Waypoint 46" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Waypoint 46 to Oberon" value="1.0" />
     <set_variable name="Oberon System" value="1.0" />

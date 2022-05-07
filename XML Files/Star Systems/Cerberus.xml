@@ -4,8 +4,8 @@
     <set_variable name="Coordinate Y" value="356.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Cerberus System" id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
-  <folder_arme name="Cerberus Settings" id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Cerberus System" id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" expanded_arme="" />
+  <folder_arme name="Cerberus Settings" id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" expanded_arme="" />
   <folder_arme name="Cerberus Menu" id_arme="05b9aacb-9a69-4b30-8c67-13c26cec06bf" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe" />
   <event name="Cerberus Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="05b9aacb-9a69-4b30-8c67-13c26cec06bf">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Cerberus Sector I" id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Cerberus Sector I" id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" expanded_arme="" />
   <event name="Create Cerberus Sector I" id_arme="cfd6bb8c-981a-4f8b-a085-eb3820b54c3c" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b">
     <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -80,7 +80,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" integer="yes" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Navigation" id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" />
+  <folder_arme name="Navigation" id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" expanded_arme="" />
   <event name="Transition to Sector II" id_arme="8540873b-f13d-44d2-bfb6-592af29e6862" parent_id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
@@ -286,7 +286,7 @@
     <if_variable name="Krisenda Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Cerberus System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Cerberus to Krisenda" value="1.0" />
     <set_variable name="Krisenda System" value="1.0" />
@@ -356,7 +356,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Krisenda to Cerberus" value="0.0" />
   </event>
-  <folder_arme name="Cerberus Sector II" id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Cerberus Sector II" id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" expanded_arme="" />
   <event name="Create Cerberus Sector II" id_arme="d2feb10d-8a52-4356-9232-0ff6d9485293" parent_id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6">
     <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -377,7 +377,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7" parent_id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6" />
+  <folder_arme name="Navigation" id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7" parent_id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6" expanded_arme="" />
   <event name="Transition to Sector I" id_arme="3d334c07-dfc5-42ea-8a82-7cdd5febbdd5" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
@@ -433,7 +433,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Cerberus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="4744c8ef-fee6-4c7f-b369-4f8ee9459dd0" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="4744c8ef-fee6-4c7f-b369-4f8ee9459dd0" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7" expanded_arme="" />
   <event name="Gate Offline" id_arme="5961b64b-5020-446c-b741-419ec785c884" parent_id_arme="4744c8ef-fee6-4c7f-b369-4f8ee9459dd0">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
@@ -605,7 +605,7 @@
     <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Cerberus System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Cerberus to Atlantis" value="1.0" />
     <set_variable name="Atlantis System" value="1.0" />
@@ -687,7 +687,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Atlantis to Cerberus" value="0.0" />
   </event>
-  <folder_arme name="Cerberus Sector III" id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Cerberus Sector III" id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" expanded_arme="" />
   <event name="Create Cerberus Sector III" id_arme="2a5eb676-88e2-4daa-bdfb-dee667e0ca67" parent_id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20">
     <if_timer_finished name="Transition" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
@@ -709,7 +709,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93" parent_id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20" />
+  <folder_arme name="Navigation" id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93" parent_id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20" expanded_arme="" />
   <event name="Transition to Sector IV" id_arme="aef204eb-4b29-4040-a9cb-324d33cd3d49" parent_id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
@@ -803,7 +803,7 @@
     <set_variable name="Cerberus System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Cerberus Sector IV" id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Cerberus Sector IV" id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" expanded_arme="" />
   <event name="Create Cerberus Sector IV" id_arme="817121da-14dc-47de-9f78-ee5ae7ea48e3" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd">
     <if_timer_finished name="Transition" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
@@ -824,7 +824,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" />
+  <folder_arme name="Navigation" id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" expanded_arme="" />
   <event name="Transition to Sector III" id_arme="2acbd4c8-ca89-4bbe-805b-617ea775300e" parent_id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
@@ -858,14 +858,14 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Cerberus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="20d40d4e-5e97-4bbd-9d03-6f32e12e00a9" parent_id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="20d40d4e-5e97-4bbd-9d03-6f32e12e00a9" parent_id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f" expanded_arme="" />
   <event name="Gate Offline" id_arme="1f273a88-d7c2-49e0-80fc-60187167a8af" parent_id_arme="20d40d4e-5e97-4bbd-9d03-6f32e12e00a9">
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Promethean Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a" parent_id_arme="20d40d4e-5e97-4bbd-9d03-6f32e12e00a9" />
+  <folder_arme name="Tracking System" id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a" parent_id_arme="20d40d4e-5e97-4bbd-9d03-6f32e12e00a9" expanded_arme="" />
   <event name="Ship1 Activation Range" id_arme="ec50438e-2385-41ce-a561-492ddf1d89c0" parent_id_arme="6e9ec4fa-7a43-4529-bd29-9900f73f297a">
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
@@ -1030,7 +1030,7 @@
     <if_variable name="Promethean Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Cerberus System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Cerberus to Promethean" value="1.0" />
     <set_variable name="Promethean System" value="1.0" />
@@ -1039,7 +1039,7 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" />
+  <folder_arme name="Sector Entities" id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="be34843d-3b9a-46ab-b420-99938d49dc40" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -1099,7 +1099,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Promethean to Cerberus" value="0.0" />
   </event>
-  <folder_arme name="Cerberus Sector V" id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Cerberus Sector V" id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" expanded_arme="" />
   <event name="Create Cerberus Sector V" id_arme="cd534796-7ca7-45de-816a-c0590a6703ec" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2">
     <if_timer_finished name="Transition" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
@@ -1125,7 +1125,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" />
+  <folder_arme name="Navigation" id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" expanded_arme="" />
   <event name="Transition to Sector I" id_arme="5845fa59-2742-4e6b-b0eb-72da68c7a6bb" parent_id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def">
     <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
@@ -1159,7 +1159,7 @@
     <set_variable name="Sector" value="2.0" integer="yes" />
     <set_variable name="Cerberus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="0fa59167-5195-4b77-8677-90e1a93a54ce" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" />
+  <folder_arme name="Sector Entities" id_arme="0fa59167-5195-4b77-8677-90e1a93a54ce" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="daea5bb1-d78c-44de-a05f-e6591d6073b5" parent_id_arme="0fa59167-5195-4b77-8677-90e1a93a54ce">
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -1189,7 +1189,7 @@
     <set_variable name="Cerberus System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Cerberus Sector VI" id_arme="f472a500-58ab-4130-91ec-312faaf2f127" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Cerberus Sector VI" id_arme="f472a500-58ab-4130-91ec-312faaf2f127" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" expanded_arme="" />
   <event name="Create Cerberus Sector VI" id_arme="e34609ea-464f-43c2-a780-7c1bd1d05ddf" parent_id_arme="f472a500-58ab-4130-91ec-312faaf2f127">
     <if_timer_finished name="Transition" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
@@ -1215,7 +1215,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="87d8c4e3-0829-4091-897d-284e07c18b30" parent_id_arme="f472a500-58ab-4130-91ec-312faaf2f127" />
+  <folder_arme name="Navigation" id_arme="87d8c4e3-0829-4091-897d-284e07c18b30" parent_id_arme="f472a500-58ab-4130-91ec-312faaf2f127" expanded_arme="" />
   <event name="Transition to Sector V" id_arme="132d68cc-4dd3-445e-bd83-9b1497dfcdbd" parent_id_arme="87d8c4e3-0829-4091-897d-284e07c18b30">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
@@ -1312,7 +1312,7 @@
     <set_variable name="Cerberus System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Cerberus Sector VII" id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Cerberus Sector VII" id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" expanded_arme="" />
   <event name="Create Cerberus Sector VII" id_arme="37b50a25-6fa8-47c4-817b-227c9c02b14b" parent_id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6">
     <if_timer_finished name="Transition" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
@@ -1340,7 +1340,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0" parent_id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6" />
+  <folder_arme name="Navigation" id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0" parent_id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6" expanded_arme="" />
   <event name="Transition to Sector VIII" id_arme="ba68e714-dfe7-4cbf-8ad9-98341cde296d" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
@@ -1396,7 +1396,7 @@
     <set_variable name="Sector" value="2.0" integer="yes" />
     <set_variable name="Cerberus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="086a4c08-9ddc-4a47-b0cc-beb3b455d775" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="086a4c08-9ddc-4a47-b0cc-beb3b455d775" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0" expanded_arme="" />
   <event name="Gate Offline" id_arme="24f83962-736e-4dfe-a3bd-7fd2aeab6e12" parent_id_arme="086a4c08-9ddc-4a47-b0cc-beb3b455d775">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
@@ -1556,7 +1556,7 @@
     <if_variable name="Hjorden Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Cerberus System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Cerberus to Hjorden" value="1.0" />
     <set_variable name="Hjorden System" value="1.0" />
@@ -1643,7 +1643,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Hjorden to Cerberus" value="0.0" />
   </event>
-  <folder_arme name="Cerberus Sector VIII" id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Cerberus Sector VIII" id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" expanded_arme="" />
   <event name="Create Cerberus Sector VIII" id_arme="a7c1436d-766a-47b8-8700-9b0c42ba81b6" parent_id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63">
     <if_timer_finished name="Transition" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="1.0" />
@@ -1664,7 +1664,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0" parent_id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63" />
+  <folder_arme name="Navigation" id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0" parent_id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63" expanded_arme="" />
   <event name="Transition to Sector IV" id_arme="1186b48b-5113-4ca0-9709-1a373400cb3c" parent_id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0">
     <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />

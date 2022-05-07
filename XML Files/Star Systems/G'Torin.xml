@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="272.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="G'Torin System" id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
+  <folder_arme name="G'Torin System" id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" expanded_arme="" />
   <folder_arme name="G'Torin Settings" id_arme="7de4ecf1-627e-4c41-8741-4ff2f82f7862" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
   <folder_arme name="G'Torin Menu" id_arme="725d51eb-6e6c-4c70-85c3-0f2b1cf29960" parent_id_arme="7de4ecf1-627e-4c41-8741-4ff2f82f7862" />
   <event name="G'Torin Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="725d51eb-6e6c-4c70-85c3-0f2b1cf29960">
@@ -134,7 +134,7 @@
     <set_variable name="G'Torin System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="G'Torin Sector II" id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
+  <folder_arme name="G'Torin Sector II" id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" expanded_arme="" />
   <event name="Create G'Torin Sector II" id_arme="7fe962e1-43d6-4e96-8699-43d1a089b7f5" parent_id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f">
     <if_timer_finished name="Transition" />
     <if_variable name="G'Torin System" comparator="EQUALS" value="1.0" />
@@ -159,7 +159,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
     <set_variable name="G'Torin System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160" parent_id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f" />
+  <folder_arme name="Navigation" id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160" parent_id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f" expanded_arme="" />
   <event name="Transition to Sector III" id_arme="33b449bb-63fc-4f47-b1dc-d8ebf312dc15" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
@@ -215,7 +215,7 @@
     <set_variable name="Sector" value="4.0" integer="yes" />
     <set_variable name="G'Torin System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b7376bbb-8de2-48f3-9813-aa2542f09f1d" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b7376bbb-8de2-48f3-9813-aa2542f09f1d" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160" expanded_arme="" />
   <event name="Gate Offline" id_arme="84a3148d-cbd0-4939-a323-c16f0a002357" parent_id_arme="b7376bbb-8de2-48f3-9813-aa2542f09f1d">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />

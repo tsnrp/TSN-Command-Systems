@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="376.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Sumri System" id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
+  <folder_arme name="Sumri System" id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
   <folder_arme name="Sumri Settings" id_arme="1bfb2f53-8b19-41e0-8f1c-2ed34742c50d" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <folder_arme name="Sumri Menu" id_arme="c1ba718b-bfdd-49ee-a3dd-a6872ae9069b" parent_id_arme="1bfb2f53-8b19-41e0-8f1c-2ed34742c50d" />
   <event name="Sumri Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="c1ba718b-bfdd-49ee-a3dd-a6872ae9069b">
@@ -57,7 +57,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sumri Sector I" id_arme="13a7dc01-522b-472d-9a97-1f7a46f9e24b" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
+  <folder_arme name="Sumri Sector I" id_arme="13a7dc01-522b-472d-9a97-1f7a46f9e24b" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
   <event name="Create Sumri Sector I" id_arme="3fcbd4b3-05d2-4bca-bbe1-24268d8bb7e0" parent_id_arme="13a7dc01-522b-472d-9a97-1f7a46f9e24b">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -352,7 +352,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="G'Torin to Sumri" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector II" id_arme="5fc34811-7b04-4c04-8a57-2454032a6685" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
+  <folder_arme name="Sumri Sector II" id_arme="5fc34811-7b04-4c04-8a57-2454032a6685" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
   <event name="Create Sumri Sector II" id_arme="05962792-828d-463e-b881-2580a08c2300" parent_id_arme="5fc34811-7b04-4c04-8a57-2454032a6685">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -1166,7 +1166,7 @@
     <set_variable name="Sumri System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector VII" id_arme="9a2bc86a-6b59-4557-9e90-829a8a1dae01" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
+  <folder_arme name="Sumri Sector VII" id_arme="9a2bc86a-6b59-4557-9e90-829a8a1dae01" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
   <event name="Create Sumri Sector VII" id_arme="e1d6cfa3-444e-4b0b-bafa-5472f9666f50" parent_id_arme="9a2bc86a-6b59-4557-9e90-829a8a1dae01">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1570,7 +1570,7 @@
     <set_variable name="Sumri System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector IX" id_arme="f882a02a-229e-40ca-9b10-4f462d550ff8" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
+  <folder_arme name="Sumri Sector IX" id_arme="f882a02a-229e-40ca-9b10-4f462d550ff8" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
   <event name="Create Sumri Sector IX" id_arme="7648a7fb-7f45-469d-aee8-51f2cf4e342f" parent_id_arme="f882a02a-229e-40ca-9b10-4f462d550ff8">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1592,7 +1592,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="544779ed-f445-43bd-96ff-a24be1cc1e7a" parent_id_arme="f882a02a-229e-40ca-9b10-4f462d550ff8" />
+  <folder_arme name="Navigation" id_arme="544779ed-f445-43bd-96ff-a24be1cc1e7a" parent_id_arme="f882a02a-229e-40ca-9b10-4f462d550ff8" expanded_arme="" />
   <event name="Transition to Sector VIII" id_arme="59fe1d87-dc81-423b-a147-dbde6d508c30" parent_id_arme="544779ed-f445-43bd-96ff-a24be1cc1e7a">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1626,7 +1626,7 @@
     <set_variable name="Sumri System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="5a287e14-1d9b-448f-b9be-7f27a1744134" parent_id_arme="544779ed-f445-43bd-96ff-a24be1cc1e7a" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="5a287e14-1d9b-448f-b9be-7f27a1744134" parent_id_arme="544779ed-f445-43bd-96ff-a24be1cc1e7a" expanded_arme="" />
   <event name="Gate Offline" id_arme="26a0243b-48f5-4160-9523-ad03fe0b074e" parent_id_arme="5a287e14-1d9b-448f-b9be-7f27a1744134">
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />

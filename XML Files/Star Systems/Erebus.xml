@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="169.0" integer="yes" />
     <set_variable name="Alignment" value="Hegemony" integer="yes" />
   </start>
-  <folder_arme name="Erebus System" id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <folder_arme name="Erebus System" id_arme="598b2edb-0504-4df9-8258-b15950408102" expanded_arme="" />
   <folder_arme name="Erebus Settings" id_arme="12aa1282-8949-4c44-84e0-264d16ea10f1" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
   <folder_arme name="Erebus Menu" id_arme="80da5600-2f4d-4d45-bc35-17fb592be1b2" parent_id_arme="12aa1282-8949-4c44-84e0-264d16ea10f1" />
   <event name="Erebus Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="80da5600-2f4d-4d45-bc35-17fb592be1b2">
@@ -150,7 +150,7 @@
     <set_variable name="Erebus System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Erebus Sector II" id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <folder_arme name="Erebus Sector II" id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" expanded_arme="" />
   <event name="Create Erebus Sector II" id_arme="eb102f50-488c-45f5-8c63-0efaa4cde4b2" parent_id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf">
     <if_timer_finished name="Transition" />
     <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
@@ -175,7 +175,7 @@
     <create count="36" type="asteroids" startX="73100.0" startY="0.0" startZ="33147.0" endX="71742.0" endY="0.0" endZ="46235.0" randomRange="6436" />
     <create count="10" type="nebulas" startX="26623.0" startY="0.0" startZ="54414.0" endX="18517.0" endY="0.0" endZ="68166.0" randomRange="9214" />
   </event>
-  <folder_arme name="Navigation" id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969" parent_id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf" />
+  <folder_arme name="Navigation" id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969" parent_id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf" expanded_arme="" />
   <event name="Transition to Sector III" id_arme="e04c83bc-0248-4d71-97d0-adbbcaf2b4db" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
@@ -231,7 +231,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Erebus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="8e85790b-6991-45ad-bb7c-9c27771e2ab2" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="8e85790b-6991-45ad-bb7c-9c27771e2ab2" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969" expanded_arme="" />
   <event name="Gate Offline" id_arme="00068d28-b9dc-4ee1-ab6d-4beeb52a52f0" parent_id_arme="8e85790b-6991-45ad-bb7c-9c27771e2ab2">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
@@ -403,7 +403,7 @@
     <if_variable name="Cronus Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Erebus System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Erebus to Cronus" value="1.0" />
     <set_variable name="Cronus System" value="1.0" />
@@ -1282,7 +1282,7 @@
     <set_variable name="Erebus System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Erebus Sector X" id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
+  <folder_arme name="Erebus Sector X" id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" expanded_arme="" />
   <event name="Create Erebus Sector X" id_arme="67a8c664-ab93-4780-8135-0d6a85573aa0" parent_id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147">
     <if_timer_finished name="Transition" />
     <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
@@ -1310,7 +1310,7 @@
     <create count="40" type="nebulas" startX="83362.0" startY="0.0" startZ="77832.0" endX="58859.0" endY="0.0" endZ="92910.0" randomRange="7675" />
     <create count="10" type="nebulas" startX="75948.0" startY="0.0" startZ="24178.0" endX="75948.0" endY="0.0" endZ="24178.0" randomRange="8564" />
   </event>
-  <folder_arme name="Navigation" id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45" parent_id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147" />
+  <folder_arme name="Navigation" id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45" parent_id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147" expanded_arme="" />
   <event name="Transition to Sector XI" id_arme="d19584ac-c927-4d85-a8f3-2fd4cae99eaa" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
@@ -1366,7 +1366,7 @@
     <set_variable name="Sector" value="5.0" integer="yes" />
     <set_variable name="Erebus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="645dc0af-c04a-4407-becb-232f36b36757" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="645dc0af-c04a-4407-becb-232f36b36757" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45" expanded_arme="" />
   <event name="Gate Offline" id_arme="e7c63da4-e411-407a-a9ae-d54dd7c452c7" parent_id_arme="645dc0af-c04a-4407-becb-232f36b36757">
     <if_variable name="Sector" comparator="EQUALS" value="10" />
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
@@ -1538,7 +1538,7 @@
     <if_variable name="Sierra Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Erebus System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Erebus to Sierra" value="1.0" />
     <set_variable name="Sierra System" value="1.0" />

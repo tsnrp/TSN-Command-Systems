@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="145.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Eyukua System" id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" />
+  <folder_arme name="Eyukua System" id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" expanded_arme="" />
   <folder_arme name="Eyukua Settings" id_arme="e3992077-b2c0-4077-bba4-b274771433f3" parent_id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" />
   <folder_arme name="Eyukua Menu" id_arme="d97dd36d-608e-41eb-bd53-f65146266237" parent_id_arme="e3992077-b2c0-4077-bba4-b274771433f3" />
   <event name="Eyukua Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="d97dd36d-608e-41eb-bd53-f65146266237">
@@ -57,7 +57,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sector I - V" id_arme="195cd123-9599-4972-81a6-1bc92fdd3c2e" parent_id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" />
+  <folder_arme name="Sector I - V" id_arme="195cd123-9599-4972-81a6-1bc92fdd3c2e" parent_id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" expanded_arme="" />
   <folder_arme name="Eyukua Sector I" id_arme="8adfea41-d3f6-4f4a-a98b-2531f8c54e1e" parent_id_arme="195cd123-9599-4972-81a6-1bc92fdd3c2e" />
   <event name="Create Eyukua Sector I" id_arme="e83b63a1-b192-4cdf-a291-2615f25a6ca9" parent_id_arme="8adfea41-d3f6-4f4a-a98b-2531f8c54e1e">
     <if_timer_finished name="Transition" />
@@ -137,7 +137,7 @@
     <set_variable name="Eyukua System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Eyukua Sector II" id_arme="9fe3e6d9-3ec0-42b9-a84c-fc3fecab8b6b" parent_id_arme="195cd123-9599-4972-81a6-1bc92fdd3c2e" />
+  <folder_arme name="Eyukua Sector II" id_arme="9fe3e6d9-3ec0-42b9-a84c-fc3fecab8b6b" parent_id_arme="195cd123-9599-4972-81a6-1bc92fdd3c2e" expanded_arme="" />
   <event name="Create Eyukua Sector II" id_arme="7d018e81-722c-4022-acfe-027c1a67bad3" parent_id_arme="9fe3e6d9-3ec0-42b9-a84c-fc3fecab8b6b">
     <if_timer_finished name="Transition" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="1.0" />
@@ -170,7 +170,7 @@
     <create type="genericMesh" x="54768.0" y="0.0" z="33349.0" angle="0" name="Waypoint 78 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <create type="blackHole" x="70978.0" y="0.0" z="73985.0" name="BH-2" />
   </event>
-  <folder_arme name="Navigation" id_arme="4d29c723-2787-46ce-a3be-b6ecc6bb201a" parent_id_arme="9fe3e6d9-3ec0-42b9-a84c-fc3fecab8b6b" />
+  <folder_arme name="Navigation" id_arme="4d29c723-2787-46ce-a3be-b6ecc6bb201a" parent_id_arme="9fe3e6d9-3ec0-42b9-a84c-fc3fecab8b6b" expanded_arme="" />
   <event name="Transition to Sector III" id_arme="baec264e-6dcf-449e-9c47-42a303801ec3" parent_id_arme="4d29c723-2787-46ce-a3be-b6ecc6bb201a">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
@@ -226,7 +226,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Eyukua System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="714d6bb7-e4d7-46ad-8fdd-e8808d65254c" parent_id_arme="4d29c723-2787-46ce-a3be-b6ecc6bb201a" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="714d6bb7-e4d7-46ad-8fdd-e8808d65254c" parent_id_arme="4d29c723-2787-46ce-a3be-b6ecc6bb201a" expanded_arme="" />
   <event name="Gate Offline" id_arme="ff85f7b7-f1e8-4a94-b2dc-582f16b78cc5" parent_id_arme="714d6bb7-e4d7-46ad-8fdd-e8808d65254c">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
@@ -398,7 +398,7 @@
     <if_variable name="Waypoint 78 Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Eyukua System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Eyukua to Waypoint 78" value="1.0" />
     <set_variable name="Waypoint 78" value="1.0" />
@@ -2860,8 +2860,8 @@
     <set_variable name="Eyukua System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector XXI - XXV" id_arme="0bd09cbd-0392-41ec-816e-3cbd2900da1a" parent_id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" />
-  <folder_arme name="Eyukua Sector XXI" id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" parent_id_arme="0bd09cbd-0392-41ec-816e-3cbd2900da1a" />
+  <folder_arme name="Sector XXI - XXV" id_arme="0bd09cbd-0392-41ec-816e-3cbd2900da1a" parent_id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" expanded_arme="" />
+  <folder_arme name="Eyukua Sector XXI" id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" parent_id_arme="0bd09cbd-0392-41ec-816e-3cbd2900da1a" expanded_arme="" />
   <event name="Create Eyukua Sector XXI" id_arme="ca2a33d2-dd72-460a-8db3-398633f774e6" parent_id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111">
     <if_timer_finished name="Transition" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="1.0" />
@@ -2888,7 +2888,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="e1029921-8e1c-44da-b61a-1e71faece63a" parent_id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" />
+  <folder_arme name="Navigation" id_arme="e1029921-8e1c-44da-b61a-1e71faece63a" parent_id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" expanded_arme="" />
   <event name="Transition to Sector XXII" id_arme="e850c3a3-0831-4c99-ba33-bafc3663e908" parent_id_arme="e1029921-8e1c-44da-b61a-1e71faece63a">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
@@ -2922,7 +2922,7 @@
     <set_variable name="Sector" value="17.0" integer="yes" />
     <set_variable name="Eyukua System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="26a89333-3f3b-4ad2-a480-81b4732f9c83" parent_id_arme="e1029921-8e1c-44da-b61a-1e71faece63a" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="26a89333-3f3b-4ad2-a480-81b4732f9c83" parent_id_arme="e1029921-8e1c-44da-b61a-1e71faece63a" expanded_arme="" />
   <event name="Gate Offline" id_arme="de421943-299f-456b-94da-8b4f1d05f55f" parent_id_arme="26a89333-3f3b-4ad2-a480-81b4732f9c83">
     <if_variable name="Sector" comparator="EQUALS" value="21" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
@@ -3094,7 +3094,7 @@
     <if_variable name="Arcturus Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Eyukua System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Eyukua to Arcturus" value="1.0" />
     <set_variable name="Arcturus System" value="1.0" />

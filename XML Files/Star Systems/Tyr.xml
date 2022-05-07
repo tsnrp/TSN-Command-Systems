@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="582.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Tyr System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <folder_arme name="Tyr System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
   <folder_arme name="Tyr Settings" id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <folder_arme name="Tyr Menu" id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" />
   <event name="Tyr Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Tyr Sector I" id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <folder_arme name="Tyr Sector I" id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
   <event name="Create Tyr Sector I" id_arme="32458fc2-4bb6-455e-8446-23f5e7574323" parent_id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884">
     <if_variable name="Tyr System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -85,7 +85,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708" parent_id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884" />
+  <folder_arme name="Navigation" id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708" parent_id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884" expanded_arme="" />
   <event name="Transition to Sector II" id_arme="cd353cd3-19b5-488a-bb3f-194baaa92c23" parent_id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708">
     <if_variable name="Tyr System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -119,7 +119,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708" expanded_arme="" />
   <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Tyr System" comparator="EQUALS" value="2.0" />
@@ -785,7 +785,7 @@
     <set_variable name="Tyr System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Tyr Sector VI" id_arme="c78971ed-58c2-4607-8f75-b07db6a40817" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <folder_arme name="Tyr Sector VI" id_arme="c78971ed-58c2-4607-8f75-b07db6a40817" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
   <event name="Create Tyr Sector VI" id_arme="4e5c0731-175e-4d97-a8fb-9bfc7630ee55" parent_id_arme="c78971ed-58c2-4607-8f75-b07db6a40817">
     <if_variable name="Tyr System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -811,7 +811,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a" parent_id_arme="c78971ed-58c2-4607-8f75-b07db6a40817" />
+  <folder_arme name="Navigation" id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a" parent_id_arme="c78971ed-58c2-4607-8f75-b07db6a40817" expanded_arme="" />
   <event name="Transition to Sector V" id_arme="73931322-b2da-434a-a455-a2dfffdc4bc5" parent_id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -867,7 +867,7 @@
     <set_variable name="Tyr System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="d4292fe3-fe2d-4f71-8c2f-222b4ff67bcb" parent_id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="d4292fe3-fe2d-4f71-8c2f-222b4ff67bcb" parent_id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a" expanded_arme="" />
   <event name="Gate Offline" id_arme="f80e292b-7294-4d9e-9024-cb18fee4f82c" parent_id_arme="d4292fe3-fe2d-4f71-8c2f-222b4ff67bcb">
     <if_variable name="Sector" comparator="EQUALS" value="6" />
     <if_variable name="Tyr System" comparator="EQUALS" value="2.0" />
@@ -1166,7 +1166,7 @@
     <set_variable name="Tyr System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Tyr Sector VIII" id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <folder_arme name="Tyr Sector VIII" id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
   <event name="Create Tyr Sector VIII" id_arme="ba89a4e6-f595-4e57-8d0d-916ec5b940f1" parent_id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c">
     <if_variable name="Tyr System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -1190,7 +1190,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14" parent_id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" />
+  <folder_arme name="Navigation" id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14" parent_id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" expanded_arme="" />
   <event name="Transition to Sector IX" id_arme="034a76f5-8570-47a5-a237-5d8176bf7604" parent_id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -1246,7 +1246,7 @@
     <set_variable name="Tyr System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="4.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="4cc1d593-ab4f-4cbc-bac2-0d5991b969f2" parent_id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="4cc1d593-ab4f-4cbc-bac2-0d5991b969f2" parent_id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14" expanded_arme="" />
   <event name="Gate Offline" id_arme="3cd9e914-f18b-4238-9082-5db30987d9ad" parent_id_arme="4cc1d593-ab4f-4cbc-bac2-0d5991b969f2">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Tyr System" comparator="EQUALS" value="2.0" />

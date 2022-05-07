@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="322.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Tilminra System" id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" />
+  <folder_arme name="Tilminra System" id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" expanded_arme="" />
   <folder_arme name="System Settings" id_arme="dd49bd6b-a7a8-4cac-aa85-7837e165129c" parent_id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" />
   <folder_arme name="Activation Menu" id_arme="8ae053d0-4686-4668-8ed3-71ad1f09113c" parent_id_arme="dd49bd6b-a7a8-4cac-aa85-7837e165129c" expanded_arme="" />
   <event name="Tilminra Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="8ae053d0-4686-4668-8ed3-71ad1f09113c">
@@ -57,7 +57,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Tilminra Sector I" id_arme="b8a49bcf-486b-4e18-8a2f-71718ae58311" parent_id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" />
+  <folder_arme name="Tilminra Sector I" id_arme="b8a49bcf-486b-4e18-8a2f-71718ae58311" parent_id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" expanded_arme="" />
   <event name="Create Tilminra Sector I" id_arme="694251d8-ea39-4ad0-b273-c764787a4005" parent_id_arme="b8a49bcf-486b-4e18-8a2f-71718ae58311">
     <if_variable name="Tilminra System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -117,7 +117,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Tilminra System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="a7fed899-8b50-4592-a36e-2678b968d3af" parent_id_arme="31122fef-506a-475a-b6fc-7b45ef355520" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="a7fed899-8b50-4592-a36e-2678b968d3af" parent_id_arme="31122fef-506a-475a-b6fc-7b45ef355520" expanded_arme="" />
   <event name="Gate Offline" id_arme="500028bd-865e-4932-8efc-a29c04cb9f0b" parent_id_arme="a7fed899-8b50-4592-a36e-2678b968d3af">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
@@ -975,7 +975,7 @@
     <set_variable name="Tilminra System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Tilminra Sector VIII" id_arme="3395a850-dab6-431a-979d-4234acf527fb" parent_id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" />
+  <folder_arme name="Tilminra Sector VIII" id_arme="3395a850-dab6-431a-979d-4234acf527fb" parent_id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" expanded_arme="" />
   <event name="Create Tilminra Sector VIII" id_arme="65b57b6f-0f48-4d92-bbe8-2bf099a66000" parent_id_arme="3395a850-dab6-431a-979d-4234acf527fb">
     <if_timer_finished name="Transition" />
     <if_variable name="Tilminra System" comparator="EQUALS" value="1.0" />
@@ -998,7 +998,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="24a72eee-87ef-4b14-a9a7-954afdb0aac9" parent_id_arme="3395a850-dab6-431a-979d-4234acf527fb" />
+  <folder_arme name="Navigation" id_arme="24a72eee-87ef-4b14-a9a7-954afdb0aac9" parent_id_arme="3395a850-dab6-431a-979d-4234acf527fb" expanded_arme="" />
   <event name="Transition to Sector IV" id_arme="d866b902-b16e-467d-818d-2c27c40d2a5b" parent_id_arme="24a72eee-87ef-4b14-a9a7-954afdb0aac9">
     <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />

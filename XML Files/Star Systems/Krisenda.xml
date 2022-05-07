@@ -147,7 +147,7 @@
     <set_variable name="Krisenda System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Krisenda Sector II" id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <folder_arme name="Krisenda Sector II" id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
   <event name="Create Krisenda Sector II" id_arme="a809ba5b-a4de-453d-a686-511e5e880d0a" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471">
     <if_timer_finished name="Transition" />
     <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
@@ -171,7 +171,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
     <set_variable name="Krisenda System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" />
+  <folder_arme name="Navigation" id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" expanded_arme="" />
   <event name="Transition to Sector III" id_arme="a3adbe75-527b-4693-bd45-83dad22af448" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -227,7 +227,7 @@
     <set_variable name="Krisenda System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b54404f0-5fea-4f76-a8b6-e386198dee06" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b54404f0-5fea-4f76-a8b6-e386198dee06" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" expanded_arme="" />
   <event name="Gate Offline" id_arme="42a58768-14b2-4178-b03b-93cba69aa579" parent_id_arme="b54404f0-5fea-4f76-a8b6-e386198dee06">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
@@ -399,7 +399,7 @@
     <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Krisenda System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Krisenda to Cerberus" value="1.0" />
     <set_variable name="Cerberus System" value="1.0" />
@@ -893,7 +893,7 @@
     <set_variable name="Krisenda System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Krisenda Sector VII" id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <folder_arme name="Krisenda Sector VII" id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
   <event name="Create Krisenda Sector VII" id_arme="0e82ab1d-af45-412b-a825-b41a4d78269c" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351">
     <if_timer_finished name="Transition" />
     <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
@@ -914,7 +914,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
     <set_variable name="Krisenda System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" />
+  <folder_arme name="Navigation" id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" expanded_arme="" />
   <event name="Transition to Sector VIII" id_arme="138ead23-dbfd-44aa-81d8-bd1ceff7ea12" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1003,7 +1003,7 @@
     <set_variable name="Krisenda System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="5f545f1e-0e3e-491a-8e54-4824043646ff" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="5f545f1e-0e3e-491a-8e54-4824043646ff" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" expanded_arme="" />
   <event name="Gate Offline" id_arme="30598e88-1aca-492a-ab22-f28b4911e3ae" parent_id_arme="5f545f1e-0e3e-491a-8e54-4824043646ff">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
@@ -1175,7 +1175,7 @@
     <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Krisenda System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Krisenda to Waypoint 60" value="1.0" />
     <set_variable name="Waypoint 60" value="1.0" />

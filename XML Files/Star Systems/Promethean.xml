@@ -648,7 +648,7 @@
     <create count="20" type="nebulas" startX="73826.0" startY="0.0" startZ="26610.0" endX="84577.0" endY="0.0" endZ="11937.0" randomRange="6578" />
     <create count="20" type="asteroids" startX="77168.0" startY="0.0" startZ="18765.0" endX="65545.0" endY="0.0" endZ="33147.0" randomRange="8037" />
   </event>
-  <folder_arme name="Navigation" id_arme="122673a3-4826-4b4d-b524-c10a49a12177" parent_id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2" />
+  <folder_arme name="Navigation" id_arme="122673a3-4826-4b4d-b524-c10a49a12177" parent_id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2" expanded_arme="" />
   <event name="Transition to Sector VII" id_arme="35f61a1e-2b57-4513-a87b-b4a59cd3737d" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
@@ -737,7 +737,7 @@
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="82075028-8227-4ce7-b2fd-20c6b2471e37" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="82075028-8227-4ce7-b2fd-20c6b2471e37" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177" expanded_arme="" />
   <event name="Gate Offline" id_arme="3db734a0-57ea-4491-bf55-0b34bba28853" parent_id_arme="82075028-8227-4ce7-b2fd-20c6b2471e37">
     <if_variable name="Sector" comparator="EQUALS" value="6" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
@@ -1177,7 +1177,7 @@
     <create count="20" type="asteroids" startX="71004.0" startY="0.0" startZ="44654.0" endX="64229.0" endY="0.0" endZ="39535.0" randomRange="2047" />
     <create count="30" type="nebulas" startX="48570.0" startY="0.0" startZ="26737.0" endX="38031.0" endY="0.0" endZ="9422.0" randomRange="2020" />
   </event>
-  <folder_arme name="Navigation" id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee" parent_id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7" />
+  <folder_arme name="Navigation" id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee" parent_id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7" expanded_arme="" />
   <event name="Transition to Sector VII" id_arme="f0437ef1-72bf-4cc0-b4f3-d7733bbe322e" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
@@ -1233,7 +1233,7 @@
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="e32dccac-b1fc-49b8-b4bb-282edcf3b4cc" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="e32dccac-b1fc-49b8-b4bb-282edcf3b4cc" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee" expanded_arme="" />
   <event name="Gate Offline" id_arme="4f0bab27-56c6-4a6f-b54e-89e2404d26d2" parent_id_arme="e32dccac-b1fc-49b8-b4bb-282edcf3b4cc">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
@@ -1728,7 +1728,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c" parent_id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3" />
+  <folder_arme name="Navigation" id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c" parent_id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3" expanded_arme="" />
   <event name="Transition to Sector XII" id_arme="dcff69d4-e6db-40ed-b2a9-1b7c43ab3f4c" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
@@ -1784,7 +1784,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="405d38b6-cae3-4358-9f19-66fd33c1a1ff" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="405d38b6-cae3-4358-9f19-66fd33c1a1ff" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c" expanded_arme="" />
   <event name="Gate Offline" id_arme="a3618d9a-6155-47c8-973e-7c41b79e1534" parent_id_arme="405d38b6-cae3-4358-9f19-66fd33c1a1ff">
     <if_variable name="Sector" comparator="EQUALS" value="11" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />

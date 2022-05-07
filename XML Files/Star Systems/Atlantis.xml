@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="467.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Atlantis System" id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
+  <folder_arme name="Atlantis System" id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" expanded_arme="" />
   <folder_arme name="Atlantis Settings" id_arme="6a2258c3-a4b7-41fe-afa3-44ee6c37b2a7" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
   <folder_arme name="Atlantis Menu" id_arme="c2a03bcd-ea39-4eef-845c-b59609f1681c" parent_id_arme="6a2258c3-a4b7-41fe-afa3-44ee6c37b2a7" />
   <event name="Atlantis Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="c2a03bcd-ea39-4eef-845c-b59609f1681c">
@@ -56,8 +56,8 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sector I - V" id_arme="3b9ad800-a830-4a7d-a636-a088a510d4c3" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
-  <folder_arme name="Atlantis Sector I" id_arme="cbd8d290-e045-4559-b09b-4cd859152557" parent_id_arme="3b9ad800-a830-4a7d-a636-a088a510d4c3" />
+  <folder_arme name="Sector I - V" id_arme="3b9ad800-a830-4a7d-a636-a088a510d4c3" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" expanded_arme="" />
+  <folder_arme name="Atlantis Sector I" id_arme="cbd8d290-e045-4559-b09b-4cd859152557" parent_id_arme="3b9ad800-a830-4a7d-a636-a088a510d4c3" expanded_arme="" />
   <event name="Create Atlantis Sector I" id_arme="4bdf0701-f314-4648-ae47-c2ecaf3dedcd" parent_id_arme="cbd8d290-e045-4559-b09b-4cd859152557">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -83,7 +83,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="7a2a6f2f-f075-4610-bd16-0ef75cc49062" parent_id_arme="cbd8d290-e045-4559-b09b-4cd859152557" />
+  <folder_arme name="Navigation" id_arme="7a2a6f2f-f075-4610-bd16-0ef75cc49062" parent_id_arme="cbd8d290-e045-4559-b09b-4cd859152557" expanded_arme="" />
   <event name="Transition to Sector II" id_arme="73bf08d3-1aae-4b6f-b9d9-09226359d2f6" parent_id_arme="7a2a6f2f-f075-4610-bd16-0ef75cc49062">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -117,7 +117,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="5e66556b-cee5-4de0-abf9-874fe539b59f" parent_id_arme="7a2a6f2f-f075-4610-bd16-0ef75cc49062" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="5e66556b-cee5-4de0-abf9-874fe539b59f" parent_id_arme="7a2a6f2f-f075-4610-bd16-0ef75cc49062" expanded_arme="" />
   <event name="Gate Offline" id_arme="6273c20e-cdb5-4ba5-b38f-f48275a6f258" parent_id_arme="5e66556b-cee5-4de0-abf9-874fe539b59f">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -289,7 +289,7 @@
     <if_variable name="Waypoint 60 Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Atlantis to Waypoint 60" value="1.0" />
     <set_variable name="Waypoint 60" value="1.0" />
@@ -836,8 +836,8 @@
     <set_variable name="Atlantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector VI - X" id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
-  <folder_arme name="Atlantis Sector VI" id_arme="6a51792f-4c5d-4455-afcc-de0c9256ce6f" parent_id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" />
+  <folder_arme name="Sector VI - X" id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" expanded_arme="" />
+  <folder_arme name="Atlantis Sector VI" id_arme="6a51792f-4c5d-4455-afcc-de0c9256ce6f" parent_id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" expanded_arme="" />
   <event name="Create Atlantis Sector VI" id_arme="fcd7a2dc-dda1-4797-8edc-b20eac672770" parent_id_arme="6a51792f-4c5d-4455-afcc-de0c9256ce6f">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -865,7 +865,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="fef93a7d-d3f4-4a57-a76f-fca004f4b9ab" parent_id_arme="6a51792f-4c5d-4455-afcc-de0c9256ce6f" />
+  <folder_arme name="Navigation" id_arme="fef93a7d-d3f4-4a57-a76f-fca004f4b9ab" parent_id_arme="6a51792f-4c5d-4455-afcc-de0c9256ce6f" expanded_arme="" />
   <event name="Transition to Sector VII" id_arme="962cf31d-3f35-467a-b1e3-85882d4c3723" parent_id_arme="fef93a7d-d3f4-4a57-a76f-fca004f4b9ab">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -921,7 +921,7 @@
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="256a569d-302b-40dd-94f1-3f5fcd93909d" parent_id_arme="fef93a7d-d3f4-4a57-a76f-fca004f4b9ab" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="256a569d-302b-40dd-94f1-3f5fcd93909d" parent_id_arme="fef93a7d-d3f4-4a57-a76f-fca004f4b9ab" expanded_arme="" />
   <event name="Gate Offline" id_arme="dc27401e-57dd-4b1a-93b6-a12301ebd824" parent_id_arme="256a569d-302b-40dd-94f1-3f5fcd93909d">
     <if_variable name="Sector" comparator="EQUALS" value="6" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -1093,7 +1093,7 @@
     <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Atlantis to Al'Mare" value="1.0" />
     <set_variable name="Al'Mare System" value="1.0" />
@@ -1168,7 +1168,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Al'Mare to Atlantis" value="0.0" />
   </event>
-  <folder_arme name="Atlantis Sector VII" id_arme="6c3ebf17-07b5-4289-a31f-a8ea40e906fa" parent_id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" />
+  <folder_arme name="Atlantis Sector VII" id_arme="6c3ebf17-07b5-4289-a31f-a8ea40e906fa" parent_id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" expanded_arme="" />
   <event name="Create Atlantis Sector VII" id_arme="c56067ae-a068-41a8-99cd-c5de8959658e" parent_id_arme="6c3ebf17-07b5-4289-a31f-a8ea40e906fa">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -1194,7 +1194,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="ad133bc9-28b2-4b4e-a2b6-0b8e303c2372" parent_id_arme="6c3ebf17-07b5-4289-a31f-a8ea40e906fa" />
+  <folder_arme name="Navigation" id_arme="ad133bc9-28b2-4b4e-a2b6-0b8e303c2372" parent_id_arme="6c3ebf17-07b5-4289-a31f-a8ea40e906fa" expanded_arme="" />
   <event name="Transition to Sector VIII" id_arme="b47230ee-799c-420f-a606-4058bf4ccb39" parent_id_arme="ad133bc9-28b2-4b4e-a2b6-0b8e303c2372">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1283,7 +1283,7 @@
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="8be464a4-588e-42cd-8966-f922ac69245e" parent_id_arme="ad133bc9-28b2-4b4e-a2b6-0b8e303c2372" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="8be464a4-588e-42cd-8966-f922ac69245e" parent_id_arme="ad133bc9-28b2-4b4e-a2b6-0b8e303c2372" expanded_arme="" />
   <event name="Gate Offline" id_arme="65eb756c-74ed-4e74-8c6e-7db4e2d7fe8e" parent_id_arme="8be464a4-588e-42cd-8966-f922ac69245e">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -1455,7 +1455,7 @@
     <if_variable name="Titan Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Atlantis to Titan" value="1.0" />
     <set_variable name="Titan System" value="1.0" />
@@ -1975,7 +1975,7 @@
     <set_variable name="Atlantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector XI - XV" id_arme="c2d2c1f4-a7bd-4165-838b-09f70eed8cf6" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
+  <folder_arme name="Sector XI - XV" id_arme="c2d2c1f4-a7bd-4165-838b-09f70eed8cf6" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" expanded_arme="" />
   <folder_arme name="Atlantis Sector XI" id_arme="fe6bd80c-8499-4d8f-9354-29a4cd076b4e" parent_id_arme="c2d2c1f4-a7bd-4165-838b-09f70eed8cf6" />
   <event name="Create Atlantis Sector XI" id_arme="a72d9494-efe0-4a9b-a20a-5dcb77d5e8a0" parent_id_arme="fe6bd80c-8499-4d8f-9354-29a4cd076b4e">
     <if_timer_finished name="Transition" />
@@ -2437,7 +2437,7 @@
     <set_variable name="Atlantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Atlantis Sector XIV" id_arme="86ff4e07-8cd7-46ce-9d08-30149f06fbdf" parent_id_arme="c2d2c1f4-a7bd-4165-838b-09f70eed8cf6" />
+  <folder_arme name="Atlantis Sector XIV" id_arme="86ff4e07-8cd7-46ce-9d08-30149f06fbdf" parent_id_arme="c2d2c1f4-a7bd-4165-838b-09f70eed8cf6" expanded_arme="" />
   <event name="Create Atlantis Sector XIV" id_arme="77ac36ac-01c6-4b30-b383-3d7f706bc4c5" parent_id_arme="86ff4e07-8cd7-46ce-9d08-30149f06fbdf">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -2461,7 +2461,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="43965aff-6416-44b3-acc9-ea1ccbc73dc3" parent_id_arme="86ff4e07-8cd7-46ce-9d08-30149f06fbdf" />
+  <folder_arme name="Navigation" id_arme="43965aff-6416-44b3-acc9-ea1ccbc73dc3" parent_id_arme="86ff4e07-8cd7-46ce-9d08-30149f06fbdf" expanded_arme="" />
   <event name="Transition to Sector XV" id_arme="9dd86376-fa04-4ddf-954d-0a69a40fd8e5" parent_id_arme="43965aff-6416-44b3-acc9-ea1ccbc73dc3">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="14.0" />
@@ -2550,7 +2550,7 @@
     <set_variable name="Sector" value="8.0" integer="yes" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="3c3ebbdf-c98a-4111-be76-40ad85642c46" parent_id_arme="43965aff-6416-44b3-acc9-ea1ccbc73dc3" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="3c3ebbdf-c98a-4111-be76-40ad85642c46" parent_id_arme="43965aff-6416-44b3-acc9-ea1ccbc73dc3" expanded_arme="" />
   <event name="Gate Offline" id_arme="a585fa04-97ca-429d-882b-1c62b53e418f" parent_id_arme="3c3ebbdf-c98a-4111-be76-40ad85642c46">
     <if_variable name="Sector" comparator="EQUALS" value="14" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -2722,7 +2722,7 @@
     <if_variable name="Waypoint 52 Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Atlantis to Waypoint 52" value="1.0" />
     <set_variable name="Waypoint 52" value="1.0" />
@@ -2903,8 +2903,8 @@
     <set_variable name="Atlantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector XVI - XX" id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
-  <folder_arme name="Atlantis Sector XVI" id_arme="5b36e449-a996-4f2e-bebc-31b38eb36ce1" parent_id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" />
+  <folder_arme name="Sector XVI - XX" id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" expanded_arme="" />
+  <folder_arme name="Atlantis Sector XVI" id_arme="5b36e449-a996-4f2e-bebc-31b38eb36ce1" parent_id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" expanded_arme="" />
   <event name="Create Atlantis Sector XVI" id_arme="dd508fca-c70a-4794-9d88-8d0ca16f06df" parent_id_arme="5b36e449-a996-4f2e-bebc-31b38eb36ce1">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -2934,7 +2934,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="4553e4ef-0fdb-4a12-be70-8570cb342eae" parent_id_arme="5b36e449-a996-4f2e-bebc-31b38eb36ce1" />
+  <folder_arme name="Navigation" id_arme="4553e4ef-0fdb-4a12-be70-8570cb342eae" parent_id_arme="5b36e449-a996-4f2e-bebc-31b38eb36ce1" expanded_arme="" />
   <event name="Transition to Sector XVII" id_arme="5a7cd630-0b63-4857-97ee-26a9c28dbd0e" parent_id_arme="4553e4ef-0fdb-4a12-be70-8570cb342eae">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -2968,7 +2968,7 @@
     <set_variable name="Sector" value="12.0" integer="yes" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="384648e1-fede-41e6-b353-5740abc9ea91" parent_id_arme="4553e4ef-0fdb-4a12-be70-8570cb342eae" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="384648e1-fede-41e6-b353-5740abc9ea91" parent_id_arme="4553e4ef-0fdb-4a12-be70-8570cb342eae" expanded_arme="" />
   <event name="Gate Offline" id_arme="a470ae31-357c-44d8-88c7-cee2c77be537" parent_id_arme="384648e1-fede-41e6-b353-5740abc9ea91">
     <if_variable name="Sector" comparator="EQUALS" value="16" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -3140,7 +3140,7 @@
     <if_variable name="Cerberus Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Atlantis to Cerberus" value="1.0" />
     <set_variable name="Cerberus System" value="1.0" />
@@ -3358,7 +3358,7 @@
     <set_variable name="Atlantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Atlantis Sector XVIII" id_arme="19b5d36c-272c-4595-b1e4-0b66cc337ec1" parent_id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" />
+  <folder_arme name="Atlantis Sector XVIII" id_arme="19b5d36c-272c-4595-b1e4-0b66cc337ec1" parent_id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" expanded_arme="" />
   <event name="Create Atlantis Sector XVIII" id_arme="763cec0d-84e4-4ca2-a248-5b9e49405ef9" parent_id_arme="19b5d36c-272c-4595-b1e4-0b66cc337ec1">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -3384,7 +3384,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="53d5bafa-9f6f-47bf-a401-f7fb33dedead" parent_id_arme="19b5d36c-272c-4595-b1e4-0b66cc337ec1" />
+  <folder_arme name="Navigation" id_arme="53d5bafa-9f6f-47bf-a401-f7fb33dedead" parent_id_arme="19b5d36c-272c-4595-b1e4-0b66cc337ec1" expanded_arme="" />
   <event name="Transition to Sector XVII" id_arme="27c085d1-2629-47e9-b9d5-44db54cf89ed" parent_id_arme="53d5bafa-9f6f-47bf-a401-f7fb33dedead">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -3440,7 +3440,7 @@
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="12.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="4022279d-3f54-456d-9315-5f09d17af6ab" parent_id_arme="53d5bafa-9f6f-47bf-a401-f7fb33dedead" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="4022279d-3f54-456d-9315-5f09d17af6ab" parent_id_arme="53d5bafa-9f6f-47bf-a401-f7fb33dedead" expanded_arme="" />
   <event name="Gate Offline" id_arme="8b125b98-88b7-4dcb-81bd-7c008da6332d" parent_id_arme="4022279d-3f54-456d-9315-5f09d17af6ab">
     <if_variable name="Sector" comparator="EQUALS" value="18" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -3612,7 +3612,7 @@
     <if_variable name="Arietis Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Atlantis to Arietis" value="1.0" />
     <set_variable name="Arietis System" value="1.0" />

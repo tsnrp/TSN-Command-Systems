@@ -403,7 +403,7 @@
     <set_variable name="Onwia System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Onwia Sector V" id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <folder_arme name="Onwia Sector V" id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
   <event name="Create Onwia Sector V" id_arme="b712d4ae-1542-49c5-9122-35ba03f9d2de" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda">
     <if_variable name="Onwia System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -424,7 +424,7 @@
     <create count="300" type="asteroids" startX="23215.0" startY="200.0" startZ="20000.0" endX="52009.0" endY="0.0" endZ="94866.0" randomRange="15000" />
     <create type="genericMesh" x="63259.0" y="0.0" z="31250.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.0" colorGreen="1.0" colorBlue="0.5" />
   </event>
-  <folder_arme name="Navigation" id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" />
+  <folder_arme name="Navigation" id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" expanded_arme="" />
   <event name="Transition to Sector VI" id_arme="9e190538-f04c-45b1-90b6-e5a6e088e125" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -513,7 +513,7 @@
     <set_variable name="Onwia System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" expanded_arme="" />
   <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Onwia System" comparator="EQUALS" value="2.0" />

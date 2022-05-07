@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="562.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Loria System" id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <folder_arme name="Loria System" id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" expanded_arme="" />
   <folder_arme name="Loria Settings" id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
   <folder_arme name="Loria Menu" id_arme="22a66b71-1df2-45ee-8eda-9da6108be998" parent_id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c" expanded_arme="" />
   <event name="Loria Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="22a66b71-1df2-45ee-8eda-9da6108be998">
@@ -141,7 +141,7 @@
     <set_variable name="Loria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Loria Sector II" id_arme="e887bc5f-398a-4b23-a291-5ad2de429229" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
+  <folder_arme name="Loria Sector II" id_arme="e887bc5f-398a-4b23-a291-5ad2de429229" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" expanded_arme="" />
   <event name="Create Loria Sector II" id_arme="886fa335-b555-4556-a51a-dc4e21e810d8" parent_id_arme="e887bc5f-398a-4b23-a291-5ad2de429229">
     <if_timer_finished name="Transition" />
     <if_variable name="Loria System" comparator="EQUALS" value="1.0" />

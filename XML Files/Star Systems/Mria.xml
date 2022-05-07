@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="451.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Mria System" id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
+  <folder_arme name="Mria System" id_arme="b3306a27-726e-4516-a40f-48e4e4825520" expanded_arme="" />
   <folder_arme name="Mria Settings" id_arme="6b8fe142-bc3a-4d5a-8e0b-b7435c16b71e" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
   <folder_arme name="Mria Menu" id_arme="fb4301dd-df9d-4130-ad08-76544682f8eb" parent_id_arme="6b8fe142-bc3a-4d5a-8e0b-b7435c16b71e" />
   <event name="Mria Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="fb4301dd-df9d-4130-ad08-76544682f8eb">
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sector I - V" id_arme="69612d26-6395-4a7e-bb78-44433347d5ad" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
+  <folder_arme name="Sector I - V" id_arme="69612d26-6395-4a7e-bb78-44433347d5ad" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" expanded_arme="" />
   <folder_arme name="Mria Sector I" id_arme="b4a76ff8-d811-451c-9d0e-989559544354" parent_id_arme="69612d26-6395-4a7e-bb78-44433347d5ad" />
   <event name="Create Mria Sector I" id_arme="8772d3ed-d206-4ed8-a419-accee9169ccd" parent_id_arme="b4a76ff8-d811-451c-9d0e-989559544354">
     <if_timer_finished name="Transition" />
@@ -132,7 +132,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector II" id_arme="80ee9720-460e-4adb-b474-5aec356a8d41" parent_id_arme="69612d26-6395-4a7e-bb78-44433347d5ad" />
+  <folder_arme name="Mria Sector II" id_arme="80ee9720-460e-4adb-b474-5aec356a8d41" parent_id_arme="69612d26-6395-4a7e-bb78-44433347d5ad" expanded_arme="" />
   <event name="Create Mria Sector II" id_arme="45e9a2a3-f0b0-4be5-879a-fc8d9a6fd968" parent_id_arme="80ee9720-460e-4adb-b474-5aec356a8d41">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />
@@ -157,7 +157,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="c8e92e1b-794b-44b2-a88d-869f9e1104db" parent_id_arme="80ee9720-460e-4adb-b474-5aec356a8d41" />
+  <folder_arme name="Navigation" id_arme="c8e92e1b-794b-44b2-a88d-869f9e1104db" parent_id_arme="80ee9720-460e-4adb-b474-5aec356a8d41" expanded_arme="" />
   <event name="Transition to Sector III" id_arme="564d8ea8-e011-4615-8bf6-5ffc6b5cea69" parent_id_arme="c8e92e1b-794b-44b2-a88d-869f9e1104db">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
@@ -743,7 +743,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector VI - X" id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
+  <folder_arme name="Sector VI - X" id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" expanded_arme="" />
   <folder_arme name="Mria Sector VI" id_arme="7e41ece5-b766-4f9d-b6ab-6151a719f0d0" parent_id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" expanded_arme="" />
   <event name="Create Mria Sector VI" id_arme="427aeb50-317e-4038-9b8d-441cf7fc7696" parent_id_arme="7e41ece5-b766-4f9d-b6ab-6151a719f0d0">
     <if_timer_finished name="Transition" />
@@ -2481,7 +2481,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Tibur to Mria" value="0.0" />
   </event>
-  <folder_arme name="Sector XVI - XX" id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
+  <folder_arme name="Sector XVI - XX" id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" expanded_arme="" />
   <folder_arme name="Mria Sector XVI" id_arme="9b7c0af5-f5df-4280-badc-ba9c4be75cda" parent_id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" />
   <event name="Create Mria Sector XVI" id_arme="64dbed83-a032-41d9-83fe-e0fb8cb96e60" parent_id_arme="9b7c0af5-f5df-4280-badc-ba9c4be75cda">
     <if_timer_finished name="Transition" />
@@ -2664,7 +2664,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector XVIII" id_arme="de351ea9-58b6-4af3-a8df-a13cb5b43a0e" parent_id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" />
+  <folder_arme name="Mria Sector XVIII" id_arme="de351ea9-58b6-4af3-a8df-a13cb5b43a0e" parent_id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" expanded_arme="" />
   <event name="Create Mria Sector XVIII" id_arme="f69d7674-b08b-437e-a8a6-0b17de45149d" parent_id_arme="de351ea9-58b6-4af3-a8df-a13cb5b43a0e">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />

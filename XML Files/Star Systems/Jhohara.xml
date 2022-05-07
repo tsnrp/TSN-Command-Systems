@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="210.0" integer="yes" />
     <set_variable name="Alignment" value="Hegemony" integer="yes" />
   </start>
-  <folder_arme name="Jhohara System" id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <folder_arme name="Jhohara System" id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
   <folder_arme name="Jhohara Settings" id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
   <folder_arme name="Jhohara Menu" id_arme="a680029d-40d7-4fe7-ac26-951602f65d78" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2" />
   <event name="Jhohara Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="a680029d-40d7-4fe7-ac26-951602f65d78">
@@ -131,7 +131,7 @@
     <set_variable name="Jhohara System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Jhohara Sector II" id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <folder_arme name="Jhohara Sector II" id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
   <event name="Create Jhohara Sector II" id_arme="a809ba5b-a4de-453d-a686-511e5e880d0a" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471">
     <if_timer_finished name="Transition" />
     <if_variable name="Jhohara System" comparator="EQUALS" value="1.0" />
@@ -150,7 +150,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
     <set_variable name="Jhohara System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" />
+  <folder_arme name="Navigation" id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" expanded_arme="" />
   <event name="Transition to Sector III" id_arme="a3adbe75-527b-4693-bd45-83dad22af448" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -206,7 +206,7 @@
     <set_variable name="Jhohara System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" expanded_arme="" />
   <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Jhohara System" comparator="EQUALS" value="2.0" />
@@ -867,7 +867,7 @@
     <set_variable name="Jhohara System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Jhohara Sector VII" id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <folder_arme name="Jhohara Sector VII" id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
   <event name="Create Jhohara Sector VII" id_arme="0e82ab1d-af45-412b-a825-b41a4d78269c" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351">
     <if_timer_finished name="Transition" />
     <if_variable name="Jhohara System" comparator="EQUALS" value="1.0" />
@@ -885,7 +885,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
     <set_variable name="Jhohara System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" />
+  <folder_arme name="Navigation" id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" expanded_arme="" />
   <event name="Transition to Sector VIII" id_arme="138ead23-dbfd-44aa-81d8-bd1ceff7ea12" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -974,7 +974,7 @@
     <set_variable name="Jhohara System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="3e4babd2-e54b-47c7-a2ea-fdd24f6ecbd6" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="3e4babd2-e54b-47c7-a2ea-fdd24f6ecbd6" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" expanded_arme="" />
   <event name="Gate Offline" id_arme="3811a29a-585e-4898-88de-de4ad34a1f87" parent_id_arme="3e4babd2-e54b-47c7-a2ea-fdd24f6ecbd6">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Jhohara System" comparator="EQUALS" value="2.0" />
@@ -1375,7 +1375,7 @@
     <set_variable name="Jhohara System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Jhohara Sector X" id_arme="039e566e-993a-43ee-816f-0a49e9595594" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <folder_arme name="Jhohara Sector X" id_arme="039e566e-993a-43ee-816f-0a49e9595594" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
   <event name="Create Jhohara Sector X" id_arme="4204d83e-533f-4475-beb5-7818238ac615" parent_id_arme="039e566e-993a-43ee-816f-0a49e9595594">
     <if_timer_finished name="Transition" />
     <if_variable name="Jhohara System" comparator="EQUALS" value="1.0" />
@@ -1393,7 +1393,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
     <set_variable name="Jhohara System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed" parent_id_arme="039e566e-993a-43ee-816f-0a49e9595594" />
+  <folder_arme name="Navigation" id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed" parent_id_arme="039e566e-993a-43ee-816f-0a49e9595594" expanded_arme="" />
   <event name="Transition to Sector XI" id_arme="7fef43ca-d4e5-4be1-98c8-f22659ebff38" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="10.0" />
@@ -1449,7 +1449,7 @@
     <set_variable name="Jhohara System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="f842adbb-38fa-41a1-986f-dcd8a4b64e14" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="f842adbb-38fa-41a1-986f-dcd8a4b64e14" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed" expanded_arme="" />
   <event name="Gate Offline" id_arme="d0f45c62-905c-4951-bbb7-c7618b54c7c0" parent_id_arme="f842adbb-38fa-41a1-986f-dcd8a4b64e14">
     <if_variable name="Sector" comparator="EQUALS" value="10" />
     <if_variable name="Jhohara System" comparator="EQUALS" value="2.0" />

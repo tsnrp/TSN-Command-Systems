@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="497.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Arietis System" id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <folder_arme name="Arietis System" id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" expanded_arme="" />
   <folder_arme name="Arietis Settings" id_arme="a5dba461-b284-47ac-955b-3589afa07984" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
   <folder_arme name="Arietis Menu" id_arme="678e3871-0237-498c-bc2c-a0c3ae561298" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984" />
   <event name="Arietis Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="678e3871-0237-498c-bc2c-a0c3ae561298">
@@ -260,7 +260,7 @@
     <set_variable name="Arietis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Arietis Sector III" id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <folder_arme name="Arietis Sector III" id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" expanded_arme="" />
   <event name="Create Arietis Sector III" id_arme="79f935b9-9c53-4db9-a765-907636dbc3b2" parent_id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594">
     <if_timer_finished name="Transition" />
     <if_variable name="Arietis System" comparator="EQUALS" value="1.0" />
@@ -281,7 +281,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
     <set_variable name="Arietis System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="123248e1-d36f-4070-88a1-1bd1d7324198" parent_id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594" />
+  <folder_arme name="Navigation" id_arme="123248e1-d36f-4070-88a1-1bd1d7324198" parent_id_arme="d6fe8d38-fbcf-48f0-bca7-670202e80594" expanded_arme="" />
   <event name="Transition to Sector II" id_arme="89797f69-10d5-4402-8f31-ec1e1925f9a6" parent_id_arme="123248e1-d36f-4070-88a1-1bd1d7324198">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
@@ -315,7 +315,7 @@
     <set_variable name="Sector" value="5.0" integer="yes" />
     <set_variable name="Arietis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="273b1874-bd17-476f-99aa-5db773252779" parent_id_arme="123248e1-d36f-4070-88a1-1bd1d7324198" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="273b1874-bd17-476f-99aa-5db773252779" parent_id_arme="123248e1-d36f-4070-88a1-1bd1d7324198" expanded_arme="" />
   <event name="Gate Offline" id_arme="57db0aed-242c-4345-bbd0-0ba08d7119d8" parent_id_arme="273b1874-bd17-476f-99aa-5db773252779">
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
@@ -487,7 +487,7 @@
     <if_variable name="Poseidon Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Arietis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Arietis to Poseidon" value="1.0" />
     <set_variable name="Poseidon System" value="1.0" />
@@ -560,7 +560,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Poseidon to Arietis" value="0.0" />
   </event>
-  <folder_arme name="Arietis Sector IV" id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <folder_arme name="Arietis Sector IV" id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" expanded_arme="" />
   <event name="Create Arietis Sector IV" id_arme="ec122f90-212a-4a33-9285-9c92b2de90f4" parent_id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172">
     <if_timer_finished name="Transition" />
     <if_variable name="Arietis System" comparator="EQUALS" value="1.0" />
@@ -583,7 +583,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
     <set_variable name="Arietis System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01" parent_id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172" />
+  <folder_arme name="Navigation" id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01" parent_id_arme="df5c4b02-34b8-4a7f-8099-dff6a0a3d172" expanded_arme="" />
   <event name="Transition to Sector V" id_arme="285b096a-651f-4081-b47f-cdf2988e8743" parent_id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
@@ -617,7 +617,7 @@
     <set_variable name="Sector" value="2.0" integer="yes" />
     <set_variable name="Arietis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="e04f86c2-f574-4ce8-8e8a-5535615ae429" parent_id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="e04f86c2-f574-4ce8-8e8a-5535615ae429" parent_id_arme="3ad72ebc-bd89-446d-b351-c1711bcc4e01" expanded_arme="" />
   <event name="Gate Offline" id_arme="1711596c-55be-4c20-8259-a95b14669687" parent_id_arme="e04f86c2-f574-4ce8-8e8a-5535615ae429">
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
@@ -789,7 +789,7 @@
     <if_variable name="Atlantis Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Arietis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Arietis to Atlantis" value="1.0" />
     <set_variable name="Atlantis System" value="1.0" />
@@ -974,7 +974,7 @@
     <set_variable name="Arietis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Arietis Sector VI" id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
+  <folder_arme name="Arietis Sector VI" id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" expanded_arme="" />
   <event name="Create Arietis Sector VI" id_arme="d1f648ed-607d-4f9b-9619-1550fdd1fe70" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae">
     <if_timer_finished name="Transition" />
     <if_variable name="Arietis System" comparator="EQUALS" value="1.0" />
@@ -996,7 +996,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
     <set_variable name="Arietis System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" />
+  <folder_arme name="Navigation" id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" expanded_arme="" />
   <event name="Transition to Sector V" id_arme="e70edfd4-10cc-44d3-aeb3-ade938c24a0c" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
@@ -1030,7 +1030,7 @@
     <set_variable name="Sector" value="2.0" integer="yes" />
     <set_variable name="Arietis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="87a4de61-b837-4fb1-aa49-f65b19c58881" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="87a4de61-b837-4fb1-aa49-f65b19c58881" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" expanded_arme="" />
   <event name="Gate Offline" id_arme="23aa5a9f-35bb-4886-8a99-87c392a70f3a" parent_id_arme="87a4de61-b837-4fb1-aa49-f65b19c58881">
     <if_variable name="Sector" comparator="EQUALS" value="6" />
     <if_variable name="Arietis System" comparator="EQUALS" value="2.0" />
@@ -1202,7 +1202,7 @@
     <if_variable name="Waypoint 89 Gate" comparator="EQUALS" value="1.0" />
     <clear_comms_button text="Jump" sideValue="playerSide" />
     <set_variable name="Arietis System" value="3.0" integer="yes" />
-    <set_variable name="System" value="1.0" />
+    <set_variable name="System" value="0.0" />
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Arietis to Waypoint 89" value="1.0" />
     <set_variable name="Waypoint 89" value="1.0" />
