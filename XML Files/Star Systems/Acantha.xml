@@ -290,6 +290,7 @@
     <set_variable name="Acantha to Tilminra" value="1.0" />
     <set_variable name="Tilminra System" value="1.0" />
     <set_variable name="Sector" value="1" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
   </event>
@@ -932,6 +933,7 @@
     <set_variable name="Acantha to Ashia" value="1.0" />
     <set_variable name="Ashia System" value="1.0" />
     <set_variable name="Sector" value="5" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
   </event>
@@ -1506,6 +1508,7 @@
     <set_variable name="Acantha to Krellis" value="1.0" />
     <set_variable name="Krellis System" value="1.0" />
     <set_variable name="Sector" value="1" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
   </event>

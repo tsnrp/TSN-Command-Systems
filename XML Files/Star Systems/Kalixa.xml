@@ -568,6 +568,7 @@
     <set_variable name="Kalixa to Waypoint 78" value="1.0" />
     <set_variable name="Waypoint 78" value="1.0" />
     <set_variable name="Sector" value="3" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -877,6 +878,7 @@
     <set_variable name="Kalixa to Antara" value="1.0" />
     <set_variable name="Antara System" value="1.0" />
     <set_variable name="Sector" value="12" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1723,6 +1725,7 @@
     <set_variable name="Kalixa to Cronus" value="1.0" />
     <set_variable name="Cronus System" value="1.0" />
     <set_variable name="Sector" value="10" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

@@ -402,6 +402,7 @@
     <set_variable name="No'Ma to Drenan" value="1.0" />
     <set_variable name="Drenan System" value="1.0" />
     <set_variable name="Sector" value="16.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -716,6 +717,7 @@
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="No'Ma to Lokuli'Bala" value="1.0" />
     <set_variable name="Lokuli'Bala System" value="1.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Sector" value="targetSector" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
@@ -1394,6 +1396,7 @@
     <set_variable name="No'Ma to Oubli" value="1.0" />
     <set_variable name="Oubli System" value="1.0" />
     <set_variable name="Sector" value="targetSector" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1546,7 +1549,7 @@
     <set_variable name="No'Ma System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="No'Ma Sector IX" id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <folder_arme name="No'Ma Sector IX" id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
   <event name="Create No'Ma Sector IX" id_arme="a05a68ee-c3c8-422b-9e5c-886bb65cecad" parent_id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736">
     <if_variable name="No'Ma System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1569,7 +1572,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="d82c3305-8a5d-4e39-b209-755970e3e258" parent_id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736" />
+  <folder_arme name="Navigation" id_arme="d82c3305-8a5d-4e39-b209-755970e3e258" parent_id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736" expanded_arme="" />
   <event name="Transition to Sector VIII" id_arme="7899320b-decd-4cfa-a270-b2728f625593" parent_id_arme="d82c3305-8a5d-4e39-b209-755970e3e258">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1603,8 +1606,8 @@
     <set_variable name="No'Ma System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="New Jump Gate Code" id_arme="d18feab3-7977-4862-8d7e-3ac70047ea4d" parent_id_arme="d82c3305-8a5d-4e39-b209-755970e3e258" />
-  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="d18feab3-7977-4862-8d7e-3ac70047ea4d" />
+  <folder_arme name="New Jump Gate Code" id_arme="d18feab3-7977-4862-8d7e-3ac70047ea4d" parent_id_arme="d82c3305-8a5d-4e39-b209-755970e3e258" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="d18feab3-7977-4862-8d7e-3ac70047ea4d" expanded_arme="" />
   <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="No'Ma System" comparator="EQUALS" value="2.0" />
@@ -1781,6 +1784,7 @@
     <set_variable name="No'Ma to Setmari" value="1.0" />
     <set_variable name="Setmari System" value="1.0" />
     <set_variable name="Sector" value="targetSector" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

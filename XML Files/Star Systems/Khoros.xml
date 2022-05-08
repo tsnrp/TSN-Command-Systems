@@ -491,6 +491,7 @@
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Khoros to Mria" value="1.0" />
     <set_variable name="Mria System" value="1.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Sector" value="18" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
@@ -802,6 +803,7 @@
     <set_variable name="Khoros to Eulis" value="1.0" />
     <set_variable name="Eulis System" value="1.0" />
     <set_variable name="Sector" value="targetSector" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1428,6 +1430,7 @@
     <set_variable name="Khoros to Vrae" value="1.0" />
     <set_variable name="Vrae System" value="1.0" />
     <set_variable name="Sector" value="targetSector" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

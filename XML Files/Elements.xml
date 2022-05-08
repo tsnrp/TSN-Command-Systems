@@ -6789,7 +6789,7 @@
     <set_object_property property="exitPointZ" value="0+(randMult*5000)" name="--" />
     <add_ai type="PROCEED_TO_EXIT" name="--" />
   </event>
-  <folder_arme name="Docking Ports (500 - 599)" id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c" parent_id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" />
+  <folder_arme name="Docking Ports (500 - 599)" id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c" parent_id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" expanded_arme="" />
   <event name="500 - Energy Only" id_arme="d899309b-70ae-4c73-b003-3d306851d990" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="500.0" />
     <set_object_property property="canBuild" value="0" name="--" />
@@ -33638,11 +33638,15 @@
     <set_timer name="Ship8Silent" seconds="10" />
   </event>
   <folder_arme name="Gate Activation System" id_arme="4d100278-3ca4-410d-b427-d409701fcf24" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
+  <event name="Ship Tracking" id_arme="e1b62a55-290d-46d5-89bd-dba7c5eba540" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_variable name="shipsInrange" comparator="LESS" value="0.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
+  </event>
   <event name="Ship1 Activate Gate" id_arme="afa4315b-f719-4a35-a5e3-05285616427b" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
     <if_exists player_slot="0" />
     <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
     <if_variable name="Gates Offline" comparator="NOT" value="1.0" />
-    <if_variable name="Gate System" comparator="NOT" value="2.0" />
+    <if_variable name="Gate System" comparator="LESS" value="2.0" />
     <set_comms_button text="Activate Gate" player_slot="0" />
     <set_variable name="Gate System" value="1.0" />
   </event>
@@ -33650,7 +33654,7 @@
     <if_exists player_slot="1" />
     <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
     <if_variable name="Gates Offline" comparator="NOT" value="1.0" />
-    <if_variable name="Gate System" comparator="NOT" value="2.0" />
+    <if_variable name="Gate System" comparator="LESS" value="2.0" />
     <set_comms_button text="Activate Gate" player_slot="1" />
     <set_variable name="Gate System" value="1.0" />
   </event>
@@ -33658,7 +33662,7 @@
     <if_exists player_slot="2" />
     <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
     <if_variable name="Gates Offline" comparator="NOT" value="1.0" />
-    <if_variable name="Gate System" comparator="NOT" value="2.0" />
+    <if_variable name="Gate System" comparator="LESS" value="2.0" />
     <set_comms_button text="Activate Gate" player_slot="2" />
     <set_variable name="Gate System" value="1.0" />
   </event>
@@ -33666,7 +33670,7 @@
     <if_exists player_slot="3" />
     <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
     <if_variable name="Gates Offline" comparator="NOT" value="1.0" />
-    <if_variable name="Gate System" comparator="NOT" value="2.0" />
+    <if_variable name="Gate System" comparator="LESS" value="2.0" />
     <set_comms_button text="Activate Gate" player_slot="3" />
     <set_variable name="Gate System" value="1.0" />
   </event>
@@ -33674,7 +33678,7 @@
     <if_exists player_slot="4" />
     <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
     <if_variable name="Gates Offline" comparator="NOT" value="1.0" />
-    <if_variable name="Gate System" comparator="NOT" value="2.0" />
+    <if_variable name="Gate System" comparator="LESS" value="2.0" />
     <set_comms_button text="Activate Gate" player_slot="4" />
     <set_variable name="Gate System" value="1.0" />
   </event>
@@ -33682,7 +33686,7 @@
     <if_exists player_slot="5" />
     <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
     <if_variable name="Gates Offline" comparator="NOT" value="1.0" />
-    <if_variable name="Gate System" comparator="NOT" value="2.0" />
+    <if_variable name="Gate System" comparator="LESS" value="2.0" />
     <set_comms_button text="Activate Gate" player_slot="5" />
     <set_variable name="Gate System" value="1.0" />
   </event>
@@ -33690,7 +33694,7 @@
     <if_exists player_slot="6" />
     <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
     <if_variable name="Gates Offline" comparator="NOT" value="1.0" />
-    <if_variable name="Gate System" comparator="NOT" value="2.0" />
+    <if_variable name="Gate System" comparator="LESS" value="2.0" />
     <set_comms_button text="Activate Gate" player_slot="6" />
     <set_variable name="Gate System" value="1.0" />
   </event>
@@ -33698,9 +33702,22 @@
     <if_exists player_slot="7" />
     <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
     <if_variable name="Gates Offline" comparator="NOT" value="1.0" />
-    <if_variable name="Gate System" comparator="NOT" value="2.0" />
+    <if_variable name="Gate System" comparator="LESS" value="2.0" />
     <set_comms_button text="Activate Gate" player_slot="7" />
     <set_variable name="Gate System" value="1.0" />
+  </event>
+  <event name="Deactive Gate" id_arme="036a77e3-3e24-4c79-9213-ec9e5a340863" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_variable name="shipsInrange" comparator="LESS" value="1.0" />
+    <clear_comms_button text="Activate Gate" player_slot="0" />
+    <clear_comms_button text="Activate Gate" player_slot="1" />
+    <clear_comms_button text="Activate Gate" player_slot="2" />
+    <clear_comms_button text="Activate Gate" player_slot="3" />
+    <clear_comms_button text="Activate Gate" player_slot="4" />
+    <clear_comms_button text="Activate Gate" player_slot="5" />
+    <clear_comms_button text="Activate Gate" player_slot="6" />
+    <clear_comms_button text="Activate Gate" player_slot="7" />
+    <set_variable name="Gate System" value="0.0" integer="yes" />
   </event>
   <event name="Deactive Gate" id_arme="3d68d7ed-0e36-405c-81a5-2488d80e4ff3" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
     <if_variable name="Gate System" comparator="GREATER" value="1.0" />
@@ -33715,19 +33732,6 @@
     <clear_comms_button text="Activate Gate" player_slot="7" />
     <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Deactivating Gate</incoming_comms_text>
     <set_variable name="Gate System" value="0.0" />
-  </event>
-  <event name="Deactive Gate" id_arme="036a77e3-3e24-4c79-9213-ec9e5a340863" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
-    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
-    <if_variable name="shipsInrange" comparator="LESS" value="1.0" />
-    <clear_comms_button text="Activate Gate" player_slot="0" />
-    <clear_comms_button text="Activate Gate" player_slot="1" />
-    <clear_comms_button text="Activate Gate" player_slot="2" />
-    <clear_comms_button text="Activate Gate" player_slot="3" />
-    <clear_comms_button text="Activate Gate" player_slot="4" />
-    <clear_comms_button text="Activate Gate" player_slot="5" />
-    <clear_comms_button text="Activate Gate" player_slot="6" />
-    <clear_comms_button text="Activate Gate" player_slot="7" />
-    <set_variable name="Gate System" value="0.0" integer="yes" />
   </event>
   <event name="Tracking Ships" id_arme="facb4333-876f-48f6-9f89-bb1adb476558" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
     <if_variable name="Gate System" comparator="EQUALS" value="2.0" />

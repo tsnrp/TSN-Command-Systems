@@ -827,6 +827,7 @@
     <set_variable name="Antara to Hjorden" value="1.0" />
     <set_variable name="Hjorden System" value="1.0" />
     <set_variable name="Sector" value="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1639,6 +1640,7 @@
     <set_variable name="Antara to Kalixa" value="1.0" />
     <set_variable name="Kalixa System" value="1.0" />
     <set_variable name="Sector" value="12" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

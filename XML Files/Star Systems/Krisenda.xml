@@ -404,6 +404,7 @@
     <set_variable name="Krisenda to Cerberus" value="1.0" />
     <set_variable name="Cerberus System" value="1.0" />
     <set_variable name="Sector" value="1" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1180,6 +1181,7 @@
     <set_variable name="Krisenda to Waypoint 60" value="1.0" />
     <set_variable name="Waypoint 60" value="1.0" />
     <set_variable name="Sector" value="1" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

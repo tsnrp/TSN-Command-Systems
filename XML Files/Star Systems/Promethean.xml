@@ -914,6 +914,7 @@
     <set_variable name="Promethean to Cerberus" value="1.0" />
     <set_variable name="Cerberus System" value="1.0" />
     <set_variable name="Sector" value="4" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1410,6 +1411,7 @@
     <set_variable name="Promethean to Volantis" value="1.0" />
     <set_variable name="Volantis System" value="1.0" />
     <set_variable name="Sector" value="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1960,6 +1962,7 @@
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
     <set_variable name="Promethean to Cronus" value="1.0" />
     <set_variable name="Cronus System" value="1.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Sector" value="1" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />

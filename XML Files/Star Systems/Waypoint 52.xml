@@ -273,6 +273,7 @@
     <set_variable name="Waypoint 52 to Atlantis" value="1.0" />
     <set_variable name="Atlantis System" value="1.0" />
     <set_variable name="Sector" value="14" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -538,6 +539,7 @@
     <set_variable name="Waypoint 52 to Volantis" value="1.0" />
     <set_variable name="Volantis System" value="1.0" />
     <set_variable name="Sector" value="7" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

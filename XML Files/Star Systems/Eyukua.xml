@@ -403,6 +403,7 @@
     <set_variable name="Eyukua to Waypoint 78" value="1.0" />
     <set_variable name="Waypoint 78" value="1.0" />
     <set_variable name="Sector" value="1" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -3099,16 +3100,17 @@
     <set_variable name="Eyukua to Arcturus" value="1.0" />
     <set_variable name="Arcturus System" value="1.0" />
     <set_variable name="Sector" value="4" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="53f56e11-76b6-43b7-9a9a-ff930386cb7f" parent_id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" />
+  <folder_arme name="Sector Entities" id_arme="53f56e11-76b6-43b7-9a9a-ff930386cb7f" parent_id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="5379bc87-568a-4cc3-821b-5b8f0cc064af" parent_id_arme="53f56e11-76b6-43b7-9a9a-ff930386cb7f">
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="21.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="52997.0" y="0.0" z="69590.0" angle="0" name="Arcturus Gate" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="74353.0" y="0.0" z="74205.0" name="Arcturus Gate" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <create type="blackHole" x="84799.0" y="0.0" z="62517.0" name="BHA" />
     <create type="blackHole" x="50418.0" y="0.0" z="72364.0" name="BHC" />
     <create type="blackHole" x="58345.0" y="0.0" z="52837.0" name="BHB" />

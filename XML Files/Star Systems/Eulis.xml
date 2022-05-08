@@ -395,6 +395,7 @@
     <set_variable name="Eulis to Jhohara" value="1.0" />
     <set_variable name="Jhohara System" value="1.0" />
     <set_variable name="Sector" value="targetSector" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -911,6 +912,7 @@
     <set_variable name="Eulis to Sumri" value="1.0" />
     <set_variable name="Sumri System" value="1.0" />
     <set_variable name="Sector" value="7" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1550,6 +1552,7 @@
     <set_variable name="Eulis to Khoros" value="1.0" />
     <set_variable name="Khoros System" value="1.0" />
     <set_variable name="Sector" value="4" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1845,6 +1848,7 @@
     <set_variable name="Eulis to Reema" value="1.0" />
     <set_variable name="Reema System" value="1.0" />
     <set_variable name="Sector" value="25" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -2352,6 +2356,7 @@
     <set_variable name="Eulis to Mria" value="1.0" />
     <set_variable name="Mria System" value="1.0" />
     <set_variable name="Sector" value="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

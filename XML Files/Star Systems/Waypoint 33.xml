@@ -293,6 +293,7 @@
     <set_variable name="Waypoint 33 to Hypherion" value="1.0" />
     <set_variable name="Hypherion System" value="1.0" />
     <set_variable name="Sector" value="12" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -582,6 +583,7 @@
     <set_variable name="Waypoint 33 to Rhea" value="1.0" />
     <set_variable name="Rhea System" value="1.0" />
     <set_variable name="Sector" value="11" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

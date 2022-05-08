@@ -289,6 +289,7 @@
     <set_variable name="Ashia to Tyr" value="1.0" />
     <set_variable name="Tyr System" value="1.0" />
     <set_variable name="Sector" value="8.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
   </event>
@@ -670,7 +671,7 @@
     <set_variable name="Ashia System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Ashia Sector V" id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <folder_arme name="Ashia Sector V" id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" expanded_arme="" />
   <event name="Create Ashia Sector V" id_arme="5e199dbf-2fe1-4670-bbf8-5074872409c9" parent_id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c">
     <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -699,7 +700,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950" parent_id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c" />
+  <folder_arme name="Navigation" id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950" parent_id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c" expanded_arme="" />
   <event name="Transition to Sector VI" id_arme="b4ad0195-2f42-4814-a192-3f1227418413" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -788,7 +789,7 @@
     <set_variable name="Ashia System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="ac548ba6-7088-4636-a92a-73b2b6ce1731" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="ac548ba6-7088-4636-a92a-73b2b6ce1731" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950" expanded_arme="" />
   <event name="Gate Offline" id_arme="998e406b-2cdb-4fe1-aa06-890ef9b6fe38" parent_id_arme="ac548ba6-7088-4636-a92a-73b2b6ce1731">
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
@@ -965,6 +966,7 @@
     <set_variable name="Ashia to Acantha" value="1.0" />
     <set_variable name="Acantha System" value="1.0" />
     <set_variable name="Sector" value="5" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
   </event>
@@ -1156,7 +1158,7 @@
     <set_variable name="Ashia System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Ashia Sector VII" id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <folder_arme name="Ashia Sector VII" id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" expanded_arme="" />
   <event name="Create Ashia Sector VII" id_arme="d61236f5-4164-4d60-b655-bb69091dfd49" parent_id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f">
     <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1177,7 +1179,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb" parent_id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f" />
+  <folder_arme name="Navigation" id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb" parent_id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f" expanded_arme="" />
   <event name="Transition to Sector VIII" id_arme="f5b8a16c-f4fe-457e-9941-1408daa15a22" parent_id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1211,7 +1213,7 @@
     <set_variable name="Ashia System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="a1eaf133-3d76-446f-81e6-cd1bc8ed648c" parent_id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="a1eaf133-3d76-446f-81e6-cd1bc8ed648c" parent_id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb" expanded_arme="" />
   <event name="Gate Offline" id_arme="c6c5807d-7f4a-4d01-b64d-3256b390c30e" parent_id_arme="a1eaf133-3d76-446f-81e6-cd1bc8ed648c">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
@@ -1388,6 +1390,7 @@
     <set_variable name="Ashia to Reema" value="1.0" />
     <set_variable name="Reema System" value="1.0" />
     <set_variable name="Sector" value="7" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
   </event>
@@ -1557,7 +1560,7 @@
     <set_variable name="Ashia System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Ashia Sector IX" id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
+  <folder_arme name="Ashia Sector IX" id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" expanded_arme="" />
   <event name="Create Ashia Sector IX" id_arme="39cbbb05-4b2b-4e05-8e05-b60bc1432c82" parent_id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b">
     <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1578,7 +1581,7 @@
     <create count="20" type="nebulas" nebType="2" startX="27768.0" startY="0.0" startZ="31517.0" endX="31250.0" endY="0.0" endZ="54419.0" randomRange="7000" />
     <create count="15" type="asteroids" startX="40558.0" startY="0.0" startZ="36988.0" endX="54286.0" endY="0.0" endZ="27232.0" randomRange="4000" />
   </event>
-  <folder_arme name="Navigation" id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7" parent_id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b" />
+  <folder_arme name="Navigation" id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7" parent_id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b" expanded_arme="" />
   <event name="Transition to Sector VIII" id_arme="e178ba89-8e32-4a41-8e72-30d6a5bb700b" parent_id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1612,7 +1615,7 @@
     <set_variable name="Ashia System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="2c620cf6-2164-44a9-a50a-b74ea6231240" parent_id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="2c620cf6-2164-44a9-a50a-b74ea6231240" parent_id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7" expanded_arme="" />
   <event name="Gate Offline" id_arme="df8140c7-9852-460f-92b1-218af9b8e113" parent_id_arme="2c620cf6-2164-44a9-a50a-b74ea6231240">
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
@@ -1789,6 +1792,7 @@
     <set_variable name="Ashia to Phinmoor" value="1.0" />
     <set_variable name="Phinmoor System" value="1.0" />
     <set_variable name="Sector" value="targetSector" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
   </event>

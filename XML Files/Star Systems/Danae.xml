@@ -483,6 +483,7 @@
     <set_variable name="Danae to Euphini" value="1.0" />
     <set_variable name="Euphini System" value="1.0" />
     <set_variable name="Sector" value="8" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -940,6 +941,7 @@
     <set_variable name="Danae to Waypoint 60" value="1.0" />
     <set_variable name="Waypoint 60" value="1.0" />
     <set_variable name="Sector" value="3" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

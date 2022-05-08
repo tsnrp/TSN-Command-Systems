@@ -249,6 +249,10 @@
     <set_variable name="digitZ2" value="0.0" integer="yes" />
     <!--End of Start Block-->
   </start>
+  <event name="Ship Tracking" id_arme="e1b62a55-290d-46d5-89bd-dba7c5eba540">
+    <if_variable name="shipsInrange" comparator="LESS" value="0.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
+  </event>
   <event name="Destroy Wrecks" id_arme="202200fd-4e3f-4f3a-b710-7f427d27fd91">
     <if_exists name="WRECK" />
     <destroy name="WRECK" />

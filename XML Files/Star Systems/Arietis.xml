@@ -492,6 +492,7 @@
     <set_variable name="Arietis to Poseidon" value="1.0" />
     <set_variable name="Poseidon System" value="1.0" />
     <set_variable name="Sector" value="1" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -794,6 +795,7 @@
     <set_variable name="Arietis to Atlantis" value="1.0" />
     <set_variable name="Atlantis System" value="1.0" />
     <set_variable name="Sector" value="18.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1207,6 +1209,7 @@
     <set_variable name="Arietis to Waypoint 89" value="1.0" />
     <set_variable name="Waypoint 89" value="1.0" />
     <set_variable name="Sector" value="3" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

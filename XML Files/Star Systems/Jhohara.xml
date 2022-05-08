@@ -383,6 +383,7 @@
     <set_variable name="Jhohara to Setmari" value="1.0" />
     <set_variable name="Setmari System" value="1.0" />
     <set_variable name="Sector" value="targetSector" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1151,6 +1152,7 @@
     <set_variable name="Jhohara to Vrae" value="1.0" />
     <set_variable name="Vrae System" value="1.0" />
     <set_variable name="Sector" value="targetSector" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1626,6 +1628,7 @@
     <set_variable name="Jhohara to Eulis" value="1.0" />
     <set_variable name="Eulis System" value="1.0" />
     <set_variable name="Sector" value="2.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

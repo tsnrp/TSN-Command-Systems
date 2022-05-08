@@ -288,6 +288,7 @@
     <set_variable name="Holtair to Meera" value="1.0" />
     <set_variable name="Meera System" value="1.0" />
     <set_variable name="Sector" value="4" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1170,6 +1171,7 @@
     <set_variable name="Holtair to Jotar" value="1.0" />
     <set_variable name="Jotar System" value="1.0" />
     <set_variable name="Sector" value="8" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1590,6 +1592,7 @@
     <set_variable name="Holtair to Waypoint 89" value="1.0" />
     <set_variable name="Waypoint 89" value="1.0" />
     <set_variable name="Sector" value="1" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -2468,6 +2471,7 @@
     <set_variable name="Holtair to Norayne" value="1.0" />
     <set_variable name="Norayne System" value="1.0" />
     <set_variable name="Sector" value="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

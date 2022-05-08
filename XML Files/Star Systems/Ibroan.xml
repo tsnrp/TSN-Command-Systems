@@ -730,6 +730,7 @@
     <set_variable name="Ibroan to Setmari" value="1.0" />
     <set_variable name="Setmari System" value="1.0" />
     <set_variable name="Sector" value="targetSector" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1040,6 +1041,7 @@
     <set_variable name="Ibroan to Sumri" value="1.0" />
     <set_variable name="Sumri System" value="1.0" />
     <set_variable name="Sector" value="9.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1333,6 +1335,7 @@
     <set_variable name="Ibroan to Drenan" value="1.0" />
     <set_variable name="Drenan System" value="1.0" />
     <set_variable name="Sector" value="14.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

@@ -390,6 +390,7 @@
     <set_variable name="Mria to Eulis" value="1.0" />
     <set_variable name="Eulis System" value="1.0" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
     <set_variable name="Sector" value="12.0" integer="yes" />
@@ -1134,6 +1135,7 @@
     <set_variable name="Mria to Loria" value="1.0" />
     <set_variable name="Loria System" value="1.0" />
     <set_variable name="Sector" value="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1602,7 +1604,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector XI - XV" id_arme="f052e0f1-a44a-45ad-a664-9319234b40c6" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
+  <folder_arme name="Sector XI - XV" id_arme="f052e0f1-a44a-45ad-a664-9319234b40c6" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" expanded_arme="" />
   <folder_arme name="Mria Sector XI" id_arme="54ec7357-7ffa-47a7-80e5-e89b5357e4ae" parent_id_arme="f052e0f1-a44a-45ad-a664-9319234b40c6" />
   <event name="Create Mria Sector XI" id_arme="04824613-21da-4ff1-8de8-8f01cf33d479" parent_id_arme="54ec7357-7ffa-47a7-80e5-e89b5357e4ae">
     <if_timer_finished name="Transition" />
@@ -2418,6 +2420,7 @@
     <set_variable name="Mria to Tibur" value="1.0" />
     <set_variable name="Tibur System" value="1.0" />
     <set_variable name="Sector" value="targetSector" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -2923,6 +2926,7 @@
     <set_variable name="Mria to Khoros" value="1.0" />
     <set_variable name="Khoros System" value="1.0" />
     <set_variable name="Sector" value="3" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

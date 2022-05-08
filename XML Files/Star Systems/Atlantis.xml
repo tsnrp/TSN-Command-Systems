@@ -295,6 +295,7 @@
     <set_variable name="Waypoint 60" value="1.0" />
     <set_variable name="Sector" value="4" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
@@ -1099,6 +1100,7 @@
     <set_variable name="Al'Mare System" value="1.0" />
     <set_variable name="Sector" value="targetSector" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
@@ -1461,6 +1463,7 @@
     <set_variable name="Titan System" value="1.0" />
     <set_variable name="Sector" value="3" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
@@ -2728,6 +2731,7 @@
     <set_variable name="Waypoint 52" value="1.0" />
     <set_variable name="Sector" value="1" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
@@ -3146,6 +3150,7 @@
     <set_variable name="Cerberus System" value="1.0" />
     <set_variable name="Sector" value="2.0" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
@@ -3618,6 +3623,7 @@
     <set_variable name="Arietis System" value="1.0" />
     <set_variable name="Sector" value="4" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>

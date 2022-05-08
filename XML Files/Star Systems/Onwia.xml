@@ -672,6 +672,7 @@
     <set_variable name="Onwia to Drenan" value="1.0" />
     <set_variable name="Drenan System" value="1.0" />
     <set_variable name="Sector" value="8" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

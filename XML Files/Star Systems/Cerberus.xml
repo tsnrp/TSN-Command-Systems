@@ -292,10 +292,11 @@
     <set_variable name="Krisenda System" value="1.0" />
     <set_variable name="Sector" value="2" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="a02ff657-1c8f-4c54-a604-8f70f4f9899b" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" />
+  <folder_arme name="Sector Entities" id_arme="a02ff657-1c8f-4c54-a604-8f70f4f9899b" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="2ec3ef61-3fb4-4e0b-8e21-1ce6c235638b" parent_id_arme="a02ff657-1c8f-4c54-a604-8f70f4f9899b">
     <if_variable name="Cerberus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -611,6 +612,7 @@
     <set_variable name="Atlantis System" value="1.0" />
     <set_variable name="Sector" value="16" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
@@ -1036,6 +1038,7 @@
     <set_variable name="Promethean System" value="1.0" />
     <set_variable name="Sector" value="6" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
@@ -1562,6 +1565,7 @@
     <set_variable name="Hjorden System" value="1.0" />
     <set_variable name="Sector" value="6" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>

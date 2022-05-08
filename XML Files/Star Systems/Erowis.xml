@@ -286,6 +286,7 @@
     <set_variable name="Erowis to Drenan" value="1.0" />
     <set_variable name="Drenan System" value="1.0" />
     <set_variable name="Sector" value="5.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -921,6 +922,7 @@
     <set_variable name="Erowis to Krellis" value="1.0" />
     <set_variable name="Krellis System" value="1.0" />
     <set_variable name="Sector" value="8.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

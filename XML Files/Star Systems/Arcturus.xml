@@ -557,6 +557,7 @@
     <set_variable name="Arcturus to Eyukua" value="1.0" />
     <set_variable name="Eyukua System" value="1.0" />
     <set_variable name="Sector" value="21" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
@@ -1326,6 +1327,7 @@
     <set_variable name="Arcturus to Hjorden" value="1.0" />
     <set_variable name="Hjorden System" value="1.0" />
     <set_variable name="Sector" value="3" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />

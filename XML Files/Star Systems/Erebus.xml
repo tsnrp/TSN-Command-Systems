@@ -409,6 +409,7 @@
     <set_variable name="Cronus System" value="1.0" />
     <set_variable name="Sector" value="8" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
@@ -1544,6 +1545,7 @@
     <set_variable name="Sierra System" value="1.0" />
     <set_variable name="Sector" value="2" />
     <set_timer name="Transition" seconds="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
