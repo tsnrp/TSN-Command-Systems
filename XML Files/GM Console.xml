@@ -5822,6 +5822,7 @@
   <event name="Set Menu" id_arme="59a04bfe-8a07-494c-8ee6-b5c1af32b6c4" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b">
     <if_gm_button text="AI Cmds Off" />
     <set_gm_button text="AI Cmds On" x="140" y="480" h="28" w="90" />
+    <set_gm_button text="Assign Specials\Toggle quick add" />
     <set_gm_button text="Assign Specials\Add\Shield Drain" />
     <set_gm_button text="Assign Specials\Add\Tractor" />
     <set_gm_button text="Assign Specials\Add\Shield Reset" />
@@ -5852,10 +5853,72 @@
     <clear_gm_button text="AI Cmds Off" />
     <set_variable name="AI Commands" value="0.0" integer="yes" />
     <set_variable name="AI Commands Menu" value="1.0" integer="yes" />
+    <set_variable name="SPCL_floating_on" value="0.0" integer="yes" />
+    <set_timer name="SPCL_floating_timer" seconds="1" />
+  </event>
+  <event name="Open SPCL Menu" id_arme="a4e13c2a-7082-41b4-a52b-1766fa98745e" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b">
+    <if_gm_button text="Assign Specials\Toggle quick add" />
+    <if_variable name="SPCL_floating_on" comparator="EQUALS" value ="0.0" />
+    <!-- <if_timer_finished name="SPCL_floating_timer" /> -->
+
+    <set_variable name="SPCL_floating_on" value="1.0" integer="yes" />
+    <set_timer name="SPCL_floating_timer" seconds="1" />
+
+    <set_gm_button text="Tractor" x="420" y="270" h="28" w="60" />
+    <set_gm_button text="Sh.Drn" x="420" y="300" h="28" w="60" />
+    <set_gm_button text="Sh.Rst" x="420" y="330" h="28" w="60" />
+    <set_gm_button text="Sh.Vmp" x="420" y="360" h="28" w="60" />
+    <set_gm_button text="Telebck" x="420" y="390" h="28" w="60" />
+    <set_gm_button text="Teleprt" x="420" y="420" h="28" w="60" />
+    <set_gm_button text="ATorp" x="420" y="450" h="28" w="60" />
+    <set_gm_button text="AMine" x="420" y="480" h="28" w="60" />
+    <set_gm_button text="Warp" x="420" y="510" h="28" w="60" />
+    <set_gm_button text="HET" x="420" y="540" h="28" w="60" />
+    <set_gm_button text="Cloak" x="420" y="570" h="28" w="60" />
+    <set_gm_button text="LowVis" x="420" y="600" h="28" w="60" />
+    <set_gm_button text="Drones" x="420" y="630" h="28" w="60" />
+  </event>
+  <event name="Close SPCL Menu" id_arme="ca8555e6-343b-43ce-8144-0240b068e7cd" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b">
+    <if_gm_button text="Assign Specials\Toggle quick add" />
+    <if_variable name="SPCL_floating_on" comparator="EQUALS" value ="1.0" />
+    <if_timer_finished name="SPCL_floating_timer" />
+
+    <set_variable name="SPCL_floating_on" value="0.0" integer="yes" />
+    <!-- <set_timer name="SPCL_floating_timer" seconds="1" /> -->
+
+    <clear_gm_button text="Tractor" />
+    <clear_gm_button text="Sh.Drn" />
+    <clear_gm_button text="Sh.Rst" />
+    <clear_gm_button text="Sh.Vmp" />
+    <clear_gm_button text="Telebck" />
+    <clear_gm_button text="Teleprt" />
+    <clear_gm_button text="ATorp" />
+    <clear_gm_button text="AMine" />
+    <clear_gm_button text="Warp" />
+    <clear_gm_button text="HET" />
+    <clear_gm_button text="Cloak" />
+    <clear_gm_button text="LowVis" />
+    <clear_gm_button text="Drones" />
   </event>
   <event name="Close Menu" id_arme="cf066618-8b8b-40b0-b4a4-949a6afff1f7" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b">
     <if_gm_button text="AI Cmds On" />
     <clear_gm_button text="AI Cmds On" />
+    <clear_gm_button text="SPCL off" />
+    <clear_gm_button text="SPCL on" />
+    <clear_gm_button text="Tractor" />
+    <clear_gm_button text="Sh.Drn" />
+    <clear_gm_button text="Sh.Rst" />
+    <clear_gm_button text="Sh.Vmp" />
+    <clear_gm_button text="Telebck" />
+    <clear_gm_button text="Teleprt" />
+    <clear_gm_button text="ATorp" />
+    <clear_gm_button text="AMine" />
+    <clear_gm_button text="Warp" />
+    <clear_gm_button text="HET" />
+    <clear_gm_button text="Cloak" />
+    <clear_gm_button text="LowVis" />
+    <clear_gm_button text="Drones" />
+    <clear_gm_button text="Assign Specials\Add\<FLOATING MENU>" />
     <clear_gm_button text="Assign Specials\Add\Shield Drain" />
     <clear_gm_button text="Assign Specials\Add\Tractor" />
     <clear_gm_button text="Assign Specials\Add\Shield Reset" />
@@ -6222,6 +6285,64 @@
   </event>
   <folder_arme name="AI Specials" id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b" expanded_arme="" />
   <folder_arme name="Add Special" id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01" parent_id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" expanded_arme="" />
+  
+  <event name="Tractor" id_arme="95199a89-f606-4be0-9da5-3247d967e466" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="Tractor" />
+    <set_special use_gm_selection="" ability="Tractor" />
+  </event>
+  <event name="Shield Reset" id_arme="c35b83cc-1ea2-40c9-b70a-dedf90c402d7" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="Sh.Rst" />
+    <set_special use_gm_selection="" ability="ShldReset" />
+  </event>
+  <event name="Teleback" id_arme="48024b89-ba15-4bf7-8e55-b7ec6ecf638f" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="Telebck" />
+    <set_special use_gm_selection="" ability="TeleBack" />
+  </event>
+  <event name="Warp" id_arme="3a2a06a6-a8dd-477b-8cf8-5e250a3d02da" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="Warp" />
+    <set_special use_gm_selection="" ability="Warp" />
+  </event>
+  <event name="HET" id_arme="cbced375-81fe-4862-9294-e2051ad26844" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="HET" />
+    <set_special use_gm_selection="" ability="HET" />
+  </event>
+  <event name="Anti-Torp" id_arme="005fd04b-4d02-454a-a424-5372e35dbe91" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="ATorp" />
+    <set_special use_gm_selection="" ability="AntiTorp" />
+  </event>
+  <event name="Anti-Mine" id_arme="ba09f41c-f305-406d-8c9f-eb8888a1d6a6" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="AMine" />
+    <set_special use_gm_selection="" ability="AntiMine" />
+  </event>
+  <event name="Cloak" id_arme="3fcec1cc-e746-44aa-8092-69564e063715" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="Cloak" />
+    <set_special use_gm_selection="" ability="Cloak" />
+  </event>
+  <event name="Low Vis" id_arme="f5ff8801-b531-4c87-bf9c-10cba07873e6" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="LowVis" />
+    <set_special use_gm_selection="" ability="LowVis" />
+  </event>
+  <event name="Teleport" id_arme="0d8c2483-60c3-4588-9719-31a0679b7cf9" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="Teleprt" />
+    <set_special use_gm_selection="" ability="Teleport" />
+  </event>
+  <event name="Drones" id_arme="73d0226f-1b79-43d2-bc01-df05dd1fd325" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="Drones" />
+    <set_special use_gm_selection="" ability="Drones" />
+  </event>
+  <event name="Shield Vamp" id_arme="af113581-e31a-4bc5-80ba-0132b388381f" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="Sh.Vmp" />
+    <set_special use_gm_selection="" ability="ShldVamp" />
+  </event>
+  <event name="Anti-Mine" id_arme="4a0a8e3c-63ff-4b7d-8a69-54386e60a14a" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="AMine" />
+    <set_special use_gm_selection="" ability="AntiMine" />
+  </event>
+  <event name="Shield Drain" id_arme="51d96d2b-950a-4166-9ec3-3e2c45f9fb74" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_gm_button text="Sh.Drn" />
+    <set_special use_gm_selection="" clear="yes" ability="ShldDrain" />
+  </event>
+
   <event name="Shield Drain" id_arme="aa1012f5-fc9c-4641-900d-1be041cb36c2" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
     <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
     <if_gm_button text="Assign Specials\Add\Shield Drain" />
