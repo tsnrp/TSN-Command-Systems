@@ -14,7 +14,7 @@
     <set_variable name="sqrt_calc" value="2.0" integer="yes" />
   </event>
   <event name="SqrtRecur1" id_arme="4859ef14-3662-4459-846e-1feb5960c296" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696">
-    <if_variable name="sqrt_depth" comparator="LESS" value="15.0" />
+    <if_variable name="sqrt_depth" comparator="LESS" value="25.0" />
     <if_variable name="sqrt_calc" comparator="EQUALS" value="2.0" />
 
     <set_variable name="sqrt_ans" value="(sqrt_high+sqrt_low)/2.0" integer="no" />
@@ -38,7 +38,7 @@
     <set_variable name="sqrt_calc" value="2.0" integer="yes" />
   </event>
   <event name="SqrtRecur3" id_arme="a4121358-67b6-4dd0-b868-e2f2ef9a4e27" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696">
-    <if_variable name="sqrt_depth" comparator="GREATER_EQUAL" value="15.0" />
+    <if_variable name="sqrt_depth" comparator="GREATER_EQUAL" value="25.0" />
     <if_variable name="sqrt_calc" comparator="EQUALS" value="2.0" />
     <set_variable name="sqrt_calc" value="4.0" integer="yes" />
   </event>

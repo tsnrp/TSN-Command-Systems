@@ -166,6 +166,7 @@
     <clear_gm_button text="Terrain\Nebulae\Lrg Nebula Cluster (Blue)" />
     <clear_gm_button text="Terrain\Asteroids\Single Asteroid" />
     <clear_gm_button text="Terrain\Asteroids\Small Field" />
+    <clear_gm_button text="Terrain\Forcefield" />
     <clear_gm_button text="Terrain\Asteroids\Medium Field" />
     <clear_gm_button text="Terrain\Asteroids\Large Field" />
     <clear_gm_button text="Creatures\Shark" />
@@ -204,6 +205,7 @@
     <clear_gm_button text="3 Lyrs"/>
     <clear_gm_button text="5 Lyrs"/>
     <clear_gm_button text="Painter\Mines (arc)"/>
+    <clear_gm_button text="Painter\Forcefield (arc)"/>
     <clear_gm_button text="Painter\Asteroid Field (arc)"/>
     <clear_gm_button text="Painter\Mines (line START)"/>
     <clear_gm_button text="Painter\Mines (line FINISH)"/>
@@ -40935,6 +40937,7 @@
     <set_gm_button text="Terrain\Nebulae\Lrg Nebula Cluster (Blue)" />
     <set_gm_button text="Terrain\Asteroids\Single Asteroid" />
     <set_gm_button text="Terrain\Asteroids\Small Field" />
+    <set_gm_button text="Terrain\Forcefield" />
     <set_gm_button text="Terrain\Asteroids\Medium Field" />
     <set_gm_button text="Terrain\Asteroids\Large Field" />
     <set_gm_button text="Creatures\Shark" />
@@ -40970,6 +40973,7 @@
     <clear_gm_button text="Terrain\Nebulae\Lrg Nebula Cluster (Blue)" />
     <clear_gm_button text="Terrain\Asteroids\Single Asteroid" />
     <clear_gm_button text="Terrain\Asteroids\Small Field" />
+    <clear_gm_button text="Terrain\Forcefield" />
     <clear_gm_button text="Terrain\Asteroids\Medium Field" />
     <clear_gm_button text="Terrain\Asteroids\Large Field" />
     <clear_gm_button text="Creatures\Shark" />
@@ -41004,6 +41008,7 @@
     <clear_gm_button text="3 Lyrs"/>
     <clear_gm_button text="5 Lyrs"/>
     <clear_gm_button text="Painter\Mines (arc)"/>
+    <clear_gm_button text="Painter\Forcefield (arc)"/>
     <clear_gm_button text="Painter\Asteroid Field (arc)"/>
     <clear_gm_button text="Painter\Mines (line START)"/>
     <clear_gm_button text="Painter\Mines (line FINISH)"/>
@@ -41222,6 +41227,17 @@
     <if_gm_button text="Terrain\Asteroids\Large Field" />
     <create count="100" type="asteroids" use_gm_position="" radius="5000" randomRange="5000" />
   </event>
+  <event name="Forcefield" id_arme="1809549f-7acb-4f2c-993c-f6b70dd3d8f2" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+    <if_gm_button text="Terrain\Forcefield" />
+    <create type="genericMesh" use_gm_position=""
+      name="new_ff" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png"
+      colorRed="0.7" colorGreen="0.7" colorBlue="0.9" />
+    <create type="genericMesh" use_gm_position="" name="new_ff" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" fakeShieldsFront="100" fakeShieldsRear="0" colorRed="0.1" colorGreen="0.1" colorBlue="0.9" />
+    <set_object_property name="new_ff" property="artScale" value="7.5" />
+    <set_object_property name="new_ff" property="pushRadius" value="750.0" />
+    <set_object_property name="new_ff" property="angleDelta" value="0.1" />
+    <set_ship_text name="new_ff" newname=" " class="Forcefield" desc="An entangled cosmic string made from anti higgsinos. Its anti-gravity has a repelling effect on nearby massive objects." scan_desc="The barrier is self-sustaining and impenetrable. It can't be removed with the equipment we have on board."/>
+  </event>
 
   <event name="Increase painterObjectCount" id_arme="333d092b-5572-4b68-8ff2-0dd5f319db26" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Count+5" />
@@ -41393,7 +41409,7 @@
     <get_object_property property="positionZ" name="CurrGm" variable="CurrGmZ" />
     <destroy name="CurrGm" />
 
-    <set_variable name="sqrt_y" value="(LineStartX-CurrGmX)*(LineStartX-CurrGmX)+(LineStartZ-CurrGmZ)*(LineStartZ-CurrGmZ)" integer="no" />
+    <set_variable name="sqrt_y" value="0.5*((LineStartX-CurrGmX)*(LineStartX-CurrGmX)+(LineStartZ-CurrGmZ)*(LineStartZ-CurrGmZ))" integer="no" />
     <set_variable name="sqrt_calc" value="1.0" integer="yes" />
   </event>
 
@@ -41410,6 +41426,120 @@
     <set_timer name="refreshLineSpacingTimerLoop" seconds="1.0" />
   </event>
 
+
+  <event name="SpawnLine Forcefield Start" id_arme="d4aa7e16-1d6b-4cdd-ab99-abee34b54cc6" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+    <!-- 
+    Spawns two rows of forcefields
+    In order to block 300% boosted warp4 at flight ceiling ensure line spacing of about 700.
+     -->
+
+    <if_gm_button text="Painter\Forcefield (line START)" />
+
+    <create type="genericMesh" use_gm_position="" name="." meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.1" colorGreen="0.1" colorBlue="0.2"  />
+    <get_object_property property="positionX" name="." variable="LineStartX" />
+    <get_object_property property="positionZ" name="." variable="LineStartZ" />
+
+    <set_variable name="refreshLineSpacingTimerLoopActive" value="1.0" />
+    <set_timer name="refreshLineSpacingTimerLoop" seconds="1.0" />
+    <set_variable name="sqrt_calc" value="0.0" integer="yes" />
+
+    <clear_gm_button text="Painter\Mines (line START)"/>
+    <clear_gm_button text="Painter\Forcefield (line START)"/>
+    <clear_gm_button text="Painter\Asteroids (line START)"/>
+    <set_gm_button text="Painter\Forcefield (line FINISH)"/>
+    <set_gm_button text="Painter\Forcefield (line CANCEL)"/>
+  </event>
+  <event name="SpawnLine Forcefield End" id_arme="3d8c15b2-71ab-494f-88b9-3b617500fe23" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+    <if_gm_button text="Painter\Forcefield (line FINISH)" />
+
+    <create type="genericMesh" use_gm_position="" name="LineEnd" meshFileName="dat\mine.dsx" textureFileName="dat\cargo_vessel_glow.png" colorRed="0.1" colorGreen="0.1" colorBlue="0.2"  />
+    <get_object_property property="positionX" name="LineEnd" variable="LineEndX" />
+    <get_object_property property="positionZ" name="LineEnd" variable="LineEndZ" />
+
+    <set_variable name="forcefieldPaintLineDeltaX" value="(LineEndX-LineStartX)/painterObjectCount" />
+    <set_variable name="forcefieldPaintLineDeltaZ" value="(LineEndZ-LineStartZ)/painterObjectCount" />
+    <set_variable name="forcefieldPaintLineOffsetZ" value="500.0" />
+
+    <set_variable name="forcefieldPaintCounter" value="0.0" integer="yes" />
+    <set_variable name="forcefieldPaintNext" value="1.0" integer="yes" />
+
+    <clear_gm_button text="Painter\Forcefield (line FINISH)"/>
+    <clear_gm_button text="Painter\Forcefield (line CANCEL)"/>
+    <set_gm_button text="Painter\Mines (line START)"/>
+    <set_gm_button text="Painter\Forcefield (line START)"/>
+    <set_gm_button text="Painter\Asteroids (line START)"/>
+
+  </event>
+  <event name="SpawnLine Forcefield paint next" id_arme="f16ed007-3c11-40ee-bfc2-05dff5340428" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+    <if_variable name="forcefieldPaintNext" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" y="-forcefieldPaintLineOffsetZ" x="LineStartX + forcefieldPaintCounter*forcefieldPaintLineDeltaX + 0.5*forcefieldPaintLineDeltaX" z="LineStartZ + forcefieldPaintCounter*forcefieldPaintLineDeltaZ + 0.5*forcefieldPaintLineDeltaZ"
+      name="new_ff_top" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png"
+      colorRed="0.7" colorGreen="0.7" colorBlue="0.9" />
+
+
+    <create type="genericMesh" y="forcefieldPaintLineOffsetZ" x="LineStartX + forcefieldPaintCounter*forcefieldPaintLineDeltaX" z="LineStartZ + forcefieldPaintCounter*forcefieldPaintLineDeltaZ"
+      name="new_ff_bot" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png"
+      colorRed="0.7" colorGreen="0.7" colorBlue="0.9" />
+
+    <set_variable name="forcefieldPaintNext" value="0.0" integer="yes" />
+    <set_variable name="forcefieldPaintCounter" value="forcefieldPaintCounter+1" integer="yes" />
+  </event>
+  <event name="SpawnLine Forcefield update" id_arme="23786b97-d32d-4b64-bae6-42f700b6aadf" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+    <if_exists name="new_ff_top" />
+    <if_exists name="new_ff_bot" />
+    <if_variable name="forcefieldPaintCounter" comparator="LESS" value="painterObjectCount" />
+    <if_variable name="forcefieldPaintNext" comparator="EQUALS" value="0.0" />
+
+    <set_object_property name="new_ff_top" property="artScale" value="10.0" />
+    <set_object_property name="new_ff_top" property="pushRadius" value="1000.0" />
+    <set_object_property name="new_ff_top" property="angleDelta" value="0.1" />
+    <set_ship_text name="new_ff_top" newname=" " class="Forcefield" desc="An entangled cosmic string made from anti higgsinos. Its anti-gravity has a repelling effect on nearby massive objects." scan_desc="The barrier is self-sustaining and impenetrable. It can't be removed with the equipment we have on board." />
+
+    <set_object_property name="new_ff_bot" property="artScale" value="10.0" />
+    <set_object_property name="new_ff_bot" property="pushRadius" value="1000.0" />
+    <set_object_property name="new_ff_bot" property="angleDelta" value="0.1" />
+    <set_ship_text name="new_ff_bot" newname=" " class="Forcefield" desc="An entangled cosmic string made from anti higgsinos. Its anti-gravity has a repelling effect on nearby massive objects." scan_desc="The barrier is self-sustaining and impenetrable. It can't be removed with the equipment we have on board." />
+
+    <set_variable name="forcefieldPaintNext" value="1.0" integer="yes" />
+
+  </event>
+  <event name="SpawnLine Forcefield last update" id_arme="3ca556e2-5283-4e2c-be0f-fe91dfa529c1" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+    <if_exists name="new_ff_top" />
+    <if_exists name="new_ff_bot" />
+    <if_variable name="forcefieldPaintCounter" comparator="GREATER_EQUAL" value="painterObjectCount" />
+    <if_variable name="forcefieldPaintNext" comparator="EQUALS" value="0.0" />
+
+    <set_variable name="forcefieldPaintCounter" value="0.0" integer="yes" />
+
+    <set_object_property name="new_ff_top" property="artScale" value="10.0" />
+    <set_object_property name="new_ff_top" property="pushRadius" value="1000.0" />
+    <set_object_property name="new_ff_top" property="angleDelta" value="0.1" />
+    <set_ship_text name="new_ff_top" newname=" " desc="Forcefield" />
+
+    <set_object_property name="new_ff_bot" property="artScale" value="10.0" />
+    <set_object_property name="new_ff_bot" property="pushRadius" value="1000.0" />
+    <set_object_property name="new_ff_bot" property="angleDelta" value="0.1" />
+    <set_ship_text name="new_ff_bot" newname=" " desc="Forcefield" />
+
+    <set_variable name="refreshLineSpacingTimerLoopActive" value="0.0" />
+
+    <destroy name="LineEnd" />
+    <destroy name="." />
+
+  </event>
+  <event name="SpawnLine Forcefield Cancel" id_arme="85797f7b-8b1a-4161-aa05-9ed00cabde34" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+    <if_gm_button text="Painter\Forcefield (line CANCEL)" />
+
+    <clear_gm_button text="Painter\Forcefield (line FINISH)"/>
+    <clear_gm_button text="Painter\Forcefield (line CANCEL)"/>
+    <set_gm_button text="Painter\Mines (line START)"/>
+    <set_gm_button text="Painter\Forcefield (line START)"/>
+    <set_gm_button text="Painter\Asteroids (line START)"/>
+
+    <set_variable name="refreshLineSpacingTimerLoopActive" value="0.0" />
+
+    <destroy name="." />
+  </event>
 
   <event name="SpawnLine Mines Start" id_arme="706bea52-641f-472e-9418-d7ed9ed35019" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Mines (line START)" />
@@ -41442,7 +41572,7 @@
     <set_gm_button text="Painter\Asteroids (line START)"/>
     <set_variable name="paintMineLineIter" value="1.0" integer="yes" />
   </event>
-  <event name="SpawnLine Mines Cancel" id_arme="9cc4c714-fb88-455e-a14b-6b4ba35066" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+  <event name="SpawnLine Mines Cancel" id_arme="9bede393-f901-4571-ac72-27569f62429c" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <if_gm_button text="Painter\Mines (line CANCEL)" />
 
     <set_variable name="refreshLineSpacingTimerLoopActive" value="0.0" />
@@ -47726,6 +47856,7 @@
     <set_gm_button text="Painter\Mines (arc)"/>
     <set_gm_button text="Painter\Asteroid Field (arc)"/>
     <set_gm_button text="Painter\Mines (line START)"/>
+    <set_gm_button text="Painter\Forcefield (line START)"/>
     <set_gm_button text="Painter\Asteroids (line START)"/>
 
     <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
