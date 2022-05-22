@@ -5822,6 +5822,11 @@
   <event name="Set Menu" id_arme="59a04bfe-8a07-494c-8ee6-b5c1af32b6c4" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b">
     <if_gm_button text="AI Cmds Off" />
     <set_gm_button text="AI Cmds On" x="140" y="480" h="28" w="90" />
+    <set_gm_button text="Assign Specials\Add\Scramble Sign." />
+    <set_gm_button text="Assign Specials\Add\Normal" />
+    <set_gm_button text="Assign Specials\Add\Upgraded" />
+    <set_gm_button text="Assign Specials\Add\Overpowered" />
+    <set_gm_button text="Assign Specials\Add\Underpowered" />
     <set_gm_button text="Assign Specials\Add\Shield Drain" />
     <set_gm_button text="Assign Specials\Add\Tractor" />
     <set_gm_button text="Assign Specials\Add\Shield Reset" />
@@ -5831,6 +5836,7 @@
     <set_gm_button text="Assign Specials\Add\Anti-Torp" />
     <set_gm_button text="Assign Specials\Add\Anti-Mine" />
     <set_gm_button text="Assign Specials\Add\Cloak" />
+    <set_gm_button text="Assign Specials\Add\Stealth" />
     <set_gm_button text="Assign Specials\Add\Low Vis" />
     <set_gm_button text="Assign Specials\Add\Teleport" />
     <set_gm_button text="Assign Specials\Add\Drones" />
@@ -5856,6 +5862,12 @@
   <event name="Close Menu" id_arme="cf066618-8b8b-40b0-b4a4-949a6afff1f7" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b">
     <if_gm_button text="AI Cmds On" />
     <clear_gm_button text="AI Cmds On" />
+    <clear_gm_button text="Assign Specials\Add\Scramble Sign." />
+    <clear_gm_button text="Assign Specials\Add\Normal" />
+    <clear_gm_button text="Assign Specials\Add\Upgraded" />
+    <clear_gm_button text="Assign Specials\Add\Overpowered" />
+    <clear_gm_button text="Assign Specials\Add\Underpowered" />
+    <clear_gm_button text="Assign Specials\Add\Activate" />
     <clear_gm_button text="Assign Specials\Add\Shield Drain" />
     <clear_gm_button text="Assign Specials\Add\Tractor" />
     <clear_gm_button text="Assign Specials\Add\Shield Reset" />
@@ -5865,6 +5877,7 @@
     <clear_gm_button text="Assign Specials\Add\Anti-Torp" />
     <clear_gm_button text="Assign Specials\Add\Anti-Mine" />
     <clear_gm_button text="Assign Specials\Add\Cloak" />
+    <clear_gm_button text="Assign Specials\Add\Stealth" />
     <clear_gm_button text="Assign Specials\Add\Low Vis" />
     <clear_gm_button text="Assign Specials\Add\Teleport" />
     <clear_gm_button text="Assign Specials\Add\Drones" />
@@ -6222,6 +6235,31 @@
   </event>
   <folder_arme name="AI Specials" id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b" expanded_arme="" />
   <folder_arme name="Add Special" id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01" parent_id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" expanded_arme="" />
+  <event name="Scramble Sign." id_arme="aa1012f5-fc9c-4641-900d-1be041cb36c3" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Scramble Sign." />
+    <set_ship_text use_gm_selection="" race="Race?" class="Class?" desc="Failed to match radar signature against database of known vessel types." scan_desc="Specials: Signature scrambler, +others?"/>
+  </event>
+  <event name="Normal" id_arme="f70ae214-992e-4f5e-97e2-92fd4c6fef69" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Normal" />
+    <set_special use_gm_selection="" ship="-1" />
+  </event>
+  <event name="Upgraded" id_arme="0d07dd9e-604a-46cd-9ad3-e34f0bf8fac9" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Upgraded" />
+    <set_special use_gm_selection="" ship="0" />
+  </event>
+  <event name="Overpowered" id_arme="90d78fb9-b749-4087-b2d8-a804ba6bc813" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Overpowered" />
+    <set_special use_gm_selection="" ship="1" />
+  </event>
+  <event name="Underpowered" id_arme="28dae4c7-1e73-4262-9e2d-24e4f60aaaf1" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Underpowered" />
+    <set_special use_gm_selection="" ship="2" />
+  </event>
   <event name="Shield Drain" id_arme="aa1012f5-fc9c-4641-900d-1be041cb36c2" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
     <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
     <if_gm_button text="Assign Specials\Add\Shield Drain" />
@@ -6266,6 +6304,11 @@
     <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
     <if_gm_button text="Assign Specials\Add\Cloak" />
     <set_special use_gm_selection="" ability="Cloak" />
+  </event>
+  <event name="Stealth" id_arme="bfc55f8e-8d6f-4a3d-9c72-e4344c0214e5" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Stealth" />
+    <set_special use_gm_selection="" ability="Stealth" />
   </event>
   <event name="Low Vis" id_arme="61d5380b-00b9-4878-8789-1db5c920f21a" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
     <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
