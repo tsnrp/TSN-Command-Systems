@@ -205,7 +205,10 @@
     <clear_gm_button text="3 Lyrs"/>
     <clear_gm_button text="5 Lyrs"/>
     <clear_gm_button text="Painter\Mines (arc)"/>
-    <clear_gm_button text="Painter\Forcefield (arc)"/>
+    <clear_gm_button text="Painter\Forcefield (line START)"/>
+    <clear_gm_button text="Painter\Forcefield (line FINISH)"/>
+    <clear_gm_button text="Painter\Forcefield (line CANCEL)"/>
+    <clear_gm_button text="Painter\Forcefields clear"/>
     <clear_gm_button text="Painter\Asteroid Field (arc)"/>
     <clear_gm_button text="Painter\Mines (line START)"/>
     <clear_gm_button text="Painter\Mines (line FINISH)"/>
@@ -41008,7 +41011,10 @@
     <clear_gm_button text="3 Lyrs"/>
     <clear_gm_button text="5 Lyrs"/>
     <clear_gm_button text="Painter\Mines (arc)"/>
-    <clear_gm_button text="Painter\Forcefield (arc)"/>
+    <clear_gm_button text="Painter\Forcefield (line START)"/>
+    <clear_gm_button text="Painter\Forcefield (line FINISH)"/>
+    <clear_gm_button text="Painter\Forcefield (line CANCEL)"/>
+    <clear_gm_button text="Painter\Forcefields clear"/>
     <clear_gm_button text="Painter\Asteroid Field (arc)"/>
     <clear_gm_button text="Painter\Mines (line START)"/>
     <clear_gm_button text="Painter\Mines (line FINISH)"/>
@@ -41426,6 +41432,63 @@
     <set_timer name="refreshLineSpacingTimerLoop" seconds="1.0" />
   </event>
 
+  <event name="DestroyForcefields Start" id_arme="d4aa7e16-1d6b-4cdd-ab99-abee34b54cc6" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
+    <if_gm_button text="Painter\Forcefields clear" />
+    <set_variable name="DestroyForcefields" value="10.0" integer="yes" />
+  </event>
+  <event name="DestroyForcefields Cycle" id_arme="3e830d4f-6018-48e4-a11e-02c9f88c9f6e" parent_id_arme="5ff67968-452f-4702-895f-9a15861dc425">
+    <if_variable name="DestroyForcefields" comparator="GREATER" value="0.0" />
+    <!--Remove 40 Forcefields in this iteration (will be 400 total)-->
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <destroy name=" " />
+    <set_variable name="DestroyForcefields" value="DestroyForcefields-1" integer="yes" />
+  </event>
 
   <event name="SpawnLine Forcefield Start" id_arme="d4aa7e16-1d6b-4cdd-ab99-abee34b54cc6" parent_id_arme="039885e7-1f84-45e5-82ac-b0aac9af1686">
     <!-- 
@@ -47857,6 +47920,7 @@
     <set_gm_button text="Painter\Asteroid Field (arc)"/>
     <set_gm_button text="Painter\Mines (line START)"/>
     <set_gm_button text="Painter\Forcefield (line START)"/>
+    <set_gm_button text="Painter\Forcefields clear"/>
     <set_gm_button text="Painter\Asteroids (line START)"/>
 
     <set_variable name="updatePainterArcSpacing" value="1.0" integer="yes" />
