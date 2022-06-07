@@ -176,8 +176,8 @@
   <event name="Enable Modules" id_arme="2a1a89b3-96ff-4195-86bb-7fdc1814c997" parent_id_arme="2426f36e-da72-4835-9068-2067f83a12fa">
     <if_variable name="Custom Config" comparator="EQUALS" value="2.0" />
     <if_variable name="Modules" comparator="NOT" value="1.0" />
-    <set_variable name="Ship1ModuleType" value="0" integer="yes" />
-    <set_variable name="Ship2ModuleType" value="0" integer="yes" />
+    <set_variable name="Ship1ModuleType" value="1" integer="yes" />
+    <set_variable name="Ship2ModuleType" value="1" integer="yes" />
     <set_variable name="Ship3ModuleType" value="0" integer="yes" />
     <set_variable name="Ship4ModuleType" value="0" integer="yes" />
     <set_variable name="Ship5ModuleType" value="0" integer="yes" />

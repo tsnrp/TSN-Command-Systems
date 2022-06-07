@@ -16,7 +16,6 @@
     <set_gm_button text="CSTM" x="40" y="300" h="30" w="50" />
     <set_gm_button text="DelOff" x="40" y="340" h="30" w="50" />
     <set_gm_button text="AI Off" x="40" y="380" h="30" w="50" />
-    <set_variable name="ProgressIndicator" value="0.0" />
     <set_variable name="GM Menu" value="2.0" />
   </event>
   <event name="GM Menu Select" id_arme="f1482e21-9ffe-47fd-a584-51702842fddf" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f">
@@ -31,9 +30,6 @@
     <clear_gm_button text="DelShips" />
     <clear_gm_button text="LockSect" />
     <clear_gm_button text="UnlockSect" />
-    <clear_gm_button text="(Key: W)" />
-    <clear_gm_button text="(Key: T)" />
-    <clear_gm_button text="(Key: D)" />
     <clear_gm_button text="UP   /\" />
     <clear_gm_button text="RIGHT   &gt;&gt;" />
     <clear_gm_button text="DOWN    V" />
@@ -325,9 +321,6 @@
     <clear_gm_button text="ClrMeshes" />
     <clear_gm_button text="LockSect" />
     <clear_gm_button text="UnlockSect" />
-    <clear_gm_button text="(Key: W)" />
-    <clear_gm_button text="(Key: T)" />
-    <clear_gm_button text="(Key: D)" />
     <clear_gm_button text="UP   /\" />
     <clear_gm_button text="RIGHT   &gt;&gt;" />
     <clear_gm_button text="DOWN    V" />
@@ -357,21 +350,9 @@
     <if_gm_button text="SlctdToGM" />
     <set_to_gm_position use_gm_selection=" " distance="0" angle="0.0" />
   </event>
-  <event name="Move Entity(Key)" id_arme="59ec7918-a3f6-4e91-a593-78ebc1bcae44" parent_id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e">
-    <if_variable name="Shortcut Keys" comparator="EQUALS" value="1.0" />
-    <if_gm_key keyText="W" />
-    <set_to_gm_position use_gm_selection=" " distance="0" angle="0.0" />
-  </event>
   <event name="Destroy Unnamed Object" id_arme="f00a0268-6a59-4e62-b59d-80c91fc0e6d1" parent_id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e">
     <if_variable name="GM Controls" comparator="EQUALS" value="1.0" />
     <if_gm_button text="DelTerrain" />
-    <destroy_near type="asteroids" radius="1000" use_gm_position="" />
-    <destroy_near type="mines" radius="1000" use_gm_position="" />
-    <destroy_near type="nebulas" radius="1000" use_gm_position="" />
-  </event>
-  <event name="Destroy Unnamed Object(Key)" id_arme="32303a5d-b7d1-465b-84c8-c65753554cb9" parent_id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e">
-    <if_variable name="Shortcut Keys" comparator="EQUALS" value="1.0" />
-    <if_gm_key keyText="T" />
     <destroy_near type="asteroids" radius="1000" use_gm_position="" />
     <destroy_near type="mines" radius="1000" use_gm_position="" />
     <destroy_near type="nebulas" radius="1000" use_gm_position="" />
@@ -384,11 +365,6 @@
   <event name="Destroy Entity" id_arme="970358da-12be-4de8-9d69-fbb8d0608b68" parent_id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e">
     <if_variable name="GM Controls" comparator="EQUALS" value="1.0" />
     <if_gm_button text="DelSelected" />
-    <destroy use_gm_selection="" />
-  </event>
-  <event name="Destroy Entity(Key)" id_arme="50e581d8-c9f6-4d8d-8086-8e07a42f6dc5" parent_id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e">
-    <if_variable name="Shortcut Keys" comparator="EQUALS" value="1.0" />
-    <if_gm_key keyText="D" />
     <destroy use_gm_selection="" />
   </event>
   <event name="Lock Sector" id_arme="02aedf6d-00e9-40f8-b725-d8c76f35f98f" parent_id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e">
@@ -800,7 +776,7 @@
     <set_variable name="sectorSideOverride" value="6.0" integer="yes" />
     <set_variable name="System Settings" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="Spawn Keys" id_arme="047cc0b3-ea2a-4991-98c9-400c3bbcd6c5" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
+  <folder_arme name="Spawn Keys" id_arme="047cc0b3-ea2a-4991-98c9-400c3bbcd6c5" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
   <event name="Ships Keys Menu" id_arme="0f9f65b3-02dc-4e16-ad4e-64dc97c5731a" parent_id_arme="047cc0b3-ea2a-4991-98c9-400c3bbcd6c5">
     <if_variable name="GM Menu" comparator="EQUALS" value="4.0" />
     <if_timer_finished name="GM Menu" />
@@ -5822,6 +5798,11 @@
   <event name="Set Menu" id_arme="59a04bfe-8a07-494c-8ee6-b5c1af32b6c4" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b">
     <if_gm_button text="AI Cmds Off" />
     <set_gm_button text="AI Cmds On" x="140" y="480" h="28" w="90" />
+    <set_gm_button text="Assign Specials\Add\Normal" />
+    <set_gm_button text="Assign Specials\Add\Upgraded" />
+    <set_gm_button text="Assign Specials\Add\Overpowered" />
+    <set_gm_button text="Assign Specials\Add\Underpowered" />
+    <set_gm_button text="Assign Specials\Add\Stealth" />
     <set_gm_button text="Assign Specials\Add\Shield Drain" />
     <set_gm_button text="Assign Specials\Add\Tractor" />
     <set_gm_button text="Assign Specials\Add\Shield Reset" />
@@ -5835,6 +5816,7 @@
     <set_gm_button text="Assign Specials\Add\Teleport" />
     <set_gm_button text="Assign Specials\Add\Drones" />
     <set_gm_button text="Assign Specials\Add\Shield Vamp" />
+    <set_gm_button text="Assign Specials\Clear\Stealth" />
     <set_gm_button text="Assign Specials\Clear\Shield Drain" />
     <set_gm_button text="Assign Specials\Clear\Tractor" />
     <set_gm_button text="Assign Specials\Clear\Shield Reset" />
@@ -5856,6 +5838,11 @@
   <event name="Close Menu" id_arme="cf066618-8b8b-40b0-b4a4-949a6afff1f7" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b">
     <if_gm_button text="AI Cmds On" />
     <clear_gm_button text="AI Cmds On" />
+    <clear_gm_button text="Assign Specials\Add\Normal" />
+    <clear_gm_button text="Assign Specials\Add\Upgraded" />
+    <clear_gm_button text="Assign Specials\Add\Overpowered" />
+    <clear_gm_button text="Assign Specials\Add\Underpowered" />
+    <clear_gm_button text="Assign Specials\Add\Stealth" />
     <clear_gm_button text="Assign Specials\Add\Shield Drain" />
     <clear_gm_button text="Assign Specials\Add\Tractor" />
     <clear_gm_button text="Assign Specials\Add\Shield Reset" />
@@ -5869,6 +5856,7 @@
     <clear_gm_button text="Assign Specials\Add\Teleport" />
     <clear_gm_button text="Assign Specials\Add\Drones" />
     <clear_gm_button text="Assign Specials\Add\Shield Vamp" />
+    <clear_gm_button text="Assign Specials\Clear\Stealth" />
     <clear_gm_button text="Assign Specials\Clear\Shield Drain" />
     <clear_gm_button text="Assign Specials\Clear\Tractor" />
     <clear_gm_button text="Assign Specials\Clear\Shield Reset" />
@@ -6023,7 +6011,7 @@
     <set_gm_button text="Comm:OFF" x="140" y="510" h="28" w="90" />
     <set_variable name="AICommsControl" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Commands" id_arme="7ef9ad11-aebe-4397-aa87-16d7e5aa88a2" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b" expanded_arme="" />
+  <folder_arme name="Commands" id_arme="7ef9ad11-aebe-4397-aa87-16d7e5aa88a2" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b" />
   <event name="Move to GM" id_arme="f1922817-0270-487a-ba37-d68a96c9c11b" parent_id_arme="7ef9ad11-aebe-4397-aa87-16d7e5aa88a2">
     <if_gm_button text="Grp to GM" />
     <set_variable name="ReassignAI" value="111.0" integer="yes" />
@@ -6113,7 +6101,7 @@
     <if_variable name="AI Type" comparator="EQUALS" value="1.0" />
     <set_variable name="ReassignAI" value="6.0" integer="yes" />
   </event>
-  <folder_arme name="Neutral Controls (4)" id_arme="62788a0a-5b87-48c1-b5aa-1b21bc9e3c2d" parent_id_arme="7ef9ad11-aebe-4397-aa87-16d7e5aa88a2" expanded_arme="" />
+  <folder_arme name="Neutral Controls (4)" id_arme="62788a0a-5b87-48c1-b5aa-1b21bc9e3c2d" parent_id_arme="7ef9ad11-aebe-4397-aa87-16d7e5aa88a2" />
   <event name="Neu Default (No Comms)" id_arme="021b0045-ba77-4000-a3b7-bcc097286479" parent_id_arme="62788a0a-5b87-48c1-b5aa-1b21bc9e3c2d">
     <if_gm_button text="DefaultAI" />
     <if_variable name="AI Type" comparator="EQUALS" value="2.0" />
@@ -6142,7 +6130,7 @@
     <set_variable name="Random Direction" value="1.0" integer="yes" />
     <set_variable name="ReassignAI" value="23.0" integer="yes" />
   </event>
-  <folder_arme name="Ally Controls (5)" id_arme="cf9f5045-3af9-4bf2-bb06-b7ff5d2b6220" parent_id_arme="7ef9ad11-aebe-4397-aa87-16d7e5aa88a2" expanded_arme="" />
+  <folder_arme name="Ally Controls (5)" id_arme="cf9f5045-3af9-4bf2-bb06-b7ff5d2b6220" parent_id_arme="7ef9ad11-aebe-4397-aa87-16d7e5aa88a2" />
   <event name="Default AI (No Comms)" id_arme="7c96174c-6372-44ed-988b-e96800e182b6" parent_id_arme="cf9f5045-3af9-4bf2-bb06-b7ff5d2b6220">
     <if_gm_button text="DefaultAI" />
     <if_variable name="AI Type" comparator="EQUALS" value="3.0" />
@@ -6199,7 +6187,7 @@
     <set_variable name="Random Direction" value="1.0" integer="yes" />
     <set_variable name="ReassignAI" value="37.0" integer="yes" />
   </event>
-  <folder_arme name="GM ONLY" id_arme="43ef2b27-bcec-412e-8846-742120a2d1aa" parent_id_arme="7ef9ad11-aebe-4397-aa87-16d7e5aa88a2" expanded_arme="" />
+  <folder_arme name="GM ONLY" id_arme="43ef2b27-bcec-412e-8846-742120a2d1aa" parent_id_arme="7ef9ad11-aebe-4397-aa87-16d7e5aa88a2" />
   <event name="Marine Rv" id_arme="860870f6-0cc7-4eb0-b592-1709807d4cef" parent_id_arme="43ef2b27-bcec-412e-8846-742120a2d1aa">
     <if_gm_button text="Marine Rv" />
     <set_variable name="RvType" value="1.0" integer="yes" />
@@ -6220,8 +6208,33 @@
     <set_variable name="RvType" value="30.0" integer="yes" />
     <set_variable name="ReassignAI" value="40.0" integer="yes" />
   </event>
-  <folder_arme name="AI Specials" id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b" expanded_arme="" />
-  <folder_arme name="Add Special" id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01" parent_id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" expanded_arme="" />
+  <folder_arme name="AI Specials" id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b" />
+  <folder_arme name="Add Special" id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01" parent_id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" />
+  <event name="Normal" id_arme="f70ae214-992e-4f5e-97e2-92fd4c6fef69" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Normal" />
+    <set_special use_gm_selection="" ship="-1" />
+  </event>
+  <event name="Overpowered" id_arme="90d78fb9-b749-4087-b2d8-a804ba6bc813" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Overpowered" />
+    <set_special use_gm_selection="" ship="1" />
+  </event>
+  <event name="Upgraded" id_arme="0d07dd9e-604a-46cd-9ad3-e34f0bf8fac9" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Upgraded" />
+    <set_special use_gm_selection="" ship="0" />
+  </event>
+  <event name="Stealth" id_arme="bfc55f8e-8d6f-4a3d-9c72-e4344c0214e5" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Stealth" />
+    <set_special use_gm_selection="" ability="Stealth" />
+  </event>
+  <event name="Underpowered" id_arme="28dae4c7-1e73-4262-9e2d-24e4f60aaaf1" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Underpowered" />
+    <set_special use_gm_selection="" ship="2" />
+  </event>
   <event name="Shield Drain" id_arme="aa1012f5-fc9c-4641-900d-1be041cb36c2" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
     <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
     <if_gm_button text="Assign Specials\Add\Shield Drain" />
@@ -6292,7 +6305,12 @@
     <if_gm_button text="Assign Specials\Add\Shield Drain" />
     <set_special use_gm_selection="" ability="AntiMine" />
   </event>
-  <folder_arme name="Clear Special" id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9" parent_id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" expanded_arme="" />
+  <folder_arme name="Clear Special" id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9" parent_id_arme="8b2a6ca1-caf3-4f27-bd34-4ec5e4d13b49" />
+  <event name="Stealth" id_arme="078d02bd-90d8-43b6-bb41-787ee9e46d57" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Clear\Stealth" />
+    <set_special use_gm_selection="" clear="yes" ability="Stealth" />
+  </event>
   <event name="Shield Drain" id_arme="7894f2ae-8233-4ede-bf62-3fada6d2332b" parent_id_arme="c7f51caa-59fe-48e1-ba7b-a4f530a754f9">
     <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
     <if_gm_button text="Assign Specials\Clear\Shield Drain" />
@@ -6381,7 +6399,7 @@
     <set_special use_gm_selection="" clear="yes" ability="TeleBack" />
     <set_special use_gm_selection="" clear="yes" ability="ShldReset" />
   </event>
-  <folder_arme name="AI Settings" id_arme="1837a576-e840-4375-8a86-d5f20cc9e40d" parent_id_arme="3eb8fb48-1223-46b2-a68b-1694f9160a06" expanded_arme="" />
+  <folder_arme name="AI Settings" id_arme="1837a576-e840-4375-8a86-d5f20cc9e40d" parent_id_arme="3eb8fb48-1223-46b2-a68b-1694f9160a06" />
   <folder_arme name="Set AI for Group (Lettername)" id_arme="a86e423e-7381-4cb5-b011-7eea3c72b57e" parent_id_arme="1837a576-e840-4375-8a86-d5f20cc9e40d" />
   <folder_arme name="Enemy AI (1 - 19)" id_arme="601d2939-0904-4452-9754-2c37176af20a" parent_id_arme="a86e423e-7381-4cb5-b011-7eea3c72b57e" />
   <disabled_event name="Fleet Surrender" id_arme="a4403451-9bc0-4839-ab6e-7dc0935e269d" parent_id_arme="601d2939-0904-4452-9754-2c37176af20a">
@@ -7561,7 +7579,7 @@
     <set_gm_button text="Reassigning AI" x="230" y="415" h="60" w="150" />
     <set_variable name="ReassignDigits" value="1.0" integer="yes" />
   </disabled_event>
-  <folder_arme name="Set AI for GM Target" id_arme="58f667bd-74a0-4469-8deb-9ce8b3f8943d" parent_id_arme="1837a576-e840-4375-8a86-d5f20cc9e40d" expanded_arme="" />
+  <folder_arme name="Set AI for GM Target" id_arme="58f667bd-74a0-4469-8deb-9ce8b3f8943d" parent_id_arme="1837a576-e840-4375-8a86-d5f20cc9e40d" />
   <folder_arme name="Enemy AI (1 - 19)" id_arme="fb786eab-6ca9-45f8-8cbb-fc70b9256083" parent_id_arme="58f667bd-74a0-4469-8deb-9ce8b3f8943d" />
   <event name="Fleet Surrender" id_arme="b2f81fbf-bef3-421c-8450-bac5592ad697" parent_id_arme="fb786eab-6ca9-45f8-8cbb-fc70b9256083">
     <if_variable name="ReassignLetter" comparator="EQUALS" value="30" />
@@ -38632,7 +38650,7 @@
     <set_gm_button text="Reassigning AI" x="230" y="415" h="60" w="150" />
     <set_variable name="ReassignDigits" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="POI Keys" id_arme="16ea2536-7911-4199-bcd8-d74f63c6379b" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
+  <folder_arme name="POI Keys" id_arme="16ea2536-7911-4199-bcd8-d74f63c6379b" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
   <event name="POI Keys Menu" id_arme="b9e08eca-2cd2-43e7-9b80-2d3551940165" parent_id_arme="16ea2536-7911-4199-bcd8-d74f63c6379b">
     <if_timer_finished name="GM Menu" />
     <if_variable name="GM Menu" comparator="EQUALS" value="7.0" />
@@ -38824,7 +38842,7 @@
     <set_variable name="waypointnumber" value="1.0" integer="yes" />
     <set_variable name="Waypoints" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Rendevous Points (Shuttles)" id_arme="ca360c0d-5710-4656-8b01-2d231044c6e3" parent_id_arme="16ea2536-7911-4199-bcd8-d74f63c6379b" expanded_arme="" />
+  <folder_arme name="Rendevous Points (Shuttles)" id_arme="ca360c0d-5710-4656-8b01-2d231044c6e3" parent_id_arme="16ea2536-7911-4199-bcd8-d74f63c6379b" />
   <event name="Rendezvous Menu" id_arme="e42fc554-4373-47ca-b081-d97965bb7c76" parent_id_arme="ca360c0d-5710-4656-8b01-2d231044c6e3">
     <if_variable name="POI Menu" comparator="EQUALS" value="6.0" />
     <if_timer_finished name="POI Menu" />
@@ -38835,8 +38853,8 @@
     <set_gm_button text="Relay Actions" x="185" y="250" h="30" w="120" />
     <set_variable name="POI Menu" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Rendezvous Config Menu" id_arme="9d893769-b935-4477-b812-eaea3308df59" parent_id_arme="ca360c0d-5710-4656-8b01-2d231044c6e3" expanded_arme="" />
-  <folder_arme name="Marine Actions" id_arme="be7e6de4-4e6d-42ca-ae3c-5ca6cddaf814" parent_id_arme="9d893769-b935-4477-b812-eaea3308df59" expanded_arme="" />
+  <folder_arme name="Rendezvous Config Menu" id_arme="9d893769-b935-4477-b812-eaea3308df59" parent_id_arme="ca360c0d-5710-4656-8b01-2d231044c6e3" />
+  <folder_arme name="Marine Actions" id_arme="be7e6de4-4e6d-42ca-ae3c-5ca6cddaf814" parent_id_arme="9d893769-b935-4477-b812-eaea3308df59" />
   <event name="Marine Actions Selected" id_arme="b2bccbb6-590c-4ba2-905b-73f071f7f7a4" parent_id_arme="be7e6de4-4e6d-42ca-ae3c-5ca6cddaf814">
     <if_gm_button text="Marine Actions" />
     <clear_gm_button text="Cargo Ops" />

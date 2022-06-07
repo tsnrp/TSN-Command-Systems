@@ -1,13 +1,7 @@
 <mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!--Configurations-->
-    <set_variable name="Ship1CommsMenu" value="0.0" integer="yes" />
-    <get_object_property property="shieldStateFront" player_slot="0" variable="Ship1ShieldStateFront" />
-    <get_object_property property="shieldStateBack" player_slot="0" variable="Ship1ShieldStateBack" />
-    <get_object_property property="shieldMaxStateFront" player_slot="0" variable="Ship1MaxShieldLevelFront" />
-    <get_object_property property="shieldMaxStateBack" player_slot="0" variable="Ship1MaxShieldLevelBack" />
     <set_difficulty_level value="10" />
-    <set_variable name="FleetStatusOption" value="1.0" integer="yes" />
     <big_message title="The TSN Universe" subtitle1="Created by Xavier" subtitle2="Version 9.0" />
     <warning_popup_message message="V.9.0" consoles="MHWESCO" player_slot="0" />
     <warning_popup_message message="Initialising ship systems...." consoles="MHWESCO" player_slot="0" />
@@ -24,26 +18,6 @@
     <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
     <set_variable name="System" value="1.0" integer="yes" />
     <set_variable name="systemSideOverride" value="0.0" integer="yes" />
-    <set_variable name="reassignPatrol0" value="0.0" integer="yes" />
-    <set_variable name="reassignPatrol2" value="10.0" integer="yes" />
-    <set_variable name="reassignPatrol4" value="35.0" integer="yes" />
-    <set_variable name="reassignPatrol6" value="60.0" integer="yes" />
-    <set_variable name="reassignPatrol8" value="80.0" integer="yes" />
-    <set_variable name="secondpatnumber" value="0.0" integer="yes" />
-    <set_variable name="firstpatnumber" value="0.0" integer="yes" />
-    <set_variable name="patrolNumber" value="0.0" integer="yes" />
-    <!--<set_variable name="patrolX11" value="0.0" />-->
-    <!--<set_variable name="patrolZ11" value="0.0" />-->
-    <!--<set_variable name="patrolX21" value="0.0" />-->
-    <!--<set_variable name="patrolZ21" value="0.0" />-->
-    <!--<set_variable name="patrolX31" value="0.0" />-->
-    <!--<set_variable name="patrolZ31" value="0.0" />-->
-    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolX1|patrolNumber|" variable="PatrolX11" />-->
-    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolZ1|patrolNumber|" variable="PatrolX11" />-->
-    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolX2|patrolNumber|" variable="PatrolX11" />-->
-    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolZ2|patrolNumber|" variable="PatrolX11" />-->
-    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolX3|patrolNumber|" variable="PatrolX11" />-->
-    <!--<set_variable integer="yes" value="0.0" property="positionX" name="patrolZ3|patrolNumber|" variable="PatrolX11" />-->
     <!--Random Elements-->
     <set_variable name="Name Assign" value="0.0" integer="yes" />
     <set_variable name="LetterPrefix" value="1.0" integer="yes" />
@@ -98,10 +72,9 @@
     <set_variable name="Sector Type" value="0.0" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" integer="yes" />
-    <set_variable name="SpecialistOpsCheck" value="0.0" integer="yes" />
-    <set_variable name="Ship1MaxShieldLevelFront" value="0.0" integer="yes" />
-    <set_variable name="Ship1MaxShieldLevelBack" value="0.0" integer="yes" />
     <!--Specialist Ops Specific-->
+    <set_variable name="Ship1MaxShieldLevelBack" value="0.0" integer="yes" />
+    <set_variable name="Ship1MaxShieldLevelFront" value="0.0" integer="yes" />
     <set_variable name="CL.10MinePositionX" value="0.0" />
     <set_variable name="CL.10MinePositionZ" value="0.0" />
     <set_variable name="CL.20MinePositionX" value="0.0" />
@@ -261,7 +234,7 @@
     <if_timer_finished name="Destroy Objects" />
     <set_timer name="Destroy Objects" seconds="1" />
   </disabled_event>
-  <folder_arme name="Sandbox Activation" id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" expanded_arme="" />
+  <folder_arme name="Sandbox Activation" id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" />
   <folder_arme name="Reset Activation" id_arme="dec1f604-a38a-449a-b80b-d630ce45845c" parent_id_arme="d2f73ac8-352b-463b-aa12-87d61dd5064f" />
   <event name="Reset All Buttons" id_arme="4db38589-05f0-4387-9dd4-ef08c201581c" parent_id_arme="dec1f604-a38a-449a-b80b-d630ce45845c">
     <if_gm_button text="Restart Sandbox" />
@@ -885,9 +858,16 @@
     <warning_popup_message message="Ship Systems Activated" consoles="MHWESCO" player_slot="5" />
     <warning_popup_message message="Ship Systems Activated" consoles="MHWESCO" player_slot="6" />
     <warning_popup_message message="Ship Systems Activated" consoles="MHWESCO" player_slot="7" />
+    <set_variable name="Ship1CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship2CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship3CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship4CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship5CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship6CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship7CommsMenu" value="0.0" integer="yes" />
+    <set_variable name="Ship8CommsMenu" value="0.0" integer="yes" />
     <set_variable name="Refresh" value="0.0" integer="yes" />
     <clear_gm_button text="Refresh" />
-    <set_variable name="CommsControls" value="1.0" integer="yes" />
     <set_variable name="Position Ships" value="1.0" integer="yes" />
     <set_variable name="System Settings" value="1.0" integer="yes" />
     <set_variable name="Sandbox Activation" value="0.0" integer="yes" />
