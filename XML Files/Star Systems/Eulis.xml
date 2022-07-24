@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="343.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Eulis System" id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" expanded_arme="" />
+  <folder_arme name="Eulis System" id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
   <folder_arme name="Eulis Settings" id_arme="3d60fee4-9c78-4717-aac3-2dd895dab426" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
   <folder_arme name="Eulis Menu" id_arme="5b3bbef5-7529-4395-941b-7321a10b17d3" parent_id_arme="3d60fee4-9c78-4717-aac3-2dd895dab426" />
   <event name="Eulis Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="5b3bbef5-7529-4395-941b-7321a10b17d3">
@@ -139,7 +139,7 @@
     <set_variable name="Eulis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Eulis Sector II" id_arme="93ada8cf-3ec7-4220-bbef-1e7da5c1fbc8" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" expanded_arme="" />
+  <folder_arme name="Eulis Sector II" id_arme="93ada8cf-3ec7-4220-bbef-1e7da5c1fbc8" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
   <event name="Create Eulis Sector II" id_arme="7f8f5824-6a21-4959-b74c-2e5878e118eb" parent_id_arme="93ada8cf-3ec7-4220-bbef-1e7da5c1fbc8">
     <if_timer_finished name="Transition" />
     <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
@@ -162,7 +162,7 @@
     <create count="60" type="asteroids" startX="51908.0" startY="0.0" startZ="49339.0" endX="51908.0" endY="0.0" endZ="49339.0" randomRange="10447" />
     <create count="10" type="asteroids" startX="52201.0" startY="0.0" startZ="59388.0" endX="52201.0" endY="0.0" endZ="59388.0" randomRange="2801" />
   </event>
-  <folder_arme name="Navigation" id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7" parent_id_arme="93ada8cf-3ec7-4220-bbef-1e7da5c1fbc8" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7" parent_id_arme="93ada8cf-3ec7-4220-bbef-1e7da5c1fbc8" />
   <event name="Transition to Sector III" id_arme="2a89974b-b7b0-4137-8be0-9dd6fa8f92ec" parent_id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
@@ -218,7 +218,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Eulis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="4899796a-d418-4e42-877c-b5ef463eeaf9" parent_id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="4899796a-d418-4e42-877c-b5ef463eeaf9" parent_id_arme="b71aab9d-c2e6-4ec2-bad1-0e7477296bc7" />
   <event name="Gate Offline" id_arme="1ccc5df3-b091-4737-9033-31c579bba6aa" parent_id_arme="4899796a-d418-4e42-877c-b5ef463eeaf9">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
@@ -472,9 +472,9 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
     <create count="40" type="nebulas" startX="73546.0" startY="0.0" startZ="57921.0" endX="30563.0" endY="0.0" endZ="23080.0" randomRange="6637" />
-    <create count="100" type="asteroids" startX="56015.0" startY="0.0" startZ="35256.0" endX="34670.0" endY="0.0" endZ="9877.0" randomRange="5708" />
-    <create count="100" type="asteroids" startX="36284.0" startY="0.0" startZ="19486.0" endX="4597.0" endY="0.0" endZ="36503.0" randomRange="7218" />
-    <create count="100" type="asteroids" startX="20000.0" startY="0.0" startZ="12518.0" endX="13692.0" endY="0.0" endZ="18092.0" randomRange="14736" />
+    <create count="50" type="asteroids" startX="56015.0" startY="0.0" startZ="35256.0" endX="34670.0" endY="0.0" endZ="9877.0" randomRange="5708" />
+    <create count="50" type="asteroids" startX="36284.0" startY="0.0" startZ="19486.0" endX="4597.0" endY="0.0" endZ="36503.0" randomRange="7218" />
+    <create count="50" type="asteroids" startX="20000.0" startY="0.0" startZ="12518.0" endX="13692.0" endY="0.0" endZ="18092.0" randomRange="14736" />
   </event>
   <folder_arme name="Navigation" id_arme="33e755ca-dba4-4d5b-bcd9-2320e11f11f2" parent_id_arme="d4d0ab2b-0dfd-4d39-b4cd-8949068ceef7" />
   <event name="Transition to Sector IV" id_arme="f1ccbf94-6758-4c76-9f71-f0759985c304" parent_id_arme="33e755ca-dba4-4d5b-bcd9-2320e11f11f2">
@@ -572,7 +572,7 @@
     <set_variable name="Grid A Transition Enabled" value="0.0" />
     <create count="80" type="asteroids" startX="96064.0" startY="0.0" startZ="3936.0" endX="95991.0" endY="0.0" endZ="38557.0" randomRange="4076" />
     <create count="40" type="asteroids" startX="91516.0" startY="0.0" startZ="8117.0" endX="34890.0" endY="0.0" endZ="29608.0" randomRange="6172" />
-    <create count="100" type="asteroids" startX="83375.0" startY="0.0" startZ="29168.0" endX="83375.0" endY="0.0" endZ="29168.0" randomRange="10146" />
+    <create count="75" type="asteroids" startX="83375.0" startY="0.0" startZ="29168.0" endX="83375.0" endY="0.0" endZ="29168.0" randomRange="10146" />
     <create count="50" type="asteroids" startX="72372.0" startY="0.0" startZ="31955.0" endX="53008.0" endY="0.0" endZ="24474.0" randomRange="4469" />
     <create count="80" type="nebulas" startX="47653.0" startY="0.0" startZ="62542.0" endX="8411.0" endY="0.0" endZ="77652.0" randomRange="9379" />
     <create count="10" type="nebulas" startX="25502.0" startY="0.0" startZ="56601.0" endX="3497.0" endY="0.0" endZ="60488.0" randomRange="6226" />
@@ -657,7 +657,7 @@
     <set_variable name="Eulis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Eulis Sector V" id_arme="67aa2fa9-ec9c-41e2-aa30-0a0d1c1dea8a" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" expanded_arme="" />
+  <folder_arme name="Eulis Sector V" id_arme="67aa2fa9-ec9c-41e2-aa30-0a0d1c1dea8a" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
   <event name="Create Eulis Sector V" id_arme="dda799dc-aeee-4dbc-8f8e-1c329710304d" parent_id_arme="67aa2fa9-ec9c-41e2-aa30-0a0d1c1dea8a">
     <if_timer_finished name="Transition" />
     <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
@@ -679,7 +679,7 @@
     <create count="10" type="nebulas" startX="5111.0" startY="0.0" startZ="69290.0" endX="3717.0" endY="0.0" endZ="97383.0" randomRange="3963" />
     <create count="40" type="nebulas" startX="21834.0" startY="0.0" startZ="94083.0" endX="6944.0" endY="0.0" endZ="77212.0" randomRange="6549" />
   </event>
-  <folder_arme name="Navigation" id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8" parent_id_arme="67aa2fa9-ec9c-41e2-aa30-0a0d1c1dea8a" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8" parent_id_arme="67aa2fa9-ec9c-41e2-aa30-0a0d1c1dea8a" />
   <event name="Transition to Sector VI" id_arme="6b27dd35-61bb-4caa-968e-87f69055de14" parent_id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
@@ -735,7 +735,7 @@
     <set_variable name="Sector" value="10.0" integer="yes" />
     <set_variable name="Eulis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="133f636a-f317-42c7-a4c9-5468afc403e8" parent_id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="133f636a-f317-42c7-a4c9-5468afc403e8" parent_id_arme="19f3a269-ff7c-4388-968f-11954b7b45d8" />
   <event name="Gate Offline" id_arme="0a9d502c-6f56-4713-977c-e475d03d4938" parent_id_arme="133f636a-f317-42c7-a4c9-5468afc403e8">
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
@@ -1012,9 +1012,9 @@
     <create count="30" type="nebulas" startX="97018.0" startY="0.0" startZ="5256.0" endX="67751.0" endY="0.0" endZ="4449.0" randomRange="4576" />
     <create count="10" type="nebulas" startX="97091.0" startY="0.0" startZ="96723.0" endX="73986.0" endY="0.0" endZ="51026.0" randomRange="3596" />
     <create count="10" type="nebulas" startX="75526.0" startY="0.0" startZ="9951.0" endX="76700.0" endY="0.0" endZ="47139.0" randomRange="5013" />
-    <create count="80" type="nebulas" startX="92177.0" startY="0.0" startZ="12004.0" endX="91663.0" endY="0.0" endZ="73838.0" randomRange="7121" />
-    <create count="100" type="asteroids" startX="35404.0" startY="0.0" startZ="43618.0" endX="1810.0" endY="0.0" endZ="56748.0" randomRange="5311" />
-    <create count="80" type="asteroids" startX="21101.0" startY="0.0" startZ="40537.0" endX="6578.0" endY="0.0" endZ="40317.0" randomRange="7764" />
+    <create count="50" type="nebulas" startX="92177.0" startY="0.0" startZ="12004.0" endX="91663.0" endY="0.0" endZ="73838.0" randomRange="7121" />
+    <create count="75" type="asteroids" startX="35404.0" startY="0.0" startZ="43618.0" endX="1810.0" endY="0.0" endZ="56748.0" randomRange="5311" />
+    <create count="50" type="asteroids" startX="21101.0" startY="0.0" startZ="40537.0" endX="6578.0" endY="0.0" endZ="40317.0" randomRange="7764" />
     <create count="10" type="nebulas" nebType="2" startX="31296.0" startY="0.0" startZ="49119.0" endX="8998.0" endY="0.0" endZ="60562.0" randomRange="3288" />
   </event>
   <folder_arme name="Navigation" id_arme="6be33c28-4bc3-42ba-9f40-a6394ac107cb" parent_id_arme="f6955b8a-1359-477b-a609-883b0be7ea23" />
@@ -1155,10 +1155,10 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
     <create count="40" type="asteroids" startX="97164.0" startY="0.0" startZ="35550.0" endX="97678.0" endY="0.0" endZ="58948.0" randomRange="2176" />
-    <create count="250" type="asteroids" startX="95771.0" startY="0.0" startZ="37530.0" endX="25282.0" endY="0.0" endZ="25134.0" randomRange="3096" />
-    <create count="200" type="asteroids" startX="93937.0" startY="0.0" startZ="54987.0" endX="42592.0" endY="0.0" endZ="35036.0" randomRange="5031" />
+    <create count="75" type="asteroids" startX="95771.0" startY="0.0" startZ="37530.0" endX="25282.0" endY="0.0" endZ="25134.0" randomRange="3096" />
+    <create count="75" type="asteroids" startX="93937.0" startY="0.0" startZ="54987.0" endX="42592.0" endY="0.0" endZ="35036.0" randomRange="5031" />
     <create count="10" type="asteroids" startX="93203.0" startY="0.0" startZ="44205.0" endX="75306.0" endY="0.0" endZ="38190.0" randomRange="3479" />
-    <create count="250" type="asteroids" startX="61883.0" startY="0.0" startZ="53960.0" endX="7971.0" endY="0.0" endZ="64523.0" randomRange="6465" />
+    <create count="75" type="asteroids" startX="61883.0" startY="0.0" startZ="53960.0" endX="7971.0" endY="0.0" endZ="64523.0" randomRange="6465" />
     <create count="10" type="asteroids" startX="81101.0" startY="0.0" startZ="57921.0" endX="66137.0" endY="0.0" endZ="54547.0" randomRange="2861" />
     <create count="50" type="asteroids" startX="37678.0" startY="0.0" startZ="44425.0" endX="32470.0" endY="0.0" endZ="40464.0" randomRange="15140" />
     <create count="40" type="asteroids" startX="88069.0" startY="0.0" startZ="30709.0" endX="33057.0" endY="0.0" endZ="22493.0" randomRange="3648" />
@@ -1297,7 +1297,7 @@
     <set_variable name="Eulis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Eulis Sector VIII" id_arme="31e1c238-0ae5-4171-bd58-6715b6516883" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" expanded_arme="" />
+  <folder_arme name="Eulis Sector VIII" id_arme="31e1c238-0ae5-4171-bd58-6715b6516883" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
   <event name="Create Eulis Sector VIII" id_arme="167d9984-4bf2-42b8-914a-5ef859c2ef74" parent_id_arme="31e1c238-0ae5-4171-bd58-6715b6516883">
     <if_timer_finished name="Transition" />
     <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
@@ -1319,7 +1319,7 @@
     <create count="40" type="nebulas" startX="41785.0" startY="0.0" startZ="37163.0" endX="563.0" endY="0.0" endZ="39070.0" randomRange="6276" />
     <create count="30" type="nebulas" startX="54842.0" startY="0.0" startZ="96870.0" endX="1296.0" endY="0.0" endZ="82860.0" randomRange="4561" />
   </event>
-  <folder_arme name="Navigation" id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd" parent_id_arme="31e1c238-0ae5-4171-bd58-6715b6516883" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd" parent_id_arme="31e1c238-0ae5-4171-bd58-6715b6516883" />
   <event name="Transition to Sector VII" id_arme="1db0f00c-9a6c-4fc1-9615-2c32bf48e56f" parent_id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
@@ -1375,7 +1375,7 @@
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="Eulis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="fe05b82a-f135-40dd-bc61-eb9ef80f5e67" parent_id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="fe05b82a-f135-40dd-bc61-eb9ef80f5e67" parent_id_arme="d96bba51-eb71-4bf9-97f2-217bf01102cd" />
   <event name="Gate Offline" id_arme="a7efed36-156d-47b6-8bf2-8e0b54ad8147" parent_id_arme="fe05b82a-f135-40dd-bc61-eb9ef80f5e67">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
@@ -1612,7 +1612,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Khoros to Eulis" value="0.0" />
   </event>
-  <folder_arme name="Eulis Sector IX" id_arme="2f3faa50-2377-4ae8-9fd7-81f52bd5ce44" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" expanded_arme="" />
+  <folder_arme name="Eulis Sector IX" id_arme="2f3faa50-2377-4ae8-9fd7-81f52bd5ce44" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
   <event name="Create Eulis Sector IX" id_arme="488aef6d-e217-4949-9d74-f534453933ab" parent_id_arme="2f3faa50-2377-4ae8-9fd7-81f52bd5ce44">
     <if_timer_finished name="Transition" />
     <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
@@ -1637,7 +1637,7 @@
     <create count="40" type="asteroids" startX="87629.0" startY="0.0" startZ="43178.0" endX="59389.0" endY="0.0" endZ="14132.0" randomRange="4604" />
     <create count="10" type="asteroids" startX="59243.0" startY="0.0" startZ="18459.0" endX="48167.0" endY="0.0" endZ="18386.0" randomRange="4946" />
   </event>
-  <folder_arme name="Navigation" id_arme="08ceadfc-6d1c-4d2b-a708-e4307a685a4a" parent_id_arme="2f3faa50-2377-4ae8-9fd7-81f52bd5ce44" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="08ceadfc-6d1c-4d2b-a708-e4307a685a4a" parent_id_arme="2f3faa50-2377-4ae8-9fd7-81f52bd5ce44" />
   <event name="Transition to Sector X" id_arme="4716a078-cecc-448d-80fb-9df9e278d97c" parent_id_arme="08ceadfc-6d1c-4d2b-a708-e4307a685a4a">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
@@ -1671,7 +1671,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Eulis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="da02711c-dcbe-4075-97a5-bc566b4c0738" parent_id_arme="08ceadfc-6d1c-4d2b-a708-e4307a685a4a" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="da02711c-dcbe-4075-97a5-bc566b4c0738" parent_id_arme="08ceadfc-6d1c-4d2b-a708-e4307a685a4a" />
   <event name="Gate Offline" id_arme="4882b592-2fa4-4722-b1ae-51906c42e649" parent_id_arme="da02711c-dcbe-4075-97a5-bc566b4c0738">
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
@@ -2118,7 +2118,7 @@
     <set_variable name="Eulis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Eulis Sector XII" id_arme="84b3e4e1-3534-49e1-bc66-988b6c3e0acf" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" expanded_arme="" />
+  <folder_arme name="Eulis Sector XII" id_arme="84b3e4e1-3534-49e1-bc66-988b6c3e0acf" parent_id_arme="bc33602e-ec48-4b64-8156-3f1c9ac0f8a0" />
   <event name="Create Eulis Sector XII" id_arme="1c25873b-aa68-4bac-ba42-56d0306dde5f" parent_id_arme="84b3e4e1-3534-49e1-bc66-988b6c3e0acf">
     <if_timer_finished name="Transition" />
     <if_variable name="Eulis System" comparator="EQUALS" value="1.0" />
@@ -2145,7 +2145,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="34b2ba05-e4d9-45a2-80e9-fa6af51fba50" parent_id_arme="84b3e4e1-3534-49e1-bc66-988b6c3e0acf" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="34b2ba05-e4d9-45a2-80e9-fa6af51fba50" parent_id_arme="84b3e4e1-3534-49e1-bc66-988b6c3e0acf" />
   <event name="Transition to Sector XI" id_arme="bba1b6ee-cca1-4cdc-bf05-f466f61f7c16" parent_id_arme="34b2ba05-e4d9-45a2-80e9-fa6af51fba50">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
@@ -2179,7 +2179,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Eulis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="691bab30-dd3d-484f-badb-51f2b2214270" parent_id_arme="34b2ba05-e4d9-45a2-80e9-fa6af51fba50" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="691bab30-dd3d-484f-badb-51f2b2214270" parent_id_arme="34b2ba05-e4d9-45a2-80e9-fa6af51fba50" />
   <event name="Gate Offline" id_arme="54f34bed-ac98-4c63-b80c-95b8e96d9ad6" parent_id_arme="691bab30-dd3d-484f-badb-51f2b2214270">
     <if_variable name="Sector" comparator="EQUALS" value="12.0" />
     <if_variable name="Eulis System" comparator="EQUALS" value="2.0" />
