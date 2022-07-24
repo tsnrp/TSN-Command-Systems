@@ -57,17 +57,17 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sumri Sector I" id_arme="13a7dc01-522b-472d-9a97-1f7a46f9e24b" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
+  <folder_arme name="Sumri Sector I" id_arme="13a7dc01-522b-472d-9a97-1f7a46f9e24b" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <event name="Create Sumri Sector I" id_arme="3fcbd4b3-05d2-4bca-bbe1-24268d8bb7e0" parent_id_arme="13a7dc01-522b-472d-9a97-1f7a46f9e24b">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="26" />
-    <create count="100" type="nebulas" startX="59108.0" startY="0.0" startZ="93928.0" endX="8081.0" endY="0.0" endZ="45580.0" randomRange="10000" />
-    <create count="150" type="asteroids" startX="77188.0" startY="-300.0" startZ="94598.0" endX="58572.0" endY="300.0" endZ="50000.0" randomRange="9000" />
-    <create count="100" type="asteroids" startX="42099.0" startY="-300.0" startZ="39285.0" endX="3527.0" endY="300.0" endZ="29642.0" randomRange="9000" />
-    <create count="150" type="asteroids" startX="31384.0" startY="-300.0" startZ="94598.0" endX="5268.0" endY="300.0" endZ="67410.0" randomRange="6000" />
-    <create count="150" type="asteroids" startX="44509.0" startY="0.0" startZ="56964.0" endX="44509.0" endY="0.0" endZ="56964.0" randomRange="40000" />
+    <create count="50" type="nebulas" startX="59108.0" startY="0.0" startZ="93928.0" endX="8081.0" endY="0.0" endZ="45580.0" randomRange="10000" />
+    <create count="75" type="asteroids" startX="77188.0" startY="-300.0" startZ="94598.0" endX="58572.0" endY="300.0" endZ="50000.0" randomRange="9000" />
+    <create count="50" type="asteroids" startX="42099.0" startY="-300.0" startZ="39285.0" endX="3527.0" endY="300.0" endZ="29642.0" randomRange="9000" />
+    <create count="75" type="asteroids" startX="31384.0" startY="-300.0" startZ="94598.0" endX="5268.0" endY="300.0" endZ="67410.0" randomRange="6000" />
+    <create count="50" type="asteroids" startX="44509.0" startY="0.0" startZ="56964.0" endX="44509.0" endY="0.0" endZ="56964.0" randomRange="40000" />
     <set_variable name="Sector Entities" value="1.0" />
     <set_variable name="Sumri System" value="2.0" />
     <set_variable name="Grid 5 Transition Enabled" value="1.0" />
@@ -359,13 +359,13 @@
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="26" />
-    <create count="100" type="nebulas" startX="97411.0" startY="0.0" startZ="56428.0" endX="50268.0" endY="0.0" endZ="45714.0" randomRange="10000" />
-    <create count="100" type="nebulas" startX="3259.0" startY="0.0" startZ="55223.0" endX="50268.0" endY="0.0" endZ="45714.0" randomRange="10000" />
-    <create count="150" type="asteroids" startX="98215.0" startY="-300.0" startZ="28571.0" endX="47188.0" endY="300.0" endZ="20267.0" randomRange="10000" />
-    <create count="150" type="asteroids" startX="2322.0" startY="-300.0" startZ="29107.0" endX="45313.0" endY="300.0" endZ="20133.0" randomRange="10000" />
-    <create count="100" type="asteroids" startX="59643.0" startY="-300.0" startZ="63660.0" endX="98750.0" endY="300.0" endZ="67544.0" randomRange="6000" />
-    <create count="100" type="asteroids" startX="39286.0" startY="-300.0" startZ="62589.0" endX="1786.0" endY="300.0" endZ="72767.0" randomRange="6000" />
-    <create count="250" type="asteroids" startX="52009.0" startY="0.0" startZ="57232.0" endX="52009.0" endY="0.0" endZ="57232.0" randomRange="45000" />
+    <create count="50" type="nebulas" startX="97411.0" startY="0.0" startZ="56428.0" endX="50268.0" endY="0.0" endZ="45714.0" randomRange="10000" />
+    <create count="50" type="nebulas" startX="3259.0" startY="0.0" startZ="55223.0" endX="50268.0" endY="0.0" endZ="45714.0" randomRange="10000" />
+    <create count="75" type="asteroids" startX="98215.0" startY="-300.0" startZ="28571.0" endX="47188.0" endY="300.0" endZ="20267.0" randomRange="10000" />
+    <create count="75" type="asteroids" startX="2322.0" startY="-300.0" startZ="29107.0" endX="45313.0" endY="300.0" endZ="20133.0" randomRange="10000" />
+    <create count="50" type="asteroids" startX="59643.0" startY="-300.0" startZ="63660.0" endX="98750.0" endY="300.0" endZ="67544.0" randomRange="6000" />
+    <create count="50" type="asteroids" startX="39286.0" startY="-300.0" startZ="62589.0" endX="1786.0" endY="300.0" endZ="72767.0" randomRange="6000" />
+    <create count="125" type="asteroids" startX="52009.0" startY="0.0" startZ="57232.0" endX="52009.0" endY="0.0" endZ="57232.0" randomRange="45000" />
     <set_variable name="Sector Entities" value="1.0" />
     <set_variable name="Sumri System" value="2.0" />
     <set_variable name="Grid 5 Transition Enabled" value="1.0" />
@@ -377,7 +377,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="80fa3265-d44a-4b2c-b5be-144d73ecfbc6" parent_id_arme="5fc34811-7b04-4c04-8a57-2454032a6685" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="80fa3265-d44a-4b2c-b5be-144d73ecfbc6" parent_id_arme="5fc34811-7b04-4c04-8a57-2454032a6685" />
   <event name="Transition to Sector III" id_arme="53c69f9b-4c4c-4ae6-85e6-8677e88ee785" parent_id_arme="80fa3265-d44a-4b2c-b5be-144d73ecfbc6">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -433,7 +433,7 @@
     <set_variable name="Sumri System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="4.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="db18fcf4-e4c9-4dc4-a246-f2f5b7912cfd" parent_id_arme="80fa3265-d44a-4b2c-b5be-144d73ecfbc6" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="db18fcf4-e4c9-4dc4-a246-f2f5b7912cfd" parent_id_arme="80fa3265-d44a-4b2c-b5be-144d73ecfbc6" />
   <event name="Gate Offline" id_arme="5d9141e4-86cd-4c78-8c51-e96ce9dc7f24" parent_id_arme="db18fcf4-e4c9-4dc4-a246-f2f5b7912cfd">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
@@ -678,18 +678,18 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Tilminra to Sumri" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector III" id_arme="654bfb7e-1363-46be-8e74-bfbd1b388864" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
+  <folder_arme name="Sumri Sector III" id_arme="654bfb7e-1363-46be-8e74-bfbd1b388864" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
   <event name="Create Sumri Sector III" id_arme="f7f9561d-5130-4e7c-86cf-47328ccec4ec" parent_id_arme="654bfb7e-1363-46be-8e74-bfbd1b388864">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="26" />
-    <create count="150" type="asteroids" startX="36875.0" startY="-300.0" startZ="48660.0" endX="25358.0" endY="300.0" endZ="94598.0" randomRange="9000" />
-    <create count="100" type="nebulas" startX="95670.0" startY="0.0" startZ="43437.0" endX="48393.0" endY="0.0" endZ="90446.0" randomRange="10000" />
-    <create count="150" type="asteroids" startX="93661.0" startY="-300.0" startZ="24687.0" endX="53884.0" endY="300.0" endZ="44107.0" randomRange="9000" />
-    <create count="100" type="asteroids" startX="77590.0" startY="-300.0" startZ="85758.0" endX="97143.0" endY="300.0" endZ="74241.0" randomRange="6000" />
-    <create count="100" type="asteroids" startX="77590.0" startY="-300.0" startZ="85758.0" endX="65804.0" endY="300.0" endZ="97008.0" randomRange="6000" />
-    <create count="250" type="asteroids" startX="52009.0" startY="0.0" startZ="57232.0" endX="52009.0" endY="0.0" endZ="57232.0" randomRange="45000" />
+    <create count="75" type="asteroids" startX="36875.0" startY="-300.0" startZ="48660.0" endX="25358.0" endY="300.0" endZ="94598.0" randomRange="9000" />
+    <create count="50" type="nebulas" startX="95670.0" startY="0.0" startZ="43437.0" endX="48393.0" endY="0.0" endZ="90446.0" randomRange="10000" />
+    <create count="75" type="asteroids" startX="93661.0" startY="-300.0" startZ="24687.0" endX="53884.0" endY="300.0" endZ="44107.0" randomRange="9000" />
+    <create count="50" type="asteroids" startX="77590.0" startY="-300.0" startZ="85758.0" endX="97143.0" endY="300.0" endZ="74241.0" randomRange="6000" />
+    <create count="50" type="asteroids" startX="77590.0" startY="-300.0" startZ="85758.0" endX="65804.0" endY="300.0" endZ="97008.0" randomRange="6000" />
+    <create count="125" type="asteroids" startX="52009.0" startY="0.0" startZ="57232.0" endX="52009.0" endY="0.0" endZ="57232.0" randomRange="45000" />
     <set_variable name="Sector Entities" value="1.0" />
     <set_variable name="Sumri System" value="2.0" />
     <set_variable name="Grid 5 Transition Enabled" value="0.0" />
@@ -756,19 +756,19 @@
     <set_variable name="Sumri System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector IV" id_arme="669fc0e9-ba23-426c-b80c-8b47a8b87cd1" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
+  <folder_arme name="Sumri Sector IV" id_arme="669fc0e9-ba23-426c-b80c-8b47a8b87cd1" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
   <event name="Create Sumri Sector IV" id_arme="a4deb42d-d8db-4628-9a3f-5ca90f5ec369" parent_id_arme="669fc0e9-ba23-426c-b80c-8b47a8b87cd1">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="26" />
-    <create count="100" type="nebulas" startX="47322.0" startY="0.0" startZ="178.0" endX="50268.0" endY="0.0" endZ="45714.0" randomRange="10000" />
-    <create count="100" type="nebulas" startX="35205.0" startY="0.0" startZ="97360.0" endX="50268.0" endY="0.0" endZ="45714.0" randomRange="10000" />
-    <create count="150" type="asteroids" startX="68750.0" startY="-300.0" startZ="7812.0" endX="75045.0" endY="300.0" endZ="48928.0" randomRange="9000" />
-    <create count="150" type="asteroids" startX="59911.0" startY="-300.0" startZ="95267.0" endX="73170.0" endY="300.0" endZ="55625.0" randomRange="9000" />
-    <create count="100" type="asteroids" startX="27634.0" startY="-300.0" startZ="3392.0" endX="28974.0" endY="300.0" endZ="37946.0" randomRange="6000" />
-    <create count="100" type="asteroids" startX="16786.0" startY="-300.0" startZ="89375.0" endX="30715.0" endY="300.0" endZ="47589.0" randomRange="6000" />
-    <create count="250" type="asteroids" startX="48259.0" startY="0.0" startZ="47857.0" endX="48259.0" endY="0.0" endZ="47857.0" randomRange="45000" />
+    <create count="50" type="nebulas" startX="47322.0" startY="0.0" startZ="178.0" endX="50268.0" endY="0.0" endZ="45714.0" randomRange="10000" />
+    <create count="50" type="nebulas" startX="35205.0" startY="0.0" startZ="97360.0" endX="50268.0" endY="0.0" endZ="45714.0" randomRange="10000" />
+    <create count="75" type="asteroids" startX="68750.0" startY="-300.0" startZ="7812.0" endX="75045.0" endY="300.0" endZ="48928.0" randomRange="9000" />
+    <create count="75" type="asteroids" startX="59911.0" startY="-300.0" startZ="95267.0" endX="73170.0" endY="300.0" endZ="55625.0" randomRange="9000" />
+    <create count="50" type="asteroids" startX="27634.0" startY="-300.0" startZ="3392.0" endX="28974.0" endY="300.0" endZ="37946.0" randomRange="6000" />
+    <create count="50" type="asteroids" startX="16786.0" startY="-300.0" startZ="89375.0" endX="30715.0" endY="300.0" endZ="47589.0" randomRange="6000" />
+    <create count="125" type="asteroids" startX="48259.0" startY="0.0" startZ="47857.0" endX="48259.0" endY="0.0" endZ="47857.0" randomRange="45000" />
     <set_variable name="Sector Entities" value="1.0" />
     <set_variable name="Sumri System" value="2.0" />
     <set_variable name="Grid 5 Transition Enabled" value="1.0" />
@@ -869,14 +869,14 @@
     <set_variable name="Sumri System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector V" id_arme="32cf7d09-aea8-42dd-8672-8fd03d1b9a2e" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
+  <folder_arme name="Sumri Sector V" id_arme="32cf7d09-aea8-42dd-8672-8fd03d1b9a2e" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
   <event name="Create Sumri Sector V" id_arme="2f96d0c9-6d52-4acc-80af-435bc164f460" parent_id_arme="32cf7d09-aea8-42dd-8672-8fd03d1b9a2e">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="26" />
     <create type="genericMesh" x="49599.0" y="0.0" z="47991.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\Planets\planetTex4.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create count="250" type="nebulas" startX="49926.0" startY="0.0" startZ="48289.0" radius="30000" randomRange="5000" />
+    <create count="125" type="nebulas" startX="49926.0" startY="0.0" startZ="48289.0" radius="30000" randomRange="5000" />
     <create count="30" type="asteroids" startX="70224.0" startY="-200.0" startZ="38616.0" endX="56563.0" endY="200.0" endZ="31785.0" randomRange="3000" />
     <create count="30" type="asteroids" startX="51206.0" startY="-200.0" startZ="26026.0" endX="71027.0" endY="200.0" endZ="33526.0" randomRange="3000" />
     <create count="30" type="asteroids" startX="69956.0" startY="-200.0" startZ="61517.0" endX="71295.0" endY="200.0" endZ="47321.0" randomRange="3000" />
@@ -895,7 +895,7 @@
     <create count="50" type="asteroids" startX="33929.0" startY="-200.0" startZ="79732.0" endX="17322.0" endY="200.0" endZ="67276.0" randomRange="5000" />
     <create count="50" type="asteroids" startX="9420.0" startY="-200.0" startZ="46785.0" endX="14536.0" endY="200.0" endZ="69851.0" randomRange="5000" />
     <create count="50" type="asteroids" startX="7813.0" startY="-200.0" startZ="58705.0" endX="11831.0" endY="200.0" endZ="38883.0" randomRange="5000" />
-    <create count="250" type="asteroids" startX="49599.0" startY="0.0" startZ="48392.0" radius="5000" randomRange="45000" />
+    <create count="125" type="asteroids" startX="49599.0" startY="0.0" startZ="48392.0" radius="5000" randomRange="45000" />
     <set_variable name="Sector Entities" value="1.0" />
     <set_variable name="Sumri System" value="2.0" />
     <set_variable name="Grid 5 Transition Enabled" value="1.0" />
@@ -1052,20 +1052,20 @@
     <set_variable name="Sumri System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector VI" id_arme="ee08c19c-c263-4e9e-a57e-c506a13d2cc7" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
+  <folder_arme name="Sumri Sector VI" id_arme="ee08c19c-c263-4e9e-a57e-c506a13d2cc7" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
   <event name="Create Sumri Sector VI" id_arme="abb4919d-8b3e-420d-af2a-b204cc2bdaa2" parent_id_arme="ee08c19c-c263-4e9e-a57e-c506a13d2cc7">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="26" />
-    <create count="100" type="nebulas" startX="56429.0" startY="0.0" startZ="2187.0" endX="47188.0" endY="0.0" endZ="43437.0" randomRange="10000" />
-    <create count="100" type="nebulas" startX="52947.0" startY="0.0" startZ="90982.0" endX="39554.0" endY="0.0" endZ="44375.0" randomRange="10000" />
-    <create count="150" type="asteroids" startX="18661.0" startY="-300.0" startZ="52142.0" endX="25625.0" endY="300.0" endZ="95669.0" randomRange="9000" />
-    <create count="150" type="asteroids" startX="21072.0" startY="-300.0" startZ="39017.0" endX="26878.0" endY="300.0" endZ="6208.0" randomRange="9000" />
-    <create count="100" type="asteroids" startX="67277.0" startY="-300.0" startZ="62723.0" endX="78125.0" endY="300.0" endZ="93125.0" randomRange="6000" />
-    <create count="100" type="asteroids" startX="68750.0" startY="-300.0" startZ="62589.0" endX="63929.0" endY="300.0" endZ="43973.0" randomRange="6000" />
-    <create count="100" type="asteroids" startX="63755.0" startY="-300.0" startZ="34312.0" endX="62566.0" endY="300.0" endZ="3382.0" randomRange="6000" />
-    <create count="250" type="asteroids" startX="52009.0" startY="0.0" startZ="57232.0" endX="52009.0" endY="0.0" endZ="57232.0" randomRange="45000" />
+    <create count="50" type="nebulas" startX="56429.0" startY="0.0" startZ="2187.0" endX="47188.0" endY="0.0" endZ="43437.0" randomRange="10000" />
+    <create count="50" type="nebulas" startX="52947.0" startY="0.0" startZ="90982.0" endX="39554.0" endY="0.0" endZ="44375.0" randomRange="10000" />
+    <create count="75" type="asteroids" startX="18661.0" startY="-300.0" startZ="52142.0" endX="25625.0" endY="300.0" endZ="95669.0" randomRange="9000" />
+    <create count="75" type="asteroids" startX="21072.0" startY="-300.0" startZ="39017.0" endX="26878.0" endY="300.0" endZ="6208.0" randomRange="9000" />
+    <create count="50" type="asteroids" startX="67277.0" startY="-300.0" startZ="62723.0" endX="78125.0" endY="300.0" endZ="93125.0" randomRange="6000" />
+    <create count="50" type="asteroids" startX="68750.0" startY="-300.0" startZ="62589.0" endX="63929.0" endY="300.0" endZ="43973.0" randomRange="6000" />
+    <create count="50" type="asteroids" startX="63755.0" startY="-300.0" startZ="34312.0" endX="62566.0" endY="300.0" endZ="3382.0" randomRange="6000" />
+    <create count="125" type="asteroids" startX="52009.0" startY="0.0" startZ="57232.0" endX="52009.0" endY="0.0" endZ="57232.0" randomRange="45000" />
     <set_variable name="Sector Entities" value="1.0" />
     <set_variable name="Sumri System" value="2.0" />
     <set_variable name="Grid A Transition Enabled" value="1.0" />
@@ -1174,11 +1174,11 @@
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="26" />
-    <create count="100" type="nebulas" startX="44777.0" startY="0.0" startZ="44.0" endX="14509.0" endY="0.0" endZ="60446.0" randomRange="10000" />
-    <create count="150" type="asteroids" startX="60313.0" startY="-300.0" startZ="3660.0" endX="54956.0" endY="300.0" endZ="46919.0" randomRange="9000" />
-    <create count="150" type="asteroids" startX="4465.0" startY="-300.0" startZ="78526.0" endX="44777.0" endY="300.0" endZ="58973.0" randomRange="9000" />
-    <create count="100" type="asteroids" startX="19063.0" startY="-300.0" startZ="2857.0" endX="2456.0" endY="300.0" endZ="36875.0" randomRange="6000" />
-    <create count="250" type="asteroids" startX="42500.0" startY="0.0" startZ="47455.0" endX="42500.0" endY="0.0" endZ="47455.0" randomRange="45000" />
+    <create count="50" type="nebulas" startX="44777.0" startY="0.0" startZ="44.0" endX="14509.0" endY="0.0" endZ="60446.0" randomRange="10000" />
+    <create count="75" type="asteroids" startX="60313.0" startY="-300.0" startZ="3660.0" endX="54956.0" endY="300.0" endZ="46919.0" randomRange="9000" />
+    <create count="75" type="asteroids" startX="4465.0" startY="-300.0" startZ="78526.0" endX="44777.0" endY="300.0" endZ="58973.0" randomRange="9000" />
+    <create count="50" type="asteroids" startX="19063.0" startY="-300.0" startZ="2857.0" endX="2456.0" endY="300.0" endZ="36875.0" randomRange="6000" />
+    <create count="125" type="asteroids" startX="42500.0" startY="0.0" startZ="47455.0" endX="42500.0" endY="0.0" endZ="47455.0" randomRange="45000" />
     <set_variable name="Sector Entities" value="1.0" />
     <set_variable name="Sumri System" value="2.0" />
     <set_variable name="Grid 5 Transition Enabled" value="1.0" />
@@ -1190,7 +1190,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="edd2a3f4-c112-4ca5-be19-0d0f1d67fbb2" parent_id_arme="9a2bc86a-6b59-4557-9e90-829a8a1dae01" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="edd2a3f4-c112-4ca5-be19-0d0f1d67fbb2" parent_id_arme="9a2bc86a-6b59-4557-9e90-829a8a1dae01" />
   <event name="Transition to Sector VIII" id_arme="5c3d10f4-4090-4cd8-af24-d89c70786c6f" parent_id_arme="edd2a3f4-c112-4ca5-be19-0d0f1d67fbb2">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1466,19 +1466,19 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Eulis to Sumri" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector VIII" id_arme="fbbc595c-ae83-4338-bf98-6e965bd6304f" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
+  <folder_arme name="Sumri Sector VIII" id_arme="fbbc595c-ae83-4338-bf98-6e965bd6304f" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
   <event name="Create Sumri Sector VIII" id_arme="90371865-71c0-4aee-a1f6-3a456c7b1c6a" parent_id_arme="fbbc595c-ae83-4338-bf98-6e965bd6304f">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="26" />
-    <create count="100" type="nebulas" startX="97277.0" startY="0.0" startZ="59107.0" endX="58572.0" endY="0.0" endZ="67008.0" randomRange="10000" />
-    <create count="100" type="nebulas" startX="2456.0" startY="0.0" startZ="55758.0" endX="49063.0" endY="0.0" endZ="64866.0" randomRange="10000" />
-    <create count="100" type="asteroids" startX="59777.0" startY="-300.0" startZ="46919.0" endX="98215.0" endY="300.0" endZ="36741.0" randomRange="6000" />
-    <create count="100" type="asteroids" startX="47322.0" startY="-300.0" startZ="47321.0" endX="1920.0" endY="300.0" endZ="39821.0" randomRange="6000" />
-    <create count="150" type="asteroids" startX="96340.0" startY="-300.0" startZ="76785.0" endX="47054.0" endY="300.0" endZ="86964.0" randomRange="9000" />
-    <create count="150" type="asteroids" startX="3125.0" startY="-300.0" startZ="76517.0" endX="47054.0" endY="300.0" endZ="86964.0" randomRange="9000" />
-    <create count="250" type="asteroids" startX="50134.0" startY="0.0" startZ="50401.0" endX="50134.0" endY="0.0" endZ="50401.0" randomRange="45000" />
+    <create count="50" type="nebulas" startX="97277.0" startY="0.0" startZ="59107.0" endX="58572.0" endY="0.0" endZ="67008.0" randomRange="10000" />
+    <create count="50" type="nebulas" startX="2456.0" startY="0.0" startZ="55758.0" endX="49063.0" endY="0.0" endZ="64866.0" randomRange="10000" />
+    <create count="50" type="asteroids" startX="59777.0" startY="-300.0" startZ="46919.0" endX="98215.0" endY="300.0" endZ="36741.0" randomRange="6000" />
+    <create count="50" type="asteroids" startX="47322.0" startY="-300.0" startZ="47321.0" endX="1920.0" endY="300.0" endZ="39821.0" randomRange="6000" />
+    <create count="75" type="asteroids" startX="96340.0" startY="-300.0" startZ="76785.0" endX="47054.0" endY="300.0" endZ="86964.0" randomRange="9000" />
+    <create count="75" type="asteroids" startX="3125.0" startY="-300.0" startZ="76517.0" endX="47054.0" endY="300.0" endZ="86964.0" randomRange="9000" />
+    <create count="125" type="asteroids" startX="50134.0" startY="0.0" startZ="50401.0" endX="50134.0" endY="0.0" endZ="50401.0" randomRange="45000" />
     <set_variable name="Sector Entities" value="1.0" />
     <set_variable name="Sumri System" value="2.0" />
     <set_variable name="Grid 5 Transition Enabled" value="1.0" />
@@ -1579,11 +1579,11 @@
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="26" />
-    <create count="100" type="nebulas" startX="43304.0" startY="0.0" startZ="2053.0" endX="94733.0" endY="0.0" endZ="66071.0" randomRange="10000" />
-    <create count="150" type="asteroids" startX="96340.0" startY="-300.0" startZ="76517.0" endX="56831.0" endY="300.0" endZ="62857.0" randomRange="9000" />
-    <create count="150" type="asteroids" startX="40358.0" startY="-300.0" startZ="44776.0" endX="24018.0" endY="300.0" endZ="6875.0" randomRange="9000" />
-    <create count="100" type="asteroids" startX="72902.0" startY="-300.0" startZ="14107.0" endX="96742.0" endY="300.0" endZ="38750.0" randomRange="6000" />
-    <create count="250" type="asteroids" startX="54554.0" startY="0.0" startZ="47991.0" endX="54554.0" endY="0.0" endZ="47991.0" randomRange="45000" />
+    <create count="50" type="nebulas" startX="43304.0" startY="0.0" startZ="2053.0" endX="94733.0" endY="0.0" endZ="66071.0" randomRange="10000" />
+    <create count="75" type="asteroids" startX="96340.0" startY="-300.0" startZ="76517.0" endX="56831.0" endY="300.0" endZ="62857.0" randomRange="9000" />
+    <create count="75" type="asteroids" startX="40358.0" startY="-300.0" startZ="44776.0" endX="24018.0" endY="300.0" endZ="6875.0" randomRange="9000" />
+    <create count="50" type="asteroids" startX="72902.0" startY="-300.0" startZ="14107.0" endX="96742.0" endY="300.0" endZ="38750.0" randomRange="6000" />
+    <create count="125" type="asteroids" startX="54554.0" startY="0.0" startZ="47991.0" endX="54554.0" endY="0.0" endZ="47991.0" randomRange="45000" />
     <set_variable name="Sector Entities" value="1.0" />
     <set_variable name="Sumri System" value="2.0" />
     <set_variable name="Grid 5 Transition Enabled" value="0.0" />
@@ -1595,7 +1595,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="544779ed-f445-43bd-96ff-a24be1cc1e7a" parent_id_arme="f882a02a-229e-40ca-9b10-4f462d550ff8" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="544779ed-f445-43bd-96ff-a24be1cc1e7a" parent_id_arme="f882a02a-229e-40ca-9b10-4f462d550ff8" />
   <event name="Transition to Sector VIII" id_arme="59fe1d87-dc81-423b-a147-dbde6d508c30" parent_id_arme="544779ed-f445-43bd-96ff-a24be1cc1e7a">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
