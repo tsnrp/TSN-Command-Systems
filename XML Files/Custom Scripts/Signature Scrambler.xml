@@ -1,0 +1,19 @@
+<mission_data version="1.0" background_id_arme="77d373f9-ed2e-4726-a2b2-74bd775ac998" playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana">
+  <start id_arme="77d373f9-ed2e-4726-a2b2-74bd775ac998">
+    <!---->
+  </start>
+  <folder_arme name="Custom Special" id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01" />
+  <event name="Set Button" id_arme="9af2a555-b03f-4c80-a528-14fb8983d635" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Assign Specials\Add\Scramble Sign." />
+  </event>
+  <event name="Clear Button" id_arme="6083ce2c-2f6b-4584-a827-8f447b050cb6" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Assign Specials\Add\Scramble Sign." />
+  </event>
+  <event name="Scramble Sign" id_arme="aa1012f5-fc9c-4641-900d-1be041cb36c3" parent_id_arme="2f1f1ba7-9b26-4c15-9dea-f2e7c5906c01">
+    <if_variable name="AI Commands Menu" comparator="EQUALS" value="1.0" />
+    <if_gm_button text="Assign Specials\Add\Scramble Sign." />
+    <set_ship_text use_gm_selection="" race="Race?" class="Class?" desc="Failed to match radar signature against database of known vessel types." scan_desc="Specials: Signature scrambler, +others?" />
+  </event>
+</mission_data>

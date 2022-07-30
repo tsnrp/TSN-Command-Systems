@@ -30,7 +30,7 @@
     <set_variable name="randMult" randomIntLow="1" randomIntHigh="5" integer="yes" />
     <set_variable name="Random Multiplier" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="AI Types" id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
+  <folder_arme name="AI Types" id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <folder_arme name="Combat AI (1 - 49)" id_arme="d474c83d-3108-49d6-983d-3752ff52be2f" parent_id_arme="f4e899cb-4edd-4729-ac40-d582379619fb" expanded_arme="" />
   <event name="1 - Standard Attack AI" id_arme="431edf06-7d5a-49dd-86fd-4990b5b16374" parent_id_arme="d474c83d-3108-49d6-983d-3752ff52be2f">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="1.0" />
@@ -37153,7 +37153,7 @@
     <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 20.0" />
     <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 20.0" />
   </event>
-  <folder_arme name="Sensor Ping" id_arme="ad9938a2-658d-41b7-848f-b251c044b0d7" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
+  <folder_arme name="Sensor Ping" id_arme="ad9938a2-658d-41b7-848f-b251c044b0d7" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
   <event name="Sensors Off" id_arme="79530b6a-9a01-41ae-9cc9-3a43331948b4" parent_id_arme="ad9938a2-658d-41b7-848f-b251c044b0d7">
     <if_variable name="Sensor Ping" comparator="EQUALS" value="10.0" />
     <destroy name="_A_" />

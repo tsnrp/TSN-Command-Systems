@@ -5073,7 +5073,7 @@
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="AI Keys" id_arme="3eb8fb48-1223-46b2-a68b-1694f9160a06" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
+  <folder_arme name="AI Keys" id_arme="3eb8fb48-1223-46b2-a68b-1694f9160a06" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
   <event name="AI On" id_arme="955d61d1-3e3c-4769-a79b-fe279470198a" parent_id_arme="3eb8fb48-1223-46b2-a68b-1694f9160a06">
     <if_variable name="AI Menu" comparator="EQUALS" value="1.0" />
     <!--Group Selection Menu-->
@@ -5794,7 +5794,7 @@
     <set_variable name="ReassignAI" value="91.0" integer="yes" />
     <set_variable name="CycleAISide" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="Commands Select Menu" id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b" parent_id_arme="3eb8fb48-1223-46b2-a68b-1694f9160a06" expanded_arme="" />
+  <folder_arme name="Commands Select Menu" id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b" parent_id_arme="3eb8fb48-1223-46b2-a68b-1694f9160a06" />
   <event name="Set Menu" id_arme="59a04bfe-8a07-494c-8ee6-b5c1af32b6c4" parent_id_arme="846725f1-9752-4065-a2a1-9f52b9a4a32b">
     <if_gm_button text="AI Cmds Off" />
     <set_gm_button text="AI Cmds On" x="140" y="480" h="28" w="90" />
@@ -41164,7 +41164,7 @@
     <if_gm_button text="Terrain\Asteroids\Large Field" />
     <create count="100" type="asteroids" use_gm_position="" radius="5000" randomRange="5000" />
   </event>
-  <folder_arme name="Interaction Keys" id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
+  <folder_arme name="Interaction Keys" id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
   <event name="Interaction Menu" id_arme="6f5c9324-17b9-470d-ac70-4f1e4a50636a" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99">
     <if_timer_finished name="GM Menu" />
     <if_variable name="GM Menu" comparator="EQUALS" value="10.0" />
@@ -41851,7 +41851,7 @@
     <set_variable name="RandomDamageShip8" value="0.0" integer="yes" />
     <set_variable name="RandomDamage" value="0.0" integer="yes" />
   </disabled_event>
-  <folder_arme name="Set Sensor Range" id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" />
+  <folder_arme name="Set Sensor Range" id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" expanded_arme="" />
   <event name="Sensor Range Menu" id_arme="4228976f-1254-4e75-8f35-f579bcaf5543" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_variable name="Interactions Menu" comparator="EQUALS" value="5.0" />
     <if_timer_finished name="Interactions Menu" />
@@ -41889,6 +41889,32 @@
   </event>
   <event name="Unlimited sensors" id_arme="cbfba619-8fa7-4ddc-8a67-deeac1f4bf3f" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Sensor Range\Set to unlimited" />
+    <destroy name="_A_" />
+    <destroy name="_B_" />
+    <destroy name="_C_" />
+    <destroy name="_D_" />
+    <destroy name="_E_" />
+    <destroy name="_F_" />
+    <destroy name="_G_" />
+    <destroy name="_H_" />
+    <destroy name="_I_" />
+    <destroy name="_J_" />
+    <destroy name="_K_" />
+    <destroy name="_L_" />
+    <destroy name="_M_" />
+    <destroy name="_N_" />
+    <destroy name="_O_" />
+    <destroy name="_P_" />
+    <destroy name="_Q_" />
+    <destroy name="_R_" />
+    <destroy name="_S_" />
+    <destroy name="_T_" />
+    <destroy name="_U_" />
+    <destroy name="_V_" />
+    <destroy name="_W_" />
+    <destroy name="_X_" />
+    <destroy name="_Y_" />
+    <destroy name="_Z_" />
     <set_variable name="Sensor Ping" value="10.0" integer="yes" />
     <set_object_property property="sensorSetting" value="0.0" />
   </event>
@@ -41922,6 +41948,32 @@
   </event>
   <event name="Unlimited sensors  (msg)" id_arme="780301c6-1898-4970-a106-0c0a523bfffd" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Snsr Rng with msg\Set to unlimited" />
+    <destroy name="_A_" />
+    <destroy name="_B_" />
+    <destroy name="_C_" />
+    <destroy name="_D_" />
+    <destroy name="_E_" />
+    <destroy name="_F_" />
+    <destroy name="_G_" />
+    <destroy name="_H_" />
+    <destroy name="_I_" />
+    <destroy name="_J_" />
+    <destroy name="_K_" />
+    <destroy name="_L_" />
+    <destroy name="_M_" />
+    <destroy name="_N_" />
+    <destroy name="_O_" />
+    <destroy name="_P_" />
+    <destroy name="_Q_" />
+    <destroy name="_R_" />
+    <destroy name="_S_" />
+    <destroy name="_T_" />
+    <destroy name="_U_" />
+    <destroy name="_V_" />
+    <destroy name="_W_" />
+    <destroy name="_X_" />
+    <destroy name="_Y_" />
+    <destroy name="_Z_" />
     <set_variable name="Sensor Ping" value="10.0" integer="yes" />
     <set_object_property property="sensorSetting" value="0.0" />
     <warning_popup_message message="100% Effective" consoles="S" />
