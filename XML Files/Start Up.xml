@@ -168,6 +168,7 @@
     <set_variable name="Ship8NodeNumber" value="0.0" integer="yes" />
     <set_variable name="Ship8DamageType" value="0.0" integer="yes" />
     <!--Sensor Ping Data-->
+    <set_variable name="DisablePing" value="2.0" integer="yes" />
     <set_variable name="digitA1" value="0.0" integer="yes" />
     <set_variable name="digitB1" value="0.0" integer="yes" />
     <set_variable name="digitC1" value="0.0" integer="yes" />

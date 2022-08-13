@@ -272,7 +272,7 @@
     <set_variable name="GM Menu" value="12.0" />
     <set_timer name="GM Menu" seconds="1" />
   </event>
-  <folder_arme name="Bas. Keys" id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
+  <folder_arme name="Bas. Keys" id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
   <event name="Bas. Key Menu" id_arme="7ae597ca-9166-4e2e-af7f-7a820dc1f151" parent_id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e">
     <if_variable name="GM Menu" comparator="EQUALS" value="3.0" />
     <if_timer_finished name="GM Menu" />
@@ -40881,7 +40881,7 @@
     <set_variable name="ScanSignature" value="0.0" integer="yes" />
     <set_variable name="ScanPoint" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Hazard Keys" id_arme="043c9bdc-8549-4b00-ab76-1d191d309472" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
+  <folder_arme name="Hazard Keys" id_arme="043c9bdc-8549-4b00-ab76-1d191d309472" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
   <event name="Hazard Keys Menu" id_arme="e994d630-6ae0-46f0-a06d-514995ebd4cf" parent_id_arme="043c9bdc-8549-4b00-ab76-1d191d309472">
     <if_timer_finished name="GM Menu" />
     <if_variable name="GM Menu" comparator="EQUALS" value="8.0" />
@@ -41239,6 +41239,11 @@
     <clear_gm_button text="Snsr Rng with msg\Set to 16000" />
     <clear_gm_button text="Snsr Rng with msg\Set to 33000" />
     <clear_gm_button text="Snsr Rng with msg\Set to unlimited" />
+    <clear_gm_button text="Disable Sensor Ping" />
+    <clear_gm_button text="Enable Sensor Ping" />
+    <clear_gm_button text="Clear Pings" />
+    <clear_gm_button text="Sensor Pings Disabled" />
+    <clear_gm_button text="Sensor Pings Enabled" />
     <clear_gm_button text="Command Messages\Sim Aborted" />
     <clear_gm_button text="Command Messages\Data Tranferring" />
     <clear_gm_button text="Command Messages\Personnel Tranferring" />
@@ -41851,11 +41856,11 @@
     <set_variable name="RandomDamageShip8" value="0.0" integer="yes" />
     <set_variable name="RandomDamage" value="0.0" integer="yes" />
   </disabled_event>
-  <folder_arme name="Set Sensor Range" id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" expanded_arme="" />
+  <folder_arme name="Set Sensor Range" id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" />
   <event name="Sensor Range Menu" id_arme="4228976f-1254-4e75-8f35-f579bcaf5543" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_variable name="Interactions Menu" comparator="EQUALS" value="5.0" />
     <if_timer_finished name="Interactions Menu" />
-    <set_gm_button text="Sensor Range\Set to 8000" />
+    <set_gm_button text="Sensor Range\Set to 8000" menu_w="200" />
     <set_gm_button text="Sensor Range\Set to 11000" />
     <set_gm_button text="Sensor Range\Set to 16000" />
     <set_gm_button text="Sensor Range\Set to 33000" />
@@ -41865,7 +41870,20 @@
     <set_gm_button text="Snsr Rng with msg\Set to 16000" />
     <set_gm_button text="Snsr Rng with msg\Set to 33000" />
     <set_gm_button text="Snsr Rng with msg\Set to unlimited" />
+    <set_gm_button text="Disable Sensor Ping" />
+    <set_gm_button text="Enable Sensor Ping" />
+    <set_gm_button text="Clear Pings" />
     <set_variable name="Interactions Menu" value="1.0" integer="yes" />
+  </event>
+  <event name="SensorPingStatusDisabled" id_arme="0b346f90-3153-4d7e-a74f-1051c0ddbecf" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
+    <if_variable name="DisablePing" comparator="EQUALS" value="1.0" />
+    <if_variable name="Interactions Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Sensor Pings Disabled" x="850" y="100" h="30" w="160" />
+  </event>
+  <event name="SensorPingStatusEnabled" id_arme="b08653c5-eb44-4dca-8624-f4650ac03918" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
+    <if_variable name="DisablePing" comparator="EQUALS" value="2.0" />
+    <if_variable name="Interactions Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Sensor Pings Enabled" x="850" y="100" h="30" w="160" />
   </event>
   <event name="8K sensors" id_arme="b6b91c81-4466-43b8-b187-1ba7d4dfd06d" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Sensor Range\Set to 8000" />
@@ -41946,7 +41964,7 @@
     <warning_popup_message message="Effective 33K" consoles="S" />
     <warning_popup_message message="Sensors Disrupted" consoles="MHWESC" />
   </event>
-  <event name="Unlimited sensors  (msg)" id_arme="780301c6-1898-4970-a106-0c0a523bfffd" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
+  <event name="Unlimited sensors  (msg)" id_arme="13af84fc-6a71-46e0-9084-e2236a551b8d" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
     <if_gm_button text="Snsr Rng with msg\Set to unlimited" />
     <destroy name="_A_" />
     <destroy name="_B_" />
@@ -41978,6 +41996,20 @@
     <set_object_property property="sensorSetting" value="0.0" />
     <warning_popup_message message="100% Effective" consoles="S" />
     <warning_popup_message message="Sensors Restored" consoles="MHWESC" />
+  </event>
+  <event name="Disable Pings" id_arme="d27fa453-0f36-4f6b-8dec-ccec947ee11f" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
+    <if_gm_button text="Disable Sensor Ping" />
+    <clear_gm_button text="Sensor Pings Enabled" />
+    <set_variable name="DisablePing" value="1.0" integer="yes" />
+  </event>
+  <event name="Enable Pings" id_arme="2d8b6bd6-e2b7-47b5-b18c-6d82a7ecf579" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
+    <if_gm_button text="Enable Sensor Ping" />
+    <clear_gm_button text="Sensor Pings Disabled" />
+    <set_variable name="DisablePing" value="2.0" integer="yes" />
+  </event>
+  <event name="Remove Pings" id_arme="780301c6-1898-4970-a106-0c0a523bfffd" parent_id_arme="5281ed9f-faab-47da-981b-3aa5f38459a0">
+    <if_gm_button text="Clear Pings" />
+    <set_variable name="Sensor Ping" value="10.0" integer="yes" />
   </event>
   <folder_arme name="Boarding Actions" id_arme="c223fb98-94a1-42fa-b5a5-8a1e6411342e" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" />
   <event name="Boarding Actions Menu" id_arme="e1def8c3-9426-4532-9d6f-f53692e675c2" parent_id_arme="c223fb98-94a1-42fa-b5a5-8a1e6411342e">
@@ -47067,6 +47099,127 @@
     <set_variable name="Ship6CommsMenu" value="0.0" integer="yes" />
     <set_variable name="Ship7CommsMenu" value="0.0" integer="yes" />
     <set_variable name="Ship8CommsMenu" value="0.0" integer="yes" />
+    <!---->
+    <clear_comms_button text="-Cargo &amp; Personnel" player_slot="0" />
+    <clear_comms_button text="-Shuttle Operations" player_slot="0" />
+    <clear_comms_button text="-Resupply Operations" player_slot="0" />
+    <clear_comms_button text="-Main Menu" player_slot="0" />
+    <!--Shuttle Operations Menu Options-->
+    <clear_comms_button text="-Shuttle Status" player_slot="0" />
+    <clear_comms_button text="-Operations" player_slot="0" />
+    <clear_comms_button text="-Back" player_slot="0" />
+    <clear_comms_button text="-Unload Shuttle" player_slot="0" />
+    <clear_comms_button text="-Load Marines" player_slot="0" />
+    <clear_comms_button text="-Load Cargo" player_slot="0" />
+    <clear_comms_button text="-Load Medical Team" player_slot="0" />
+    <clear_comms_button text="-Load Engineering Team" player_slot="0" />
+    <clear_comms_button text="-Load Comms Relay" player_slot="0" />
+    <clear_comms_button text="-Load Sensor Buoy" player_slot="0" />
+    <clear_comms_button text="*Cargo &amp; Personnel" player_slot="1" />
+    <clear_comms_button text="*Shuttle Operations" player_slot="1" />
+    <clear_comms_button text="*Resupply Operations" player_slot="1" />
+    <clear_comms_button text="*Main Menu" player_slot="1" />
+    <!--Shuttle Operations Menu Options-->
+    <clear_comms_button text="*Shuttle Status" player_slot="1" />
+    <clear_comms_button text="*Operations" player_slot="1" />
+    <clear_comms_button text="*Back" player_slot="1" />
+    <clear_comms_button text="*Unload Shuttle" player_slot="1" />
+    <clear_comms_button text="*Load Marines" player_slot="1" />
+    <clear_comms_button text="*Load Cargo" player_slot="1" />
+    <clear_comms_button text="*Load Medical Team" player_slot="1" />
+    <clear_comms_button text="*Load Engineering Team" player_slot="1" />
+    <clear_comms_button text="*Load Comms Relay" player_slot="1" />
+    <clear_comms_button text="*Load Sensor Buoy" player_slot="1" />
+    <clear_comms_button text="**Cargo &amp; Personnel" player_slot="2" />
+    <clear_comms_button text="**Shuttle Operations" player_slot="2" />
+    <clear_comms_button text="**Resupply Operations" player_slot="2" />
+    <clear_comms_button text="**Main Menu" player_slot="2" />
+    <!--Shuttle Operations Menu Options-->
+    <clear_comms_button text="**Shuttle Status" player_slot="2" />
+    <clear_comms_button text="**Operations" player_slot="2" />
+    <clear_comms_button text="**Back" player_slot="2" />
+    <clear_comms_button text="**Unload Shuttle" player_slot="2" />
+    <clear_comms_button text="**Load Marines" player_slot="2" />
+    <clear_comms_button text="**Load Cargo" player_slot="2" />
+    <clear_comms_button text="**Load Medical Team" player_slot="2" />
+    <clear_comms_button text="**Load Engineering Team" player_slot="2" />
+    <clear_comms_button text="**Load Comms Relay" player_slot="2" />
+    <clear_comms_button text="**Load Sensor Buoy" player_slot="2" />
+    <clear_comms_button text="--Cargo &amp; Personnel" player_slot="3" />
+    <clear_comms_button text="--Shuttle Operations" player_slot="3" />
+    <clear_comms_button text="--Resupply Operations" player_slot="3" />
+    <clear_comms_button text="--Main Menu" player_slot="3" />
+    <!--Shuttle Operations Menu Options-->
+    <clear_comms_button text="--Shuttle Status" player_slot="3" />
+    <clear_comms_button text="--Operations" player_slot="3" />
+    <clear_comms_button text="--Back" player_slot="3" />
+    <clear_comms_button text="--Unload Shuttle" player_slot="3" />
+    <clear_comms_button text="--Load Marines" player_slot="3" />
+    <clear_comms_button text="--Load Cargo" player_slot="3" />
+    <clear_comms_button text="--Load Medical Team" player_slot="3" />
+    <clear_comms_button text="--Load Engineering Team" player_slot="3" />
+    <clear_comms_button text="--Load Comms Relay" player_slot="3" />
+    <clear_comms_button text="--Load Sensor Buoy" player_slot="3" />
+    <clear_comms_button text="*-Cargo &amp; Personnel" player_slot="4" />
+    <clear_comms_button text="*-Shuttle Operations" player_slot="4" />
+    <clear_comms_button text="*-Resupply Operations" player_slot="4" />
+    <clear_comms_button text="*-Main Menu" player_slot="4" />
+    <!--Shuttle Operations Menu Options-->
+    <clear_comms_button text="*-Shuttle Status" player_slot="4" />
+    <clear_comms_button text="*-Operations" player_slot="4" />
+    <clear_comms_button text="*-Back" player_slot="4" />
+    <clear_comms_button text="*-Unload Shuttle" player_slot="4" />
+    <clear_comms_button text="*-Load Marines" player_slot="4" />
+    <clear_comms_button text="*-Load Cargo" player_slot="4" />
+    <clear_comms_button text="*-Load Medical Team" player_slot="4" />
+    <clear_comms_button text="*-Load Engineering Team" player_slot="4" />
+    <clear_comms_button text="*-Load Comms Relay" player_slot="4" />
+    <clear_comms_button text="*-Load Sensor Buoy" player_slot="4" />
+    <clear_comms_button text="-*Cargo &amp; Personnel" player_slot="5" />
+    <clear_comms_button text="-*Shuttle Operations" player_slot="5" />
+    <clear_comms_button text="-*Resupply Operations" player_slot="5" />
+    <clear_comms_button text="-*Main Menu" player_slot="5" />
+    <!--Shuttle Operations Menu Options-->
+    <clear_comms_button text="-*Shuttle Status" player_slot="5" />
+    <clear_comms_button text="-*Operations" player_slot="5" />
+    <clear_comms_button text="-*Back" player_slot="5" />
+    <clear_comms_button text="-*Unload Shuttle" player_slot="5" />
+    <clear_comms_button text="-*Load Marines" player_slot="5" />
+    <clear_comms_button text="-*Load Cargo" player_slot="5" />
+    <clear_comms_button text="-*Load Medical Team" player_slot="5" />
+    <clear_comms_button text="-*Load Engineering Team" player_slot="5" />
+    <clear_comms_button text="-*Load Comms Relay" player_slot="5" />
+    <clear_comms_button text="-*Load Sensor Buoy" player_slot="5" />
+    <clear_comms_button text="_Cargo &amp; Personnel" player_slot="6" />
+    <clear_comms_button text="_Shuttle Operations" player_slot="6" />
+    <clear_comms_button text="_Resupply Operations" player_slot="6" />
+    <clear_comms_button text="_Main Menu" player_slot="6" />
+    <!--Shuttle Operations Menu Options-->
+    <clear_comms_button text="_Shuttle Status" player_slot="6" />
+    <clear_comms_button text="_Operations" player_slot="6" />
+    <clear_comms_button text="_Back" player_slot="6" />
+    <clear_comms_button text="_Unload Shuttle" player_slot="6" />
+    <clear_comms_button text="_Load Marines" player_slot="6" />
+    <clear_comms_button text="_Load Cargo" player_slot="6" />
+    <clear_comms_button text="_Load Medical Team" player_slot="6" />
+    <clear_comms_button text="_Load Engineering Team" player_slot="6" />
+    <clear_comms_button text="_Load Comms Relay" player_slot="6" />
+    <clear_comms_button text="_Load Sensor Buoy" player_slot="6" />
+    <clear_comms_button text="__Cargo &amp; Personnel" player_slot="7" />
+    <clear_comms_button text="__Shuttle Operations" player_slot="7" />
+    <clear_comms_button text="__Resupply Operations" player_slot="7" />
+    <clear_comms_button text="__Main Menu" player_slot="7" />
+    <!--Shuttle Operations Menu Options-->
+    <clear_comms_button text="__Shuttle Status" player_slot="7" />
+    <clear_comms_button text="__Operations" player_slot="7" />
+    <clear_comms_button text="__Back" player_slot="7" />
+    <clear_comms_button text="__Unload Shuttle" player_slot="7" />
+    <clear_comms_button text="__Load Marines" player_slot="7" />
+    <clear_comms_button text="__Load Cargo" player_slot="7" />
+    <clear_comms_button text="__Load Medical Team" player_slot="7" />
+    <clear_comms_button text="__Load Engineering Team" player_slot="7" />
+    <clear_comms_button text="__Load Comms Relay" player_slot="7" />
+    <clear_comms_button text="__Load Sensor Buoy" player_slot="7" />
   </event>
   <folder_arme name="Custom Keys" id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
   <event name="Custom Keys Menu" id_arme="9c078e16-5385-44db-ab15-563fd2dff7f1" parent_id_arme="a4eb80ae-97a6-49ea-8d5c-aab308c0ea87">

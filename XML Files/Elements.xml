@@ -1006,8 +1006,8 @@
     <set_variable name="Sector Locked" value="1.0" integer="yes" />
     <set_variable name="Sandbox Activation" value="100.0" integer="yes" />
   </event>
-  <folder_arme name="Comms Controls" id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" parent_id_arme="da1f4d06-129f-463c-a1e6-d7a4eae746b1" />
-  <folder_arme name="Ship 1 Comms Menu" id_arme="11974bdf-b216-46f4-a7b9-5c50936650d3" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" />
+  <folder_arme name="Comms Controls" id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" parent_id_arme="da1f4d06-129f-463c-a1e6-d7a4eae746b1" expanded_arme="" />
+  <folder_arme name="Ship 1 Comms Menu" id_arme="11974bdf-b216-46f4-a7b9-5c50936650d3" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" expanded_arme="" />
   <event name="Create Menu" id_arme="879a2eb2-2514-4461-a948-a66bb5c2c9a5" parent_id_arme="11974bdf-b216-46f4-a7b9-5c50936650d3">
     <if_exists player_slot="0" />
     <if_variable name="Ship1CommsMenu" comparator="EQUALS" value="0.0" />
@@ -1041,7 +1041,7 @@
     <set_variable name="Ship1CommsMenu" value="0.0" integer="yes" />
     <set_variable name="Ship1Modules" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Cargo and Personnel" id_arme="8f8b7441-2bd4-4d47-91bf-956b4cc82963" parent_id_arme="11974bdf-b216-46f4-a7b9-5c50936650d3" />
+  <folder_arme name="Cargo and Personnel" id_arme="8f8b7441-2bd4-4d47-91bf-956b4cc82963" parent_id_arme="11974bdf-b216-46f4-a7b9-5c50936650d3" expanded_arme="" />
   <event name="Inventory Status Request" id_arme="adaf418e-b4ab-4df1-92cd-01f375f8e390" parent_id_arme="8f8b7441-2bd4-4d47-91bf-956b4cc82963">
     <if_exists player_slot="0" />
     <if_variable name="Ship1CommsMenu" comparator="EQUALS" value="1.0" />
@@ -1307,7 +1307,7 @@
     <incoming_comms_text from="Goblin" sideValue="playerSide" type="FRIEND">Request Received - beginning resupply.^Maintain distance 1000 from Goblin, with shields offline.</incoming_comms_text>
     <set_variable name="GoblintoShip1Resupply" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Ship 2 Comms Menu" id_arme="5bb8bb2b-3dbd-4dfd-949a-3cd406d51bae" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" />
+  <folder_arme name="Ship 2 Comms Menu" id_arme="5bb8bb2b-3dbd-4dfd-949a-3cd406d51bae" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" expanded_arme="" />
   <event name="Create Menu" id_arme="6be8b119-c742-449c-8a59-501eb1c9555e" parent_id_arme="5bb8bb2b-3dbd-4dfd-949a-3cd406d51bae">
     <if_exists player_slot="1" />
     <if_variable name="Ship2CommsMenu" comparator="EQUALS" value="0.0" />
@@ -1341,7 +1341,7 @@
     <set_variable name="Ship2CommsMenu" value="0.0" integer="yes" />
     <set_variable name="Ship2Modules" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Cargo and Personnel" id_arme="93d43161-228a-48fe-a4e6-d03e20a5c6f7" parent_id_arme="5bb8bb2b-3dbd-4dfd-949a-3cd406d51bae" />
+  <folder_arme name="Cargo and Personnel" id_arme="93d43161-228a-48fe-a4e6-d03e20a5c6f7" parent_id_arme="5bb8bb2b-3dbd-4dfd-949a-3cd406d51bae" expanded_arme="" />
   <event name="Inventory Status Request" id_arme="43b9f285-bb10-43e8-a0b7-08646f08d06f" parent_id_arme="93d43161-228a-48fe-a4e6-d03e20a5c6f7">
     <if_exists player_slot="1" />
     <if_variable name="Ship2CommsMenu" comparator="EQUALS" value="1.0" />
@@ -1607,7 +1607,7 @@
     <incoming_comms_text from="Goblin" sideValue="playerSide" type="FRIEND">Request Received - beginning resupply.^Maintain distance 1000 from Goblin, with shields offline.</incoming_comms_text>
     <set_variable name="GoblintoShip2Resupply" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Ship 3 Comms Menu" id_arme="2d9df97e-ffbc-4782-9594-4f80608a38f5" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" />
+  <folder_arme name="Ship 3 Comms Menu" id_arme="2d9df97e-ffbc-4782-9594-4f80608a38f5" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" expanded_arme="" />
   <event name="Create Menu" id_arme="999e529a-032c-48bc-8b69-53e41c956828" parent_id_arme="2d9df97e-ffbc-4782-9594-4f80608a38f5">
     <if_exists player_slot="2" />
     <if_variable name="Ship3CommsMenu" comparator="EQUALS" value="0.0" />
@@ -1641,7 +1641,7 @@
     <set_variable name="Ship3CommsMenu" value="0.0" integer="yes" />
     <set_variable name="Ship3Modules" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Cargo and Personnel" id_arme="506ea0ab-a872-45ff-98fe-5045d9e4c736" parent_id_arme="2d9df97e-ffbc-4782-9594-4f80608a38f5" />
+  <folder_arme name="Cargo and Personnel" id_arme="506ea0ab-a872-45ff-98fe-5045d9e4c736" parent_id_arme="2d9df97e-ffbc-4782-9594-4f80608a38f5" expanded_arme="" />
   <event name="Inventory Status Request" id_arme="8046a3c2-38b5-4a42-bab2-932cd8f93f0e" parent_id_arme="506ea0ab-a872-45ff-98fe-5045d9e4c736">
     <if_exists player_slot="2" />
     <if_variable name="Ship3CommsMenu" comparator="EQUALS" value="1.0" />
@@ -1907,7 +1907,7 @@
     <incoming_comms_text from="Goblin" sideValue="playerSide" type="FRIEND">Request Received - beginning resupply.^Maintain distance 1000 from Goblin, with shields offline.</incoming_comms_text>
     <set_variable name="GoblintoShip3Resupply" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Ship 4 Comms Menu" id_arme="3e34f8c7-7750-4a1d-bee5-0e96e4e39a46" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" />
+  <folder_arme name="Ship 4 Comms Menu" id_arme="3e34f8c7-7750-4a1d-bee5-0e96e4e39a46" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" expanded_arme="" />
   <event name="Create Menu" id_arme="3845cc70-a033-4dda-bfc5-a9ca1a9ca362" parent_id_arme="3e34f8c7-7750-4a1d-bee5-0e96e4e39a46">
     <if_exists player_slot="3" />
     <if_variable name="Ship4CommsMenu" comparator="EQUALS" value="0.0" />
@@ -1941,7 +1941,7 @@
     <set_variable name="Ship4CommsMenu" value="0.0" integer="yes" />
     <set_variable name="Ship4Modules" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Cargo and Personnel" id_arme="75a3aa64-e844-4b59-a028-fc97e3b22fe5" parent_id_arme="3e34f8c7-7750-4a1d-bee5-0e96e4e39a46" />
+  <folder_arme name="Cargo and Personnel" id_arme="75a3aa64-e844-4b59-a028-fc97e3b22fe5" parent_id_arme="3e34f8c7-7750-4a1d-bee5-0e96e4e39a46" expanded_arme="" />
   <event name="Inventory Status Request" id_arme="2c57ee97-a516-4d19-a446-837ea9bb5ac5" parent_id_arme="75a3aa64-e844-4b59-a028-fc97e3b22fe5">
     <if_exists player_slot="3" />
     <if_variable name="Ship4CommsMenu" comparator="EQUALS" value="1.0" />
@@ -2206,7 +2206,7 @@
     <incoming_comms_text from="Goblin" sideValue="playerSide" type="FRIEND">Request Received - beginning resupply.^Maintain distance 1000 from Goblin, with shields offline.</incoming_comms_text>
     <set_variable name="GoblintoShip4Resupply" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Ship 5 Comms Menu" id_arme="fb034650-149b-4f8a-a6b8-34a43ff377f5" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" />
+  <folder_arme name="Ship 5 Comms Menu" id_arme="fb034650-149b-4f8a-a6b8-34a43ff377f5" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" expanded_arme="" />
   <event name="Create Menu" id_arme="ec370d05-87ff-4c4a-9d4e-324a5e4e11c8" parent_id_arme="fb034650-149b-4f8a-a6b8-34a43ff377f5">
     <if_exists player_slot="4" />
     <if_variable name="Ship5CommsMenu" comparator="EQUALS" value="0.0" />
@@ -2240,7 +2240,7 @@
     <set_variable name="Ship5CommsMenu" value="0.0" integer="yes" />
     <set_variable name="Ship5Modules" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Cargo and Personnel" id_arme="9f6f7ca3-8605-4eb8-815f-0fe422d21307" parent_id_arme="fb034650-149b-4f8a-a6b8-34a43ff377f5" />
+  <folder_arme name="Cargo and Personnel" id_arme="9f6f7ca3-8605-4eb8-815f-0fe422d21307" parent_id_arme="fb034650-149b-4f8a-a6b8-34a43ff377f5" expanded_arme="" />
   <event name="Inventory Status Request" id_arme="14db95cb-a317-48fa-925d-72ab3a8aa6d5" parent_id_arme="9f6f7ca3-8605-4eb8-815f-0fe422d21307">
     <if_exists player_slot="4" />
     <if_variable name="Ship5CommsMenu" comparator="EQUALS" value="1.0" />
@@ -2506,7 +2506,7 @@
     <incoming_comms_text from="Goblin" sideValue="playerSide" type="FRIEND">Request Received - beginning resupply.^Maintain distance 1000 from Goblin, with shields offline.</incoming_comms_text>
     <set_variable name="GoblintoShip5Resupply" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Ship 6 Comms Menu" id_arme="9af40a39-82e7-46b8-8029-d42f3a9362cb" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" />
+  <folder_arme name="Ship 6 Comms Menu" id_arme="9af40a39-82e7-46b8-8029-d42f3a9362cb" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" expanded_arme="" />
   <event name="Create Menu" id_arme="89276a18-a3ab-4b56-a836-8c47e4ea01e4" parent_id_arme="9af40a39-82e7-46b8-8029-d42f3a9362cb">
     <if_exists player_slot="5" />
     <if_variable name="Ship6CommsMenu" comparator="EQUALS" value="0.0" />
@@ -2540,7 +2540,7 @@
     <set_variable name="Ship6CommsMenu" value="0.0" integer="yes" />
     <set_variable name="Ship6Modules" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Cargo and Personnel" id_arme="611e1b96-8be5-440a-8f66-eb54526a10f5" parent_id_arme="9af40a39-82e7-46b8-8029-d42f3a9362cb" />
+  <folder_arme name="Cargo and Personnel" id_arme="611e1b96-8be5-440a-8f66-eb54526a10f5" parent_id_arme="9af40a39-82e7-46b8-8029-d42f3a9362cb" expanded_arme="" />
   <event name="Inventory Status Request" id_arme="35985e6e-35bf-4896-8c94-274036a560c1" parent_id_arme="611e1b96-8be5-440a-8f66-eb54526a10f5">
     <if_exists player_slot="5" />
     <if_variable name="Ship6CommsMenu" comparator="EQUALS" value="1.0" />
@@ -2806,7 +2806,7 @@
     <incoming_comms_text from="Goblin" sideValue="playerSide" type="FRIEND">Request Received - beginning resupply.^Maintain distance 1000 from Goblin, with shields offline.</incoming_comms_text>
     <set_variable name="GoblintoShip6Resupply" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Ship 7 Comms Menu" id_arme="443153c2-8211-4887-a857-f6afbe7d8d8d" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" />
+  <folder_arme name="Ship 7 Comms Menu" id_arme="443153c2-8211-4887-a857-f6afbe7d8d8d" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" expanded_arme="" />
   <event name="Create Menu" id_arme="cdca0ef1-da90-496c-92c6-ae3663a649e8" parent_id_arme="443153c2-8211-4887-a857-f6afbe7d8d8d">
     <if_exists player_slot="6" />
     <if_variable name="Ship7CommsMenu" comparator="EQUALS" value="0.0" />
@@ -2840,7 +2840,7 @@
     <set_variable name="Ship7CommsMenu" value="0.0" integer="yes" />
     <set_variable name="Ship7Modules" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Cargo and Personnel" id_arme="b1625d82-7f83-412c-891a-bf45c42cb77e" parent_id_arme="443153c2-8211-4887-a857-f6afbe7d8d8d" />
+  <folder_arme name="Cargo and Personnel" id_arme="b1625d82-7f83-412c-891a-bf45c42cb77e" parent_id_arme="443153c2-8211-4887-a857-f6afbe7d8d8d" expanded_arme="" />
   <event name="Inventory Status Request" id_arme="fa32535d-cde8-4930-9be9-8eb412740921" parent_id_arme="b1625d82-7f83-412c-891a-bf45c42cb77e">
     <if_exists player_slot="6" />
     <if_variable name="Ship7CommsMenu" comparator="EQUALS" value="1.0" />
@@ -3105,7 +3105,7 @@
     <incoming_comms_text from="Goblin" sideValue="playerSide" type="FRIEND">Request Received - beginning resupply.^Maintain distance 1000 from Goblin, with shields offline.</incoming_comms_text>
     <set_variable name="GoblintoShip7Resupply" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Ship 8 Comms Menu" id_arme="f693b0b1-adc0-47b6-b056-6b67750fd563" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" />
+  <folder_arme name="Ship 8 Comms Menu" id_arme="f693b0b1-adc0-47b6-b056-6b67750fd563" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" expanded_arme="" />
   <event name="Create Menu" id_arme="9785755e-538c-48d9-a584-93acfeb86536" parent_id_arme="f693b0b1-adc0-47b6-b056-6b67750fd563">
     <if_exists player_slot="7" />
     <if_variable name="Ship8CommsMenu" comparator="EQUALS" value="0.0" />
@@ -3139,7 +3139,7 @@
     <set_variable name="Ship8CommsMenu" value="0.0" integer="yes" />
     <set_variable name="Ship8Modules" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Cargo and Personnel" id_arme="02089ddc-6f70-4bf4-985c-775a9d567bc3" parent_id_arme="f693b0b1-adc0-47b6-b056-6b67750fd563" />
+  <folder_arme name="Cargo and Personnel" id_arme="02089ddc-6f70-4bf4-985c-775a9d567bc3" parent_id_arme="f693b0b1-adc0-47b6-b056-6b67750fd563" expanded_arme="" />
   <event name="Inventory Status Request" id_arme="33b534d2-3a6b-4b8f-824b-05faa68851db" parent_id_arme="02089ddc-6f70-4bf4-985c-775a9d567bc3">
     <if_exists player_slot="7" />
     <if_variable name="Ship8CommsMenu" comparator="EQUALS" value="1.0" />
@@ -3405,7 +3405,7 @@
     <incoming_comms_text from="Goblin" sideValue="playerSide" type="FRIEND">Request Received - beginning resupply.^Maintain distance 1000 from Goblin, with shields offline.</incoming_comms_text>
     <set_variable name="GoblintoShip8Resupply" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Ship (SHIPNUMBER) Comms Menu" id_arme="5b63e8df-a5cd-439c-9d32-a0bff91c6e28" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" />
+  <folder_arme name="Ship (SHIPNUMBER) Comms Menu" id_arme="5b63e8df-a5cd-439c-9d32-a0bff91c6e28" parent_id_arme="80a1374f-673f-4705-b885-2cd2598e2f02" expanded_arme="" />
   <disabled_event name="Create Menu" id_arme="2bd924f2-3cf8-49d3-b8a2-84c89d66262d" parent_id_arme="5b63e8df-a5cd-439c-9d32-a0bff91c6e28">
     <if_exists player_slot="(PLAYERSLOT)" />
     <if_variable name="Ship(SHIPNUMBER)CommsMenu" comparator="EQUALS" value="0.0" />
@@ -37153,7 +37153,7 @@
     <set_object_property property="positionX" value="DynamicBHCoordX*1000" name="Dynamic Blackhole 20.0" />
     <set_object_property property="positionZ" value="DynamicBHCoordZ*1000" name="Dynamic Blackhole 20.0" />
   </event>
-  <folder_arme name="Sensor Ping" id_arme="ad9938a2-658d-41b7-848f-b251c044b0d7" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
+  <folder_arme name="Sensor Ping" id_arme="ad9938a2-658d-41b7-848f-b251c044b0d7" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <event name="Sensors Off" id_arme="79530b6a-9a01-41ae-9cc9-3a43331948b4" parent_id_arme="ad9938a2-658d-41b7-848f-b251c044b0d7">
     <if_variable name="Sensor Ping" comparator="EQUALS" value="10.0" />
     <destroy name="_A_" />
@@ -37185,6 +37185,7 @@
     <set_variable name="Sensor Ping" value="11.0" integer="yes" />
   </event>
   <event name="Ping Sensors" id_arme="44c606bb-79ae-42f2-9403-97957fca9b6f" parent_id_arme="ad9938a2-658d-41b7-848f-b251c044b0d7">
+    <if_variable name="DisablePing" comparator="EQUALS" value="2.0" />
     <if_variable name="Sensor Ping" comparator="LESS" value="10.0" />
     <if_timer_finished name="Sensor Ping" />
     <set_variable name="Update Position A" value="1.0" integer="yes" />
