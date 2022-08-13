@@ -2,7 +2,7 @@
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!---->
   </start>
-  <folder_arme name="GM Keys" id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
+  <folder_arme name="GM Keys" id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
   <event name="GM Main Menu" id_arme="605a7c3f-76b5-4953-bb43-aa50abc3f88b" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f">
     <if_variable name="GM Controls" comparator="EQUALS" value="1.0" />
     <if_variable name="GM Menu" comparator="EQUALS" value="1.0" />
@@ -272,7 +272,7 @@
     <set_variable name="GM Menu" value="12.0" />
     <set_timer name="GM Menu" seconds="1" />
   </event>
-  <folder_arme name="Bas. Keys" id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
+  <folder_arme name="Bas. Keys" id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
   <event name="Bas. Key Menu" id_arme="7ae597ca-9166-4e2e-af7f-7a820dc1f151" parent_id_arme="0495fdca-3d86-4cab-a403-d2dbdffe127e">
     <if_variable name="GM Menu" comparator="EQUALS" value="3.0" />
     <if_timer_finished name="GM Menu" />
@@ -990,6 +990,8 @@
     <clear_gm_button text="Single Ximni\Shuttle" />
     <clear_gm_button text="Single Ximni\LR Shuttle" />
     <clear_gm_button text="Ximni Fleet\Light Group" />
+    <clear_gm_button text="Ximni Fleet\Medium Group" />
+    <clear_gm_button text="Ximni Fleet\Heavy Group" />
     <!--Hjorden Menu-->
     <clear_gm_button text="Single Hjorden\Cruiser" />
     <clear_gm_button text="Single Hjorden\Cruise Liner" />
@@ -2433,6 +2435,8 @@
     <set_gm_button text="Single Ximni\Shuttle" />
     <set_gm_button text="Single Ximni\LR Shuttle" />
     <set_gm_button text="Ximni Fleet\Light Group" />
+    <set_gm_button text="Ximni Fleet\Medium Group" />
+    <set_gm_button text="Ximni Fleet\Heavy Group" />
     <clear_gm_button text="1" />
     <!--Change Default Side-->
     <clear_gm_button text="Change" />
@@ -2525,11 +2529,34 @@
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
   <folder_arme name="Fleets" id_arme="23de6ecb-6087-4bf6-9f2a-3fa60e96bbfb" parent_id_arme="4dbde460-7816-4bce-a918-6fed43d54922" />
-  <event name="Create Light Battlegroup" id_arme="e486a187-427c-4b5f-ad44-26b832c3842c" parent_id_arme="23de6ecb-6087-4bf6-9f2a-3fa60e96bbfb">
+  <event name="Create Light Battlegroup" id_arme="c480611d-18be-4ef2-a868-8538057ab27c" parent_id_arme="23de6ecb-6087-4bf6-9f2a-3fa60e96bbfb">
     <if_gm_button text="Ximni Fleet\Light Group" />
-    <create type="neutral" use_gm_position="" name="--" hullID="7501" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="neutral" use_gm_position="" name="--" hullID="7502" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_variable name="Fleet Settings" value="1.0" />
+    <set_variable name="Auto AI Type" value="305.0" integer="yes" />
+    <set_variable name="Random Direction" value="1.0" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+  </event>
+  <event name="Create Medium Battlegroup" id_arme="0f0afc03-f938-474b-8e1f-9141ed6c92be" parent_id_arme="23de6ecb-6087-4bf6-9f2a-3fa60e96bbfb">
+    <if_gm_button text="Ximni Fleet\Medium Group" />
+    <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="small medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="medium large" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_variable name="Fleet Settings" value="1.0" />
+    <set_variable name="Auto AI Type" value="305.0" integer="yes" />
+    <set_variable name="Random Direction" value="1.0" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+  </event>
+  <event name="Create Heavy Battlegroup" id_arme="e486a187-427c-4b5f-ad44-26b832c3842c" parent_id_arme="23de6ecb-6087-4bf6-9f2a-3fa60e96bbfb">
+    <if_gm_button text="Ximni Fleet\Heavy Group" />
+    <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="small" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="small medium" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="medium large" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="neutral" use_gm_position="" name="--" raceKeys="Ximni FactionXimni" hullKeys="medium large" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Auto AI Type" value="305.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -40881,7 +40908,7 @@
     <set_variable name="ScanSignature" value="0.0" integer="yes" />
     <set_variable name="ScanPoint" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Hazard Keys" id_arme="043c9bdc-8549-4b00-ab76-1d191d309472" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
+  <folder_arme name="Hazard Keys" id_arme="043c9bdc-8549-4b00-ab76-1d191d309472" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
   <event name="Hazard Keys Menu" id_arme="e994d630-6ae0-46f0-a06d-514995ebd4cf" parent_id_arme="043c9bdc-8549-4b00-ab76-1d191d309472">
     <if_timer_finished name="GM Menu" />
     <if_variable name="GM Menu" comparator="EQUALS" value="8.0" />
@@ -41164,7 +41191,7 @@
     <if_gm_button text="Terrain\Asteroids\Large Field" />
     <create count="100" type="asteroids" use_gm_position="" radius="5000" randomRange="5000" />
   </event>
-  <folder_arme name="Interaction Keys" id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" expanded_arme="" />
+  <folder_arme name="Interaction Keys" id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99" parent_id_arme="a63d8b7a-dd61-481e-b818-314ef7f7af5f" />
   <event name="Interaction Menu" id_arme="6f5c9324-17b9-470d-ac70-4f1e4a50636a" parent_id_arme="c3aaadcc-fe4b-4a02-8f3a-f263ccfd6c99">
     <if_timer_finished name="GM Menu" />
     <if_variable name="GM Menu" comparator="EQUALS" value="10.0" />
