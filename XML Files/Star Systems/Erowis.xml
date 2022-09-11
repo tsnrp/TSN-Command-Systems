@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="200.0" integer="yes" />
     <set_variable name="Alignment" value="Hegemony" integer="yes" />
   </start>
-  <folder_arme name="Erowis System" id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" expanded_arme="" />
+  <folder_arme name="Erowis System" id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
   <folder_arme name="Erowis Settings" id_arme="a5dba461-b284-47ac-955b-3589afa07984" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
   <folder_arme name="Erowis Menu" id_arme="678e3871-0237-498c-bc2c-a0c3ae561298" parent_id_arme="a5dba461-b284-47ac-955b-3589afa07984" />
   <event name="Erowis Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="678e3871-0237-498c-bc2c-a0c3ae561298">
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Erowis Sector I" id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" expanded_arme="" />
+  <folder_arme name="Erowis Sector I" id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
   <event name="Create Erowis Sector I" id_arme="3f891468-1e8e-4606-acd9-c4ce08ec9c6e" parent_id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246">
     <if_timer_finished name="Transition" />
     <if_variable name="Erowis System" comparator="EQUALS" value="1.0" />
@@ -75,7 +75,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea" parent_id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea" parent_id_arme="f90f758e-eb38-41cc-8812-4ddc0be9c246" />
   <event name="Transition to Sector II" id_arme="e450f899-09ad-407f-8d81-d333578cac19" parent_id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
@@ -109,7 +109,7 @@
     <set_variable name="Sector" value="5.0" integer="yes" />
     <set_variable name="Erowis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="bd2090ce-b9df-446b-b3af-620e61ea32ea" />
   <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
@@ -691,7 +691,7 @@
     <set_variable name="Erowis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Erowis Sector VI" id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" expanded_arme="" />
+  <folder_arme name="Erowis Sector VI" id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" parent_id_arme="5ab9fef0-cffd-4a9c-a676-c76f5f8cc096" />
   <event name="Create Erowis Sector VI" id_arme="d1f648ed-607d-4f9b-9619-1550fdd1fe70" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae">
     <if_timer_finished name="Transition" />
     <if_variable name="Erowis System" comparator="EQUALS" value="1.0" />
@@ -711,7 +711,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
     <set_variable name="Erowis System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" parent_id_arme="1215cd97-45f9-4486-9707-e0bee4f4baae" />
   <event name="Transition to Sector V" id_arme="e70edfd4-10cc-44d3-aeb3-ade938c24a0c" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />
@@ -745,7 +745,7 @@
     <set_variable name="Sector" value="2.0" integer="yes" />
     <set_variable name="Erowis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="9fc82c07-3802-488a-b718-6146f7a09d37" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="9fc82c07-3802-488a-b718-6146f7a09d37" parent_id_arme="12374c97-e408-497c-baac-8fd97a5f29c8" />
   <event name="Gate Offline" id_arme="60abed91-3b08-4916-907a-8578c553980a" parent_id_arme="9fc82c07-3802-488a-b718-6146f7a09d37">
     <if_variable name="Sector" comparator="EQUALS" value="6" />
     <if_variable name="Erowis System" comparator="EQUALS" value="2.0" />

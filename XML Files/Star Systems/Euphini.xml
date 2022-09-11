@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="483.0" integer="yes" />
     <set_variable name="Alignment" value="Badlands" integer="yes" />
   </start>
-  <folder_arme name="Euphini System" id_arme="eaf41dcc-fdf7-46b8-a3cd-f47067b74788" expanded_arme="" />
+  <folder_arme name="Euphini System" id_arme="eaf41dcc-fdf7-46b8-a3cd-f47067b74788" />
   <folder_arme name="Euphini Settings" id_arme="c86758cf-67f4-4c58-9980-a8569fd43136" parent_id_arme="eaf41dcc-fdf7-46b8-a3cd-f47067b74788" />
   <folder_arme name="Euphini Menu" id_arme="8b16e436-bbd4-4366-bb25-b85fc08b403f" parent_id_arme="c86758cf-67f4-4c58-9980-a8569fd43136" />
   <event name="Euphini Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="8b16e436-bbd4-4366-bb25-b85fc08b403f">
@@ -337,7 +337,7 @@
     <if_variable name="Euphini System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="37749.0" y="0.0" z="36115.0" angle="0" name="Drake" hullID="1250" sideValue="8" />
+    <create type="neutral" x="37749.0" y="0.0" z="36115.0" angle="0" name="Drake" hullID="1250" sideValue="8" />
     <set_variable name="ClassYPlanet" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -542,7 +542,7 @@
     <set_variable name="Euphini System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector VI - X" id_arme="b93e8bd3-7304-448d-8d33-04d487a557a8" parent_id_arme="eaf41dcc-fdf7-46b8-a3cd-f47067b74788" expanded_arme="" />
+  <folder_arme name="Sector VI - X" id_arme="b93e8bd3-7304-448d-8d33-04d487a557a8" parent_id_arme="eaf41dcc-fdf7-46b8-a3cd-f47067b74788" />
   <folder_arme name="Euphini Sector VI" id_arme="8554202a-111e-473d-93fd-313156048cc7" parent_id_arme="b93e8bd3-7304-448d-8d33-04d487a557a8" />
   <event name="Create Euphini Sector VI" id_arme="59e5607f-96c6-4ecb-ad5b-432340ec0309" parent_id_arme="8554202a-111e-473d-93fd-313156048cc7">
     <if_timer_finished name="Transition" />
@@ -777,7 +777,7 @@
     <set_variable name="Euphini System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Euphini Sector VIII" id_arme="ba328bad-0499-4454-a865-b28c70bc9c0e" parent_id_arme="b93e8bd3-7304-448d-8d33-04d487a557a8" expanded_arme="" />
+  <folder_arme name="Euphini Sector VIII" id_arme="ba328bad-0499-4454-a865-b28c70bc9c0e" parent_id_arme="b93e8bd3-7304-448d-8d33-04d487a557a8" />
   <event name="Create Euphini Sector VIII" id_arme="43bc0910-f569-436f-aa66-61d990422eb5" parent_id_arme="ba328bad-0499-4454-a865-b28c70bc9c0e">
     <if_timer_finished name="Transition" />
     <if_variable name="Euphini System" comparator="EQUALS" value="1.0" />
@@ -806,7 +806,7 @@
     <create count="60" type="nebulas" startX="61951.0" startY="0.0" startZ="34829.0" endX="31363.0" endY="0.0" endZ="47089.0" randomRange="5803" />
     <create count="60" type="nebulas" startAngle="-304.4" endAngle="-179.9" startX="37307.0" startY="0.0" startZ="42136.0" radius="29277" randomRange="5991" />
   </event>
-  <folder_arme name="Navigation" id_arme="9313e3da-bcd4-4453-9682-c9857e57b29d" parent_id_arme="ba328bad-0499-4454-a865-b28c70bc9c0e" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="9313e3da-bcd4-4453-9682-c9857e57b29d" parent_id_arme="ba328bad-0499-4454-a865-b28c70bc9c0e" />
   <event name="Transition to Sector IX" id_arme="27351ad5-f3a5-4421-84e2-78bdaeb3c4a7" parent_id_arme="9313e3da-bcd4-4453-9682-c9857e57b29d">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -895,7 +895,7 @@
     <set_variable name="Euphini System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="4b75fd4d-c360-4041-97fc-73e892de4d7a" parent_id_arme="9313e3da-bcd4-4453-9682-c9857e57b29d" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="4b75fd4d-c360-4041-97fc-73e892de4d7a" parent_id_arme="9313e3da-bcd4-4453-9682-c9857e57b29d" />
   <event name="Gate Offline" id_arme="5bb8b82b-07be-4ebd-922e-2ae855a4015a" parent_id_arme="4b75fd4d-c360-4041-97fc-73e892de4d7a">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Euphini System" comparator="EQUALS" value="2.0" />
@@ -1082,8 +1082,8 @@
     <if_variable name="Euphini System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="52074.0" y="0.0" z="38000.0" angle="0" name="Danae Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="62204.0" y="0.0" z="69903.0" angle="0" name="CP-27X" hullID="1002" />
+    <create type="genericMesh" x="52074.0" y="0.0" z="38000.0" name="Danae Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="62204.0" y="0.0" z="69903.0" angle="0" name="CP-27X" hullID="1002" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

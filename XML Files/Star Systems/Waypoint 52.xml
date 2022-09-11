@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="438.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Waypoint 52" id_arme="1f46c3be-ecc3-4c6b-b82c-6cd44ec0a67b" expanded_arme="" />
+  <folder_arme name="Waypoint 52" id_arme="1f46c3be-ecc3-4c6b-b82c-6cd44ec0a67b" />
   <folder_arme name="Waypoint 52 Settings" id_arme="44296c06-93a2-4316-8e4b-89cadab8144e" parent_id_arme="1f46c3be-ecc3-4c6b-b82c-6cd44ec0a67b" />
   <folder_arme name="Waypoint 52 Menu" id_arme="3400ed78-ff8d-445a-9541-bcba59f3bfa5" parent_id_arme="44296c06-93a2-4316-8e4b-89cadab8144e" />
   <event name="Waypoint 52 Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="3400ed78-ff8d-445a-9541-bcba59f3bfa5">
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sector 1" id_arme="5954e373-fffa-4876-b8a9-96d3a05d8d2a" parent_id_arme="1f46c3be-ecc3-4c6b-b82c-6cd44ec0a67b" expanded_arme="" />
+  <folder_arme name="Sector 1" id_arme="5954e373-fffa-4876-b8a9-96d3a05d8d2a" parent_id_arme="1f46c3be-ecc3-4c6b-b82c-6cd44ec0a67b" />
   <event name="Create Sector 1" id_arme="6e801577-8392-45ae-a0f1-0c8f03c47498" parent_id_arme="5954e373-fffa-4876-b8a9-96d3a05d8d2a">
     <if_timer_finished name="Transition" />
     <if_variable name="Waypoint 52" comparator="EQUALS" value="1.0" />
@@ -84,7 +84,7 @@
     <create count="60" type="nebulas" startX="11381.0" startY="0.0" startZ="94341.0" endX="16952.0" endY="0.0" endZ="63776.0" randomRange="6057" />
     <set_variable name="Waypoint 52" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="1b3408aa-4145-4f14-a04b-4be81f901e36" parent_id_arme="5954e373-fffa-4876-b8a9-96d3a05d8d2a" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="1b3408aa-4145-4f14-a04b-4be81f901e36" parent_id_arme="5954e373-fffa-4876-b8a9-96d3a05d8d2a" />
   <event name="Transition to Sector 2" id_arme="25bca340-d0c3-412c-9511-7a973ae46966" parent_id_arme="1b3408aa-4145-4f14-a04b-4be81f901e36">
     <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -96,7 +96,7 @@
     <set_variable name="Waypoint 52" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="fb921dfc-49f9-4576-b3c9-51830fdb0eac" parent_id_arme="1b3408aa-4145-4f14-a04b-4be81f901e36" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="fb921dfc-49f9-4576-b3c9-51830fdb0eac" parent_id_arme="1b3408aa-4145-4f14-a04b-4be81f901e36" />
   <event name="Gate Offline" id_arme="8e5eb509-f26c-441e-83b0-bdd0db4f5643" parent_id_arme="fb921dfc-49f9-4576-b3c9-51830fdb0eac">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Waypoint 52" comparator="EQUALS" value="2.0" />
@@ -283,7 +283,7 @@
     <if_variable name="Waypoint 52" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="17393.0" y="0.0" z="23172.0" angle="0" name="Atlantis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="17393.0" y="0.0" z="23172.0" name="Atlantis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -329,7 +329,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Atlantis to Waypoint 52" value="0.0" />
   </event>
-  <folder_arme name="Sector 2" id_arme="a5e557d0-6b0b-40e5-9330-45f452e2f635" parent_id_arme="1f46c3be-ecc3-4c6b-b82c-6cd44ec0a67b" expanded_arme="" />
+  <folder_arme name="Sector 2" id_arme="a5e557d0-6b0b-40e5-9330-45f452e2f635" parent_id_arme="1f46c3be-ecc3-4c6b-b82c-6cd44ec0a67b" />
   <event name="Create Sector 2" id_arme="efd82ca0-82ae-4d75-9f1a-fd461aa886f4" parent_id_arme="a5e557d0-6b0b-40e5-9330-45f452e2f635">
     <if_timer_finished name="Transition" />
     <if_variable name="Waypoint 52" comparator="EQUALS" value="1.0" />
@@ -350,7 +350,7 @@
     <create count="203" type="nebulas" startX="15477.0" startY="0.0" startZ="3462.0" endX="15766.0" endY="0.0" endZ="36899.0" randomRange="7027" />
     <set_variable name="Waypoint 52" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="2a7d8d97-28ae-410e-8e67-b876fc4f263a" parent_id_arme="a5e557d0-6b0b-40e5-9330-45f452e2f635" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="2a7d8d97-28ae-410e-8e67-b876fc4f263a" parent_id_arme="a5e557d0-6b0b-40e5-9330-45f452e2f635" />
   <event name="Transition to Sector 1" id_arme="94d3b796-62c7-4449-aef1-2f56b217ffd6" parent_id_arme="2a7d8d97-28ae-410e-8e67-b876fc4f263a">
     <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -362,7 +362,7 @@
     <set_variable name="Waypoint 52" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="5e1a1c4e-d1fc-4422-9959-2139d109b88c" parent_id_arme="2a7d8d97-28ae-410e-8e67-b876fc4f263a" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="5e1a1c4e-d1fc-4422-9959-2139d109b88c" parent_id_arme="2a7d8d97-28ae-410e-8e67-b876fc4f263a" />
   <event name="Gate Offline" id_arme="623449d0-14cb-4bb2-a337-ffe21cc38c0a" parent_id_arme="5e1a1c4e-d1fc-4422-9959-2139d109b88c">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Waypoint 52" comparator="EQUALS" value="2.0" />
@@ -549,7 +549,7 @@
     <if_variable name="Waypoint 52" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="74970.0" y="0.0" z="74680.0" angle="0" name="Volantis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="74970.0" y="0.0" z="74680.0" name="Volantis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

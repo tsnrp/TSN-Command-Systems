@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="243.0" integer="yes" />
     <set_variable name="Alignment" value="Hegemony" integer="yes" />
   </start>
-  <folder_arme name="Sierra System" id_arme="e9246d5c-950d-4fec-a3ee-d076de7edef0" expanded_arme="" />
+  <folder_arme name="Sierra System" id_arme="e9246d5c-950d-4fec-a3ee-d076de7edef0" />
   <folder_arme name="Sierra Settings" id_arme="f3c59cb5-0313-4447-af42-86dc6c1feffd" parent_id_arme="e9246d5c-950d-4fec-a3ee-d076de7edef0" />
   <folder_arme name="Sierra Menu" id_arme="8933d759-51fd-4d3b-986a-95780cc5141b" parent_id_arme="f3c59cb5-0313-4447-af42-86dc6c1feffd" />
   <event name="Sierra Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="8933d759-51fd-4d3b-986a-95780cc5141b">
@@ -132,7 +132,7 @@
     <set_variable name="Sierra System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sierra Sector II" id_arme="9b5a6ebc-274a-42ec-9fc7-eff67bffcbaf" parent_id_arme="e9246d5c-950d-4fec-a3ee-d076de7edef0" expanded_arme="" />
+  <folder_arme name="Sierra Sector II" id_arme="9b5a6ebc-274a-42ec-9fc7-eff67bffcbaf" parent_id_arme="e9246d5c-950d-4fec-a3ee-d076de7edef0" />
   <event name="Create Sierra Sector II" id_arme="6e8a6f42-7123-48ae-88ee-b64a9dd08366" parent_id_arme="9b5a6ebc-274a-42ec-9fc7-eff67bffcbaf">
     <if_variable name="Sierra System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -153,7 +153,7 @@
     <create count="150" type="asteroids" startX="71030.0" startY="0.0" startZ="65747.0" endX="17000.0" endY="0.0" endZ="55000.0" randomRange="24975" />
     <create count="25" type="nebulas" startX="55000.0" startY="0.0" startZ="73000.0" endX="26778.0" endY="0.0" endZ="88073.0" randomRange="4638" />
   </event>
-  <folder_arme name="Navigation" id_arme="4bec2e69-b4bf-4a6f-8dbe-04138865d3ee" parent_id_arme="9b5a6ebc-274a-42ec-9fc7-eff67bffcbaf" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="4bec2e69-b4bf-4a6f-8dbe-04138865d3ee" parent_id_arme="9b5a6ebc-274a-42ec-9fc7-eff67bffcbaf" />
   <event name="Transition to Sector III" id_arme="334396ed-1f6c-4881-ae3e-7ff19c4a0e91" parent_id_arme="4bec2e69-b4bf-4a6f-8dbe-04138865d3ee">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -209,7 +209,7 @@
     <set_variable name="Sierra System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="4.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="c6928acc-586a-4af6-b259-2eb1d94d9b4c" parent_id_arme="4bec2e69-b4bf-4a6f-8dbe-04138865d3ee" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="c6928acc-586a-4af6-b259-2eb1d94d9b4c" parent_id_arme="4bec2e69-b4bf-4a6f-8dbe-04138865d3ee" />
   <event name="Gate Offline" id_arme="caefcf16-7aaf-4ab0-9e62-f55dacf3af2b" parent_id_arme="c6928acc-586a-4af6-b259-2eb1d94d9b4c">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Sierra System" comparator="EQUALS" value="2.0" />
@@ -396,7 +396,7 @@
     <if_variable name="Sierra System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="53959.0" y="0.0" z="28450.0" angle="0" name="Erebus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="53959.0" y="0.0" z="28450.0" name="Erebus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -911,7 +911,7 @@
     <set_variable name="Sierra System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sierra Sector VIII" id_arme="579e0cc2-c3a1-4669-bd73-58d40c59671a" parent_id_arme="e9246d5c-950d-4fec-a3ee-d076de7edef0" expanded_arme="" />
+  <folder_arme name="Sierra Sector VIII" id_arme="579e0cc2-c3a1-4669-bd73-58d40c59671a" parent_id_arme="e9246d5c-950d-4fec-a3ee-d076de7edef0" />
   <event name="Create Sierra Sector VIII" id_arme="447352d5-a341-43c6-829e-5a408cad4dce" parent_id_arme="579e0cc2-c3a1-4669-bd73-58d40c59671a">
     <if_variable name="Sierra System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -932,7 +932,7 @@
     <create count="47" type="asteroids" startX="32472.0" startY="0.0" startZ="31465.0" endX="16137.0" endY="0.0" endZ="19780.0" randomRange="10000" />
     <create count="3" type="mines" startX="58231.0" startY="0.0" startZ="48052.0" endX="58231.0" endY="0.0" endZ="48052.0" randomRange="33039" />
   </event>
-  <folder_arme name="Navigation" id_arme="692d5efe-abdc-49fe-b74d-fbcaaeb0f0b9" parent_id_arme="579e0cc2-c3a1-4669-bd73-58d40c59671a" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="692d5efe-abdc-49fe-b74d-fbcaaeb0f0b9" parent_id_arme="579e0cc2-c3a1-4669-bd73-58d40c59671a" />
   <event name="Transition to Sector IX" id_arme="a87278c0-628d-4e3b-a782-f08ae0ba1fd2" parent_id_arme="692d5efe-abdc-49fe-b74d-fbcaaeb0f0b9">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -988,7 +988,7 @@
     <set_variable name="Sierra System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="4.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="4d6c88be-0260-4754-ad88-f0717bbc1da0" parent_id_arme="692d5efe-abdc-49fe-b74d-fbcaaeb0f0b9" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="4d6c88be-0260-4754-ad88-f0717bbc1da0" parent_id_arme="692d5efe-abdc-49fe-b74d-fbcaaeb0f0b9" />
   <event name="Gate Offline" id_arme="a9ff9b26-30d2-4758-b324-da88afc3634d" parent_id_arme="4d6c88be-0260-4754-ad88-f0717bbc1da0">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Sierra System" comparator="EQUALS" value="2.0" />
@@ -1175,7 +1175,7 @@
     <if_variable name="Sierra System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="50943.0" y="0.0" z="55465.0" angle="0" name="Volantis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="50943.0" y="0.0" z="55465.0" name="Volantis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

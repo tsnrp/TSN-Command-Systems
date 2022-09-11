@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="467.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Atlantis System" id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" expanded_arme="" />
+  <folder_arme name="Atlantis System" id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
   <folder_arme name="Atlantis Settings" id_arme="6a2258c3-a4b7-41fe-afa3-44ee6c37b2a7" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
   <folder_arme name="Atlantis Menu" id_arme="c2a03bcd-ea39-4eef-845c-b59609f1681c" parent_id_arme="6a2258c3-a4b7-41fe-afa3-44ee6c37b2a7" />
   <event name="Atlantis Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="c2a03bcd-ea39-4eef-845c-b59609f1681c">
@@ -56,8 +56,8 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sector I - V" id_arme="3b9ad800-a830-4a7d-a636-a088a510d4c3" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" expanded_arme="" />
-  <folder_arme name="Atlantis Sector I" id_arme="cbd8d290-e045-4559-b09b-4cd859152557" parent_id_arme="3b9ad800-a830-4a7d-a636-a088a510d4c3" expanded_arme="" />
+  <folder_arme name="Sector I - V" id_arme="3b9ad800-a830-4a7d-a636-a088a510d4c3" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
+  <folder_arme name="Atlantis Sector I" id_arme="cbd8d290-e045-4559-b09b-4cd859152557" parent_id_arme="3b9ad800-a830-4a7d-a636-a088a510d4c3" />
   <event name="Create Atlantis Sector I" id_arme="4bdf0701-f314-4648-ae47-c2ecaf3dedcd" parent_id_arme="cbd8d290-e045-4559-b09b-4cd859152557">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -83,7 +83,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="7a2a6f2f-f075-4610-bd16-0ef75cc49062" parent_id_arme="cbd8d290-e045-4559-b09b-4cd859152557" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="7a2a6f2f-f075-4610-bd16-0ef75cc49062" parent_id_arme="cbd8d290-e045-4559-b09b-4cd859152557" />
   <event name="Transition to Sector II" id_arme="73bf08d3-1aae-4b6f-b9d9-09226359d2f6" parent_id_arme="7a2a6f2f-f075-4610-bd16-0ef75cc49062">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -117,7 +117,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="5e66556b-cee5-4de0-abf9-874fe539b59f" parent_id_arme="7a2a6f2f-f075-4610-bd16-0ef75cc49062" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="5e66556b-cee5-4de0-abf9-874fe539b59f" parent_id_arme="7a2a6f2f-f075-4610-bd16-0ef75cc49062" />
   <event name="Gate Offline" id_arme="6273c20e-cdb5-4ba5-b38f-f48275a6f258" parent_id_arme="5e66556b-cee5-4de0-abf9-874fe539b59f">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -457,7 +457,7 @@
     <create type="genericMesh" x="56701.0" y="0.0" z="86813.0" angle="0" name="B-7R" meshFileName="dat\mine.dxs" textureFileName="dat\arvonian_station_spec.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
     <create type="genericMesh" x="78532.0" y="0.0" z="81994.0" angle="0" name="B-6G" meshFileName="dat\mine.dxs" textureFileName="dat\arvonian_station_spec.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
     <create type="genericMesh" x="97955.0" y="0.0" z="69648.0" angle="0" name="B-3D" meshFileName="dat\mine.dxs" textureFileName="dat\arvonian_station_spec.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <create type="station" x="20800.0" y="0.0" z="66852.0" angle="0" name="RS-00" hullID="1004" />
+    <create type="neutral" x="20800.0" y="0.0" z="66852.0" angle="0" name="RS-00" hullID="1004" />
     <set_variable name="Sector Type" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -704,10 +704,10 @@
     <create type="neutral" x="16070.0" y="0.0" z="56361.0" angle="0" name="SY-67X" hullID="1053" />
     <create type="neutral" x="25556.0" y="0.0" z="55307.0" angle="0" name="SY-23X" hullID="1053" />
     <create type="neutral" x="28416.0" y="0.0" z="62233.0" angle="0" name="WP-919" hullID="1052" sideValue="2" />
-    <create type="station" x="14000.0" y="0.0" z="66637.0" angle="0" name="CB-21" hullID="1002" />
-    <create type="station" x="36374.0" y="0.0" z="65583.0" angle="0" name="ATL-131" hullID="1000" />
-    <create type="station" x="25383.0" y="0.0" z="72358.0" angle="0" name="ATL-239" hullID="1000" />
-    <create type="station" x="37127.0" y="0.0" z="78531.0" angle="0" name="ATL-322" hullID="1000" />
+    <create type="neutral" x="14000.0" y="0.0" z="66637.0" angle="0" name="CB-21" hullID="1002" />
+    <create type="neutral" x="36374.0" y="0.0" z="65583.0" angle="0" name="ATL-131" hullID="1000" />
+    <create type="neutral" x="25383.0" y="0.0" z="72358.0" angle="0" name="ATL-239" hullID="1000" />
+    <create type="neutral" x="37127.0" y="0.0" z="78531.0" angle="0" name="ATL-322" hullID="1000" />
     <set_variable name="Sector Type" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -804,10 +804,10 @@
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="56247.0" y="0.0" z="16876.0" angle="0" name="KR1" hullID="1005" />
-    <create type="station" x="22833.0" y="0.0" z="39249.0" angle="0" name="AV1" hullID="1006" />
-    <create type="station" x="48838.0" y="0.0" z="46949.0" angle="0" name="TG1" hullID="1007" />
-    <create type="station" x="38669.0" y="0.0" z="25593.0" angle="0" name="SK1" hullID="1008" />
+    <create type="neutral" x="56247.0" y="0.0" z="16876.0" angle="0" name="KR1" hullID="1005" />
+    <create type="neutral" x="22833.0" y="0.0" z="39249.0" angle="0" name="AV1" hullID="1006" />
+    <create type="neutral" x="48838.0" y="0.0" z="46949.0" angle="0" name="TG1" hullID="1007" />
+    <create type="neutral" x="38669.0" y="0.0" z="25593.0" angle="0" name="SK1" hullID="1008" />
     <create type="neutral" x="37361.0" y="0.0" z="71065.0" angle="0" name="WP2" hullID="1052" sideValue="2" />
     <create type="neutral" x="49274.0" y="0.0" z="78474.0" angle="0" name="WP1" hullID="1052" sideValue="2" />
     <create type="neutral" x="79637.0" y="0.0" z="66125.0" angle="0" name="WP3" hullID="1052" sideValue="2" />
@@ -837,8 +837,8 @@
     <set_variable name="Atlantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector VI - X" id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" expanded_arme="" />
-  <folder_arme name="Atlantis Sector VI" id_arme="6a51792f-4c5d-4455-afcc-de0c9256ce6f" parent_id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" expanded_arme="" />
+  <folder_arme name="Sector VI - X" id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
+  <folder_arme name="Atlantis Sector VI" id_arme="6a51792f-4c5d-4455-afcc-de0c9256ce6f" parent_id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" />
   <event name="Create Atlantis Sector VI" id_arme="fcd7a2dc-dda1-4797-8edc-b20eac672770" parent_id_arme="6a51792f-4c5d-4455-afcc-de0c9256ce6f">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -866,7 +866,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="fef93a7d-d3f4-4a57-a76f-fca004f4b9ab" parent_id_arme="6a51792f-4c5d-4455-afcc-de0c9256ce6f" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="fef93a7d-d3f4-4a57-a76f-fca004f4b9ab" parent_id_arme="6a51792f-4c5d-4455-afcc-de0c9256ce6f" />
   <event name="Transition to Sector VII" id_arme="962cf31d-3f35-467a-b1e3-85882d4c3723" parent_id_arme="fef93a7d-d3f4-4a57-a76f-fca004f4b9ab">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -922,7 +922,7 @@
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="256a569d-302b-40dd-94f1-3f5fcd93909d" parent_id_arme="fef93a7d-d3f4-4a57-a76f-fca004f4b9ab" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="256a569d-302b-40dd-94f1-3f5fcd93909d" parent_id_arme="fef93a7d-d3f4-4a57-a76f-fca004f4b9ab" />
   <event name="Gate Offline" id_arme="dc27401e-57dd-4b1a-93b6-a12301ebd824" parent_id_arme="256a569d-302b-40dd-94f1-3f5fcd93909d">
     <if_variable name="Sector" comparator="EQUALS" value="6" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -1109,13 +1109,13 @@
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="45258.0" y="0.0" z="65583.0" angle="0" name="Al'Mare Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="71607.0" y="0.0" z="25232.0" angle="0" name="Novara" hullID="1001" />
-    <create type="station" x="33213.0" y="0.0" z="62722.0" angle="0" name="Oshin" hullID="1001" />
-    <create type="station" x="22824.0" y="0.0" z="69347.0" angle="0" name="Alaine" hullID="1001" />
-    <create type="station" x="65735.0" y="0.0" z="75069.0" angle="0" name="Volante" hullID="1001" />
-    <create type="station" x="30502.0" y="0.0" z="27340.0" angle="0" name="Leon" hullID="1001" />
-    <create type="station" x="43752.0" y="0.0" z="46311.0" angle="0" name="DS-11" hullID="1000" />
+    <create type="genericMesh" x="45258.0" y="0.0" z="65583.0" name="Al'Mare Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="71607.0" y="0.0" z="25232.0" angle="0" name="Novara" hullID="1001" />
+    <create type="neutral" x="33213.0" y="0.0" z="62722.0" angle="0" name="Oshin" hullID="1001" />
+    <create type="neutral" x="22824.0" y="0.0" z="69347.0" angle="0" name="Alaine" hullID="1001" />
+    <create type="neutral" x="65735.0" y="0.0" z="75069.0" angle="0" name="Volante" hullID="1001" />
+    <create type="neutral" x="30502.0" y="0.0" z="27340.0" angle="0" name="Leon" hullID="1001" />
+    <create type="neutral" x="43752.0" y="0.0" z="46311.0" angle="0" name="DS-11" hullID="1000" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1170,7 +1170,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Al'Mare to Atlantis" value="0.0" />
   </event>
-  <folder_arme name="Atlantis Sector VII" id_arme="6c3ebf17-07b5-4289-a31f-a8ea40e906fa" parent_id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" expanded_arme="" />
+  <folder_arme name="Atlantis Sector VII" id_arme="6c3ebf17-07b5-4289-a31f-a8ea40e906fa" parent_id_arme="599bc9bf-4961-421a-a441-7ecf0231b1cb" />
   <event name="Create Atlantis Sector VII" id_arme="c56067ae-a068-41a8-99cd-c5de8959658e" parent_id_arme="6c3ebf17-07b5-4289-a31f-a8ea40e906fa">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -1196,7 +1196,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="ad133bc9-28b2-4b4e-a2b6-0b8e303c2372" parent_id_arme="6c3ebf17-07b5-4289-a31f-a8ea40e906fa" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="ad133bc9-28b2-4b4e-a2b6-0b8e303c2372" parent_id_arme="6c3ebf17-07b5-4289-a31f-a8ea40e906fa" />
   <event name="Transition to Sector VIII" id_arme="b47230ee-799c-420f-a606-4058bf4ccb39" parent_id_arme="ad133bc9-28b2-4b4e-a2b6-0b8e303c2372">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1285,7 +1285,7 @@
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="8be464a4-588e-42cd-8966-f922ac69245e" parent_id_arme="ad133bc9-28b2-4b4e-a2b6-0b8e303c2372" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="8be464a4-588e-42cd-8966-f922ac69245e" parent_id_arme="ad133bc9-28b2-4b4e-a2b6-0b8e303c2372" />
   <event name="Gate Offline" id_arme="65eb756c-74ed-4e74-8c6e-7db4e2d7fe8e" parent_id_arme="8be464a4-588e-42cd-8966-f922ac69245e">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -1472,17 +1472,17 @@
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="74467.0" y="0.0" z="46311.0" angle="0" name="I-19" hullID="1003" />
-    <create type="station" x="71066.0" y="0.0" z="67433.0" angle="0" name="Amov" hullID="1001" />
+    <create type="neutral" x="74467.0" y="0.0" z="46311.0" angle="0" name="I-19" hullID="1003" />
+    <create type="neutral" x="71066.0" y="0.0" z="67433.0" angle="0" name="Amov" hullID="1001" />
     <create type="neutral" x="38814.0" y="0.0" z="61912.0" angle="0" name="SY-23" hullID="1053" />
-    <create type="station" x="33148.0" y="0.0" z="47966.0" angle="0" name="Take" hullID="1001" />
-    <create type="station" x="58717.0" y="0.0" z="55811.0" angle="0" name="Tetsu" hullID="1001" />
-    <create type="station" x="26320.0" y="0.0" z="83995.0" angle="0" name="DS-42" hullID="1000" />
-    <create type="station" x="51744.0" y="0.0" z="24866.0" angle="0" name="Eris" hullID="1001" />
+    <create type="neutral" x="33148.0" y="0.0" z="47966.0" angle="0" name="Take" hullID="1001" />
+    <create type="neutral" x="58717.0" y="0.0" z="55811.0" angle="0" name="Tetsu" hullID="1001" />
+    <create type="neutral" x="26320.0" y="0.0" z="83995.0" angle="0" name="DS-42" hullID="1000" />
+    <create type="neutral" x="51744.0" y="0.0" z="24866.0" angle="0" name="Eris" hullID="1001" />
     <create type="neutral" x="49710.0" y="0.0" z="71937.0" angle="0" name="SY-91" hullID="1053" />
-    <create type="station" x="40848.0" y="0.0" z="27627.0" angle="0" name="I-53" hullID="1003" />
-    <create type="station" x="81235.0" y="0.0" z="28498.0" angle="0" name="M-668" hullID="1003" />
-    <create type="genericMesh" x="76575.0" y="0.0" z="38030.0" angle="0" name="Titan Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="40848.0" y="0.0" z="27627.0" angle="0" name="I-53" hullID="1003" />
+    <create type="neutral" x="81235.0" y="0.0" z="28498.0" angle="0" name="M-668" hullID="1003" />
+    <create type="genericMesh" x="76575.0" y="0.0" z="38030.0" name="Titan Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1664,9 +1664,9 @@
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="46161.0" y="0.0" z="37879.0" angle="0" name="DS-65" hullID="1000" />
-    <create type="station" x="52937.0" y="0.0" z="50828.0" angle="0" name="DS-88" hullID="1000" />
-    <create type="station" x="58809.0" y="0.0" z="39686.0" angle="0" name="DS-39" hullID="1000" />
+    <create type="neutral" x="46161.0" y="0.0" z="37879.0" angle="0" name="DS-65" hullID="1000" />
+    <create type="neutral" x="52937.0" y="0.0" z="50828.0" angle="0" name="DS-88" hullID="1000" />
+    <create type="neutral" x="58809.0" y="0.0" z="39686.0" angle="0" name="DS-39" hullID="1000" />
     <create type="neutral" x="52334.0" y="0.0" z="36524.0" angle="0" name="SY-11" hullID="1053" />
     <create type="neutral" x="47968.0" y="0.0" z="47666.0" angle="0" name="SY-38X" hullID="1053" />
     <create type="neutral" x="62272.0" y="0.0" z="44956.0" angle="0" name="SY-72" hullID="1053" />
@@ -1675,7 +1675,7 @@
     <create type="neutral" x="47817.0" y="0.0" z="30200.0" angle="0" name="WP-53" hullID="1052" sideValue="2" />
     <create type="neutral" x="65677.0" y="0.0" z="57919.0" angle="0" name="WP-01" hullID="1052" sideValue="2" />
     <create type="neutral" x="58203.0" y="0.0" z="61417.0" angle="0" name="WP-09" hullID="1052" sideValue="2" />
-    <create type="station" x="51280.0" y="0.0" z="42396.0" angle="0" name="TSAF Greyson" hullID="1505" />
+    <create type="neutral" x="51280.0" y="0.0" z="42396.0" angle="0" name="TSAF Greyson" hullID="1505" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1842,7 +1842,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="neutral" x="22071.0" y="0.0" z="23726.0" angle="0" name="WP-909" hullID="1052" sideValue="2" />
     <create type="neutral" x="41042.0" y="0.0" z="16649.0" angle="0" name="WP-415" hullID="1052" sideValue="2" />
-    <create type="station" x="14844.0" y="0.0" z="8218.0" angle="0" name="DS-91" hullID="1000" />
+    <create type="neutral" x="14844.0" y="0.0" z="8218.0" angle="0" name="DS-91" hullID="1000" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1978,7 +1978,7 @@
     <set_variable name="Atlantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector XI - XV" id_arme="c2d2c1f4-a7bd-4165-838b-09f70eed8cf6" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" expanded_arme="" />
+  <folder_arme name="Sector XI - XV" id_arme="c2d2c1f4-a7bd-4165-838b-09f70eed8cf6" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
   <folder_arme name="Atlantis Sector XI" id_arme="fe6bd80c-8499-4d8f-9354-29a4cd076b4e" parent_id_arme="c2d2c1f4-a7bd-4165-838b-09f70eed8cf6" />
   <event name="Create Atlantis Sector XI" id_arme="a72d9494-efe0-4a9b-a20a-5dcb77d5e8a0" parent_id_arme="fe6bd80c-8499-4d8f-9354-29a4cd076b4e">
     <if_timer_finished name="Transition" />
@@ -2068,15 +2068,15 @@
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="11.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="43759.0" y="0.0" z="31276.0" angle="0" name="M-226" hullID="1003" />
-    <create type="station" x="23618.0" y="0.0" z="48156.0" angle="0" name="M-082" hullID="1003" />
-    <create type="station" x="32412.0" y="0.0" z="53262.0" angle="0" name="M-010" hullID="1003" />
-    <create type="station" x="42625.0" y="0.0" z="41489.0" angle="0" name="M-209X" hullID="1003" />
-    <create type="station" x="55249.0" y="0.0" z="49432.0" angle="0" name="M-420" hullID="1003" />
-    <create type="station" x="42199.0" y="0.0" z="65744.0" angle="0" name="M-723" hullID="1003" />
-    <create type="station" x="66171.0" y="0.0" z="23475.0" angle="0" name="M-595" hullID="1003" />
-    <create type="station" x="78937.0" y="0.0" z="48297.0" angle="0" name="Esperon" hullID="1001" />
-    <create type="station" x="76100.0" y="0.0" z="60921.0" angle="0" name="Castillon" hullID="1001" />
+    <create type="neutral" x="43759.0" y="0.0" z="31276.0" angle="0" name="M-226" hullID="1003" />
+    <create type="neutral" x="23618.0" y="0.0" z="48156.0" angle="0" name="M-082" hullID="1003" />
+    <create type="neutral" x="32412.0" y="0.0" z="53262.0" angle="0" name="M-010" hullID="1003" />
+    <create type="neutral" x="42625.0" y="0.0" z="41489.0" angle="0" name="M-209X" hullID="1003" />
+    <create type="neutral" x="55249.0" y="0.0" z="49432.0" angle="0" name="M-420" hullID="1003" />
+    <create type="neutral" x="42199.0" y="0.0" z="65744.0" angle="0" name="M-723" hullID="1003" />
+    <create type="neutral" x="66171.0" y="0.0" z="23475.0" angle="0" name="M-595" hullID="1003" />
+    <create type="neutral" x="78937.0" y="0.0" z="48297.0" angle="0" name="Esperon" hullID="1001" />
+    <create type="neutral" x="76100.0" y="0.0" z="60921.0" angle="0" name="Castillon" hullID="1001" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2237,13 +2237,13 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <create type="station" x="18039.0" y="0.0" z="54939.0" angle="0" name="M-820" hullID="1003" />
-    <create type="station" x="43754.0" y="0.0" z="85738.0" angle="0" name="M-774" hullID="1003" />
-    <create type="station" x="39235.0" y="0.0" z="59259.0" angle="0" name="M-059" hullID="1003" />
-    <create type="station" x="22398.0" y="0.0" z="67723.0" angle="0" name="M-097" hullID="1003" />
-    <create type="station" x="46914.0" y="0.0" z="74767.0" angle="0" name="M-829" hullID="1003" />
-    <create type="station" x="66186.0" y="0.0" z="28544.0" angle="0" name="RS-03" hullID="1004" />
-    <create type="station" x="76100.0" y="0.0" z="60921.0" angle="0" name="Wynter" hullID="1001" />
+    <create type="neutral" x="18039.0" y="0.0" z="54939.0" angle="0" name="M-820" hullID="1003" />
+    <create type="neutral" x="43754.0" y="0.0" z="85738.0" angle="0" name="M-774" hullID="1003" />
+    <create type="neutral" x="39235.0" y="0.0" z="59259.0" angle="0" name="M-059" hullID="1003" />
+    <create type="neutral" x="22398.0" y="0.0" z="67723.0" angle="0" name="M-097" hullID="1003" />
+    <create type="neutral" x="46914.0" y="0.0" z="74767.0" angle="0" name="M-829" hullID="1003" />
+    <create type="neutral" x="66186.0" y="0.0" z="28544.0" angle="0" name="RS-03" hullID="1004" />
+    <create type="neutral" x="76100.0" y="0.0" z="60921.0" angle="0" name="Wynter" hullID="1001" />
     <create type="neutral" x="70508.0" y="1.0" z="67695.0" angle="0" name="Southalk Refinery" hullID="1051" />
     <create type="neutral" x="80704.0" y="1.0" z="25507.0" angle="0" name="Big N Large Pharmaceutical" hullID="1056" />
     <create type="neutral" x="20469.0" y="1.0" z="86328.0" angle="0" name="Sprout Bio Products" hullID="1056" />
@@ -2404,14 +2404,14 @@
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="13.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="47240.0" y="0.0" z="25157.0" angle="0" name="I-07" hullID="1003" />
-    <create type="station" x="54649.0" y="0.0" z="36343.0" angle="0" name="Nakada" hullID="1001" />
+    <create type="neutral" x="47240.0" y="0.0" z="25157.0" angle="0" name="I-07" hullID="1003" />
+    <create type="neutral" x="54649.0" y="0.0" z="36343.0" angle="0" name="Nakada" hullID="1001" />
     <create type="neutral" x="39250.0" y="0.0" z="27046.0" angle="0" name="SY-56" hullID="1053" />
-    <create type="station" x="42882.0" y="0.0" z="36924.0" angle="0" name="Kutsuo" hullID="1001" />
-    <create type="station" x="49274.0" y="0.0" z="47820.0" angle="0" name="Alken" hullID="1001" />
-    <create type="station" x="64674.0" y="0.0" z="47966.0" angle="0" name="DS-68" hullID="1000" />
-    <create type="station" x="71502.0" y="0.0" z="21815.0" angle="0" name="Carthen" hullID="1001" />
-    <create type="station" x="61913.0" y="0.0" z="10774.0" angle="0" name="RS-26X" hullID="1004" />
+    <create type="neutral" x="42882.0" y="0.0" z="36924.0" angle="0" name="Kutsuo" hullID="1001" />
+    <create type="neutral" x="49274.0" y="0.0" z="47820.0" angle="0" name="Alken" hullID="1001" />
+    <create type="neutral" x="64674.0" y="0.0" z="47966.0" angle="0" name="DS-68" hullID="1000" />
+    <create type="neutral" x="71502.0" y="0.0" z="21815.0" angle="0" name="Carthen" hullID="1001" />
+    <create type="neutral" x="61913.0" y="0.0" z="10774.0" angle="0" name="RS-26X" hullID="1004" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2440,7 +2440,7 @@
     <set_variable name="Atlantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Atlantis Sector XIV" id_arme="86ff4e07-8cd7-46ce-9d08-30149f06fbdf" parent_id_arme="c2d2c1f4-a7bd-4165-838b-09f70eed8cf6" expanded_arme="" />
+  <folder_arme name="Atlantis Sector XIV" id_arme="86ff4e07-8cd7-46ce-9d08-30149f06fbdf" parent_id_arme="c2d2c1f4-a7bd-4165-838b-09f70eed8cf6" />
   <event name="Create Atlantis Sector XIV" id_arme="77ac36ac-01c6-4b30-b383-3d7f706bc4c5" parent_id_arme="86ff4e07-8cd7-46ce-9d08-30149f06fbdf">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -2464,7 +2464,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="43965aff-6416-44b3-acc9-ea1ccbc73dc3" parent_id_arme="86ff4e07-8cd7-46ce-9d08-30149f06fbdf" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="43965aff-6416-44b3-acc9-ea1ccbc73dc3" parent_id_arme="86ff4e07-8cd7-46ce-9d08-30149f06fbdf" />
   <event name="Transition to Sector XV" id_arme="9dd86376-fa04-4ddf-954d-0a69a40fd8e5" parent_id_arme="43965aff-6416-44b3-acc9-ea1ccbc73dc3">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="14.0" />
@@ -2553,7 +2553,7 @@
     <set_variable name="Sector" value="8.0" integer="yes" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="3c3ebbdf-c98a-4111-be76-40ad85642c46" parent_id_arme="43965aff-6416-44b3-acc9-ea1ccbc73dc3" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="3c3ebbdf-c98a-4111-be76-40ad85642c46" parent_id_arme="43965aff-6416-44b3-acc9-ea1ccbc73dc3" />
   <event name="Gate Offline" id_arme="a585fa04-97ca-429d-882b-1c62b53e418f" parent_id_arme="3c3ebbdf-c98a-4111-be76-40ad85642c46">
     <if_variable name="Sector" comparator="EQUALS" value="14" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -2742,9 +2742,9 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <create type="genericMesh" x="47215.0" y="0.0" z="51882.0" angle="0" name="Waypoint 52 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="71356.0" y="0.0" z="35617.0" angle="0" name="DS-28" hullID="1000" />
-    <create type="station" x="18039.0" y="0.0" z="57118.0" angle="0" name="DS-92" hullID="1000" />
+    <create type="genericMesh" x="47215.0" y="0.0" z="51882.0" name="Waypoint 52 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="71356.0" y="0.0" z="35617.0" angle="0" name="DS-28" hullID="1000" />
+    <create type="neutral" x="18039.0" y="0.0" z="57118.0" angle="0" name="DS-92" hullID="1000" />
     <create type="neutral" x="70508.0" y="1.0" z="67695.0" angle="0" name="Victor Refinery" hullID="1051" />
     <create type="neutral" x="34297.0" y="1.0" z="35468.0" angle="0" name="Point Nori" hullID="1050" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2907,8 +2907,8 @@
     <set_variable name="Atlantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector XVI - XX" id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" expanded_arme="" />
-  <folder_arme name="Atlantis Sector XVI" id_arme="5b36e449-a996-4f2e-bebc-31b38eb36ce1" parent_id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" expanded_arme="" />
+  <folder_arme name="Sector XVI - XX" id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" parent_id_arme="fcd741e1-19b6-49ff-8b69-bf44dbe150a6" />
+  <folder_arme name="Atlantis Sector XVI" id_arme="5b36e449-a996-4f2e-bebc-31b38eb36ce1" parent_id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" />
   <event name="Create Atlantis Sector XVI" id_arme="dd508fca-c70a-4794-9d88-8d0ca16f06df" parent_id_arme="5b36e449-a996-4f2e-bebc-31b38eb36ce1">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -2938,7 +2938,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="4553e4ef-0fdb-4a12-be70-8570cb342eae" parent_id_arme="5b36e449-a996-4f2e-bebc-31b38eb36ce1" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="4553e4ef-0fdb-4a12-be70-8570cb342eae" parent_id_arme="5b36e449-a996-4f2e-bebc-31b38eb36ce1" />
   <event name="Transition to Sector XVII" id_arme="5a7cd630-0b63-4857-97ee-26a9c28dbd0e" parent_id_arme="4553e4ef-0fdb-4a12-be70-8570cb342eae">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -2972,7 +2972,7 @@
     <set_variable name="Sector" value="12.0" integer="yes" />
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="384648e1-fede-41e6-b353-5740abc9ea91" parent_id_arme="4553e4ef-0fdb-4a12-be70-8570cb342eae" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="384648e1-fede-41e6-b353-5740abc9ea91" parent_id_arme="4553e4ef-0fdb-4a12-be70-8570cb342eae" />
   <event name="Gate Offline" id_arme="a470ae31-357c-44d8-88c7-cee2c77be537" parent_id_arme="384648e1-fede-41e6-b353-5740abc9ea91">
     <if_variable name="Sector" comparator="EQUALS" value="16" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -3159,10 +3159,10 @@
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="16.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="45107.0" y="0.0" z="57754.0" angle="0" name="Cerberus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="85458.0" y="0.0" z="62572.0" angle="0" name="M-184" hullID="1003" />
-    <create type="station" x="68746.0" y="0.0" z="40589.0" angle="0" name="M-738" hullID="1003" />
-    <create type="station" x="60766.0" y="0.0" z="84253.0" angle="0" name="M-865" hullID="1003" />
+    <create type="genericMesh" x="45107.0" y="0.0" z="57754.0" name="Cerberus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="85458.0" y="0.0" z="62572.0" angle="0" name="M-184" hullID="1003" />
+    <create type="neutral" x="68746.0" y="0.0" z="40589.0" angle="0" name="M-738" hullID="1003" />
+    <create type="neutral" x="60766.0" y="0.0" z="84253.0" angle="0" name="M-865" hullID="1003" />
     <create type="neutral" x="44844.0" y="1.0" z="78476.0" angle="90" name="Breath Easy Inc" hullID="1050" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -3322,9 +3322,9 @@
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="17.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="41945.0" y="0.0" z="14240.0" angle="0" name="RS-41" hullID="1004" />
-    <create type="station" x="53840.0" y="0.0" z="55796.0" angle="0" name="Gate Control" hullID="1000" />
-    <create type="station" x="56701.0" y="0.0" z="48720.0" angle="0" name="Atlantis Command" hullID="1002" />
+    <create type="neutral" x="41945.0" y="0.0" z="14240.0" angle="0" name="RS-41" hullID="1004" />
+    <create type="neutral" x="53840.0" y="0.0" z="55796.0" angle="0" name="Gate Control" hullID="1000" />
+    <create type="neutral" x="56701.0" y="0.0" z="48720.0" angle="0" name="Atlantis Command" hullID="1002" />
     <create type="neutral" x="45860.0" y="0.0" z="42848.0" angle="0" name="SY-230" hullID="1053" />
     <create type="neutral" x="51883.0" y="0.0" z="37126.0" angle="0" name="SY-235" hullID="1053" />
     <create type="neutral" x="25508.0" y="1.0" z="80937.0" angle="0" name="Korczynski Enterprises" hullID="1050" />
@@ -3363,7 +3363,7 @@
     <set_variable name="Atlantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Atlantis Sector XVIII" id_arme="19b5d36c-272c-4595-b1e4-0b66cc337ec1" parent_id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" expanded_arme="" />
+  <folder_arme name="Atlantis Sector XVIII" id_arme="19b5d36c-272c-4595-b1e4-0b66cc337ec1" parent_id_arme="f4f00cda-3862-44ea-997b-ba9fd87ec4d3" />
   <event name="Create Atlantis Sector XVIII" id_arme="763cec0d-84e4-4ca2-a248-5b9e49405ef9" parent_id_arme="19b5d36c-272c-4595-b1e4-0b66cc337ec1">
     <if_timer_finished name="Transition" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="1.0" />
@@ -3389,7 +3389,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="53d5bafa-9f6f-47bf-a401-f7fb33dedead" parent_id_arme="19b5d36c-272c-4595-b1e4-0b66cc337ec1" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="53d5bafa-9f6f-47bf-a401-f7fb33dedead" parent_id_arme="19b5d36c-272c-4595-b1e4-0b66cc337ec1" />
   <event name="Transition to Sector XVII" id_arme="27c085d1-2629-47e9-b9d5-44db54cf89ed" parent_id_arme="53d5bafa-9f6f-47bf-a401-f7fb33dedead">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -3445,7 +3445,7 @@
     <set_variable name="Atlantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="12.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="4022279d-3f54-456d-9315-5f09d17af6ab" parent_id_arme="53d5bafa-9f6f-47bf-a401-f7fb33dedead" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="4022279d-3f54-456d-9315-5f09d17af6ab" parent_id_arme="53d5bafa-9f6f-47bf-a401-f7fb33dedead" />
   <event name="Gate Offline" id_arme="8b125b98-88b7-4dcb-81bd-7c008da6332d" parent_id_arme="4022279d-3f54-456d-9315-5f09d17af6ab">
     <if_variable name="Sector" comparator="EQUALS" value="18" />
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
@@ -3632,15 +3632,15 @@
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="18.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="54894.0" y="0.0" z="25984.0" angle="0" name="Orwed" hullID="1100" />
-    <create type="station" x="15295.0" y="0.0" z="35922.0" angle="0" name="RS-261" hullID="1004" />
-    <create type="station" x="47968.0" y="0.0" z="53839.0" angle="0" name="Honor" hullID="1001" />
-    <create type="station" x="65433.0" y="0.0" z="56549.0" angle="0" name="Ordan" hullID="1100" />
-    <create type="station" x="11983.0" y="0.0" z="86060.0" angle="0" name="A'Aureln" hullID="1100" />
+    <create type="neutral" x="54894.0" y="0.0" z="25984.0" angle="0" name="Orwed" hullID="1100" />
+    <create type="neutral" x="15295.0" y="0.0" z="35922.0" angle="0" name="RS-261" hullID="1004" />
+    <create type="neutral" x="47968.0" y="0.0" z="53839.0" angle="0" name="Honor" hullID="1001" />
+    <create type="neutral" x="65433.0" y="0.0" z="56549.0" angle="0" name="Ordan" hullID="1100" />
+    <create type="neutral" x="11983.0" y="0.0" z="86060.0" angle="0" name="A'Aureln" hullID="1100" />
     <create type="blackHole" x="23878.0" y="0.0" z="28544.0" name="MatildaBH" />
-    <create type="genericMesh" x="23878.0" y="-600.0" z="28545.0" angle="0" name="Matilda" meshFileName="dat\mine.dxs" textureFileName="dat\artemis_illum.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="station" x="28244.0" y="0.0" z="75821.0" angle="0" name="Elnan" hullID="1100" />
-    <create type="genericMesh" x="54593.0" y="0.0" z="72057.0" angle="0" name="Arietis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="23878.0" y="-600.0" z="28545.0" name="Matilda" meshFileName="dat\mine.dxs" textureFileName="dat\artemis_illum.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="neutral" x="28244.0" y="0.0" z="75821.0" angle="0" name="Elnan" hullID="1100" />
+    <create type="genericMesh" x="54593.0" y="0.0" z="72057.0" name="Arietis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <create type="neutral" x="12735.0" y="1.0" z="70742.0" angle="0" name="Seer Entertainment Systems" hullID="1050" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -3786,11 +3786,11 @@
     <if_variable name="Atlantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="19.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="47817.0" y="0.0" z="22973.0" angle="0" name="DS-34" hullID="1000" />
-    <create type="station" x="53238.0" y="0.0" z="51731.0" angle="0" name="DS-91" hullID="1000" />
-    <create type="station" x="19812.0" y="0.0" z="36675.0" angle="0" name="M-810" hullID="1003" />
-    <create type="station" x="26588.0" y="0.0" z="45859.0" angle="0" name="M-991" hullID="1003" />
-    <create type="station" x="37880.0" y="0.0" z="56700.0" angle="0" name="M-028" hullID="1003" />
+    <create type="neutral" x="47817.0" y="0.0" z="22973.0" angle="0" name="DS-34" hullID="1000" />
+    <create type="neutral" x="53238.0" y="0.0" z="51731.0" angle="0" name="DS-91" hullID="1000" />
+    <create type="neutral" x="19812.0" y="0.0" z="36675.0" angle="0" name="M-810" hullID="1003" />
+    <create type="neutral" x="26588.0" y="0.0" z="45859.0" angle="0" name="M-991" hullID="1003" />
+    <create type="neutral" x="37880.0" y="0.0" z="56700.0" angle="0" name="M-028" hullID="1003" />
     <create type="neutral" x="18477.0" y="1.0" z="81289.0" angle="0" name="Bidderlyn Heavy Engineering" hullID="1050" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -3878,7 +3878,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="20.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="neutral" x="45899.0" y="1.0" z="58203.0" angle="0" name="Trueson Instruments" hullID="1050" />
-    <create type="station" x="32008.0" y="0.0" z="52484.0" angle="0" name="RS-21" hullID="1004" />
+    <create type="neutral" x="32008.0" y="0.0" z="52484.0" angle="0" name="RS-21" hullID="1004" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="282.0" integer="yes" />
     <set_variable name="Alignment" value="Hegemony" integer="yes" />
   </start>
-  <folder_arme name="Krellis System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="Krellis System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <folder_arme name="Krellis Settings" id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <folder_arme name="Krellis Menu" id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" />
   <event name="Krellis Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Krellis Sector I" id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="Krellis Sector I" id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create Krellis Sector I" id_arme="32458fc2-4bb6-455e-8446-23f5e7574323" parent_id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884">
     <if_variable name="Krellis System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -79,7 +79,7 @@
     <create count="50" type="asteroids" startX="56965.0" startY="0.0" startZ="61919.0" endX="56965.0" endY="0.0" endZ="61919.0" randomRange="8000" />
     <create count="50" type="asteroids" startX="30045.0" startY="0.0" startZ="48526.0" endX="30045.0" endY="0.0" endZ="48526.0" randomRange="8000" />
   </event>
-  <folder_arme name="Navigation" id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708" parent_id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708" parent_id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884" />
   <event name="Transition to Sector II" id_arme="cd353cd3-19b5-488a-bb3f-194baaa92c23" parent_id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708">
     <if_variable name="Krellis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -113,7 +113,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="35d4c4fc-b28a-485c-afd9-766d9ee07760" parent_id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="35d4c4fc-b28a-485c-afd9-766d9ee07760" parent_id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708" />
   <event name="Gate Offline" id_arme="9483f012-a5af-4c2e-adb2-a0d83c9214ce" parent_id_arme="35d4c4fc-b28a-485c-afd9-766d9ee07760">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Krellis System" comparator="EQUALS" value="2.0" />
@@ -992,7 +992,7 @@
     <destroy name="Ungswor Base" />
     <destroy name="Zol-Quen Base" />
   </event>
-  <folder_arme name="Krellis Sector VIII" id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="Krellis Sector VIII" id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create Krellis Sector VIII" id_arme="ba89a4e6-f595-4e57-8d0d-916ec5b940f1" parent_id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c">
     <if_variable name="Krellis System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -1013,7 +1013,7 @@
     <create count="100" type="nebulas" startX="59777.0" startY="0.0" startZ="13571.0" endX="9956.0" endY="0.0" endZ="46517.0" randomRange="8000" />
     <create count="30" type="nebulas" startX="58974.0" startY="0.0" startZ="3392.0" endX="46384.0" endY="0.0" endZ="22276.0" randomRange="5000" />
   </event>
-  <folder_arme name="Navigation" id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14" parent_id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14" parent_id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" />
   <event name="Transition to Sector IX" id_arme="034a76f5-8570-47a5-a237-5d8176bf7604" parent_id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -1069,7 +1069,7 @@
     <set_variable name="Krellis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="4.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="8125908c-e344-46d0-a72f-cf840f8db921" parent_id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="8125908c-e344-46d0-a72f-cf840f8db921" parent_id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14" />
   <event name="Gate Offline" id_arme="56714e37-17c1-433b-a5f7-f1faeec31ec0" parent_id_arme="8125908c-e344-46d0-a72f-cf840f8db921">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Krellis System" comparator="EQUALS" value="2.0" />

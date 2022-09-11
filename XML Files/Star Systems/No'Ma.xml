@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="120.0" integer="yes" />
     <set_variable name="Alignment" value="Hegemony" integer="yes" />
   </start>
-  <folder_arme name="No'Ma System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="No'Ma System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <folder_arme name="No'Ma Settings" id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <folder_arme name="No'Ma Menu" id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" />
   <event name="No'Ma Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
@@ -145,7 +145,7 @@
     <destroy name="CR 1" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="No'Ma Sector II" id_arme="7bc1753c-21c1-4375-ae7b-58ae9fed048c" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="No'Ma Sector II" id_arme="7bc1753c-21c1-4375-ae7b-58ae9fed048c" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create No'Ma Sector II" id_arme="e7ad10c8-ca65-468b-a021-fa8bd33414ea" parent_id_arme="7bc1753c-21c1-4375-ae7b-58ae9fed048c">
     <if_variable name="No'Ma System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -169,7 +169,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="2e31124d-5303-4b44-ac43-ec4bc3e547ef" parent_id_arme="7bc1753c-21c1-4375-ae7b-58ae9fed048c" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="2e31124d-5303-4b44-ac43-ec4bc3e547ef" parent_id_arme="7bc1753c-21c1-4375-ae7b-58ae9fed048c" />
   <event name="Transition to Sector III" id_arme="ca768fc3-842c-4862-b3ae-aeea7223db55" parent_id_arme="2e31124d-5303-4b44-ac43-ec4bc3e547ef">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -225,7 +225,7 @@
     <set_variable name="No'Ma System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="4.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="d5b27ef4-aa07-49a5-ab81-3e50fd171614" parent_id_arme="2e31124d-5303-4b44-ac43-ec4bc3e547ef" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="d5b27ef4-aa07-49a5-ab81-3e50fd171614" parent_id_arme="2e31124d-5303-4b44-ac43-ec4bc3e547ef" />
   <event name="Gate Offline" id_arme="b4f738e6-776b-4b4f-a809-0444acf623ba" parent_id_arme="d5b27ef4-aa07-49a5-ab81-3e50fd171614">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="No'Ma System" comparator="EQUALS" value="2.0" />
@@ -480,7 +480,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Drenan to No'Ma" value="0.0" />
   </event>
-  <folder_arme name="No'Ma Sector III" id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="No'Ma Sector III" id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create No'Ma Sector III" id_arme="1bd39347-45be-45ed-92ba-3c4ff16259fe" parent_id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65">
     <if_variable name="No'Ma System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -507,7 +507,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce" parent_id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce" parent_id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65" />
   <event name="Transition to Sector II" id_arme="94f9a07b-651d-442e-bcc6-c4a7de8521b2" parent_id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -541,7 +541,7 @@
     <set_variable name="No'Ma System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="46727d2e-1643-4f00-8326-e8ab84f46df3" parent_id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="46727d2e-1643-4f00-8326-e8ab84f46df3" parent_id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce" />
   <event name="Gate Offline" id_arme="13668625-5c43-4740-9830-8d336ce608be" parent_id_arme="46727d2e-1643-4f00-8326-e8ab84f46df3">
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="No'Ma System" comparator="EQUALS" value="2.0" />
@@ -1165,7 +1165,7 @@
     <set_variable name="No'Ma System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="No'Ma Sector VII" id_arme="e2d55524-a6bd-4018-9b07-688afae855de" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="No'Ma Sector VII" id_arme="e2d55524-a6bd-4018-9b07-688afae855de" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create No'Ma Sector VII" id_arme="1163159b-b277-4e16-b80e-a71d8360c29d" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de">
     <if_variable name="No'Ma System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1185,7 +1185,7 @@
     <create count="200" type="nebulas" startX="95184.0" startY="0.0" startZ="38190.0" endX="38998.0" endY="0.0" endZ="98557.0" randomRange="14239" />
     <create count="100" type="nebulas" nebType="3" startX="94744.0" startY="0.0" startZ="37163.0" endX="38851.0" endY="0.0" endZ="96503.0" randomRange="14239" />
   </event>
-  <folder_arme name="Navigation" id_arme="b0176281-1c2e-4951-a043-be63996a31a1" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="b0176281-1c2e-4951-a043-be63996a31a1" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de" />
   <event name="Transition to Sector VIII" id_arme="2199956d-bdfb-450b-9c4f-e46db380aed1" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1219,14 +1219,14 @@
     <set_variable name="No'Ma System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="fb8dbff2-e855-4c38-99df-5efdcf641f23" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="fb8dbff2-e855-4c38-99df-5efdcf641f23" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1" />
   <event name="Gate Offline" id_arme="4f59fda1-b618-4e1c-9877-5aab64dd8a83" parent_id_arme="fb8dbff2-e855-4c38-99df-5efdcf641f23">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="No'Ma System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Oubli Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="459216c3-8649-4d03-8640-468b8b1c82c7" parent_id_arme="fb8dbff2-e855-4c38-99df-5efdcf641f23" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="459216c3-8649-4d03-8640-468b8b1c82c7" parent_id_arme="fb8dbff2-e855-4c38-99df-5efdcf641f23" />
   <event name="Ship1 Activation Range" id_arme="2d4fcb27-406f-4074-b0d6-9de8fae265db" parent_id_arme="459216c3-8649-4d03-8640-468b8b1c82c7">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="No'Ma System" comparator="EQUALS" value="2.0" />
@@ -1549,7 +1549,7 @@
     <set_variable name="No'Ma System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="No'Ma Sector IX" id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="No'Ma Sector IX" id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create No'Ma Sector IX" id_arme="a05a68ee-c3c8-422b-9e5c-886bb65cecad" parent_id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736">
     <if_variable name="No'Ma System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1572,7 +1572,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="d82c3305-8a5d-4e39-b209-755970e3e258" parent_id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="d82c3305-8a5d-4e39-b209-755970e3e258" parent_id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736" />
   <event name="Transition to Sector VIII" id_arme="7899320b-decd-4cfa-a270-b2728f625593" parent_id_arme="d82c3305-8a5d-4e39-b209-755970e3e258">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1606,8 +1606,8 @@
     <set_variable name="No'Ma System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="New Jump Gate Code" id_arme="d18feab3-7977-4862-8d7e-3ac70047ea4d" parent_id_arme="d82c3305-8a5d-4e39-b209-755970e3e258" expanded_arme="" />
-  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="d18feab3-7977-4862-8d7e-3ac70047ea4d" expanded_arme="" />
+  <folder_arme name="New Jump Gate Code" id_arme="d18feab3-7977-4862-8d7e-3ac70047ea4d" parent_id_arme="d82c3305-8a5d-4e39-b209-755970e3e258" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="d18feab3-7977-4862-8d7e-3ac70047ea4d" />
   <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="No'Ma System" comparator="EQUALS" value="2.0" />

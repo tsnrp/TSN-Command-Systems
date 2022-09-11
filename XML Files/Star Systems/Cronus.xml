@@ -88,7 +88,7 @@
     <create count="30" type="asteroids" startX="57119.0" startY="300.0" startZ="82106.0" endX="29662.0" endY="-350.0" endZ="69757.0" randomRange="3054" />
     <create count="50" type="asteroids" startX="74262.0" startY="400.0" startZ="83849.0" endX="33584.0" endY="-200.0" endZ="66997.0" randomRange="5378" />
   </event>
-  <folder_arme name="Navigation" id_arme="c9dad05e-5e55-4c99-b5f9-1c8bdfd8d6e6" parent_id_arme="d6a1852c-e4a2-4ee2-a66b-75e357af2d60" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="c9dad05e-5e55-4c99-b5f9-1c8bdfd8d6e6" parent_id_arme="d6a1852c-e4a2-4ee2-a66b-75e357af2d60" />
   <event name="Transition to Sector II" id_arme="6f26c1c6-20c2-4548-8f33-07ad7311ee31" parent_id_arme="c9dad05e-5e55-4c99-b5f9-1c8bdfd8d6e6">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1" />
@@ -122,7 +122,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="1d50ad86-7d7a-451a-b168-b4925e3b9c46" parent_id_arme="c9dad05e-5e55-4c99-b5f9-1c8bdfd8d6e6" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="1d50ad86-7d7a-451a-b168-b4925e3b9c46" parent_id_arme="c9dad05e-5e55-4c99-b5f9-1c8bdfd8d6e6" />
   <event name="Gate Offline" id_arme="3960cdbc-b054-49b2-939b-d48f1a480e0a" parent_id_arme="1d50ad86-7d7a-451a-b168-b4925e3b9c46">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -304,12 +304,12 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="9baa34c7-b3b8-4b6b-9217-6141b33f75c8" parent_id_arme="d6a1852c-e4a2-4ee2-a66b-75e357af2d60" />
+  <folder_arme name="Sector Entities" id_arme="9baa34c7-b3b8-4b6b-9217-6141b33f75c8" parent_id_arme="d6a1852c-e4a2-4ee2-a66b-75e357af2d60" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="d45b5398-aaab-4556-be02-4734f54bd2f5" parent_id_arme="9baa34c7-b3b8-4b6b-9217-6141b33f75c8">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="62723.0" y="0.0" z="37578.0" angle="0" name="Promethean Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="62723.0" y="0.0" z="37578.0" name="Promethean Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -385,7 +385,7 @@
     <create count="10" type="asteroids" startX="79347.0" startY="0.0" startZ="72953.0" endX="83560.0" endY="0.0" endZ="65980.0" randomRange="2536" />
     <create count="40" type="asteroids" startX="75134.0" startY="0.0" startZ="77167.0" endX="59298.0" endY="0.0" endZ="91694.0" randomRange="3215" />
   </event>
-  <folder_arme name="Navigation" id_arme="3f842e8f-01cf-4000-bb4a-4d80c67e85ee" parent_id_arme="98ca387b-f97d-4683-ae99-e80608269906" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="3f842e8f-01cf-4000-bb4a-4d80c67e85ee" parent_id_arme="98ca387b-f97d-4683-ae99-e80608269906" />
   <event name="Transition to Sector III" id_arme="0e29f9ab-db5b-418a-8bb1-0f65b04982c7" parent_id_arme="3f842e8f-01cf-4000-bb4a-4d80c67e85ee">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -441,7 +441,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="22b4695b-325f-402a-b1cf-6d2f1c0eaf15" parent_id_arme="98ca387b-f97d-4683-ae99-e80608269906" />
+  <folder_arme name="Sector Entities" id_arme="22b4695b-325f-402a-b1cf-6d2f1c0eaf15" parent_id_arme="98ca387b-f97d-4683-ae99-e80608269906" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="8e6185d8-d592-410f-9963-d0f639831d90" parent_id_arme="22b4695b-325f-402a-b1cf-6d2f1c0eaf15">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2" />
@@ -500,7 +500,7 @@
     <create count="7" type="mines" startX="73245.0" startY="0.0" startZ="15423.0" endX="55521.0" endY="0.0" endZ="27917.0" randomRange="7797" />
     <create count="3" type="mines" startX="49419.0" startY="0.0" startZ="72372.0" endX="38669.0" endY="0.0" endZ="79200.0" randomRange="4678" />
   </event>
-  <folder_arme name="Navigation" id_arme="90282c13-37bf-4987-ab71-7ec5bd8a91ff" parent_id_arme="7fc0be19-e05e-466e-bac2-6b857b546bd1" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="90282c13-37bf-4987-ab71-7ec5bd8a91ff" parent_id_arme="7fc0be19-e05e-466e-bac2-6b857b546bd1" />
   <event name="Transition to Sector IV" id_arme="1a2b7b2c-b1e1-410b-b05c-94275e6070be" parent_id_arme="90282c13-37bf-4987-ab71-7ec5bd8a91ff">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -556,7 +556,7 @@
     <set_variable name="Sector" value="8.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="0fb35365-3c2f-4aeb-925a-e19d19bf7e45" parent_id_arme="7fc0be19-e05e-466e-bac2-6b857b546bd1" />
+  <folder_arme name="Sector Entities" id_arme="0fb35365-3c2f-4aeb-925a-e19d19bf7e45" parent_id_arme="7fc0be19-e05e-466e-bac2-6b857b546bd1" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="2ec5f217-9a04-4ac4-acec-83b49c6ed49a" parent_id_arme="0fb35365-3c2f-4aeb-925a-e19d19bf7e45">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3" />
@@ -605,7 +605,7 @@
     <create count="10" type="nebulas" startX="80654.0" startY="0.0" startZ="9031.0" endX="23850.0" endY="0.0" endZ="34455.0" randomRange="7194" />
     <create count="15" type="nebulas" startX="60896.0" startY="0.0" startZ="69612.0" endX="15424.0" endY="0.0" endZ="81670.0" randomRange="3119" />
   </event>
-  <folder_arme name="Navigation" id_arme="4c756b31-ddbd-44dc-8ac7-5f5790292189" parent_id_arme="d3484ad4-2479-4278-b2ce-28c6f63d05c8" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="4c756b31-ddbd-44dc-8ac7-5f5790292189" parent_id_arme="d3484ad4-2479-4278-b2ce-28c6f63d05c8" />
   <event name="Transition to Sector III" id_arme="bc9a5772-17cb-4e83-8e39-f8adf0e95b8b" parent_id_arme="4c756b31-ddbd-44dc-8ac7-5f5790292189">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -639,7 +639,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="e6d2adf1-3cbe-4271-ac04-73f8d480f32c" parent_id_arme="d3484ad4-2479-4278-b2ce-28c6f63d05c8" />
+  <folder_arme name="Sector Entities" id_arme="e6d2adf1-3cbe-4271-ac04-73f8d480f32c" parent_id_arme="d3484ad4-2479-4278-b2ce-28c6f63d05c8" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="f72c46c9-bc61-4833-a602-cefad9c1d045" parent_id_arme="e6d2adf1-3cbe-4271-ac04-73f8d480f32c">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4" />
@@ -685,7 +685,7 @@
     <create count="30" type="nebulas" startX="17022.0" startY="0.0" startZ="75278.0" endX="23996.0" endY="0.0" endZ="83414.0" randomRange="6963" />
     <create count="6" type="mines" startX="56102.0" startY="0.0" startZ="47530.0" endX="56102.0" endY="0.0" endZ="47530.0" randomRange="43044" />
   </event>
-  <folder_arme name="Navigation" id_arme="232e1ed2-cb9e-4d5f-9cae-753c50cdea6b" parent_id_arme="7f7115a3-9097-4291-b930-c6c293ba7386" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="232e1ed2-cb9e-4d5f-9cae-753c50cdea6b" parent_id_arme="7f7115a3-9097-4291-b930-c6c293ba7386" />
   <event name="Transition to Sector VI" id_arme="0eca6c3a-fe02-4a97-bca6-f0acbf49d1b9" parent_id_arme="232e1ed2-cb9e-4d5f-9cae-753c50cdea6b">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -741,7 +741,7 @@
     <set_variable name="Sector" value="10.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="c00b395a-331c-423d-a945-cd20153a2324" parent_id_arme="7f7115a3-9097-4291-b930-c6c293ba7386" />
+  <folder_arme name="Sector Entities" id_arme="c00b395a-331c-423d-a945-cd20153a2324" parent_id_arme="7f7115a3-9097-4291-b930-c6c293ba7386" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="e3a629c9-c62e-45c5-93e7-47112b84c1a7" parent_id_arme="c00b395a-331c-423d-a945-cd20153a2324">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5" />
@@ -793,7 +793,7 @@
     <create count="19" type="nebulas" startX="30097.0" startY="0.0" startZ="31113.0" endX="8306.0" endY="0.0" endZ="43753.0" randomRange="3593" />
     <create count="40" type="asteroids" startX="75715.0" startY="0.0" startZ="47384.0" endX="51599.0" endY="0.0" endZ="61622.0" randomRange="3288" />
   </event>
-  <folder_arme name="Navigation" id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e" parent_id_arme="a624dba9-d158-490c-8cab-e9e878d290f7" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e" parent_id_arme="a624dba9-d158-490c-8cab-e9e878d290f7" />
   <event name="Transition to Sector VII" id_arme="3c2a62df-5429-4fb0-b9f7-82ba6250300c" parent_id_arme="4675401a-6f0a-4c56-8f23-4f9a1447b63e">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -882,7 +882,7 @@
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="67cb7fe3-07e9-4fdb-a831-121419d04313" parent_id_arme="a624dba9-d158-490c-8cab-e9e878d290f7" />
+  <folder_arme name="Sector Entities" id_arme="67cb7fe3-07e9-4fdb-a831-121419d04313" parent_id_arme="a624dba9-d158-490c-8cab-e9e878d290f7" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="80b33cef-ddd8-4658-828d-331cded70513" parent_id_arme="67cb7fe3-07e9-4fdb-a831-121419d04313">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -933,7 +933,7 @@
     <create count="30" type="nebulas" startX="47240.0" startY="0.0" startZ="12227.0" endX="30969.0" endY="0.0" endZ="29079.0" randomRange="3143" />
     <create count="10" type="mines" startX="61332.0" startY="0.0" startZ="42300.0" endX="61332.0" endY="0.0" endZ="42300.0" randomRange="37748" />
   </event>
-  <folder_arme name="Navigation" id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933" parent_id_arme="6d20f23c-7229-4076-9f7a-4f8ab13e9309" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933" parent_id_arme="6d20f23c-7229-4076-9f7a-4f8ab13e9309" />
   <event name="Transition to Sector VIII" id_arme="c1784873-c6cc-45e7-8c0c-93dff3dfbd1e" parent_id_arme="fd945d6d-3ec3-4431-b783-b070d0a52933">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -1022,7 +1022,7 @@
     <set_variable name="Sector" value="12.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="d95b0853-09e1-42af-8558-e614bbf069c9" parent_id_arme="6d20f23c-7229-4076-9f7a-4f8ab13e9309" />
+  <folder_arme name="Sector Entities" id_arme="d95b0853-09e1-42af-8558-e614bbf069c9" parent_id_arme="6d20f23c-7229-4076-9f7a-4f8ab13e9309" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="449b7ca5-28e0-4940-a936-13cab435e930" parent_id_arme="d95b0853-09e1-42af-8558-e614bbf069c9">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7" />
@@ -1072,7 +1072,7 @@
     <create count="90" type="asteroids" startX="71647.0" startY="0.0" startZ="15133.0" endX="27192.0" endY="0.0" endZ="39104.0" randomRange="7810" />
     <create count="4" type="mines" startX="55521.0" startY="0.0" startZ="40266.0" endX="58427.0" endY="0.0" endZ="43026.0" randomRange="25936" />
   </event>
-  <folder_arme name="Navigation" id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1" parent_id_arme="32170489-a907-4358-a287-3e541cf5f48d" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1" parent_id_arme="32170489-a907-4358-a287-3e541cf5f48d" />
   <event name="Transition to Sector VII" id_arme="b614489e-9c0b-492c-8f50-83151869b2de" parent_id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -1128,7 +1128,7 @@
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="3935bd59-5739-406a-b851-b0e494df76a4" parent_id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="3935bd59-5739-406a-b851-b0e494df76a4" parent_id_arme="17ba5cd2-68d5-43f9-b5b9-d08b796938c1" />
   <event name="Gate Offline" id_arme="d70556f6-6ebf-41b9-be5e-5a64edb84f28" parent_id_arme="3935bd59-5739-406a-b851-b0e494df76a4">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -1394,7 +1394,7 @@
     <create count="90" type="asteroids" startX="81816.0" startY="0.0" startZ="27481.0" endX="36925.0" endY="0.0" endZ="60460.0" randomRange="7084" />
     <create count="50" type="asteroids" startX="45206.0" startY="0.0" startZ="56537.0" endX="24577.0" endY="0.0" endZ="89079.0" randomRange="5856" />
   </event>
-  <folder_arme name="Navigation" id_arme="07ce28ed-a1dd-44cd-adcf-3c3d06fb8c5a" parent_id_arme="1c12403b-57dd-4695-99a0-28a91f1b7206" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="07ce28ed-a1dd-44cd-adcf-3c3d06fb8c5a" parent_id_arme="1c12403b-57dd-4695-99a0-28a91f1b7206" />
   <event name="Transition to Sector X" id_arme="e0da0d8c-f8d1-4036-81d8-7d990fe70961" parent_id_arme="07ce28ed-a1dd-44cd-adcf-3c3d06fb8c5a">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -1428,7 +1428,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="fa52196b-01ea-4678-a9ea-5c56ec18a8b3" parent_id_arme="1c12403b-57dd-4695-99a0-28a91f1b7206" />
+  <folder_arme name="Sector Entities" id_arme="fa52196b-01ea-4678-a9ea-5c56ec18a8b3" parent_id_arme="1c12403b-57dd-4695-99a0-28a91f1b7206" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="3e1db7e9-0aca-4e76-9610-615e44455b95" parent_id_arme="fa52196b-01ea-4678-a9ea-5c56ec18a8b3">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9" />
@@ -1477,7 +1477,7 @@
     <create count="25" type="nebulas" startX="41644.0" startY="0.0" startZ="24027.0" endX="37880.0" endY="0.0" endZ="33964.0" randomRange="10436" />
     <create count="20" type="nebulas" startX="25835.0" startY="0.0" startZ="35621.0" endX="13338.0" endY="0.0" endZ="54441.0" randomRange="2860" />
   </event>
-  <folder_arme name="Navigation" id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91" parent_id_arme="7bea1ea1-9965-457e-acdd-3ca2a269a4dd" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91" parent_id_arme="7bea1ea1-9965-457e-acdd-3ca2a269a4dd" />
   <event name="Transition to Sector XI" id_arme="a1c192a4-5d1d-4469-bb2c-c833a4316d7c" parent_id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -1533,7 +1533,7 @@
     <set_variable name="Sector" value="5.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="f035cdaf-6ef6-46e9-b33f-4024680ba1cd" parent_id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="f035cdaf-6ef6-46e9-b33f-4024680ba1cd" parent_id_arme="7e95ca59-a581-4a54-b77e-d3a04182ab91" />
   <event name="Gate Offline" id_arme="9fd97ca4-1c2e-4f68-aba7-c7722a6a67ac" parent_id_arme="f035cdaf-6ef6-46e9-b33f-4024680ba1cd">
     <if_variable name="Sector" comparator="EQUALS" value="10" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -1715,12 +1715,12 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="e9d14eed-1665-42da-91af-cd0c72f5f8b3" parent_id_arme="7bea1ea1-9965-457e-acdd-3ca2a269a4dd" />
+  <folder_arme name="Sector Entities" id_arme="e9d14eed-1665-42da-91af-cd0c72f5f8b3" parent_id_arme="7bea1ea1-9965-457e-acdd-3ca2a269a4dd" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="ac7a0d25-021b-4880-b4cf-a1be1b0be3b5" parent_id_arme="e9d14eed-1665-42da-91af-cd0c72f5f8b3">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="10" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="66036.0" y="0.0" z="46010.0" angle="0" name="Kalixa Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="66036.0" y="0.0" z="46010.0" name="Kalixa Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1797,7 +1797,7 @@
     <create count="40" type="nebulas" startX="54649.0" startY="0.0" startZ="15569.0" endX="82688.0" endY="0.0" endZ="12372.0" randomRange="3968" />
     <create count="27" type="asteroids" startX="61187.0" startY="0.0" startZ="15714.0" endX="17749.0" endY="0.0" endZ="36634.0" randomRange="5341" />
   </event>
-  <folder_arme name="Navigation" id_arme="435d1131-8107-411f-aaf8-eaeb811cf07c" parent_id_arme="a1eff35a-6f64-4443-948d-2ed86bae77b5" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="435d1131-8107-411f-aaf8-eaeb811cf07c" parent_id_arme="a1eff35a-6f64-4443-948d-2ed86bae77b5" />
   <event name="Transition to Sector XII" id_arme="fa21ed49-c19c-4b79-a4c8-bd7c376b6712" parent_id_arme="435d1131-8107-411f-aaf8-eaeb811cf07c">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -1853,7 +1853,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="4a00aa70-7ad1-4ef1-a2a4-3e5a09c8e214" parent_id_arme="a1eff35a-6f64-4443-948d-2ed86bae77b5" />
+  <folder_arme name="Sector Entities" id_arme="4a00aa70-7ad1-4ef1-a2a4-3e5a09c8e214" parent_id_arme="a1eff35a-6f64-4443-948d-2ed86bae77b5" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="e42ebffd-7709-48c9-9f32-ace2d8839ca6" parent_id_arme="4a00aa70-7ad1-4ef1-a2a4-3e5a09c8e214">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="11" />
@@ -1904,7 +1904,7 @@
     <create count="10" type="nebulas" startX="65109.0" startY="0.0" startZ="33728.0" endX="49274.0" endY="0.0" endZ="38523.0" randomRange="5439" />
     <create count="40" type="asteroids" startX="56974.0" startY="0.0" startZ="90532.0" endX="16296.0" endY="0.0" endZ="92711.0" randomRange="6753" />
   </event>
-  <folder_arme name="Navigation" id_arme="4b9da6dd-2dd9-4e20-9701-9d861668c18f" parent_id_arme="6491fc30-b5b4-4326-b485-6f3990532227" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="4b9da6dd-2dd9-4e20-9701-9d861668c18f" parent_id_arme="6491fc30-b5b4-4326-b485-6f3990532227" />
   <event name="Transition to Sector XI" id_arme="189959c6-f865-4dbc-b5c0-94fab6636dbf" parent_id_arme="4b9da6dd-2dd9-4e20-9701-9d861668c18f">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
@@ -1938,7 +1938,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Cronus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="7dab9fb1-ae7f-4339-a9e5-e05fefd84675" parent_id_arme="6491fc30-b5b4-4326-b485-6f3990532227" />
+  <folder_arme name="Sector Entities" id_arme="7dab9fb1-ae7f-4339-a9e5-e05fefd84675" parent_id_arme="6491fc30-b5b4-4326-b485-6f3990532227" expanded_arme="" />
   <event name="Generate Sector Entities" id_arme="2f10de4a-a8cb-4533-9318-b2929397eabc" parent_id_arme="7dab9fb1-ae7f-4339-a9e5-e05fefd84675">
     <if_variable name="Cronus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="12" />

@@ -4,9 +4,9 @@
     <set_variable name="Coordinate Y" value="279.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Hjorden System" id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" expanded_arme="" />
-  <folder_arme name="Hjorden Settings" id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" expanded_arme="" />
-  <folder_arme name="Hjorden Menu" id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" expanded_arme="" />
+  <folder_arme name="Hjorden System" id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <folder_arme name="Hjorden Settings" id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <folder_arme name="Hjorden Menu" id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" />
   <event name="Hjorden Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
     <set_gm_button text="Upper Arc/Hjorden System" />
@@ -122,11 +122,11 @@
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
-    <create type="station" x="59712.0" y="0.0" z="21016.0" angle="0" name="L-94" hullID="1100" />
-    <create type="station" x="65283.0" y="0.0" z="20414.0" angle="0" name="G-82" hullID="1100" />
-    <create type="station" x="64229.0" y="0.0" z="25081.0" angle="0" name="K-77" hullID="1100" />
-    <create type="station" x="68896.0" y="0.0" z="24178.0" angle="0" name="H-20" hullID="1100" />
-    <create type="station" x="54442.0" y="0.0" z="72208.0" angle="0" name="Lagora" hullID="1100" />
+    <create type="neutral" x="59712.0" y="0.0" z="21016.0" angle="0" name="L-94" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="65283.0" y="0.0" z="20414.0" angle="0" name="G-82" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="64229.0" y="0.0" z="25081.0" angle="0" name="K-77" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="68896.0" y="0.0" z="24178.0" angle="0" name="H-20" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="54442.0" y="0.0" z="72208.0" angle="0" name="Lagora" hullID="1100" sideValue="sectorSide" />
   </event>
   <event name="Settings" id_arme="04a78bbd-fa8d-4df6-9691-ee675302001c" parent_id_arme="6478d327-fe3c-4276-860c-283f7b770741">
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
@@ -147,7 +147,7 @@
     <set_variable name="Hjorden System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Hjorden Sector II" id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" expanded_arme="" />
+  <folder_arme name="Hjorden Sector II" id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
   <event name="Create Hjorden Sector II" id_arme="cbcb7ea4-4969-4fb9-a34c-96a8bfc90014" parent_id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da">
     <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -174,7 +174,7 @@
     <create count="10" type="nebulas" startX="19963.0" startY="0.0" startZ="47063.0" endX="16801.0" endY="0.0" endZ="39385.0" randomRange="2293" />
     <create count="11" type="nebulas" startX="23275.0" startY="0.0" startZ="44203.0" endX="23125.0" endY="0.0" endZ="55646.0" randomRange="3544" />
   </event>
-  <folder_arme name="Navigation" id_arme="40317299-7ecd-4667-92c0-248b4746aef7" parent_id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="40317299-7ecd-4667-92c0-248b4746aef7" parent_id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da" />
   <event name="Transition to Sector III" id_arme="223845c0-0623-4342-aa3e-549381b4375b" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -230,7 +230,7 @@
     <set_variable name="Hjorden System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="4.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="31ad8cea-530d-4c6e-b93e-d3ddcf977280" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="31ad8cea-530d-4c6e-b93e-d3ddcf977280" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7" />
   <event name="Gate Offline" id_arme="5e0f0ab2-edcc-479f-bbf7-f8ad41b5914d" parent_id_arme="31ad8cea-530d-4c6e-b93e-d3ddcf977280">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
@@ -417,12 +417,12 @@
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="51280.0" y="0.0" z="35621.0" angle="0" name="S-54" hullID="1100" />
-    <create type="station" x="67391.0" y="0.0" z="46010.0" angle="0" name="L-01" hullID="1100" />
-    <create type="station" x="46914.0" y="0.0" z="19811.0" angle="0" name="Z-12" hullID="1100" />
-    <create type="station" x="87566.0" y="0.0" z="52333.0" angle="0" name="X-53" hullID="1100" />
-    <create type="station" x="49624.0" y="0.0" z="51129.0" angle="0" name="Nanara" hullID="1100" />
-    <create type="genericMesh" x="73714.0" y="0.0" z="28092.0" angle="0" name="Antara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="51280.0" y="0.0" z="35621.0" angle="0" name="S-54" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="67391.0" y="0.0" z="46010.0" angle="0" name="L-01" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="46914.0" y="0.0" z="19811.0" angle="0" name="Z-12" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="87566.0" y="0.0" z="52333.0" angle="0" name="X-53" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="49624.0" y="0.0" z="51129.0" angle="0" name="Nanara" hullID="1100" sideValue="sectorSide" />
+    <create type="genericMesh" x="73714.0" y="0.0" z="28092.0" name="Antara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -474,7 +474,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Antara to Hjorden" value="0.0" />
   </event>
-  <folder_arme name="Hjorden Sector III" id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" expanded_arme="" />
+  <folder_arme name="Hjorden Sector III" id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
   <event name="Create Hjorden Sector III" id_arme="4d9141ec-c868-4ca6-85e5-74a62a9aea4e" parent_id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a">
     <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -499,7 +499,7 @@
     <create count="20" type="asteroids" startX="52033.0" startY="0.0" startZ="14993.0" endX="33213.0" endY="0.0" endZ="9422.0" randomRange="2563" />
     <create count="24" type="nebulas" startX="33514.0" startY="30.0" startZ="70401.0" endX="33514.0" endY="30.0" endZ="70401.0" randomRange="31838" />
   </event>
-  <folder_arme name="Navigation" id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6" parent_id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6" parent_id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a" />
   <event name="Transition to Sector II" id_arme="cf917f7b-b0ea-43e2-84fb-244bf2418837" parent_id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -533,7 +533,7 @@
     <set_variable name="Hjorden System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="9814d69c-d1b7-49b1-bbd2-dc6ecd90e1ff" parent_id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="9814d69c-d1b7-49b1-bbd2-dc6ecd90e1ff" parent_id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6" />
   <event name="Gate Offline" id_arme="1cc0a1f6-4d8e-4ffa-b27b-f2ff465ba3fa" parent_id_arme="9814d69c-d1b7-49b1-bbd2-dc6ecd90e1ff">
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
@@ -720,7 +720,7 @@
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="52997.0" y="0.0" z="69590.0" angle="0" name="Arcturus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="52997.0" y="0.0" z="69590.0" name="Arcturus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -852,11 +852,11 @@
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="55195.0" y="0.0" z="52183.0" angle="0" name="Pantera" hullID="1100" />
-    <create type="station" x="42925.0" y="0.0" z="31103.0" angle="0" name="Q-78" hullID="1100" />
-    <create type="station" x="76651.0" y="0.0" z="75821.0" angle="0" name="E-24" hullID="1100" />
-    <create type="station" x="71983.0" y="0.0" z="71003.0" angle="0" name="T-75" hullID="1100" />
-    <create type="station" x="46659.0" y="0.0" z="29079.0" angle="0" name="X-02" hullID="1100" />
+    <create type="neutral" x="55195.0" y="0.0" z="52183.0" angle="0" name="Pantera" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="42925.0" y="0.0" z="31103.0" angle="0" name="Q-78" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="76651.0" y="0.0" z="75821.0" angle="0" name="E-24" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="71983.0" y="0.0" z="71003.0" angle="0" name="T-75" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="46659.0" y="0.0" z="29079.0" angle="0" name="X-02" hullID="1100" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -997,7 +997,7 @@
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="65433.0" y="0.0" z="48569.0" angle="0" name="S-12" hullID="1100" />
+    <create type="neutral" x="65433.0" y="0.0" z="48569.0" angle="0" name="S-12" hullID="1100" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1017,7 +1017,7 @@
     <set_variable name="Hjorden System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Hjorden Sector VI" id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" expanded_arme="" />
+  <folder_arme name="Hjorden Sector VI" id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
   <event name="Create Hjorden Sector VI" id_arme="3c185f07-54e4-4edd-920a-a74af77ee755" parent_id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16">
     <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -1038,7 +1038,7 @@
     <create count="40" type="asteroids" startX="68896.0" startY="0.0" startZ="29297.0" endX="38934.0" endY="0.0" endZ="31555.0" randomRange="2891" />
     <create count="30" type="asteroids" startX="43903.0" startY="0.0" startZ="79134.0" endX="15446.0" endY="0.0" endZ="68143.0" randomRange="4728" />
   </event>
-  <folder_arme name="Navigation" id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4" parent_id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4" parent_id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16" />
   <event name="Transition to Sector V" id_arme="01b84d9d-7624-4839-ae1c-e502a18ed116" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -1094,7 +1094,7 @@
     <set_variable name="Hjorden System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b633fe08-2ece-49c5-a584-dcdaeda7d372" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b633fe08-2ece-49c5-a584-dcdaeda7d372" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4" />
   <event name="Gate Offline" id_arme="f11d0afa-fee5-4159-945a-2132439d6cdb" parent_id_arme="b633fe08-2ece-49c5-a584-dcdaeda7d372">
     <if_variable name="Sector" comparator="EQUALS" value="6" />
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
@@ -1281,12 +1281,12 @@
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="27642.0" y="0.0" z="35169.0" angle="0" name="Cerberus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="44806.0" y="0.0" z="82296.0" angle="0" name="A-14" hullID="1100" />
-    <create type="station" x="72058.0" y="0.0" z="66185.0" angle="0" name="F-01" hullID="1100" />
-    <create type="station" x="41795.0" y="0.0" z="80037.0" angle="0" name="L-33" hullID="1100" />
-    <create type="station" x="75521.0" y="0.0" z="64680.0" angle="0" name="D-46" hullID="1100" />
-    <create type="station" x="50377.0" y="0.0" z="46311.0" angle="0" name="Alpha" hullID="1100" />
+    <create type="genericMesh" x="27642.0" y="0.0" z="35169.0" name="Cerberus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="44806.0" y="0.0" z="82296.0" angle="0" name="A-14" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="72058.0" y="0.0" z="66185.0" angle="0" name="F-01" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="41795.0" y="0.0" z="80037.0" angle="0" name="L-33" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="75521.0" y="0.0" z="64680.0" angle="0" name="D-46" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="50377.0" y="0.0" z="46311.0" angle="0" name="Alpha" hullID="1100" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1338,7 +1338,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Cerberus to Hjorden" value="0.0" />
   </event>
-  <folder_arme name="Hjorden Sector VII" id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" expanded_arme="" />
+  <folder_arme name="Hjorden Sector VII" id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
   <event name="Create Hjorden Sector VII" id_arme="cf73260d-9ecf-4da3-b473-a0ada0117bdd" parent_id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14">
     <if_variable name="Hjorden System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1365,7 +1365,7 @@
     <create count="30" type="asteroids" startX="30388.0" startY="0.0" startZ="72518.0" endX="17603.0" endY="0.0" endZ="84576.0" randomRange="2963" />
     <create count="30" type="asteroids" startX="34165.0" startY="-300.0" startZ="69322.0" endX="18766.0" endY="300.0" endZ="82687.0" randomRange="2923" />
   </event>
-  <folder_arme name="Navigation" id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c" parent_id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c" parent_id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14" />
   <event name="Transition to Sector VIII" id_arme="fd7d7f42-60fa-4b25-a07e-0533294b1cf9" parent_id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1399,7 +1399,7 @@
     <set_variable name="Hjorden System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b878c744-fd44-4283-8891-6afe9c201d4d" parent_id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b878c744-fd44-4283-8891-6afe9c201d4d" parent_id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c" />
   <event name="Gate Offline" id_arme="f0934bf4-591a-4c7c-9bc2-0822c32aac4b" parent_id_arme="b878c744-fd44-4283-8891-6afe9c201d4d">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
@@ -1586,7 +1586,7 @@
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="54214.0" y="0.0" z="50581.0" angle="0" name="Arrin Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="54214.0" y="0.0" z="50581.0" name="Arrin Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1715,9 +1715,9 @@
     <if_variable name="Hjorden System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="64982.0" y="0.0" z="50526.0" angle="0" name="Quill" hullID="1100" />
-    <create type="station" x="80731.0" y="0.0" z="33922.0" angle="0" name="D-56" hullID="1100" />
-    <create type="station" x="85594.0" y="0.0" z="41573.0" angle="0" name="C-72" hullID="1100" />
+    <create type="neutral" x="64982.0" y="0.0" z="50526.0" angle="0" name="Quill" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="80731.0" y="0.0" z="33922.0" angle="0" name="D-56" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="85594.0" y="0.0" z="41573.0" angle="0" name="C-72" hullID="1100" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

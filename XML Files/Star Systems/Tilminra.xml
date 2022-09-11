@@ -4,9 +4,9 @@
     <set_variable name="Coordinate Y" value="322.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Tilminra System" id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" expanded_arme="" />
+  <folder_arme name="Tilminra System" id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" />
   <folder_arme name="System Settings" id_arme="dd49bd6b-a7a8-4cac-aa85-7837e165129c" parent_id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" />
-  <folder_arme name="Activation Menu" id_arme="8ae053d0-4686-4668-8ed3-71ad1f09113c" parent_id_arme="dd49bd6b-a7a8-4cac-aa85-7837e165129c" expanded_arme="" />
+  <folder_arme name="Activation Menu" id_arme="8ae053d0-4686-4668-8ed3-71ad1f09113c" parent_id_arme="dd49bd6b-a7a8-4cac-aa85-7837e165129c" />
   <event name="Tilminra Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="8ae053d0-4686-4668-8ed3-71ad1f09113c">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
     <set_gm_button text="Lower Arc/Tilminra System" />
@@ -57,7 +57,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Tilminra Sector I" id_arme="b8a49bcf-486b-4e18-8a2f-71718ae58311" parent_id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" expanded_arme="" />
+  <folder_arme name="Tilminra Sector I" id_arme="b8a49bcf-486b-4e18-8a2f-71718ae58311" parent_id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" />
   <event name="Create Tilminra Sector I" id_arme="694251d8-ea39-4ad0-b273-c764787a4005" parent_id_arme="b8a49bcf-486b-4e18-8a2f-71718ae58311">
     <if_variable name="Tilminra System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -83,7 +83,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" integer="yes" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="Navigation" id_arme="31122fef-506a-475a-b6fc-7b45ef355520" parent_id_arme="b8a49bcf-486b-4e18-8a2f-71718ae58311" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="31122fef-506a-475a-b6fc-7b45ef355520" parent_id_arme="b8a49bcf-486b-4e18-8a2f-71718ae58311" />
   <event name="Transition to Sector II" id_arme="c0d8728d-7301-4852-ad88-aaa66dd50744" parent_id_arme="31122fef-506a-475a-b6fc-7b45ef355520">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
@@ -117,14 +117,14 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Tilminra System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="a7fed899-8b50-4592-a36e-2678b968d3af" parent_id_arme="31122fef-506a-475a-b6fc-7b45ef355520" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="a7fed899-8b50-4592-a36e-2678b968d3af" parent_id_arme="31122fef-506a-475a-b6fc-7b45ef355520" />
   <event name="Gate Offline" id_arme="500028bd-865e-4932-8efc-a29c04cb9f0b" parent_id_arme="a7fed899-8b50-4592-a36e-2678b968d3af">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Acantha Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="889d260f-f6f3-421c-831b-d671259e0546" parent_id_arme="a7fed899-8b50-4592-a36e-2678b968d3af" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="889d260f-f6f3-421c-831b-d671259e0546" parent_id_arme="a7fed899-8b50-4592-a36e-2678b968d3af" />
   <event name="Ship1 Activation Range" id_arme="3705a1ac-18b3-448b-89fc-4606423be837" parent_id_arme="889d260f-f6f3-421c-831b-d671259e0546">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
@@ -299,15 +299,15 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="68b31bd2-8db9-4e01-8a83-5334a1ed35c3" parent_id_arme="b8a49bcf-486b-4e18-8a2f-71718ae58311" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="68b31bd2-8db9-4e01-8a83-5334a1ed35c3" parent_id_arme="b8a49bcf-486b-4e18-8a2f-71718ae58311" />
   <event name="Generate Sector Entities" id_arme="5c53e76d-e2d8-41b1-9e10-bf0b9bf76668" parent_id_arme="68b31bd2-8db9-4e01-8a83-5334a1ed35c3">
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="58572.0" y="0.0" z="48125.0" name="Acantha Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="21875.0" y="0.0" z="69419.0" name="Tilminra Welcome" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="25090.0" y="0.0" z="32321.0" name="Mirilis" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="64063.0" y="0.0" z="80401.0" name="Sondo" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="21875.0" y="0.0" z="69419.0" name="Tilminra Welcome" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="25090.0" y="0.0" z="32321.0" name="Mirilis" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="64063.0" y="0.0" z="80401.0" name="Sondo" hullID="1000" sideValue="sectorSide" />
     <create type="neutral" x="47514.0" y="0.0" z="25469.0" angle="0" name="WP-922" hullID="1052" sideValue="sectorSide" />
     <create type="neutral" x="48343.0" y="0.0" z="70220.0" angle="0" name="WP-881" hullID="1052" sideValue="sectorSide" />
     <create type="neutral" x="79503.0" y="0.0" z="68066.0" angle="0" name="WP-749" hullID="1052" sideValue="sectorSide" />
@@ -444,10 +444,10 @@
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="73702.0" y="0.0" z="63591.0" name="L'Nya" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="43036.0" y="0.0" z="41830.0" name="L'Shawa" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="41027.0" y="0.0" z="60044.0" name="Aga Medical Institute" hullID="1004" sideValue="sectorSide" />
-    <create type="station" x="45360.0" y="0.0" z="69558.0" name="Tasn Mining Ops" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="73702.0" y="0.0" z="63591.0" name="L'Nya" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="43036.0" y="0.0" z="41830.0" name="L'Shawa" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="41027.0" y="0.0" z="60044.0" name="Aga Medical Institute" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="45360.0" y="0.0" z="69558.0" name="Tasn Mining Ops" hullID="1003" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -549,7 +549,7 @@
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="49669.0" y="0.0" z="52983.0" name="Mel-Ya Foundry" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="49669.0" y="0.0" z="52983.0" name="Mel-Ya Foundry" hullID="1003" sideValue="sectorSide" />
     <create type="neutral" x="48675.0" y="0.0" z="75193.0" angle="0" name="Crixia Metals" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="51824.0" y="0.0" z="44861.0" angle="0" name="Yandro Shipyards" hullID="1053" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
@@ -630,9 +630,9 @@
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="53813.0" y="0.0" z="54309.0" name="Mildraz" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="53315.0" y="0.0" z="40220.0" name="Police HQ" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="42233.0" y="0.0" z="69553.0" name="Yashi Traders" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="53813.0" y="0.0" z="54309.0" name="Mildraz" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="53315.0" y="0.0" z="40220.0" name="Police HQ" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="42233.0" y="0.0" z="69553.0" name="Yashi Traders" hullID="1003" sideValue="sectorSide" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -732,9 +732,9 @@
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="35402.0" y="0.0" z="48125.0" name="Immigration Authority" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="66875.0" y="0.0" z="66339.0" name="Tilminra Alders" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="31768.0" y="0.0" z="70718.0" name="Intu Hospitality" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="35402.0" y="0.0" z="48125.0" name="Immigration Authority" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="66875.0" y="0.0" z="66339.0" name="Tilminra Alders" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="31768.0" y="0.0" z="70718.0" name="Intu Hospitality" hullID="1001" sideValue="sectorSide" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -852,9 +852,9 @@
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="49669.0" y="0.0" z="42375.0" name="DS-601" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="56630.0" y="0.0" z="49834.0" name="TSN R&amp;D Directive" hullID="1004" sideValue="sectorSide" />
-    <create type="station" x="67735.0" y="0.0" z="55469.0" name="TSN Xenoscience" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="49669.0" y="0.0" z="42375.0" name="DS-601" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="56630.0" y="0.0" z="49834.0" name="TSN R&amp;D Directive" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="67735.0" y="0.0" z="55469.0" name="TSN Xenoscience" hullID="1004" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -954,9 +954,9 @@
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="67277.0" y="0.0" z="48125.0" name="TSN Materials Science" hullID="1004" sideValue="sectorSide" />
-    <create type="station" x="66340.0" y="0.0" z="33125.0" name="DS-1231" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="29108.0" y="0.0" z="53750.0" name="DS-1310" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="67277.0" y="0.0" z="48125.0" name="TSN Materials Science" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="66340.0" y="0.0" z="33125.0" name="DS-1231" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="29108.0" y="0.0" z="53750.0" name="DS-1310" hullID="1000" sideValue="sectorSide" />
     <create type="neutral" x="24420.0" y="0.0" z="39017.0" name="TSN Refinery" hullID="1051" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -976,7 +976,7 @@
     <set_variable name="Tilminra System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Tilminra Sector VIII" id_arme="3395a850-dab6-431a-979d-4234acf527fb" parent_id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" expanded_arme="" />
+  <folder_arme name="Tilminra Sector VIII" id_arme="3395a850-dab6-431a-979d-4234acf527fb" parent_id_arme="b394a5bf-9b2d-42df-8a92-acd68c457ff4" />
   <event name="Create Tilminra Sector VIII" id_arme="65b57b6f-0f48-4d92-bbe8-2bf099a66000" parent_id_arme="3395a850-dab6-431a-979d-4234acf527fb">
     <if_timer_finished name="Transition" />
     <if_variable name="Tilminra System" comparator="EQUALS" value="1.0" />
@@ -999,7 +999,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="24a72eee-87ef-4b14-a9a7-954afdb0aac9" parent_id_arme="3395a850-dab6-431a-979d-4234acf527fb" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="24a72eee-87ef-4b14-a9a7-954afdb0aac9" parent_id_arme="3395a850-dab6-431a-979d-4234acf527fb" />
   <event name="Transition to Sector IV" id_arme="d866b902-b16e-467d-818d-2c27c40d2a5b" parent_id_arme="24a72eee-87ef-4b14-a9a7-954afdb0aac9">
     <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
@@ -1033,14 +1033,14 @@
     <set_variable name="Sector" value="3.0" integer="yes" />
     <set_variable name="Tilminra System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="822c255b-954e-4aa1-ba67-6ef11ff1126a" parent_id_arme="24a72eee-87ef-4b14-a9a7-954afdb0aac9" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="822c255b-954e-4aa1-ba67-6ef11ff1126a" parent_id_arme="24a72eee-87ef-4b14-a9a7-954afdb0aac9" />
   <event name="Gate Offline" id_arme="7125ec51-fdd8-4baf-beb2-0fcd68573f15" parent_id_arme="822c255b-954e-4aa1-ba67-6ef11ff1126a">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Sumri Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="22d2e3f4-1de3-45ca-b45a-33d3be99569c" parent_id_arme="822c255b-954e-4aa1-ba67-6ef11ff1126a" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="22d2e3f4-1de3-45ca-b45a-33d3be99569c" parent_id_arme="822c255b-954e-4aa1-ba67-6ef11ff1126a" />
   <event name="Ship1 Activation Range" id_arme="1f81cb63-d604-4bc6-afab-c512de9e88ef" parent_id_arme="22d2e3f4-1de3-45ca-b45a-33d3be99569c">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Tilminra System" comparator="EQUALS" value="2.0" />
@@ -1221,9 +1221,9 @@
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="26831.0" y="0.0" z="61517.0" name="Sumri Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="69822.0" y="0.0" z="42232.0" name="Anhoto" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="67143.0" y="0.0" z="21875.0" name="Krynk Welcome" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="41027.0" y="0.0" z="17857.0" name="Aydos" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="69822.0" y="0.0" z="42232.0" name="Anhoto" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="67143.0" y="0.0" z="21875.0" name="Krynk Welcome" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="41027.0" y="0.0" z="17857.0" name="Aydos" hullID="1000" sideValue="sectorSide" />
     <create type="neutral" x="69554.0" y="0.0" z="59241.0" angle="0" name="WP-1208" hullID="1052" sideValue="sectorSide" />
     <create type="neutral" x="46117.0" y="0.0" z="36205.0" angle="0" name="WP-1211" hullID="1052" sideValue="sectorSide" />
     <create type="neutral" x="22277.0" y="0.0" z="9687.0" angle="0" name="WP-1244" hullID="1052" sideValue="sectorSide" />

@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="451.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Mria System" id_arme="b3306a27-726e-4516-a40f-48e4e4825520" expanded_arme="" />
+  <folder_arme name="Mria System" id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
   <folder_arme name="Mria Settings" id_arme="6b8fe142-bc3a-4d5a-8e0b-b7435c16b71e" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
   <folder_arme name="Mria Menu" id_arme="fb4301dd-df9d-4130-ad08-76544682f8eb" parent_id_arme="6b8fe142-bc3a-4d5a-8e0b-b7435c16b71e" />
   <event name="Mria Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="fb4301dd-df9d-4130-ad08-76544682f8eb">
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sector I - V" id_arme="69612d26-6395-4a7e-bb78-44433347d5ad" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" expanded_arme="" />
+  <folder_arme name="Sector I - V" id_arme="69612d26-6395-4a7e-bb78-44433347d5ad" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
   <folder_arme name="Mria Sector I" id_arme="b4a76ff8-d811-451c-9d0e-989559544354" parent_id_arme="69612d26-6395-4a7e-bb78-44433347d5ad" />
   <event name="Create Mria Sector I" id_arme="8772d3ed-d206-4ed8-a419-accee9169ccd" parent_id_arme="b4a76ff8-d811-451c-9d0e-989559544354">
     <if_timer_finished name="Transition" />
@@ -132,7 +132,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector II" id_arme="80ee9720-460e-4adb-b474-5aec356a8d41" parent_id_arme="69612d26-6395-4a7e-bb78-44433347d5ad" expanded_arme="" />
+  <folder_arme name="Mria Sector II" id_arme="80ee9720-460e-4adb-b474-5aec356a8d41" parent_id_arme="69612d26-6395-4a7e-bb78-44433347d5ad" />
   <event name="Create Mria Sector II" id_arme="45e9a2a3-f0b0-4be5-879a-fc8d9a6fd968" parent_id_arme="80ee9720-460e-4adb-b474-5aec356a8d41">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />
@@ -157,7 +157,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="c8e92e1b-794b-44b2-a88d-869f9e1104db" parent_id_arme="80ee9720-460e-4adb-b474-5aec356a8d41" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="c8e92e1b-794b-44b2-a88d-869f9e1104db" parent_id_arme="80ee9720-460e-4adb-b474-5aec356a8d41" />
   <event name="Transition to Sector III" id_arme="564d8ea8-e011-4615-8bf6-5ffc6b5cea69" parent_id_arme="c8e92e1b-794b-44b2-a88d-869f9e1104db">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
@@ -213,14 +213,14 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Mria System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="0bd65736-39bf-4261-ac83-d3add7afcebc" parent_id_arme="c8e92e1b-794b-44b2-a88d-869f9e1104db" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="0bd65736-39bf-4261-ac83-d3add7afcebc" parent_id_arme="c8e92e1b-794b-44b2-a88d-869f9e1104db" />
   <event name="Gate Offline" id_arme="6933be14-3b63-408e-87bf-13f0de4e7789" parent_id_arme="0bd65736-39bf-4261-ac83-d3add7afcebc">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Eulis Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="0de83953-e65a-4908-9c24-66f69acbe87b" parent_id_arme="0bd65736-39bf-4261-ac83-d3add7afcebc" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="0de83953-e65a-4908-9c24-66f69acbe87b" parent_id_arme="0bd65736-39bf-4261-ac83-d3add7afcebc" />
   <event name="Ship1 Activation Range" id_arme="ce757cf2-9e92-431f-9e1d-48d43135bb25" parent_id_arme="0de83953-e65a-4908-9c24-66f69acbe87b">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
@@ -401,11 +401,11 @@
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="51474.0" y="0.0" z="69151.0" name="Eulis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="84822.0" y="0.0" z="69955.0" name="DS-662" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="28036.0" y="0.0" z="61250.0" name="DS-701" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="71563.0" y="0.0" z="24687.0" name="Ela Industries" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="27500.0" y="0.0" z="46116.0" name="Customs &amp; Immigration" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="20536.0" y="0.0" z="52142.0" name="Mria Shipyards" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="84822.0" y="0.0" z="69955.0" name="DS-662" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="28036.0" y="0.0" z="61250.0" name="DS-701" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="71563.0" y="0.0" z="24687.0" name="Ela Industries" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="27500.0" y="0.0" z="46116.0" name="Customs &amp; Immigration" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="20536.0" y="0.0" z="52142.0" name="Mria Shipyards" hullID="1003" sideValue="sectorSide" />
     <create type="neutral" x="74375.0" y="0.0" z="42901.0" angle="0" name="Precious Mining" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="51742.0" y="0.0" z="27366.0" angle="0" name="Jeketa Ores" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="82009.0" y="0.0" z="54017.0" angle="0" name="Ufaqi Mining" hullID="1050" sideValue="sectorSide" />
@@ -543,13 +543,13 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Mria System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="4737e525-3e24-46f1-b82f-2441f8cd95c1" parent_id_arme="c936d28a-00a2-4bd9-833f-f5391903b57e" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="4737e525-3e24-46f1-b82f-2441f8cd95c1" parent_id_arme="c936d28a-00a2-4bd9-833f-f5391903b57e" />
   <event name="Generate Sector Entities" id_arme="a5352457-fbf6-4cfd-a83d-567b4ba8a4a5" parent_id_arme="4737e525-3e24-46f1-b82f-2441f8cd95c1">
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="56295.0" y="0.0" z="55223.0" name="Oophedran" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="41563.0" y="0.0" z="75312.0" name="Premoler" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="56295.0" y="0.0" z="55223.0" name="Oophedran" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="41563.0" y="0.0" z="75312.0" name="Premoler" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Mria III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -645,7 +645,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Mria System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="350c1a93-2e84-4252-b612-fc78d70483ed" parent_id_arme="12f603c4-15f7-476e-bd0f-19260adf301d" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="350c1a93-2e84-4252-b612-fc78d70483ed" parent_id_arme="12f603c4-15f7-476e-bd0f-19260adf301d" />
   <event name="Generate Sector Entities" id_arme="27dd7633-6924-4e0f-abf1-f004e0af36dc" parent_id_arme="350c1a93-2e84-4252-b612-fc78d70483ed">
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -722,7 +722,7 @@
     <set_variable name="Sector" value="9.0" integer="yes" />
     <set_variable name="Mria System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="af1c25fe-9741-4065-bf6d-655e67142002" parent_id_arme="c43a4830-862a-4555-bad6-ac916c688077" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="af1c25fe-9741-4065-bf6d-655e67142002" parent_id_arme="c43a4830-862a-4555-bad6-ac916c688077" />
   <event name="Generate Sector Entities" id_arme="63298aaa-d792-4869-b980-9c54e47c494c" parent_id_arme="af1c25fe-9741-4065-bf6d-655e67142002">
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -744,8 +744,8 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector VI - X" id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" expanded_arme="" />
-  <folder_arme name="Mria Sector VI" id_arme="7e41ece5-b766-4f9d-b6ab-6151a719f0d0" parent_id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" expanded_arme="" />
+  <folder_arme name="Sector VI - X" id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
+  <folder_arme name="Mria Sector VI" id_arme="7e41ece5-b766-4f9d-b6ab-6151a719f0d0" parent_id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" />
   <event name="Create Mria Sector VI" id_arme="427aeb50-317e-4038-9b8d-441cf7fc7696" parent_id_arme="7e41ece5-b766-4f9d-b6ab-6151a719f0d0">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />
@@ -829,7 +829,7 @@
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="57367.0" y="0.0" z="52276.0" name="Kazu" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="57367.0" y="0.0" z="52276.0" name="Kazu" hullID="1003" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Mria VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -848,7 +848,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector VII" id_arme="9a3089c4-cf53-4c69-8619-17d8b7f9ac55" parent_id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" expanded_arme="" />
+  <folder_arme name="Mria Sector VII" id_arme="9a3089c4-cf53-4c69-8619-17d8b7f9ac55" parent_id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" />
   <event name="Create Mria Sector VII" id_arme="ab9d1db0-fd8d-411e-aa58-6be5939c8b0b" parent_id_arme="9a3089c4-cf53-4c69-8619-17d8b7f9ac55">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />
@@ -869,7 +869,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="2f054fd9-4463-4236-82f5-eda45d1239d6" parent_id_arme="9a3089c4-cf53-4c69-8619-17d8b7f9ac55" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="2f054fd9-4463-4236-82f5-eda45d1239d6" parent_id_arme="9a3089c4-cf53-4c69-8619-17d8b7f9ac55" />
   <event name="Transition to Sector VIII" id_arme="c3b1b5f9-2ea2-4eff-b3dd-c480fde61c97" parent_id_arme="2f054fd9-4463-4236-82f5-eda45d1239d6">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -958,7 +958,7 @@
     <set_variable name="Mria System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="1fd73ecd-b1ff-4087-b65c-d0b7aae1674a" parent_id_arme="2f054fd9-4463-4236-82f5-eda45d1239d6" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="1fd73ecd-b1ff-4087-b65c-d0b7aae1674a" parent_id_arme="2f054fd9-4463-4236-82f5-eda45d1239d6" />
   <event name="Gate Offline" id_arme="7ef88750-80d8-46bc-ac23-af78ac2fa514" parent_id_arme="1fd73ecd-b1ff-4087-b65c-d0b7aae1674a">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
@@ -1146,9 +1146,9 @@
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="51394.0" y="0.0" z="36356.0" name="Loria Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="29911.0" y="0.0" z="67946.0" name="DS-459" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="82411.0" y="0.0" z="33660.0" name="Tergi" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="27099.0" y="0.0" z="28705.0" name="Pargusan" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="29911.0" y="0.0" z="67946.0" name="DS-459" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="82411.0" y="0.0" z="33660.0" name="Tergi" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="27099.0" y="0.0" z="28705.0" name="Pargusan" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Mria VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -1197,7 +1197,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Loria to Mria" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector VIII" id_arme="9a1b9110-de80-4289-b1ae-d21cf5c04957" parent_id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" expanded_arme="" />
+  <folder_arme name="Mria Sector VIII" id_arme="9a1b9110-de80-4289-b1ae-d21cf5c04957" parent_id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" />
   <event name="Create Mria Sector VIII" id_arme="a3a7287b-f3bd-46ad-886c-9c1d44077e96" parent_id_arme="9a1b9110-de80-4289-b1ae-d21cf5c04957">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />
@@ -1315,9 +1315,9 @@
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="75447.0" y="0.0" z="55625.0" name="Massimon" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="20536.0" y="0.0" z="76651.0" name="Oppia" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="49063.0" y="0.0" z="26026.0" name="Finaro" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="75447.0" y="0.0" z="55625.0" name="Massimon" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="20536.0" y="0.0" z="76651.0" name="Oppia" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="49063.0" y="0.0" z="26026.0" name="Finaro" hullID="1001" sideValue="sectorSide" />
     <create type="neutral" x="52545.0" y="0.0" z="54955.0" angle="0" name="Imidri Mining" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="26697.0" y="0.0" z="63392.0" angle="0" name="Cholander Ores" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="30849.0" y="0.0" z="45178.0" angle="0" name="Elite Refining" hullID="1051" sideValue="sectorSide" />
@@ -1344,7 +1344,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector IX" id_arme="1f52fe76-debd-41d7-824f-7e814f161898" parent_id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" expanded_arme="" />
+  <folder_arme name="Mria Sector IX" id_arme="1f52fe76-debd-41d7-824f-7e814f161898" parent_id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" />
   <event name="Create Mria Sector IX" id_arme="c62d0395-4273-45b7-a721-a038439945a3" parent_id_arme="1f52fe76-debd-41d7-824f-7e814f161898">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />
@@ -1459,9 +1459,9 @@
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
-    <create type="station" x="41161.0" y="0.0" z="25089.0" name="Capitol City" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="65536.0" y="0.0" z="63125.0" name="Ayala Trading Post" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="25358.0" y="0.0" z="51741.0" name="Elson" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="41161.0" y="0.0" z="25089.0" name="Capitol City" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="65536.0" y="0.0" z="63125.0" name="Ayala Trading Post" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="25358.0" y="0.0" z="51741.0" name="Elson" hullID="1003" sideValue="sectorSide" />
     <create type="neutral" x="22277.0" y="0.0" z="43839.0" angle="0" name="Elson Shipyards" hullID="1053" sideValue="sectorSide" />
     <create type="neutral" x="85759.0" y="0.0" z="40758.0" angle="0" name="Shachat Denabite" hullID="1051" sideValue="sectorSide" />
     <create type="neutral" x="86831.0" y="0.0" z="48125.0" angle="0" name="Sheol Ore Processing" hullID="1050" sideValue="sectorSide" />
@@ -1506,7 +1506,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector X" id_arme="337b3dbe-20df-4748-9f7e-3c065e541f0e" parent_id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" expanded_arme="" />
+  <folder_arme name="Mria Sector X" id_arme="337b3dbe-20df-4748-9f7e-3c065e541f0e" parent_id_arme="5ee4bd23-513d-47bf-9c85-72505cd5385f" />
   <event name="Create Mria Sector X" id_arme="94e09304-2897-4ce5-a33b-f0b55133316d" parent_id_arme="337b3dbe-20df-4748-9f7e-3c065e541f0e">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />
@@ -1604,7 +1604,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector XI - XV" id_arme="f052e0f1-a44a-45ad-a664-9319234b40c6" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" expanded_arme="" />
+  <folder_arme name="Sector XI - XV" id_arme="f052e0f1-a44a-45ad-a664-9319234b40c6" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
   <folder_arme name="Mria Sector XI" id_arme="54ec7357-7ffa-47a7-80e5-e89b5357e4ae" parent_id_arme="f052e0f1-a44a-45ad-a664-9319234b40c6" />
   <event name="Create Mria Sector XI" id_arme="04824613-21da-4ff1-8de8-8f01cf33d479" parent_id_arme="54ec7357-7ffa-47a7-80e5-e89b5357e4ae">
     <if_timer_finished name="Transition" />
@@ -1689,8 +1689,8 @@
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="11.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="33527.0" y="0.0" z="44776.0" name="DS-312" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="25893.0" y="0.0" z="74241.0" name="DS-448" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="33527.0" y="0.0" z="44776.0" name="DS-312" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="25893.0" y="0.0" z="74241.0" name="DS-448" hullID="1000" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Mria XI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -1710,7 +1710,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector XII" id_arme="e24421c4-af33-4fcd-9fd5-b186ddcdabcd" parent_id_arme="f052e0f1-a44a-45ad-a664-9319234b40c6" expanded_arme="" />
+  <folder_arme name="Mria Sector XII" id_arme="e24421c4-af33-4fcd-9fd5-b186ddcdabcd" parent_id_arme="f052e0f1-a44a-45ad-a664-9319234b40c6" />
   <event name="Create Mria Sector XII" id_arme="f0b513af-418e-40d4-b6c4-c5909502d776" parent_id_arme="e24421c4-af33-4fcd-9fd5-b186ddcdabcd">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />
@@ -1826,14 +1826,14 @@
     <set_variable name="Mria System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="6.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="9d0a1d96-d0fa-4584-9a79-e7ee0d1a652c" parent_id_arme="e24421c4-af33-4fcd-9fd5-b186ddcdabcd" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="9d0a1d96-d0fa-4584-9a79-e7ee0d1a652c" parent_id_arme="e24421c4-af33-4fcd-9fd5-b186ddcdabcd" />
   <event name="Generate Sector Entities" id_arme="bd5b30fb-ec77-4efa-a831-62b0b28b313f" parent_id_arme="9d0a1d96-d0fa-4584-9a79-e7ee0d1a652c">
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="12.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="75581.0" y="0.0" z="35133.0" name="DS-900" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="24018.0" y="0.0" z="22142.0" name="Alkanillion" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="63125.0" y="0.0" z="63125.0" name="Zildi Systems" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="75581.0" y="0.0" z="35133.0" name="DS-900" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="24018.0" y="0.0" z="22142.0" name="Alkanillion" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="63125.0" y="0.0" z="63125.0" name="Zildi Systems" hullID="1003" sideValue="sectorSide" />
     <create type="neutral" x="33125.0" y="0.0" z="34732.0" angle="0" name="Tossey Fabricants" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="45715.0" y="0.0" z="56964.0" angle="0" name="Redeymo Ores" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="23483.0" y="0.0" z="67678.0" angle="0" name="Opal Ores" hullID="1050" sideValue="sectorSide" />
@@ -1984,10 +1984,10 @@
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="13.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="47322.0" y="0.0" z="36741.0" name="Mria Command" hullID="1002" sideValue="sectorSide" />
-    <create type="station" x="36742.0" y="0.0" z="34866.0" name="DS-202" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="61518.0" y="0.0" z="30982.0" name="DS-257" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="53617.0" y="0.0" z="45446.0" name="Jetel" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="47322.0" y="0.0" z="36741.0" name="Mria Command" hullID="1002" sideValue="sectorSide" />
+    <create type="neutral" x="36742.0" y="0.0" z="34866.0" name="DS-202" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="61518.0" y="0.0" z="30982.0" name="DS-257" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="53617.0" y="0.0" z="45446.0" name="Jetel" hullID="1003" sideValue="sectorSide" />
     <create type="neutral" x="60849.0" y="0.0" z="38482.0" angle="0" name="SY-110" hullID="1053" sideValue="sectorSide" />
     <create type="neutral" x="60983.0" y="0.0" z="43571.0" angle="0" name="SY-198" hullID="1053" sideValue="sectorSide" />
     <create type="neutral" x="52813.0" y="0.0" z="16651.0" angle="0" name="WP-62A" hullID="1052" sideValue="sectorSide" />
@@ -2135,10 +2135,10 @@
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="14.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="24822.0" y="0.0" z="24285.0" name="DS-506" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="75045.0" y="0.0" z="70491.0" name="DS-795" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="16518.0" y="0.0" z="68616.0" name="Axitymy" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="76117.0" y="0.0" z="26160.0" name="Pretara" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="24822.0" y="0.0" z="24285.0" name="DS-506" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="75045.0" y="0.0" z="70491.0" name="DS-795" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="16518.0" y="0.0" z="68616.0" name="Axitymy" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="76117.0" y="0.0" z="26160.0" name="Pretara" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Mria XIV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -2160,7 +2160,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector XV" id_arme="36a813dd-d8a3-416c-ae54-d89b6a636c5b" parent_id_arme="f052e0f1-a44a-45ad-a664-9319234b40c6" expanded_arme="" />
+  <folder_arme name="Mria Sector XV" id_arme="36a813dd-d8a3-416c-ae54-d89b6a636c5b" parent_id_arme="f052e0f1-a44a-45ad-a664-9319234b40c6" />
   <event name="Create Mria Sector XV" id_arme="a6d235ba-2aa3-4c48-aed8-c8e624c96e64" parent_id_arme="36a813dd-d8a3-416c-ae54-d89b6a636c5b">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />
@@ -2186,7 +2186,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="00e30153-9972-42b8-8154-7fb35b99282b" parent_id_arme="36a813dd-d8a3-416c-ae54-d89b6a636c5b" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="00e30153-9972-42b8-8154-7fb35b99282b" parent_id_arme="36a813dd-d8a3-416c-ae54-d89b6a636c5b" />
   <event name="Transition to Sector IX" id_arme="8e7d810c-4414-40bf-844f-c57fc4ed20ae" parent_id_arme="00e30153-9972-42b8-8154-7fb35b99282b">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
@@ -2242,7 +2242,7 @@
     <set_variable name="Sector" value="9.0" integer="yes" />
     <set_variable name="Mria System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="6265dc44-2d78-4a27-b59f-f898196d83aa" parent_id_arme="00e30153-9972-42b8-8154-7fb35b99282b" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="6265dc44-2d78-4a27-b59f-f898196d83aa" parent_id_arme="00e30153-9972-42b8-8154-7fb35b99282b" />
   <event name="Gate Offline" id_arme="7e146d0a-f3f7-4c67-bd78-0eee6f896667" parent_id_arme="6265dc44-2d78-4a27-b59f-f898196d83aa">
     <if_variable name="Sector" comparator="EQUALS" value="15" />
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
@@ -2431,10 +2431,10 @@
     <if_variable name="Sector" comparator="EQUALS" value="15.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="45715.0" y="0.0" z="66205.0" name="Tibur Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="68750.0" y="0.0" z="29642.0" name="DS-441" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="79197.0" y="0.0" z="51339.0" name="Majarki" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="44911.0" y="0.0" z="29107.0" name="Inidabi Institute" hullID="1004" sideValue="sectorSide" />
-    <create type="station" x="67411.0" y="0.0" z="68883.0" name="Goldone Industries" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="68750.0" y="0.0" z="29642.0" name="DS-441" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="79197.0" y="0.0" z="51339.0" name="Majarki" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="44911.0" y="0.0" z="29107.0" name="Inidabi Institute" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="67411.0" y="0.0" z="68883.0" name="Goldone Industries" hullID="1003" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Mria XV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -2484,7 +2484,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Tibur to Mria" value="0.0" />
   </event>
-  <folder_arme name="Sector XVI - XX" id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" expanded_arme="" />
+  <folder_arme name="Sector XVI - XX" id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" parent_id_arme="b3306a27-726e-4516-a40f-48e4e4825520" />
   <folder_arme name="Mria Sector XVI" id_arme="9b7c0af5-f5df-4280-badc-ba9c4be75cda" parent_id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" />
   <event name="Create Mria Sector XVI" id_arme="64dbed83-a032-41d9-83fe-e0fb8cb96e60" parent_id_arme="9b7c0af5-f5df-4280-badc-ba9c4be75cda">
     <if_timer_finished name="Transition" />
@@ -2646,8 +2646,8 @@
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="17.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="66742.0" y="0.0" z="37008.0" name="Hooke Labs" hullID="1004" sideValue="sectorSide" />
-    <create type="station" x="37143.0" y="0.0" z="41696.0" name="Djakinti" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="66742.0" y="0.0" z="37008.0" name="Hooke Labs" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="37143.0" y="0.0" z="41696.0" name="Djakinti" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Mria XVII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -2667,7 +2667,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector XVIII" id_arme="de351ea9-58b6-4af3-a8df-a13cb5b43a0e" parent_id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" expanded_arme="" />
+  <folder_arme name="Mria Sector XVIII" id_arme="de351ea9-58b6-4af3-a8df-a13cb5b43a0e" parent_id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" />
   <event name="Create Mria Sector XVIII" id_arme="f69d7674-b08b-437e-a8a6-0b17de45149d" parent_id_arme="de351ea9-58b6-4af3-a8df-a13cb5b43a0e">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />
@@ -2693,7 +2693,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="350d32e5-ca70-4946-81f0-6e4fbd3671e9" parent_id_arme="de351ea9-58b6-4af3-a8df-a13cb5b43a0e" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="350d32e5-ca70-4946-81f0-6e4fbd3671e9" parent_id_arme="de351ea9-58b6-4af3-a8df-a13cb5b43a0e" />
   <event name="Transition to Sector XVII" id_arme="9bf90a39-c8f6-493b-a9cb-e3cf89e679aa" parent_id_arme="350d32e5-ca70-4946-81f0-6e4fbd3671e9">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
@@ -2749,14 +2749,14 @@
     <set_variable name="Mria System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="12.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="a2f89d8d-945f-4804-8ca7-065477ef1953" parent_id_arme="350d32e5-ca70-4946-81f0-6e4fbd3671e9" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="a2f89d8d-945f-4804-8ca7-065477ef1953" parent_id_arme="350d32e5-ca70-4946-81f0-6e4fbd3671e9" />
   <event name="Gate Offline" id_arme="dbd45860-7b74-4407-aea6-6156620f6dfc" parent_id_arme="a2f89d8d-945f-4804-8ca7-065477ef1953">
     <if_variable name="Sector" comparator="EQUALS" value="18" />
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Khoros Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="c240d7a4-8d17-4630-af1b-84f237159e32" parent_id_arme="a2f89d8d-945f-4804-8ca7-065477ef1953" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="c240d7a4-8d17-4630-af1b-84f237159e32" parent_id_arme="a2f89d8d-945f-4804-8ca7-065477ef1953" />
   <event name="Ship1 Activation Range" id_arme="2459b189-1dbe-4e0a-934c-2e43911453bd" parent_id_arme="c240d7a4-8d17-4630-af1b-84f237159e32">
     <if_variable name="Sector" comparator="EQUALS" value="18" />
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
@@ -2931,15 +2931,15 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="ea75da1e-c563-4690-ba6c-ce62e36644a0" parent_id_arme="de351ea9-58b6-4af3-a8df-a13cb5b43a0e" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="ea75da1e-c563-4690-ba6c-ce62e36644a0" parent_id_arme="de351ea9-58b6-4af3-a8df-a13cb5b43a0e" />
   <event name="Generate Sector Entities" id_arme="180ba5c0-b087-454a-a536-d43bcb286bdc" parent_id_arme="ea75da1e-c563-4690-ba6c-ce62e36644a0">
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="18.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="61920.0" y="0.0" z="61116.0" name="Khoros Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="36742.0" y="0.0" z="15982.0" name="Roshtic Market" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="68349.0" y="0.0" z="26830.0" name="DS-521" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="52679.0" y="0.0" z="28437.0" name="Mrir Authority" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="36742.0" y="0.0" z="15982.0" name="Roshtic Market" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="68349.0" y="0.0" z="26830.0" name="DS-521" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="52679.0" y="0.0" z="28437.0" name="Mrir Authority" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Mria XVIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -2988,7 +2988,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Khoros to Mria" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector XIX" id_arme="857748b0-62b0-4cff-a3e7-6ffd44227f8d" parent_id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" expanded_arme="" />
+  <folder_arme name="Mria Sector XIX" id_arme="857748b0-62b0-4cff-a3e7-6ffd44227f8d" parent_id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" />
   <event name="Create Mria Sector XIX" id_arme="d0885bac-9aa0-48da-95d5-9cd511e5c8d5" parent_id_arme="857748b0-62b0-4cff-a3e7-6ffd44227f8d">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />
@@ -3075,8 +3075,8 @@
     <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="19.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="32054.0" y="0.0" z="34062.0" name="DS-881" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="59643.0" y="0.0" z="55223.0" name="Sandinal" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="32054.0" y="0.0" z="34062.0" name="DS-881" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="59643.0" y="0.0" z="55223.0" name="Sandinal" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Mria XIX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -3096,7 +3096,7 @@
     <set_variable name="Mria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Mria Sector XX" id_arme="0e9c3d6a-45d0-4174-965a-c63c832a4d86" parent_id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" expanded_arme="" />
+  <folder_arme name="Mria Sector XX" id_arme="0e9c3d6a-45d0-4174-965a-c63c832a4d86" parent_id_arme="75e782d2-dae0-4ba9-be6e-86e7a7076752" />
   <event name="Create Mria Sector XX" id_arme="1b8dc57d-3b19-4323-99ae-42701b873e37" parent_id_arme="0e9c3d6a-45d0-4174-965a-c63c832a4d86">
     <if_timer_finished name="Transition" />
     <if_variable name="Mria System" comparator="EQUALS" value="1.0" />

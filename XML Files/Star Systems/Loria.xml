@@ -4,9 +4,9 @@
     <set_variable name="Coordinate Y" value="562.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Loria System" id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" expanded_arme="" />
+  <folder_arme name="Loria System" id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
   <folder_arme name="Loria Settings" id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
-  <folder_arme name="Loria Menu" id_arme="22a66b71-1df2-45ee-8eda-9da6108be998" parent_id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c" expanded_arme="" />
+  <folder_arme name="Loria Menu" id_arme="22a66b71-1df2-45ee-8eda-9da6108be998" parent_id_arme="ffcf1a16-893d-4a3b-b006-403b3374067c" />
   <event name="Loria Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="22a66b71-1df2-45ee-8eda-9da6108be998">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
     <set_gm_button text="Lower Arc/Loria System" />
@@ -111,16 +111,16 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Loria System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="c718d614-5303-46bb-8be8-526587e5006b" parent_id_arme="367c7f6c-afb3-4468-afe5-0ff55bfa431a" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="c718d614-5303-46bb-8be8-526587e5006b" parent_id_arme="367c7f6c-afb3-4468-afe5-0ff55bfa431a" />
   <event name="Generate Sector Entities" id_arme="33520d00-36ba-4a5b-a328-dc2b8c1f39cd" parent_id_arme="c718d614-5303-46bb-8be8-526587e5006b">
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="31384.0" y="0.0" z="73303.0" angle="0" name="DS-105" hullID="1000" sideValue="sectorside" />
-    <create type="station" x="77590.0" y="0.0" z="47723.0" angle="0" name="DS-107" hullID="1000" sideValue="sectorside" />
-    <create type="station" x="74777.0" y="0.0" z="77857.0" angle="0" name="Deserati" hullID="1003" sideValue="sectorside" />
-    <create type="station" x="63393.0" y="0.0" z="83214.0" angle="0" name="Conduti" hullID="1003" sideValue="sectorside" />
-    <create type="station" x="47322.0" y="0.0" z="52678.0" angle="0" name="DS-101" hullID="1000" />
+    <create type="neutral" x="31384.0" y="0.0" z="73303.0" angle="0" name="DS-105" hullID="1000" sideValue="sectorside" />
+    <create type="neutral" x="77590.0" y="0.0" z="47723.0" angle="0" name="DS-107" hullID="1000" sideValue="sectorside" />
+    <create type="neutral" x="74777.0" y="0.0" z="77857.0" angle="0" name="Deserati" hullID="1003" sideValue="sectorside" />
+    <create type="neutral" x="63393.0" y="0.0" z="83214.0" angle="0" name="Conduti" hullID="1003" sideValue="sectorside" />
+    <create type="neutral" x="47322.0" y="0.0" z="52678.0" angle="0" name="DS-101" hullID="1000" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -141,7 +141,7 @@
     <set_variable name="Loria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Loria Sector II" id_arme="e887bc5f-398a-4b23-a291-5ad2de429229" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" expanded_arme="" />
+  <folder_arme name="Loria Sector II" id_arme="e887bc5f-398a-4b23-a291-5ad2de429229" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
   <event name="Create Loria Sector II" id_arme="886fa335-b555-4556-a51a-dc4e21e810d8" parent_id_arme="e887bc5f-398a-4b23-a291-5ad2de429229">
     <if_timer_finished name="Transition" />
     <if_variable name="Loria System" comparator="EQUALS" value="1.0" />
@@ -166,7 +166,7 @@
     <create count="40" type="asteroids" startX="49634.0" startY="0.0" startZ="75378.0" endX="26309.0" endY="0.0" endZ="56454.0" randomRange="5439" />
     <create count="10" type="asteroids" startX="30416.0" startY="0.0" startZ="49779.0" endX="22714.0" endY="0.0" endZ="45892.0" randomRange="7251" />
   </event>
-  <folder_arme name="Navigation" id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e" parent_id_arme="e887bc5f-398a-4b23-a291-5ad2de429229" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e" parent_id_arme="e887bc5f-398a-4b23-a291-5ad2de429229" />
   <event name="Transition to Sector III" id_arme="f0044381-731a-4baa-896a-1f502db7d73c" parent_id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
@@ -222,14 +222,14 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Loria System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1" parent_id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1" parent_id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e" />
   <event name="Gate Offline" id_arme="38cbc171-f49a-46fa-be1d-7d0983a98789" parent_id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Mria Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b" parent_id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b" parent_id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1" />
   <event name="Ship1 Activation Range" id_arme="245683e8-6ba8-4fab-a70a-a262d1421eec" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
@@ -412,15 +412,15 @@
     <create type="genericMesh" x="75715.0" y="0.0" z="36205.0" name="Mria Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <create count="100" type="mines" startAngle="-60" endAngle="60" startX="73438.0" startY="0.0" startZ="92991.0" radius="20000" />
     <create count="100" type="mines" startAngle="-120" endAngle="0" startX="27902.0" startY="0.0" startZ="72633.0" radius="20000" />
-    <create type="station" x="72634.0" y="0.0" z="89107.0" name="DS-118" hullID="1000" />
+    <create type="neutral" x="72634.0" y="0.0" z="89107.0" name="DS-118" hullID="1000" sideValue="sectorSide" />
     <create count="100" type="mines" startAngle="-120" endAngle="15" startX="10625.0" startY="0.0" startZ="34464.0" radius="20000" />
-    <create type="station" x="29375.0" y="0.0" z="71294.0" name="DS-119" hullID="1000" />
-    <create type="station" x="13734.0" y="0.0" z="34933.0" name="DS-120" hullID="1000" />
-    <create type="station" x="25358.0" y="0.0" z="50267.0" name="WP" hullID="1052" />
-    <create type="station" x="17858.0" y="0.0" z="76651.0" name="Ayana" hullID="1003" />
-    <create type="station" x="49465.0" y="0.0" z="85357.0" name="WP" hullID="1052" />
-    <create type="station" x="26831.0" y="0.0" z="85357.0" name="Customs House" hullID="1001" />
-    <create type="neutral" x="31786.0" y="0.0" z="89508.0" angle="0" name="Civilian SY" hullID="1053" />
+    <create type="neutral" x="29375.0" y="0.0" z="71294.0" name="DS-119" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="13734.0" y="0.0" z="34933.0" name="DS-120" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="25358.0" y="0.0" z="50267.0" name="WP" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="17858.0" y="0.0" z="76651.0" name="Ayana" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="49465.0" y="0.0" z="85357.0" name="WP" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="26831.0" y="0.0" z="85357.0" name="Customs House" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="31786.0" y="0.0" z="89508.0" angle="0" name="Civilian SY" hullID="1053" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -557,11 +557,11 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="39554.0" y="0.0" z="25491.0" angle="0" name="DS-19" hullID="1000" />
-    <create type="station" x="67411.0" y="0.0" z="67812.0" angle="0" name="DS-39" hullID="1000" />
-    <create type="station" x="35000.0" y="0.0" z="45580.0" angle="0" name="Melnibo" hullID="1003" />
-    <create type="station" x="62188.0" y="0.0" z="49464.0" angle="0" name="Santiago" hullID="1003" />
-    <create type="station" x="66340.0" y="0.0" z="31785.0" angle="0" name="DS-148" hullID="1000" />
+    <create type="neutral" x="39554.0" y="0.0" z="25491.0" angle="0" name="DS-19" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="67411.0" y="0.0" z="67812.0" angle="0" name="DS-39" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="35000.0" y="0.0" z="45580.0" angle="0" name="Melnibo" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="62188.0" y="0.0" z="49464.0" angle="0" name="Santiago" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="66340.0" y="0.0" z="31785.0" angle="0" name="DS-148" hullID="1000" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -646,11 +646,11 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="neutral" x="24018.0" y="0.0" z="56964.0" angle="0" name="Comms Relay" hullID="1055" />
-    <create type="station" x="74108.0" y="0.0" z="43973.0" angle="0" name="DS-59" hullID="1000" />
-    <create type="station" x="51875.0" y="0.0" z="66339.0" angle="0" name="DS-71" hullID="1000" />
-    <create type="station" x="64465.0" y="0.0" z="28169.0" angle="0" name="Okogonik" hullID="1003" />
-    <create type="neutral" x="38483.0" y="0.0" z="61919.0" angle="0" name="Sensor Buoy" hullID="1054" />
+    <create type="neutral" x="24018.0" y="0.0" z="56964.0" angle="0" name="Comms Relay" hullID="1055" sideValue="sectorSide" />
+    <create type="neutral" x="74108.0" y="0.0" z="43973.0" angle="0" name="DS-59" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="51875.0" y="0.0" z="66339.0" angle="0" name="DS-71" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="64465.0" y="0.0" z="28169.0" angle="0" name="Okogonik" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="38483.0" y="0.0" z="61919.0" angle="0" name="Sensor Buoy" hullID="1054" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -756,11 +756,11 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="23215.0" y="0.0" z="45580.0" angle="0" name="DS-53" hullID="1000" />
-    <create type="station" x="50670.0" y="0.0" z="23883.0" angle="0" name="DS-87" hullID="1000" />
-    <create type="station" x="77322.0" y="0.0" z="56562.0" angle="0" name="DS-166" hullID="1000" />
-    <create type="station" x="44242.0" y="0.0" z="75848.0" angle="0" name="Chel-rea" hullID="1003" />
-    <create type="station" x="47322.0" y="0.0" z="45714.0" angle="0" name="Chel-don" hullID="1003" />
+    <create type="neutral" x="23215.0" y="0.0" z="45580.0" angle="0" name="DS-53" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="50670.0" y="0.0" z="23883.0" angle="0" name="DS-87" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="77322.0" y="0.0" z="56562.0" angle="0" name="DS-166" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="44242.0" y="0.0" z="75848.0" angle="0" name="Chel-rea" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="47322.0" y="0.0" z="45714.0" angle="0" name="Chel-don" hullID="1003" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -901,14 +901,14 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="35536.0" y="0.0" z="65937.0" angle="0" name="DS-57" hullID="1000" />
-    <create type="station" x="25224.0" y="0.0" z="28035.0" angle="0" name="DS-33" hullID="1000" />
-    <create type="station" x="69822.0" y="0.0" z="28169.0" angle="0" name="DS-165" hullID="1000" />
-    <create type="station" x="52679.0" y="0.0" z="49866.0" angle="0" name="Staunton" hullID="1004" />
-    <create type="station" x="77456.0" y="0.0" z="51071.0" angle="0" name="Penton" hullID="1004" />
-    <create type="station" x="41697.0" y="0.0" z="77187.0" angle="0" name="Anton" hullID="1004" />
-    <create type="station" x="61117.0" y="0.0" z="77857.0" angle="0" name="Oralo" hullID="1004" />
-    <create type="station" x="74777.0" y="0.0" z="67008.0" angle="0" name="DS-21" hullID="1000" />
+    <create type="neutral" x="35536.0" y="0.0" z="65937.0" angle="0" name="DS-57" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="25224.0" y="0.0" z="28035.0" angle="0" name="DS-33" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="69822.0" y="0.0" z="28169.0" angle="0" name="DS-165" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="52679.0" y="0.0" z="49866.0" angle="0" name="Staunton" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="77456.0" y="0.0" z="51071.0" angle="0" name="Penton" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="41697.0" y="0.0" z="77187.0" angle="0" name="Anton" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="61117.0" y="0.0" z="77857.0" angle="0" name="Oralo" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="74777.0" y="0.0" z="67008.0" angle="0" name="DS-21" hullID="1000" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1049,8 +1049,8 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="blackHole" x="46250.0" y="0.0" z="74508.0" name="Charybdis" />
     <create type="blackHole" x="49197.0" y="0.0" z="30580.0" name="Scylla" />
-    <create type="neutral" x="83617.0" y="0.0" z="50937.0" angle="0" name="Comms Relay 1" hullID="1055" />
-    <create type="neutral" x="12902.0" y="0.0" z="46250.0" angle="0" name="Comms Relay 2" hullID="1055" />
+    <create type="neutral" x="83617.0" y="0.0" z="50937.0" angle="0" name="Comms Relay 1" hullID="1055" sideValue="sectorSide" />
+    <create type="neutral" x="12902.0" y="0.0" z="46250.0" angle="0" name="Comms Relay 2" hullID="1055" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1155,15 +1155,15 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="77322.0" y="0.0" z="70491.0" angle="0" name="DS-88" hullID="1000" />
-    <create type="station" x="49599.0" y="0.0" z="18526.0" angle="0" name="DS-92" hullID="1000" />
-    <create type="station" x="32188.0" y="0.0" z="43437.0" angle="0" name="Phineas" hullID="1003" />
-    <create type="station" x="34331.0" y="0.0" z="78392.0" angle="0" name="DS-44" hullID="1000" />
-    <create type="neutral" x="70492.0" y="0.0" z="42633.0" angle="0" name="Civilian SY" hullID="1053" />
-    <create type="neutral" x="26697.0" y="0.0" z="40892.0" angle="0" name="SY-199" hullID="1053" />
-    <create type="neutral" x="50268.0" y="0.0" z="27633.0" angle="0" name="Rockaway Metallurgy" hullID="1050" />
-    <create type="neutral" x="32724.0" y="0.0" z="22812.0" angle="0" name="Taylor Denabite" hullID="1051" />
-    <create type="station" x="76786.0" y="0.0" z="46517.0" angle="0" name="Immigration" hullID="1001" />
+    <create type="neutral" x="77322.0" y="0.0" z="70491.0" angle="0" name="DS-88" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="49599.0" y="0.0" z="18526.0" angle="0" name="DS-92" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="32188.0" y="0.0" z="43437.0" angle="0" name="Phineas" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="34331.0" y="0.0" z="78392.0" angle="0" name="DS-44" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="70492.0" y="0.0" z="42633.0" angle="0" name="Civilian SY" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="26697.0" y="0.0" z="40892.0" angle="0" name="SY-199" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="50268.0" y="0.0" z="27633.0" angle="0" name="Rockaway Metallurgy" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="32724.0" y="0.0" z="22812.0" angle="0" name="Taylor Denabite" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="76786.0" y="0.0" z="46517.0" angle="0" name="Immigration" hullID="1001" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1273,10 +1273,10 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="19063.0" y="0.0" z="44776.0" angle="0" name="Magellan" hullID="1004" />
-    <create type="station" x="76117.0" y="0.0" z="24285.0" angle="0" name="DS-160" hullID="1000" />
-    <create type="station" x="73840.0" y="0.0" z="74241.0" angle="0" name="Puerto Piedra" hullID="1003" />
-    <create type="station" x="49465.0" y="0.0" z="49598.0" angle="0" name="DS-144" hullID="1000" />
+    <create type="neutral" x="19063.0" y="0.0" z="44776.0" angle="0" name="Magellan" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="76117.0" y="0.0" z="24285.0" angle="0" name="DS-160" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="73840.0" y="0.0" z="74241.0" angle="0" name="Puerto Piedra" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="49465.0" y="0.0" z="49598.0" angle="0" name="DS-144" hullID="1000" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1413,16 +1413,16 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="10" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="73045.0" y="0.0" z="75017.0" angle="0" name="DS-68" hullID="1000" />
-    <create type="station" x="67947.0" y="0.0" z="47589.0" angle="0" name="Singh" hullID="1003" />
-    <create type="station" x="25492.0" y="0.0" z="51607.0" angle="0" name="Rio" hullID="1003" />
-    <create type="station" x="40762.0" y="0.0" z="21141.0" angle="0" name="DS-28" hullID="1000" />
-    <create type="station" x="77858.0" y="0.0" z="23616.0" angle="0" name="DS-105" hullID="1000" />
-    <create type="station" x="43840.0" y="0.0" z="78125.0" angle="0" name="DS-125" hullID="1000" />
-    <create type="neutral" x="71563.0" y="0.0" z="45446.0" angle="0" name="SY-992" hullID="1053" />
-    <create type="neutral" x="58974.0" y="0.0" z="55892.0" angle="0" name="Akira Metal Works" hullID="1050" />
-    <create type="neutral" x="41295.0" y="0.0" z="44508.0" angle="0" name="Joshua Tree Denebite" hullID="1051" />
-    <create type="neutral" x="21875.0" y="0.0" z="49598.0" angle="0" name="SY-998" hullID="1053" />
+    <create type="neutral" x="73045.0" y="0.0" z="75017.0" angle="0" name="DS-68" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="67947.0" y="0.0" z="47589.0" angle="0" name="Singh" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="25492.0" y="0.0" z="51607.0" angle="0" name="Rio" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="40762.0" y="0.0" z="21141.0" angle="0" name="DS-28" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="77858.0" y="0.0" z="23616.0" angle="0" name="DS-105" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="43840.0" y="0.0" z="78125.0" angle="0" name="DS-125" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="71563.0" y="0.0" z="45446.0" angle="0" name="SY-992" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="58974.0" y="0.0" z="55892.0" angle="0" name="Akira Metal Works" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="41295.0" y="0.0" z="44508.0" angle="0" name="Joshua Tree Denebite" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="21875.0" y="0.0" z="49598.0" angle="0" name="SY-998" hullID="1053" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1570,15 +1570,15 @@
     <create count="200" type="mines" startAngle="7" endAngle="172" startX="60313.0" startY="250.0" startZ="40089.0" radius="25000" />
     <create count="200" type="mines" startAngle="-8" endAngle="-173" startX="60313.0" startY="250.0" startZ="40089.0" radius="25000" />
     <create count="200" type="mines" startAngle="-8" endAngle="-173" startX="60313.0" startY="-250.0" startZ="40089.0" radius="25000" />
-    <create type="station" x="60402.0" y="0.0" z="39777.0" name="Loria Command" hullID="1002" />
-    <create type="station" x="56593.0" y="0.0" z="27574.0" name="Ries" hullID="1003" />
-    <create type="station" x="70358.0" y="0.0" z="46517.0" name="DS-44" hullID="1000" />
-    <create type="neutral" x="60447.0" y="0.0" z="15178.0" angle="0" name="WP-09" hullID="1052" />
-    <create type="neutral" x="60447.0" y="0.0" z="65401.0" angle="0" name="WP-54" hullID="1052" />
-    <create type="station" x="51474.0" y="0.0" z="52008.0" name="Diana" hullID="1003" />
-    <create type="neutral" x="75313.0" y="0.0" z="48928.0" angle="0" name="SY-169" hullID="1053" />
-    <create type="neutral" x="52947.0" y="0.0" z="25892.0" angle="0" name="SY-172" hullID="1053" />
-    <create type="neutral" x="46384.0" y="0.0" z="49330.0" angle="0" name="SY-144" hullID="1053" />
+    <create type="neutral" x="60402.0" y="0.0" z="39777.0" name="Loria Command" hullID="1002" sideValue="sectorSide" />
+    <create type="neutral" x="56593.0" y="0.0" z="27574.0" name="Ries" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="70358.0" y="0.0" z="46517.0" name="DS-44" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="60447.0" y="0.0" z="15178.0" angle="0" name="WP-09" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="60447.0" y="0.0" z="65401.0" angle="0" name="WP-54" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="51474.0" y="0.0" z="52008.0" name="Diana" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="75313.0" y="0.0" z="48928.0" angle="0" name="SY-169" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="52947.0" y="0.0" z="25892.0" angle="0" name="SY-172" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="46384.0" y="0.0" z="49330.0" angle="0" name="SY-144" hullID="1053" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1687,9 +1687,9 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="12" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="26027.0" y="0.0" z="73303.0" angle="0" name="DS-190" hullID="1000" />
-    <create type="station" x="50000.0" y="0.0" z="50803.0" angle="0" name="DS-181" hullID="1000" />
-    <create type="station" x="75849.0" y="0.0" z="26964.0" angle="0" name="DS-166" hullID="1000" />
+    <create type="neutral" x="26027.0" y="0.0" z="73303.0" angle="0" name="DS-190" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="50000.0" y="0.0" z="50803.0" angle="0" name="DS-181" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="75849.0" y="0.0" z="26964.0" angle="0" name="DS-166" hullID="1000" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1771,13 +1771,13 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="13" />
-    <create type="station" x="45447.0" y="0.0" z="25892.0" angle="0" name="DS-109" hullID="1000" />
-    <create type="station" x="44108.0" y="0.0" z="63794.0" angle="0" name="DS-114" hullID="1000" />
-    <create type="station" x="85625.0" y="0.0" z="34866.0" angle="0" name="Sanda" hullID="1003" />
-    <create type="station" x="50268.0" y="0.0" z="45178.0" angle="0" name="Customs House" hullID="1001" />
-    <create type="station" x="74509.0" y="0.0" z="74776.0" angle="0" name="DS-143" hullID="1000" />
-    <create type="neutral" x="50402.0" y="0.0" z="51607.0" angle="0" name="Civilian SY" hullID="1053" />
-    <create type="neutral" x="86831.0" y="0.0" z="23080.0" angle="0" name="Isotopia" hullID="1050" />
+    <create type="neutral" x="45447.0" y="0.0" z="25892.0" angle="0" name="DS-109" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="44108.0" y="0.0" z="63794.0" angle="0" name="DS-114" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="85625.0" y="0.0" z="34866.0" angle="0" name="Sanda" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="50268.0" y="0.0" z="45178.0" angle="0" name="Customs House" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="74509.0" y="0.0" z="74776.0" angle="0" name="DS-143" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="50402.0" y="0.0" z="51607.0" angle="0" name="Civilian SY" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="86831.0" y="0.0" z="23080.0" angle="0" name="Isotopia" hullID="1050" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1887,11 +1887,11 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="14" />
-    <create type="station" x="75848.0" y="0.0" z="63494.0" angle="0" name="DS-180" hullID="1000" />
-    <create type="station" x="34733.0" y="0.0" z="71026.0" angle="0" name="Diatha" hullID="1003" />
-    <create type="station" x="65000.0" y="0.0" z="72232.0" angle="0" name="Arylin" hullID="1003" />
-    <create type="neutral" x="52143.0" y="0.0" z="61250.0" angle="0" name="Terranic Mining" hullID="1050" />
-    <create type="station" x="50208.0" y="0.0" z="37958.0" angle="0" name="DS-199" hullID="1000" />
+    <create type="neutral" x="75848.0" y="0.0" z="63494.0" angle="0" name="DS-180" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="34733.0" y="0.0" z="71026.0" angle="0" name="Diatha" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="65000.0" y="0.0" z="72232.0" angle="0" name="Arylin" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="52143.0" y="0.0" z="61250.0" angle="0" name="Terranic Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="50208.0" y="0.0" z="37958.0" angle="0" name="DS-199" hullID="1000" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1995,14 +1995,14 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="15" />
-    <create type="station" x="67813.0" y="0.0" z="36875.0" angle="0" name="DS-123" hullID="1000" />
-    <create type="station" x="21350.0" y="0.0" z="50622.0" angle="0" name="DS-138" hullID="1000" />
-    <create type="station" x="44291.0" y="0.0" z="31730.0" angle="0" name="Umber" hullID="1003" />
-    <create type="station" x="59375.0" y="0.0" z="77991.0" angle="0" name="DS-170" hullID="1000" />
-    <create type="station" x="26161.0" y="0.0" z="77991.0" angle="0" name="DS-159" hullID="1000" />
-    <create type="station" x="78795.0" y="0.0" z="56696.0" angle="0" name="Lorian Council" hullID="1001" />
-    <create type="neutral" x="47858.0" y="0.0" z="28705.0" angle="0" name="SY-881" hullID="1053" />
-    <create type="neutral" x="32858.0" y="0.0" z="35535.0" angle="0" name="Tiffan Denebite" hullID="1051" />
+    <create type="neutral" x="67813.0" y="0.0" z="36875.0" angle="0" name="DS-123" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="21350.0" y="0.0" z="50622.0" angle="0" name="DS-138" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="44291.0" y="0.0" z="31730.0" angle="0" name="Umber" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="59375.0" y="0.0" z="77991.0" angle="0" name="DS-170" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="26161.0" y="0.0" z="77991.0" angle="0" name="DS-159" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="78795.0" y="0.0" z="56696.0" angle="0" name="Lorian Council" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="47858.0" y="0.0" z="28705.0" angle="0" name="SY-881" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="32858.0" y="0.0" z="35535.0" angle="0" name="Tiffan Denebite" hullID="1051" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

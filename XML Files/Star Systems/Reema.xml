@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="487.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Reema System" id_arme="9d3af7f8-6ac2-434a-8286-448fb6e3496e" expanded_arme="" />
+  <folder_arme name="Reema System" id_arme="9d3af7f8-6ac2-434a-8286-448fb6e3496e" />
   <folder_arme name="Reema Settings" id_arme="c082e930-00ee-4467-9c7a-713f2c4c5359" parent_id_arme="9d3af7f8-6ac2-434a-8286-448fb6e3496e" />
   <folder_arme name="Reema Menu" id_arme="2a2a31ba-1318-476f-995f-85c78b7eeb5d" parent_id_arme="c082e930-00ee-4467-9c7a-713f2c4c5359" />
   <event name="Reema Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="2a2a31ba-1318-476f-995f-85c78b7eeb5d">
@@ -117,7 +117,7 @@
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="64057.0" y="-100.0" z="43012.0" angle="0" name="Porisiana" hullID="1001" />
+    <create type="neutral" x="64057.0" y="-100.0" z="43012.0" angle="0" name="Porisiana" hullID="1001" sideValue="sectorSide" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -342,8 +342,8 @@
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="neutral" x="49867.0" y="0.0" z="62455.0" angle="0" name="CR-04" hullID="1055" />
-    <create type="neutral" x="41563.0" y="0.0" z="58973.0" angle="0" name="BY-27" hullID="1054" />
+    <create type="neutral" x="49867.0" y="0.0" z="62455.0" angle="0" name="CR-04" hullID="1055" sideValue="sectorSide" />
+    <create type="neutral" x="41563.0" y="0.0" z="58973.0" angle="0" name="BY-27" hullID="1054" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -521,8 +521,8 @@
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
-    <create type="station" x="47188.0" y="0.0" z="70491.0" angle="0" name="Sylvan Oasis" hullID="1001" />
-    <create type="station" x="24152.0" y="0.0" z="25491.0" angle="0" name="Tesla" hullID="1004" />
+    <create type="neutral" x="47188.0" y="0.0" z="70491.0" angle="0" name="Sylvan Oasis" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="24152.0" y="0.0" z="25491.0" angle="0" name="Tesla" hullID="1004" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -558,7 +558,7 @@
     <set_variable name="Reema System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector VI - X" id_arme="2020696c-5d14-4baf-8fa1-517ca6ef1a3b" parent_id_arme="9d3af7f8-6ac2-434a-8286-448fb6e3496e" expanded_arme="" />
+  <folder_arme name="Sector VI - X" id_arme="2020696c-5d14-4baf-8fa1-517ca6ef1a3b" parent_id_arme="9d3af7f8-6ac2-434a-8286-448fb6e3496e" />
   <folder_arme name="Reema Sector VI" id_arme="04cee146-b3de-4fc3-999c-1bd4754b5e3f" parent_id_arme="2020696c-5d14-4baf-8fa1-517ca6ef1a3b" />
   <event name="Create Reema Sector VI" id_arme="927e09b2-29cb-4371-bad6-7bc462df0d92" parent_id_arme="04cee146-b3de-4fc3-999c-1bd4754b5e3f">
     <if_timer_finished name="Transition" />
@@ -657,7 +657,7 @@
     <set_variable name="Reema System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Reema Sector VII" id_arme="86a42967-64ab-45dd-8b3e-82759d42199f" parent_id_arme="2020696c-5d14-4baf-8fa1-517ca6ef1a3b" expanded_arme="" />
+  <folder_arme name="Reema Sector VII" id_arme="86a42967-64ab-45dd-8b3e-82759d42199f" parent_id_arme="2020696c-5d14-4baf-8fa1-517ca6ef1a3b" />
   <event name="Create Reema Sector VII" id_arme="c392bd07-c4f9-4ef9-92ec-b630b464895a" parent_id_arme="86a42967-64ab-45dd-8b3e-82759d42199f">
     <if_timer_finished name="Transition" />
     <if_variable name="Reema System" comparator="EQUALS" value="1.0" />
@@ -680,7 +680,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="e68469f9-1b96-4b48-8c72-c151f3e9be48" parent_id_arme="86a42967-64ab-45dd-8b3e-82759d42199f" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="e68469f9-1b96-4b48-8c72-c151f3e9be48" parent_id_arme="86a42967-64ab-45dd-8b3e-82759d42199f" />
   <event name="Transition to Sector VIII" id_arme="a78f6e92-5171-4cea-b469-8fcf511aa0e0" parent_id_arme="e68469f9-1b96-4b48-8c72-c151f3e9be48">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -769,7 +769,7 @@
     <set_variable name="Reema System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="92e13df5-5ef8-4c98-8456-d4a5e1ca86f6" parent_id_arme="e68469f9-1b96-4b48-8c72-c151f3e9be48" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="92e13df5-5ef8-4c98-8456-d4a5e1ca86f6" parent_id_arme="e68469f9-1b96-4b48-8c72-c151f3e9be48" />
   <event name="Gate Offline" id_arme="883eaa56-e90e-4f5f-a773-c7fe33ec04d7" parent_id_arme="92e13df5-5ef8-4c98-8456-d4a5e1ca86f6">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
@@ -957,7 +957,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="62590.0" y="0.0" z="56294.0" name="Ashia Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="28304.0" y="0.0" z="70357.0" name="Nevega" hullID="1001" />
+    <create type="neutral" x="28304.0" y="0.0" z="70357.0" name="Nevega" hullID="1001" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1120,11 +1120,11 @@
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="neutral" x="33929.0" y="0.0" z="62857.0" angle="0" name="Goldleaf Commissariat" hullID="1050" />
-    <create type="station" x="32188.0" y="0.0" z="73035.0" angle="0" name="Reema Confederacy" hullID="1001" />
-    <create type="station" x="43036.0" y="0.0" z="22678.0" angle="0" name="Tycho Institute" hullID="1004" />
-    <create type="station" x="31518.0" y="0.0" z="50535.0" angle="0" name="Elysium Spa" hullID="1001" />
-    <create type="station" x="76250.0" y="0.0" z="44107.0" angle="0" name="Reema Tradehouse" hullID="1001" />
+    <create type="neutral" x="33929.0" y="0.0" z="62857.0" angle="0" name="Goldleaf Commissariat" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="32188.0" y="0.0" z="73035.0" angle="0" name="Reema Confederacy" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="43036.0" y="0.0" z="22678.0" angle="0" name="Tycho Institute" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="31518.0" y="0.0" z="50535.0" angle="0" name="Elysium Spa" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="76250.0" y="0.0" z="44107.0" angle="0" name="Reema Tradehouse" hullID="1001" sideValue="sectorSide" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -1478,7 +1478,7 @@
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="11.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="69688.0" y="0.0" z="57767.0" angle="0" name="Sluvian" hullID="1001" />
+    <create type="neutral" x="69688.0" y="0.0" z="57767.0" angle="0" name="Sluvian" hullID="1001" sideValue="sectorSide" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -1636,10 +1636,10 @@
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="12.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="48000.0" y="0.0" z="60000.0" angle="90" name="Reema Command" hullID="1002" />
-    <create type="neutral" x="46250.0" y="0.0" z="50669.0" angle="0" name="SY-219" hullID="1053" />
-    <create type="neutral" x="67143.0" y="0.0" z="60044.0" angle="0" name="WP-14" hullID="1052" />
-    <create type="neutral" x="28974.0" y="0.0" z="59910.0" angle="0" name="WP-02" hullID="1052" />
+    <create type="neutral" x="48000.0" y="0.0" z="60000.0" angle="90" name="Reema Command" hullID="1002" sideValue="sectorSide" />
+    <create type="neutral" x="46250.0" y="0.0" z="50669.0" angle="0" name="SY-219" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="67143.0" y="0.0" z="60044.0" angle="0" name="WP-14" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="28974.0" y="0.0" z="59910.0" angle="0" name="WP-02" hullID="1052" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2012,8 +2012,8 @@
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="15.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="53081.0" y="0.0" z="76651.0" angle="0" name="Zabnel" hullID="1001" />
-    <create type="neutral" x="22813.0" y="0.0" z="56026.0" angle="0" name="Aspen Art Colony" hullID="1050" />
+    <create type="neutral" x="53081.0" y="0.0" z="76651.0" angle="0" name="Zabnel" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="22813.0" y="0.0" z="56026.0" angle="0" name="Aspen Art Colony" hullID="1050" sideValue="sectorSide" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -2527,12 +2527,12 @@
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="19.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="59375.0" y="0.0" z="80133.0" angle="0" name="Freedom Station" hullID="1001" />
-    <create type="station" x="44509.0" y="0.0" z="53750.0" angle="0" name="DS-212" hullID="1000" />
-    <create type="station" x="71697.0" y="0.0" z="32589.0" angle="0" name="Bremmer" hullID="1001" />
-    <create type="station" x="25090.0" y="0.0" z="25357.0" angle="0" name="Cyrnoth Emporium" hullID="1001" />
-    <create type="neutral" x="56023.0" y="0.0" z="17657.0" angle="0" name="Irasmix Mining" hullID="1050" />
-    <create type="neutral" x="47696.0" y="0.0" z="23457.0" angle="0" name="Kaltoa Ores" hullID="1050" />
+    <create type="neutral" x="59375.0" y="0.0" z="80133.0" angle="0" name="Freedom Station" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="44509.0" y="0.0" z="53750.0" angle="0" name="DS-212" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="71697.0" y="0.0" z="32589.0" angle="0" name="Bremmer" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="25090.0" y="0.0" z="25357.0" angle="0" name="Cyrnoth Emporium" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="56023.0" y="0.0" z="17657.0" angle="0" name="Irasmix Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="47696.0" y="0.0" z="23457.0" angle="0" name="Kaltoa Ores" hullID="1050" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2638,7 +2638,7 @@
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="20.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="44509.0" y="0.0" z="40892.0" angle="0" name="Huygens" hullID="1004" />
+    <create type="neutral" x="44509.0" y="0.0" z="40892.0" angle="0" name="Huygens" hullID="1004" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2655,7 +2655,7 @@
     <set_variable name="Reema System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector XXI - XXV" id_arme="eab682b1-24cb-481a-a3a4-6dd84fb9c79c" parent_id_arme="9d3af7f8-6ac2-434a-8286-448fb6e3496e" expanded_arme="" />
+  <folder_arme name="Sector XXI - XXV" id_arme="eab682b1-24cb-481a-a3a4-6dd84fb9c79c" parent_id_arme="9d3af7f8-6ac2-434a-8286-448fb6e3496e" />
   <folder_arme name="Reema Sector XXI" id_arme="8ecd72f8-0547-4fb3-8603-72b9be1a27e9" parent_id_arme="eab682b1-24cb-481a-a3a4-6dd84fb9c79c" />
   <event name="Create Reema Sector XXI" id_arme="26161d97-c783-4bbf-96ab-f8c30c748a18" parent_id_arme="8ecd72f8-0547-4fb3-8603-72b9be1a27e9">
     <if_timer_finished name="Transition" />
@@ -2815,9 +2815,9 @@
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="22.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="49197.0" y="0.0" z="40892.0" angle="0" name="Kikiti" hullID="1001" />
-    <create type="neutral" x="49599.0" y="0.0" z="47053.0" angle="0" name="SY-248" hullID="1053" />
-    <create type="neutral" x="40358.0" y="0.0" z="30580.0" angle="0" name="Mergatz Denabite" hullID="1051" />
+    <create type="neutral" x="49197.0" y="0.0" z="40892.0" angle="0" name="Kikiti" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="49599.0" y="0.0" z="47053.0" angle="0" name="SY-248" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="40358.0" y="0.0" z="30580.0" angle="0" name="Mergatz Denabite" hullID="1051" sideValue="sectorSide" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -3041,8 +3041,8 @@
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="24.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="30313.0" y="0.0" z="36875.0" angle="0" name="Mahagma" hullID="1001" />
-    <create type="neutral" x="40358.0" y="0.0" z="61250.0" angle="0" name="Everest Groceries" hullID="1050" />
+    <create type="neutral" x="30313.0" y="0.0" z="36875.0" angle="0" name="Mahagma" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="40358.0" y="0.0" z="61250.0" angle="0" name="Everest Groceries" hullID="1050" sideValue="sectorSide" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -3079,7 +3079,7 @@
     <set_variable name="Reema System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Reema Sector XXV" id_arme="27052935-1a02-480f-8230-963ffa5f8412" parent_id_arme="eab682b1-24cb-481a-a3a4-6dd84fb9c79c" expanded_arme="" />
+  <folder_arme name="Reema Sector XXV" id_arme="27052935-1a02-480f-8230-963ffa5f8412" parent_id_arme="eab682b1-24cb-481a-a3a4-6dd84fb9c79c" />
   <event name="Create Reema Sector XXV" id_arme="150972c8-eb55-4e96-bd17-02e867dbb3df" parent_id_arme="27052935-1a02-480f-8230-963ffa5f8412">
     <if_timer_finished name="Transition" />
     <if_variable name="Reema System" comparator="EQUALS" value="1.0" />
@@ -3105,7 +3105,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="9e931bca-51cf-4f94-adf9-b9a8f779628d" parent_id_arme="27052935-1a02-480f-8230-963ffa5f8412" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="9e931bca-51cf-4f94-adf9-b9a8f779628d" parent_id_arme="27052935-1a02-480f-8230-963ffa5f8412" />
   <event name="Transition to Sector XXIV" id_arme="ed10a211-376c-4c65-86be-aba2fc5b975a" parent_id_arme="9e931bca-51cf-4f94-adf9-b9a8f779628d">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
@@ -3139,7 +3139,7 @@
     <set_variable name="Reema System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="19.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="4bf059d7-89f1-4422-bf32-3180ac20f439" parent_id_arme="9e931bca-51cf-4f94-adf9-b9a8f779628d" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="4bf059d7-89f1-4422-bf32-3180ac20f439" parent_id_arme="9e931bca-51cf-4f94-adf9-b9a8f779628d" />
   <event name="Gate Offline" id_arme="dfd740c9-abe3-4e79-8edf-9755bd447149" parent_id_arme="4bf059d7-89f1-4422-bf32-3180ac20f439">
     <if_variable name="Sector" comparator="EQUALS" value="25" />
     <if_variable name="Reema System" comparator="EQUALS" value="2.0" />
@@ -3327,14 +3327,14 @@
     <if_variable name="Sector" comparator="EQUALS" value="25.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="25540.0" y="0.0" z="65241.0" name="Eulis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="84127.0" y="0.0" z="60929.0" name="DS-192" hullID="1000" />
-    <create type="station" x="40707.0" y="0.0" z="9628.0" name="DS-183" hullID="1000" />
-    <create type="station" x="76246.0" y="0.0" z="23159.0" name="Customs &amp; Immigration" hullID="1001" />
-    <create type="neutral" x="80856.0" y="0.0" z="28661.0" angle="0" name="Samson SY" hullID="1053" />
-    <create type="neutral" x="91859.0" y="0.0" z="79962.0" angle="0" name="WP-74" hullID="1052" />
-    <create type="neutral" x="68662.0" y="0.0" z="56468.0" angle="0" name="WP-21" hullID="1052" />
-    <create type="neutral" x="44573.0" y="0.0" z="31933.0" angle="0" name="WP-63" hullID="1052" />
-    <create type="neutral" x="21971.0" y="0.0" z="7397.0" angle="0" name="WP-85" hullID="1052" />
+    <create type="neutral" x="84127.0" y="0.0" z="60929.0" name="DS-192" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="40707.0" y="0.0" z="9628.0" name="DS-183" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="76246.0" y="0.0" z="23159.0" name="Customs &amp; Immigration" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="80856.0" y="0.0" z="28661.0" angle="0" name="Samson SY" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="91859.0" y="0.0" z="79962.0" angle="0" name="WP-74" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="68662.0" y="0.0" z="56468.0" angle="0" name="WP-21" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="44573.0" y="0.0" z="31933.0" angle="0" name="WP-63" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="21971.0" y="0.0" z="7397.0" angle="0" name="WP-85" hullID="1052" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

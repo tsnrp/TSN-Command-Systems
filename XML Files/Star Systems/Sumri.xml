@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="376.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Sumri System" id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
+  <folder_arme name="Sumri System" id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <folder_arme name="Sumri Settings" id_arme="1bfb2f53-8b19-41e0-8f1c-2ed34742c50d" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <folder_arme name="Sumri Menu" id_arme="c1ba718b-bfdd-49ee-a3dd-a6872ae9069b" parent_id_arme="1bfb2f53-8b19-41e0-8f1c-2ed34742c50d" />
   <event name="Sumri Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="c1ba718b-bfdd-49ee-a3dd-a6872ae9069b">
@@ -79,7 +79,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="fb1a9346-2fda-473f-a270-77841855e699" parent_id_arme="13a7dc01-522b-472d-9a97-1f7a46f9e24b" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="fb1a9346-2fda-473f-a270-77841855e699" parent_id_arme="13a7dc01-522b-472d-9a97-1f7a46f9e24b" />
   <event name="Transition to Sector II" id_arme="48345309-82fe-4533-8a69-544168a63db3" parent_id_arme="fb1a9346-2fda-473f-a270-77841855e699">
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -113,14 +113,14 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="1b06395d-309f-4350-ac28-19a1d3f107d4" parent_id_arme="fb1a9346-2fda-473f-a270-77841855e699" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="1b06395d-309f-4350-ac28-19a1d3f107d4" parent_id_arme="fb1a9346-2fda-473f-a270-77841855e699" />
   <event name="Gate Offline" id_arme="519c4636-17a0-46aa-af3c-5d2c3607fcd8" parent_id_arme="1b06395d-309f-4350-ac28-19a1d3f107d4">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="G'Torin Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="2c7d6139-03a6-40d3-a9cd-403b126518bd" parent_id_arme="1b06395d-309f-4350-ac28-19a1d3f107d4" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="2c7d6139-03a6-40d3-a9cd-403b126518bd" parent_id_arme="1b06395d-309f-4350-ac28-19a1d3f107d4" />
   <event name="Ship1 Activation Range" id_arme="257a1e8a-1b2c-4ba9-acc2-da41e921dbc1" parent_id_arme="2c7d6139-03a6-40d3-a9cd-403b126518bd">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
@@ -300,12 +300,12 @@
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="77322.0" y="0.0" z="65000.0" angle="0" name="G'Torin Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="46384.0" y="0.0" z="54955.0" angle="0" name="Lyn Markets" hullID="1001" />
-    <create type="station" x="31786.0" y="0.0" z="27500.0" angle="0" name="Rei" hullID="1001" />
-    <create type="neutral" x="13840.0" y="0.0" z="81205.0" angle="0" name="Scarsald Ores" hullID="1050" />
-    <create type="neutral" x="28438.0" y="0.0" z="38214.0" angle="0" name="Yonk Mining" hullID="1050" />
-    <create type="neutral" x="67947.0" y="0.0" z="78125.0" angle="0" name="Chelle Denabite" hullID="1051" />
+    <create type="genericMesh" x="77322.0" y="0.0" z="65000.0" name="G'Torin Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="46384.0" y="0.0" z="54955.0" angle="0" name="Lyn Markets" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="31786.0" y="0.0" z="27500.0" angle="0" name="Rei" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="13840.0" y="0.0" z="81205.0" angle="0" name="Scarsald Ores" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="28438.0" y="0.0" z="38214.0" angle="0" name="Yonk Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="67947.0" y="0.0" z="78125.0" angle="0" name="Chelle Denabite" hullID="1051" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -353,7 +353,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="G'Torin to Sumri" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector II" id_arme="5fc34811-7b04-4c04-8a57-2454032a6685" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
+  <folder_arme name="Sumri Sector II" id_arme="5fc34811-7b04-4c04-8a57-2454032a6685" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <event name="Create Sumri Sector II" id_arme="05962792-828d-463e-b881-2580a08c2300" parent_id_arme="5fc34811-7b04-4c04-8a57-2454032a6685">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -440,7 +440,7 @@
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Tilminra Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="a2537729-c3fb-4b9b-b573-30369f9076ec" parent_id_arme="db18fcf4-e4c9-4dc4-a246-f2f5b7912cfd" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="a2537729-c3fb-4b9b-b573-30369f9076ec" parent_id_arme="db18fcf4-e4c9-4dc4-a246-f2f5b7912cfd" />
   <event name="Ship1 Activation Range" id_arme="d2e00bab-0356-4fbb-8cc5-e99999eaae50" parent_id_arme="a2537729-c3fb-4b9b-b573-30369f9076ec">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
@@ -620,14 +620,14 @@
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="15447.0" y="0.0" z="52678.0" angle="0" name="Tilminra Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="48259.0" y="0.0" z="60044.0" angle="0" name="Usi Ax" hullID="1001" />
-    <create type="station" x="58170.0" y="0.0" z="33125.0" angle="0" name="Paragon Mills" hullID="1003" />
-    <create type="neutral" x="80670.0" y="0.0" z="66071.0" angle="0" name="Kadumi Mining" hullID="1050" />
-    <create type="neutral" x="71161.0" y="0.0" z="24285.0" angle="0" name="Czarina Denabite" hullID="1051" />
-    <create type="neutral" x="20134.0" y="0.0" z="24955.0" angle="0" name="Nyama Mining" hullID="1050" />
-    <create type="neutral" x="15447.0" y="0.0" z="75312.0" angle="0" name="Ushu Denabite" hullID="1051" />
-    <create type="neutral" x="37679.0" y="0.0" z="19330.0" angle="0" name="Fiyah Ores" hullID="1050" />
+    <create type="genericMesh" x="15447.0" y="0.0" z="52678.0" name="Tilminra Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="48259.0" y="0.0" z="60044.0" angle="0" name="Usi Ax" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="58170.0" y="0.0" z="33125.0" angle="0" name="Paragon Mills" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="80670.0" y="0.0" z="66071.0" angle="0" name="Kadumi Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="71161.0" y="0.0" z="24285.0" angle="0" name="Czarina Denabite" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="20134.0" y="0.0" z="24955.0" angle="0" name="Nyama Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="15447.0" y="0.0" z="75312.0" angle="0" name="Ushu Denabite" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="37679.0" y="0.0" z="19330.0" angle="0" name="Fiyah Ores" hullID="1050" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" integer="yes" />
@@ -678,7 +678,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Tilminra to Sumri" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector III" id_arme="654bfb7e-1363-46be-8e74-bfbd1b388864" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
+  <folder_arme name="Sumri Sector III" id_arme="654bfb7e-1363-46be-8e74-bfbd1b388864" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <event name="Create Sumri Sector III" id_arme="f7f9561d-5130-4e7c-86cf-47328ccec4ec" parent_id_arme="654bfb7e-1363-46be-8e74-bfbd1b388864">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -740,7 +740,7 @@
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="60849.0" y="0.0" z="58303.0" angle="0" name="Holyard" hullID="1004" />
+    <create type="neutral" x="60849.0" y="0.0" z="58303.0" angle="0" name="Holyard" hullID="1004" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -756,7 +756,7 @@
     <set_variable name="Sumri System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector IV" id_arme="669fc0e9-ba23-426c-b80c-8b47a8b87cd1" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
+  <folder_arme name="Sumri Sector IV" id_arme="669fc0e9-ba23-426c-b80c-8b47a8b87cd1" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <event name="Create Sumri Sector IV" id_arme="a4deb42d-d8db-4628-9a3f-5ca90f5ec369" parent_id_arme="669fc0e9-ba23-426c-b80c-8b47a8b87cd1">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -841,13 +841,13 @@
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="43438.0" y="0.0" z="62053.0" angle="0" name="Juba" hullID="1001" />
-    <create type="station" x="22009.0" y="0.0" z="41696.0" angle="0" name="Conakry Foundry" hullID="1003" />
-    <create type="station" x="54554.0" y="0.0" z="48125.0" angle="0" name="Maury Institute" hullID="1004" />
-    <create type="neutral" x="68215.0" y="0.0" z="23482.0" angle="0" name="Maseru Metals" hullID="1050" />
-    <create type="neutral" x="71697.0" y="0.0" z="62723.0" angle="0" name="Niyamo Ores" hullID="1050" />
-    <create type="neutral" x="26161.0" y="0.0" z="58839.0" angle="0" name="Okalpa Minerals" hullID="1050" />
-    <create type="neutral" x="82411.0" y="0.0" z="36741.0" angle="0" name="Purity Denabite" hullID="1051" />
+    <create type="neutral" x="43438.0" y="0.0" z="62053.0" angle="0" name="Juba" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="22009.0" y="0.0" z="41696.0" angle="0" name="Conakry Foundry" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="54554.0" y="0.0" z="48125.0" angle="0" name="Maury Institute" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="68215.0" y="0.0" z="23482.0" angle="0" name="Maseru Metals" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="71697.0" y="0.0" z="62723.0" angle="0" name="Niyamo Ores" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="26161.0" y="0.0" z="58839.0" angle="0" name="Okalpa Minerals" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="82411.0" y="0.0" z="36741.0" angle="0" name="Purity Denabite" hullID="1051" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -869,7 +869,7 @@
     <set_variable name="Sumri System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector V" id_arme="32cf7d09-aea8-42dd-8672-8fd03d1b9a2e" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
+  <folder_arme name="Sumri Sector V" id_arme="32cf7d09-aea8-42dd-8672-8fd03d1b9a2e" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <event name="Create Sumri Sector V" id_arme="2f96d0c9-6d52-4acc-80af-435bc164f460" parent_id_arme="32cf7d09-aea8-42dd-8672-8fd03d1b9a2e">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -1001,15 +1001,15 @@
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="29777.0" y="0.0" z="55223.0" angle="0" name="Ingarda Market" hullID="1001" />
-    <create type="station" x="73569.0" y="0.0" z="41598.0" angle="0" name="Sumri Administration" hullID="1001" />
-    <create type="neutral" x="76518.0" y="0.0" z="46517.0" angle="0" name="Defense Grid 1" hullID="1052" />
-    <create type="neutral" x="45045.0" y="0.0" z="20000.0" angle="0" name="Defense Grid 2" hullID="1052" />
-    <create type="neutral" x="26965.0" y="0.0" z="59776.0" angle="0" name="Defense Grid 3" hullID="1052" />
-    <create type="neutral" x="57634.0" y="0.0" z="74241.0" angle="0" name="Defense Grid 4" hullID="1052" />
-    <create type="neutral" x="48661.0" y="0.0" z="24687.0" angle="0" name="Tubilt Works" hullID="1050" />
-    <create type="neutral" x="57500.0" y="0.0" z="69017.0" angle="0" name="Acmen Mining" hullID="1050" />
-    <create type="neutral" x="73170.0" y="0.0" z="35000.0" angle="0" name="Defense Grid 5" hullID="1052" />
+    <create type="neutral" x="29777.0" y="0.0" z="55223.0" angle="0" name="Ingarda Market" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="73569.0" y="0.0" z="41598.0" angle="0" name="Sumri Administration" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="76518.0" y="0.0" z="46517.0" angle="0" name="Defense Grid 1" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="45045.0" y="0.0" z="20000.0" angle="0" name="Defense Grid 2" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="26965.0" y="0.0" z="59776.0" angle="0" name="Defense Grid 3" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="57634.0" y="0.0" z="74241.0" angle="0" name="Defense Grid 4" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="48661.0" y="0.0" z="24687.0" angle="0" name="Tubilt Works" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="57500.0" y="0.0" z="69017.0" angle="0" name="Acmen Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="73170.0" y="0.0" z="35000.0" angle="0" name="Defense Grid 5" hullID="1052" sideValue="sectorSide" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -1052,7 +1052,7 @@
     <set_variable name="Sumri System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector VI" id_arme="ee08c19c-c263-4e9e-a57e-c506a13d2cc7" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
+  <folder_arme name="Sumri Sector VI" id_arme="ee08c19c-c263-4e9e-a57e-c506a13d2cc7" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <event name="Create Sumri Sector VI" id_arme="abb4919d-8b3e-420d-af2a-b204cc2bdaa2" parent_id_arme="ee08c19c-c263-4e9e-a57e-c506a13d2cc7">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -1138,14 +1138,14 @@
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="76518.0" y="0.0" z="44776.0" angle="0" name="Priah Hek" hullID="1001" />
-    <create type="station" x="25492.0" y="0.0" z="53482.0" angle="0" name="Banjul Works" hullID="1003" />
-    <create type="station" x="18527.0" y="0.0" z="78125.0" angle="0" name="Cliowa Smithy" hullID="1003" />
-    <create type="neutral" x="36072.0" y="0.0" z="20535.0" angle="0" name="Dujum Denabite" hullID="1051" />
-    <create type="neutral" x="82545.0" y="0.0" z="55758.0" angle="0" name="Fluzor Denabite" hullID="1051" />
-    <create type="neutral" x="30313.0" y="0.0" z="67678.0" angle="0" name="Grepna Ores" hullID="1050" />
-    <create type="neutral" x="14242.0" y="0.0" z="29910.0" angle="0" name="Yiari Mining" hullID="1050" />
-    <create type="neutral" x="65688.0" y="0.0" z="31040.0" angle="0" name="Quan Excavations" hullID="1050" />
+    <create type="neutral" x="76518.0" y="0.0" z="44776.0" angle="0" name="Priah Hek" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="25492.0" y="0.0" z="53482.0" angle="0" name="Banjul Works" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="18527.0" y="0.0" z="78125.0" angle="0" name="Cliowa Smithy" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="36072.0" y="0.0" z="20535.0" angle="0" name="Dujum Denabite" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="82545.0" y="0.0" z="55758.0" angle="0" name="Fluzor Denabite" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="30313.0" y="0.0" z="67678.0" angle="0" name="Grepna Ores" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="14242.0" y="0.0" z="29910.0" angle="0" name="Yiari Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="65688.0" y="0.0" z="31040.0" angle="0" name="Quan Excavations" hullID="1050" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -1168,7 +1168,7 @@
     <set_variable name="Sumri System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector VII" id_arme="9a2bc86a-6b59-4557-9e90-829a8a1dae01" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
+  <folder_arme name="Sumri Sector VII" id_arme="9a2bc86a-6b59-4557-9e90-829a8a1dae01" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <event name="Create Sumri Sector VII" id_arme="e1d6cfa3-444e-4b0b-bafa-5472f9666f50" parent_id_arme="9a2bc86a-6b59-4557-9e90-829a8a1dae01">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1224,14 +1224,14 @@
     <set_variable name="Sumri System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="35fb9ef7-cfac-4818-8378-8ba5f1cbc5d9" parent_id_arme="edd2a3f4-c112-4ca5-be19-0d0f1d67fbb2" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="35fb9ef7-cfac-4818-8378-8ba5f1cbc5d9" parent_id_arme="edd2a3f4-c112-4ca5-be19-0d0f1d67fbb2" />
   <event name="Gate Offline" id_arme="88b4cb7d-a2de-4e2e-b9a0-759fbe3cb475" parent_id_arme="35fb9ef7-cfac-4818-8378-8ba5f1cbc5d9">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Eulis Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="addf15e3-3de9-4fb0-98d8-d6454362d2ec" parent_id_arme="35fb9ef7-cfac-4818-8378-8ba5f1cbc5d9" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="addf15e3-3de9-4fb0-98d8-d6454362d2ec" parent_id_arme="35fb9ef7-cfac-4818-8378-8ba5f1cbc5d9" />
   <event name="Ship1 Activation Range" id_arme="22dc2131-5e07-4f95-bda2-d1d587731ecc" parent_id_arme="addf15e3-3de9-4fb0-98d8-d6454362d2ec">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
@@ -1411,13 +1411,13 @@
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="33661.0" y="0.0" z="48258.0" angle="0" name="Eulis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="37545.0" y="0.0" z="32321.0" angle="0" name="Bujum" hullID="1001" />
-    <create type="station" x="43438.0" y="0.0" z="73035.0" angle="0" name="Molono Industries" hullID="1003" />
-    <create type="neutral" x="60179.0" y="0.0" z="27500.0" angle="0" name="Barr-Toc Mines" hullID="1050" />
-    <create type="neutral" x="48125.0" y="0.0" z="50669.0" angle="0" name="Deleno Ores" hullID="1050" />
-    <create type="neutral" x="15983.0" y="0.0" z="25758.0" angle="0" name="Cuvia Ores" hullID="1050" />
-    <create type="neutral" x="19599.0" y="0.0" z="72767.0" angle="0" name="Mishivi Denabite" hullID="1051" />
+    <create type="genericMesh" x="33661.0" y="0.0" z="48258.0" name="Eulis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="37545.0" y="0.0" z="32321.0" angle="0" name="Bujum" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="43438.0" y="0.0" z="73035.0" angle="0" name="Molono Industries" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="60179.0" y="0.0" z="27500.0" angle="0" name="Barr-Toc Mines" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="48125.0" y="0.0" z="50669.0" angle="0" name="Deleno Ores" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="15983.0" y="0.0" z="25758.0" angle="0" name="Cuvia Ores" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="19599.0" y="0.0" z="72767.0" angle="0" name="Mishivi Denabite" hullID="1051" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -1466,7 +1466,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Eulis to Sumri" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector VIII" id_arme="fbbc595c-ae83-4338-bf98-6e965bd6304f" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
+  <folder_arme name="Sumri Sector VIII" id_arme="fbbc595c-ae83-4338-bf98-6e965bd6304f" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <event name="Create Sumri Sector VIII" id_arme="90371865-71c0-4aee-a1f6-3a456c7b1c6a" parent_id_arme="fbbc595c-ae83-4338-bf98-6e965bd6304f">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -1551,10 +1551,10 @@
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="47590.0" y="0.0" z="57633.0" angle="0" name="Lon-Na" hullID="1001" />
-    <create type="neutral" x="46920.0" y="0.0" z="88169.0" angle="0" name="Jedna Denabite" hullID="1051" />
-    <create type="neutral" x="64197.0" y="0.0" z="80133.0" angle="0" name="Mikos Denabite" hullID="1051" />
-    <create type="neutral" x="82411.0" y="0.0" z="76651.0" angle="0" name="Sandur Denabite" hullID="1051" />
+    <create type="neutral" x="47590.0" y="0.0" z="57633.0" angle="0" name="Lon-Na" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="46920.0" y="0.0" z="88169.0" angle="0" name="Jedna Denabite" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="64197.0" y="0.0" z="80133.0" angle="0" name="Mikos Denabite" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="82411.0" y="0.0" z="76651.0" angle="0" name="Sandur Denabite" hullID="1051" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -1573,7 +1573,7 @@
     <set_variable name="Sumri System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sumri Sector IX" id_arme="f882a02a-229e-40ca-9b10-4f462d550ff8" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" expanded_arme="" />
+  <folder_arme name="Sumri Sector IX" id_arme="f882a02a-229e-40ca-9b10-4f462d550ff8" parent_id_arme="285898d5-6b7d-48b7-b9c5-643cc6cff3f9" />
   <event name="Create Sumri Sector IX" id_arme="7648a7fb-7f45-469d-aee8-51f2cf4e342f" parent_id_arme="f882a02a-229e-40ca-9b10-4f462d550ff8">
     <if_variable name="Sumri System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1629,7 +1629,7 @@
     <set_variable name="Sumri System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="5a287e14-1d9b-448f-b9be-7f27a1744134" parent_id_arme="544779ed-f445-43bd-96ff-a24be1cc1e7a" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="5a287e14-1d9b-448f-b9be-7f27a1744134" parent_id_arme="544779ed-f445-43bd-96ff-a24be1cc1e7a" />
   <event name="Gate Offline" id_arme="26a0243b-48f5-4160-9523-ad03fe0b074e" parent_id_arme="5a287e14-1d9b-448f-b9be-7f27a1744134">
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Sumri System" comparator="EQUALS" value="2.0" />
@@ -1817,13 +1817,13 @@
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="13438.0" y="0.0" z="34866.0" angle="0" name="Ibroan Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="62724.0" y="0.0" z="45982.0" angle="0" name="Pakku-Est" hullID="1001" />
-    <create type="station" x="59509.0" y="0.0" z="27901.0" angle="0" name="Xar Production" hullID="1003" />
-    <create type="neutral" x="79867.0" y="0.0" z="22142.0" angle="0" name="Orvag Mining" hullID="1050" />
-    <create type="neutral" x="78795.0" y="0.0" z="71160.0" angle="0" name="Kaolus Mining" hullID="1050" />
-    <create type="neutral" x="51608.0" y="0.0" z="50535.0" angle="0" name="Defense Grid 1" hullID="1052" />
-    <create type="neutral" x="50536.0" y="0.0" z="36741.0" angle="0" name="Defense Grid 2" hullID="1052" />
-    <create type="neutral" x="48259.0" y="0.0" z="22946.0" angle="0" name="Defense Grid 3" hullID="1052" />
+    <create type="neutral" x="62724.0" y="0.0" z="45982.0" angle="0" name="Pakku-Est" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="59509.0" y="0.0" z="27901.0" angle="0" name="Xar Production" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="79867.0" y="0.0" z="22142.0" angle="0" name="Orvag Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="78795.0" y="0.0" z="71160.0" angle="0" name="Kaolus Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="51608.0" y="0.0" z="50535.0" angle="0" name="Defense Grid 1" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="50536.0" y="0.0" z="36741.0" angle="0" name="Defense Grid 2" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="48259.0" y="0.0" z="22946.0" angle="0" name="Defense Grid 3" hullID="1052" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>

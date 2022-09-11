@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="386.0" integer="yes" />
     <set_variable name="Alignment" value="Badlands" integer="yes" />
   </start>
-  <folder_arme name="Poseidon System" id_arme="f02d8774-f2e8-48c5-8c29-1949ff32f20b" expanded_arme="" />
+  <folder_arme name="Poseidon System" id_arme="f02d8774-f2e8-48c5-8c29-1949ff32f20b" />
   <folder_arme name="Poseidon Settings" id_arme="1c6b88f5-5659-4bda-a672-44f2de6dc790" parent_id_arme="f02d8774-f2e8-48c5-8c29-1949ff32f20b" />
   <folder_arme name="Poseidon Menu" id_arme="08e1b032-b1e3-48d2-a4ff-a65276c20e78" parent_id_arme="1c6b88f5-5659-4bda-a672-44f2de6dc790" />
   <event name="Poseidon Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="08e1b032-b1e3-48d2-a4ff-a65276c20e78">
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Poseidon Sector I" id_arme="10d8db1f-daac-4282-b568-8c2de2d3422f" parent_id_arme="f02d8774-f2e8-48c5-8c29-1949ff32f20b" expanded_arme="" />
+  <folder_arme name="Poseidon Sector I" id_arme="10d8db1f-daac-4282-b568-8c2de2d3422f" parent_id_arme="f02d8774-f2e8-48c5-8c29-1949ff32f20b" />
   <event name="Create Poseidon Sector I" id_arme="bd1a28ff-7785-4030-bb93-e9c5aedb83db" parent_id_arme="10d8db1f-daac-4282-b568-8c2de2d3422f">
     <if_variable name="Poseidon System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -88,7 +88,7 @@
     <create count="80" type="asteroids" startX="53539.0" startY="0.0" startZ="88619.0" endX="90277.0" endY="0.0" endZ="87264.0" randomRange="1905" />
     <create count="50" type="asteroids" startX="12886.0" startY="0.0" startZ="25081.0" endX="45258.0" endY="0.0" endZ="24780.0" randomRange="2829" />
   </event>
-  <folder_arme name="Navigation" id_arme="b1d7b63d-d7b9-48ad-ab8a-86d5c16f3ac9" parent_id_arme="10d8db1f-daac-4282-b568-8c2de2d3422f" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="b1d7b63d-d7b9-48ad-ab8a-86d5c16f3ac9" parent_id_arme="10d8db1f-daac-4282-b568-8c2de2d3422f" />
   <event name="Transition to Sector II" id_arme="1003f198-d344-440b-8d40-f2872dcf9e67" parent_id_arme="b1d7b63d-d7b9-48ad-ab8a-86d5c16f3ac9">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Poseidon System" comparator="EQUALS" value="2.0" />
@@ -122,7 +122,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Poseidon System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="7338d1de-ad98-4ada-bba1-7bbfcf9f088b" parent_id_arme="b1d7b63d-d7b9-48ad-ab8a-86d5c16f3ac9" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="7338d1de-ad98-4ada-bba1-7bbfcf9f088b" parent_id_arme="b1d7b63d-d7b9-48ad-ab8a-86d5c16f3ac9" />
   <event name="Gate Offline" id_arme="bc8547aa-6b8a-4cc3-9a68-6418a5819067" parent_id_arme="7338d1de-ad98-4ada-bba1-7bbfcf9f088b">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Poseidon System" comparator="EQUALS" value="2.0" />

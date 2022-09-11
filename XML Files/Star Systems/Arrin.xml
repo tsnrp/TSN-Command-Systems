@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="289.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Arrin System" id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" expanded_arme="" />
+  <folder_arme name="Arrin System" id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
   <folder_arme name="Arrin Settings" id_arme="730efd70-2c23-44b3-a9bd-e57acaaacc0c" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
   <folder_arme name="Arrin Menu" id_arme="7aac852e-45e0-4329-9dac-12c6782f6b70" parent_id_arme="730efd70-2c23-44b3-a9bd-e57acaaacc0c" />
   <event name="Arrin Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="7aac852e-45e0-4329-9dac-12c6782f6b70">
@@ -517,7 +517,7 @@
     <set_variable name="Arrin System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Arrin Sector VI" id_arme="d5c89728-e542-437e-a8c5-569578312f05" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" expanded_arme="" />
+  <folder_arme name="Arrin Sector VI" id_arme="d5c89728-e542-437e-a8c5-569578312f05" parent_id_arme="bb158b61-ded7-4dd7-99e5-bcb40b9c6df2" />
   <event name="Create Arrin Sector VI" id_arme="7a7c7639-8de2-4495-89da-9d72a2640b98" parent_id_arme="d5c89728-e542-437e-a8c5-569578312f05">
     <if_timer_finished name="Transition" />
     <if_variable name="Arrin System" comparator="EQUALS" value="1.0" />
@@ -540,7 +540,7 @@
     <create count="80" type="nebulas" startX="89412.0" startY="0.0" startZ="20883.0" endX="40705.0" endY="0.0" endZ="48233.0" randomRange="5437" />
     <create count="10" type="asteroids" startX="52075.0" startY="0.0" startZ="58066.0" endX="52075.0" endY="0.0" endZ="58066.0" randomRange="37474" />
   </event>
-  <folder_arme name="Navigation" id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7" parent_id_arme="d5c89728-e542-437e-a8c5-569578312f05" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7" parent_id_arme="d5c89728-e542-437e-a8c5-569578312f05" />
   <event name="Transition to Sector VII" id_arme="dec9d9cf-9871-46fc-9562-a72967032180" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />
@@ -629,7 +629,7 @@
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="Arrin System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="c463f39c-2474-4b85-8088-9f75a4b1b01d" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="c463f39c-2474-4b85-8088-9f75a4b1b01d" parent_id_arme="3bab2381-bce2-4fe7-af8d-cfb9d24643d7" />
   <event name="Gate Offline" id_arme="fc417da2-6e26-4a6b-a1ff-c79d3919c50e" parent_id_arme="c463f39c-2474-4b85-8088-9f75a4b1b01d">
     <if_variable name="Sector" comparator="EQUALS" value="6" />
     <if_variable name="Arrin System" comparator="EQUALS" value="2.0" />

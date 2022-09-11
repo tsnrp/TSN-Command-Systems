@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="341.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Promethean System" id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean System" id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <folder_arme name="Promethean Settings" id_arme="9fa33713-c913-4a6f-9b33-ddcd2e037971" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <folder_arme name="Promethean Menu" id_arme="4e45781a-949e-4e74-ad37-0e9188cbe7d5" parent_id_arme="9fa33713-c913-4a6f-9b33-ddcd2e037971" />
   <event name="Promethean Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="4e45781a-949e-4e74-ad37-0e9188cbe7d5">
@@ -57,7 +57,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Promethean Sector I" id_arme="f31123aa-9c39-4853-b3cc-9ca54e9aea3d" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Sector I" id_arme="f31123aa-9c39-4853-b3cc-9ca54e9aea3d" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <event name="Create Promethean Sector I" id_arme="88e1e32a-c8dc-4401-8b8f-b42405cb6d06" parent_id_arme="f31123aa-9c39-4853-b3cc-9ca54e9aea3d">
     <if_timer_finished name="Transition" />
     <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
@@ -115,7 +115,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="92aedfdb-5324-44eb-9403-a207dc726533" parent_id_arme="f31123aa-9c39-4853-b3cc-9ca54e9aea3d" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="92aedfdb-5324-44eb-9403-a207dc726533" parent_id_arme="f31123aa-9c39-4853-b3cc-9ca54e9aea3d" />
   <event name="Generate Sector Entities" id_arme="6772395c-47e8-4674-a9c6-e717cb4456c3" parent_id_arme="92aedfdb-5324-44eb-9403-a207dc726533">
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1" />
@@ -148,7 +148,7 @@
     <set_variable name="Promethean System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Promethean Sector II" id_arme="1b6c80c2-b8e8-432f-bc7d-67931c4de90f" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Sector II" id_arme="1b6c80c2-b8e8-432f-bc7d-67931c4de90f" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <event name="Create Promethean Sector II" id_arme="4ffa98b5-0aef-40c7-92dd-980421c7fc0a" parent_id_arme="1b6c80c2-b8e8-432f-bc7d-67931c4de90f">
     <if_timer_finished name="Transition" />
     <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
@@ -232,7 +232,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="c436ba3d-7045-4d68-92e2-cb90952e2097" parent_id_arme="1b6c80c2-b8e8-432f-bc7d-67931c4de90f" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="c436ba3d-7045-4d68-92e2-cb90952e2097" parent_id_arme="1b6c80c2-b8e8-432f-bc7d-67931c4de90f" />
   <event name="Generate Sector Entities" id_arme="418a24db-31b1-4f83-a2b4-ac0a386fba45" parent_id_arme="c436ba3d-7045-4d68-92e2-cb90952e2097">
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2" />
@@ -276,7 +276,7 @@
     <set_variable name="Promethean System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Promethean Sector III" id_arme="52149a28-ab70-4c83-a417-dd3ca8968e66" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Sector III" id_arme="52149a28-ab70-4c83-a417-dd3ca8968e66" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <event name="Create Promethean Sector III" id_arme="e6f88493-04f6-4557-8cd6-41d84d589368" parent_id_arme="52149a28-ab70-4c83-a417-dd3ca8968e66">
     <if_timer_finished name="Transition" />
     <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
@@ -362,7 +362,7 @@
     <set_variable name="Sector" value="8.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="2b53b4e1-57f4-4746-b409-d1ad00b42e86" parent_id_arme="52149a28-ab70-4c83-a417-dd3ca8968e66" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="2b53b4e1-57f4-4746-b409-d1ad00b42e86" parent_id_arme="52149a28-ab70-4c83-a417-dd3ca8968e66" />
   <event name="Generate Sector Entities" id_arme="64c43c6e-e6e8-4fbe-8229-a4a9dd1e722a" parent_id_arme="2b53b4e1-57f4-4746-b409-d1ad00b42e86">
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3" />
@@ -400,7 +400,7 @@
     <set_variable name="Promethean System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Promethean Sector IV" id_arme="19fa7447-28d9-4017-beed-f12f68f128a7" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Sector IV" id_arme="19fa7447-28d9-4017-beed-f12f68f128a7" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <event name="Create Promethean Sector IV" id_arme="5c0beada-d8dc-4a6d-a82e-94225f8dede9" parent_id_arme="19fa7447-28d9-4017-beed-f12f68f128a7">
     <if_timer_finished name="Transition" />
     <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
@@ -461,7 +461,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="329d4430-4274-4da5-8fab-af2e8a5c3a05" parent_id_arme="19fa7447-28d9-4017-beed-f12f68f128a7" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="329d4430-4274-4da5-8fab-af2e8a5c3a05" parent_id_arme="19fa7447-28d9-4017-beed-f12f68f128a7" />
   <event name="Generate Sector Entities" id_arme="e76dfa5a-59ba-4954-b0ee-ce404235cf10" parent_id_arme="329d4430-4274-4da5-8fab-af2e8a5c3a05">
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4" />
@@ -509,7 +509,7 @@
     <set_variable name="Promethean System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Promethean Sector V" id_arme="4d9c0b90-0bd6-4af4-8460-87ff581bbe7f" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Sector V" id_arme="4d9c0b90-0bd6-4af4-8460-87ff581bbe7f" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <event name="Create Promethean Sector V" id_arme="d696736a-79df-4644-8fd5-8b62ff43624f" parent_id_arme="4d9c0b90-0bd6-4af4-8460-87ff581bbe7f">
     <if_timer_finished name="Transition" />
     <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
@@ -592,7 +592,7 @@
     <set_variable name="Sector" value="10.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="bbbdb8d8-d3e9-4d03-a8db-a4d13bca66ae" parent_id_arme="4d9c0b90-0bd6-4af4-8460-87ff581bbe7f" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="bbbdb8d8-d3e9-4d03-a8db-a4d13bca66ae" parent_id_arme="4d9c0b90-0bd6-4af4-8460-87ff581bbe7f" />
   <event name="Generate Sector Entities" id_arme="f3661bfc-0772-4b92-a7da-21d6c884618d" parent_id_arme="bbbdb8d8-d3e9-4d03-a8db-a4d13bca66ae">
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5" />
@@ -626,7 +626,7 @@
     <set_variable name="Promethean System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Promethean Sector VI" id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Sector VI" id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <event name="Create Promethean Sector VI" id_arme="facc920d-219b-449d-bde7-b57c4fd5b216" parent_id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2">
     <if_timer_finished name="Transition" />
     <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
@@ -648,7 +648,7 @@
     <create count="20" type="nebulas" startX="73826.0" startY="0.0" startZ="26610.0" endX="84577.0" endY="0.0" endZ="11937.0" randomRange="6578" />
     <create count="20" type="asteroids" startX="77168.0" startY="0.0" startZ="18765.0" endX="65545.0" endY="0.0" endZ="33147.0" randomRange="8037" />
   </event>
-  <folder_arme name="Navigation" id_arme="122673a3-4826-4b4d-b524-c10a49a12177" parent_id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="122673a3-4826-4b4d-b524-c10a49a12177" parent_id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2" />
   <event name="Transition to Sector VII" id_arme="35f61a1e-2b57-4513-a87b-b4a59cd3737d" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
@@ -737,7 +737,7 @@
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="82075028-8227-4ce7-b2fd-20c6b2471e37" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="82075028-8227-4ce7-b2fd-20c6b2471e37" parent_id_arme="122673a3-4826-4b4d-b524-c10a49a12177" />
   <event name="Gate Offline" id_arme="3db734a0-57ea-4491-bf55-0b34bba28853" parent_id_arme="82075028-8227-4ce7-b2fd-20c6b2471e37">
     <if_variable name="Sector" comparator="EQUALS" value="6" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
@@ -919,7 +919,7 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="5e679e6a-0bc6-4256-b360-dcc53fcd7c2a" parent_id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="5e679e6a-0bc6-4256-b360-dcc53fcd7c2a" parent_id_arme="1a7f9454-f775-4926-b353-eed3cec1a1e2" />
   <event name="Generate Sector Entities" id_arme="0ae126dd-64c6-46b5-a7f5-d2059530b1c2" parent_id_arme="5e679e6a-0bc6-4256-b360-dcc53fcd7c2a">
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -986,7 +986,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Cerberus to Promethean" value="0.0" />
   </event>
-  <folder_arme name="Promethean Sector VII" id_arme="c9650d57-c72c-4574-b0e4-fd7656b1e614" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Sector VII" id_arme="c9650d57-c72c-4574-b0e4-fd7656b1e614" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <event name="Create Promethean Sector VII" id_arme="8c4e398b-db7d-437f-a227-d01a39c7fe56" parent_id_arme="c9650d57-c72c-4574-b0e4-fd7656b1e614">
     <if_timer_finished name="Transition" />
     <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
@@ -1103,7 +1103,7 @@
     <set_variable name="Sector" value="12.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="7116dc87-7ed9-4187-8f32-16bc0c285b1c" parent_id_arme="c9650d57-c72c-4574-b0e4-fd7656b1e614" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="7116dc87-7ed9-4187-8f32-16bc0c285b1c" parent_id_arme="c9650d57-c72c-4574-b0e4-fd7656b1e614" />
   <event name="Generate Sector Entities" id_arme="09b1db4f-67bb-4cf8-b44c-dd8967b9de92" parent_id_arme="7116dc87-7ed9-4187-8f32-16bc0c285b1c">
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7" />
@@ -1155,7 +1155,7 @@
     <set_variable name="Promethean System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Promethean Sector VIII" id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Sector VIII" id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <event name="Create Promethean Sector VIII" id_arme="73bab143-2d62-4ea8-84f4-45cb2d705d51" parent_id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7">
     <if_timer_finished name="Transition" />
     <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
@@ -1178,7 +1178,7 @@
     <create count="20" type="asteroids" startX="71004.0" startY="0.0" startZ="44654.0" endX="64229.0" endY="0.0" endZ="39535.0" randomRange="2047" />
     <create count="30" type="nebulas" startX="48570.0" startY="0.0" startZ="26737.0" endX="38031.0" endY="0.0" endZ="9422.0" randomRange="2020" />
   </event>
-  <folder_arme name="Navigation" id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee" parent_id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee" parent_id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7" />
   <event name="Transition to Sector VII" id_arme="f0437ef1-72bf-4cc0-b4f3-d7733bbe322e" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
@@ -1234,7 +1234,7 @@
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="e32dccac-b1fc-49b8-b4bb-282edcf3b4cc" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="e32dccac-b1fc-49b8-b4bb-282edcf3b4cc" parent_id_arme="f40f1079-43a1-4991-b2a5-1a2ace87b3ee" />
   <event name="Gate Offline" id_arme="4f0bab27-56c6-4a6f-b54e-89e2404d26d2" parent_id_arme="e32dccac-b1fc-49b8-b4bb-282edcf3b4cc">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
@@ -1416,7 +1416,7 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="7ad9bbf4-0182-410f-83f9-8a31129b3697" parent_id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="7ad9bbf4-0182-410f-83f9-8a31129b3697" parent_id_arme="80417d2c-1a3d-4d1c-b9e2-8d08cea89eb7" />
   <event name="Generate Sector Entities" id_arme="c6ec42f4-dc46-47cd-a820-e27328ca1e17" parent_id_arme="7ad9bbf4-0182-410f-83f9-8a31129b3697">
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8" />
@@ -1545,10 +1545,10 @@
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="81586.0" y="0.0" z="41013.0" name="M-040" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="71014.0" y="0.0" z="44317.0" name="M-294" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="85551.0" y="0.0" z="52114.0" name="M-008" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="38814.0" y="0.0" z="56973.0" name="DS-72" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="81586.0" y="0.0" z="41013.0" name="M-040" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="71014.0" y="0.0" z="44317.0" name="M-294" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="85551.0" y="0.0" z="52114.0" name="M-008" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="38814.0" y="0.0" z="56973.0" name="DS-72" hullID="1000" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Promethean IX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Type" value="5.0" integer="yes" />
     <set_variable name="ExitorRetreat" value="0.0" />
@@ -1575,7 +1575,7 @@
     <set_variable name="Promethean System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Promethean Sector X" id_arme="04763c64-5027-4dd1-a0e7-4a17b87dbc13" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Sector X" id_arme="04763c64-5027-4dd1-a0e7-4a17b87dbc13" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <event name="Create Promethean Sector X" id_arme="15aa9b97-74b0-4fbf-844d-35f72d994473" parent_id_arme="04763c64-5027-4dd1-a0e7-4a17b87dbc13">
     <if_timer_finished name="Transition" />
     <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
@@ -1664,7 +1664,7 @@
     <set_variable name="Sector" value="5.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="f0c513ce-36ef-47fc-b5a8-aa229206822d" parent_id_arme="04763c64-5027-4dd1-a0e7-4a17b87dbc13" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="f0c513ce-36ef-47fc-b5a8-aa229206822d" parent_id_arme="04763c64-5027-4dd1-a0e7-4a17b87dbc13" />
   <event name="Generate Sector Entities" id_arme="23fc08b4-ff6a-4922-bc1b-ece5ac8711ad" parent_id_arme="f0c513ce-36ef-47fc-b5a8-aa229206822d">
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="10" />
@@ -1697,7 +1697,7 @@
     <set_variable name="Promethean System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Promethean Sector XI" id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Sector XI" id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <event name="Create Promethean Sector XI" id_arme="1aa0eb95-5af4-4dc3-984a-de96cff00f66" parent_id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3">
     <if_timer_finished name="Transition" />
     <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
@@ -1730,7 +1730,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c" parent_id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c" parent_id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3" />
   <event name="Transition to Sector XII" id_arme="dcff69d4-e6db-40ed-b2a9-1b7c43ab3f4c" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
@@ -1786,7 +1786,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="405d38b6-cae3-4358-9f19-66fd33c1a1ff" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="405d38b6-cae3-4358-9f19-66fd33c1a1ff" parent_id_arme="22bdfd9f-14d9-4f52-8f7a-130bc05a789c" />
   <event name="Gate Offline" id_arme="a3618d9a-6155-47c8-973e-7c41b79e1534" parent_id_arme="405d38b6-cae3-4358-9f19-66fd33c1a1ff">
     <if_variable name="Sector" comparator="EQUALS" value="11" />
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
@@ -1968,7 +1968,7 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="1b4c91a8-7642-47ad-a743-dcef2d14d1de" parent_id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="1b4c91a8-7642-47ad-a743-dcef2d14d1de" parent_id_arme="9b616979-3ede-4410-bb83-2b09ed2b48b3" />
   <event name="Generate Sector Entities" id_arme="cd18bc75-e088-430a-9841-38c012ccaa77" parent_id_arme="1b4c91a8-7642-47ad-a743-dcef2d14d1de">
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="11" />
@@ -2050,7 +2050,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Cronus to Promethean" value="0.0" />
   </event>
-  <folder_arme name="Promethean Sector XII" id_arme="21900bea-b1b0-448b-bec1-016227d687a7" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" expanded_arme="" />
+  <folder_arme name="Promethean Sector XII" id_arme="21900bea-b1b0-448b-bec1-016227d687a7" parent_id_arme="c584f5e8-bea3-4e6a-9924-e09dab77746e" />
   <event name="Create Promethean Sector XII" id_arme="b0769cd1-a8b3-4353-9b04-4b3788ba9ff4" parent_id_arme="21900bea-b1b0-448b-bec1-016227d687a7">
     <if_timer_finished name="Transition" />
     <if_variable name="Promethean System" comparator="EQUALS" value="1.0" />
@@ -2112,7 +2112,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Promethean System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="e10f41fb-a4b9-4d89-8d5e-e42fc0eeb325" parent_id_arme="21900bea-b1b0-448b-bec1-016227d687a7" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="e10f41fb-a4b9-4d89-8d5e-e42fc0eeb325" parent_id_arme="21900bea-b1b0-448b-bec1-016227d687a7" />
   <event name="Generate Sector Entities" id_arme="f2b6e565-436d-414d-a4eb-3ee7ffbb2203" parent_id_arme="e10f41fb-a4b9-4d89-8d5e-e42fc0eeb325">
     <if_variable name="Promethean System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="12" />

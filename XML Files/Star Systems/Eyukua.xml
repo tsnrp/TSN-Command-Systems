@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="145.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Eyukua System" id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" expanded_arme="" />
+  <folder_arme name="Eyukua System" id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" />
   <folder_arme name="Eyukua Settings" id_arme="e3992077-b2c0-4077-bba4-b274771433f3" parent_id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" />
   <folder_arme name="Eyukua Menu" id_arme="d97dd36d-608e-41eb-bd53-f65146266237" parent_id_arme="e3992077-b2c0-4077-bba4-b274771433f3" />
   <event name="Eyukua Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="d97dd36d-608e-41eb-bd53-f65146266237">
@@ -57,7 +57,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sector I - V" id_arme="195cd123-9599-4972-81a6-1bc92fdd3c2e" parent_id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" expanded_arme="" />
+  <folder_arme name="Sector I - V" id_arme="195cd123-9599-4972-81a6-1bc92fdd3c2e" parent_id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" />
   <folder_arme name="Eyukua Sector I" id_arme="8adfea41-d3f6-4f4a-a98b-2531f8c54e1e" parent_id_arme="195cd123-9599-4972-81a6-1bc92fdd3c2e" />
   <event name="Create Eyukua Sector I" id_arme="e83b63a1-b192-4cdf-a291-2615f25a6ca9" parent_id_arme="8adfea41-d3f6-4f4a-a98b-2531f8c54e1e">
     <if_timer_finished name="Transition" />
@@ -137,7 +137,7 @@
     <set_variable name="Eyukua System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Eyukua Sector II" id_arme="9fe3e6d9-3ec0-42b9-a84c-fc3fecab8b6b" parent_id_arme="195cd123-9599-4972-81a6-1bc92fdd3c2e" expanded_arme="" />
+  <folder_arme name="Eyukua Sector II" id_arme="9fe3e6d9-3ec0-42b9-a84c-fc3fecab8b6b" parent_id_arme="195cd123-9599-4972-81a6-1bc92fdd3c2e" />
   <event name="Create Eyukua Sector II" id_arme="7d018e81-722c-4022-acfe-027c1a67bad3" parent_id_arme="9fe3e6d9-3ec0-42b9-a84c-fc3fecab8b6b">
     <if_timer_finished name="Transition" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="1.0" />
@@ -170,7 +170,7 @@
     <create type="genericMesh" x="54768.0" y="0.0" z="33349.0" angle="0" name="Waypoint 78 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <create type="blackHole" x="70978.0" y="0.0" z="73985.0" name="BH-2" />
   </event>
-  <folder_arme name="Navigation" id_arme="4d29c723-2787-46ce-a3be-b6ecc6bb201a" parent_id_arme="9fe3e6d9-3ec0-42b9-a84c-fc3fecab8b6b" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="4d29c723-2787-46ce-a3be-b6ecc6bb201a" parent_id_arme="9fe3e6d9-3ec0-42b9-a84c-fc3fecab8b6b" />
   <event name="Transition to Sector III" id_arme="baec264e-6dcf-449e-9c47-42a303801ec3" parent_id_arme="4d29c723-2787-46ce-a3be-b6ecc6bb201a">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
@@ -226,7 +226,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Eyukua System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="714d6bb7-e4d7-46ad-8fdd-e8808d65254c" parent_id_arme="4d29c723-2787-46ce-a3be-b6ecc6bb201a" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="714d6bb7-e4d7-46ad-8fdd-e8808d65254c" parent_id_arme="4d29c723-2787-46ce-a3be-b6ecc6bb201a" />
   <event name="Gate Offline" id_arme="ff85f7b7-f1e8-4a94-b2dc-582f16b78cc5" parent_id_arme="714d6bb7-e4d7-46ad-8fdd-e8808d65254c">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
@@ -655,10 +655,10 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="61443.0" y="0.0" z="72371.0" angle="0" name="H-81" hullID="1405" sideValue="1" />
-    <create type="station" x="49634.0" y="0.0" z="23520.0" angle="0" name="S-90" hullID="1402" sideValue="1" />
-    <create type="station" x="79780.0" y="0.0" z="40171.0" angle="0" name="L-12" hullID="1408" sideValue="1" />
-    <create type="station" x="26749.0" y="0.0" z="48239.0" angle="0" name="D-17" hullID="1408" sideValue="1" />
+    <create type="neutral" x="61443.0" y="0.0" z="72371.0" angle="0" name="H-81" hullID="1405" sideValue="sectorSide" />
+    <create type="neutral" x="49634.0" y="0.0" z="23520.0" angle="0" name="S-90" hullID="1402" sideValue="sectorSide" />
+    <create type="neutral" x="79780.0" y="0.0" z="40171.0" angle="0" name="L-12" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="26749.0" y="0.0" z="48239.0" angle="0" name="D-17" hullID="1408" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -750,11 +750,11 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="19634.0" y="0.0" z="17872.0" angle="0" name="E-43" hullID="1402" sideValue="1" />
-    <create type="station" x="66504.0" y="0.0" z="32836.0" angle="0" name="C-87" hullID="1408" sideValue="1" />
-    <create type="station" x="86822.0" y="0.0" z="36356.0" angle="0" name="W-26" hullID="1405" sideValue="1" />
-    <create type="station" x="29903.0" y="0.0" z="66797.0" angle="0" name="F-99" hullID="1408" sideValue="1" />
-    <create type="station" x="48900.0" y="0.0" z="48679.0" angle="0" name="J-01" hullID="1403" sideValue="1" />
+    <create type="neutral" x="19634.0" y="0.0" z="17872.0" angle="0" name="E-43" hullID="1402" sideValue="sectorSide" />
+    <create type="neutral" x="66504.0" y="0.0" z="32836.0" angle="0" name="C-87" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="86822.0" y="0.0" z="36356.0" angle="0" name="W-26" hullID="1405" sideValue="sectorSide" />
+    <create type="neutral" x="29903.0" y="0.0" z="66797.0" angle="0" name="F-99" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="48900.0" y="0.0" z="48679.0" angle="0" name="J-01" hullID="1403" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -877,12 +877,12 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="40612.0" y="0.0" z="14132.0" angle="0" name="L-27" hullID="1408" sideValue="1" />
-    <create type="station" x="81761.0" y="0.0" z="20220.0" angle="0" name="U-58" hullID="1402" sideValue="1" />
-    <create type="station" x="55208.0" y="0.0" z="29902.0" angle="0" name="J-36" hullID="1408" sideValue="1" />
-    <create type="station" x="40172.0" y="0.0" z="47139.0" angle="0" name="F-21" hullID="1408" sideValue="1" />
-    <create type="station" x="58436.0" y="0.0" z="63643.0" angle="0" name="F-03" hullID="1405" sideValue="1" />
-    <create type="station" x="37531.0" y="0.0" z="84400.0" angle="0" name="V-52" hullID="1403" sideValue="1" />
+    <create type="neutral" x="40612.0" y="0.0" z="14132.0" angle="0" name="L-27" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="81761.0" y="0.0" z="20220.0" angle="0" name="U-58" hullID="1402" sideValue="sectorSide" />
+    <create type="neutral" x="55208.0" y="0.0" z="29902.0" angle="0" name="J-36" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="40172.0" y="0.0" z="47139.0" angle="0" name="F-21" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="58436.0" y="0.0" z="63643.0" angle="0" name="F-03" hullID="1405" sideValue="sectorSide" />
+    <create type="neutral" x="37531.0" y="0.0" z="84400.0" angle="0" name="V-52" hullID="1403" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1047,11 +1047,11 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="76773.0" y="0.0" z="50073.0" angle="0" name="B-37" hullID="1408" sideValue="1" />
-    <create type="station" x="59169.0" y="0.0" z="60415.0" angle="0" name="G-25" hullID="1408" sideValue="1" />
-    <create type="station" x="43839.0" y="0.0" z="73398.0" angle="0" name="D-03" hullID="1408" sideValue="1" />
-    <create type="station" x="85648.0" y="0.0" z="85134.0" angle="0" name="K-23" hullID="1405" sideValue="1" />
-    <create type="station" x="40098.0" y="0.0" z="23594.0" angle="0" name="V-93" hullID="1402" sideValue="1" />
+    <create type="neutral" x="76773.0" y="0.0" z="50073.0" angle="0" name="B-37" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="59169.0" y="0.0" z="60415.0" angle="0" name="G-25" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="43839.0" y="0.0" z="73398.0" angle="0" name="D-03" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="85648.0" y="0.0" z="85134.0" angle="0" name="K-23" hullID="1405" sideValue="sectorSide" />
+    <create type="neutral" x="40098.0" y="0.0" z="23594.0" angle="0" name="V-93" hullID="1402" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1204,10 +1204,10 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="41859.0" y="0.0" z="16479.0" angle="0" name="U-01" hullID="1408" sideValue="1" />
-    <create type="station" x="47727.0" y="0.0" z="33349.0" angle="0" name="G-99" hullID="1408" sideValue="1" />
-    <create type="station" x="56749.0" y="0.0" z="64376.0" angle="0" name="L-35" hullID="1405" sideValue="1" />
-    <create type="station" x="87262.0" y="0.0" z="49779.0" angle="0" name="S-62" hullID="1402" sideValue="1" />
+    <create type="neutral" x="41859.0" y="0.0" z="16479.0" angle="0" name="U-01" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="47727.0" y="0.0" z="33349.0" angle="0" name="G-99" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="56749.0" y="0.0" z="64376.0" angle="0" name="L-35" hullID="1405" sideValue="sectorSide" />
+    <create type="neutral" x="87262.0" y="0.0" z="49779.0" angle="0" name="S-62" hullID="1402" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1468,8 +1468,8 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="10.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="43986.0" y="0.0" z="3349.0" angle="0" name="G-69" hullID="1403" sideValue="1" />
-    <create type="station" x="36871.0" y="0.0" z="27555.0" angle="0" name="C-82" hullID="1408" sideValue="1" />
+    <create type="neutral" x="43986.0" y="0.0" z="3349.0" angle="0" name="G-69" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="36871.0" y="0.0" z="27555.0" angle="0" name="C-82" hullID="1408" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1580,12 +1580,12 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="11.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="91956.0" y="0.0" z="39290.0" angle="0" name="X-74" hullID="1408" sideValue="1" />
-    <create type="station" x="52568.0" y="0.0" z="40024.0" angle="0" name="L-10" hullID="1408" sideValue="1" />
-    <create type="station" x="16333.0" y="0.0" z="47652.0" angle="0" name="K-53" hullID="1408" sideValue="1" />
-    <create type="station" x="23448.0" y="0.0" z="90709.0" angle="0" name="U-88" hullID="1402" sideValue="1" />
-    <create type="station" x="50881.0" y="0.0" z="79926.0" angle="0" name="P-42" hullID="1405" sideValue="1" />
-    <create type="station" x="72299.0" y="0.0" z="78606.0" angle="0" name="C-49" hullID="1408" sideValue="1" />
+    <create type="neutral" x="91956.0" y="0.0" z="39290.0" angle="0" name="X-74" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="52568.0" y="0.0" z="40024.0" angle="0" name="L-10" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="16333.0" y="0.0" z="47652.0" angle="0" name="K-53" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="23448.0" y="0.0" z="90709.0" angle="0" name="U-88" hullID="1402" sideValue="sectorSide" />
+    <create type="neutral" x="50881.0" y="0.0" z="79926.0" angle="0" name="P-42" hullID="1405" sideValue="sectorSide" />
+    <create type="neutral" x="72299.0" y="0.0" z="78606.0" angle="0" name="C-49" hullID="1408" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1730,11 +1730,11 @@
     <if_variable name="Sector" comparator="EQUALS" value="12.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="ClassPPlanet" value="1.0" integer="yes" />
-    <create type="station" x="92837.0" y="0.0" z="71271.0" angle="0" name="Y-51" hullID="1408" sideValue="1" />
-    <create type="station" x="75086.0" y="0.0" z="83520.0" angle="0" name="S-67" hullID="1408" sideValue="1" />
-    <create type="station" x="44206.0" y="0.0" z="83520.0" angle="0" name="B-33" hullID="1408" sideValue="1" />
-    <create type="station" x="83595.0" y="0.0" z="19339.0" angle="0" name="H-18" hullID="1403" sideValue="1" />
-    <create type="station" x="17947.0" y="0.0" z="64743.0" angle="0" name="R-72" hullID="1403" sideValue="1" />
+    <create type="neutral" x="92837.0" y="0.0" z="71271.0" angle="0" name="Y-51" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="75086.0" y="0.0" z="83520.0" angle="0" name="S-67" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="44206.0" y="0.0" z="83520.0" angle="0" name="B-33" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="83595.0" y="0.0" z="19339.0" angle="0" name="H-18" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="17947.0" y="0.0" z="64743.0" angle="0" name="R-72" hullID="1403" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1887,12 +1887,12 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="13.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="83301.0" y="0.0" z="52860.0" angle="0" name="I-34" hullID="1403" sideValue="1" />
-    <create type="station" x="62177.0" y="0.0" z="62469.0" angle="0" name="Q-01" hullID="1403" sideValue="1" />
-    <create type="station" x="47433.0" y="0.0" z="80366.0" angle="0" name="F-16" hullID="1403" sideValue="1" />
-    <create type="station" x="88509.0" y="0.0" z="88728.0" angle="0" name="E-26" hullID="1405" sideValue="1" />
-    <create type="station" x="18387.0" y="0.0" z="12078.0" angle="0" name="T-32" hullID="1402" sideValue="1" />
-    <create type="station" x="44573.0" y="0.0" z="33863.0" angle="0" name="Z-72" hullID="1408" sideValue="1" />
+    <create type="neutral" x="83301.0" y="0.0" z="52860.0" angle="0" name="I-34" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="62177.0" y="0.0" z="62469.0" angle="0" name="Q-01" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="47433.0" y="0.0" z="80366.0" angle="0" name="F-16" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="88509.0" y="0.0" z="88728.0" angle="0" name="E-26" hullID="1405" sideValue="sectorSide" />
+    <create type="neutral" x="18387.0" y="0.0" z="12078.0" angle="0" name="T-32" hullID="1402" sideValue="sectorSide" />
+    <create type="neutral" x="44573.0" y="0.0" z="33863.0" angle="0" name="Z-72" hullID="1408" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2042,14 +2042,13 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="14.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="64230.0" y="0.0" z="15965.0" angle="0" name="W-20" hullID="1406" sideValue="1" />
-    <create type="station" x="88802.0" y="0.0" z="61882.0" angle="0" name="X-93" hullID="1405" sideValue="1" />
-    <create type="station" x="58289.0" y="0.0" z="91149.0" angle="0" name="V-71" hullID="1402" sideValue="1" />
-    <create type="station" x="76993.0" y="0.0" z="73618.0" angle="0" name="D-67" hullID="1402" sideValue="1" />
-    <create type="station" x="53815.0" y="0.0" z="41784.0" angle="0" name="A-35" hullID="1403" sideValue="1" />
-    <create type="station" x="93864.0" y="0.0" z="83227.0" angle="0" name="K-45" hullID="1408" sideValue="1" />
-    <create type="enemy" x="81467.0" y="0.0" z="78092.0" angle="0" name="W-43" hullID="1409" fleetnumber="-1" />
-    <create type="genericMesh" x="77580.0" y="0.0" z="78679.0" angle="0" name="--" meshFileName="dat/TSN/Player/frigate.dxs" textureFileName="dat/artemis_diffuse.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <create type="neutral" x="64230.0" y="0.0" z="15965.0" angle="0" name="W-20" hullID="1406" sideValue="sectorSide" />
+    <create type="neutral" x="88802.0" y="0.0" z="61882.0" angle="0" name="X-93" hullID="1405" sideValue="sectorSide" />
+    <create type="neutral" x="58289.0" y="0.0" z="91149.0" angle="0" name="V-71" hullID="1402" sideValue="sectorSide" />
+    <create type="neutral" x="76993.0" y="0.0" z="73618.0" angle="0" name="D-67" hullID="1402" sideValue="sectorSide" />
+    <create type="neutral" x="53815.0" y="0.0" z="41784.0" angle="0" name="A-35" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="93864.0" y="0.0" z="83227.0" angle="0" name="K-45" hullID="1408" sideValue="sectorSide" />
+    <create type="enemy" x="81467.0" y="0.0" z="78092.0" angle="0" name="W-43" hullID="1409" sideValue="sectorSide" fleetnumber="-1" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2267,10 +2266,10 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="16.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="32763.0" y="0.0" z="27628.0" angle="0" name="W-01" hullID="1403" sideValue="1" />
-    <create type="station" x="56529.0" y="0.0" z="36577.0" angle="0" name="H-35" hullID="1402" sideValue="1" />
-    <create type="station" x="25502.0" y="0.0" z="45232.0" angle="0" name="I-99" hullID="1405" sideValue="1" />
-    <create type="station" x="85135.0" y="0.0" z="19559.0" angle="0" name="P-67" hullID="1403" sideValue="1" />
+    <create type="neutral" x="32763.0" y="0.0" z="27628.0" angle="0" name="W-01" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="56529.0" y="0.0" z="36577.0" angle="0" name="H-35" hullID="1402" sideValue="sectorSide" />
+    <create type="neutral" x="25502.0" y="0.0" z="45232.0" angle="0" name="I-99" hullID="1405" sideValue="sectorSide" />
+    <create type="neutral" x="85135.0" y="0.0" z="19559.0" angle="0" name="P-67" hullID="1403" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2414,13 +2413,13 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="17.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="84035.0" y="0.0" z="30929.0" angle="0" name="H-46" hullID="1408" sideValue="1" />
-    <create type="station" x="86969.0" y="0.0" z="78899.0" angle="0" name="R-22" hullID="1406" sideValue="1" />
-    <create type="station" x="46773.0" y="0.0" z="31589.0" angle="0" name="D-76" hullID="1406" sideValue="1" />
-    <create type="neutral" x="87042.0" y="0.0" z="32102.0" angle="0" name="F-29" hullID="1401" sideValue="1" />
-    <create type="neutral" x="80000.0" y="0.0" z="30929.0" angle="0" name="S-60" hullID="1401" sideValue="1" />
-    <create type="station" x="62617.0" y="0.0" z="57408.0" angle="0" name="C-74" hullID="1404" sideValue="1" />
-    <create type="neutral" x="64817.0" y="0.0" z="59682.0" angle="0" name="S-63" hullID="1401" sideValue="1" />
+    <create type="neutral" x="84035.0" y="0.0" z="30929.0" angle="0" name="H-46" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="86969.0" y="0.0" z="78899.0" angle="0" name="R-22" hullID="1406" sideValue="sectorSide" />
+    <create type="neutral" x="46773.0" y="0.0" z="31589.0" angle="0" name="D-76" hullID="1406" sideValue="sectorSide" />
+    <create type="neutral" x="87042.0" y="0.0" z="32102.0" angle="0" name="F-29" hullID="1401" sideValue="sectorSide" />
+    <create type="neutral" x="80000.0" y="0.0" z="30929.0" angle="0" name="S-60" hullID="1401" sideValue="sectorSide" />
+    <create type="neutral" x="62617.0" y="0.0" z="57408.0" angle="0" name="C-74" hullID="1404" sideValue="sectorSide" />
+    <create type="neutral" x="64817.0" y="0.0" z="59682.0" angle="0" name="S-63" hullID="1401" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2571,13 +2570,13 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="18.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="90343.0" y="0.0" z="65036.0" angle="0" name="R-25" hullID="1402" sideValue="1" />
-    <create type="station" x="87189.0" y="0.0" z="49559.0" angle="0" name="F-83" hullID="1403" sideValue="1" />
-    <create type="station" x="40538.0" y="0.0" z="61589.0" angle="0" name="L-02" hullID="1406" sideValue="1" />
-    <create type="station" x="30563.0" y="0.0" z="41344.0" angle="0" name="G-25" hullID="1403" sideValue="1" />
-    <create type="station" x="90416.0" y="0.0" z="10464.0" angle="0" name="J-01" hullID="1403" sideValue="1" />
-    <create type="station" x="63350.0" y="0.0" z="9877.0" angle="0" name="N-26" hullID="1400" sideValue="1" />
-    <create type="station" x="48460.0" y="0.0" z="10977.0" angle="0" name="K-95" hullID="1400" sideValue="1" />
+    <create type="neutral" x="90343.0" y="0.0" z="65036.0" angle="0" name="R-25" hullID="1402" sideValue="sectorSide" />
+    <create type="neutral" x="87189.0" y="0.0" z="49559.0" angle="0" name="F-83" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="40538.0" y="0.0" z="61589.0" angle="0" name="L-02" hullID="1406" sideValue="sectorSide" />
+    <create type="neutral" x="30563.0" y="0.0" z="41344.0" angle="0" name="G-25" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="90416.0" y="0.0" z="10464.0" angle="0" name="J-01" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="63350.0" y="0.0" z="9877.0" angle="0" name="N-26" hullID="1400" sideValue="sectorSide" />
+    <create type="neutral" x="48460.0" y="0.0" z="10977.0" angle="0" name="K-95" hullID="1400" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2726,11 +2725,11 @@
     <if_variable name="Sector" comparator="EQUALS" value="19.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="blackHole" x="89316.0" y="0.0" z="90562.0" name="BH21" />
-    <create type="station" x="80294.0" y="0.0" z="15305.0" angle="0" name="D-42" hullID="1403" sideValue="1" />
-    <create type="station" x="91296.0" y="0.0" z="28801.0" angle="0" name="W-66" hullID="1403" sideValue="1" />
-    <create type="station" x="56455.0" y="0.0" z="40757.0" angle="0" name="L-90" hullID="1405" sideValue="1" />
-    <create type="station" x="37384.0" y="0.0" z="63643.0" angle="0" name="G-03" hullID="1403" sideValue="1" />
-    <create type="station" x="24695.0" y="0.0" z="17432.0" angle="0" name="C-31" hullID="1402" sideValue="1" />
+    <create type="neutral" x="80294.0" y="0.0" z="15305.0" angle="0" name="D-42" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="91296.0" y="0.0" z="28801.0" angle="0" name="W-66" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="56455.0" y="0.0" z="40757.0" angle="0" name="L-90" hullID="1405" sideValue="sectorSide" />
+    <create type="neutral" x="37384.0" y="0.0" z="63643.0" angle="0" name="G-03" hullID="1403" sideValue="sectorSide" />
+    <create type="neutral" x="24695.0" y="0.0" z="17432.0" angle="0" name="C-31" hullID="1402" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2846,7 +2845,7 @@
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
     <create type="blackHole" x="67490.0" y="0.0" z="75263.0" name="BH20" />
-    <create type="station" x="16186.0" y="0.0" z="44352.0" angle="0" name="K-02" hullID="1008" sideValue="2" />
+    <create type="neutral" x="16186.0" y="0.0" z="44352.0" angle="0" name="K-02" hullID="1008" sideValue="sectorSide" />
   </event>
   <event name="Settings" id_arme="d88c89ad-8659-4a34-8288-c5a4a2888719" parent_id_arme="fe57690d-28d7-4970-b992-4936bffd1595">
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
@@ -2861,8 +2860,8 @@
     <set_variable name="Eyukua System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector XXI - XXV" id_arme="0bd09cbd-0392-41ec-816e-3cbd2900da1a" parent_id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" expanded_arme="" />
-  <folder_arme name="Eyukua Sector XXI" id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" parent_id_arme="0bd09cbd-0392-41ec-816e-3cbd2900da1a" expanded_arme="" />
+  <folder_arme name="Sector XXI - XXV" id_arme="0bd09cbd-0392-41ec-816e-3cbd2900da1a" parent_id_arme="b0f462e7-aa33-47f5-a301-d19c81e0d315" />
+  <folder_arme name="Eyukua Sector XXI" id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" parent_id_arme="0bd09cbd-0392-41ec-816e-3cbd2900da1a" />
   <event name="Create Eyukua Sector XXI" id_arme="ca2a33d2-dd72-460a-8db3-398633f774e6" parent_id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111">
     <if_timer_finished name="Transition" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="1.0" />
@@ -2889,7 +2888,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="e1029921-8e1c-44da-b61a-1e71faece63a" parent_id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="e1029921-8e1c-44da-b61a-1e71faece63a" parent_id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" />
   <event name="Transition to Sector XXII" id_arme="e850c3a3-0831-4c99-ba33-bafc3663e908" parent_id_arme="e1029921-8e1c-44da-b61a-1e71faece63a">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
@@ -2923,7 +2922,7 @@
     <set_variable name="Sector" value="17.0" integer="yes" />
     <set_variable name="Eyukua System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="26a89333-3f3b-4ad2-a480-81b4732f9c83" parent_id_arme="e1029921-8e1c-44da-b61a-1e71faece63a" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="26a89333-3f3b-4ad2-a480-81b4732f9c83" parent_id_arme="e1029921-8e1c-44da-b61a-1e71faece63a" />
   <event name="Gate Offline" id_arme="de421943-299f-456b-94da-8b4f1d05f55f" parent_id_arme="26a89333-3f3b-4ad2-a480-81b4732f9c83">
     <if_variable name="Sector" comparator="EQUALS" value="21" />
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
@@ -3105,7 +3104,7 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="53f56e11-76b6-43b7-9a9a-ff930386cb7f" parent_id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="53f56e11-76b6-43b7-9a9a-ff930386cb7f" parent_id_arme="dddf9f26-884c-4a80-a4ce-04cf27016111" />
   <event name="Generate Sector Entities" id_arme="5379bc87-568a-4cc3-821b-5b8f0cc064af" parent_id_arme="53f56e11-76b6-43b7-9a9a-ff930386cb7f">
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="21.0" />
@@ -3532,12 +3531,12 @@
     <if_variable name="Eyukua System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="25.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="56235.0" y="0.0" z="17212.0" angle="0" name="G-04" hullID="1406" sideValue="1" />
-    <create type="station" x="20514.0" y="0.0" z="20586.0" angle="0" name="S-45" hullID="1402" sideValue="1" />
-    <create type="station" x="28436.0" y="0.0" z="32836.0" angle="0" name="H-72" hullID="1405" sideValue="1" />
-    <create type="station" x="32690.0" y="0.0" z="71858.0" angle="0" name="K-01" hullID="1408" sideValue="1" />
-    <create type="station" x="48754.0" y="0.0" z="42518.0" angle="0" name="M-99" hullID="1408" sideValue="1" />
-    <create type="station" x="75233.0" y="0.0" z="29242.0" angle="0" name="L-57" hullID="1408" sideValue="1" />
+    <create type="neutral" x="56235.0" y="0.0" z="17212.0" angle="0" name="G-04" hullID="1406" sideValue="sectorSide" />
+    <create type="neutral" x="20514.0" y="0.0" z="20586.0" angle="0" name="S-45" hullID="1402" sideValue="sectorSide" />
+    <create type="neutral" x="28436.0" y="0.0" z="32836.0" angle="0" name="H-72" hullID="1405" sideValue="sectorSide" />
+    <create type="neutral" x="32690.0" y="0.0" z="71858.0" angle="0" name="K-01" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="48754.0" y="0.0" z="42518.0" angle="0" name="M-99" hullID="1408" sideValue="sectorSide" />
+    <create type="neutral" x="75233.0" y="0.0" z="29242.0" angle="0" name="L-57" hullID="1408" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

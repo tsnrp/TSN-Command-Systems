@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="150.0" integer="yes" />
     <set_variable name="Alignment" value="Hegemony" integer="yes" />
   </start>
-  <folder_arme name="Drenan System" id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" expanded_arme="" />
+  <folder_arme name="Drenan System" id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
   <folder_arme name="Drenan Settings" id_arme="971f6410-0bc3-41db-bb50-0bf7545c65f5" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
   <folder_arme name="Drenan Menu" id_arme="d40267b7-73d1-459b-ba36-e8fe13883e8c" parent_id_arme="971f6410-0bc3-41db-bb50-0bf7545c65f5" />
   <event name="Drenan Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="d40267b7-73d1-459b-ba36-e8fe13883e8c">
@@ -449,7 +449,7 @@
     <set_variable name="Drenan System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Drenan Sector V" id_arme="317d475e-ee15-455a-9e91-a482b38ed4ae" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" expanded_arme="" />
+  <folder_arme name="Drenan Sector V" id_arme="317d475e-ee15-455a-9e91-a482b38ed4ae" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
   <event name="Create Drenan Sector V" id_arme="b7aa7c30-4878-46b8-896e-d1f64c79a3e6" parent_id_arme="317d475e-ee15-455a-9e91-a482b38ed4ae">
     <if_timer_finished name="Transition" />
     <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
@@ -470,7 +470,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc" parent_id_arme="317d475e-ee15-455a-9e91-a482b38ed4ae" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc" parent_id_arme="317d475e-ee15-455a-9e91-a482b38ed4ae" />
   <event name="Transition to Sector VI" id_arme="45226fda-b314-446e-9f3d-22c7c92fe476" parent_id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -526,7 +526,7 @@
     <set_variable name="Sector" value="10.0" integer="yes" />
     <set_variable name="Drenan System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="fc21570c-3a7f-4c56-9523-675a8bf7a2bc" />
   <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -1046,7 +1046,7 @@
     <set_variable name="Drenan System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Drenan Sector VIII" id_arme="7f372945-bf4a-4202-9565-ce8f93642be8" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" expanded_arme="" />
+  <folder_arme name="Drenan Sector VIII" id_arme="7f372945-bf4a-4202-9565-ce8f93642be8" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
   <event name="Create Drenan Sector VIII" id_arme="9af228f3-e2a9-4e6b-b36c-e9c12587ea4d" parent_id_arme="7f372945-bf4a-4202-9565-ce8f93642be8">
     <if_timer_finished name="Transition" />
     <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
@@ -1067,7 +1067,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="d8710197-d844-4049-ad37-8f390da6aa9b" parent_id_arme="7f372945-bf4a-4202-9565-ce8f93642be8" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="d8710197-d844-4049-ad37-8f390da6aa9b" parent_id_arme="7f372945-bf4a-4202-9565-ce8f93642be8" />
   <event name="Transition to Sector VII" id_arme="2d9f48df-c480-4272-84da-10598960af93" parent_id_arme="d8710197-d844-4049-ad37-8f390da6aa9b">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -1123,7 +1123,7 @@
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="Drenan System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="212852d3-b29f-4039-a799-1080727b957a" parent_id_arme="d8710197-d844-4049-ad37-8f390da6aa9b" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="212852d3-b29f-4039-a799-1080727b957a" parent_id_arme="d8710197-d844-4049-ad37-8f390da6aa9b" />
   <event name="Gate Offline" id_arme="938516a4-0a72-4cf2-b159-ad39133ba771" parent_id_arme="212852d3-b29f-4039-a799-1080727b957a">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -1311,7 +1311,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="29375.0" y="0.0" z="75312.0" name="Onwia Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="enemy" x="39018.0" y="0.0" z="67142.0" angle="0" name="Onwia Guard" hullID="1005" fleetnumber="-1" />
+    <create type="enemy" x="39018.0" y="0.0" z="67142.0" angle="0" name="Onwia Guard" hullID="1005" sideValue="sectorSide" fleetnumber="-1" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1929,7 +1929,7 @@
     <set_variable name="Drenan System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Drenan Sector XIV" id_arme="2da0bc40-678e-4fdf-8858-054de6cbbd33" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" expanded_arme="" />
+  <folder_arme name="Drenan Sector XIV" id_arme="2da0bc40-678e-4fdf-8858-054de6cbbd33" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
   <event name="Create Drenan Sector XIV" id_arme="55e5fdaf-7273-4d6a-bf44-94990438aa06" parent_id_arme="2da0bc40-678e-4fdf-8858-054de6cbbd33">
     <if_timer_finished name="Transition" />
     <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
@@ -1947,7 +1947,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf" parent_id_arme="2da0bc40-678e-4fdf-8858-054de6cbbd33" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf" parent_id_arme="2da0bc40-678e-4fdf-8858-054de6cbbd33" />
   <event name="Transition to (Right)" id_arme="3a872ac7-b536-4458-b453-2dc457fc52bb" parent_id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
@@ -2003,7 +2003,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner A1 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="d825fd81-efca-4ee4-ac86-2185ea8b3506" parent_id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="d825fd81-efca-4ee4-ac86-2185ea8b3506" parent_id_arme="73261044-c58e-4abb-aa30-e6e73c3da7bf" />
   <event name="Gate Offline" id_arme="a30fdcc4-0e6c-4dc3-a7ca-b734b8ec4707" parent_id_arme="d825fd81-efca-4ee4-ac86-2185ea8b3506">
     <if_variable name="Sector" comparator="EQUALS" value="14" />
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
@@ -2328,7 +2328,7 @@
     <set_variable name="Drenan System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Drenan Sector XVI" id_arme="63531a11-07cd-4ef2-8c1e-a619a56d25c0" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" expanded_arme="" />
+  <folder_arme name="Drenan Sector XVI" id_arme="63531a11-07cd-4ef2-8c1e-a619a56d25c0" parent_id_arme="97116376-44e2-47ed-aaf3-388f03e6a7ab" />
   <event name="Create Drenan Sector XVI" id_arme="24e49c2b-882c-4053-8d73-892fcb001e91" parent_id_arme="63531a11-07cd-4ef2-8c1e-a619a56d25c0">
     <if_timer_finished name="Transition" />
     <if_variable name="Drenan System" comparator="EQUALS" value="1.0" />
@@ -2349,7 +2349,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="0b903c8f-e84c-4b05-bbdf-2c7cbe2fa26c" parent_id_arme="63531a11-07cd-4ef2-8c1e-a619a56d25c0" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="0b903c8f-e84c-4b05-bbdf-2c7cbe2fa26c" parent_id_arme="63531a11-07cd-4ef2-8c1e-a619a56d25c0" />
   <event name="Transition to (Left)" id_arme="679b96b8-2bf5-4851-9d01-efa3d526d6a9" parent_id_arme="0b903c8f-e84c-4b05-bbdf-2c7cbe2fa26c">
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
@@ -2383,7 +2383,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner A1 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="0bf403c4-2572-41c6-bb47-ca9e8c74de15" parent_id_arme="0b903c8f-e84c-4b05-bbdf-2c7cbe2fa26c" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="0bf403c4-2572-41c6-bb47-ca9e8c74de15" parent_id_arme="0b903c8f-e84c-4b05-bbdf-2c7cbe2fa26c" />
   <event name="Gate Offline" id_arme="b907c774-2127-457b-8dbd-3cbd0435c970" parent_id_arme="0bf403c4-2572-41c6-bb47-ca9e8c74de15">
     <if_variable name="Sector" comparator="EQUALS" value="16" />
     <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />

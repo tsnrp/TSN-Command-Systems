@@ -4,9 +4,9 @@
     <set_variable name="Coordinate Y" value="399.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Krisenda System" id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
-  <folder_arme name="Krisenda Settings" id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
-  <folder_arme name="Krisenda Menu" id_arme="a680029d-40d7-4fe7-ac26-951602f65d78" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2" expanded_arme="" />
+  <folder_arme name="Krisenda System" id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <folder_arme name="Krisenda Settings" id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <folder_arme name="Krisenda Menu" id_arme="a680029d-40d7-4fe7-ac26-951602f65d78" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2" />
   <event name="Krisenda Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="a680029d-40d7-4fe7-ac26-951602f65d78">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
     <set_gm_button text="Upper Arc/Krisenda System" />
@@ -122,11 +122,11 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="41268.0" y="0.0" z="42397.0" angle="0" name="I-902S" hullID="1051" />
-    <create type="station" x="59613.0" y="0.0" z="56471.0" angle="0" name="I-82S" hullID="1051" />
-    <create type="station" x="73058.0" y="0.0" z="76575.0" angle="0" name="I-18A" hullID="1051" />
-    <create type="station" x="14377.0" y="0.0" z="36115.0" angle="0" name="I-32A" hullID="1051" />
-    <create type="station" x="28199.0" y="0.0" z="70795.0" angle="0" name="I-45B" hullID="1050" />
+    <create type="neutral" x="41268.0" y="0.0" z="42397.0" angle="0" name="I-902S" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="59613.0" y="0.0" z="56471.0" angle="0" name="I-82S" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="73058.0" y="0.0" z="76575.0" angle="0" name="I-18A" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="14377.0" y="0.0" z="36115.0" angle="0" name="I-32A" hullID="1051" sideValue="sectorSide" />
+    <create type="neutral" x="28199.0" y="0.0" z="70795.0" angle="0" name="I-45B" hullID="1050" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -147,7 +147,7 @@
     <set_variable name="Krisenda System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Krisenda Sector II" id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
+  <folder_arme name="Krisenda Sector II" id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
   <event name="Create Krisenda Sector II" id_arme="a809ba5b-a4de-453d-a686-511e5e880d0a" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471">
     <if_timer_finished name="Transition" />
     <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
@@ -171,7 +171,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
     <set_variable name="Krisenda System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" />
   <event name="Transition to Sector III" id_arme="a3adbe75-527b-4693-bd45-83dad22af448" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -227,7 +227,7 @@
     <set_variable name="Krisenda System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b54404f0-5fea-4f76-a8b6-e386198dee06" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b54404f0-5fea-4f76-a8b6-e386198dee06" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" />
   <event name="Gate Offline" id_arme="42a58768-14b2-4178-b03b-93cba69aa579" parent_id_arme="b54404f0-5fea-4f76-a8b6-e386198dee06">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
@@ -414,10 +414,10 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="51446.0" y="0.0" z="72303.0" angle="0" name="Cerberus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="52828.0" y="0.0" z="23549.0" angle="0" name="I-23" hullID="1003" />
-    <create type="station" x="48053.0" y="0.0" z="28827.0" angle="0" name="I-002" hullID="1003" />
-    <create type="station" x="57980.0" y="0.0" z="30712.0" angle="0" name="I-91" hullID="1003" />
+    <create type="genericMesh" x="51446.0" y="0.0" z="72303.0" name="Cerberus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="52828.0" y="0.0" z="23549.0" angle="0" name="I-23" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="48053.0" y="0.0" z="28827.0" angle="0" name="I-002" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="57980.0" y="0.0" z="30712.0" angle="0" name="I-91" hullID="1003" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -549,8 +549,8 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="62754.0" y="0.0" z="57727.0" angle="0" name="DS-33" hullID="1000" />
-    <create type="station" x="48304.0" y="0.0" z="71298.0" angle="0" name="R-56X" hullID="1004" />
+    <create type="neutral" x="62754.0" y="0.0" z="57727.0" angle="0" name="DS-33" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="48304.0" y="0.0" z="71298.0" angle="0" name="R-56X" hullID="1004" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -631,9 +631,9 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="60241.0" y="0.0" z="55717.0" angle="0" name="DS-96" hullID="1000" />
-    <create type="station" x="35110.0" y="0.0" z="61120.0" angle="0" name="DS-47" hullID="1000" />
-    <create type="station" x="78587.0" y="0.0" z="46418.0" angle="0" name="DS-121" hullID="1000" />
+    <create type="neutral" x="60241.0" y="0.0" z="55717.0" angle="0" name="DS-96" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="35110.0" y="0.0" z="61120.0" angle="0" name="DS-47" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="78587.0" y="0.0" z="46418.0" angle="0" name="DS-121" hullID="1000" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -737,8 +737,8 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="75814.0" y="0.0" z="65488.0" angle="0" name="P-282" hullID="1050" />
-    <create type="station" x="62977.0" y="0.0" z="74418.0" angle="0" name="P-382" hullID="1050" />
+    <create type="neutral" x="75814.0" y="0.0" z="65488.0" angle="0" name="P-282" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="62977.0" y="0.0" z="74418.0" angle="0" name="P-382" hullID="1050" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -873,9 +873,9 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="50436.0" y="0.0" z="48211.0" angle="0" name="Krisenda Command" hullID="1002" />
-    <create type="neutral" x="45139.0" y="0.0" z="46990.0" angle="0" name="WP-88" hullID="1052" />
-    <create type="neutral" x="55510.0" y="0.0" z="49861.0" angle="0" name="WP-24" hullID="1052" />
+    <create type="neutral" x="50436.0" y="0.0" z="48211.0" angle="0" name="Krisenda Command" hullID="1002" sideValue="sectorSide" />
+    <create type="neutral" x="45139.0" y="0.0" z="46990.0" angle="0" name="WP-88" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="55510.0" y="0.0" z="49861.0" angle="0" name="WP-24" hullID="1052" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -894,7 +894,7 @@
     <set_variable name="Krisenda System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Krisenda Sector VII" id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" expanded_arme="" />
+  <folder_arme name="Krisenda Sector VII" id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
   <event name="Create Krisenda Sector VII" id_arme="0e82ab1d-af45-412b-a825-b41a4d78269c" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351">
     <if_timer_finished name="Transition" />
     <if_variable name="Krisenda System" comparator="EQUALS" value="1.0" />
@@ -915,7 +915,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
     <set_variable name="Krisenda System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" />
   <event name="Transition to Sector VIII" id_arme="138ead23-dbfd-44aa-81d8-bd1ceff7ea12" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1004,7 +1004,7 @@
     <set_variable name="Krisenda System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="5f545f1e-0e3e-491a-8e54-4824043646ff" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="5f545f1e-0e3e-491a-8e54-4824043646ff" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" />
   <event name="Gate Offline" id_arme="30598e88-1aca-492a-ab22-f28b4911e3ae" parent_id_arme="5f545f1e-0e3e-491a-8e54-4824043646ff">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
@@ -1191,10 +1191,10 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="65907.0" y="0.0" z="64790.0" angle="0" name="Waypoint 60 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="48884.0" y="0.0" z="22232.0" angle="0" name="P-11" hullID="1050" />
-    <create type="station" x="35489.0" y="0.0" z="46372.0" angle="0" name="P-73" hullID="1050" />
-    <create type="station" x="72047.0" y="0.0" z="37720.0" angle="0" name="P-383" hullID="1050" />
+    <create type="genericMesh" x="65907.0" y="0.0" z="64790.0" name="Waypoint 60 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="48884.0" y="0.0" z="22232.0" angle="0" name="P-11" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="35489.0" y="0.0" z="46372.0" angle="0" name="P-73" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="72047.0" y="0.0" z="37720.0" angle="0" name="P-383" hullID="1050" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1327,8 +1327,8 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="39257.0" y="0.0" z="24554.0" angle="0" name="Stephenson" hullID="1001" />
-    <create type="station" x="46168.0" y="0.0" z="55717.0" angle="0" name="Brunell" hullID="1001" />
+    <create type="neutral" x="39257.0" y="0.0" z="24554.0" angle="0" name="Stephenson" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="46168.0" y="0.0" z="55717.0" angle="0" name="Brunell" hullID="1001" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1404,7 +1404,7 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="65142.0" y="0.0" z="56596.0" angle="0" name="DS-54" hullID="1000" />
+    <create type="neutral" x="65142.0" y="0.0" z="56596.0" angle="0" name="DS-54" hullID="1000" sideValue="sectorSide" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
   </event>
@@ -1499,8 +1499,8 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="10.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="74559.0" y="0.0" z="55720.0" angle="0" name="DS-43" hullID="1000" />
-    <create type="station" x="23628.0" y="0.0" z="36604.0" angle="0" name="DS-001" hullID="1000" />
+    <create type="neutral" x="74559.0" y="0.0" z="55720.0" angle="0" name="DS-43" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="23628.0" y="0.0" z="36604.0" angle="0" name="DS-001" hullID="1000" sideValue="sectorSide" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
   </event>
@@ -1599,7 +1599,7 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="11.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="47927.0" y="0.0" z="29958.0" angle="0" name="DS-12" hullID="1000" />
+    <create type="neutral" x="47927.0" y="0.0" z="29958.0" angle="0" name="DS-12" hullID="1000" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1678,7 +1678,7 @@
     <if_variable name="Krisenda System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="12.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="49699.0" y="0.0" z="26482.0" angle="0" name="DS-40" hullID="1000" />
+    <create type="neutral" x="49699.0" y="0.0" z="26482.0" angle="0" name="DS-40" hullID="1000" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

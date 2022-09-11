@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="321.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Khoros System" id_arme="4a9dfea1-09d6-44ef-9991-96e133c795d8" expanded_arme="" />
+  <folder_arme name="Khoros System" id_arme="4a9dfea1-09d6-44ef-9991-96e133c795d8" />
   <folder_arme name="Khoros Settings" id_arme="bbd1585e-667a-4151-a42c-1b0ed5f22a81" parent_id_arme="4a9dfea1-09d6-44ef-9991-96e133c795d8" />
   <folder_arme name="Khoros Menu" id_arme="79d22e84-3434-4247-9c4a-4deaf0802676" parent_id_arme="bbd1585e-667a-4151-a42c-1b0ed5f22a81" />
   <event name="Khoros Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="79d22e84-3434-4247-9c4a-4deaf0802676">
@@ -117,7 +117,7 @@
     <if_variable name="Khoros System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="41429.0" y="0.0" z="50133.0" name="Khoros Directorate" hullID="1100" sideValue="sectorSide" />
+    <create type="neutral" x="41429.0" y="0.0" z="50133.0" name="Khoros Directorate" hullID="1100" sideValue="sectorSide" />
     <create type="neutral" x="61652.0" y="0.0" z="66339.0" angle="0" name="Mining Collective" hullID="1051" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Khoros I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
@@ -260,7 +260,7 @@
     <set_variable name="Khoros System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Khoros Sector III" id_arme="414c34ac-cfc5-4893-a49f-93e15a90fcc0" parent_id_arme="4a9dfea1-09d6-44ef-9991-96e133c795d8" expanded_arme="" />
+  <folder_arme name="Khoros Sector III" id_arme="414c34ac-cfc5-4893-a49f-93e15a90fcc0" parent_id_arme="4a9dfea1-09d6-44ef-9991-96e133c795d8" />
   <event name="Create Khoros Sector III" id_arme="8e463fde-8686-4f60-8ea2-43c399475a7b" parent_id_arme="414c34ac-cfc5-4893-a49f-93e15a90fcc0">
     <if_variable name="Khoros System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -281,7 +281,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="656e8a96-266c-47d8-858a-9a1759fe5991" parent_id_arme="414c34ac-cfc5-4893-a49f-93e15a90fcc0" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="656e8a96-266c-47d8-858a-9a1759fe5991" parent_id_arme="414c34ac-cfc5-4893-a49f-93e15a90fcc0" />
   <event name="Transition to Sector II" id_arme="c1ad075e-6817-478c-8561-b1a8db26d653" parent_id_arme="656e8a96-266c-47d8-858a-9a1759fe5991">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -315,7 +315,7 @@
     <set_variable name="Khoros System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="8c48adc3-602b-401f-bc31-1abb8db81c65" parent_id_arme="656e8a96-266c-47d8-858a-9a1759fe5991" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="8c48adc3-602b-401f-bc31-1abb8db81c65" parent_id_arme="656e8a96-266c-47d8-858a-9a1759fe5991" />
   <event name="Gate Offline" id_arme="56b97176-628c-4858-b64a-9ca1ec8b762e" parent_id_arme="8c48adc3-602b-401f-bc31-1abb8db81c65">
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="Khoros System" comparator="EQUALS" value="2.0" />
@@ -504,7 +504,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Khoros III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <create type="genericMesh" x="34599.0" y="0.0" z="38482.0" name="Mria Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="50804.0" y="0.0" z="50803.0" name="Ingal Post" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="50804.0" y="0.0" z="50803.0" name="Ingal Post" hullID="1001" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -550,7 +550,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Mria to Khoros" value="0.0" />
   </event>
-  <folder_arme name="Khoros Sector IV" id_arme="540f289e-69ce-4e9d-9271-c7a7e9ae8de7" parent_id_arme="4a9dfea1-09d6-44ef-9991-96e133c795d8" expanded_arme="" />
+  <folder_arme name="Khoros Sector IV" id_arme="540f289e-69ce-4e9d-9271-c7a7e9ae8de7" parent_id_arme="4a9dfea1-09d6-44ef-9991-96e133c795d8" />
   <event name="Create Khoros Sector IV" id_arme="bd439762-6dc5-4702-9fa1-cdddb1d5bb86" parent_id_arme="540f289e-69ce-4e9d-9271-c7a7e9ae8de7">
     <if_variable name="Khoros System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -570,7 +570,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="dc56ff43-4bf8-43d6-b6da-0ab99265f29d" parent_id_arme="540f289e-69ce-4e9d-9271-c7a7e9ae8de7" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="dc56ff43-4bf8-43d6-b6da-0ab99265f29d" parent_id_arme="540f289e-69ce-4e9d-9271-c7a7e9ae8de7" />
   <event name="Transition to Sector V" id_arme="40dd2e85-4332-4c8a-b77d-d42eeb1ad21a" parent_id_arme="dc56ff43-4bf8-43d6-b6da-0ab99265f29d">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -626,7 +626,7 @@
     <set_variable name="Khoros System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="92f81e10-3292-47e7-8219-ca5a1ab01e00" parent_id_arme="dc56ff43-4bf8-43d6-b6da-0ab99265f29d" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="92f81e10-3292-47e7-8219-ca5a1ab01e00" parent_id_arme="dc56ff43-4bf8-43d6-b6da-0ab99265f29d" />
   <event name="Gate Offline" id_arme="2a50488c-f90c-4e39-a740-e999db4d6bb2" parent_id_arme="92f81e10-3292-47e7-8219-ca5a1ab01e00">
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Khoros System" comparator="EQUALS" value="2.0" />
@@ -814,7 +814,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="45447.0" y="0.0" z="55223.0" name="Eulis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="60313.0" y="200.0" z="35133.0" name="Yadina Post" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="60313.0" y="200.0" z="35133.0" name="Yadina Post" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Khoros IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -1175,7 +1175,7 @@
     <set_variable name="Khoros System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Khoros Sector VIII" id_arme="581c6586-96fc-4170-a589-c4257efa1226" parent_id_arme="4a9dfea1-09d6-44ef-9991-96e133c795d8" expanded_arme="" />
+  <folder_arme name="Khoros Sector VIII" id_arme="581c6586-96fc-4170-a589-c4257efa1226" parent_id_arme="4a9dfea1-09d6-44ef-9991-96e133c795d8" />
   <event name="Create Khoros Sector VIII" id_arme="07240870-0b2f-4e2b-b277-64cffdf2f2a6" parent_id_arme="581c6586-96fc-4170-a589-c4257efa1226">
     <if_variable name="Khoros System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -1197,7 +1197,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="21342d47-b01f-4678-86e1-f69d0b336531" parent_id_arme="581c6586-96fc-4170-a589-c4257efa1226" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="21342d47-b01f-4678-86e1-f69d0b336531" parent_id_arme="581c6586-96fc-4170-a589-c4257efa1226" />
   <event name="Transition to Sector IX" id_arme="79e9c466-4883-40b7-94ae-686c50f16a81" parent_id_arme="21342d47-b01f-4678-86e1-f69d0b336531">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -1253,7 +1253,7 @@
     <set_variable name="Khoros System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="4.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="5669518c-d501-4c2f-b0fe-2359d6e5d935" parent_id_arme="21342d47-b01f-4678-86e1-f69d0b336531" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="5669518c-d501-4c2f-b0fe-2359d6e5d935" parent_id_arme="21342d47-b01f-4678-86e1-f69d0b336531" />
   <event name="Gate Offline" id_arme="ecbee743-404c-4c49-9436-5d91ed45b28e" parent_id_arme="5669518c-d501-4c2f-b0fe-2359d6e5d935">
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Khoros System" comparator="EQUALS" value="2.0" />

@@ -4,9 +4,9 @@
     <set_variable name="Coordinate Y" value="120.0" integer="yes" />
     <set_variable name="Alignment" value="Hegemony" integer="yes" />
   </start>
-  <folder_arme name="Onwia System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
-  <folder_arme name="Onwia Settings" id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
-  <folder_arme name="Onwia Menu" id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" expanded_arme="" />
+  <folder_arme name="Onwia System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <folder_arme name="Onwia Settings" id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <folder_arme name="Onwia Menu" id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" />
   <event name="Onwia Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
     <set_gm_button text="Lower Arc/Onwia System" />
@@ -115,7 +115,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Onwia I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="enemy" x="52813.0" y="0.0" z="42767.0" angle="0" name="K'za" hullID="1008" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="52813.0" y="0.0" z="42767.0" angle="0" name="K'za" hullID="1008" sideValue="sectorSide" fleetnumber="-1" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
   <event name="Settings" id_arme="dc367b1e-af0c-4a70-b98e-49bca5b5f636" parent_id_arme="94cae3cf-1a20-4ba3-8196-3294d979bf3f">
@@ -284,9 +284,9 @@
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Onwia III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="enemy" x="53483.0" y="0.0" z="67142.0" angle="0" name="Li-andra Mining" hullID="1005" sideValue="1" fleetnumber="-1" />
-    <create type="enemy" x="67813.0" y="0.0" z="64866.0" angle="0" name="Ya-er Military Base" hullID="1361" sideValue="1" fleetnumber="-1" />
-    <create type="enemy" x="54420.0" y="0.0" z="61651.0" angle="0" name="Anza Markets" hullID="1357" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="53483.0" y="0.0" z="67142.0" angle="0" name="Li-andra Mining" hullID="1005" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="67813.0" y="0.0" z="64866.0" angle="0" name="Ya-er Military Base" hullID="1361" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="54420.0" y="0.0" z="61651.0" angle="0" name="Anza Markets" hullID="1357" sideValue="sectorSide" fleetnumber="-1" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
   <event name="Settings" id_arme="71a32eaf-ef73-4630-b31a-522fdb1a44ee" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
@@ -403,7 +403,7 @@
     <set_variable name="Onwia System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Onwia Sector V" id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="Onwia Sector V" id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create Onwia Sector V" id_arme="b712d4ae-1542-49c5-9122-35ba03f9d2de" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda">
     <if_variable name="Onwia System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -424,7 +424,7 @@
     <create count="300" type="asteroids" startX="23215.0" startY="200.0" startZ="20000.0" endX="52009.0" endY="0.0" endZ="94866.0" randomRange="15000" />
     <create type="genericMesh" x="63259.0" y="0.0" z="31250.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.0" colorGreen="1.0" colorBlue="0.5" />
   </event>
-  <folder_arme name="Navigation" id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" />
   <event name="Transition to Sector VI" id_arme="9e190538-f04c-45b1-90b6-e5a6e088e125" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -513,7 +513,7 @@
     <set_variable name="Onwia System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" />
   <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Onwia System" comparator="EQUALS" value="2.0" />
@@ -684,10 +684,10 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Onwia V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <create type="genericMesh" x="38215.0" y="0.0" z="74241.0" name="Drenan Gate" meshFileName="dat\TSN\Gates\NeutralGate1.dxs" textureFileName="dat\TSN\Gates\neutralgate1diff.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="enemy" x="42634.0" y="0.0" z="40892.0" angle="0" name="Naki Mining" hullID="1357" sideValue="1" fleetnumber="-1" />
-    <create type="enemy" x="76652.0" y="0.0" z="27767.0" angle="0" name="Onwia Ship Yards" hullID="1358" sideValue="1" fleetnumber="-1" />
-    <create type="enemy" x="62724.0" y="0.0" z="45178.0" angle="0" name="Grand Terminal" hullID="1005" fleetnumber="-1" />
-    <create type="enemy" x="54956.0" y="0.0" z="18392.0" angle="0" name="Ximni Factories" hullID="1405" fleetnumber="-1" />
+    <create type="enemy" x="42634.0" y="0.0" z="40892.0" angle="0" name="Naki Mining" hullID="1357" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="76652.0" y="0.0" z="27767.0" angle="0" name="Onwia Ship Yards" hullID="1358" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="62724.0" y="0.0" z="45178.0" angle="0" name="Grand Terminal" hullID="1005" sideValue="sectorSide" fleetnumber="-1" />
+    <create type="enemy" x="54956.0" y="0.0" z="18392.0" angle="0" name="Ximni Factories" hullID="1405" sideValue="sectorSide" fleetnumber="-1" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
     <set_variable name="Moon" value="1.0" integer="yes" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -1009,8 +1009,8 @@
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Onwia VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="station" x="40759.0" y="0.0" z="60312.0" name="Gzhr" hullID="1007" sideValue="1" />
-    <create type="enemy" x="58036.0" y="0.0" z="26160.0" angle="0" name="Ishka Gasses" hullID="1356" fleetnumber="-1" />
+    <create type="neutral" x="40759.0" y="0.0" z="60312.0" name="Gzhr" hullID="1007" sideValue="sectorSide" />
+    <create type="enemy" x="58036.0" y="0.0" z="26160.0" angle="0" name="Ishka Gasses" hullID="1356" sideValue="sectorSide" fleetnumber="-1" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
   <event name="Settings" id_arme="5cdef4f7-f60f-4e79-b11c-01ec66abb68a" parent_id_arme="e04eb7b3-de99-4b25-af6b-12a4c917fe93">

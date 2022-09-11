@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="211.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Antara System" id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" expanded_arme="" />
+  <folder_arme name="Antara System" id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
   <folder_arme name="Antara Settings" id_arme="0b232f9e-4aa0-457b-900a-d71f1d435f25" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
   <folder_arme name="Antara Menu" id_arme="9ca09069-ad23-412b-8b69-665b7583133c" parent_id_arme="0b232f9e-4aa0-457b-900a-d71f1d435f25" />
   <event name="Antara Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="9ca09069-ad23-412b-8b69-665b7583133c">
@@ -537,7 +537,7 @@
     <set_variable name="Antara System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Antara Sector VI" id_arme="843f5f4b-dde3-47b3-9a40-62c3c45bb733" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" expanded_arme="" />
+  <folder_arme name="Antara Sector VI" id_arme="843f5f4b-dde3-47b3-9a40-62c3c45bb733" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
   <event name="Create Antara Sector VI" id_arme="907cf267-e308-4a4f-9e77-9de28a7ed921" parent_id_arme="843f5f4b-dde3-47b3-9a40-62c3c45bb733">
     <if_timer_finished name="Transition" />
     <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
@@ -561,7 +561,7 @@
     <create count="40" type="asteroids" startX="14174.0" startY="0.0" startZ="56296.0" endX="5489.0" endY="0.0" endZ="41531.0" randomRange="5688" />
     <create count="20" type="asteroids" startX="11569.0" startY="0.0" startZ="62665.0" endX="2594.0" endY="0.0" endZ="64981.0" randomRange="3895" />
   </event>
-  <folder_arme name="Navigation" id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d" parent_id_arme="843f5f4b-dde3-47b3-9a40-62c3c45bb733" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d" parent_id_arme="843f5f4b-dde3-47b3-9a40-62c3c45bb733" />
   <event name="Transition to Sector VII" id_arme="53340bca-b244-40e6-89a4-5dbb8b303306" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
@@ -650,7 +650,7 @@
     <set_variable name="Sector" value="11.0" integer="yes" />
     <set_variable name="Antara System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="d139eab9-b16b-459e-9fd3-f4d507cc725e" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="d139eab9-b16b-459e-9fd3-f4d507cc725e" parent_id_arme="7a252064-58fe-42f5-b49c-3b37a4b4126d" />
   <event name="Gate Offline" id_arme="cb45c514-6d1f-4484-a126-4bfdb67b4fc6" parent_id_arme="d139eab9-b16b-459e-9fd3-f4d507cc725e">
     <if_variable name="Sector" comparator="EQUALS" value="6" />
     <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
@@ -1405,7 +1405,7 @@
     <set_variable name="Antara System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Antara Sector XII" id_arme="cab9f3fd-d98b-4b25-bdc0-93d96530b2c5" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" expanded_arme="" />
+  <folder_arme name="Antara Sector XII" id_arme="cab9f3fd-d98b-4b25-bdc0-93d96530b2c5" parent_id_arme="7b7c18bf-adaa-4a21-a11c-aeca00f42bfc" />
   <event name="Create Antara Sector XII" id_arme="bd8a5515-5cf0-4b00-b746-3f714b10b539" parent_id_arme="cab9f3fd-d98b-4b25-bdc0-93d96530b2c5">
     <if_timer_finished name="Transition" />
     <if_variable name="Antara System" comparator="EQUALS" value="1.0" />
@@ -1429,7 +1429,7 @@
     <create count="80" type="asteroids" startX="14029.0" startY="0.0" startZ="51809.0" endX="10845.0" endY="0.0" endZ="75548.0" randomRange="11024" />
     <create count="40" type="asteroids" startX="13740.0" startY="0.0" startZ="46743.0" endX="4621.0" endY="0.0" endZ="23727.0" randomRange="8150" />
   </event>
-  <folder_arme name="Navigation" id_arme="5e8d2baf-b998-425c-801f-b0820f5a451d" parent_id_arme="cab9f3fd-d98b-4b25-bdc0-93d96530b2c5" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="5e8d2baf-b998-425c-801f-b0820f5a451d" parent_id_arme="cab9f3fd-d98b-4b25-bdc0-93d96530b2c5" />
   <event name="Transition to Sector XI" id_arme="4705ab56-d349-4745-832a-9fc3ad8f8edb" parent_id_arme="5e8d2baf-b998-425c-801f-b0820f5a451d">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Antara System" comparator="EQUALS" value="2.0" />
@@ -1463,7 +1463,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Antara System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="e60adddf-a79c-4c74-bab8-64563b85cd4e" parent_id_arme="5e8d2baf-b998-425c-801f-b0820f5a451d" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="e60adddf-a79c-4c74-bab8-64563b85cd4e" parent_id_arme="5e8d2baf-b998-425c-801f-b0820f5a451d" />
   <event name="Gate Offline" id_arme="9961eadd-1233-4507-889f-c4af84f00feb" parent_id_arme="e60adddf-a79c-4c74-bab8-64563b85cd4e">
     <if_variable name="Sector" comparator="EQUALS" value="12" />
     <if_variable name="Antara System" comparator="EQUALS" value="2.0" />

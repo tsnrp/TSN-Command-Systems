@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="272.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="G'Torin System" id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" expanded_arme="" />
+  <folder_arme name="G'Torin System" id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
   <folder_arme name="G'Torin Settings" id_arme="7de4ecf1-627e-4c41-8741-4ff2f82f7862" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
   <folder_arme name="G'Torin Menu" id_arme="725d51eb-6e6c-4c70-85c3-0f2b1cf29960" parent_id_arme="7de4ecf1-627e-4c41-8741-4ff2f82f7862" />
   <event name="G'Torin Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="725d51eb-6e6c-4c70-85c3-0f2b1cf29960">
@@ -134,7 +134,7 @@
     <set_variable name="G'Torin System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="G'Torin Sector II" id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" expanded_arme="" />
+  <folder_arme name="G'Torin Sector II" id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f" parent_id_arme="6fd1f040-4e52-415d-9676-24725b00bd4c" />
   <event name="Create G'Torin Sector II" id_arme="7fe962e1-43d6-4e96-8699-43d1a089b7f5" parent_id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f">
     <if_timer_finished name="Transition" />
     <if_variable name="G'Torin System" comparator="EQUALS" value="1.0" />
@@ -159,7 +159,7 @@
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
     <set_variable name="G'Torin System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160" parent_id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160" parent_id_arme="a7a1bd62-a2d8-431a-9409-8b9bb978735f" />
   <event name="Transition to Sector III" id_arme="33b449bb-63fc-4f47-b1dc-d8ebf312dc15" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
@@ -215,7 +215,7 @@
     <set_variable name="Sector" value="4.0" integer="yes" />
     <set_variable name="G'Torin System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b7376bbb-8de2-48f3-9813-aa2542f09f1d" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b7376bbb-8de2-48f3-9813-aa2542f09f1d" parent_id_arme="fc4e12e8-925d-4123-adf0-f1012a4a9160" />
   <event name="Gate Offline" id_arme="84a3148d-cbd0-4939-a323-c16f0a002357" parent_id_arme="b7376bbb-8de2-48f3-9813-aa2542f09f1d">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
@@ -404,7 +404,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="G'Torin II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <create type="genericMesh" x="50884.0" y="0.0" z="29036.0" name="Sumri Gate" meshFileName="dat\TSN\Gates\NeutralGate1.dxs" textureFileName="dat\TSN\Gates\neutralgate1diff.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="70161.0" y="0.0" z="76265.0" name="G'Torin Commerce" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="70161.0" y="0.0" z="76265.0" name="G'Torin Commerce" hullID="1001" sideValue="sectorSide" />
     <create type="neutral" x="56133.0" y="0.0" z="74861.0" angle="0" name="G'Torin Shipyard" hullID="1053" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -517,8 +517,8 @@
     <if_variable name="G'Torin System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="24699.0" y="0.0" z="58273.0" name="G'Torin Manufacturing" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="48314.0" y="0.0" z="43815.0" name="Caska" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="24699.0" y="0.0" z="58273.0" name="G'Torin Manufacturing" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="48314.0" y="0.0" z="43815.0" name="Caska" hullID="1003" sideValue="sectorSide" />
     <create type="neutral" x="39639.0" y="0.0" z="71606.0" angle="0" name="Shorin Refinery" hullID="1051" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="G'Torin III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
@@ -604,10 +604,10 @@
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="33094.0" y="0.0" z="33756.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="23315.0" y="0.0" z="20331.0" name="G'Torin Center" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="50366.0" y="0.0" z="29464.0" name="Maansta" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="37650.0" y="0.0" z="51827.0" name="Rishondi" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="74862.0" y="0.0" z="77182.0" name="Purrino" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="23315.0" y="0.0" z="20331.0" name="G'Torin Center" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="50366.0" y="0.0" z="29464.0" name="Maansta" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="37650.0" y="0.0" z="51827.0" name="Rishondi" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="74862.0" y="0.0" z="77182.0" name="Purrino" hullID="1000" sideValue="sectorSide" />
     <create type="neutral" x="67901.0" y="0.0" z="54143.0" angle="0" name="Alrin Factory" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="49343.0" y="0.0" z="71412.0" angle="0" name="Kiquin Foundry" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="61474.0" y="0.0" z="59719.0" angle="0" name="Libeth Mining" hullID="1050" sideValue="sectorSide" />
@@ -765,7 +765,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="blackHole" x="33695.0" y="0.0" z="72570.0" name="Elika" />
     <create type="blackHole" x="44940.0" y="0.0" z="59718.0" name="Ezati" />
-    <create type="station" x="38996.0" y="0.0" z="66305.0" name="Initi" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="38996.0" y="0.0" z="66305.0" name="Initi" hullID="1003" sideValue="sectorSide" />
     <create type="neutral" x="19237.0" y="0.0" z="51044.0" angle="0" name="Magrath Mining" hullID="1003" sideValue="sectorSide" />
     <create type="neutral" x="62129.0" y="0.0" z="85261.0" angle="0" name="Kalange Ores" hullID="1050" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="G'Torin V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />

@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="355.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Volantis System" id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" expanded_arme="" />
+  <folder_arme name="Volantis System" id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" />
   <folder_arme name="Volantis Settings" id_arme="352c5b33-563d-4083-a83f-a6bab4571ca3" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" />
   <folder_arme name="Volantis Menu" id_arme="82c94686-4fd0-476a-a48e-b4f11f16a29f" parent_id_arme="352c5b33-563d-4083-a83f-a6bab4571ca3" />
   <event name="Volantis Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="82c94686-4fd0-476a-a48e-b4f11f16a29f">
@@ -138,7 +138,7 @@
     <set_variable name="Volantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Volantis Sector II" id_arme="d45c2904-9b38-40db-90df-ecd23c711e7c" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" expanded_arme="" />
+  <folder_arme name="Volantis Sector II" id_arme="d45c2904-9b38-40db-90df-ecd23c711e7c" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" />
   <event name="Create Volantis Sector II" id_arme="05e06ddc-7913-462e-ba0b-dc3187f05960" parent_id_arme="d45c2904-9b38-40db-90df-ecd23c711e7c">
     <if_timer_finished name="Transition" />
     <if_variable name="Volantis System" comparator="EQUALS" value="1.0" />
@@ -163,7 +163,7 @@
     <create count="10" type="nebulas" startX="10859.0" startY="0.0" startZ="92785.0" endX="10231.0" endY="0.0" endZ="67026.0" randomRange="13294" />
     <set_variable name="Volantis System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="66e83ed2-a04d-4fdd-96ba-5968185119b6" parent_id_arme="d45c2904-9b38-40db-90df-ecd23c711e7c" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="66e83ed2-a04d-4fdd-96ba-5968185119b6" parent_id_arme="d45c2904-9b38-40db-90df-ecd23c711e7c" />
   <event name="Transition to Sector III" id_arme="5e687f17-89bd-4a6a-97dc-d9d8263468e1" parent_id_arme="66e83ed2-a04d-4fdd-96ba-5968185119b6">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -219,7 +219,7 @@
     <set_variable name="Volantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="a801f388-94c2-45a8-98b1-d58c1c65763b" parent_id_arme="66e83ed2-a04d-4fdd-96ba-5968185119b6" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="a801f388-94c2-45a8-98b1-d58c1c65763b" parent_id_arme="66e83ed2-a04d-4fdd-96ba-5968185119b6" />
   <event name="Gate Offline" id_arme="71e7f25f-db9e-4d2a-a591-28e3eee96fed" parent_id_arme="a801f388-94c2-45a8-98b1-d58c1c65763b">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Volantis System" comparator="EQUALS" value="2.0" />
@@ -406,7 +406,7 @@
     <if_variable name="Volantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="68911.0" y="0.0" z="30460.0" angle="0" name="Promethean Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="68911.0" y="0.0" z="30460.0" name="Promethean Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -544,10 +544,10 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <create type="station" x="49932.0" y="0.0" z="51577.0" angle="0" name="DS-34" hullID="1000" />
-    <create type="station" x="28263.0" y="0.0" z="73108.0" angle="0" name="DS-17" hullID="1000" />
-    <create type="station" x="59395.0" y="0.0" z="22091.0" angle="0" name="DS-53" hullID="1000" />
-    <create type="station" x="73520.0" y="0.0" z="64057.0" angle="0" name="Outpost 16" hullID="1002" />
+    <create type="neutral" x="49932.0" y="0.0" z="51577.0" angle="0" name="DS-34" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="28263.0" y="0.0" z="73108.0" angle="0" name="DS-17" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="59395.0" y="0.0" z="22091.0" angle="0" name="DS-53" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="73520.0" y="0.0" z="64057.0" angle="0" name="Outpost 16" hullID="1002" sideValue="sectorSide" />
     <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="844d67e6-5909-4d03-abd8-d5025a146ffc" parent_id_arme="8732b5c1-92c9-4938-812f-76158196553b">
@@ -570,7 +570,7 @@
     <set_variable name="Volantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Volantis Sector IV" id_arme="56d1cf80-83dd-414f-821b-cd5059d3b66c" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" expanded_arme="" />
+  <folder_arme name="Volantis Sector IV" id_arme="56d1cf80-83dd-414f-821b-cd5059d3b66c" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" />
   <event name="Create Volantis Sector IV" id_arme="c6f17a3e-bbcc-4628-b626-52025fca8580" parent_id_arme="56d1cf80-83dd-414f-821b-cd5059d3b66c">
     <if_timer_finished name="Transition" />
     <if_variable name="Volantis System" comparator="EQUALS" value="1.0" />
@@ -598,7 +598,7 @@
     <create count="20" type="nebulas" startX="83110.0" startY="0.0" startZ="3068.0" endX="64765.0" endY="0.0" endZ="9225.0" randomRange="4122" />
     <set_variable name="Volantis System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="6f6f1242-f226-432c-b8c4-29a2582dae21" parent_id_arme="56d1cf80-83dd-414f-821b-cd5059d3b66c" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="6f6f1242-f226-432c-b8c4-29a2582dae21" parent_id_arme="56d1cf80-83dd-414f-821b-cd5059d3b66c" />
   <event name="Transition to Sector III" id_arme="ceb172e4-0701-4017-a7de-c4c2e707da22" parent_id_arme="6f6f1242-f226-432c-b8c4-29a2582dae21">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -632,7 +632,7 @@
     <set_variable name="Volantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="7.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="9441e4fe-343e-4b8f-93e8-4c61d419b13f" parent_id_arme="6f6f1242-f226-432c-b8c4-29a2582dae21" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="9441e4fe-343e-4b8f-93e8-4c61d419b13f" parent_id_arme="6f6f1242-f226-432c-b8c4-29a2582dae21" />
   <event name="Gate Offline" id_arme="2e9a6b00-b772-44bf-b67e-c2533077143d" parent_id_arme="9441e4fe-343e-4b8f-93e8-4c61d419b13f">
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Volantis System" comparator="EQUALS" value="2.0" />
@@ -821,7 +821,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <create type="genericMesh" x="44911.0" y="0.0" z="44157.0" angle="0" name="Sierra Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="44911.0" y="0.0" z="44157.0" name="Sierra Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="571b94c4-0b0c-4227-b3ba-c92263b92535" parent_id_arme="44251d0d-b8ca-45d8-892a-8c66583b86b5">
@@ -1102,12 +1102,12 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
-    <create type="station" x="51194.0" y="0.0" z="40890.0" angle="0" name="Volantis Command" hullID="1002" />
-    <create type="neutral" x="58231.0" y="0.0" z="57225.0" angle="0" name="WP-15" hullID="1052" />
-    <create type="neutral" x="43278.0" y="0.0" z="25560.0" angle="0" name="WP-34" hullID="1052" />
-    <create type="neutral" x="60618.0" y="0.0" z="43026.0" angle="0" name="SY-08" hullID="1053" />
-    <create type="station" x="41393.0" y="0.0" z="45916.0" angle="0" name="DS-71" hullID="1000" />
-    <create type="station" x="54838.0" y="0.0" z="33350.0" angle="0" name="DS-93" hullID="1000" />
+    <create type="neutral" x="51194.0" y="0.0" z="40890.0" angle="0" name="Volantis Command" hullID="1002" sideValue="sectorSide" />
+    <create type="neutral" x="58231.0" y="0.0" z="57225.0" angle="0" name="WP-15" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="43278.0" y="0.0" z="25560.0" angle="0" name="WP-34" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="60618.0" y="0.0" z="43026.0" angle="0" name="SY-08" hullID="1053" sideValue="sectorSide" />
+    <create type="neutral" x="41393.0" y="0.0" z="45916.0" angle="0" name="DS-71" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="54838.0" y="0.0" z="33350.0" angle="0" name="DS-93" hullID="1000" sideValue="sectorSide" />
     <set_variable name="MissionCode" value="1.0" />
   </event>
   <event name="Settings" id_arme="fae5afe6-3619-4cc3-a46f-266e144b81e6" parent_id_arme="18d82190-69d3-4244-8cf1-62116afa7717">
@@ -1133,7 +1133,7 @@
     <set_variable name="Volantis System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Volantis Sector VII" id_arme="0a96d9c8-057b-480d-8070-1287fe075b9a" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" expanded_arme="" />
+  <folder_arme name="Volantis Sector VII" id_arme="0a96d9c8-057b-480d-8070-1287fe075b9a" parent_id_arme="bca1b0f7-2803-4617-895d-5a2365355c91" />
   <event name="Create Volantis Sector VII" id_arme="1a0e6e37-a36e-4d83-9b7f-f1d2dafab607" parent_id_arme="0a96d9c8-057b-480d-8070-1287fe075b9a">
     <if_timer_finished name="Transition" />
     <if_variable name="Volantis System" comparator="EQUALS" value="1.0" />
@@ -1154,7 +1154,7 @@
     <create count="30" type="asteroids" startX="70168.0" startY="0.0" startZ="29204.0" endX="41644.0" endY="0.0" endZ="49811.0" randomRange="5798" />
     <set_variable name="Volantis System" value="2.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="7425276f-138a-48a1-9495-a5ffcf8e596c" parent_id_arme="0a96d9c8-057b-480d-8070-1287fe075b9a" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="7425276f-138a-48a1-9495-a5ffcf8e596c" parent_id_arme="0a96d9c8-057b-480d-8070-1287fe075b9a" />
   <event name="Transition to Sector VIII" id_arme="935559c0-8308-4584-af87-86c46974bdc7" parent_id_arme="7425276f-138a-48a1-9495-a5ffcf8e596c">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1243,7 +1243,7 @@
     <set_variable name="Volantis System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="1a88a0fc-1851-41a2-8198-79bb6aa268e5" parent_id_arme="7425276f-138a-48a1-9495-a5ffcf8e596c" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="1a88a0fc-1851-41a2-8198-79bb6aa268e5" parent_id_arme="7425276f-138a-48a1-9495-a5ffcf8e596c" />
   <event name="Gate Offline" id_arme="83c26875-16cc-41a2-acc5-e00100bfd07c" parent_id_arme="1a88a0fc-1851-41a2-8198-79bb6aa268e5">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Volantis System" comparator="EQUALS" value="2.0" />
@@ -1430,7 +1430,7 @@
     <if_variable name="Volantis System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="8821.0" y="0.0" z="93588.0" angle="0" name="Waypoint 52 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="8821.0" y="0.0" z="93588.0" name="Waypoint 52 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

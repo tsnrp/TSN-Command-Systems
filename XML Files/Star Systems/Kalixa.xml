@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="137.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Kalixa System" id_arme="3a9fd63c-2b69-4ec9-9105-14cc278b78ac" expanded_arme="" />
+  <folder_arme name="Kalixa System" id_arme="3a9fd63c-2b69-4ec9-9105-14cc278b78ac" />
   <folder_arme name="Kalixa Settings" id_arme="c103dc34-f8dd-4df7-a165-38a2a51d7fc2" parent_id_arme="3a9fd63c-2b69-4ec9-9105-14cc278b78ac" />
   <folder_arme name="Kalixa Menu" id_arme="d7d247b9-3c21-4341-92ef-8c5aba2f0ec8" parent_id_arme="c103dc34-f8dd-4df7-a165-38a2a51d7fc2" />
   <event name="Kalixa Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="d7d247b9-3c21-4341-92ef-8c5aba2f0ec8">
@@ -333,7 +333,7 @@
     <set_variable name="Kalixa System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Kalixa Sector IV" id_arme="89c9218e-0336-4e0c-a57b-3e72951e2142" parent_id_arme="3a9fd63c-2b69-4ec9-9105-14cc278b78ac" expanded_arme="" />
+  <folder_arme name="Kalixa Sector IV" id_arme="89c9218e-0336-4e0c-a57b-3e72951e2142" parent_id_arme="3a9fd63c-2b69-4ec9-9105-14cc278b78ac" />
   <event name="Create Kalixa Sector IV" id_arme="e2ddda31-21b4-4f62-87d0-686048a767b9" parent_id_arme="89c9218e-0336-4e0c-a57b-3e72951e2142">
     <if_timer_finished name="Transition" />
     <if_variable name="Kalixa System" comparator="EQUALS" value="1.0" />
@@ -357,7 +357,7 @@
     <create count="20" type="nebulas" startX="37247.0" startY="0.0" startZ="49685.0" endX="4199.0" endY="0.0" endZ="49183.0" randomRange="2427" />
     <create count="40" type="nebulas" startX="66524.0" startY="0.0" startZ="79842.0" endX="23927.0" endY="0.0" endZ="79968.0" randomRange="3025" />
   </event>
-  <folder_arme name="Navigation" id_arme="46df3c3e-0814-40c0-8944-a9341d83fcce" parent_id_arme="89c9218e-0336-4e0c-a57b-3e72951e2142" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="46df3c3e-0814-40c0-8944-a9341d83fcce" parent_id_arme="89c9218e-0336-4e0c-a57b-3e72951e2142" />
   <event name="Transition to Sector III" id_arme="9261c26b-e9ec-4775-a6b6-745a216f6e38" parent_id_arme="46df3c3e-0814-40c0-8944-a9341d83fcce">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Kalixa System" comparator="EQUALS" value="2.0" />
@@ -391,7 +391,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Kalixa System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="33f6ea40-42eb-4836-8342-b24b375f2bae" parent_id_arme="46df3c3e-0814-40c0-8944-a9341d83fcce" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="33f6ea40-42eb-4836-8342-b24b375f2bae" parent_id_arme="46df3c3e-0814-40c0-8944-a9341d83fcce" />
   <event name="Gate Offline" id_arme="6c1bf251-1d5f-4164-a7e3-f0747b8a84f3" parent_id_arme="33f6ea40-42eb-4836-8342-b24b375f2bae">
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Kalixa System" comparator="EQUALS" value="2.0" />
@@ -578,7 +578,7 @@
     <if_variable name="Kalixa System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="18754.0" y="0.0" z="10684.0" angle="0" name="Waypoint 78 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="18754.0" y="0.0" z="10684.0" name="Waypoint 78 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -622,7 +622,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Waypoint 78 to Kalixa" value="0.0" />
   </event>
-  <folder_arme name="Kalixa Sector V" id_arme="1e08dd44-ac9c-4ab6-9c94-4fe1900ce784" parent_id_arme="3a9fd63c-2b69-4ec9-9105-14cc278b78ac" expanded_arme="" />
+  <folder_arme name="Kalixa Sector V" id_arme="1e08dd44-ac9c-4ab6-9c94-4fe1900ce784" parent_id_arme="3a9fd63c-2b69-4ec9-9105-14cc278b78ac" />
   <event name="Create Kalixa Sector V" id_arme="f83ed16a-abeb-40f0-bf9f-63216afe4985" parent_id_arme="1e08dd44-ac9c-4ab6-9c94-4fe1900ce784">
     <if_timer_finished name="Transition" />
     <if_variable name="Kalixa System" comparator="EQUALS" value="1.0" />
@@ -645,7 +645,7 @@
     <create count="50" type="nebulas" startX="80346.0" startY="0.0" startZ="56471.0" endX="59864.0" endY="0.0" endZ="55214.0" randomRange="6678" />
     <create count="90" type="nebulas" startX="53833.0" startY="0.0" startZ="53581.0" endX="25058.0" endY="0.0" endZ="47926.0" randomRange="3210" />
   </event>
-  <folder_arme name="Navigation" id_arme="07a26fa9-a9bc-4dd5-8326-1e5e9b68b760" parent_id_arme="1e08dd44-ac9c-4ab6-9c94-4fe1900ce784" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="07a26fa9-a9bc-4dd5-8326-1e5e9b68b760" parent_id_arme="1e08dd44-ac9c-4ab6-9c94-4fe1900ce784" />
   <event name="Transition to Sector VI" id_arme="89cfb552-a3d2-4c9c-ad0a-9ee2362738c7" parent_id_arme="07a26fa9-a9bc-4dd5-8326-1e5e9b68b760">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Kalixa System" comparator="EQUALS" value="2.0" />
@@ -701,7 +701,7 @@
     <set_variable name="Sector" value="10.0" integer="yes" />
     <set_variable name="Kalixa System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="cadc827d-3f75-43e7-968c-a546bb239948" parent_id_arme="07a26fa9-a9bc-4dd5-8326-1e5e9b68b760" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="cadc827d-3f75-43e7-968c-a546bb239948" parent_id_arme="07a26fa9-a9bc-4dd5-8326-1e5e9b68b760" />
   <event name="Gate Offline" id_arme="c6a34f00-a66f-4e9b-907e-8e3e5b699b01" parent_id_arme="cadc827d-3f75-43e7-968c-a546bb239948">
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Kalixa System" comparator="EQUALS" value="2.0" />
@@ -888,7 +888,7 @@
     <if_variable name="Kalixa System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="48053.0" y="0.0" z="43403.0" angle="0" name="Antara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="48053.0" y="0.0" z="43403.0" name="Antara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1468,7 +1468,7 @@
     <set_variable name="Kalixa System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Kalixa Sector XI" id_arme="cd8fbe9f-3d66-429c-bf6a-13fb2ea40990" parent_id_arme="3a9fd63c-2b69-4ec9-9105-14cc278b78ac" expanded_arme="" />
+  <folder_arme name="Kalixa Sector XI" id_arme="cd8fbe9f-3d66-429c-bf6a-13fb2ea40990" parent_id_arme="3a9fd63c-2b69-4ec9-9105-14cc278b78ac" />
   <event name="Create Kalixa Sector XI" id_arme="74ddf50a-6a57-4516-8b3a-8838957b3d84" parent_id_arme="cd8fbe9f-3d66-429c-bf6a-13fb2ea40990">
     <if_timer_finished name="Transition" />
     <if_variable name="Kalixa System" comparator="EQUALS" value="1.0" />
@@ -1492,7 +1492,7 @@
     <create count="40" type="asteroids" startX="95048.0" startY="0.0" startZ="34732.0" endX="95550.0" endY="0.0" endZ="74565.0" randomRange="3831" />
     <create count="30" type="asteroids" startX="5582.0" startY="0.0" startZ="13120.0" endX="6210.0" endY="0.0" endZ="34356.0" randomRange="3171" />
   </event>
-  <folder_arme name="Navigation" id_arme="a9ba2319-4f70-472a-b6d0-31bd935107b0" parent_id_arme="cd8fbe9f-3d66-429c-bf6a-13fb2ea40990" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="a9ba2319-4f70-472a-b6d0-31bd935107b0" parent_id_arme="cd8fbe9f-3d66-429c-bf6a-13fb2ea40990" />
   <event name="Transition to Sector XII" id_arme="3431a778-0c19-4d23-a39b-929431975377" parent_id_arme="a9ba2319-4f70-472a-b6d0-31bd935107b0">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Kalixa System" comparator="EQUALS" value="2.0" />
@@ -1548,7 +1548,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Kalixa System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="83f371cf-4897-4a35-8ab5-00d0a9b5f46b" parent_id_arme="a9ba2319-4f70-472a-b6d0-31bd935107b0" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="83f371cf-4897-4a35-8ab5-00d0a9b5f46b" parent_id_arme="a9ba2319-4f70-472a-b6d0-31bd935107b0" />
   <event name="Gate Offline" id_arme="26af73ce-7978-4c52-b1d1-c4497da2db2f" parent_id_arme="83f371cf-4897-4a35-8ab5-00d0a9b5f46b">
     <if_variable name="Sector" comparator="EQUALS" value="11" />
     <if_variable name="Kalixa System" comparator="EQUALS" value="2.0" />
@@ -1735,7 +1735,7 @@
     <if_variable name="Kalixa System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="11" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="63131.0" y="0.0" z="54586.0" angle="0" name="Cronus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="63131.0" y="0.0" z="54586.0" name="Cronus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

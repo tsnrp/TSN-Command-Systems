@@ -4,9 +4,9 @@
     <set_variable name="Coordinate Y" value="673.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Waypoint 33" id_arme="91cd0d4e-755e-4b59-a15b-9ac5b2ab1875" expanded_arme="" />
+  <folder_arme name="Waypoint 33" id_arme="91cd0d4e-755e-4b59-a15b-9ac5b2ab1875" />
   <folder_arme name="Waypoint 33 Settings" id_arme="ab9224c5-76fe-4ab6-9d67-2d29f7b96869" parent_id_arme="91cd0d4e-755e-4b59-a15b-9ac5b2ab1875" />
-  <folder_arme name="Waypoint 33 Menu" id_arme="3915dc36-68fd-45c5-aee2-7fe212e56920" parent_id_arme="ab9224c5-76fe-4ab6-9d67-2d29f7b96869" expanded_arme="" />
+  <folder_arme name="Waypoint 33 Menu" id_arme="3915dc36-68fd-45c5-aee2-7fe212e56920" parent_id_arme="ab9224c5-76fe-4ab6-9d67-2d29f7b96869" />
   <event name="Waypoint 33 Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="3915dc36-68fd-45c5-aee2-7fe212e56920">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
     <set_gm_button text="Lower Arc/Waypoint 33 System" />
@@ -57,7 +57,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sector 1" id_arme="430a6c7a-b30c-4232-b3f4-226ebab8f9ef" parent_id_arme="91cd0d4e-755e-4b59-a15b-9ac5b2ab1875" expanded_arme="" />
+  <folder_arme name="Sector 1" id_arme="430a6c7a-b30c-4232-b3f4-226ebab8f9ef" parent_id_arme="91cd0d4e-755e-4b59-a15b-9ac5b2ab1875" />
   <event name="Create Waypoint 33-1" id_arme="87aa01dc-1c41-4175-b5b4-5f02cbbc4437" parent_id_arme="430a6c7a-b30c-4232-b3f4-226ebab8f9ef">
     <if_variable name="Waypoint 33" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -82,7 +82,7 @@
     <create count="40" type="asteroids" startX="95624.0" startY="0.0" startZ="6503.0" endX="51834.0" endY="0.0" endZ="7017.0" randomRange="5970" />
     <create count="10" type="asteroids" startX="87335.0" startY="0.0" startZ="11564.0" endX="69805.0" endY="0.0" endZ="15305.0" randomRange="2890" />
   </event>
-  <folder_arme name="Navigation" id_arme="ab81b1ea-a761-43f2-a36f-8ac494223083" parent_id_arme="430a6c7a-b30c-4232-b3f4-226ebab8f9ef" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="ab81b1ea-a761-43f2-a36f-8ac494223083" parent_id_arme="430a6c7a-b30c-4232-b3f4-226ebab8f9ef" />
   <event name="Transition to (Right)" id_arme="c99a7d99-2fb8-4e3c-9358-a2de061c4f90" parent_id_arme="ab81b1ea-a761-43f2-a36f-8ac494223083">
     <if_variable name="Waypoint 33" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
@@ -116,7 +116,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="3e58cd3c-7c0a-4510-bb80-f43e8c95457b" parent_id_arme="ab81b1ea-a761-43f2-a36f-8ac494223083" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="3e58cd3c-7c0a-4510-bb80-f43e8c95457b" parent_id_arme="ab81b1ea-a761-43f2-a36f-8ac494223083" />
   <event name="Gate Offline" id_arme="b96f05fc-a6b7-4e3f-a8c9-5b60416ab716" parent_id_arme="3e58cd3c-7c0a-4510-bb80-f43e8c95457b">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Waypoint 33" comparator="EQUALS" value="2.0" />
@@ -303,7 +303,7 @@
     <if_variable name="Waypoint 33" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="72739.0" y="0.0" z="33276.0" angle="0" name="Hypherion Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="72739.0" y="0.0" z="33276.0" name="Hypherion Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -349,7 +349,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Hypherion to Waypoint 33" value="0.0" />
   </event>
-  <folder_arme name="Sector 2" id_arme="58a209fa-ac46-49b7-b9b0-f772bdea4f90" parent_id_arme="91cd0d4e-755e-4b59-a15b-9ac5b2ab1875" expanded_arme="" />
+  <folder_arme name="Sector 2" id_arme="58a209fa-ac46-49b7-b9b0-f772bdea4f90" parent_id_arme="91cd0d4e-755e-4b59-a15b-9ac5b2ab1875" />
   <event name="Create Waypoint 33-2" id_arme="56fa21e9-b396-4f91-8fc6-97a6c22a3167" parent_id_arme="58a209fa-ac46-49b7-b9b0-f772bdea4f90">
     <if_variable name="Waypoint 33" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -372,7 +372,7 @@
     <create count="30" type="nebulas" startX="58656.0" startY="0.0" startZ="38850.0" endX="9512.0" endY="0.0" endZ="56821.0" randomRange="10633" />
     <create count="20" type="asteroids" startX="65917.0" startY="0.0" startZ="49853.0" endX="44719.0" endY="0.0" endZ="41271.0" randomRange="2388" />
   </event>
-  <folder_arme name="Navigation" id_arme="6827b08e-72c6-4740-8a28-d485e188e1b6" parent_id_arme="58a209fa-ac46-49b7-b9b0-f772bdea4f90" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="6827b08e-72c6-4740-8a28-d485e188e1b6" parent_id_arme="58a209fa-ac46-49b7-b9b0-f772bdea4f90" />
   <event name="Transition to (Left)" id_arme="35544dbf-e76e-47e0-a547-4ac346d96786" parent_id_arme="6827b08e-72c6-4740-8a28-d485e188e1b6">
     <if_variable name="Waypoint 33" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
@@ -406,7 +406,7 @@
     <set_variable name="Corner E1 Transition" value="0.0" />
     <set_variable name="Waypoint 33" value="3.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="7dd2c2fb-106e-42f4-ace3-b0599333edba" parent_id_arme="6827b08e-72c6-4740-8a28-d485e188e1b6" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="7dd2c2fb-106e-42f4-ace3-b0599333edba" parent_id_arme="6827b08e-72c6-4740-8a28-d485e188e1b6" />
   <event name="Gate Offline" id_arme="a795e679-4278-4a52-8712-72d6c88cbadd" parent_id_arme="7dd2c2fb-106e-42f4-ace3-b0599333edba">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Waypoint 33" comparator="EQUALS" value="2.0" />
@@ -593,8 +593,8 @@
     <if_variable name="Waypoint 33" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="33497.0" y="0.0" z="73545.0" angle="0" name="Rhea Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="65991.0" y="0.0" z="70977.0" angle="0" name="DS-18" hullID="1000" />
+    <create type="genericMesh" x="33497.0" y="0.0" z="73545.0" name="Rhea Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="65991.0" y="0.0" z="70977.0" angle="0" name="DS-18" hullID="1000" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

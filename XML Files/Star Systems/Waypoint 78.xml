@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="125.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Waypoint 78" id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" expanded_arme="" />
+  <folder_arme name="Waypoint 78" id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" />
   <folder_arme name="Waypoint 78 Settings" id_arme="e8f51934-06c1-4626-91a8-3eaade362d34" parent_id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" />
   <folder_arme name="Waypoint 78 Menu" id_arme="2f4a4e8b-245b-4bc1-974f-d2b0a915b7eb" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34" />
   <event name="Waypoint 78 Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="2f4a4e8b-245b-4bc1-974f-d2b0a915b7eb">
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Sector 1" id_arme="babb1f16-2109-4912-970e-880d316dcb12" parent_id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" expanded_arme="" />
+  <folder_arme name="Sector 1" id_arme="babb1f16-2109-4912-970e-880d316dcb12" parent_id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" />
   <event name="Create Waypoint 78-1" id_arme="f26f75dc-3039-41b4-a3b2-b716d8d5408a" parent_id_arme="babb1f16-2109-4912-970e-880d316dcb12">
     <if_variable name="Waypoint 78" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -79,7 +79,7 @@
     <create count="100" type="asteroids" startX="71712.0" startY="0.0" startZ="34816.0" endX="56162.0" endY="0.0" endZ="21100.0" randomRange="6280" />
     <create count="40" type="asteroids" startX="94890.0" startY="0.0" startZ="5916.0" endX="73619.0" endY="0.0" endZ="8337.0" randomRange="5183" />
   </event>
-  <folder_arme name="Navigation" id_arme="70bc1537-300e-4873-987e-e6d9e175747b" parent_id_arme="babb1f16-2109-4912-970e-880d316dcb12" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="70bc1537-300e-4873-987e-e6d9e175747b" parent_id_arme="babb1f16-2109-4912-970e-880d316dcb12" />
   <event name="Transition to (Right)" id_arme="109a4a4f-f891-4fae-acf3-4c97bfbc410c" parent_id_arme="70bc1537-300e-4873-987e-e6d9e175747b">
     <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
@@ -113,7 +113,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b09f8187-db21-434b-859c-ccf1144673d5" parent_id_arme="70bc1537-300e-4873-987e-e6d9e175747b" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b09f8187-db21-434b-859c-ccf1144673d5" parent_id_arme="70bc1537-300e-4873-987e-e6d9e175747b" />
   <event name="Gate Offline" id_arme="167dbbe7-f1c8-4ab9-aaa5-bc11f8dc419b" parent_id_arme="b09f8187-db21-434b-859c-ccf1144673d5">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
@@ -300,7 +300,7 @@
     <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="50294.0" y="0.0" z="38337.0" angle="0" name="Eyukua Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="50294.0" y="0.0" z="38337.0" name="Eyukua Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -423,7 +423,7 @@
     <set_variable name="Waypoint 78" value="System" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Sector 3" id_arme="2eae0028-5fb8-499d-92de-dedb02a26904" parent_id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" expanded_arme="" />
+  <folder_arme name="Sector 3" id_arme="2eae0028-5fb8-499d-92de-dedb02a26904" parent_id_arme="a6a9676d-caa4-416f-a8e1-348ff67c6e83" />
   <event name="Create Waypoint 78-3" id_arme="a716dd3f-7e60-4b0d-9935-dc9f2ae60163" parent_id_arme="2eae0028-5fb8-499d-92de-dedb02a26904">
     <if_variable name="Waypoint 78" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -446,7 +446,7 @@
     <create count="200" type="asteroids" startX="36284.0" startY="0.0" startZ="91662.0" endX="3937.0" endY="0.0" endZ="94156.0" randomRange="5591" />
     <create count="100" type="asteroids" startX="62397.0" startY="0.0" startZ="97163.0" endX="33644.0" endY="0.0" endZ="97017.0" randomRange="2862" />
   </event>
-  <folder_arme name="Navigation" id_arme="b0d08366-4819-470a-840e-bc71ff0af24e" parent_id_arme="2eae0028-5fb8-499d-92de-dedb02a26904" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="b0d08366-4819-470a-840e-bc71ff0af24e" parent_id_arme="2eae0028-5fb8-499d-92de-dedb02a26904" />
   <event name="Transition to (Right)" id_arme="a848cdff-25e0-48c7-b211-3ada32b3f4db" parent_id_arme="b0d08366-4819-470a-840e-bc71ff0af24e">
     <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
@@ -480,7 +480,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner A5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="9d6eaa8e-a0c7-40e9-ba06-c73ac9f63fa9" parent_id_arme="b0d08366-4819-470a-840e-bc71ff0af24e" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="9d6eaa8e-a0c7-40e9-ba06-c73ac9f63fa9" parent_id_arme="b0d08366-4819-470a-840e-bc71ff0af24e" />
   <event name="Gate Offline" id_arme="5bd2a32c-1e4e-44aa-8b1a-5a847dca28e6" parent_id_arme="9d6eaa8e-a0c7-40e9-ba06-c73ac9f63fa9">
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
@@ -667,7 +667,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Waypoint 78" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="31370.0" y="0.0" z="64523.0" angle="0" name="Kalixa Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="31370.0" y="0.0" z="64523.0" name="Kalixa Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

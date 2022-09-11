@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="185.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Arcturus System" id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" expanded_arme="" />
+  <folder_arme name="Arcturus System" id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
   <folder_arme name="Arcturus Settings" id_arme="1986ea1d-abb5-4ccf-9766-f76d11759b00" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
   <folder_arme name="Arcturus Menu" id_arme="ef3ca4c9-6053-42df-a800-d3dab87b3c63" parent_id_arme="1986ea1d-abb5-4ccf-9766-f76d11759b00" />
   <event name="Arcturus Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="ef3ca4c9-6053-42df-a800-d3dab87b3c63">
@@ -326,7 +326,7 @@
     <set_variable name="Arcturus System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Arcturus Sector IV" id_arme="ec30e324-521f-4a9e-a548-8778e2d54232" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" expanded_arme="" />
+  <folder_arme name="Arcturus Sector IV" id_arme="ec30e324-521f-4a9e-a548-8778e2d54232" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
   <event name="Create Arcturus Sector IV" id_arme="5fa31dc6-2e62-42ae-bb59-98ea2cab023b" parent_id_arme="ec30e324-521f-4a9e-a548-8778e2d54232">
     <if_timer_finished name="Transition" />
     <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
@@ -346,7 +346,7 @@
     <create count="10" type="nebulas" startX="72470.0" startY="0.0" startZ="20242.0" endX="27166.0" endY="0.0" endZ="40283.0" randomRange="17917" />
     <create count="10" type="asteroids" startX="41863.0" startY="0.0" startZ="60931.0" endX="15628.0" endY="0.0" endZ="77327.0" randomRange="15156" />
   </event>
-  <folder_arme name="Navigation" id_arme="ad47bc4e-38c1-4042-9b3e-0090cf7f0e72" parent_id_arme="ec30e324-521f-4a9e-a548-8778e2d54232" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="ad47bc4e-38c1-4042-9b3e-0090cf7f0e72" parent_id_arme="ec30e324-521f-4a9e-a548-8778e2d54232" />
   <event name="Transition to Sector III" id_arme="623bb10f-74d2-4d74-9693-4e479605d16c" parent_id_arme="ad47bc4e-38c1-4042-9b3e-0090cf7f0e72">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
@@ -380,7 +380,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Arcturus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="ad7ec755-0260-4893-93d0-8e9b7259d394" parent_id_arme="ad47bc4e-38c1-4042-9b3e-0090cf7f0e72" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="ad7ec755-0260-4893-93d0-8e9b7259d394" parent_id_arme="ad47bc4e-38c1-4042-9b3e-0090cf7f0e72" />
   <event name="Gate Offline" id_arme="62ca9800-638a-4966-9212-a6131eab0ac0" parent_id_arme="ad7ec755-0260-4893-93d0-8e9b7259d394">
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
@@ -562,7 +562,7 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="705241bf-8193-4f5a-973e-4ab6a72ef0cc" parent_id_arme="ec30e324-521f-4a9e-a548-8778e2d54232" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="705241bf-8193-4f5a-973e-4ab6a72ef0cc" parent_id_arme="ec30e324-521f-4a9e-a548-8778e2d54232" />
   <event name="Generate Sector Entities" id_arme="a8859df8-71a9-4e2c-a15b-fc699199ed71" parent_id_arme="705241bf-8193-4f5a-973e-4ab6a72ef0cc">
     <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4" />
@@ -1072,7 +1072,7 @@
     <set_variable name="Arcturus System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Arcturus Sector IX" id_arme="ba7d172f-477b-45e5-bbf9-556e82c02889" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" expanded_arme="" />
+  <folder_arme name="Arcturus Sector IX" id_arme="ba7d172f-477b-45e5-bbf9-556e82c02889" parent_id_arme="aadf79dc-a0f2-4527-91dc-7cb23de39948" />
   <event name="Create Arcturus Sector IX" id_arme="b970471d-80b3-4f4f-b612-6dfada40a9ea" parent_id_arme="ba7d172f-477b-45e5-bbf9-556e82c02889">
     <if_timer_finished name="Transition" />
     <if_variable name="Arcturus System" comparator="EQUALS" value="1.0" />
@@ -1094,7 +1094,7 @@
     <create count="30" type="nebulas" startX="57409.0" startY="0.0" startZ="94453.0" endX="20972.0" endY="0.0" endZ="94939.0" randomRange="5032" />
     <create count="10" type="nebulas" startX="20972.0" startY="0.0" startZ="95668.0" endX="1539.0" endY="0.0" endZ="97732.0" randomRange="3540" />
   </event>
-  <folder_arme name="Navigation" id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556" parent_id_arme="ba7d172f-477b-45e5-bbf9-556e82c02889" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556" parent_id_arme="ba7d172f-477b-45e5-bbf9-556e82c02889" />
   <event name="Transition to Sector X" id_arme="91dc65dd-cd6a-412b-b541-daf49aef2536" parent_id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
@@ -1150,7 +1150,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="0ff62029-9cbf-4732-b8e9-1f0b2aa918c7" parent_id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="0ff62029-9cbf-4732-b8e9-1f0b2aa918c7" parent_id_arme="e480b9ee-c187-4f2e-9949-e2b5a384a556" />
   <event name="Gate Offline" id_arme="4cb6df91-c658-4e87-ab28-15c4b1515ef7" parent_id_arme="0ff62029-9cbf-4732-b8e9-1f0b2aa918c7">
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Arcturus System" comparator="EQUALS" value="2.0" />
@@ -1339,7 +1339,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="70770.0" y="0.0" z="69190.0" angle="0" name="Hjorden Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <create type="neutral" x="74899.0" y="0.0" z="52064.0" angle="0" name="SY-18" hullID="1053" />
-    <create type="station" x="69677.0" y="0.0" z="49757.0" angle="0" name="Outpost 91" hullID="1503" />
+    <create type="neutral" x="69677.0" y="0.0" z="49757.0" angle="0" name="Outpost 91" hullID="1503" />
     <create type="neutral" x="74292.0" y="0.0" z="67611.0" angle="0" name="BY-23" hullID="1055" />
     <create type="neutral" x="26073.0" y="0.0" z="26680.0" angle="0" name="SR-76" hullID="1054" />
     <create type="neutral" x="73442.0" y="0.0" z="22793.0" angle="0" name="SR-24" hullID="1054" />

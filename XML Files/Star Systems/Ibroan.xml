@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="243.0" integer="yes" />
     <set_variable name="Alignment" value="Hegemony" integer="yes" />
   </start>
-  <folder_arme name="Ibroan System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="Ibroan System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <folder_arme name="Ibroan Settings" id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <folder_arme name="Ibroan Menu" id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" />
   <event name="Ibroan Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
@@ -435,7 +435,7 @@
     <set_variable name="Ibroan System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Ibroan Sector V" id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="Ibroan Sector V" id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create Ibroan Sector V" id_arme="b712d4ae-1542-49c5-9122-35ba03f9d2de" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda">
     <if_variable name="Ibroan System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -464,7 +464,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" />
   <event name="Transition to Sector VI" id_arme="9e190538-f04c-45b1-90b6-e5a6e088e125" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -553,7 +553,7 @@
     <set_variable name="Ibroan System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" />
   <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Ibroan System" comparator="EQUALS" value="2.0" />
@@ -788,7 +788,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Setmari to Ibroan" value="0.0" />
   </event>
-  <folder_arme name="Ibroan Sector VI" id_arme="c78971ed-58c2-4607-8f75-b07db6a40817" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="Ibroan Sector VI" id_arme="c78971ed-58c2-4607-8f75-b07db6a40817" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create Ibroan Sector VI" id_arme="4e5c0731-175e-4d97-a8fb-9bfc7630ee55" parent_id_arme="c78971ed-58c2-4607-8f75-b07db6a40817">
     <if_variable name="Ibroan System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -808,7 +808,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a" parent_id_arme="c78971ed-58c2-4607-8f75-b07db6a40817" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a" parent_id_arme="c78971ed-58c2-4607-8f75-b07db6a40817" />
   <event name="Transition to Sector V" id_arme="73931322-b2da-434a-a455-a2dfffdc4bc5" parent_id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -864,7 +864,7 @@
     <set_variable name="Ibroan System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="a5720fe9-527f-4008-9424-fcd658668ae6" parent_id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="a5720fe9-527f-4008-9424-fcd658668ae6" parent_id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a" />
   <event name="Gate Offline" id_arme="569e5ac1-e596-4fff-837a-1618b2258f00" parent_id_arme="a5720fe9-527f-4008-9424-fcd658668ae6">
     <if_variable name="Sector" comparator="EQUALS" value="6" />
     <if_variable name="Ibroan System" comparator="EQUALS" value="2.0" />
@@ -1105,7 +1105,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Sumri to Ibroan" value="0.0" />
   </event>
-  <folder_arme name="Ibroan Sector VII" id_arme="e2d55524-a6bd-4018-9b07-688afae855de" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" expanded_arme="" />
+  <folder_arme name="Ibroan Sector VII" id_arme="e2d55524-a6bd-4018-9b07-688afae855de" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create Ibroan Sector VII" id_arme="1163159b-b277-4e16-b80e-a71d8360c29d" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de">
     <if_variable name="Ibroan System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1124,7 +1124,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="b0176281-1c2e-4951-a043-be63996a31a1" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="b0176281-1c2e-4951-a043-be63996a31a1" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de" />
   <event name="Transition to Sector VIII" id_arme="2199956d-bdfb-450b-9c4f-e46db380aed1" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1158,7 +1158,7 @@
     <set_variable name="Ibroan System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="2504d42f-bd67-4ad8-88f6-e734f176a77d" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="2504d42f-bd67-4ad8-88f6-e734f176a77d" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1" />
   <event name="Gate Offline" id_arme="d69816b6-fd05-4a42-bb51-27a7e5e2003b" parent_id_arme="2504d42f-bd67-4ad8-88f6-e734f176a77d">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Ibroan System" comparator="EQUALS" value="2.0" />

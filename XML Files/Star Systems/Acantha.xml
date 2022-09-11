@@ -4,9 +4,9 @@
     <set_variable name="Coordinate Y" value="405.0" integer="yes" />
     <set_variable name="Alignment" value="Neutral" integer="yes" />
   </start>
-  <folder_arme name="Acantha System" id_arme="8699bae6-3874-420f-91ff-380772d038bf" expanded_arme="" />
-  <folder_arme name="Acantha Settings" id_arme="e12965cc-4adf-447b-9c58-37de11bbe78f" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" expanded_arme="" />
-  <folder_arme name="Acantha Menu" id_arme="15031bf4-211a-41db-8a94-8db570ab16ce" parent_id_arme="e12965cc-4adf-447b-9c58-37de11bbe78f" expanded_arme="" />
+  <folder_arme name="Acantha System" id_arme="8699bae6-3874-420f-91ff-380772d038bf" />
+  <folder_arme name="Acantha Settings" id_arme="e12965cc-4adf-447b-9c58-37de11bbe78f" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" />
+  <folder_arme name="Acantha Menu" id_arme="15031bf4-211a-41db-8a94-8db570ab16ce" parent_id_arme="e12965cc-4adf-447b-9c58-37de11bbe78f" />
   <event name="Acantha Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="15031bf4-211a-41db-8a94-8db570ab16ce">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
     <set_gm_button text="Lower Arc/Acantha System" />
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Acantha Sector I" id_arme="2c904c1e-52ef-4efb-b841-b1a8077998f0" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" expanded_arme="" />
+  <folder_arme name="Acantha Sector I" id_arme="2c904c1e-52ef-4efb-b841-b1a8077998f0" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" />
   <event name="Create Acantha Sector I" id_arme="18c8dc38-efaa-4cfd-969e-4a7118398db0" parent_id_arme="2c904c1e-52ef-4efb-b841-b1a8077998f0">
     <if_variable name="Acantha System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -79,7 +79,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="a6260724-ada8-4262-b488-7ea5b89a895d" parent_id_arme="2c904c1e-52ef-4efb-b841-b1a8077998f0" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="a6260724-ada8-4262-b488-7ea5b89a895d" parent_id_arme="2c904c1e-52ef-4efb-b841-b1a8077998f0" />
   <event name="Transition to Sector II" id_arme="0b12dab4-9821-49ba-baad-b62935a6cb50" parent_id_arme="a6260724-ada8-4262-b488-7ea5b89a895d">
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -113,14 +113,14 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="008d9df1-aa8c-4295-82ac-1fd4d150cb77" parent_id_arme="a6260724-ada8-4262-b488-7ea5b89a895d" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="008d9df1-aa8c-4295-82ac-1fd4d150cb77" parent_id_arme="a6260724-ada8-4262-b488-7ea5b89a895d" />
   <event name="Gate Offline" id_arme="4d2d3b10-fd64-4dd6-9e8d-b12ce7eb58a3" parent_id_arme="008d9df1-aa8c-4295-82ac-1fd4d150cb77">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Tilminra Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="bb30c99b-a653-4922-97e1-5453ddeeab0e" parent_id_arme="008d9df1-aa8c-4295-82ac-1fd4d150cb77" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="bb30c99b-a653-4922-97e1-5453ddeeab0e" parent_id_arme="008d9df1-aa8c-4295-82ac-1fd4d150cb77" />
   <event name="Ship1 Activation Range" id_arme="a679ec21-d954-4434-a3f5-4cfd907d288d" parent_id_arme="bb30c99b-a653-4922-97e1-5453ddeeab0e">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
@@ -294,14 +294,14 @@
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="779b0754-b216-4581-80fc-b990d3ad25cc" parent_id_arme="2c904c1e-52ef-4efb-b841-b1a8077998f0" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="779b0754-b216-4581-80fc-b990d3ad25cc" parent_id_arme="2c904c1e-52ef-4efb-b841-b1a8077998f0" />
   <event name="Generate Sector Entities" id_arme="8c65217d-efc0-4506-ab03-2980f876a14d" parent_id_arme="779b0754-b216-4581-80fc-b990d3ad25cc">
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="63125.0" y="0.0" z="31383.0" name="Tilminra Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="38617.0" y="0.0" z="58035.0" name="Raschad" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="61250.0" y="0.0" z="73571.0" name="Potzhu Construction" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="38617.0" y="0.0" z="58035.0" name="Raschad" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="61250.0" y="0.0" z="73571.0" name="Potzhu Construction" hullID="1003" sideValue="sectorSide" />
     <create type="neutral" x="65000.0" y="0.0" z="80535.0" angle="0" name="Potzhu Shipyards" hullID="1053" sideValue="sectorSide" />
     <create type="neutral" x="72500.0" y="0.0" z="62455.0" angle="0" name="Multada Denabite" hullID="1051" sideValue="sectorSide" />
     <create type="neutral" x="33125.0" y="0.0" z="21071.0" angle="0" name="Nautri Ores" hullID="1050" sideValue="sectorSide" />
@@ -353,7 +353,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Tilminra to Acantha" value="0.0" />
   </event>
-  <folder_arme name="Acantha Sector II" id_arme="b33f8006-a87c-49d3-85b0-fc8cc0356b9a" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" expanded_arme="" />
+  <folder_arme name="Acantha Sector II" id_arme="b33f8006-a87c-49d3-85b0-fc8cc0356b9a" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" />
   <event name="Create Acantha Sector II" id_arme="fc34aa17-05fe-45ac-a77b-c20b3e917112" parent_id_arme="b33f8006-a87c-49d3-85b0-fc8cc0356b9a">
     <if_variable name="Acantha System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -374,7 +374,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="933b529e-0da7-4b64-b4bf-39c8f99dff21" parent_id_arme="b33f8006-a87c-49d3-85b0-fc8cc0356b9a" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="933b529e-0da7-4b64-b4bf-39c8f99dff21" parent_id_arme="b33f8006-a87c-49d3-85b0-fc8cc0356b9a" />
   <event name="Transition to Sector III" id_arme="057913c3-ed78-4521-a79a-79a0b759c970" parent_id_arme="933b529e-0da7-4b64-b4bf-39c8f99dff21">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
@@ -430,12 +430,12 @@
     <set_variable name="Acantha System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="4.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="32f79e1c-9b85-40c3-b3b3-7012cb35d410" parent_id_arme="b33f8006-a87c-49d3-85b0-fc8cc0356b9a" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="32f79e1c-9b85-40c3-b3b3-7012cb35d410" parent_id_arme="b33f8006-a87c-49d3-85b0-fc8cc0356b9a" />
   <event name="Generate Sector Entities" id_arme="2c6472d8-3407-49c0-9ee3-86624abad65f" parent_id_arme="32f79e1c-9b85-40c3-b3b3-7012cb35d410">
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="65670.0" y="0.0" z="71964.0" name="Intaka" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="65670.0" y="0.0" z="71964.0" name="Intaka" hullID="1001" sideValue="sectorSide" />
     <create type="neutral" x="32054.0" y="0.0" z="39821.0" angle="0" name="SB-112" hullID="1054" sideValue="sectorSide" />
     <create type="neutral" x="51206.0" y="0.0" z="30178.0" angle="0" name="CR-982" hullID="1055" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
@@ -456,7 +456,7 @@
     <set_variable name="Acantha System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Acantha Sector III" id_arme="bbfd106a-4992-4b34-bf93-190c6f8387e1" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" expanded_arme="" />
+  <folder_arme name="Acantha Sector III" id_arme="bbfd106a-4992-4b34-bf93-190c6f8387e1" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" />
   <event name="Create Acantha Sector III" id_arme="9c562175-8659-436e-90f5-3b731b4363f4" parent_id_arme="bbfd106a-4992-4b34-bf93-190c6f8387e1">
     <if_variable name="Acantha System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -476,7 +476,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="d5545f16-3bd1-4195-8bdb-7eb3202cb02d" parent_id_arme="bbfd106a-4992-4b34-bf93-190c6f8387e1" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="d5545f16-3bd1-4195-8bdb-7eb3202cb02d" parent_id_arme="bbfd106a-4992-4b34-bf93-190c6f8387e1" />
   <event name="Transition to Sector II" id_arme="c2272293-a1a1-4ff8-9c41-f4b8536d15af" parent_id_arme="d5545f16-3bd1-4195-8bdb-7eb3202cb02d">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -510,7 +510,7 @@
     <set_variable name="Acantha System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="769c1f30-617a-4d4a-89c0-0a60f076a084" parent_id_arme="bbfd106a-4992-4b34-bf93-190c6f8387e1" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="769c1f30-617a-4d4a-89c0-0a60f076a084" parent_id_arme="bbfd106a-4992-4b34-bf93-190c6f8387e1" />
   <event name="Generate Sector Entities" id_arme="f3aa0489-e459-498a-8283-d3c2811fec9b" parent_id_arme="769c1f30-617a-4d4a-89c0-0a60f076a084">
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
@@ -530,7 +530,7 @@
     <set_variable name="Acantha System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Acantha Sector IV" id_arme="7dfd22d5-facb-4ac8-a9df-ae3af49f0278" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" expanded_arme="" />
+  <folder_arme name="Acantha Sector IV" id_arme="7dfd22d5-facb-4ac8-a9df-ae3af49f0278" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" />
   <event name="Create Acantha Sector IV" id_arme="606f1634-90cf-485e-b61b-eeead96245c4" parent_id_arme="7dfd22d5-facb-4ac8-a9df-ae3af49f0278">
     <if_variable name="Acantha System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -552,7 +552,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="736900de-9651-4510-b09a-d6b738ab65bb" parent_id_arme="7dfd22d5-facb-4ac8-a9df-ae3af49f0278" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="736900de-9651-4510-b09a-d6b738ab65bb" parent_id_arme="7dfd22d5-facb-4ac8-a9df-ae3af49f0278" />
   <event name="Transition to Sector V" id_arme="b6e035e7-f50c-40dc-9b12-1c297525f165" parent_id_arme="736900de-9651-4510-b09a-d6b738ab65bb">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
@@ -608,14 +608,14 @@
     <set_variable name="Acantha System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="2553c159-c94e-4048-b70f-fa5c4941a321" parent_id_arme="7dfd22d5-facb-4ac8-a9df-ae3af49f0278" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="2553c159-c94e-4048-b70f-fa5c4941a321" parent_id_arme="7dfd22d5-facb-4ac8-a9df-ae3af49f0278" />
   <event name="Generate Sector Entities" id_arme="a4bd24c0-5f1b-4575-a2dd-c201b90c8158" parent_id_arme="2553c159-c94e-4048-b70f-fa5c4941a321">
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="43438.0" y="0.0" z="55892.0" name="Acantha Protectorate" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="40893.0" y="0.0" z="38750.0" name="Sistera Processors" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="48929.0" y="0.0" z="67544.0" name="King Manufacturing" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="43438.0" y="0.0" z="55892.0" name="Acantha Protectorate" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="40893.0" y="0.0" z="38750.0" name="Sistera Processors" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="48929.0" y="0.0" z="67544.0" name="King Manufacturing" hullID="1003" sideValue="sectorSide" />
     <create type="neutral" x="64599.0" y="0.0" z="50267.0" angle="0" name="A'ania Denabite" hullID="1051" sideValue="sectorSide" />
     <create type="neutral" x="70358.0" y="0.0" z="39285.0" angle="0" name="Kinth Refinery" hullID="1051" sideValue="sectorSide" />
     <create type="neutral" x="84554.0" y="0.0" z="57767.0" angle="0" name="Le-Ray Refinery" hullID="1051" sideValue="sectorSide" />
@@ -644,7 +644,7 @@
     <set_variable name="Acantha System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Acantha Sector V" id_arme="61e9dc9c-f81b-467d-8250-2dcb6699ad2d" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" expanded_arme="" />
+  <folder_arme name="Acantha Sector V" id_arme="61e9dc9c-f81b-467d-8250-2dcb6699ad2d" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" />
   <event name="Create Acantha Sector V" id_arme="5d1ded2c-1775-4668-9ddb-c96b81085eae" parent_id_arme="61e9dc9c-f81b-467d-8250-2dcb6699ad2d">
     <if_variable name="Acantha System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -667,7 +667,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="28d9d8df-7e7f-456e-9f81-3905d16ca2e8" parent_id_arme="61e9dc9c-f81b-467d-8250-2dcb6699ad2d" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="28d9d8df-7e7f-456e-9f81-3905d16ca2e8" parent_id_arme="61e9dc9c-f81b-467d-8250-2dcb6699ad2d" />
   <event name="Transition to Sector VI" id_arme="ad2de29e-3cba-439b-83d0-57eef2d85db0" parent_id_arme="28d9d8df-7e7f-456e-9f81-3905d16ca2e8">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -756,14 +756,14 @@
     <set_variable name="Acantha System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="9f441a31-e2ff-40d0-b24a-3182655b1294" parent_id_arme="28d9d8df-7e7f-456e-9f81-3905d16ca2e8" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="9f441a31-e2ff-40d0-b24a-3182655b1294" parent_id_arme="28d9d8df-7e7f-456e-9f81-3905d16ca2e8" />
   <event name="Gate Offline" id_arme="403c10ab-9a33-4bae-bbea-fe74d37114da" parent_id_arme="9f441a31-e2ff-40d0-b24a-3182655b1294">
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Ashia Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="fb38a980-562a-4573-86ba-b6348165fdd3" parent_id_arme="9f441a31-e2ff-40d0-b24a-3182655b1294" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="fb38a980-562a-4573-86ba-b6348165fdd3" parent_id_arme="9f441a31-e2ff-40d0-b24a-3182655b1294" />
   <event name="Ship1 Activation Range" id_arme="2b927622-9266-440c-84d9-ae475b7928cd" parent_id_arme="fb38a980-562a-4573-86ba-b6348165fdd3">
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
@@ -937,15 +937,15 @@
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="ac8a7ac7-4f22-4fe8-b26e-2d6129b639da" parent_id_arme="61e9dc9c-f81b-467d-8250-2dcb6699ad2d" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="ac8a7ac7-4f22-4fe8-b26e-2d6129b639da" parent_id_arme="61e9dc9c-f81b-467d-8250-2dcb6699ad2d" />
   <event name="Generate Sector Entities" id_arme="0f4c3c4e-56c4-4975-9d6f-300f27581cec" parent_id_arme="ac8a7ac7-4f22-4fe8-b26e-2d6129b639da">
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="50000.0" y="0.0" z="49732.0" name="Ashia Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="29108.0" y="0.0" z="24151.0" name="Ni'yata" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="34063.0" y="0.0" z="81607.0" name="Utimni" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="85759.0" y="0.0" z="46517.0" name="Ozkal" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="29108.0" y="0.0" z="24151.0" name="Ni'yata" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="34063.0" y="0.0" z="81607.0" name="Utimni" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="85759.0" y="0.0" z="46517.0" name="Ozkal" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -992,7 +992,7 @@
     <set_object_property property="angle" value="3.141592654" player_slot="7" />
     <set_variable name="Ashia to Acantha" value="0.0" />
   </event>
-  <folder_arme name="Acantha Sector VI" id_arme="92ad7694-f13d-4790-8242-f62ce945e35b" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" expanded_arme="" />
+  <folder_arme name="Acantha Sector VI" id_arme="92ad7694-f13d-4790-8242-f62ce945e35b" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" />
   <event name="Create Acantha Sector VI" id_arme="d774c578-1ca0-4ed6-87cb-23293ce21482" parent_id_arme="92ad7694-f13d-4790-8242-f62ce945e35b">
     <if_variable name="Acantha System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -1012,7 +1012,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="c8e5ced1-98b1-4ee7-8356-fb155c634b7b" parent_id_arme="92ad7694-f13d-4790-8242-f62ce945e35b" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="c8e5ced1-98b1-4ee7-8356-fb155c634b7b" parent_id_arme="92ad7694-f13d-4790-8242-f62ce945e35b" />
   <event name="Transition to Sector V" id_arme="04a82425-4869-41e9-a1e8-aba0ade226b2" parent_id_arme="c8e5ced1-98b1-4ee7-8356-fb155c634b7b">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
@@ -1068,13 +1068,13 @@
     <set_variable name="Acantha System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="2.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="d00af73d-afa3-47ad-9c97-68fb68738c5b" parent_id_arme="92ad7694-f13d-4790-8242-f62ce945e35b" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="d00af73d-afa3-47ad-9c97-68fb68738c5b" parent_id_arme="92ad7694-f13d-4790-8242-f62ce945e35b" />
   <event name="Generate Sector Entities" id_arme="4b1c5311-67c1-4647-9a4b-339e3f752067" parent_id_arme="d00af73d-afa3-47ad-9c97-68fb68738c5b">
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="36072.0" y="0.0" z="36875.0" name="Ladna Labs" hullID="1004" sideValue="sectorSide" />
-    <create type="station" x="63795.0" y="0.0" z="57767.0" name="Nessin" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="36072.0" y="0.0" z="36875.0" name="Ladna Labs" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="63795.0" y="0.0" z="57767.0" name="Nessin" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -1092,7 +1092,7 @@
     <set_variable name="Acantha System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Acantha Sector VII" id_arme="ed895b10-3959-4165-a99c-f966f69db06d" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" expanded_arme="" />
+  <folder_arme name="Acantha Sector VII" id_arme="ed895b10-3959-4165-a99c-f966f69db06d" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" />
   <event name="Create Acantha Sector VII" id_arme="e728c573-b201-4de5-a6c7-bf9695e34a12" parent_id_arme="ed895b10-3959-4165-a99c-f966f69db06d">
     <if_variable name="Acantha System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1113,7 +1113,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="a34ea794-684d-4a2a-b015-ac694d94a3bf" parent_id_arme="ed895b10-3959-4165-a99c-f966f69db06d" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="a34ea794-684d-4a2a-b015-ac694d94a3bf" parent_id_arme="ed895b10-3959-4165-a99c-f966f69db06d" />
   <event name="Transition to Sector VIII" id_arme="bbe544d9-8c9e-41e7-9569-33df90e024e8" parent_id_arme="a34ea794-684d-4a2a-b015-ac694d94a3bf">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1147,13 +1147,13 @@
     <set_variable name="Acantha System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="b297b919-64b6-4c73-bb08-f9677fbb49ed" parent_id_arme="ed895b10-3959-4165-a99c-f966f69db06d" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="b297b919-64b6-4c73-bb08-f9677fbb49ed" parent_id_arme="ed895b10-3959-4165-a99c-f966f69db06d" />
   <event name="Generate Sector Entities" id_arme="238e70f4-936a-4678-80e6-10ba39cb7a84" parent_id_arme="b297b919-64b6-4c73-bb08-f9677fbb49ed">
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="45581.0" y="0.0" z="67678.0" name="Betos Bazaar" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="55893.0" y="0.0" z="31919.0" name="Onzi Oasis" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="45581.0" y="0.0" z="67678.0" name="Betos Bazaar" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="55893.0" y="0.0" z="31919.0" name="Onzi Oasis" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -1171,7 +1171,7 @@
     <set_variable name="Acantha System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Acantha Sector VIII" id_arme="8b20f9ff-cb4f-4f0d-9b34-24c3695dae8b" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" expanded_arme="" />
+  <folder_arme name="Acantha Sector VIII" id_arme="8b20f9ff-cb4f-4f0d-9b34-24c3695dae8b" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" />
   <event name="Create Acantha Sector VIII" id_arme="032e2df2-d890-492b-80d1-bba00735f0e2" parent_id_arme="8b20f9ff-cb4f-4f0d-9b34-24c3695dae8b">
     <if_variable name="Acantha System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -1191,7 +1191,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="31d70e8c-3727-4449-a93f-47e0be988843" parent_id_arme="8b20f9ff-cb4f-4f0d-9b34-24c3695dae8b" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="31d70e8c-3727-4449-a93f-47e0be988843" parent_id_arme="8b20f9ff-cb4f-4f0d-9b34-24c3695dae8b" />
   <event name="Transition to Sector IX" id_arme="dbc9ec18-ae18-4404-818a-e0a3afe9a46d" parent_id_arme="31d70e8c-3727-4449-a93f-47e0be988843">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
@@ -1247,15 +1247,15 @@
     <set_variable name="Acantha System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="4.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="4df95258-ec67-482c-8a69-5145e1b8664c" parent_id_arme="8b20f9ff-cb4f-4f0d-9b34-24c3695dae8b" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="4df95258-ec67-482c-8a69-5145e1b8664c" parent_id_arme="8b20f9ff-cb4f-4f0d-9b34-24c3695dae8b" />
   <event name="Generate Sector Entities" id_arme="9ddd6a4d-ad0e-4f82-a0f5-0fe80dff4101" parent_id_arme="4df95258-ec67-482c-8a69-5145e1b8664c">
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="50000.0" y="0.0" z="62187.0" name="Olvido" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" />
     <create type="blackHole" x="50000.0" y="0.0" z="62187.0" name="Olvido" />
-    <create type="station" x="77456.0" y="0.0" z="23214.0" name="Quee" hullID="1003" sideValue="sectorSide" />
-    <create type="station" x="43974.0" y="0.0" z="22946.0" name="Gi'Yanu Mall" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="77456.0" y="0.0" z="23214.0" name="Quee" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="43974.0" y="0.0" z="22946.0" name="Gi'Yanu Mall" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -1275,7 +1275,7 @@
     <set_variable name="Acantha System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Acantha Sector IX" id_arme="a324e02e-48a7-4ca4-b4dd-f54fbd8047cb" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" expanded_arme="" />
+  <folder_arme name="Acantha Sector IX" id_arme="a324e02e-48a7-4ca4-b4dd-f54fbd8047cb" parent_id_arme="8699bae6-3874-420f-91ff-380772d038bf" />
   <event name="Create Acantha Sector IX" id_arme="3818de9c-4ab7-4b57-b01b-263a956ca33e" parent_id_arme="a324e02e-48a7-4ca4-b4dd-f54fbd8047cb">
     <if_variable name="Acantha System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1297,7 +1297,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="1d5d7852-c905-4f5b-98e4-0a9ed429cfbd" parent_id_arme="a324e02e-48a7-4ca4-b4dd-f54fbd8047cb" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="1d5d7852-c905-4f5b-98e4-0a9ed429cfbd" parent_id_arme="a324e02e-48a7-4ca4-b4dd-f54fbd8047cb" />
   <event name="Transition to Sector VIII" id_arme="0aec8b8b-55bb-4d29-9ef9-7cd40740335e" parent_id_arme="1d5d7852-c905-4f5b-98e4-0a9ed429cfbd">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1331,14 +1331,14 @@
     <set_variable name="Acantha System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="47fdceab-428e-4823-bf82-0bd5708d82da" parent_id_arme="1d5d7852-c905-4f5b-98e4-0a9ed429cfbd" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="47fdceab-428e-4823-bf82-0bd5708d82da" parent_id_arme="1d5d7852-c905-4f5b-98e4-0a9ed429cfbd" />
   <event name="Gate Offline" id_arme="e591e603-640d-42eb-9e9f-58f4f99ab7b8" parent_id_arme="47fdceab-428e-4823-bf82-0bd5708d82da">
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
     <set_object_property property="rollDelta" value="0.3" name="Krellis Gate" />
   </event>
-  <folder_arme name="Tracking System" id_arme="463b061d-e66b-47ee-ad9e-721f42d146cb" parent_id_arme="47fdceab-428e-4823-bf82-0bd5708d82da" expanded_arme="" />
+  <folder_arme name="Tracking System" id_arme="463b061d-e66b-47ee-ad9e-721f42d146cb" parent_id_arme="47fdceab-428e-4823-bf82-0bd5708d82da" />
   <event name="Ship1 Activation Range" id_arme="f79b7713-f1dd-48ff-8bb4-86fee8814723" parent_id_arme="463b061d-e66b-47ee-ad9e-721f42d146cb">
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
@@ -1512,14 +1512,14 @@
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="1109c9b3-3332-4556-a510-c7fa89d82767" parent_id_arme="a324e02e-48a7-4ca4-b4dd-f54fbd8047cb" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="1109c9b3-3332-4556-a510-c7fa89d82767" parent_id_arme="a324e02e-48a7-4ca4-b4dd-f54fbd8047cb" />
   <event name="Generate Sector Entities" id_arme="ee4a268d-9783-4b51-b784-3e057b6dcff3" parent_id_arme="1109c9b3-3332-4556-a510-c7fa89d82767">
     <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="34733.0" y="0.0" z="65267.0" name="Krellis Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="79599.0" y="0.0" z="53348.0" name="Nuzeli" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="54018.0" y="0.0" z="28571.0" name="Yimsu" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="79599.0" y="0.0" z="53348.0" name="Nuzeli" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="54018.0" y="0.0" z="28571.0" name="Yimsu" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Acantha IX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>

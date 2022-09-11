@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="169.0" integer="yes" />
     <set_variable name="Alignment" value="Hegemony" integer="yes" />
   </start>
-  <folder_arme name="Erebus System" id_arme="598b2edb-0504-4df9-8258-b15950408102" expanded_arme="" />
+  <folder_arme name="Erebus System" id_arme="598b2edb-0504-4df9-8258-b15950408102" />
   <folder_arme name="Erebus Settings" id_arme="12aa1282-8949-4c44-84e0-264d16ea10f1" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
   <folder_arme name="Erebus Menu" id_arme="80da5600-2f4d-4d45-bc35-17fb592be1b2" parent_id_arme="12aa1282-8949-4c44-84e0-264d16ea10f1" />
   <event name="Erebus Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="80da5600-2f4d-4d45-bc35-17fb592be1b2">
@@ -121,13 +121,13 @@
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
-    <create type="station" x="46309.0" y="0.0" z="24306.0" angle="0" name="S-05" hullID="1006" sideValue="1" />
-    <create type="station" x="49060.0" y="0.0" z="37044.0" angle="0" name="D-17" hullID="1006" sideValue="1" />
-    <create type="station" x="57021.0" y="0.0" z="49638.0" angle="0" name="H-80" hullID="1006" sideValue="1" />
-    <create type="station" x="65851.0" y="0.0" z="60060.0" angle="0" name="F-53" hullID="1006" sideValue="1" />
-    <create type="station" x="51231.0" y="0.0" z="75838.0" angle="0" name="C-12" hullID="1005" sideValue="1" />
-    <create type="station" x="49928.0" y="0.0" z="78733.0" angle="0" name="L-28" hullID="1005" sideValue="1" />
-    <create type="station" x="53257.0" y="0.0" z="78588.0" angle="0" name="P-01" hullID="1005" sideValue="1" />
+    <create type="neutral" x="46309.0" y="0.0" z="24306.0" angle="0" name="S-05" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="49060.0" y="0.0" z="37044.0" angle="0" name="D-17" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="57021.0" y="0.0" z="49638.0" angle="0" name="H-80" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="65851.0" y="0.0" z="60060.0" angle="0" name="F-53" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="51231.0" y="0.0" z="75838.0" angle="0" name="C-12" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="49928.0" y="0.0" z="78733.0" angle="0" name="L-28" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="53257.0" y="0.0" z="78588.0" angle="0" name="P-01" hullID="1005" sideValue="sectorSide" />
   </event>
   <event name="Settings" id_arme="97196820-ec26-4ae1-a119-874bafdb42b4" parent_id_arme="d9b63485-db01-41e5-b903-5fa8b7777157">
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
@@ -150,7 +150,7 @@
     <set_variable name="Erebus System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Erebus Sector II" id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" expanded_arme="" />
+  <folder_arme name="Erebus Sector II" id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
   <event name="Create Erebus Sector II" id_arme="eb102f50-488c-45f5-8c63-0efaa4cde4b2" parent_id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf">
     <if_timer_finished name="Transition" />
     <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
@@ -175,7 +175,7 @@
     <create count="36" type="asteroids" startX="73100.0" startY="0.0" startZ="33147.0" endX="71742.0" endY="0.0" endZ="46235.0" randomRange="6436" />
     <create count="10" type="nebulas" startX="26623.0" startY="0.0" startZ="54414.0" endX="18517.0" endY="0.0" endZ="68166.0" randomRange="9214" />
   </event>
-  <folder_arme name="Navigation" id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969" parent_id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969" parent_id_arme="d346f367-75f1-40a0-afa0-bdc1b0d9dbaf" />
   <event name="Transition to Sector III" id_arme="e04c83bc-0248-4d71-97d0-adbbcaf2b4db" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
@@ -231,7 +231,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Erebus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="8e85790b-6991-45ad-bb7c-9c27771e2ab2" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="8e85790b-6991-45ad-bb7c-9c27771e2ab2" parent_id_arme="ad7c39f3-9a30-4d00-b65b-1260a6763969" />
   <event name="Gate Offline" id_arme="00068d28-b9dc-4ee1-ab6d-4beeb52a52f0" parent_id_arme="8e85790b-6991-45ad-bb7c-9c27771e2ab2">
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
@@ -418,12 +418,12 @@
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="37361.0" y="0.0" z="17457.0" angle="0" name="Cronus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="56070.0" y="0.0" z="28412.0" angle="0" name="N-10" hullID="1007" sideValue="1" />
-    <create type="station" x="44700.0" y="0.0" z="35326.0" angle="0" name="Z-142" hullID="1007" sideValue="1" />
-    <create type="station" x="73586.0" y="0.0" z="43777.0" angle="0" name="X-11" hullID="1005" sideValue="1" />
-    <create type="station" x="56684.0" y="0.0" z="66517.0" angle="0" name="F-56" hullID="1006" sideValue="1" />
-    <create type="station" x="27952.0" y="0.0" z="67131.0" angle="0" name="P-92" hullID="1007" sideValue="1" />
+    <create type="genericMesh" x="37361.0" y="0.0" z="17457.0" name="Cronus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="56070.0" y="0.0" z="28412.0" angle="0" name="N-10" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="44700.0" y="0.0" z="35326.0" angle="0" name="Z-142" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="73586.0" y="0.0" z="43777.0" angle="0" name="X-11" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="56684.0" y="0.0" z="66517.0" angle="0" name="F-56" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="27952.0" y="0.0" z="67131.0" angle="0" name="P-92" hullID="1007" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -561,9 +561,9 @@
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="51520.0" y="0.0" z="28069.0" angle="0" name="J-48" hullID="1007" sideValue="1" />
-    <create type="station" x="38637.0" y="0.0" z="37478.0" angle="0" name="G-66" hullID="1007" sideValue="1" />
-    <create type="station" x="52244.0" y="0.0" z="45729.0" angle="0" name="Q-09" hullID="1007" sideValue="1" />
+    <create type="neutral" x="51520.0" y="0.0" z="28069.0" angle="0" name="J-48" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="38637.0" y="0.0" z="37478.0" angle="0" name="G-66" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="52244.0" y="0.0" z="45729.0" angle="0" name="Q-09" hullID="1007" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -647,11 +647,11 @@
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="19675.0" y="0.0" z="39505.0" angle="0" name="C-29" hullID="1006" sideValue="1" />
-    <create type="station" x="24162.0" y="0.0" z="50506.0" angle="0" name="N-57" hullID="1007" sideValue="1" />
-    <create type="station" x="15043.0" y="0.0" z="46887.0" angle="0" name="V-14" hullID="1005" sideValue="1" />
-    <create type="station" x="31400.0" y="0.0" z="34149.0" angle="0" name="E-82" hullID="1006" sideValue="1" />
-    <create type="station" x="54560.0" y="0.0" z="23727.0" angle="0" name="K-98" hullID="1008" sideValue="1" />
+    <create type="neutral" x="19675.0" y="0.0" z="39505.0" angle="0" name="C-29" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="24162.0" y="0.0" z="50506.0" angle="0" name="N-57" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="15043.0" y="0.0" z="46887.0" angle="0" name="V-14" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="31400.0" y="0.0" z="34149.0" angle="0" name="E-82" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="54560.0" y="0.0" z="23727.0" angle="0" name="K-98" hullID="1008" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -761,13 +761,13 @@
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="62880.0" y="0.0" z="35738.0" angle="0" name="I-34" hullID="1006" sideValue="1" />
-    <create type="station" x="80723.0" y="0.0" z="82230.0" angle="0" name="G-34" hullID="1006" sideValue="1" />
-    <create type="station" x="73184.0" y="0.0" z="68282.0" angle="0" name="B-88" hullID="1006" sideValue="1" />
-    <create type="station" x="75194.0" y="0.0" z="77581.0" angle="0" name="J-92" hullID="1006" sideValue="1" />
-    <create type="station" x="51822.0" y="0.0" z="43277.0" angle="0" name="K-55" hullID="1005" sideValue="1" />
-    <create type="station" x="41142.0" y="0.0" z="51319.0" angle="0" name="N-01" hullID="1005" sideValue="1" />
-    <create type="station" x="30587.0" y="0.0" z="58607.0" angle="0" name="X-63" hullID="1005" sideValue="1" />
+    <create type="neutral" x="62880.0" y="0.0" z="35738.0" angle="0" name="I-34" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="80723.0" y="0.0" z="82230.0" angle="0" name="G-34" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="73184.0" y="0.0" z="68282.0" angle="0" name="B-88" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="75194.0" y="0.0" z="77581.0" angle="0" name="J-92" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="51822.0" y="0.0" z="43277.0" angle="0" name="K-55" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="41142.0" y="0.0" z="51319.0" angle="0" name="N-01" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="30587.0" y="0.0" z="58607.0" angle="0" name="X-63" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -911,12 +911,12 @@
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="53158.0" y="0.0" z="56170.0" angle="0" name="L-70" hullID="1005" sideValue="1" />
-    <create type="station" x="44316.0" y="0.0" z="59036.0" angle="0" name="CP-16" hullID="1007" sideValue="1" />
-    <create type="station" x="54033.0" y="0.0" z="63991.0" angle="0" name="Q-12" hullID="1006" sideValue="1" />
-    <create type="station" x="79397.0" y="0.0" z="45326.0" angle="0" name="M-09" hullID="1005" sideValue="1" />
-    <create type="station" x="73518.0" y="0.0" z="39899.0" angle="0" name="G-01" hullID="1005" sideValue="1" />
-    <create type="station" x="29046.0" y="0.0" z="38994.0" angle="0" name="S-21" hullID="1007" sideValue="1" />
+    <create type="neutral" x="53158.0" y="0.0" z="56170.0" angle="0" name="L-70" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="44316.0" y="0.0" z="59036.0" angle="0" name="CP-16" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="54033.0" y="0.0" z="63991.0" angle="0" name="Q-12" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="79397.0" y="0.0" z="45326.0" angle="0" name="M-09" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="73518.0" y="0.0" z="39899.0" angle="0" name="G-01" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="29046.0" y="0.0" z="38994.0" angle="0" name="S-21" hullID="1007" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1058,10 +1058,10 @@
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="47299.0" y="0.0" z="62376.0" angle="0" name="L-43" hullID="1006" sideValue="1" />
-    <create type="station" x="41393.0" y="0.0" z="63884.0" angle="0" name="X-08" hullID="1006" sideValue="1" />
-    <create type="station" x="43906.0" y="0.0" z="67528.0" angle="0" name="G-23" hullID="1006" sideValue="1" />
-    <create type="station" x="28074.0" y="0.0" z="36115.0" angle="0" name="C-25" hullID="1005" sideValue="1" />
+    <create type="neutral" x="47299.0" y="0.0" z="62376.0" angle="0" name="L-43" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="41393.0" y="0.0" z="63884.0" angle="0" name="X-08" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="43906.0" y="0.0" z="67528.0" angle="0" name="G-23" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="28074.0" y="0.0" z="36115.0" angle="0" name="C-25" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1260,10 +1260,10 @@
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="47550.0" y="0.0" z="73685.0" angle="0" name="L-04" hullID="1007" sideValue="1" />
-    <create type="station" x="51697.0" y="0.0" z="77204.0" angle="0" name="G-91" hullID="1007" sideValue="1" />
-    <create type="station" x="54713.0" y="0.0" z="80596.0" angle="0" name="B-70" hullID="1007" sideValue="1" />
-    <create type="station" x="61875.0" y="0.0" z="42523.0" angle="0" name="D-50" hullID="1008" sideValue="1" />
+    <create type="neutral" x="47550.0" y="0.0" z="73685.0" angle="0" name="L-04" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="51697.0" y="0.0" z="77204.0" angle="0" name="G-91" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="54713.0" y="0.0" z="80596.0" angle="0" name="B-70" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="61875.0" y="0.0" z="42523.0" angle="0" name="D-50" hullID="1008" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1283,7 +1283,7 @@
     <set_variable name="Erebus System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Erebus Sector X" id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" expanded_arme="" />
+  <folder_arme name="Erebus Sector X" id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147" parent_id_arme="598b2edb-0504-4df9-8258-b15950408102" />
   <event name="Create Erebus Sector X" id_arme="67a8c664-ab93-4780-8135-0d6a85573aa0" parent_id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147">
     <if_timer_finished name="Transition" />
     <if_variable name="Erebus System" comparator="EQUALS" value="1.0" />
@@ -1311,7 +1311,7 @@
     <create count="40" type="nebulas" startX="83362.0" startY="0.0" startZ="77832.0" endX="58859.0" endY="0.0" endZ="92910.0" randomRange="7675" />
     <create count="10" type="nebulas" startX="75948.0" startY="0.0" startZ="24178.0" endX="75948.0" endY="0.0" endZ="24178.0" randomRange="8564" />
   </event>
-  <folder_arme name="Navigation" id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45" parent_id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45" parent_id_arme="54263c01-7937-4d8c-a8e8-00e7f922f147" />
   <event name="Transition to Sector XI" id_arme="d19584ac-c927-4d85-a8f3-2fd4cae99eaa" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
@@ -1367,7 +1367,7 @@
     <set_variable name="Sector" value="5.0" integer="yes" />
     <set_variable name="Erebus System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="645dc0af-c04a-4407-becb-232f36b36757" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="645dc0af-c04a-4407-becb-232f36b36757" parent_id_arme="8c7716e7-a6e5-4f65-beea-a2752e54be45" />
   <event name="Gate Offline" id_arme="e7c63da4-e411-407a-a9ae-d54dd7c452c7" parent_id_arme="645dc0af-c04a-4407-becb-232f36b36757">
     <if_variable name="Sector" comparator="EQUALS" value="10" />
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
@@ -1554,8 +1554,8 @@
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="10" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="42775.0" y="0.0" z="52952.0" angle="0" name="Sierra Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="22671.0" y="0.0" z="25434.0" angle="0" name="H-48" hullID="1005" sideValue="1" />
+    <create type="genericMesh" x="42775.0" y="0.0" z="52952.0" name="Sierra Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="22671.0" y="0.0" z="25434.0" angle="0" name="H-48" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1693,11 +1693,11 @@
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="11" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="82608.0" y="0.0" z="35612.0" angle="0" name="F-55" hullID="1007" sideValue="1" />
-    <create type="station" x="36116.0" y="0.0" z="48931.0" angle="0" name="A-17" hullID="1005" sideValue="1" />
-    <create type="station" x="57854.0" y="0.0" z="51193.0" angle="0" name="S-10" hullID="1008" sideValue="1" />
-    <create type="station" x="89770.0" y="0.0" z="23549.0" angle="0" name="Q-49" hullID="1007" sideValue="1" />
-    <create type="station" x="82105.0" y="0.0" z="47047.0" angle="0" name="G-60" hullID="1007" sideValue="1" />
+    <create type="neutral" x="82608.0" y="0.0" z="35612.0" angle="0" name="F-55" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="36116.0" y="0.0" z="48931.0" angle="0" name="A-17" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="57854.0" y="0.0" z="51193.0" angle="0" name="S-10" hullID="1008" sideValue="sectorSide" />
+    <create type="neutral" x="89770.0" y="0.0" z="23549.0" angle="0" name="Q-49" hullID="1007" sideValue="sectorSide" />
+    <create type="neutral" x="82105.0" y="0.0" z="47047.0" angle="0" name="G-60" hullID="1007" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1783,11 +1783,11 @@
     <if_variable name="Erebus System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="12" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="39131.0" y="0.0" z="40513.0" angle="0" name="E-63" hullID="1005" sideValue="1" />
-    <create type="station" x="43466.0" y="0.0" z="37686.0" angle="0" name="W-33" hullID="1005" sideValue="1" />
-    <create type="station" x="34796.0" y="0.0" z="43340.0" angle="0" name="M-38" hullID="1008" sideValue="1" />
-    <create type="station" x="69414.0" y="0.0" z="25057.0" angle="0" name="C-48" hullID="1006" sideValue="1" />
-    <create type="station" x="67655.0" y="0.0" z="33853.0" angle="0" name="V-01" hullID="1006" sideValue="1" />
+    <create type="neutral" x="39131.0" y="0.0" z="40513.0" angle="0" name="E-63" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="43466.0" y="0.0" z="37686.0" angle="0" name="W-33" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="34796.0" y="0.0" z="43340.0" angle="0" name="M-38" hullID="1008" sideValue="sectorSide" />
+    <create type="neutral" x="69414.0" y="0.0" z="25057.0" angle="0" name="C-48" hullID="1006" sideValue="sectorSide" />
+    <create type="neutral" x="67655.0" y="0.0" z="33853.0" angle="0" name="V-01" hullID="1006" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

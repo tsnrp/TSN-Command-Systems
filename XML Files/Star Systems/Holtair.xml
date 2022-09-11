@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="353.0" integer="yes" />
     <set_variable name="Alignment" value="Hegemony" integer="yes" />
   </start>
-  <folder_arme name="Holtair System" id_arme="2d2332be-9df8-4041-bf28-52a36945152f" expanded_arme="" />
+  <folder_arme name="Holtair System" id_arme="2d2332be-9df8-4041-bf28-52a36945152f" />
   <folder_arme name="Holtair Settings" id_arme="41df319e-2e8f-4ade-97ab-121217a4b56a" parent_id_arme="2d2332be-9df8-4041-bf28-52a36945152f" />
   <folder_arme name="Holtair Menu" id_arme="8a916818-6266-4df6-82af-3c5a87370286" parent_id_arme="41df319e-2e8f-4ade-97ab-121217a4b56a" />
   <event name="Holtair Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="8a916818-6266-4df6-82af-3c5a87370286">
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Holtair Sector I" id_arme="cc7ebdec-7a17-40e6-a813-22c13c8b12e2" parent_id_arme="2d2332be-9df8-4041-bf28-52a36945152f" expanded_arme="" />
+  <folder_arme name="Holtair Sector I" id_arme="cc7ebdec-7a17-40e6-a813-22c13c8b12e2" parent_id_arme="2d2332be-9df8-4041-bf28-52a36945152f" />
   <event name="Create Holtair Sector I" id_arme="1873a45f-276b-4bd8-bb1a-9d11ebb6b243" parent_id_arme="cc7ebdec-7a17-40e6-a813-22c13c8b12e2">
     <if_timer_finished name="Transition" />
     <if_variable name="Holtair System" comparator="EQUALS" value="1.0" />
@@ -77,7 +77,7 @@
     <create count="48" type="asteroids" startX="54596.0" startY="0.0" startZ="51276.0" endX="16043.0" endY="0.0" endZ="66468.0" randomRange="6198" />
     <create count="24" type="nebulas" startX="82809.0" startY="0.0" startZ="64042.0" endX="65830.0" endY="0.0" endZ="52042.0" randomRange="3675" />
   </event>
-  <folder_arme name="Navigation" id_arme="7511e82d-877e-4d8a-a1ef-fe55e5056514" parent_id_arme="cc7ebdec-7a17-40e6-a813-22c13c8b12e2" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="7511e82d-877e-4d8a-a1ef-fe55e5056514" parent_id_arme="cc7ebdec-7a17-40e6-a813-22c13c8b12e2" />
   <event name="Transition to Sector II" id_arme="26406547-0701-4922-a600-e5951baf1d36" parent_id_arme="7511e82d-877e-4d8a-a1ef-fe55e5056514">
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1" />
@@ -111,7 +111,7 @@
     <set_variable name="Sector" value="6.0" integer="yes" />
     <set_variable name="Holtair System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="1f18d78d-832d-4629-9fe4-b7a01267e3ec" parent_id_arme="7511e82d-877e-4d8a-a1ef-fe55e5056514" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="1f18d78d-832d-4629-9fe4-b7a01267e3ec" parent_id_arme="7511e82d-877e-4d8a-a1ef-fe55e5056514" />
   <event name="Gate Offline" id_arme="fb6b721b-5a71-438a-b4c0-46c6c541f0c0" parent_id_arme="1f18d78d-832d-4629-9fe4-b7a01267e3ec">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
@@ -298,11 +298,11 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="52997.0" y="0.0" z="69590.0" angle="0" name="Meera Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="63149.0" y="0.0" z="34680.0" angle="0" name="S-77" hullID="1005" />
-    <create type="station" x="33660.0" y="0.0" z="40425.0" angle="0" name="F-10" hullID="1005" />
-    <create type="station" x="53447.0" y="0.0" z="51021.0" angle="0" name="X-91" hullID="1005" />
-    <create type="station" x="78596.0" y="0.0" z="79617.0" angle="0" name="V-26" hullID="1005" />
+    <create type="genericMesh" x="52997.0" y="0.0" z="69590.0" name="Meera Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="63149.0" y="0.0" z="34680.0" angle="0" name="S-77" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="33660.0" y="0.0" z="40425.0" angle="0" name="F-10" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="53447.0" y="0.0" z="51021.0" angle="0" name="X-91" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="78596.0" y="0.0" z="79617.0" angle="0" name="V-26" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -434,8 +434,8 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="65064.0" y="0.0" z="53829.0" angle="0" name="D-90" hullID="1005" />
-    <create type="station" x="42852.0" y="0.0" z="36468.0" angle="0" name="C-37" hullID="1008" />
+    <create type="neutral" x="65064.0" y="0.0" z="53829.0" angle="0" name="D-90" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="42852.0" y="0.0" z="36468.0" angle="0" name="C-37" hullID="1008" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -534,9 +534,9 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="48469.0" y="0.0" z="42595.0" angle="0" name="J-84" hullID="1005" />
-    <create type="station" x="64171.0" y="0.0" z="50510.0" angle="0" name="H-47" hullID="1005" />
-    <create type="station" x="47575.0" y="0.0" z="51787.0" angle="0" name="K-55" hullID="1005" />
+    <create type="neutral" x="48469.0" y="0.0" z="42595.0" angle="0" name="J-84" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="64171.0" y="0.0" z="50510.0" angle="0" name="H-47" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="47575.0" y="0.0" z="51787.0" angle="0" name="K-55" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -618,9 +618,9 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="10568.0" y="0.0" z="36099.0" angle="0" name="V-42" hullID="1005" />
-    <create type="station" x="17376.0" y="0.0" z="38936.0" angle="0" name="L-63" hullID="1005" />
-    <create type="station" x="9575.0" y="0.0" z="43617.0" angle="0" name="B-00" hullID="1005" />
+    <create type="neutral" x="10568.0" y="0.0" z="36099.0" angle="0" name="V-42" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="17376.0" y="0.0" z="38936.0" angle="0" name="L-63" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="9575.0" y="0.0" z="43617.0" angle="0" name="B-00" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -722,7 +722,7 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="34298.0" y="0.0" z="21787.0" angle="0" name="K-18" hullID="1008" />
+    <create type="neutral" x="34298.0" y="0.0" z="21787.0" angle="0" name="K-18" hullID="1008" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -858,11 +858,11 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="6.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="51213.0" y="0.0" z="78658.0" angle="0" name="U-67" hullID="1005" />
-    <create type="station" x="57724.0" y="0.0" z="83637.0" angle="0" name="Y-15" hullID="1005" />
-    <create type="station" x="18213.0" y="0.0" z="15021.0" angle="0" name="W-40" hullID="1005" />
-    <create type="station" x="21532.0" y="0.0" z="18212.0" angle="0" name="I-65" hullID="1005" />
-    <create type="station" x="49618.0" y="0.0" z="37744.0" angle="0" name="N-32" hullID="1005" />
+    <create type="neutral" x="51213.0" y="0.0" z="78658.0" angle="0" name="U-67" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="57724.0" y="0.0" z="83637.0" angle="0" name="Y-15" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="18213.0" y="0.0" z="15021.0" angle="0" name="W-40" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="21532.0" y="0.0" z="18212.0" angle="0" name="I-65" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="49618.0" y="0.0" z="37744.0" angle="0" name="N-32" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -883,7 +883,7 @@
     <set_variable name="Holtair System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Holtair Sector VII" id_arme="7ed71a57-c631-4e36-a2be-ead0e209a613" parent_id_arme="2d2332be-9df8-4041-bf28-52a36945152f" expanded_arme="" />
+  <folder_arme name="Holtair Sector VII" id_arme="7ed71a57-c631-4e36-a2be-ead0e209a613" parent_id_arme="2d2332be-9df8-4041-bf28-52a36945152f" />
   <event name="Create Holtair Sector VII" id_arme="654aa3d2-96da-4027-b217-6549303a30a1" parent_id_arme="7ed71a57-c631-4e36-a2be-ead0e209a613">
     <if_timer_finished name="Transition" />
     <if_variable name="Holtair System" comparator="EQUALS" value="1.0" />
@@ -905,7 +905,7 @@
     <create count="100" type="asteroids" startX="63660.0" startY="0.0" startZ="89702.0" endX="24213.0" endY="0.0" endZ="73744.0" randomRange="11768" />
     <create count="200" type="asteroids" startX="38766.0" startY="0.0" startZ="77829.0" endX="12469.0" endY="0.0" endZ="41702.0" randomRange="11768" />
   </event>
-  <folder_arme name="Navigation" id_arme="6e2bec83-d67f-4de3-a608-d65276dfc783" parent_id_arme="7ed71a57-c631-4e36-a2be-ead0e209a613" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="6e2bec83-d67f-4de3-a608-d65276dfc783" parent_id_arme="7ed71a57-c631-4e36-a2be-ead0e209a613" />
   <event name="Transition to Sector VIII" id_arme="80c7471e-6b7c-46d7-98ad-f43474fa0818" parent_id_arme="6e2bec83-d67f-4de3-a608-d65276dfc783">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
@@ -994,7 +994,7 @@
     <set_variable name="Sector" value="12.0" integer="yes" />
     <set_variable name="Holtair System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="029f198e-07b2-4275-a9d2-8c76f7875752" parent_id_arme="6e2bec83-d67f-4de3-a608-d65276dfc783" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="029f198e-07b2-4275-a9d2-8c76f7875752" parent_id_arme="6e2bec83-d67f-4de3-a608-d65276dfc783" />
   <event name="Gate Offline" id_arme="35cfb645-8171-49f1-abb2-1d2961cdeb0a" parent_id_arme="029f198e-07b2-4275-a9d2-8c76f7875752">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
@@ -1181,11 +1181,11 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="62894.0" y="0.0" z="37106.0" angle="0" name="Jotar Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="28937.0" y="0.0" z="26000.0" angle="0" name="G-62" hullID="1005" />
-    <create type="station" x="60724.0" y="0.0" z="73617.0" angle="0" name="C-45" hullID="1005" />
-    <create type="station" x="54086.0" y="0.0" z="71574.0" angle="0" name="P-98" hullID="1005" />
-    <create type="station" x="58171.0" y="0.0" z="68510.0" angle="0" name="H-11" hullID="1005" />
+    <create type="genericMesh" x="62894.0" y="0.0" z="37106.0" name="Jotar Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="28937.0" y="0.0" z="26000.0" angle="0" name="G-62" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="60724.0" y="0.0" z="73617.0" angle="0" name="C-45" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="54086.0" y="0.0" z="71574.0" angle="0" name="P-98" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="58171.0" y="0.0" z="68510.0" angle="0" name="H-11" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1317,8 +1317,8 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="27660.0" y="0.0" z="50127.0" angle="0" name="H-53" hullID="1008" />
-    <create type="station" x="51915.0" y="0.0" z="52297.0" angle="0" name="T-82" hullID="1005" />
+    <create type="neutral" x="27660.0" y="0.0" z="50127.0" angle="0" name="H-53" hullID="1008" sideValue="sectorSide" />
+    <create type="neutral" x="51915.0" y="0.0" z="52297.0" angle="0" name="T-82" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1336,7 +1336,7 @@
     <set_variable name="Holtair System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Holtair Sector IX" id_arme="3fb89940-970c-4089-a9dd-2e96bc138d79" parent_id_arme="2d2332be-9df8-4041-bf28-52a36945152f" expanded_arme="" />
+  <folder_arme name="Holtair Sector IX" id_arme="3fb89940-970c-4089-a9dd-2e96bc138d79" parent_id_arme="2d2332be-9df8-4041-bf28-52a36945152f" />
   <event name="Create Holtair Sector IX" id_arme="56369c24-8688-45d5-b4e5-f8399fa0b0e9" parent_id_arme="3fb89940-970c-4089-a9dd-2e96bc138d79">
     <if_timer_finished name="Transition" />
     <if_variable name="Holtair System" comparator="EQUALS" value="1.0" />
@@ -1359,7 +1359,7 @@
     <create count="78" type="asteroids" startX="75788.0" startY="0.0" startZ="40936.0" endX="49745.0" endY="0.0" endZ="43872.0" randomRange="11418" />
     <create count="84" type="asteroids" startX="84979.0" startY="0.0" startZ="17319.0" endX="70809.0" endY="0.0" endZ="10808.0" randomRange="11418" />
   </event>
-  <folder_arme name="Navigation" id_arme="a87f6396-2142-47b8-845e-cfb5a7f8e519" parent_id_arme="3fb89940-970c-4089-a9dd-2e96bc138d79" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="a87f6396-2142-47b8-845e-cfb5a7f8e519" parent_id_arme="3fb89940-970c-4089-a9dd-2e96bc138d79" />
   <event name="Transition to Sector X" id_arme="828e14c3-7fe5-4387-9b81-cf9081ca1e2c" parent_id_arme="a87f6396-2142-47b8-845e-cfb5a7f8e519">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
@@ -1415,7 +1415,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="d3351a72-1f97-4bf1-afe5-a5c48503af1a" parent_id_arme="a87f6396-2142-47b8-845e-cfb5a7f8e519" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="d3351a72-1f97-4bf1-afe5-a5c48503af1a" parent_id_arme="a87f6396-2142-47b8-845e-cfb5a7f8e519" />
   <event name="Gate Offline" id_arme="72fb17e1-ce69-4479-b25f-55efbda7db86" parent_id_arme="d3351a72-1f97-4bf1-afe5-a5c48503af1a">
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
@@ -1603,10 +1603,10 @@
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="69915.0" y="0.0" z="27276.0" angle="0" name="Waypoint 89 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="26313.0" y="0.0" z="14539.0" angle="0" name="S-18" hullID="1005" />
-    <create type="station" x="25107.0" y="0.0" z="45531.0" angle="0" name="Q-49" hullID="1005" />
-    <create type="station" x="40681.0" y="0.0" z="70553.0" angle="0" name="P-01" hullID="1005" />
-    <create type="station" x="69277.0" y="0.0" z="83063.0" angle="0" name="Z-37" hullID="1005" />
+    <create type="neutral" x="26313.0" y="0.0" z="14539.0" angle="0" name="S-18" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="25107.0" y="0.0" z="45531.0" angle="0" name="Q-49" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="40681.0" y="0.0" z="70553.0" angle="0" name="P-01" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="69277.0" y="0.0" z="83063.0" angle="0" name="Z-37" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1768,9 +1768,9 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="10" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="35575.0" y="0.0" z="18851.0" angle="0" name="M-64" hullID="1005" />
-    <create type="station" x="32256.0" y="0.0" z="25361.0" angle="0" name="Q-22" hullID="1005" />
-    <create type="station" x="28937.0" y="0.0" z="32000.0" angle="0" name="F-84" hullID="1005" />
+    <create type="neutral" x="35575.0" y="0.0" z="18851.0" angle="0" name="M-64" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="32256.0" y="0.0" z="25361.0" angle="0" name="Q-22" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="28937.0" y="0.0" z="32000.0" angle="0" name="F-84" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -1812,9 +1812,6 @@
     <create count="10" type="nebulas" startX="55618.0" startY="0.0" startZ="19617.0" endX="55618.0" endY="0.0" endZ="19617.0" randomRange="3005" />
     <create count="24" type="nebulas" startX="29703.0" startY="0.0" startZ="92127.0" endX="8383.0" endY="0.0" endZ="87787.0" randomRange="9817" />
     <create count="12" type="nebulas" startX="97618.0" startY="0.0" startZ="90723.0" endX="74511.0" endY="0.0" endZ="92893.0" randomRange="5694" />
-    <create type="station" x="20128.0" y="0.0" z="15148.0" angle="0" name="J-99" hullID="1005" />
-    <create type="station" x="19362.0" y="0.0" z="57021.0" angle="0" name="D-47" hullID="1005" />
-    <create type="station" x="40809.0" y="0.0" z="45021.0" angle="0" name="X-07" hullID="1005" />
   </event>
   <folder_arme name="Navigation" id_arme="6825aad9-c6c3-4bdb-815b-5f5da6c89c5f" parent_id_arme="4f703659-abcd-46bd-9f26-22428a1f0ee1" />
   <event name="Transition to Sector XII" id_arme="3229fd22-cba1-4cab-8cce-40c1cda7a773" parent_id_arme="6825aad9-c6c3-4bdb-815b-5f5da6c89c5f">
@@ -1910,9 +1907,9 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="11" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="20128.0" y="0.0" z="15148.0" angle="0" name="J-99" hullID="1005" />
-    <create type="station" x="19362.0" y="0.0" z="57021.0" angle="0" name="D-47" hullID="1005" />
-    <create type="station" x="40809.0" y="0.0" z="45021.0" angle="0" name="X-07" hullID="1005" />
+    <create type="neutral" x="20128.0" y="0.0" z="15148.0" angle="0" name="J-99" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="19362.0" y="0.0" z="57021.0" angle="0" name="D-47" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="40809.0" y="0.0" z="45021.0" angle="0" name="X-07" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2014,8 +2011,8 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="12" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="48979.0" y="0.0" z="43361.0" angle="0" name="O-62" hullID="1005" />
-    <create type="station" x="72469.0" y="0.0" z="68255.0" angle="0" name="F-88" hullID="1005" />
+    <create type="neutral" x="48979.0" y="0.0" z="43361.0" angle="0" name="O-62" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="72469.0" y="0.0" z="68255.0" angle="0" name="F-88" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2094,8 +2091,8 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="13" />
-    <create type="station" x="48724.0" y="0.0" z="58425.0" angle="0" name="V-92" hullID="1005" />
-    <create type="station" x="81915.0" y="0.0" z="68000.0" angle="0" name="E-38" hullID="1005" />
+    <create type="neutral" x="48724.0" y="0.0" z="58425.0" angle="0" name="V-92" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="81915.0" y="0.0" z="68000.0" angle="0" name="E-38" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2196,9 +2193,9 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="14" />
-    <create type="station" x="63532.0" y="0.0" z="68127.0" angle="0" name="K-01" hullID="1005" />
-    <create type="station" x="36852.0" y="0.0" z="28170.0" angle="0" name="S-63" hullID="1008" />
-    <create type="station" x="58809.0" y="0.0" z="72595.0" angle="0" name="V-11" hullID="1005" />
+    <create type="neutral" x="63532.0" y="0.0" z="68127.0" angle="0" name="K-01" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="36852.0" y="0.0" z="28170.0" angle="0" name="S-63" hullID="1008" sideValue="sectorSide" />
+    <create type="neutral" x="58809.0" y="0.0" z="72595.0" angle="0" name="V-11" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2217,7 +2214,7 @@
     <set_variable name="Holtair System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Holtair Sector XV" id_arme="60a08619-629b-4435-a92e-f845ec75dc54" parent_id_arme="2d2332be-9df8-4041-bf28-52a36945152f" expanded_arme="" />
+  <folder_arme name="Holtair Sector XV" id_arme="60a08619-629b-4435-a92e-f845ec75dc54" parent_id_arme="2d2332be-9df8-4041-bf28-52a36945152f" />
   <event name="Create Holtair Sector XV" id_arme="6e2006c8-752f-433c-81c8-8562c0f37da8" parent_id_arme="60a08619-629b-4435-a92e-f845ec75dc54">
     <if_timer_finished name="Transition" />
     <if_variable name="Holtair System" comparator="EQUALS" value="1.0" />
@@ -2238,7 +2235,7 @@
     <create count="72" type="nebulas" startX="48086.0" startY="0.0" startZ="48085.0" endX="11320.0" endY="0.0" endZ="79744.0" randomRange="10565" />
     <create count="63" type="asteroids" startX="57532.0" startY="0.0" startZ="23063.0" endX="11192.0" endY="0.0" endZ="37744.0" randomRange="8322" />
   </event>
-  <folder_arme name="Navigation" id_arme="333159cc-83aa-4543-833f-c73c9bd05628" parent_id_arme="60a08619-629b-4435-a92e-f845ec75dc54" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="333159cc-83aa-4543-833f-c73c9bd05628" parent_id_arme="60a08619-629b-4435-a92e-f845ec75dc54" />
   <event name="Transition to (Right)" id_arme="13891911-0d72-4acb-a7d8-7a033ea42e33" parent_id_arme="333159cc-83aa-4543-833f-c73c9bd05628">
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
@@ -2294,7 +2291,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner A1 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="18b7974f-d4ee-4693-a496-e3af72a3435e" parent_id_arme="333159cc-83aa-4543-833f-c73c9bd05628" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="18b7974f-d4ee-4693-a496-e3af72a3435e" parent_id_arme="333159cc-83aa-4543-833f-c73c9bd05628" />
   <event name="Gate Offline" id_arme="dc32babb-c9ce-4ca3-a721-2cc3a485ad14" parent_id_arme="18b7974f-d4ee-4693-a496-e3af72a3435e">
     <if_variable name="Sector" comparator="EQUALS" value="15" />
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
@@ -2481,12 +2478,12 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="15" />
-    <create type="genericMesh" x="52997.0" y="0.0" z="69590.0" angle="0" name="Norayne Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="73547.0" y="0.0" z="33546.0" angle="0" name="U-01" hullID="1005" />
-    <create type="station" x="74540.0" y="0.0" z="46170.0" angle="0" name="F-88" hullID="1005" />
-    <create type="station" x="31419.0" y="0.0" z="44609.0" angle="0" name="L-30" hullID="1005" />
-    <create type="station" x="77376.0" y="0.0" z="81914.0" angle="0" name="Y-25" hullID="1005" />
-    <create type="station" x="85461.0" y="0.0" z="60638.0" angle="0" name="A-43" hullID="1005" />
+    <create type="genericMesh" x="52997.0" y="0.0" z="69590.0" name="Norayne Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="73547.0" y="0.0" z="33546.0" angle="0" name="U-01" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="74540.0" y="0.0" z="46170.0" angle="0" name="F-88" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="31419.0" y="0.0" z="44609.0" angle="0" name="L-30" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="77376.0" y="0.0" z="81914.0" angle="0" name="Y-25" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="85461.0" y="0.0" z="60638.0" angle="0" name="A-43" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2595,9 +2592,9 @@
     <if_variable name="Holtair System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="16" />
-    <create type="station" x="40937.0" y="0.0" z="39148.0" angle="0" name="G-01" hullID="1005" />
-    <create type="station" x="34681.0" y="0.0" z="47191.0" angle="0" name="V-56" hullID="1005" />
-    <create type="station" x="56128.0" y="0.0" z="72468.0" angle="0" name="U-76" hullID="1005" />
+    <create type="neutral" x="40937.0" y="0.0" z="39148.0" angle="0" name="G-01" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="34681.0" y="0.0" z="47191.0" angle="0" name="V-56" hullID="1005" sideValue="sectorSide" />
+    <create type="neutral" x="56128.0" y="0.0" z="72468.0" angle="0" name="U-76" hullID="1005" sideValue="sectorSide" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />

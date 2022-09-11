@@ -4,7 +4,7 @@
     <set_variable name="Coordinate Y" value="500.0" integer="yes" />
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
-  <folder_arme name="Ashia System" id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" expanded_arme="" />
+  <folder_arme name="Ashia System" id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
   <folder_arme name="Ashia Settings" id_arme="11e9ee7d-f5ac-403b-be11-c1aff306d2e6" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
   <folder_arme name="Ashia Menu" id_arme="b26b22e8-d915-4e87-b174-46aae791c78f" parent_id_arme="11e9ee7d-f5ac-403b-be11-c1aff306d2e6" />
   <event name="Ashia Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="b26b22e8-d915-4e87-b174-46aae791c78f">
@@ -56,7 +56,7 @@
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ashia Sector I" id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" expanded_arme="" />
+  <folder_arme name="Ashia Sector I" id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
   <event name="Create Ashia Sector I" id_arme="2a7deed8-1f8f-4b4a-b745-eff4dcf12cc4" parent_id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f">
     <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -78,7 +78,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62" parent_id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62" parent_id_arme="631780f0-f1ed-42e2-9f7e-1c34fe43f97f" />
   <event name="Transition to Sector II" id_arme="5b108269-5dbb-4867-b7c3-b6c2e68176c9" parent_id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62">
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
@@ -112,7 +112,7 @@
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="6616da75-b3fe-42e9-aa95-779c79e6a575" parent_id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="6616da75-b3fe-42e9-aa95-779c79e6a575" parent_id_arme="124ef15c-7fb9-41c8-b401-8371942c8f62" />
   <event name="Gate Offline" id_arme="91e384b0-05d9-42ea-865c-2c72b0878019" parent_id_arme="6616da75-b3fe-42e9-aa95-779c79e6a575">
     <if_variable name="Sector" comparator="EQUALS" value="1" />
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
@@ -299,10 +299,10 @@
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="47054.0" y="0.0" z="36339.0" name="Tyr Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="26529.0" y="0.0" z="58839.0" name="DS-165" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="73974.0" y="0.0" z="76250.0" name="DS-250" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="31652.0" y="0.0" z="13973.0" name="DS-552" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="41697.0" y="0.0" z="67544.0" name="Goshen Hitchpost" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="26529.0" y="0.0" z="58839.0" name="DS-165" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="73974.0" y="0.0" z="76250.0" name="DS-250" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="31652.0" y="0.0" z="13973.0" name="DS-552" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="41697.0" y="0.0" z="67544.0" name="Goshen Hitchpost" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -439,11 +439,11 @@
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="80670.0" y="0.0" z="58571.0" name="DS-311" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="60179.0" y="0.0" z="80267.0" name="DS-189" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="31518.0" y="0.0" z="32857.0" name="DS-277" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="17322.0" y="0.0" z="76517.0" name="Franklin" hullID="1004" sideValue="sectorSide" />
-    <create type="station" x="49867.0" y="0.0" z="46919.0" name="Casey" hullID="1003" sideValue="sectorSide" />
+    <create type="neutral" x="80670.0" y="0.0" z="58571.0" name="DS-311" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="60179.0" y="0.0" z="80267.0" name="DS-189" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="31518.0" y="0.0" z="32857.0" name="DS-277" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="17322.0" y="0.0" z="76517.0" name="Franklin" hullID="1004" sideValue="sectorSide" />
+    <create type="neutral" x="49867.0" y="0.0" z="46919.0" name="Casey" hullID="1003" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -524,8 +524,8 @@
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="81608.0" y="0.0" z="62187.0" name="DS-201" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="41295.0" y="0.0" z="78928.0" name="DS-505" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="81608.0" y="0.0" z="62187.0" name="DS-201" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="41295.0" y="0.0" z="78928.0" name="DS-505" hullID="1000" sideValue="sectorSide" />
     <create type="neutral" x="30849.0" y="0.0" z="29241.0" angle="0" name="Indigo Mining" hullID="1050" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -630,10 +630,10 @@
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
-    <create type="station" x="30849.0" y="0.0" z="44508.0" name="Valti" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="24018.0" y="0.0" z="58571.0" name="DS-229" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="51474.0" y="0.0" z="22678.0" name="DS-303" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="73036.0" y="0.0" z="68348.0" name="DS-661" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="30849.0" y="0.0" z="44508.0" name="Valti" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="24018.0" y="0.0" z="58571.0" name="DS-229" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="51474.0" y="0.0" z="22678.0" name="DS-303" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="73036.0" y="0.0" z="68348.0" name="DS-661" hullID="1000" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -671,7 +671,7 @@
     <set_variable name="Ashia System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Ashia Sector V" id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" expanded_arme="" />
+  <folder_arme name="Ashia Sector V" id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
   <event name="Create Ashia Sector V" id_arme="5e199dbf-2fe1-4670-bbf8-5074872409c9" parent_id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c">
     <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -700,7 +700,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="1.0" />
     <set_variable name="Corner E5 Transition Enabled" value="1.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950" parent_id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950" parent_id_arme="67894017-ed10-47d0-afe2-56c91e9bca0c" />
   <event name="Transition to Sector VI" id_arme="b4ad0195-2f42-4814-a192-3f1227418413" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
@@ -789,7 +789,7 @@
     <set_variable name="Ashia System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="1.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="ac548ba6-7088-4636-a92a-73b2b6ce1731" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="ac548ba6-7088-4636-a92a-73b2b6ce1731" parent_id_arme="087fbcfb-d0dd-4e9d-9ff1-ea7990f09950" />
   <event name="Gate Offline" id_arme="998e406b-2cdb-4fe1-aa06-890ef9b6fe38" parent_id_arme="ac548ba6-7088-4636-a92a-73b2b6ce1731">
     <if_variable name="Sector" comparator="EQUALS" value="5" />
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
@@ -976,13 +976,13 @@
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="50938.0" y="0.0" z="53348.0" name="Acantha Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="78661.0" y="0.0" z="26160.0" name="DS-31R" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="62188.0" y="0.0" z="8080.0" name="DS-42A" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="95268.0" y="0.0" z="46785.0" name="DS-67E" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="39822.0" y="0.0" z="89642.0" name="DS-88P" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="22545.0" y="0.0" z="70089.0" name="DS-29X" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="9152.0" y="0.0" z="50401.0" name="DS-03T" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="13304.0" y="0.0" z="81741.0" name="Ashia Transit" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="78661.0" y="0.0" z="26160.0" name="DS-31R" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="62188.0" y="0.0" z="8080.0" name="DS-42A" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="95268.0" y="0.0" z="46785.0" name="DS-67E" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="39822.0" y="0.0" z="89642.0" name="DS-88P" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="22545.0" y="0.0" z="70089.0" name="DS-29X" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="9152.0" y="0.0" z="50401.0" name="DS-03T" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="13304.0" y="0.0" z="81741.0" name="Ashia Transit" hullID="1001" sideValue="sectorSide" />
     <create type="neutral" x="35800.0" y="0.0" z="78327.0" angle="0" name="WP-262" hullID="1052" sideValue="sectorSide" />
     <create type="neutral" x="18997.0" y="0.0" z="58550.0" angle="0" name="WP-285" hullID="1052" sideValue="sectorSide" />
     <create type="neutral" x="63160.0" y="0.0" z="22713.0" angle="0" name="WP-247" hullID="1052" sideValue="sectorSide" />
@@ -1158,7 +1158,7 @@
     <set_variable name="Ashia System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Ashia Sector VII" id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" expanded_arme="" />
+  <folder_arme name="Ashia Sector VII" id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
   <event name="Create Ashia Sector VII" id_arme="d61236f5-4164-4d60-b655-bb69091dfd49" parent_id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f">
     <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1179,7 +1179,7 @@
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
   </event>
-  <folder_arme name="Navigation" id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb" parent_id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb" parent_id_arme="157dd2f7-c5eb-4ed8-ba34-0247e8ae891f" />
   <event name="Transition to Sector VIII" id_arme="f5b8a16c-f4fe-457e-9941-1408daa15a22" parent_id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb">
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
@@ -1213,7 +1213,7 @@
     <set_variable name="Ashia System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="a1eaf133-3d76-446f-81e6-cd1bc8ed648c" parent_id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="a1eaf133-3d76-446f-81e6-cd1bc8ed648c" parent_id_arme="b3f926e3-4595-49fe-8468-00a59921c1eb" />
   <event name="Gate Offline" id_arme="c6c5807d-7f4a-4d01-b64d-3256b390c30e" parent_id_arme="a1eaf133-3d76-446f-81e6-cd1bc8ed648c">
     <if_variable name="Sector" comparator="EQUALS" value="7" />
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
@@ -1400,11 +1400,11 @@
     <if_variable name="Sector" comparator="EQUALS" value="7.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="50804.0" y="0.0" z="53883.0" name="Reema Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="18259.0" y="0.0" z="38214.0" name="DS-256" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="63606.0" y="0.0" z="23754.0" name="DS-512" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="34465.0" y="0.0" z="75982.0" name="DS-128" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="22009.0" y="0.0" z="57767.0" name="Cenotes Market" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="30149.0" y="0.0" z="19442.0" name="Customs &amp; Immigration" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="18259.0" y="0.0" z="38214.0" name="DS-256" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="63606.0" y="0.0" z="23754.0" name="DS-512" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="34465.0" y="0.0" z="75982.0" name="DS-128" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="22009.0" y="0.0" z="57767.0" name="Cenotes Market" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="30149.0" y="0.0" z="19442.0" name="Customs &amp; Immigration" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -1535,10 +1535,10 @@
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="70492.0" y="0.0" z="37276.0" name="DS-388" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="24286.0" y="0.0" z="18660.0" name="DS-476" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="29108.0" y="0.0" z="66473.0" name="DS-269" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="70090.0" y="0.0" z="66071.0" name="DS-541" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="70492.0" y="0.0" z="37276.0" name="DS-388" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="24286.0" y="0.0" z="18660.0" name="DS-476" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="29108.0" y="0.0" z="66473.0" name="DS-269" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="70090.0" y="0.0" z="66071.0" name="DS-541" hullID="1000" sideValue="sectorSide" />
     <create type="neutral" x="55279.0" y="0.0" z="59442.0" angle="0" name="Altun Ha Denabite" hullID="1051" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -1560,7 +1560,7 @@
     <set_variable name="Ashia System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
-  <folder_arme name="Ashia Sector IX" id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" expanded_arme="" />
+  <folder_arme name="Ashia Sector IX" id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b" parent_id_arme="1a9c3075-78c5-4da2-8642-21ec266e1a77" />
   <event name="Create Ashia Sector IX" id_arme="39cbbb05-4b2b-4e05-8e05-b60bc1432c82" parent_id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b">
     <if_variable name="Ashia System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1581,7 +1581,7 @@
     <create count="20" type="nebulas" nebType="2" startX="27768.0" startY="0.0" startZ="31517.0" endX="31250.0" endY="0.0" endZ="54419.0" randomRange="7000" />
     <create count="15" type="asteroids" startX="40558.0" startY="0.0" startZ="36988.0" endX="54286.0" endY="0.0" endZ="27232.0" randomRange="4000" />
   </event>
-  <folder_arme name="Navigation" id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7" parent_id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b" expanded_arme="" />
+  <folder_arme name="Navigation" id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7" parent_id_arme="7e8491a4-db6a-4499-8167-c25b9e084b8b" />
   <event name="Transition to Sector VIII" id_arme="e178ba89-8e32-4a41-8e72-30d6a5bb700b" parent_id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7">
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="9.0" />
@@ -1615,7 +1615,7 @@
     <set_variable name="Ashia System" value="3.0" integer="yes" />
     <set_variable name="Sector" value="5.0" integer="yes" />
   </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="2c620cf6-2164-44a9-a50a-b74ea6231240" parent_id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7" expanded_arme="" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="2c620cf6-2164-44a9-a50a-b74ea6231240" parent_id_arme="75d1a9b0-d0cb-4092-88b6-2de9742815e7" />
   <event name="Gate Offline" id_arme="df8140c7-9852-460f-92b1-218af9b8e113" parent_id_arme="2c620cf6-2164-44a9-a50a-b74ea6231240">
     <if_variable name="Sector" comparator="EQUALS" value="9" />
     <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
@@ -1803,11 +1803,11 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <set_variable name="CustomPlanet" value="1.0" integer="yes" />
     <create type="genericMesh" x="30849.0" y="0.0" z="72500.0" name="Phinmor Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="40707.0" y="0.0" z="47249.0" name="Ashia Authority" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="67679.0" y="0.0" z="57633.0" name="Tazumal Exchange" hullID="1001" sideValue="sectorSide" />
-    <create type="station" x="36474.0" y="0.0" z="25357.0" name="DS-819" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="67545.0" y="0.0" z="21875.0" name="DS-781" hullID="1000" sideValue="sectorSide" />
-    <create type="station" x="63795.0" y="0.0" z="79330.0" name="DS-567" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="40707.0" y="0.0" z="47249.0" name="Ashia Authority" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="67679.0" y="0.0" z="57633.0" name="Tazumal Exchange" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="36474.0" y="0.0" z="25357.0" name="DS-819" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="67545.0" y="0.0" z="21875.0" name="DS-781" hullID="1000" sideValue="sectorSide" />
+    <create type="neutral" x="63795.0" y="0.0" z="79330.0" name="DS-567" hullID="1000" sideValue="sectorSide" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Ashia IX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
