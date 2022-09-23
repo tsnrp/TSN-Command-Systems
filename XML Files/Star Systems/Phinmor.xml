@@ -1,0 +1,1003 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="1075.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="525.0" integer="yes" />
+    <set_variable name="Alignment" value="USFP" integer="yes" />
+  </start>
+  <folder_arme name="Phinmor System" id_arme="b463d847-3b9c-4696-9731-2e54b05109f0" />
+  <folder_arme name="Phinmor Settings" id_arme="508ec18b-d47d-47c0-8d35-4d31205d3c12" parent_id_arme="b463d847-3b9c-4696-9731-2e54b05109f0" />
+  <folder_arme name="Phinmor Menu" id_arme="81f50b97-d671-4dcb-91d6-366ec01ceedf" parent_id_arme="508ec18b-d47d-47c0-8d35-4d31205d3c12" />
+  <event name="Phinmor Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="81f50b97-d671-4dcb-91d6-366ec01ceedf">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Phinmor System" />
+    <set_variable name="Phinmor Gate" value="1.0" integer="yes" />
+    <!--320,272-->
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="81f50b97-d671-4dcb-91d6-366ec01ceedf">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Phinmor System" />
+  </event>
+  <event name="Phinmor System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="81f50b97-d671-4dcb-91d6-366ec01ceedf">
+    <if_gm_button text="Lower Arc/Phinmor System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="108.0" integer="yes" />
+    <set_variable name="Phinmor System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="508ec18b-d47d-47c0-8d35-4d31205d3c12">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="508ec18b-d47d-47c0-8d35-4d31205d3c12">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="508ec18b-d47d-47c0-8d35-4d31205d3c12">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="508ec18b-d47d-47c0-8d35-4d31205d3c12">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="508ec18b-d47d-47c0-8d35-4d31205d3c12">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Phinmor Sector I" id_arme="f5a66277-6914-47f3-810f-6b5f5ab3d11f" parent_id_arme="b463d847-3b9c-4696-9731-2e54b05109f0" />
+  <event name="Create Phinmor Sector I" id_arme="4c631f17-123c-4ade-a6b4-b8f1c6888fd3" parent_id_arme="f5a66277-6914-47f3-810f-6b5f5ab3d11f">
+    <if_variable name="Phinmor" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="16" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Phinmor" value="2.0" />
+    <create count="50" type="nebulas" startX="43974.0" startY="0.0" startZ="43035.0" endX="2456.0" endY="0.0" endZ="76116.0" randomRange="7000" />
+    <create count="50" type="nebulas" startX="43974.0" startY="0.0" startZ="43035.0" endX="85893.0" endY="0.0" endZ="51339.0" randomRange="7000" />
+    <create count="50" type="nebulas" nebType="2" startX="51875.0" startY="0.0" startZ="64464.0" endX="49197.0" endY="0.0" endZ="25223.0" randomRange="7000" />
+    <create count="50" type="nebulas" nebType="2" startX="51875.0" startY="0.0" startZ="64464.0" endX="34465.0" endY="0.0" endZ="97276.0" randomRange="7000" />
+    <create count="50" type="asteroids" startX="70224.0" startY="-200.0" startZ="73169.0" endX="26429.0" endY="-200.0" endZ="34196.0" randomRange="10000" />
+    <create count="50" type="asteroids" startX="73572.0" startY="200.0" startZ="59241.0" endX="20804.0" endY="200.0" endZ="46785.0" randomRange="10000" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="1ed790f5-7426-4fd9-8aab-89680acf70d2" parent_id_arme="f5a66277-6914-47f3-810f-6b5f5ab3d11f" />
+  <event name="Transition to (Right)" id_arme="51f2214e-8873-425a-be4e-610c7fb9a67c" parent_id_arme="1ed790f5-7426-4fd9-8aab-89680acf70d2">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Sector" value="2.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Down)" id_arme="8cc31ef3-e0b9-4613-8a9d-600d634af337" parent_id_arme="1ed790f5-7426-4fd9-8aab-89680acf70d2">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Sector" value="3.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="622cb4e7-873a-4f95-be27-a36938d3b2a8" parent_id_arme="1ed790f5-7426-4fd9-8aab-89680acf70d2">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Sector" value="4.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="a195ea86-e61a-4e6a-9076-415ca99c0bfc" parent_id_arme="1ed790f5-7426-4fd9-8aab-89680acf70d2" />
+  <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="a195ea86-e61a-4e6a-9076-415ca99c0bfc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Tyr Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751" parent_id_arme="a195ea86-e61a-4e6a-9076-415ca99c0bfc" />
+  <event name="Ship1 Activation Range" id_arme="9ee3d7c6-fc41-4126-9f10-ff4740910803" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="a17eaf43-4ffc-4aab-8b15-1a3117b245d3" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="821c7eeb-4bda-470d-b813-db2f91f723f0" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="8538df1f-9f88-48bc-8fd3-25f196f7707d" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="487a4879-0868-4f63-8533-6213ba0d530f" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="cfecc391-c0f4-40c4-ac0c-262dce7f46bb" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="f6a229f0-ba8d-42f4-b3a7-e17f26ffaa78" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="6aefb361-f909-4601-b04d-64ee277ae1fa" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="ab17df6f-e69c-4bb7-88d2-466ab15382a3" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="305f2236-daf5-477e-a42f-c20a910ca54f" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="a06e393a-a845-4ac1-a474-f561bafe34cc" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="6f3cc0a7-9479-4ed6-8f08-1d2e8862b558" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="aa322b59-8748-4f26-a9ea-089be033b6fd" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="6605b477-d0b3-406f-98b2-d317c4c1f2b6" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="6d6d19a5-7e59-4609-a4d6-057b979f2dfe" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="e727d711-e221-4770-bdcf-0205f51d2e40" parent_id_arme="7e82db0d-51ce-4980-aaf1-3955ddac6751">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="e113c47c-ccd7-48c8-b520-4174a25a8a6a" parent_id_arme="a195ea86-e61a-4e6a-9076-415ca99c0bfc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Tyr Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="cbb7a700-d872-4afe-97b3-23b096f478c8" parent_id_arme="a195ea86-e61a-4e6a-9076-415ca99c0bfc">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Phinmor System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor to Tyr" value="1.0" />
+    <set_variable name="Tyr System" value="1.0" />
+    <set_variable name="Sector" value="1" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="78bf8eea-09d1-480e-bd69-b360260a95fa" parent_id_arme="f5a66277-6914-47f3-810f-6b5f5ab3d11f" />
+  <event name="Generate Sector Entities" id_arme="b68bc354-8664-400f-87ba-7714a731699c" parent_id_arme="78bf8eea-09d1-480e-bd69-b360260a95fa">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="61786.0" y="0.0" z="32187.0" name="Tyr Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="34599.0" y="0.0" z="66875.0" name="DS-111" hullID="1000" />
+    <create type="station" x="47322.0" y="0.0" z="45714.0" name="Phinmor Oasis" hullID="1001" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="de1dac1a-dfb6-45b1-842c-9d89555100b5" parent_id_arme="78bf8eea-09d1-480e-bd69-b360260a95fa">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Tyr Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Tyr Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Tyr Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Tyr Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="661b02a6-0b6f-4b11-b7bc-1a6e627128b4" parent_id_arme="78bf8eea-09d1-480e-bd69-b360260a95fa">
+    <if_variable name="Phinmor" comparator="EQUALS" value="3.0" />
+    <destroy name="Tyr Gate" />
+    <destroy name="DS-111" />
+    <destroy name="Phinmor Oasis" />
+    <set_variable name="Phinmor" value="System" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Tyr" id_arme="708fb0d4-2d70-4140-898b-8cb4cbc6d044" parent_id_arme="f5a66277-6914-47f3-810f-6b5f5ab3d11f">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tyr to Phinmor" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Tyr Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Tyr to Phinmor" value="0.0" />
+  </event>
+  <folder_arme name="Phinmor Sector II" id_arme="5fee4dfa-7d58-4e29-9314-4f4e18d67a89" parent_id_arme="b463d847-3b9c-4696-9731-2e54b05109f0" />
+  <event name="Create Phinmor Sector II" id_arme="e7234a42-98e0-4abe-a896-883d4abcc646" parent_id_arme="5fee4dfa-7d58-4e29-9314-4f4e18d67a89">
+    <if_variable name="Phinmor" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="16" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Phinmor" value="2.0" />
+    <create count="50" type="nebulas" startX="65268.0" startY="0.0" startZ="97812.0" endX="98750.0" endY="0.0" endZ="75848.0" randomRange="7000" />
+    <create count="150" type="asteroids" startX="73974.0" startY="-300.0" startZ="76517.0" endX="44643.0" endY="300.0" endZ="41026.0" randomRange="10000" />
+    <create count="150" type="asteroids" startX="80402.0" startY="300.0" startZ="70625.0" endX="43840.0" endY="-300.0" endZ="46383.0" randomRange="10000" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="2d373419-8932-4d62-9c57-0fe93c374a2a" parent_id_arme="5fee4dfa-7d58-4e29-9314-4f4e18d67a89" />
+  <event name="Transition to (Left)" id_arme="574c5309-56ff-48a7-8039-8aa5fdbd4f84" parent_id_arme="2d373419-8932-4d62-9c57-0fe93c374a2a">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Sector" value="1.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Down)" id_arme="3b272505-0ccb-4bad-9b54-f9e3f5dc2d2c" parent_id_arme="2d373419-8932-4d62-9c57-0fe93c374a2a">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Sector" value="4.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="221175e5-f294-4d2e-8eca-5c01610a99ad" parent_id_arme="2d373419-8932-4d62-9c57-0fe93c374a2a">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="3.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Phinmor" value="3.0" />
+  </event>
+  <folder_arme name="System - Jump Gate Setting" id_arme="cc162ec9-dac9-4ee0-9c34-28ec30eb7e19" parent_id_arme="2d373419-8932-4d62-9c57-0fe93c374a2a" />
+  <event name="Gate Offline" id_arme="0dc4043e-463e-4ce6-8577-b23ca5ab6436" parent_id_arme="cc162ec9-dac9-4ee0-9c34-28ec30eb7e19">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Ashia Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31" parent_id_arme="cc162ec9-dac9-4ee0-9c34-28ec30eb7e19" />
+  <event name="Ship1 Activation Range" id_arme="47307c15-5634-4153-8c6a-1d139fc3117b" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Ashia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="83f41167-e555-481d-8c55-727ee6a7aefa" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Ashia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="13b38505-7750-40be-a68a-b2ad55aa7bdd" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Ashia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="86510918-7a79-43b7-bfc8-225f69e0b828" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Ashia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="ab26300c-0816-4f8b-868c-6a73a367ed7a" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Ashia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="192054ed-720d-4724-9b79-99b6fc7af921" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Ashia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="55188f38-3980-4cc0-a006-9d4cd20dfb3f" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Ashia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="3a79401f-73af-472a-8e08-7e3ddc223721" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Ashia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="d14f6db7-683b-453b-a7ab-08127d718ca6" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Ashia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="bcc9efe6-e9eb-44c2-95b5-277d4af5b08b" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Ashia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="703dc6d6-e46d-4b56-b592-ed857c55116f" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Ashia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="ab4eb8b2-d3eb-4d9c-9a3f-90a26e19fca2" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Ashia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="eacc9718-9321-454f-93e4-6bd1dd51b6fa" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Ashia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="2d802a99-6a8c-40cb-8d38-4a03907efa60" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Ashia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="c2f7bb6b-b61b-4cf6-beae-bfe2512c8b3d" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Ashia Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="c80102b8-a861-4288-ae66-4c1bdf2cf7f3" parent_id_arme="9d1fd229-9dd0-468f-af52-08cdb9f3ec31">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Ashia Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="a8913031-152f-45f8-a6cd-f1c1f22ed5bd" parent_id_arme="cc162ec9-dac9-4ee0-9c34-28ec30eb7e19">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Ashia Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="d504b090-cf68-4630-9701-cf0f403e3e4e" parent_id_arme="cc162ec9-dac9-4ee0-9c34-28ec30eb7e19">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ashia Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Phinmor System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor to Ashia" value="1.0" />
+    <set_variable name="Ashia System" value="1.0" />
+    <set_variable name="Sector" value="9" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="fb51883b-85d7-4644-9adc-d5992a5662e0" parent_id_arme="5fee4dfa-7d58-4e29-9314-4f4e18d67a89" expanded_arme="" />
+  <event name="Generate Sector Entities" id_arme="d2311ba6-228a-4812-907b-cea941f00626" parent_id_arme="fb51883b-85d7-4644-9adc-d5992a5662e0">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="34331.0" y="0.0" z="35267.0" name="Ashia Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="63795.0" y="0.0" z="42500.0" name="Modei Shipping" hullID="1001" />
+    <create type="station" x="45983.0" y="0.0" z="66071.0" name="DS-133" hullID="1000" />
+    <create type="neutral" x="69152.0" y="0.0" z="68348.0" angle="0" name="Master Miners" hullID="1050" />
+    <create type="neutral" x="57902.0" y="0.0" z="76785.0" angle="0" name="Sela Smeltery" hullID="1050" />
+    <create type="neutral" x="73438.0" y="0.0" z="53482.0" angle="0" name="Golden Foundry" hullID="1050" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="9655f80c-a13f-469d-9a18-0566843e00f0" parent_id_arme="fb51883b-85d7-4644-9adc-d5992a5662e0">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Ashia Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Ashia Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Ashia Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Ashia Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="7f36730c-2fc5-4b78-919c-cd11b77c072c" parent_id_arme="fb51883b-85d7-4644-9adc-d5992a5662e0">
+    <if_variable name="Phinmor" comparator="EQUALS" value="3.0" />
+    <destroy name="Ashia Gate" />
+    <destroy name="Modei Shipping" />
+    <destroy name="DS-133" />
+    <destroy name="Master Miners" />
+    <destroy name="Sela Smeltery" />
+    <destroy name="Golden Foundry" />
+    <set_variable name="Phinmor" value="System" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Ashia" id_arme="f2d9f435-0745-4fa5-80a1-06771af59631" parent_id_arme="5fee4dfa-7d58-4e29-9314-4f4e18d67a89">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ashia to Phinmor" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Ashia Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Ashia Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Ashia Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Ashia Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Ashia Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Ashia Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Ashia Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Ashia Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Ashia to Phinmor" value="0.0" />
+  </event>
+  <folder_arme name="Phinmor Sector III" id_arme="a59dc8e1-d8c1-48cb-bfeb-bb5124094b51" parent_id_arme="b463d847-3b9c-4696-9731-2e54b05109f0" />
+  <event name="Create Phinmor Sector III" id_arme="e087cfd2-c3d2-4e58-8bc4-d6e443cf6c03" parent_id_arme="a59dc8e1-d8c1-48cb-bfeb-bb5124094b51">
+    <if_variable name="Phinmor" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="16" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Phinmor" value="2.0" />
+    <create count="50" type="nebulas" nebType="2" startX="2456.0" startY="0.0" startZ="37812.0" endX="36474.0" endY="0.0" endZ="4464.0" randomRange="7000" />
+    <create count="100" type="nebulas" startX="53349.0" startY="0.0" startZ="46517.0" endX="53349.0" endY="0.0" endZ="46517.0" randomRange="20000" />
+    <create count="100" type="asteroids" startX="53081.0" startY="0.0" startZ="55223.0" endX="53081.0" endY="0.0" endZ="55223.0" randomRange="8000" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b2b6acf7-6309-4a31-b355-47c28dc3557a" parent_id_arme="a59dc8e1-d8c1-48cb-bfeb-bb5124094b51" />
+  <event name="Transition to (Right)" id_arme="fb3c9b04-17f1-4966-9553-78a516422526" parent_id_arme="b2b6acf7-6309-4a31-b355-47c28dc3557a">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Sector" value="4.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="25481a02-8eec-4183-aef7-3cf2e619cf32" parent_id_arme="b2b6acf7-6309-4a31-b355-47c28dc3557a">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Sector" value="1.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="7b8a7875-a387-48cf-a48e-4eed99a0f57e" parent_id_arme="b2b6acf7-6309-4a31-b355-47c28dc3557a">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Sector" value="3.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="95e88163-9ca1-4341-8da4-8f8f602f081f" parent_id_arme="a59dc8e1-d8c1-48cb-bfeb-bb5124094b51" />
+  <event name="Generate Sector Entities" id_arme="d99bee7f-8bd3-492c-ba73-f88191948f6d" parent_id_arme="95e88163-9ca1-4341-8da4-8f8f602f081f">
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="53750.0" y="0.0" z="57232.0" angle="0" name="Loags Denabite" hullID="1051" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="5d576d6c-f2e5-4b89-8461-da70dfb294c3" parent_id_arme="95e88163-9ca1-4341-8da4-8f8f602f081f">
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="fb98f51c-3424-4c52-ba11-bc8a808df5ad" parent_id_arme="95e88163-9ca1-4341-8da4-8f8f602f081f">
+    <if_variable name="Phinmor" comparator="EQUALS" value="3.0" />
+    <destroy name="Loags Denabite" />
+    <set_variable name="Phinmor" value="System" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Phinmor Sector IV" id_arme="a1bb646d-8e93-453c-85ab-f3732ed5a7a5" parent_id_arme="b463d847-3b9c-4696-9731-2e54b05109f0" />
+  <event name="Create Phinmor Sector IV" id_arme="727f1861-0320-4614-ad9d-e9df69f7f4b5" parent_id_arme="a1bb646d-8e93-453c-85ab-f3732ed5a7a5">
+    <if_variable name="Phinmor" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="16" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Phinmor" value="2.0" />
+    <create count="50" type="nebulas" nebType="2" startX="99018.0" startY="0.0" startZ="37142.0" endX="60849.0" endY="0.0" endZ="59107.0" randomRange="7000" />
+    <create count="50" type="nebulas" nebType="2" startX="23483.0" startY="0.0" startZ="62053.0" endX="60849.0" endY="0.0" endZ="59107.0" randomRange="7000" />
+    <create count="50" type="nebulas" startX="64867.0" startY="0.0" startZ="3258.0" endX="36742.0" endY="0.0" endZ="35803.0" randomRange="7000" />
+    <create count="50" type="nebulas" startX="39688.0" startY="0.0" startZ="78928.0" endX="36742.0" endY="0.0" endZ="35803.0" randomRange="7000" />
+    <create count="100" type="asteroids" startX="83349.0" startY="0.0" startZ="64062.0" endX="34197.0" endY="0.0" endZ="19464.0" randomRange="10000" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3a84adc2-a6ef-4b9b-9878-607ac764b5e9" parent_id_arme="a1bb646d-8e93-453c-85ab-f3732ed5a7a5" />
+  <event name="Transition to (Left)" id_arme="4cd53e44-1449-455f-95e7-2c0f9df2c961" parent_id_arme="3a84adc2-a6ef-4b9b-9878-607ac764b5e9">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Sector" value="3.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Up)" id_arme="e4b01529-b05f-4928-905c-f8c7b2d9b427" parent_id_arme="3a84adc2-a6ef-4b9b-9878-607ac764b5e9">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Sector" value="2.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="b846f92d-e5ae-4184-8d23-3137d67e2671" parent_id_arme="3a84adc2-a6ef-4b9b-9878-607ac764b5e9">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Sector" value="1.0" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="5784bf20-4d4a-4ff1-9e49-267be2987223" parent_id_arme="3a84adc2-a6ef-4b9b-9878-607ac764b5e9" />
+  <event name="Gate Offline" id_arme="be4cd8d8-f689-4942-be9b-06053702aaf6" parent_id_arme="5784bf20-4d4a-4ff1-9e49-267be2987223">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Waypoint 46 Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="896019d1-cbc3-433f-8aab-f969c72f1800" parent_id_arme="5784bf20-4d4a-4ff1-9e49-267be2987223" />
+  <event name="Ship1 Activation Range" id_arme="aa3f61c9-e282-423f-8e75-241120127951" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Waypoint 46 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="ada0c0b3-b087-4d6f-84a7-90f7b4d84efb" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Waypoint 46 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="78a37858-6c1f-4edc-b71e-6e06826c9f79" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Waypoint 46 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="18da8d19-cb24-4abf-bbe1-a424b7a6a752" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Waypoint 46 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="7a974287-6abd-4daf-bd5d-7d5086d6102d" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Waypoint 46 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="43f7a4d7-cca5-4249-bb87-046ccea25867" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Waypoint 46 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="66a3c3c6-3426-4fd3-b886-a6af3467a2d1" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Waypoint 46 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="e025c1d8-60d6-4e79-b3ff-b522d0f19db5" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Waypoint 46 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="b42837fc-ac1e-42c6-b032-6dfbd6bf049b" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Waypoint 46 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="30e90c8e-cdaf-4fff-9521-40349922286e" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Waypoint 46 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="f4bf06a2-2a9e-48ef-8cd8-270bf1d32cea" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Waypoint 46 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="cfefde44-473c-49e4-a48a-b96c3ea14440" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Waypoint 46 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="988b3e61-f054-4440-8ac7-3a111b09b713" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Waypoint 46 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="056b6e6e-847c-4dd0-bd39-8add627d2fd2" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Waypoint 46 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="8b7e0742-a713-4132-8d0e-0f8ef862f429" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Waypoint 46 Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="cebcab97-c887-4f5d-8d18-e2844436d824" parent_id_arme="896019d1-cbc3-433f-8aab-f969c72f1800">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Waypoint 46 Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="e2da7c27-8770-4202-bef7-86a469dc7fca" parent_id_arme="5784bf20-4d4a-4ff1-9e49-267be2987223">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Waypoint 46 Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="11c35428-27fd-4a07-adb8-52d25b1b789e" parent_id_arme="5784bf20-4d4a-4ff1-9e49-267be2987223">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Waypoint 46 Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Phinmor System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Phinmor to Waypoint 46" value="1.0" />
+    <set_variable name="Waypoint 46 System" value="1.0" />
+    <set_variable name="Sector" value="3" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="be7b9bd9-7946-4feb-971b-0c73828c74c2" parent_id_arme="a1bb646d-8e93-453c-85ab-f3732ed5a7a5" />
+  <event name="Generate Sector Entities" id_arme="70a81a21-29ee-4ed4-9e4b-f1307f804293" parent_id_arme="be7b9bd9-7946-4feb-971b-0c73828c74c2">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="24822.0" y="0.0" z="76250.0" name="Waypoint 46 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="46920.0" y="0.0" z="50803.0" name="DS-188" hullID="1000" />
+    <create type="station" x="67947.0" y="0.0" z="25625.0" name="Agros Cantina" hullID="1001" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="8eb2a01f-3eba-492e-8c25-c777b93e41ca" parent_id_arme="be7b9bd9-7946-4feb-971b-0c73828c74c2">
+    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Waypoint 46 Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Waypoint 46 Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Waypoint 46 Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Waypoint 46 Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="657503bc-e6fa-48fd-bc64-84c6dde1f401" parent_id_arme="be7b9bd9-7946-4feb-971b-0c73828c74c2">
+    <if_variable name="Phinmor" comparator="EQUALS" value="3.0" />
+    <destroy name="Waypoint 46 Gate" />
+    <destroy name="DS-188" />
+    <destroy name="Agros Cantina" />
+    <set_variable name="Phinmor" value="System" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Waypoint 46" id_arme="5dab217b-f1f5-43fb-ae42-5a8a4debc1a7" parent_id_arme="a1bb646d-8e93-453c-85ab-f3732ed5a7a5">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Waypoint 46 to Phinmor" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Waypoint 46 Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Waypoint 46 Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Waypoint 46 Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Waypoint 46 Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Waypoint 46 Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Waypoint 46 Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Waypoint 46 Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Waypoint 46 Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Waypoint 46 to Phinmor" value="0.0" />
+  </event>
+</mission_data>

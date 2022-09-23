@@ -1,0 +1,1406 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="1250.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="582.0" integer="yes" />
+    <set_variable name="Alignment" value="USFP" integer="yes" />
+  </start>
+  <folder_arme name="Vilnara System" id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Vilnara Settings" id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <folder_arme name="Vilnara Menu" id_arme="05b9aacb-9a69-4b30-8c67-13c26cec06bf" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe" />
+  <event name="Vilnara Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="05b9aacb-9a69-4b30-8c67-13c26cec06bf">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Vilnara System" />
+    <set_variable name="Vilnara Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="05b9aacb-9a69-4b30-8c67-13c26cec06bf">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Vilnara System" />
+  </event>
+  <event name="Vilnara System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="05b9aacb-9a69-4b30-8c67-13c26cec06bf">
+    <if_gm_button text="Lower Arc/Vilnara System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="103.0" integer="yes" />
+    <set_variable name="Vilnara System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="860ae8fc-5872-42f3-9feb-21c3fd9980fe">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Vilnara Sector I" id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Vilnara Sector I" id_arme="cfd6bb8c-981a-4f8b-a085-eb3820b54c3c" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" integer="yes" />
+    <set_variable name="Vilnara System" value="2.0" integer="yes" />
+    <create count="500" type="nebulas" startX="27233.0" startY="0.0" startZ="34866.0" endX="79197.0" endY="0.0" endZ="66071.0" randomRange="20000" />
+    <create count="500" type="nebulas" nebType="2" startX="29242.0" startY="0.0" startZ="67544.0" endX="72367.0" endY="0.0" endZ="21339.0" randomRange="20000" />
+    <create count="100" type="asteroids" startX="53617.0" startY="400.0" startZ="42767.0" endX="63929.0" endY="-400.0" endZ="50535.0" randomRange="10000" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" integer="yes" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" integer="yes" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" integer="yes" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" integer="yes" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" integer="yes" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" integer="yes" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" integer="yes" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Navigation" id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" />
+  <event name="Transition to Sector II" id_arme="8540873b-f13d-44d2-bfb6-592af29e6862" parent_id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="6324b0dd-a4bb-4a65-b930-d4b67727a016" parent_id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="2694b4e6-d97c-4a9c-864e-a1c34b8c1fed" parent_id_arme="45c98573-9bfa-47d2-a8fc-aed979bf56de">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="a02ff657-1c8f-4c54-a604-8f70f4f9899b" parent_id_arme="7df4988a-cdd8-44db-8f29-880dca5c1a1b" />
+  <event name="Generate Sector Entities" id_arme="2ec3ef61-3fb4-4e0b-8e21-1ce6c235638b" parent_id_arme="a02ff657-1c8f-4c54-a604-8f70f4f9899b">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="station" x="40358.0" y="0.0" z="46651.0" name="Zu Chongzhi Astrolab" hullID="1004" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" integer="yes" />
+    <set_variable name="Sector Entities" value="2.0" integer="yes" />
+    <set_variable name="MissionCode" value="1.0" integer="yes" />
+  </event>
+  <event name="Settings" id_arme="7abb2479-a8b7-4261-affd-2c324c547485" parent_id_arme="a02ff657-1c8f-4c54-a604-8f70f4f9899b">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="07be21b4-ad61-4ea2-a983-406278745125" parent_id_arme="a02ff657-1c8f-4c54-a604-8f70f4f9899b">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="3.0" />
+    <destroy name="Zu Chongzhi Astrolab" />
+    <destroy name="Vilnara I" />
+    <set_variable name="Vilnara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Vilnara Sector II" id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Vilnara Sector II" id_arme="d2feb10d-8a52-4356-9232-0ff6d9485293" parent_id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Vilnara System" value="2.0" />
+    <create count="50" type="nebulas" startX="54956.0" startY="0.0" startZ="24687.0" endX="36340.0" endY="0.0" endZ="39151.0" randomRange="5000" />
+    <create count="50" type="nebulas" startX="36206.0" startY="0.0" startZ="62053.0" endX="36340.0" endY="0.0" endZ="39151.0" randomRange="5000" />
+    <create count="50" type="nebulas" startX="36206.0" startY="0.0" startZ="62053.0" endX="65000.0" endY="0.0" endZ="83750.0" randomRange="5000" />
+    <create count="50" type="asteroids" startX="41161.0" startY="0.0" startZ="56562.0" endX="41161.0" endY="0.0" endZ="56562.0" randomRange="10000" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7" parent_id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6" />
+  <event name="Transition to Sector I" id_arme="3d334c07-dfc5-42ea-8a82-7cdd5febbdd5" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="d13c85db-2690-4429-ad8b-13c299b8e5ab" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="e9804ee9-7ac1-40d3-ba14-54c44a6baf09" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="25b4c7b2-1705-4bc7-8d72-0247c662460d" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="f3cd1e5d-0980-4949-a6c6-933e679721b3" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="3b59f11a-d696-4587-b3f6-f672022e85b7" />
+  <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Loria Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" />
+  <event name="Ship1 Activation Range" id_arme="9ee3d7c6-fc41-4126-9f10-ff4740910803" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Loria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="a17eaf43-4ffc-4aab-8b15-1a3117b245d3" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Loria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="821c7eeb-4bda-470d-b813-db2f91f723f0" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Loria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="8538df1f-9f88-48bc-8fd3-25f196f7707d" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Loria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="487a4879-0868-4f63-8533-6213ba0d530f" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Loria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="cfecc391-c0f4-40c4-ac0c-262dce7f46bb" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Loria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="f6a229f0-ba8d-42f4-b3a7-e17f26ffaa78" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Loria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="6aefb361-f909-4601-b04d-64ee277ae1fa" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Loria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="ab17df6f-e69c-4bb7-88d2-466ab15382a3" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Loria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="305f2236-daf5-477e-a42f-c20a910ca54f" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Loria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="a06e393a-a845-4ac1-a474-f561bafe34cc" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Loria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="6f3cc0a7-9479-4ed6-8f08-1d2e8862b558" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Loria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="aa322b59-8748-4f26-a9ea-089be033b6fd" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Loria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="6605b477-d0b3-406f-98b2-d317c4c1f2b6" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Loria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="6d6d19a5-7e59-4609-a4d6-057b979f2dfe" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Loria Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="e727d711-e221-4770-bdcf-0205f51d2e40" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Loria Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="e113c47c-ccd7-48c8-b520-4174a25a8a6a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Loria Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="cbb7a700-d872-4afe-97b3-23b096f478c8" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Loria Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Vilnara to Loria" value="1.0" />
+    <set_variable name="Loria System" value="1.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="7a8d296c-c29a-4fe5-889b-118e31aa5500" parent_id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6" />
+  <event name="Generate Sector Entities" id_arme="ed5a2239-358b-460b-a6d0-66f01b4e7012" parent_id_arme="7a8d296c-c29a-4fe5-889b-118e31aa5500">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="61920.0" y="0.0" z="39687.0" name="Loria Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="29777.0" y="0.0" z="71562.0" name="Gohtzao-de" hullID="1001" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="ff889b0f-d3ba-4147-b6c2-f25c74d54619" parent_id_arme="7a8d296c-c29a-4fe5-889b-118e31aa5500">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Loria Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Loria Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Loria Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Loria Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="c0075865-9f21-488a-b3e0-7cafe2020c72" parent_id_arme="7a8d296c-c29a-4fe5-889b-118e31aa5500">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="3.0" />
+    <destroy name="Loria Gate" />
+    <destroy name="Gohtzao-de" />
+    <destroy name="Vilnara II" />
+    <set_variable name="Vilnara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Loria" id_arme="708fb0d4-2d70-4140-898b-8cb4cbc6d044" parent_id_arme="114ad0b8-9154-4e56-bd2f-78a822883dc6">
+    <if_variable name="Sector" comparator="EQUALS" value="2" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Loria to Vilnara" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Loria Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Loria Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Loria Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Loria Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Loria Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Loria Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Loria Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Loria Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Loria to Vilnara" value="0.0" />
+  </event>
+  <folder_arme name="Vilnara Sector III" id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Vilnara Sector III" id_arme="2a5eb676-88e2-4daa-bdfb-dee667e0ca67" parent_id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Vilnara System" value="2.0" />
+    <create count="200" type="asteroids" startX="93495.0" startY="0.0" startZ="97360.0" endX="71785.0" endY="-300.0" endZ="88884.0" randomRange="6000" />
+    <create count="400" type="asteroids" startX="76989.0" startY="-200.0" startZ="84572.0" endX="35056.0" endY="200.0" endZ="57211.0" randomRange="6000" />
+    <create count="200" type="asteroids" startX="2724.0" startY="200.0" startZ="43973.0" endX="35056.0" endY="400.0" endZ="57211.0" randomRange="7000" />
+    <create count="100" type="nebulas" startX="53349.0" startY="0.0" startZ="49196.0" endX="35804.0" endY="0.0" endZ="68750.0" randomRange="10000" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93" parent_id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20" />
+  <event name="Transition to Sector IV" id_arme="aef204eb-4b29-4040-a9cb-324d33cd3d49" parent_id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="59bd45fe-8e16-403f-a010-53589224652e" parent_id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="8dcaf945-f677-40d7-a6f9-36c1db134aa4" parent_id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="c292053f-bff7-4ced-894a-5173daf34379" parent_id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="34e9bee1-0fbd-4f91-8277-cae8861c396f" parent_id_arme="9d552f41-c93f-4d17-8e12-c6be2f11da93">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="c3f36fcc-d17f-4fde-93fb-62dcd1fc5c85" parent_id_arme="3b405d9c-9c9a-4d98-b287-632ed2ed2c20" />
+  <event name="Generate Sector Entities" id_arme="48559617-6d6a-4e6d-bc80-ee37a57d2895" parent_id_arme="c3f36fcc-d17f-4fde-93fb-62dcd1fc5c85">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="074dcd28-ad53-4095-97e8-01b356ef0124" parent_id_arme="c3f36fcc-d17f-4fde-93fb-62dcd1fc5c85">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="d78b097e-dd4c-4611-8565-8dc4d25939ed" parent_id_arme="c3f36fcc-d17f-4fde-93fb-62dcd1fc5c85">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="3.0" />
+    <destroy name="Vilnara III" />
+    <set_variable name="Vilnara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Vilnara Sector IV" id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Vilnara Sector IV" id_arme="817121da-14dc-47de-9f78-ee5ae7ea48e3" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Vilnara System" value="2.0" />
+    <create count="200" type="asteroids" startX="94733.0" startY="400.0" startZ="45580.0" endX="70224.0" endY="0.0" endZ="36473.0" randomRange="8000" />
+    <create count="200" type="asteroids" startX="30849.0" startY="-200.0" startZ="38348.0" endX="70224.0" endY="0.0" endZ="36473.0" randomRange="10000" />
+    <create count="200" type="asteroids" startX="31920.0" startY="-300.0" startZ="37812.0" endX="11027.0" endY="0.0" endZ="72500.0" randomRange="10000" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" />
+  <event name="Transition to Sector III" id_arme="2acbd4c8-ca89-4bbe-805b-617ea775300e" parent_id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="8e7fb455-a666-42b1-af83-a8003d25ea89" parent_id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="ed23a091-d810-4741-b1d8-f40a8b2942c9" parent_id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" />
+  <event name="Generate Sector Entities" id_arme="be34843d-3b9a-46ab-b420-99938d49dc40" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="72233.0" y="0.0" z="27901.0" name="Freyja Gate" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="54286.0" y="0.0" z="58169.0" name="DS-555" hullID="1000" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="64d1a1d7-e112-4059-84c9-136ffb07605e" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e52034ec-c11b-4f29-86b2-cd1de4df5445" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="3.0" />
+    <destroy name="Freyja Gate" />
+    <destroy name="DS-555" />
+    <destroy name="Vilnara IV" />
+    <set_variable name="Vilnara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Vilnara Sector V" id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Vilnara Sector V" id_arme="cd534796-7ca7-45de-816a-c0590a6703ec" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Vilnara System" value="2.0" />
+    <create count="100" type="nebulas" startX="83349.0" startY="0.0" startZ="16651.0" endX="50268.0" endY="0.0" endZ="58839.0" randomRange="5000" />
+    <create count="100" type="nebulas" startX="2992.0" startY="0.0" startZ="67276.0" endX="53750.0" endY="0.0" endZ="54151.0" randomRange="6000" />
+    <create count="200" type="asteroids" startX="3125.0" startY="0.0" startZ="64598.0" endX="43170.0" endY="0.0" endZ="59107.0" randomRange="6000" />
+    <create count="200" type="asteroids" startX="64867.0" startY="0.0" startZ="41160.0" endX="43170.0" endY="0.0" endZ="59107.0" randomRange="6000" />
+    <create count="200" type="asteroids" startX="71831.0" startY="0.0" startZ="36473.0" endX="80402.0" endY="0.0" endZ="15312.0" randomRange="6000" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" />
+  <event name="Transition to Sector I" id_arme="5845fa59-2742-4e6b-b0eb-72da68c7a6bb" parent_id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="0aa20b95-ad47-42a3-aa1a-dbdc7a935a7e" parent_id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="f7ec5084-1491-4790-a268-a8b64d44b483" parent_id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="4f130c17-b232-457e-93c1-d7e45b5386d5" parent_id_arme="0cd0ac1e-9802-4fd0-9d15-a86245533def" />
+  <event name="Gate Offline" id_arme="8a402d6f-2b9a-44fe-a208-f61c6f681cc0" parent_id_arme="4f130c17-b232-457e-93c1-d7e45b5386d5">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Vanir Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="2eafb748-efb8-4215-b303-a729eb96578c" parent_id_arme="4f130c17-b232-457e-93c1-d7e45b5386d5" />
+  <event name="Ship1 Activation Range" id_arme="bd247ff8-f848-4d99-a03f-72c301ddd6b4" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Vanir Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="4ca4276b-5164-40b8-9135-ad1af270e794" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Vanir Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="8f06dbfb-569a-4d3b-9939-2a7c22169fa3" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Vanir Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="377574bb-745e-4d2c-a4ca-647b7a2f55c7" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Vanir Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="c86f4ba9-e184-43ea-bde7-c82451c455d9" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Vanir Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="d0723915-eefb-424e-9eb6-b624d74c2a60" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Vanir Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="e4a129f1-fcc9-4254-90f3-d4528c3802f9" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Vanir Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="453241ea-9ed7-4b31-8386-8738401117fc" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Vanir Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="8ab5e293-d98f-4627-a275-b0d892064abe" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Vanir Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="d6aca363-f2ee-413a-88e7-b41829874254" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Vanir Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="6de53921-1210-4e24-86dd-b518696d7243" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Vanir Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="31991435-c74a-4a95-82a3-a73b7ee5c77d" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Vanir Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="df332275-98ff-4081-aedd-d77e9d617f9a" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Vanir Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="0a9e1f58-0e65-49a2-839b-1c710bcf26a7" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Vanir Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="69cf2fd1-ed39-44c2-b5f0-77ad57b0dfef" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Vanir Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="c8ef64dc-979f-4d2d-b8e0-c3e6cde575ce" parent_id_arme="2eafb748-efb8-4215-b303-a729eb96578c">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Vanir Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="f0029358-3ed2-4370-a684-7e1d1108de4e" parent_id_arme="4f130c17-b232-457e-93c1-d7e45b5386d5">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Vanir Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="30e2803a-e8ac-4740-a7cc-6c5a0d2adc85" parent_id_arme="4f130c17-b232-457e-93c1-d7e45b5386d5">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Vanir Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Vilnara to Vanir" value="1.0" />
+    <set_variable name="Vanir System" value="1.0" />
+    <set_variable name="Sector" value="5.0" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="0fa59167-5195-4b77-8677-90e1a93a54ce" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" />
+  <event name="Generate Sector Entities" id_arme="daea5bb1-d78c-44de-a05f-e6591d6073b5" parent_id_arme="0fa59167-5195-4b77-8677-90e1a93a54ce">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="27768.0" y="0.0" z="71294.0" name="Vanir Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="blackHole" x="36608.0" y="0.0" z="31517.0" name="Ebusku" />
+    <create type="station" x="64733.0" y="0.0" z="62857.0" name="Kusihlwa Exchange" hullID="1001" />
+    <create type="station" x="59375.0" y="0.0" z="29375.0" name="DS-26T" hullID="1000" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="93a74f46-5353-45a1-a498-4fdf7ecd04f9" parent_id_arme="0fa59167-5195-4b77-8677-90e1a93a54ce">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Vanir Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Vanir Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Vanir Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Vanir Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="b2a3e98f-ff2f-4f89-907b-b35de2486a2e" parent_id_arme="0fa59167-5195-4b77-8677-90e1a93a54ce">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="3.0" />
+    <destroy name="Vanir Gate" />
+    <destroy name="Ebusku" />
+    <destroy name="Kusihlwa Exchange" />
+    <destroy name="DS-26T" />
+    <destroy name="Vilnara V" />
+    <set_variable name="Vilnara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Vanir" id_arme="b8c9d4f1-410c-4d51-b909-a464266c1065" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2">
+    <if_variable name="Sector" comparator="EQUALS" value="5" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Vanir to Vilnara" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Vanir Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Vanir Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Vanir Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Vanir Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Vanir Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Vanir Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Vanir Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Vanir Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Vanir to Vilnara" value="0.0" />
+  </event>
+  <folder_arme name="Vilnara Sector VI" id_arme="f472a500-58ab-4130-91ec-312faaf2f127" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Vilnara Sector VI" id_arme="e34609ea-464f-43c2-a780-7c1bd1d05ddf" parent_id_arme="f472a500-58ab-4130-91ec-312faaf2f127">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Vilnara System" value="2.0" />
+    <create count="100" type="nebulas" startX="71563.0" startY="0.0" startZ="35401.0" endX="29643.0" endY="0.0" endZ="51875.0" randomRange="15000" />
+    <create count="100" type="nebulas" startX="57367.0" startY="0.0" startZ="59241.0" endX="96340.0" endY="0.0" endZ="67544.0" randomRange="6000" />
+    <create count="100" type="nebulas" startX="18527.0" startY="0.0" startZ="8750.0" endX="53750.0" endY="0.0" endZ="54151.0" randomRange="10000" />
+    <create count="200" type="asteroids" startX="33272.0" startY="0.0" startZ="27174.0" endX="4722.0" endY="0.0" endZ="13345.0" randomRange="6000" />
+    <create count="200" type="asteroids" startX="33272.0" startY="0.0" startZ="27174.0" endX="59889.0" endY="0.0" endZ="58550.0" randomRange="6000" />
+    <create count="200" type="asteroids" startX="96320.0" startY="0.0" startZ="67620.0" endX="59889.0" endY="0.0" endZ="58550.0" randomRange="6000" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="87d8c4e3-0829-4091-897d-284e07c18b30" parent_id_arme="f472a500-58ab-4130-91ec-312faaf2f127" />
+  <event name="Transition to Sector V" id_arme="132d68cc-4dd3-445e-bd83-9b1497dfcdbd" parent_id_arme="87d8c4e3-0829-4091-897d-284e07c18b30">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="a0dbec04-5b53-4849-bb5f-649536ca557d" parent_id_arme="87d8c4e3-0829-4091-897d-284e07c18b30">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="b3af745d-070b-4cb8-945e-d48bded9bb88" parent_id_arme="87d8c4e3-0829-4091-897d-284e07c18b30">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="82d4dfeb-3e86-4895-a710-d5bd435cd201" parent_id_arme="87d8c4e3-0829-4091-897d-284e07c18b30">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="c80af7e0-896e-478b-9687-ebd6b4ae8887" parent_id_arme="87d8c4e3-0829-4091-897d-284e07c18b30">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="ac9985f7-2b6a-4474-8153-be35edff1b08" parent_id_arme="f472a500-58ab-4130-91ec-312faaf2f127" />
+  <event name="Generate Sector Entities" id_arme="ce23a429-48a1-4b2b-bff8-5d543089d881" parent_id_arme="ac9985f7-2b6a-4474-8153-be35edff1b08">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="5c40029c-9eba-49a1-a2f5-8ad156eb27b3" parent_id_arme="ac9985f7-2b6a-4474-8153-be35edff1b08">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="261905bb-8a46-4739-a221-64cde492e259" parent_id_arme="ac9985f7-2b6a-4474-8153-be35edff1b08">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="3.0" />
+    <destroy name="Vilnara VI" />
+    <set_variable name="Vilnara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Vilnara Sector VII" id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Vilnara Sector VII" id_arme="37b50a25-6fa8-47c4-817b-227c9c02b14b" parent_id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Vilnara System" value="2.0" />
+    <create count="70" type="asteroids" startX="96608.0" startY="0.0" startZ="6339.0" endX="88572.0" endY="0.0" endZ="1651.0" randomRange="7000" />
+    <create count="100" type="asteroids" startX="62456.0" startY="300.0" startZ="40625.0" endX="33929.0" endY="-300.0" endZ="60044.0" randomRange="15000" />
+    <create count="100" type="nebulas" startX="73438.0" startY="0.0" startZ="52410.0" endX="23012.0" endY="0.0" endZ="50074.0" randomRange="15000" />
+    <create count="100" type="nebulas" nebType="2" startX="21227.0" startY="0.0" startZ="62416.0" endX="73706.0" endY="0.0" endZ="41160.0" randomRange="15000" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0" parent_id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6" />
+  <event name="Transition to Sector VIII" id_arme="ba68e714-dfe7-4cbf-8ad9-98341cde296d" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="351da0df-8b4f-405a-be02-5debd1996bc5" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="d62b1ce2-5b5b-4949-87a0-64a4c2c04ade" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="ed89974e-c01a-4ba3-beaa-a7a1ccac068f" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="395ec2fb-76dd-4ec4-bb14-29c868e10f55" parent_id_arme="3b67ec10-a74a-4c08-b362-09b77fbb94f0">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="c510f719-b67f-4a54-adef-5757b40206e2" parent_id_arme="133b94f3-c3fe-49ba-8e2a-b71135b6c5f6" />
+  <event name="Generate Sector Entities" id_arme="3c2d94d8-9b5e-4d81-b515-34a1637cecfe" parent_id_arme="c510f719-b67f-4a54-adef-5757b40206e2">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="neutral" x="58974.0" y="300.0" z="46919.0" angle="0" name="Sheng Gaowan Mining" hullID="1050" />
+    <create type="neutral" x="26729.0" y="-300.0" z="65687.0" angle="0" name="Luanchao Ores" hullID="1050" />
+    <create type="station" x="31190.0" y="0.0" z="39962.0" name="Ying'er Forges" hullID="1003" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="0daf664c-70f4-470d-97bb-39a60fb3f977" parent_id_arme="c510f719-b67f-4a54-adef-5757b40206e2">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="5a090e1e-0263-4194-af17-e708394e6ecb" parent_id_arme="c510f719-b67f-4a54-adef-5757b40206e2">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="3.0" />
+    <destroy name="Sheng Gaowan Mining" />
+    <destroy name="Luanchao Ores" />
+    <destroy name="Ying'er Forges" />
+    <destroy name="Vilnara VII" />
+    <set_variable name="Vilnara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Vilnara Sector VIII" id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
+  <event name="Create Vilnara Sector VIII" id_arme="a7c1436d-766a-47b8-8700-9b0c42ba81b6" parent_id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <set_skybox_index index="20" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Vilnara System" value="2.0" />
+    <create count="100" type="nebulas" startX="52009.0" startY="0.0" startZ="54821.0" endX="52009.0" endY="0.0" endZ="54821.0" randomRange="20000" />
+    <create count="300" type="asteroids" startAngle="0" endAngle="170" startX="45983.0" startY="0.0" startZ="52142.0" radius="30000" randomRange="8000" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0" parent_id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63" />
+  <event name="Transition to Sector IV" id_arme="1186b48b-5113-4ca0-9709-1a373400cb3c" parent_id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="84e39585-29f5-488f-852e-5bef7cac3f38" parent_id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="7d4cecf6-020e-4eff-8474-ed814edeae84" parent_id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="da034a32-d1fd-4f9f-9e6b-27abd4481a94" parent_id_arme="2b8d8000-6cd4-42f2-80d9-9195a019c4c0" />
+  <event name="Gate Offline" id_arme="a4361750-ac2b-42cb-bd75-5794cb4a68d7" parent_id_arme="da034a32-d1fd-4f9f-9e6b-27abd4481a94">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Tyr Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7" parent_id_arme="da034a32-d1fd-4f9f-9e6b-27abd4481a94" />
+  <event name="Ship1 Activation Range" id_arme="16de92f6-4fd6-4380-8fa9-cd8ca9ea3f5d" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="383e8a64-521d-4de3-99cd-cccde3545e87" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="16d5066b-ee1a-4578-8311-8eecdaef4127" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="d5ec3e3a-e097-4c30-89bc-37d233503166" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="25a5e376-ec57-42b6-9b73-d0ef51655c0d" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="31302e5a-3799-4452-86aa-4ca967061ee4" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="3f587300-da59-49f4-b0da-e51f72ddbb73" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="ecf5bd1f-449c-43f1-8179-dbb4817f6f6f" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="0c1ee69b-c4b8-4729-9d4e-b2074ef3a44f" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="54c5d7dd-9ec2-4087-bcf7-8c3616d90467" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="73380755-168b-4d51-98da-d93f6032c391" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="c24ac3b9-2b41-4a0d-a6cc-773bd8c19005" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="a905d86d-d3d0-435e-9049-e89a840ae2b0" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="bf17cdb8-a154-429d-996d-035c092c1bf6" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="e0b2bf7b-45f0-4bc4-9d3e-541d499b9091" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Tyr Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="68ff306a-bf77-4a66-a166-851625d1576f" parent_id_arme="c84a301d-00bf-495d-b5ff-c7cc638286e7">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Tyr Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="cf5cd9b1-ff69-4532-8cdb-67af9d0b6565" parent_id_arme="da034a32-d1fd-4f9f-9e6b-27abd4481a94">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Tyr Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="d2d67975-92e4-492e-a4ec-e70b0aef8b56" parent_id_arme="da034a32-d1fd-4f9f-9e6b-27abd4481a94">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Tyr Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Vilnara to Tyr" value="1.0" />
+    <set_variable name="Tyr System" value="1.0" />
+    <set_variable name="Sector" value="6.0" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="10200616-5397-4f3e-bb09-f457de4cd3a7" parent_id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63" />
+  <event name="Generate Sector Entities" id_arme="71f2a0e8-a76a-4c41-a0bd-dddcd57953e0" parent_id_arme="10200616-5397-4f3e-bb09-f457de4cd3a7">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="52009.0" y="0.0" z="68214.0" name="Tyr Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="station" x="55224.0" y="0.0" z="30446.0" name="Vilnara Post" hullID="1001" />
+    <create type="station" x="73572.0" y="0.0" z="50937.0" name="DS-500" hullID="1000" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="c59f089d-a9e1-45ee-b47b-99712edbff66" parent_id_arme="10200616-5397-4f3e-bb09-f457de4cd3a7">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Tyr Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Tyr Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Tyr Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Tyr Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="6871c72c-7040-4066-a7e9-0a47f8f56b0e" parent_id_arme="10200616-5397-4f3e-bb09-f457de4cd3a7">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tyr Gate" />
+    <destroy name="DS-500" />
+    <destroy name="Vilnara Post" />
+    <destroy name="Vilnara VIII" />
+    <set_variable name="Vilnara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Tyr" id_arme="d43a2f37-3fa0-4a36-a01e-c8d23b645bb5" parent_id_arme="4eb8dee5-bee9-4037-9a97-93da1dd4ef63">
+    <if_variable name="Sector" comparator="EQUALS" value="8" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tyr to Vilnara" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Tyr Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Tyr Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Tyr to Vilnara" value="0.0" />
+  </event>
+</mission_data>
