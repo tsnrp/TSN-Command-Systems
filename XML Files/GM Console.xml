@@ -1137,6 +1137,7 @@
     <clear_gm_button text="Docking Port\Mining" />
     <clear_gm_button text="Docking Port\Exploration" />
     <clear_gm_button text="Docking Port\Xeno Research" />
+    <clear_gm_button text="Docking Port\(Standard)" />
     <clear_gm_button text="Other\Lifepod" />
     <clear_gm_button text="Other\Black Box" />
     <set_variable name="CycleSpawnMenu" value="0.0" integer="yes" />
@@ -3858,6 +3859,7 @@
     <set_gm_button text="Docking Port\Mining" />
     <set_gm_button text="Docking Port\Exploration" />
     <set_gm_button text="Docking Port\Xeno Research" />
+    <set_gm_button text="Docking Port\(Standard)" />
     <set_gm_button text="Other\Lifepod" />
     <set_gm_button text="Other\Black Box" />
     <!--Change Default Side-->
@@ -4880,10 +4882,16 @@
     <set_variable name="Auto AI Type" value="504.0" integer="yes" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <event name="USFP Xeno Research" id_arme="84a032e3-ac17-4dba-8729-a5106dae70aa" parent_id_arme="822ebab5-c150-41fa-bcbc-8affff6360e8">
+  <event name="USFP Xeno Research" id_arme="3e39d856-28e3-401f-b1cb-d3f135d5fc63" parent_id_arme="822ebab5-c150-41fa-bcbc-8affff6360e8">
     <if_gm_button text="Docking Port\Xeno Research" />
     <create type="station" use_gm_position="" name="--" hullID="1058" sideValue="2" />
     <set_variable name="Auto AI Type" value="505.0" integer="yes" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+  </event>
+  <event name="USFP Standard" id_arme="84a032e3-ac17-4dba-8729-a5106dae70aa" parent_id_arme="822ebab5-c150-41fa-bcbc-8affff6360e8">
+    <if_gm_button text="Docking Port\(Standard)" />
+    <create type="station" use_gm_position="" name="--" hullID="1058" sideValue="2" />
+    <set_variable name="Auto AI Type" value="506.0" integer="yes" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
   <folder_arme name="Default AI Override" id_arme="70c29f72-0adf-4368-8e52-9c49fccf287a" parent_id_arme="047cc0b3-ea2a-4991-98c9-400c3bbcd6c5" />

@@ -623,7 +623,7 @@
     <set_object_property property="missileStoresBeacon" value="0" name="--" />
     <set_object_property property="missileStoresProbe" value="30" name="--" />
   </event>
-  <event name="505 - Xeno Research" id_arme="bce0c4bc-8312-4f0c-8321-f5c05d661452" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+  <event name="505 - Xeno Research" id_arme="2c127aee-54bf-4d93-ace1-dada95ebca15" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
     <if_variable name="Auto AI Type" comparator="EQUALS" value="505.0" />
     <set_object_property property="canBuild" value="0" name="--" />
     <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have research equipment available for resupply." />
@@ -635,6 +635,10 @@
     <set_object_property property="missileStoresTag" value="40" name="--" />
     <set_object_property property="missileStoresBeacon" value="50" name="--" />
     <set_object_property property="missileStoresProbe" value="30" name="--" />
+  </event>
+  <event name="506 - Normal" id_arme="bce0c4bc-8312-4f0c-8321-f5c05d661452" parent_id_arme="3d823e2e-4dba-4bb6-8919-31cbc3afbb1c">
+    <if_variable name="Auto AI Type" comparator="EQUALS" value="505.0" />
+    <set_ship_text name="--" race="-" class="Tether" desc="Supplying energy" scan_desc="Energy and supply transfer systems online." hailtext="Energy tether is online and ready for energy transfer operations. We have research equipment available for resupply." />
   </event>
   <folder_arme name="Random Name System" id_arme="bfe4e4ff-aa5d-4c48-926a-056476e155d5" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <folder_arme name="Generate Fleet Names" id_arme="2dd8bf7f-9203-4c1a-9bea-2a4d2d3c05a6" parent_id_arme="bfe4e4ff-aa5d-4c48-926a-056476e155d5" />
