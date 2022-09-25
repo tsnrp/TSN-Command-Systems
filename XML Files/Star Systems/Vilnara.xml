@@ -599,7 +599,7 @@
     <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="72233.0" y="0.0" z="27901.0" name="Freyja Gate" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="genericMesh" x="72233.0" y="0.0" z="27901.0" name="Freyja Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <create type="station" x="54286.0" y="0.0" z="58169.0" name="DS-555" hullID="1000" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -608,15 +608,224 @@
     <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Freyja Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Freyja Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Freyja Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Freyja Gate" />
     <set_variable name="Sector Entities" value="3.0" />
   </event>
   <event name="Destroy Sector Entities" id_arme="e52034ec-c11b-4f29-86b2-cd1de4df5445" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
     <if_variable name="Vilnara System" comparator="EQUALS" value="3.0" />
     <destroy name="Freyja Gate" />
     <destroy name="DS-555" />
+    <destroy name="Freyja Gate" />
     <destroy name="Vilnara IV" />
     <set_variable name="Vilnara System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="2128b5f0-fcff-45c5-a06e-bf950d4be954" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" />
+  <event name="Gate Offline" id_arme="8514bad9-2162-461a-a413-c08b9783d853" parent_id_arme="2128b5f0-fcff-45c5-a06e-bf950d4be954">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Freyja Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99" parent_id_arme="2128b5f0-fcff-45c5-a06e-bf950d4be954" />
+  <event name="Ship1 Activation Range" id_arme="a2bb6cc5-86a8-47a3-85d1-ea0a2434b52d" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Freyja Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="a648dea9-8a6e-422f-8998-e000083ad2c2" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Freyja Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="644d9023-4fb8-4283-9d28-f548fd3ad4cd" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Freyja Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="aa882971-ef7b-4cfa-93c7-f7521f8adda4" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Freyja Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="68eaf0e5-dfb1-4be5-aa83-94c94b2b354a" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Freyja Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="d0044535-fa9b-4392-a355-aeaedce80d2e" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Freyja Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="d3a2a68a-5172-438d-bdec-356582356d58" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Freyja Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="aeb0721c-eecb-4736-a49f-383a47d3b44c" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Freyja Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="e1e0001e-4df6-4040-854c-5330c49e1505" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Freyja Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="ff08bb32-145b-4f37-84ba-aeb9b1f8277e" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Freyja Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="4643df84-1ec4-4a11-8d27-51561162d450" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Freyja Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="9afca9d5-8e69-4514-ac5f-4a4308044b7f" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Freyja Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="5027dc22-aeca-45d9-8d1e-0b7dbf0f7d58" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Freyja Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="de4f9e92-3671-42a7-b31a-8c676db8a030" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Freyja Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="9178e796-201d-49fd-99fd-6e373d7ae020" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Freyja Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="9bc08983-e91e-449d-a1f6-0fd518d800c6" parent_id_arme="c0b74446-b976-4733-9943-b3d9f7f09b99">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Freyja Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="51e0fb1f-eacc-4bf4-9024-a6fc4f7e1785" parent_id_arme="2128b5f0-fcff-45c5-a06e-bf950d4be954">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Freyja Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="ed1af373-ff81-4266-8170-87056c0615f2" parent_id_arme="2128b5f0-fcff-45c5-a06e-bf950d4be954">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Freyja Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Vilnara System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Vilnara to Freyja" value="1.0" />
+    <set_variable name="Freyja System" value="1.0" />
+    <set_variable name="Sector" value="7" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <event name="Arrival From Freyja" id_arme="5c4a6a95-5423-417f-9f37-c56bc5af26f0" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd">
+    <if_variable name="Sector" comparator="EQUALS" value="4" />
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Freyja to Vilnara" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Freyja Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Freyja Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Freyja Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Freyja Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Freyja Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Freyja Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Freyja Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Freyja Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Freyja to Vilnara" value="0.0" />
   </event>
   <folder_arme name="Vilnara Sector V" id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2" parent_id_arme="45503237-f35b-45af-bf1d-a5ed5147e0bf" />
   <event name="Create Vilnara Sector V" id_arme="cd534796-7ca7-45de-816a-c0590a6703ec" parent_id_arme="90f4678e-ad4b-4c6a-90ef-2c2aa99e1bb2">
