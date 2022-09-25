@@ -59,12 +59,12 @@
   </event>
   <folder_arme name="Phinmor Sector I" id_arme="f5a66277-6914-47f3-810f-6b5f5ab3d11f" parent_id_arme="b463d847-3b9c-4696-9731-2e54b05109f0" />
   <event name="Create Phinmor Sector I" id_arme="4c631f17-123c-4ade-a6b4-b8f1c6888fd3" parent_id_arme="f5a66277-6914-47f3-810f-6b5f5ab3d11f">
-    <if_variable name="Phinmor" comparator="EQUALS" value="1.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="16" />
     <set_variable name="Sector Entities" value="1.0" />
-    <set_variable name="Phinmor" value="2.0" />
+    <set_variable name="Phinmor System" value="2.0" />
     <create count="50" type="nebulas" startX="43974.0" startY="0.0" startZ="43035.0" endX="2456.0" endY="0.0" endZ="76116.0" randomRange="7000" />
     <create count="50" type="nebulas" startX="43974.0" startY="0.0" startZ="43035.0" endX="85893.0" endY="0.0" endZ="51339.0" randomRange="7000" />
     <create count="50" type="nebulas" nebType="2" startX="51875.0" startY="0.0" startZ="64464.0" endX="49197.0" endY="0.0" endZ="25223.0" randomRange="7000" />
@@ -82,34 +82,34 @@
   </event>
   <folder_arme name="Navigation" id_arme="1ed790f5-7426-4fd9-8aab-89680acf70d2" parent_id_arme="f5a66277-6914-47f3-810f-6b5f5ab3d11f" />
   <event name="Transition to (Right)" id_arme="51f2214e-8873-425a-be4e-610c7fb9a67c" parent_id_arme="1ed790f5-7426-4fd9-8aab-89680acf70d2">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
     <set_variable name="Sector" value="2.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Grid 5 Transition" value="0.0" />
   </event>
   <event name="Transition to (Down)" id_arme="8cc31ef3-e0b9-4613-8a9d-600d634af337" parent_id_arme="1ed790f5-7426-4fd9-8aab-89680acf70d2">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
     <set_variable name="Sector" value="3.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Grid E Transition" value="0.0" />
   </event>
   <event name="Transition to (Bottom Right)" id_arme="622cb4e7-873a-4f95-be27-a36938d3b2a8" parent_id_arme="1ed790f5-7426-4fd9-8aab-89680acf70d2">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
     <set_variable name="Sector" value="4.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E5 Transition" value="0.0" />
@@ -297,7 +297,7 @@
   </event>
   <folder_arme name="Sector Entities" id_arme="78bf8eea-09d1-480e-bd69-b360260a95fa" parent_id_arme="f5a66277-6914-47f3-810f-6b5f5ab3d11f" />
   <event name="Generate Sector Entities" id_arme="b68bc354-8664-400f-87ba-7714a731699c" parent_id_arme="78bf8eea-09d1-480e-bd69-b360260a95fa">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="61786.0" y="0.0" z="32187.0" name="Tyr Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
@@ -306,7 +306,7 @@
     <set_variable name="Sector Entities" value="2.0" />
   </event>
   <event name="Settings" id_arme="de1dac1a-dfb6-45b1-842c-9d89555100b5" parent_id_arme="78bf8eea-09d1-480e-bd69-b360260a95fa">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
     <set_object_property property="artScale" value="1.0" name="Tyr Gate" />
@@ -316,11 +316,11 @@
     <set_variable name="Sector Entities" value="3.0" />
   </event>
   <event name="Destroy Sector Entities" id_arme="661b02a6-0b6f-4b11-b7bc-1a6e627128b4" parent_id_arme="78bf8eea-09d1-480e-bd69-b360260a95fa">
-    <if_variable name="Phinmor" comparator="EQUALS" value="3.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="3.0" />
     <destroy name="Tyr Gate" />
     <destroy name="DS-111" />
     <destroy name="Phinmor Oasis" />
-    <set_variable name="Phinmor" value="System" />
+    <set_variable name="Phinmor System" value="System" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
   <event name="Arrival From Tyr" id_arme="708fb0d4-2d70-4140-898b-8cb4cbc6d044" parent_id_arme="f5a66277-6914-47f3-810f-6b5f5ab3d11f">
@@ -348,12 +348,12 @@
   </event>
   <folder_arme name="Phinmor Sector II" id_arme="5fee4dfa-7d58-4e29-9314-4f4e18d67a89" parent_id_arme="b463d847-3b9c-4696-9731-2e54b05109f0" />
   <event name="Create Phinmor Sector II" id_arme="e7234a42-98e0-4abe-a896-883d4abcc646" parent_id_arme="5fee4dfa-7d58-4e29-9314-4f4e18d67a89">
-    <if_variable name="Phinmor" comparator="EQUALS" value="1.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="16" />
     <set_variable name="Sector Entities" value="1.0" />
-    <set_variable name="Phinmor" value="2.0" />
+    <set_variable name="Phinmor System" value="2.0" />
     <create count="50" type="nebulas" startX="65268.0" startY="0.0" startZ="97812.0" endX="98750.0" endY="0.0" endZ="75848.0" randomRange="7000" />
     <create count="150" type="asteroids" startX="73974.0" startY="-300.0" startZ="76517.0" endX="44643.0" endY="300.0" endZ="41026.0" randomRange="10000" />
     <create count="150" type="asteroids" startX="80402.0" startY="300.0" startZ="70625.0" endX="43840.0" endY="-300.0" endZ="46383.0" randomRange="10000" />
@@ -368,29 +368,29 @@
   </event>
   <folder_arme name="Navigation" id_arme="2d373419-8932-4d62-9c57-0fe93c374a2a" parent_id_arme="5fee4dfa-7d58-4e29-9314-4f4e18d67a89" />
   <event name="Transition to (Left)" id_arme="574c5309-56ff-48a7-8039-8aa5fdbd4f84" parent_id_arme="2d373419-8932-4d62-9c57-0fe93c374a2a">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
     <set_variable name="Sector" value="1.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Grid 1 Transition" value="0.0" />
   </event>
   <event name="Transition to (Down)" id_arme="3b272505-0ccb-4bad-9b54-f9e3f5dc2d2c" parent_id_arme="2d373419-8932-4d62-9c57-0fe93c374a2a">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
     <set_variable name="Sector" value="4.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Grid E Transition" value="0.0" />
   </event>
   <event name="Transition to (Bottom Left)" id_arme="221175e5-f294-4d2e-8eca-5c01610a99ad" parent_id_arme="2d373419-8932-4d62-9c57-0fe93c374a2a">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
@@ -398,7 +398,7 @@
     <set_variable name="Sector" value="3.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner E1 Transition" value="0.0" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
   </event>
   <folder_arme name="System - Jump Gate Setting" id_arme="cc162ec9-dac9-4ee0-9c34-28ec30eb7e19" parent_id_arme="2d373419-8932-4d62-9c57-0fe93c374a2a" />
   <event name="Gate Offline" id_arme="0dc4043e-463e-4ce6-8577-b23ca5ab6436" parent_id_arme="cc162ec9-dac9-4ee0-9c34-28ec30eb7e19">
@@ -581,9 +581,9 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="fb51883b-85d7-4644-9adc-d5992a5662e0" parent_id_arme="5fee4dfa-7d58-4e29-9314-4f4e18d67a89" expanded_arme="" />
+  <folder_arme name="Sector Entities" id_arme="fb51883b-85d7-4644-9adc-d5992a5662e0" parent_id_arme="5fee4dfa-7d58-4e29-9314-4f4e18d67a89" />
   <event name="Generate Sector Entities" id_arme="d2311ba6-228a-4812-907b-cea941f00626" parent_id_arme="fb51883b-85d7-4644-9adc-d5992a5662e0">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="34331.0" y="0.0" z="35267.0" name="Ashia Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
@@ -595,7 +595,7 @@
     <set_variable name="Sector Entities" value="2.0" />
   </event>
   <event name="Settings" id_arme="9655f80c-a13f-469d-9a18-0566843e00f0" parent_id_arme="fb51883b-85d7-4644-9adc-d5992a5662e0">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
     <set_object_property property="artScale" value="1.0" name="Ashia Gate" />
@@ -605,14 +605,14 @@
     <set_variable name="Sector Entities" value="3.0" />
   </event>
   <event name="Destroy Sector Entities" id_arme="7f36730c-2fc5-4b78-919c-cd11b77c072c" parent_id_arme="fb51883b-85d7-4644-9adc-d5992a5662e0">
-    <if_variable name="Phinmor" comparator="EQUALS" value="3.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="3.0" />
     <destroy name="Ashia Gate" />
     <destroy name="Modei Shipping" />
     <destroy name="DS-133" />
     <destroy name="Master Miners" />
     <destroy name="Sela Smeltery" />
     <destroy name="Golden Foundry" />
-    <set_variable name="Phinmor" value="System" />
+    <set_variable name="Phinmor System" value="System" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
   <event name="Arrival From Ashia" id_arme="f2d9f435-0745-4fa5-80a1-06771af59631" parent_id_arme="5fee4dfa-7d58-4e29-9314-4f4e18d67a89">
@@ -640,12 +640,12 @@
   </event>
   <folder_arme name="Phinmor Sector III" id_arme="a59dc8e1-d8c1-48cb-bfeb-bb5124094b51" parent_id_arme="b463d847-3b9c-4696-9731-2e54b05109f0" />
   <event name="Create Phinmor Sector III" id_arme="e087cfd2-c3d2-4e58-8bc4-d6e443cf6c03" parent_id_arme="a59dc8e1-d8c1-48cb-bfeb-bb5124094b51">
-    <if_variable name="Phinmor" comparator="EQUALS" value="1.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="16" />
     <set_variable name="Sector Entities" value="1.0" />
-    <set_variable name="Phinmor" value="2.0" />
+    <set_variable name="Phinmor System" value="2.0" />
     <create count="50" type="nebulas" nebType="2" startX="2456.0" startY="0.0" startZ="37812.0" endX="36474.0" endY="0.0" endZ="4464.0" randomRange="7000" />
     <create count="100" type="nebulas" startX="53349.0" startY="0.0" startZ="46517.0" endX="53349.0" endY="0.0" endZ="46517.0" randomRange="20000" />
     <create count="100" type="asteroids" startX="53081.0" startY="0.0" startZ="55223.0" endX="53081.0" endY="0.0" endZ="55223.0" randomRange="8000" />
@@ -660,34 +660,34 @@
   </event>
   <folder_arme name="Navigation" id_arme="b2b6acf7-6309-4a31-b355-47c28dc3557a" parent_id_arme="a59dc8e1-d8c1-48cb-bfeb-bb5124094b51" />
   <event name="Transition to (Right)" id_arme="fb3c9b04-17f1-4966-9553-78a516422526" parent_id_arme="b2b6acf7-6309-4a31-b355-47c28dc3557a">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
     <set_variable name="Sector" value="4.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Grid 5 Transition" value="0.0" />
   </event>
   <event name="Transition to (Up)" id_arme="25481a02-8eec-4183-aef7-3cf2e619cf32" parent_id_arme="b2b6acf7-6309-4a31-b355-47c28dc3557a">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
     <set_variable name="Sector" value="1.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Grid A Transition" value="0.0" />
   </event>
   <event name="Transition to (Top Right)" id_arme="7b8a7875-a387-48cf-a48e-4eed99a0f57e" parent_id_arme="b2b6acf7-6309-4a31-b355-47c28dc3557a">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="3" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
     <set_variable name="Sector" value="3.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner A5 Transition" value="0.0" />
@@ -695,31 +695,31 @@
   <folder_arme name="Sector Entities" id_arme="95e88163-9ca1-4341-8da4-8f8f602f081f" parent_id_arme="a59dc8e1-d8c1-48cb-bfeb-bb5124094b51" />
   <event name="Generate Sector Entities" id_arme="d99bee7f-8bd3-492c-ba73-f88191948f6d" parent_id_arme="95e88163-9ca1-4341-8da4-8f8f602f081f">
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="neutral" x="53750.0" y="0.0" z="57232.0" angle="0" name="Loags Denabite" hullID="1051" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
   <event name="Settings" id_arme="5d576d6c-f2e5-4b89-8461-da70dfb294c3" parent_id_arme="95e88163-9ca1-4341-8da4-8f8f602f081f">
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
     <set_variable name="Sector Entities" value="3.0" />
   </event>
   <event name="Destroy Sector Entities" id_arme="fb98f51c-3424-4c52-ba11-bc8a808df5ad" parent_id_arme="95e88163-9ca1-4341-8da4-8f8f602f081f">
-    <if_variable name="Phinmor" comparator="EQUALS" value="3.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="3.0" />
     <destroy name="Loags Denabite" />
-    <set_variable name="Phinmor" value="System" />
+    <set_variable name="Phinmor System" value="System" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
   <folder_arme name="Phinmor Sector IV" id_arme="a1bb646d-8e93-453c-85ab-f3732ed5a7a5" parent_id_arme="b463d847-3b9c-4696-9731-2e54b05109f0" />
   <event name="Create Phinmor Sector IV" id_arme="727f1861-0320-4614-ad9d-e9df69f7f4b5" parent_id_arme="a1bb646d-8e93-453c-85ab-f3732ed5a7a5">
-    <if_variable name="Phinmor" comparator="EQUALS" value="1.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_timer_finished name="Transition" />
     <set_skybox_index index="16" />
     <set_variable name="Sector Entities" value="1.0" />
-    <set_variable name="Phinmor" value="2.0" />
+    <set_variable name="Phinmor System" value="2.0" />
     <create count="50" type="nebulas" nebType="2" startX="99018.0" startY="0.0" startZ="37142.0" endX="60849.0" endY="0.0" endZ="59107.0" randomRange="7000" />
     <create count="50" type="nebulas" nebType="2" startX="23483.0" startY="0.0" startZ="62053.0" endX="60849.0" endY="0.0" endZ="59107.0" randomRange="7000" />
     <create count="50" type="nebulas" startX="64867.0" startY="0.0" startZ="3258.0" endX="36742.0" endY="0.0" endZ="35803.0" randomRange="7000" />
@@ -736,34 +736,34 @@
   </event>
   <folder_arme name="Navigation" id_arme="3a84adc2-a6ef-4b9b-9878-607ac764b5e9" parent_id_arme="a1bb646d-8e93-453c-85ab-f3732ed5a7a5" />
   <event name="Transition to (Left)" id_arme="4cd53e44-1449-455f-95e7-2c0f9df2c961" parent_id_arme="3a84adc2-a6ef-4b9b-9878-607ac764b5e9">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
     <set_variable name="Sector" value="3.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Grid 1 Transition" value="0.0" />
   </event>
   <event name="Transition to (Up)" id_arme="e4b01529-b05f-4928-905c-f8c7b2d9b427" parent_id_arme="3a84adc2-a6ef-4b9b-9878-607ac764b5e9">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
     <set_variable name="Sector" value="2.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Grid A Transition" value="0.0" />
   </event>
   <event name="Transition to (Top Left)" id_arme="b846f92d-e5ae-4184-8d23-3137d67e2671" parent_id_arme="3a84adc2-a6ef-4b9b-9878-607ac764b5e9">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
     <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
-    <set_variable name="Phinmor" value="3.0" />
+    <set_variable name="Phinmor System" value="3.0" />
     <set_variable name="Sector" value="1.0" />
     <set_timer name="Transition" seconds="0.5" />
     <set_variable name="Corner A1 Transition" value="0.0" />
@@ -951,7 +951,7 @@
   </event>
   <folder_arme name="Sector Entities" id_arme="be7b9bd9-7946-4feb-971b-0c73828c74c2" parent_id_arme="a1bb646d-8e93-453c-85ab-f3732ed5a7a5" />
   <event name="Generate Sector Entities" id_arme="70a81a21-29ee-4ed4-9e4b-f1307f804293" parent_id_arme="be7b9bd9-7946-4feb-971b-0c73828c74c2">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="24822.0" y="0.0" z="76250.0" name="Waypoint 46 Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
@@ -960,7 +960,7 @@
     <set_variable name="Sector Entities" value="2.0" />
   </event>
   <event name="Settings" id_arme="8eb2a01f-3eba-492e-8c25-c777b93e41ca" parent_id_arme="be7b9bd9-7946-4feb-971b-0c73828c74c2">
-    <if_variable name="Phinmor" comparator="EQUALS" value="2.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="4.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
     <set_object_property property="artScale" value="1.0" name="Waypoint 46 Gate" />
@@ -970,11 +970,11 @@
     <set_variable name="Sector Entities" value="3.0" />
   </event>
   <event name="Destroy Sector Entities" id_arme="657503bc-e6fa-48fd-bc64-84c6dde1f401" parent_id_arme="be7b9bd9-7946-4feb-971b-0c73828c74c2">
-    <if_variable name="Phinmor" comparator="EQUALS" value="3.0" />
+    <if_variable name="Phinmor System" comparator="EQUALS" value="3.0" />
     <destroy name="Waypoint 46 Gate" />
     <destroy name="DS-188" />
     <destroy name="Agros Cantina" />
-    <set_variable name="Phinmor" value="System" />
+    <set_variable name="Phinmor System" value="System" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
   <event name="Arrival From Waypoint 46" id_arme="5dab217b-f1f5-43fb-ae42-5a8a4debc1a7" parent_id_arme="a1bb646d-8e93-453c-85ab-f3732ed5a7a5">

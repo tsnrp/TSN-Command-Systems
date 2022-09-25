@@ -5,6 +5,57 @@
     <set_variable name="Alignment" value="USFP" integer="yes" />
   </start>
   <folder_arme name="Waypoint 46" id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" />
+  <folder_arme name="Waypoint 46 Settings" id_arme="44296c06-93a2-4316-8e4b-89cadab8144e" parent_id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" />
+  <folder_arme name="Waypoint 46 Menu" id_arme="3400ed78-ff8d-445a-9541-bcba59f3bfa5" parent_id_arme="44296c06-93a2-4316-8e4b-89cadab8144e" />
+  <event name="Waypoint 46 Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="3400ed78-ff8d-445a-9541-bcba59f3bfa5">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Upper Arc/Waypoint 46 System" />
+    <set_variable name="Waypoint 46 Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="3400ed78-ff8d-445a-9541-bcba59f3bfa5">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Upper Arc/Waypoint 46 System" />
+  </event>
+  <event name="Waypoint 46 System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="3400ed78-ff8d-445a-9541-bcba59f3bfa5">
+    <if_gm_button text="Upper Arc/Waypoint 46 System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="109.0" integer="yes" />
+    <set_variable name="Waypoint 46 System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="44296c06-93a2-4316-8e4b-89cadab8144e">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Waypoint 46 System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="44296c06-93a2-4316-8e4b-89cadab8144e">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Waypoint 46 System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="44296c06-93a2-4316-8e4b-89cadab8144e">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Waypoint 46 System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="44296c06-93a2-4316-8e4b-89cadab8144e">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="44296c06-93a2-4316-8e4b-89cadab8144e">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Waypoint 46 System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
   <folder_arme name="Sector 1" id_arme="a331e7d4-75fa-44bb-9f60-a04335e37f67" parent_id_arme="8dda51b7-ccd0-4b0a-b25a-16513ef43e71" />
   <event name="Create Waypoint 46-1" id_arme="94c82133-a201-46dd-b0f8-50c770b5a5ef" parent_id_arme="a331e7d4-75fa-44bb-9f60-a04335e37f67">
     <if_variable name="Waypoint 46" comparator="EQUALS" value="1.0" />
