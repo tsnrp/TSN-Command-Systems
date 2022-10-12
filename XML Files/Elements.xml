@@ -26650,13 +26650,13 @@
     <if_variable name="Ship1 Status" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship1Silent" comparator="EQUALS" value="0.0" />
     <if_object_property property="shieldsOn" player_slot="0" comparator="EQUALS" value="0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="0" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="0" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="0" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="0" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="0" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="0" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="0" comparator="LESS_EQUAL" value="0.1" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="0" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="0" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="0" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="0" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="0" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="0" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="0" comparator="LESS_EQUAL" value="0.034" />
     <set_variable name="Ship1Silent" value="1.0" integer="yes" />
     <warning_popup_message message="Silent Running" consoles="MEO" player_slot="0" />
     <set_timer name="Ship1Silent" seconds="1" />
@@ -26670,557 +26670,629 @@
   </event>
   <event name="Ship1 Tactical" id_arme="38ad709b-8379-4e08-8cfe-eb7d7d68cd3f" parent_id_arme="3a5b72e9-b10a-43b7-a7c0-afbfa5874412">
     <if_variable name="Ship1Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="0" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="0" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="0" />
     <clear_gm_button text="Ship1 Silent" />
     <set_variable name="Ship1Silent" value="0.0" integer="yes" />
   </event>
   <event name="Ship1 Impulse" id_arme="99a4d567-7a60-4767-ae72-d5d78c37cc98" parent_id_arme="3a5b72e9-b10a-43b7-a7c0-afbfa5874412">
     <if_variable name="Ship1Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="0" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="0" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="0" />
     <clear_gm_button text="Ship1 Silent" />
     <set_variable name="Ship1Silent" value="0.0" integer="yes" />
   </event>
   <event name="Ship1 Warp" id_arme="73b0ebce-62d0-4762-a424-a3679c5ccb9a" parent_id_arme="3a5b72e9-b10a-43b7-a7c0-afbfa5874412">
     <if_variable name="Ship1Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="0" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="0" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="0" />
     <clear_gm_button text="Ship1 Silent" />
     <set_variable name="Ship1Silent" value="0.0" integer="yes" />
   </event>
   <event name="Ship1 FShield" id_arme="09a6e4d4-5014-4ccc-97f0-3e32b54f2127" parent_id_arme="3a5b72e9-b10a-43b7-a7c0-afbfa5874412">
     <if_variable name="Ship1Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="0" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="0" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="0" />
     <clear_gm_button text="Ship1 Silent" />
     <set_variable name="Ship1Silent" value="0.0" integer="yes" />
   </event>
   <event name="Ship1 BShield" id_arme="35d73390-f85a-4ff3-b190-012295391ac9" parent_id_arme="3a5b72e9-b10a-43b7-a7c0-afbfa5874412">
     <if_variable name="Ship1Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="0" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="0" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="0" />
     <clear_gm_button text="Ship1 Silent" />
     <set_variable name="Ship1Silent" value="0.0" integer="yes" />
   </event>
   <event name="Ship1 Torpedo" id_arme="1236d04e-6a70-49cf-84ff-b35ca44f830f" parent_id_arme="3a5b72e9-b10a-43b7-a7c0-afbfa5874412">
     <if_variable name="Ship1Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="0" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="0" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="0" />
     <clear_gm_button text="Ship1 Silent" />
     <set_variable name="Ship1Silent" value="0.0" integer="yes" />
   </event>
   <event name="Ship1 Beam" id_arme="8fe61646-f669-4b00-8504-b2b088634376" parent_id_arme="3a5b72e9-b10a-43b7-a7c0-afbfa5874412">
     <if_variable name="Ship1Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="0" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="0" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="0" />
     <clear_gm_button text="Ship1 Silent" />
     <set_variable name="Ship1Silent" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship2 Silent Code" id_arme="dca17c2f-4c2c-495d-9eba-09aec27d4b82" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
-  <event name="Ship2 Silent" id_arme="411aea23-0d4f-44b7-9351-b72d83176242" parent_id_arme="dca17c2f-4c2c-495d-9eba-09aec27d4b82">
+  <folder_arme name="Ship2 Silent Code" id_arme="f3874d3d-1903-4e16-8594-5ff1ada0b0fa" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
+  <event name="Ship2 Silent" id_arme="d48f1f48-9055-4672-894a-070889fd467c" parent_id_arme="f3874d3d-1903-4e16-8594-5ff1ada0b0fa">
     <if_variable name="Ship2 Status" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship2Silent" comparator="EQUALS" value="0.0" />
     <if_object_property property="shieldsOn" player_slot="1" comparator="EQUALS" value="0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="1" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="1" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="1" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="1" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="1" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="1" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="1" comparator="LESS_EQUAL" value="0.1" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="1" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="1" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="1" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="1" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="1" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="1" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="1" comparator="LESS_EQUAL" value="0.034" />
     <set_variable name="Ship2Silent" value="1.0" integer="yes" />
     <warning_popup_message message="Silent Running" consoles="MEO" player_slot="1" />
     <set_timer name="Ship2Silent" seconds="1" />
   </event>
-  <event name="Ship2 Shields" id_arme="1a3074d3-353e-4c56-a473-38894d66dc94" parent_id_arme="dca17c2f-4c2c-495d-9eba-09aec27d4b82">
+  <event name="Ship2 Shields" id_arme="04296ef5-5ee7-487e-91d6-64965f62fc33" parent_id_arme="f3874d3d-1903-4e16-8594-5ff1ada0b0fa">
     <if_variable name="Ship2Silent" comparator="GREATER_EQUAL" value="1.0" />
     <if_object_property property="shieldsOn" player_slot="1" comparator="EQUALS" value="1" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="1" />
     <clear_gm_button text="Ship2 Silent" />
     <set_variable name="Ship2Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship2 Tactical" id_arme="9883b6ef-3a2a-4382-bc62-50cbfeb9e7a3" parent_id_arme="dca17c2f-4c2c-495d-9eba-09aec27d4b82">
+  <event name="Ship2 Tactical" id_arme="376c37d0-fd83-4999-abf6-e33f15ce8a28" parent_id_arme="f3874d3d-1903-4e16-8594-5ff1ada0b0fa">
     <if_variable name="Ship2Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="1" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="1" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="1" />
     <clear_gm_button text="Ship2 Silent" />
     <set_variable name="Ship2Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship2 Impulse" id_arme="4c48d3d4-b3df-4a35-86ca-eabc516c329d" parent_id_arme="dca17c2f-4c2c-495d-9eba-09aec27d4b82">
+  <event name="Ship2 Impulse" id_arme="3f9b5196-0789-4b2f-9847-fe14714cf0b4" parent_id_arme="f3874d3d-1903-4e16-8594-5ff1ada0b0fa">
     <if_variable name="Ship2Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="1" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="1" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="1" />
     <clear_gm_button text="Ship2 Silent" />
     <set_variable name="Ship2Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship2 Warp" id_arme="2ac22303-bf0a-499a-9ec2-429d62910dc2" parent_id_arme="dca17c2f-4c2c-495d-9eba-09aec27d4b82">
+  <event name="Ship2 Warp" id_arme="414f4481-a9c4-4075-8d4f-003cdcf27144" parent_id_arme="f3874d3d-1903-4e16-8594-5ff1ada0b0fa">
     <if_variable name="Ship2Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="1" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="1" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="1" />
     <clear_gm_button text="Ship2 Silent" />
     <set_variable name="Ship2Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship2 FShield" id_arme="bfdee8c7-e1e3-49bc-ade3-ab0387a8aea6" parent_id_arme="dca17c2f-4c2c-495d-9eba-09aec27d4b82">
+  <event name="Ship2 FShield" id_arme="fcf9b232-38d7-4f72-8bff-d973620e85ec" parent_id_arme="f3874d3d-1903-4e16-8594-5ff1ada0b0fa">
     <if_variable name="Ship2Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="1" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="1" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="1" />
     <clear_gm_button text="Ship2 Silent" />
     <set_variable name="Ship2Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship2 BShield" id_arme="291f9253-f7ab-464b-b71c-7088d0ab6b25" parent_id_arme="dca17c2f-4c2c-495d-9eba-09aec27d4b82">
+  <event name="Ship2 BShield" id_arme="4832385e-fc63-4433-912d-fdf9550cc36d" parent_id_arme="f3874d3d-1903-4e16-8594-5ff1ada0b0fa">
     <if_variable name="Ship2Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="1" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="1" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="1" />
     <clear_gm_button text="Ship2 Silent" />
     <set_variable name="Ship2Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship2 Torpedo" id_arme="ef049093-76b5-43dc-8ea2-0043b0e671c3" parent_id_arme="dca17c2f-4c2c-495d-9eba-09aec27d4b82">
+  <event name="Ship2 Torpedo" id_arme="712b418d-1051-496b-b53f-b4ba53d8ed1d" parent_id_arme="f3874d3d-1903-4e16-8594-5ff1ada0b0fa">
     <if_variable name="Ship2Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="1" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="1" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="1" />
     <clear_gm_button text="Ship2 Silent" />
     <set_variable name="Ship2Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship2 Beam" id_arme="d7d28a29-98bb-44e8-826f-6a24853269e5" parent_id_arme="dca17c2f-4c2c-495d-9eba-09aec27d4b82">
+  <event name="Ship2 Beam" id_arme="034a2401-17fb-4229-89b3-d5c9d4901756" parent_id_arme="f3874d3d-1903-4e16-8594-5ff1ada0b0fa">
     <if_variable name="Ship2Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="1" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="1" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="1" />
     <clear_gm_button text="Ship2 Silent" />
     <set_variable name="Ship2Silent" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship3 Silent Code" id_arme="14a414fa-218a-4751-be73-68d25b62e471" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
-  <event name="Ship3 Silent" id_arme="f79d6d2d-46a3-4c9c-b7d4-b03b57c9a598" parent_id_arme="14a414fa-218a-4751-be73-68d25b62e471">
+  <folder_arme name="Ship3 Silent Code" id_arme="2748a7e7-baa4-4efd-bdc9-8f1b995b8336" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
+  <event name="Ship3 Silent" id_arme="887596cc-7853-4dcb-ac08-e77ad58a805a" parent_id_arme="2748a7e7-baa4-4efd-bdc9-8f1b995b8336">
     <if_variable name="Ship3 Status" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship3Silent" comparator="EQUALS" value="0.0" />
     <if_object_property property="shieldsOn" player_slot="2" comparator="EQUALS" value="0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="2" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="2" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="2" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="2" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="2" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="2" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="2" comparator="LESS_EQUAL" value="0.1" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="2" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="2" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="2" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="2" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="2" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="2" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="2" comparator="LESS_EQUAL" value="0.034" />
     <set_variable name="Ship3Silent" value="1.0" integer="yes" />
     <warning_popup_message message="Silent Running" consoles="MEO" player_slot="2" />
     <set_timer name="Ship3Silent" seconds="1" />
   </event>
-  <event name="Ship3 Shields" id_arme="ab1b2ff7-9ade-4b18-a93c-68066b0b0378" parent_id_arme="14a414fa-218a-4751-be73-68d25b62e471">
+  <event name="Ship3 Shields" id_arme="a2223edb-5b85-46c6-a922-189e9a62d1b7" parent_id_arme="2748a7e7-baa4-4efd-bdc9-8f1b995b8336">
     <if_variable name="Ship3Silent" comparator="GREATER_EQUAL" value="1.0" />
     <if_object_property property="shieldsOn" player_slot="2" comparator="EQUALS" value="1" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="2" />
     <clear_gm_button text="Ship3 Silent" />
     <set_variable name="Ship3Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship3 Tactical" id_arme="45579e4d-009f-4ced-9bc3-17f0be3106d3" parent_id_arme="14a414fa-218a-4751-be73-68d25b62e471">
+  <event name="Ship3 Tactical" id_arme="ede4814f-88b6-42ef-b429-c0888cb087d7" parent_id_arme="2748a7e7-baa4-4efd-bdc9-8f1b995b8336">
     <if_variable name="Ship3Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="2" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="2" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="2" />
     <clear_gm_button text="Ship3 Silent" />
     <set_variable name="Ship3Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship3 Impulse" id_arme="63c5fe99-2ba3-4901-8b64-837538dc94b3" parent_id_arme="14a414fa-218a-4751-be73-68d25b62e471">
+  <event name="Ship3 Impulse" id_arme="4b2cc20a-2c4a-49d2-a905-6fdca8b61b84" parent_id_arme="2748a7e7-baa4-4efd-bdc9-8f1b995b8336">
     <if_variable name="Ship3Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="2" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="2" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="2" />
     <clear_gm_button text="Ship3 Silent" />
     <set_variable name="Ship3Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship3 Warp" id_arme="74d116e6-466f-4e6e-915f-7e1e63bcfb63" parent_id_arme="14a414fa-218a-4751-be73-68d25b62e471">
+  <event name="Ship3 Warp" id_arme="84ff5e3a-2f93-4898-9b92-4d948d171602" parent_id_arme="2748a7e7-baa4-4efd-bdc9-8f1b995b8336">
     <if_variable name="Ship3Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="2" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="2" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="2" />
     <clear_gm_button text="Ship3 Silent" />
     <set_variable name="Ship3Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship3 FShield" id_arme="5a516bb6-f9ee-4dbc-9bb6-dab7d2b59ec3" parent_id_arme="14a414fa-218a-4751-be73-68d25b62e471">
+  <event name="Ship3 FShield" id_arme="e0b8c6d3-0bcf-4fc4-a070-d035ed0fae46" parent_id_arme="2748a7e7-baa4-4efd-bdc9-8f1b995b8336">
     <if_variable name="Ship3Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="2" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="2" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="2" />
     <clear_gm_button text="Ship3 Silent" />
     <set_variable name="Ship3Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship3 BShield" id_arme="895d584f-d905-424a-a870-a1b03c25b892" parent_id_arme="14a414fa-218a-4751-be73-68d25b62e471">
+  <event name="Ship3 BShield" id_arme="9a5eec93-04cb-4339-8968-502171ba7d19" parent_id_arme="2748a7e7-baa4-4efd-bdc9-8f1b995b8336">
     <if_variable name="Ship3Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="2" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="2" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="2" />
     <clear_gm_button text="Ship3 Silent" />
     <set_variable name="Ship3Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship3 Torpedo" id_arme="65ca90b2-779d-496e-84b0-ae27ee895d56" parent_id_arme="14a414fa-218a-4751-be73-68d25b62e471">
+  <event name="Ship3 Torpedo" id_arme="8c4cd983-5ca0-40df-9456-d84de3089a5a" parent_id_arme="2748a7e7-baa4-4efd-bdc9-8f1b995b8336">
     <if_variable name="Ship3Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="2" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="2" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="2" />
     <clear_gm_button text="Ship3 Silent" />
     <set_variable name="Ship3Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship3 Beam" id_arme="66ac976e-a1e4-4d4f-bb2f-e48135308ed1" parent_id_arme="14a414fa-218a-4751-be73-68d25b62e471">
+  <event name="Ship3 Beam" id_arme="452f2e92-e673-49cb-b9c4-615ce366c246" parent_id_arme="2748a7e7-baa4-4efd-bdc9-8f1b995b8336">
     <if_variable name="Ship3Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="2" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="2" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="2" />
     <clear_gm_button text="Ship3 Silent" />
     <set_variable name="Ship3Silent" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship4 Silent Code" id_arme="62eb9db8-8f4c-4f5a-aaf7-42f029e20c07" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
-  <event name="Ship4 Silent" id_arme="28403ac7-7b50-4dbb-87c3-23527847bfc5" parent_id_arme="62eb9db8-8f4c-4f5a-aaf7-42f029e20c07">
+  <folder_arme name="Ship4 Silent Code" id_arme="b04317ba-80e5-4226-89c3-133eb1d60c34" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
+  <event name="Ship4 Silent" id_arme="2e5e67fd-c1b2-4556-9759-990b0fa33c17" parent_id_arme="b04317ba-80e5-4226-89c3-133eb1d60c34">
     <if_variable name="Ship4 Status" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship4Silent" comparator="EQUALS" value="0.0" />
     <if_object_property property="shieldsOn" player_slot="3" comparator="EQUALS" value="0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="3" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="3" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="3" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="3" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="3" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="3" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="3" comparator="LESS_EQUAL" value="0.1" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="3" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="3" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="3" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="3" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="3" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="3" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="3" comparator="LESS_EQUAL" value="0.034" />
     <set_variable name="Ship4Silent" value="1.0" integer="yes" />
     <warning_popup_message message="Silent Running" consoles="MEO" player_slot="3" />
     <set_timer name="Ship4Silent" seconds="1" />
   </event>
-  <event name="Ship4 Shields" id_arme="b166bb4d-dd93-4917-b664-25bd7135661a" parent_id_arme="62eb9db8-8f4c-4f5a-aaf7-42f029e20c07">
+  <event name="Ship4 Shields" id_arme="0b8ca7ca-2b9c-405e-a8f2-b9b891a21ec6" parent_id_arme="b04317ba-80e5-4226-89c3-133eb1d60c34">
     <if_variable name="Ship4Silent" comparator="GREATER_EQUAL" value="1.0" />
     <if_object_property property="shieldsOn" player_slot="3" comparator="EQUALS" value="1" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="3" />
     <clear_gm_button text="Ship4 Silent" />
     <set_variable name="Ship4Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship4 Tactical" id_arme="f556109f-f935-452c-8ac2-9e028cebac49" parent_id_arme="62eb9db8-8f4c-4f5a-aaf7-42f029e20c07">
+  <event name="Ship4 Tactical" id_arme="35dee801-e299-4a0d-b0a5-d255231407d8" parent_id_arme="b04317ba-80e5-4226-89c3-133eb1d60c34">
     <if_variable name="Ship4Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="3" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="3" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="3" />
     <clear_gm_button text="Ship4 Silent" />
     <set_variable name="Ship4Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship4 Impulse" id_arme="cd286f8e-2b9a-4d0a-ab41-0a06b0a6d2a4" parent_id_arme="62eb9db8-8f4c-4f5a-aaf7-42f029e20c07">
+  <event name="Ship4 Impulse" id_arme="e452de3a-47d2-4073-b6ed-371495be824b" parent_id_arme="b04317ba-80e5-4226-89c3-133eb1d60c34">
     <if_variable name="Ship4Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="3" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="3" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="3" />
     <clear_gm_button text="Ship4 Silent" />
     <set_variable name="Ship4Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship4 Warp" id_arme="6f2cfc81-5153-40bf-9104-def7cde0a149" parent_id_arme="62eb9db8-8f4c-4f5a-aaf7-42f029e20c07">
+  <event name="Ship4 Warp" id_arme="07ddf9dd-43d3-4b09-9a75-0b07d80e022f" parent_id_arme="b04317ba-80e5-4226-89c3-133eb1d60c34">
     <if_variable name="Ship4Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="3" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="3" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="3" />
     <clear_gm_button text="Ship4 Silent" />
     <set_variable name="Ship4Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship4 FShield" id_arme="ccaf265c-879f-474d-a2ce-056b5bcdf831" parent_id_arme="62eb9db8-8f4c-4f5a-aaf7-42f029e20c07">
+  <event name="Ship4 FShield" id_arme="3746e506-f0fe-46cd-a7b8-6a4222bdaeb6" parent_id_arme="b04317ba-80e5-4226-89c3-133eb1d60c34">
     <if_variable name="Ship4Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="3" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="3" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="3" />
     <clear_gm_button text="Ship4 Silent" />
     <set_variable name="Ship4Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship4 BShield" id_arme="40414e60-87bd-4177-a540-f76d596d3821" parent_id_arme="62eb9db8-8f4c-4f5a-aaf7-42f029e20c07">
+  <event name="Ship4 BShield" id_arme="bc1608ba-6f71-4469-b1e9-d263c5e08792" parent_id_arme="b04317ba-80e5-4226-89c3-133eb1d60c34">
     <if_variable name="Ship4Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="3" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="3" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="3" />
     <clear_gm_button text="Ship4 Silent" />
     <set_variable name="Ship4Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship4 Torpedo" id_arme="4bbbd1df-8f17-439f-be32-15b7cf083a33" parent_id_arme="62eb9db8-8f4c-4f5a-aaf7-42f029e20c07">
+  <event name="Ship4 Torpedo" id_arme="52e1fafd-bd0b-4818-a358-8bab1bf6a938" parent_id_arme="b04317ba-80e5-4226-89c3-133eb1d60c34">
     <if_variable name="Ship4Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="3" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="3" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="3" />
     <clear_gm_button text="Ship4 Silent" />
     <set_variable name="Ship4Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship4 Beam" id_arme="bcc08d5b-35d9-4722-89f7-461706db08f8" parent_id_arme="62eb9db8-8f4c-4f5a-aaf7-42f029e20c07">
+  <event name="Ship4 Beam" id_arme="82b15c4c-8931-4888-96a1-f4643be880f0" parent_id_arme="b04317ba-80e5-4226-89c3-133eb1d60c34">
     <if_variable name="Ship4Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="3" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="3" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="3" />
     <clear_gm_button text="Ship4 Silent" />
     <set_variable name="Ship4Silent" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship5 Silent Code" id_arme="3d8e918e-7be0-45de-97bc-17c1c66f91c9" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
-  <event name="Ship5 Silent" id_arme="bef145c9-e2ad-47e7-b794-31c75a3df34f" parent_id_arme="3d8e918e-7be0-45de-97bc-17c1c66f91c9">
+  <folder_arme name="Ship5 Silent Code" id_arme="8e3f1a00-e485-477a-a9c6-fea7be0daf06" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
+  <event name="Ship5 Silent" id_arme="623f3c7e-274e-49d5-afe9-1a5d9c426135" parent_id_arme="8e3f1a00-e485-477a-a9c6-fea7be0daf06">
     <if_variable name="Ship5 Status" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship5Silent" comparator="EQUALS" value="0.0" />
     <if_object_property property="shieldsOn" player_slot="4" comparator="EQUALS" value="0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="4" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="4" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="4" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="4" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="4" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="4" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="4" comparator="LESS_EQUAL" value="0.1" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="4" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="4" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="4" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="4" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="4" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="4" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="4" comparator="LESS_EQUAL" value="0.034" />
     <set_variable name="Ship5Silent" value="1.0" integer="yes" />
     <warning_popup_message message="Silent Running" consoles="MEO" player_slot="4" />
     <set_timer name="Ship5Silent" seconds="1" />
   </event>
-  <event name="Ship5 Shields" id_arme="b446c187-f51c-4739-946e-1e54114cffe1" parent_id_arme="3d8e918e-7be0-45de-97bc-17c1c66f91c9">
+  <event name="Ship5 Shields" id_arme="e381e698-e58d-4ee7-bd1d-92befa9cb091" parent_id_arme="8e3f1a00-e485-477a-a9c6-fea7be0daf06">
     <if_variable name="Ship5Silent" comparator="GREATER_EQUAL" value="1.0" />
     <if_object_property property="shieldsOn" player_slot="4" comparator="EQUALS" value="1" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="4" />
     <clear_gm_button text="Ship5 Silent" />
     <set_variable name="Ship5Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship5 Tactical" id_arme="af124083-be81-41e0-87f3-cca3f1aca09a" parent_id_arme="3d8e918e-7be0-45de-97bc-17c1c66f91c9">
+  <event name="Ship5 Tactical" id_arme="0113d588-7ef3-47a8-a265-d6b34ab9489a" parent_id_arme="8e3f1a00-e485-477a-a9c6-fea7be0daf06">
     <if_variable name="Ship5Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="4" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="4" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="4" />
     <clear_gm_button text="Ship5 Silent" />
     <set_variable name="Ship5Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship5 Impulse" id_arme="b6a52d15-6af4-4b00-9aed-a24012da4f8d" parent_id_arme="3d8e918e-7be0-45de-97bc-17c1c66f91c9">
+  <event name="Ship5 Impulse" id_arme="525e8caa-65e9-4956-ac78-e7c33311ca6d" parent_id_arme="8e3f1a00-e485-477a-a9c6-fea7be0daf06">
     <if_variable name="Ship5Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="4" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="4" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="4" />
     <clear_gm_button text="Ship5 Silent" />
     <set_variable name="Ship5Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship5 Warp" id_arme="63334ca2-ff85-4ca4-ab79-a1b28228daa7" parent_id_arme="3d8e918e-7be0-45de-97bc-17c1c66f91c9">
+  <event name="Ship5 Warp" id_arme="74514da6-9105-459b-8723-2f242e08f693" parent_id_arme="8e3f1a00-e485-477a-a9c6-fea7be0daf06">
     <if_variable name="Ship5Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="4" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="4" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="4" />
     <clear_gm_button text="Ship5 Silent" />
     <set_variable name="Ship5Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship5 FShield" id_arme="40c1493d-cba2-4adc-9fbb-c09769b9ea4e" parent_id_arme="3d8e918e-7be0-45de-97bc-17c1c66f91c9">
+  <event name="Ship5 FShield" id_arme="20da3b00-41c5-4b70-b927-40718e642f70" parent_id_arme="8e3f1a00-e485-477a-a9c6-fea7be0daf06">
     <if_variable name="Ship5Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="4" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="4" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="4" />
     <clear_gm_button text="Ship5 Silent" />
     <set_variable name="Ship5Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship5 BShield" id_arme="2a60fa50-4fe9-4c35-a42f-92034e7e3b96" parent_id_arme="3d8e918e-7be0-45de-97bc-17c1c66f91c9">
+  <event name="Ship5 BShield" id_arme="269e44f0-9a62-44e5-8f33-7364de7383c1" parent_id_arme="8e3f1a00-e485-477a-a9c6-fea7be0daf06">
     <if_variable name="Ship5Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="4" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="4" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="4" />
     <clear_gm_button text="Ship5 Silent" />
     <set_variable name="Ship5Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship5 Torpedo" id_arme="042cb18d-2e4e-4460-a686-6a83dbb4a71d" parent_id_arme="3d8e918e-7be0-45de-97bc-17c1c66f91c9">
+  <event name="Ship5 Torpedo" id_arme="9e425901-0e84-406a-8fa3-553ae283bce5" parent_id_arme="8e3f1a00-e485-477a-a9c6-fea7be0daf06">
     <if_variable name="Ship5Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="4" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="4" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="4" />
     <clear_gm_button text="Ship5 Silent" />
     <set_variable name="Ship5Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship5 Beam" id_arme="34ef2da4-7442-40cc-a0ad-4bbf486faf9c" parent_id_arme="3d8e918e-7be0-45de-97bc-17c1c66f91c9">
+  <event name="Ship5 Beam" id_arme="15ce8252-c137-49e5-80a8-aea306b3f7e3" parent_id_arme="8e3f1a00-e485-477a-a9c6-fea7be0daf06">
     <if_variable name="Ship5Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="4" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="4" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="4" />
     <clear_gm_button text="Ship5 Silent" />
     <set_variable name="Ship5Silent" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship6 Silent Code" id_arme="652604b6-cde4-478c-a1af-45a78f286fc8" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
-  <event name="Ship6 Silent" id_arme="f1d8b2e2-b03e-4f65-93e1-70b5b86fddaa" parent_id_arme="652604b6-cde4-478c-a1af-45a78f286fc8">
+  <folder_arme name="Ship6 Silent Code" id_arme="3e545543-d925-41a2-8585-cc279702952f" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
+  <event name="Ship6 Silent" id_arme="5067fba8-9896-4e0b-82cd-ec41c1ed613d" parent_id_arme="3e545543-d925-41a2-8585-cc279702952f">
     <if_variable name="Ship6 Status" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship6Silent" comparator="EQUALS" value="0.0" />
     <if_object_property property="shieldsOn" player_slot="5" comparator="EQUALS" value="0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="5" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="5" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="5" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="5" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="5" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="5" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="5" comparator="LESS_EQUAL" value="0.1" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="5" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="5" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="5" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="5" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="5" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="5" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="5" comparator="LESS_EQUAL" value="0.034" />
     <set_variable name="Ship6Silent" value="1.0" integer="yes" />
     <warning_popup_message message="Silent Running" consoles="MEO" player_slot="5" />
     <set_timer name="Ship6Silent" seconds="1" />
   </event>
-  <event name="Ship6 Shields" id_arme="3ccd616d-2ed9-4612-bf2f-78f8652056df" parent_id_arme="652604b6-cde4-478c-a1af-45a78f286fc8">
+  <event name="Ship6 Shields" id_arme="6371d6dc-6e91-4525-85b4-dc930e8350af" parent_id_arme="3e545543-d925-41a2-8585-cc279702952f">
     <if_variable name="Ship6Silent" comparator="GREATER_EQUAL" value="1.0" />
     <if_object_property property="shieldsOn" player_slot="5" comparator="EQUALS" value="1" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="5" />
     <clear_gm_button text="Ship6 Silent" />
     <set_variable name="Ship6Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship6 Tactical" id_arme="b65a561d-bd44-46ca-96bf-285b2d9bb022" parent_id_arme="652604b6-cde4-478c-a1af-45a78f286fc8">
+  <event name="Ship6 Tactical" id_arme="a694b9bf-846b-4ffb-95cd-bc665c40d786" parent_id_arme="3e545543-d925-41a2-8585-cc279702952f">
     <if_variable name="Ship6Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="5" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="5" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="5" />
     <clear_gm_button text="Ship6 Silent" />
     <set_variable name="Ship6Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship6 Impulse" id_arme="8f2971c9-f933-4372-a4f0-3b201baebd05" parent_id_arme="652604b6-cde4-478c-a1af-45a78f286fc8">
+  <event name="Ship6 Impulse" id_arme="6db11495-e7d6-4823-8a14-8454c4d3ea7a" parent_id_arme="3e545543-d925-41a2-8585-cc279702952f">
     <if_variable name="Ship6Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="5" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="5" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="5" />
     <clear_gm_button text="Ship6 Silent" />
     <set_variable name="Ship6Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship6 Warp" id_arme="e77a6546-aefc-4f1f-b7ac-bc4354cd038e" parent_id_arme="652604b6-cde4-478c-a1af-45a78f286fc8">
+  <event name="Ship6 Warp" id_arme="f30d2233-ea9b-4940-a2a6-18f529b7fa80" parent_id_arme="3e545543-d925-41a2-8585-cc279702952f">
     <if_variable name="Ship6Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="5" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="5" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="5" />
     <clear_gm_button text="Ship6 Silent" />
     <set_variable name="Ship6Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship6 FShield" id_arme="5eb7bf5d-984e-4ddb-ab35-043d4b943592" parent_id_arme="652604b6-cde4-478c-a1af-45a78f286fc8">
+  <event name="Ship6 FShield" id_arme="c3458f32-db93-493d-a527-9ec1a57c63a4" parent_id_arme="3e545543-d925-41a2-8585-cc279702952f">
     <if_variable name="Ship6Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="5" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="5" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="5" />
     <clear_gm_button text="Ship6 Silent" />
     <set_variable name="Ship6Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship6 BShield" id_arme="55122588-0bda-45e6-bc3d-4104f5f122ba" parent_id_arme="652604b6-cde4-478c-a1af-45a78f286fc8">
+  <event name="Ship6 BShield" id_arme="f4796a6f-9776-4be4-aff9-605f024f7a32" parent_id_arme="3e545543-d925-41a2-8585-cc279702952f">
     <if_variable name="Ship6Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="5" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="5" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="5" />
     <clear_gm_button text="Ship6 Silent" />
     <set_variable name="Ship6Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship6 Torpedo" id_arme="4873eab0-2c78-4769-a511-96061b6f17a8" parent_id_arme="652604b6-cde4-478c-a1af-45a78f286fc8">
+  <event name="Ship6 Torpedo" id_arme="c955b14c-7372-459d-9b3d-ece314e3ea02" parent_id_arme="3e545543-d925-41a2-8585-cc279702952f">
     <if_variable name="Ship6Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="5" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="5" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="5" />
     <clear_gm_button text="Ship6 Silent" />
     <set_variable name="Ship6Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship6 Beam" id_arme="1257be21-a576-4fdc-9804-ea5f2bf41a42" parent_id_arme="652604b6-cde4-478c-a1af-45a78f286fc8">
+  <event name="Ship6 Beam" id_arme="6cb7a159-3d70-479a-8ece-b26d09ba5c02" parent_id_arme="3e545543-d925-41a2-8585-cc279702952f">
     <if_variable name="Ship6Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="5" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="5" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="5" />
     <clear_gm_button text="Ship6 Silent" />
     <set_variable name="Ship6Silent" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship7 Silent Code" id_arme="547e2937-9119-4273-a631-56171cc139a2" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
-  <event name="Ship7 Silent" id_arme="296cb4cb-ff53-46bd-a77a-714173ba5a97" parent_id_arme="547e2937-9119-4273-a631-56171cc139a2">
+  <folder_arme name="Ship7 Silent Code" id_arme="d1d055b9-5c8a-4d81-a721-45092f1947a3" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
+  <event name="Ship7 Silent" id_arme="cc5dde0d-e9e0-4348-a70c-1f11ad0fdb30" parent_id_arme="d1d055b9-5c8a-4d81-a721-45092f1947a3">
     <if_variable name="Ship7 Status" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship7Silent" comparator="EQUALS" value="0.0" />
     <if_object_property property="shieldsOn" player_slot="6" comparator="EQUALS" value="0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="6" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="6" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="6" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="6" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="6" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="6" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="6" comparator="LESS_EQUAL" value="0.1" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="6" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="6" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="6" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="6" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="6" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="6" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="6" comparator="LESS_EQUAL" value="0.034" />
     <set_variable name="Ship7Silent" value="1.0" integer="yes" />
     <warning_popup_message message="Silent Running" consoles="MEO" player_slot="6" />
     <set_timer name="Ship7Silent" seconds="1" />
   </event>
-  <event name="Ship7 Shields" id_arme="d311493f-924e-4353-8d17-1c441725388e" parent_id_arme="547e2937-9119-4273-a631-56171cc139a2">
+  <event name="Ship7 Shields" id_arme="52efdd93-da39-478e-bf2a-305baab23e6f" parent_id_arme="d1d055b9-5c8a-4d81-a721-45092f1947a3">
     <if_variable name="Ship7Silent" comparator="GREATER_EQUAL" value="1.0" />
     <if_object_property property="shieldsOn" player_slot="6" comparator="EQUALS" value="1" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="6" />
     <clear_gm_button text="Ship7 Silent" />
     <set_variable name="Ship7Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship7 Tactical" id_arme="88a7718b-16dc-499b-b0f4-64a025aae2b3" parent_id_arme="547e2937-9119-4273-a631-56171cc139a2">
+  <event name="Ship7 Tactical" id_arme="49bfcb69-10ff-4640-9a97-24bb2c2c5531" parent_id_arme="d1d055b9-5c8a-4d81-a721-45092f1947a3">
     <if_variable name="Ship7Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="6" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="6" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="6" />
     <clear_gm_button text="Ship7 Silent" />
     <set_variable name="Ship7Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship7 Impulse" id_arme="f25e61f6-eec5-466e-9b3f-c5d8c7bbf09b" parent_id_arme="547e2937-9119-4273-a631-56171cc139a2">
+  <event name="Ship7 Impulse" id_arme="aad15461-d2ad-4627-b71b-f2fe90c63f77" parent_id_arme="d1d055b9-5c8a-4d81-a721-45092f1947a3">
     <if_variable name="Ship7Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="6" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="6" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="6" />
     <clear_gm_button text="Ship7 Silent" />
     <set_variable name="Ship7Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship7 Warp" id_arme="bc059875-8212-44d4-80a8-0c4970c50c72" parent_id_arme="547e2937-9119-4273-a631-56171cc139a2">
+  <event name="Ship7 Warp" id_arme="1ba0a47b-df50-4708-b285-d4bc43f59dfe" parent_id_arme="d1d055b9-5c8a-4d81-a721-45092f1947a3">
     <if_variable name="Ship7Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="6" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="6" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="6" />
     <clear_gm_button text="Ship7 Silent" />
     <set_variable name="Ship7Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship7 FShield" id_arme="62d4311d-f0a8-4dbb-9bf6-7a9c85a2cd0f" parent_id_arme="547e2937-9119-4273-a631-56171cc139a2">
+  <event name="Ship7 FShield" id_arme="aa7c380c-4cfa-47a2-aece-217ce19ca023" parent_id_arme="d1d055b9-5c8a-4d81-a721-45092f1947a3">
     <if_variable name="Ship7Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="6" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="6" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="6" />
     <clear_gm_button text="Ship7 Silent" />
     <set_variable name="Ship7Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship7 BShield" id_arme="be2364ce-a7d0-4329-8781-e3547a87057b" parent_id_arme="547e2937-9119-4273-a631-56171cc139a2">
+  <event name="Ship7 BShield" id_arme="8de0ee44-a9aa-4c7d-836f-3ea8a0aaa56d" parent_id_arme="d1d055b9-5c8a-4d81-a721-45092f1947a3">
     <if_variable name="Ship7Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="6" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="6" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="6" />
     <clear_gm_button text="Ship7 Silent" />
     <set_variable name="Ship7Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship7 Torpedo" id_arme="58eb7d64-2c00-454d-a049-261a56532681" parent_id_arme="547e2937-9119-4273-a631-56171cc139a2">
+  <event name="Ship7 Torpedo" id_arme="ba3e8536-baee-4365-ba11-06d5c764e668" parent_id_arme="d1d055b9-5c8a-4d81-a721-45092f1947a3">
     <if_variable name="Ship7Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="6" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="6" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="6" />
     <clear_gm_button text="Ship7 Silent" />
     <set_variable name="Ship7Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship7 Beam" id_arme="aec965f6-4661-4607-97e3-0ac9b36ba451" parent_id_arme="547e2937-9119-4273-a631-56171cc139a2">
+  <event name="Ship7 Beam" id_arme="27c3e0ad-57b6-4d0a-8844-bca2b5b46cce" parent_id_arme="d1d055b9-5c8a-4d81-a721-45092f1947a3">
     <if_variable name="Ship7Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="6" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="6" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="6" />
     <clear_gm_button text="Ship7 Silent" />
     <set_variable name="Ship7Silent" value="0.0" integer="yes" />
   </event>
-  <folder_arme name="Ship8 Silent Code" id_arme="cc98bcf7-ac62-4c5f-9a18-293111e342c8" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
-  <event name="Ship8 Silent" id_arme="88b7f3dd-7fdd-4a6c-90ee-4922d18b33d3" parent_id_arme="cc98bcf7-ac62-4c5f-9a18-293111e342c8">
+  <folder_arme name="Ship8 Silent Code" id_arme="e560a143-9d5a-411c-bade-02b251dc6246" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
+  <event name="Ship8 Silent" id_arme="6b29dbc7-84c4-4e66-bae5-3956f6c81878" parent_id_arme="e560a143-9d5a-411c-bade-02b251dc6246">
     <if_variable name="Ship8 Status" comparator="EQUALS" value="2.0" />
     <if_variable name="Ship8Silent" comparator="EQUALS" value="0.0" />
     <if_object_property property="shieldsOn" player_slot="7" comparator="EQUALS" value="0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="7" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="7" comparator="LESS_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="7" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="7" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="7" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="7" comparator="LESS_EQUAL" value="0.1" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="7" comparator="LESS_EQUAL" value="0.1" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="7" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="7" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="7" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="7" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="7" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="7" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="7" comparator="LESS_EQUAL" value="0.034" />
     <set_variable name="Ship8Silent" value="1.0" integer="yes" />
     <warning_popup_message message="Silent Running" consoles="MEO" player_slot="7" />
     <set_timer name="Ship8Silent" seconds="1" />
   </event>
-  <event name="Ship8 Shields" id_arme="4dd19edc-1f7c-4e91-a2dd-a11a3c1878bc" parent_id_arme="cc98bcf7-ac62-4c5f-9a18-293111e342c8">
+  <event name="Ship8 Shields" id_arme="4b9223b2-c51f-4b9c-b805-313719264a15" parent_id_arme="e560a143-9d5a-411c-bade-02b251dc6246">
     <if_variable name="Ship8Silent" comparator="GREATER_EQUAL" value="1.0" />
     <if_object_property property="shieldsOn" player_slot="7" comparator="EQUALS" value="1" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="7" />
     <clear_gm_button text="Ship8 Silent" />
     <set_variable name="Ship8Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship8 Tactical" id_arme="f6a3d0b8-7799-4499-8cf2-aeef583da08c" parent_id_arme="cc98bcf7-ac62-4c5f-9a18-293111e342c8">
+  <event name="Ship8 Tactical" id_arme="96780fed-0f17-476d-864e-ac59b8bec0e4" parent_id_arme="e560a143-9d5a-411c-bade-02b251dc6246">
     <if_variable name="Ship8Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTactical" player_slot="7" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="7" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="7" />
     <clear_gm_button text="Ship8 Silent" />
     <set_variable name="Ship8Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship8 Impulse" id_arme="0794d0d9-f722-45cd-be88-b61bbac21983" parent_id_arme="cc98bcf7-ac62-4c5f-9a18-293111e342c8">
+  <event name="Ship8 Impulse" id_arme="4e6d059e-ce02-4388-8b8b-b02a60deb7b0" parent_id_arme="e560a143-9d5a-411c-bade-02b251dc6246">
     <if_variable name="Ship8Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyImpulse" player_slot="7" comparator="GREATER" value="1.0" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="7" comparator="GREATER" value="0.34" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="7" />
     <clear_gm_button text="Ship8 Silent" />
     <set_variable name="Ship8Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship8 Warp" id_arme="756ecb7c-b486-469e-836e-3502e9a9d5f7" parent_id_arme="cc98bcf7-ac62-4c5f-9a18-293111e342c8">
+  <event name="Ship8 Warp" id_arme="a7422ab9-116b-452d-884c-918baf16fc32" parent_id_arme="e560a143-9d5a-411c-bade-02b251dc6246">
     <if_variable name="Ship8Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyWarp" player_slot="7" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="7" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="7" />
     <clear_gm_button text="Ship8 Silent" />
     <set_variable name="Ship8Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship8 FShield" id_arme="0ae46c2e-fc00-4d9b-9f81-f63e54bf2eee" parent_id_arme="cc98bcf7-ac62-4c5f-9a18-293111e342c8">
+  <event name="Ship8 FShield" id_arme="a8198a18-b01a-4773-a90f-7859e2ef5e27" parent_id_arme="e560a143-9d5a-411c-bade-02b251dc6246">
     <if_variable name="Ship8Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyFrontShield" player_slot="7" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="7" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="7" />
     <clear_gm_button text="Ship8 Silent" />
     <set_variable name="Ship8Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship8 BShield" id_arme="839cef80-e697-4964-95dc-cf5ed6a469db" parent_id_arme="cc98bcf7-ac62-4c5f-9a18-293111e342c8">
+  <event name="Ship8 BShield" id_arme="f6192505-6a11-4b86-8515-0020ac6023fc" parent_id_arme="e560a143-9d5a-411c-bade-02b251dc6246">
     <if_variable name="Ship8Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBackShield" player_slot="7" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="7" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="7" />
     <clear_gm_button text="Ship8 Silent" />
     <set_variable name="Ship8Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship8 Torpedo" id_arme="f9bd4a1f-f072-40fa-9e6c-c190c39fa4c1" parent_id_arme="cc98bcf7-ac62-4c5f-9a18-293111e342c8">
+  <event name="Ship8 Torpedo" id_arme="62bfa2a9-79ac-4a32-bf9b-e8adebc5761f" parent_id_arme="e560a143-9d5a-411c-bade-02b251dc6246">
     <if_variable name="Ship8Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyTorpedo" player_slot="7" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="7" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="7" />
     <clear_gm_button text="Ship8 Silent" />
     <set_variable name="Ship8Silent" value="0.0" integer="yes" />
   </event>
-  <event name="Ship8 Beam" id_arme="76336392-853b-44d6-b6a6-c7b7b07e2c46" parent_id_arme="cc98bcf7-ac62-4c5f-9a18-293111e342c8">
+  <event name="Ship8 Beam" id_arme="ae20809a-047e-4c6b-96b7-ecc2c504be03" parent_id_arme="e560a143-9d5a-411c-bade-02b251dc6246">
     <if_variable name="Ship8Silent" comparator="GREATER_EQUAL" value="1.0" />
-    <if_object_property property="systemCurEnergyBeam" player_slot="7" comparator="GREATER" value="0.1" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="7" comparator="GREATER" value="0.034" />
     <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="7" />
     <clear_gm_button text="Ship8 Silent" />
     <set_variable name="Ship8Silent" value="0.0" integer="yes" />
   </event>
+  <folder_arme name="ShipX Silent Code" id_arme="e37cc966-63ea-4e7c-8c1a-694ab0e1b9b2" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
+  <disabled_event name="ShipX Silent" id_arme="be573a78-aea2-42c7-a03f-a0bf63c7a05e" parent_id_arme="e37cc966-63ea-4e7c-8c1a-694ab0e1b9b2">
+    <if_variable name="ShipX Status" comparator="EQUALS" value="2.0" />
+    <if_variable name="ShipXSilent" comparator="EQUALS" value="0.0" />
+    <if_object_property property="shieldsOn" player_slot="y" comparator="EQUALS" value="0" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="y" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="y" comparator="LESS_EQUAL" value="0.34" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="y" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="y" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="y" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="y" comparator="LESS_EQUAL" value="0.034" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="y" comparator="LESS_EQUAL" value="0.034" />
+    <set_variable name="ShipXSilent" value="1.0" integer="yes" />
+    <warning_popup_message message="Silent Running" consoles="MEO" player_slot="y" />
+    <set_timer name="ShipXSilent" seconds="1" />
+  </disabled_event>
+  <disabled_event name="ShipX Shields" id_arme="2721feaa-1bb9-4b35-8e40-dcdc68ab6761" parent_id_arme="e37cc966-63ea-4e7c-8c1a-694ab0e1b9b2">
+    <if_variable name="ShipXSilent" comparator="GREATER_EQUAL" value="1.0" />
+    <if_object_property property="shieldsOn" player_slot="y" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="y" />
+    <clear_gm_button text="ShipX Silent" />
+    <set_variable name="ShipXSilent" value="0.0" integer="yes" />
+  </disabled_event>
+  <disabled_event name="ShipX Tactical" id_arme="d5e53b0b-4344-41dd-a927-ac77f668b0cf" parent_id_arme="e37cc966-63ea-4e7c-8c1a-694ab0e1b9b2">
+    <if_variable name="ShipXSilent" comparator="GREATER_EQUAL" value="1.0" />
+    <if_object_property property="systemCurEnergyTactical" player_slot="y" comparator="GREATER" value="0.34" />
+    <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="y" />
+    <clear_gm_button text="ShipX Silent" />
+    <set_variable name="ShipXSilent" value="0.0" integer="yes" />
+  </disabled_event>
+  <disabled_event name="ShipX Impulse" id_arme="aea4ceb4-4569-4f42-890a-94ab0e960ff2" parent_id_arme="e37cc966-63ea-4e7c-8c1a-694ab0e1b9b2">
+    <if_variable name="ShipXSilent" comparator="GREATER_EQUAL" value="1.0" />
+    <if_object_property property="systemCurEnergyImpulse" player_slot="y" comparator="GREATER" value="0.34" />
+    <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="y" />
+    <clear_gm_button text="ShipX Silent" />
+    <set_variable name="ShipXSilent" value="0.0" integer="yes" />
+  </disabled_event>
+  <disabled_event name="ShipX Warp" id_arme="7a7036ab-5c41-49f6-9547-1793a89e1d6f" parent_id_arme="e37cc966-63ea-4e7c-8c1a-694ab0e1b9b2">
+    <if_variable name="ShipXSilent" comparator="GREATER_EQUAL" value="1.0" />
+    <if_object_property property="systemCurEnergyWarp" player_slot="y" comparator="GREATER" value="0.034" />
+    <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="y" />
+    <clear_gm_button text="ShipX Silent" />
+    <set_variable name="ShipXSilent" value="0.0" integer="yes" />
+  </disabled_event>
+  <disabled_event name="ShipX FShield" id_arme="803e3bc7-99f2-4f1a-85a1-72aaec836dad" parent_id_arme="e37cc966-63ea-4e7c-8c1a-694ab0e1b9b2">
+    <if_variable name="ShipXSilent" comparator="GREATER_EQUAL" value="1.0" />
+    <if_object_property property="systemCurEnergyFrontShield" player_slot="y" comparator="GREATER" value="0.034" />
+    <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="y" />
+    <clear_gm_button text="ShipX Silent" />
+    <set_variable name="ShipXSilent" value="0.0" integer="yes" />
+  </disabled_event>
+  <disabled_event name="ShipX BShield" id_arme="7726ba4f-fdd9-460a-affa-b857aee3cca0" parent_id_arme="e37cc966-63ea-4e7c-8c1a-694ab0e1b9b2">
+    <if_variable name="ShipXSilent" comparator="GREATER_EQUAL" value="1.0" />
+    <if_object_property property="systemCurEnergyBackShield" player_slot="y" comparator="GREATER" value="0.034" />
+    <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="y" />
+    <clear_gm_button text="ShipX Silent" />
+    <set_variable name="ShipXSilent" value="0.0" integer="yes" />
+  </disabled_event>
+  <disabled_event name="ShipX Torpedo" id_arme="834aaae8-c040-4bbf-ac9d-b832c98ed804" parent_id_arme="e37cc966-63ea-4e7c-8c1a-694ab0e1b9b2">
+    <if_variable name="ShipXSilent" comparator="GREATER_EQUAL" value="1.0" />
+    <if_object_property property="systemCurEnergyTorpedo" player_slot="y" comparator="GREATER" value="0.034" />
+    <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="y" />
+    <clear_gm_button text="ShipX Silent" />
+    <set_variable name="ShipXSilent" value="0.0" integer="yes" />
+  </disabled_event>
+  <disabled_event name="ShipX Beam" id_arme="afd0a9bc-b9f9-4190-af36-b95d9d3e95ce" parent_id_arme="e37cc966-63ea-4e7c-8c1a-694ab0e1b9b2">
+    <if_variable name="ShipXSilent" comparator="GREATER_EQUAL" value="1.0" />
+    <if_object_property property="systemCurEnergyBeam" player_slot="y" comparator="GREATER" value="0.034" />
+    <warning_popup_message message="Disabled = Silent Running" consoles="MEO" player_slot="y" />
+    <clear_gm_button text="ShipX Silent" />
+    <set_variable name="ShipXSilent" value="0.0" integer="yes" />
+  </disabled_event>
   <folder_arme name="GM Indicators" id_arme="c037ecc7-5e57-4e3a-9512-eedd2ee30a61" parent_id_arme="c5dc1622-6431-4d60-9d3a-daa59af3e5aa" />
   <event name="Ship1 on Silent Running" id_arme="5e774da2-435d-4ca5-8cda-a93218e2779f" parent_id_arme="c037ecc7-5e57-4e3a-9512-eedd2ee30a61">
     <if_variable name="Ship1Silent" comparator="EQUALS" value="1.0" />
