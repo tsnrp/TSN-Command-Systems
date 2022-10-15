@@ -19,7 +19,7 @@
   <event name="Jhohara System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="a680029d-40d7-4fe7-ac26-951602f65d78">
     <if_gm_button text="Lower Arc/Jhohara System" />
     <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
-    <set_variable name="Sector" value="103.0" integer="yes" />
+    <set_variable name="Sector" value="104.0" integer="yes" />
     <set_variable name="Jhohara System" value="1.0" integer="yes" />
     <set_variable name="GM Mode" value="3.0" integer="yes" />
   </event>

@@ -1,0 +1,1349 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="1160.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="675.0" integer="yes" />
+    <set_variable name="Alignment" value="USFP" integer="yes" />
+  </start>
+  <folder_arme name="Freyja System" id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <folder_arme name="Freyja Settings" id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <folder_arme name="Freyja Menu" id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" />
+  <event name="Freyja Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Upper Arc/Freyja System" />
+    <set_variable name="Freyja Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Upper Arc/Freyja System" />
+  </event>
+  <event name="Freyja System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
+    <if_gm_button text="Upper Arc/Freyja System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="102.0" integer="yes" />
+    <set_variable name="Freyja System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Freyja Sector I" id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <event name="Create Freyja Sector I" id_arme="32458fc2-4bb6-455e-8446-23f5e7574323" parent_id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884">
+    <if_variable name="Freyja System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="70" type="nebulas" nebType="3" startX="47890.0" startY="500.0" startZ="1457.0" endX="21000.0" endY="0.0" endZ="73577.0" randomRange="13000" />
+    <create count="50" type="nebulas" nebType="3" startX="8191.0" startY="0.0" startZ="97939.0" endX="28091.0" endY="0.0" endZ="51809.0" randomRange="8000" />
+    <create count="120" type="nebulas" nebType="1" startX="46684.0" startY="-500.0" startZ="8693.0" endX="24171.0" endY="0.0" endZ="62261.0" randomRange="16000" />
+    <create count="50" type="nebulas" nebType="1" startX="10302.0" startY="0.0" startZ="98241.0" endX="34724.0" endY="0.0" endZ="39447.0" randomRange="8000" />
+    <create count="70" type="asteroids" startX="87588.0" startY="200.0" startZ="28592.0" endX="71508.0" endY="-200.0" endZ="54924.0" randomRange="8000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Freyja System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708" parent_id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884" />
+  <event name="Transition to Sector II" id_arme="cd353cd3-19b5-488a-bb3f-194baaa92c23" parent_id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="78cb483e-97fc-4f7c-b074-bd20193f8c06" parent_id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="80151821-d320-45cd-b18b-e95ca32f19de" parent_id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="94cae3cf-1a20-4ba3-8196-3294d979bf3f" parent_id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884" />
+  <event name="Generate Sector Entities" id_arme="fe466c71-0891-4ad8-a146-ad6799a384d3" parent_id_arme="94cae3cf-1a20-4ba3-8196-3294d979bf3f">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="dc367b1e-af0c-4a70-b98e-49bca5b5f636" parent_id_arme="94cae3cf-1a20-4ba3-8196-3294d979bf3f">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="847894ee-2de5-4481-b0ce-91f37357a3be" parent_id_arme="94cae3cf-1a20-4ba3-8196-3294d979bf3f">
+    <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Freyja System" value="System" integer="yes" />
+    <destroy name="Freyja I" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Freyja Sector II" id_arme="7bc1753c-21c1-4375-ae7b-58ae9fed048c" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <event name="Create Freyja Sector II" id_arme="e7ad10c8-ca65-468b-a021-fa8bd33414ea" parent_id_arme="7bc1753c-21c1-4375-ae7b-58ae9fed048c">
+    <if_variable name="Freyja System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="80" type="nebulas" nebType="3" startX="29096.0" startY="500.0" startZ="6180.0" endX="48493.0" endY="0.0" endZ="97336.0" randomRange="9000" />
+    <create count="100" type="nebulas" nebType="2" startX="22707.0" startY="-500.0" startZ="827.0" endX="46931.0" endY="0.0" endZ="99506.0" randomRange="9000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Freyja System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="2e31124d-5303-4b44-ac43-ec4bc3e547ef" parent_id_arme="7bc1753c-21c1-4375-ae7b-58ae9fed048c" />
+  <event name="Transition to Sector III" id_arme="ca768fc3-842c-4862-b3ae-aeea7223db55" parent_id_arme="2e31124d-5303-4b44-ac43-ec4bc3e547ef">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="7d2b071a-4dd3-4d2d-b155-223be93e78b1" parent_id_arme="2e31124d-5303-4b44-ac43-ec4bc3e547ef">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="59332b5c-d800-4358-bd60-94566596d865" parent_id_arme="2e31124d-5303-4b44-ac43-ec4bc3e547ef">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="d7014516-1c8d-4586-8234-6173df1398a7" parent_id_arme="2e31124d-5303-4b44-ac43-ec4bc3e547ef">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="b30d564c-5bb2-4280-8aca-e6e04e0efc71" parent_id_arme="2e31124d-5303-4b44-ac43-ec4bc3e547ef">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="563d3840-7948-40f0-9f73-888cbd14e85d" parent_id_arme="7bc1753c-21c1-4375-ae7b-58ae9fed048c" />
+  <event name="Generate Sector Entities" id_arme="552a1cad-d941-4984-be8b-7c58ce13ad61" parent_id_arme="563d3840-7948-40f0-9f73-888cbd14e85d">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="0c290b8f-0308-4c2f-bf13-0fde269827f7" parent_id_arme="563d3840-7948-40f0-9f73-888cbd14e85d">
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="b7b599b2-886c-441b-a59b-ed08e98555a5" parent_id_arme="563d3840-7948-40f0-9f73-888cbd14e85d">
+    <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
+    <destroy name="Freyja II" />
+    <set_variable name="Freyja System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Freyja Sector III" id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <event name="Create Freyja Sector III" id_arme="1bd39347-45be-45ed-92ba-3c4ff16259fe" parent_id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65">
+    <if_variable name="Freyja System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Freyja System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce" parent_id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65" />
+  <event name="Transition to Sector II" id_arme="94f9a07b-651d-442e-bcc6-c4a7de8521b2" parent_id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="cbc65ba0-6189-4ec7-b425-491f6136a293" parent_id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="08fb564b-6674-48b3-b4d0-d914da77d694" parent_id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce" />
+  <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Corus Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" />
+  <event name="Ship1 Activation Range" id_arme="9ee3d7c6-fc41-4126-9f10-ff4740910803" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Corus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="a17eaf43-4ffc-4aab-8b15-1a3117b245d3" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Corus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="821c7eeb-4bda-470d-b813-db2f91f723f0" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Corus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="8538df1f-9f88-48bc-8fd3-25f196f7707d" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Corus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="487a4879-0868-4f63-8533-6213ba0d530f" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Corus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="cfecc391-c0f4-40c4-ac0c-262dce7f46bb" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Corus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="f6a229f0-ba8d-42f4-b3a7-e17f26ffaa78" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Corus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="6aefb361-f909-4601-b04d-64ee277ae1fa" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Corus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="ab17df6f-e69c-4bb7-88d2-466ab15382a3" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Corus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="305f2236-daf5-477e-a42f-c20a910ca54f" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Corus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="a06e393a-a845-4ac1-a474-f561bafe34cc" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Corus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="6f3cc0a7-9479-4ed6-8f08-1d2e8862b558" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Corus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="aa322b59-8748-4f26-a9ea-089be033b6fd" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Corus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="6605b477-d0b3-406f-98b2-d317c4c1f2b6" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Corus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="6d6d19a5-7e59-4609-a4d6-057b979f2dfe" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Corus Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="e727d711-e221-4770-bdcf-0205f51d2e40" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Corus Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="e113c47c-ccd7-48c8-b520-4174a25a8a6a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Corus Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="cbb7a700-d872-4afe-97b3-23b096f478c8" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Corus Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Freyja to Corus" value="1.0" />
+    <set_variable name="Corus System" value="1.0" />
+    <set_variable name="Sector" value="1" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <event name="Arrival From Corus" id_arme="708fb0d4-2d70-4140-898b-8cb4cbc6d044" parent_id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corus to Freyja" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Corus Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Corus to Freyja" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87" parent_id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65" />
+  <event name="Generate Sector Entities" id_arme="874ee4b6-2c61-4a13-875d-3de2780a9020" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="station" x="62782.0" y="0.0" z="64455.0" name="Gate Control &amp; Customs" hullID="1001" sideValue="sectorSide" />
+    <create type="genericMesh" x="40568.0" y="0.0" z="36995.0" name="Corus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="71a32eaf-ef73-4630-b31a-522fdb1a44ee" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="targetGate Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="targetGate Gate" />
+    <set_object_property property="angle" value="4.71238898" name="targetGate Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="targetGate Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="f6cb6274-798f-42f6-8d76-1c1cc456cfcf" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
+    <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
+    <destroy name="Freyja III" />
+    <destroy name="Gate Control &amp; Customs" />
+    <destroy name="Corus Gate" />
+    <set_variable name="Freyja System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Freyja Sector IV" id_arme="6797704b-85b6-463b-82c0-02e2e4dcf8f6" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <event name="Create Freyja Sector IV" id_arme="722c9594-7acc-4854-85eb-84bcb64ad6e8" parent_id_arme="6797704b-85b6-463b-82c0-02e2e4dcf8f6">
+    <if_variable name="Freyja System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="30" type="nebulas" nebType="1" startX="9397.0" startY="0.0" startZ="653.0" endX="1156.0" endY="0.0" endZ="14824.0" randomRange="5000" />
+    <create count="20" type="nebulas" nebType="3" startX="9297.0" startY="0.0" startZ="50.0" endX="553.0" endY="0.0" endZ="11206.0" randomRange="5000" />
+    <create count="50" type="asteroids" startX="53217.0" startY="200.0" startZ="43065.0" endX="38543.0" endY="500.0" endZ="64271.0" randomRange="8000" />
+    <create count="50" type="asteroids" startX="52212.0" startY="-500.0" startZ="28391.0" endX="31106.0" endY="-200.0" endZ="58442.0" randomRange="8000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Freyja System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="4740f1ec-6ad6-4ada-93dc-c3f213dd9786" parent_id_arme="6797704b-85b6-463b-82c0-02e2e4dcf8f6" />
+  <event name="Transition to Sector V" id_arme="09537c50-674d-4412-b6cc-4efc93ce91ea" parent_id_arme="4740f1ec-6ad6-4ada-93dc-c3f213dd9786">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="d0c5b587-cb76-4c36-a704-4ef66a766dcf" parent_id_arme="4740f1ec-6ad6-4ada-93dc-c3f213dd9786">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="4a12f9a1-58ae-4673-966a-fb8c9aea923d" parent_id_arme="4740f1ec-6ad6-4ada-93dc-c3f213dd9786">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="fedf02ed-7197-48e1-90a8-3c9a4ba1825f" parent_id_arme="4740f1ec-6ad6-4ada-93dc-c3f213dd9786">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="01818fa6-fe5f-4310-b4f1-be50f76436e3" parent_id_arme="4740f1ec-6ad6-4ada-93dc-c3f213dd9786">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="cfde8ffc-b137-4ab5-8613-903a87490bd0" parent_id_arme="6797704b-85b6-463b-82c0-02e2e4dcf8f6" />
+  <event name="Generate Sector Entities" id_arme="02200c7f-ff9c-4e47-8ccb-6f907ebfcbeb" parent_id_arme="cfde8ffc-b137-4ab5-8613-903a87490bd0">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="6fb89a0f-141c-4adf-8c9a-4bbec8071282" parent_id_arme="cfde8ffc-b137-4ab5-8613-903a87490bd0">
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e26cfdd5-2be5-4e84-8f80-30c3446eb1ff" parent_id_arme="cfde8ffc-b137-4ab5-8613-903a87490bd0">
+    <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
+    <destroy name="Freyja IV" />
+    <set_variable name="Freyja System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Freyja Sector V" id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <event name="Create Freyja Sector V" id_arme="b712d4ae-1542-49c5-9122-35ba03f9d2de" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda">
+    <if_variable name="Freyja System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="40" type="nebulas" nebType="3" startX="99649.0" startY="0.0" startZ="5477.0" endX="79448.0" endY="0.0" endZ="30603.0" randomRange="6000" />
+    <create count="80" type="nebulas" nebType="1" startX="99731.0" startY="0.0" startZ="9981.0" endX="65076.0" endY="0.0" endZ="61959.0" randomRange="7000" />
+    <create count="100" type="nebulas" nebType="2" startX="61156.0" startY="0.0" startZ="64874.0" endX="55303.0" endY="0.0" endZ="3506.0" randomRange="8000" />
+    <create count="50" type="nebulas" nebType="3" startX="65578.0" startY="0.0" startZ="41959.0" endX="51284.0" endY="0.0" endZ="1609.0" randomRange="8000" />
+    <create count="70" type="nebulas" nebType="2" startX="65478.0" startY="0.0" startZ="47788.0" endX="48995.0" endY="0.0" endZ="96834.0" randomRange="8000" />
+    <create count="40" type="nebulas" nebType="1" startX="54724.0" startY="0.0" startZ="87185.0" endX="79347.0" endY="0.0" endZ="44773.0" randomRange="8000" />
+    <create count="46" type="nebulas" nebType="1" startX="47387.0" startY="0.0" startZ="99145.0" endX="61458.0" endY="0.0" endZ="56331.0" randomRange="8000" />
+    <create count="100" type="asteroids" startX="73052.0" startY="200.0" startZ="24493.0" endX="78410.0" endY="400.0" endZ="40790.0" randomRange="8000" />
+    <create count="100" type="asteroids" startX="83545.0" startY="-400.0" startZ="29739.0" endX="63563.0" endY="-200.0" endZ="31748.0" randomRange="8000" />
+    <create count="100" type="mines" startAngle="15" endAngle="165" startX="42500.0" startY="0.0" startZ="49500.0" radius="15000" />
+    <create count="100" type="mines" startAngle="195" endAngle="345" startX="42500.0" startY="0.0" startZ="49500.0" radius="15000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Freyja System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" />
+  <event name="Transition to Sector VI" id_arme="9e190538-f04c-45b1-90b6-e5a6e088e125" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="ad0b591c-f66b-47e9-96c9-7731720604d2" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="621bc65c-7920-43eb-9671-d607b0f3a1b5" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="71feee0b-6346-4b23-a10c-7e0da792de88" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="36f260a3-0508-4dd8-8eb4-a96bb0298fcc" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="fc8b829e-c6eb-4a83-9428-55fd6f073eed" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="7d337b7b-5e08-4677-aeb4-3b601efa920a" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="da699863-e187-4089-a8a5-7194ecb803f9" parent_id_arme="e50ce6d7-14d6-4c88-8081-21a5979ef85f">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="33a17718-a44b-4a95-b2e8-8e8393e44137" parent_id_arme="c1e6332c-5c64-4995-bf24-72a634605bda" />
+  <event name="Generate Sector Entities" id_arme="ff2bc030-0dd5-457a-873d-fc1743ce9215" parent_id_arme="33a17718-a44b-4a95-b2e8-8e8393e44137">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="neutral" x="76959.0" y="0.0" z="41795.0" name="Mendeleyjev Base" raceKeys="TSN" hullKeys="Science Base" sideValue="sectorSide" />
+    <create type="neutral" x="42500.0" y="0.0" z="49500.0" name="Freyja Control" hullID="1002" sideValue="sectorSide" />
+    <create type="neutral" x="42500.0" y="0.0" z="64500.0" angle="180" name="WP-07" raceKeys="TSN" hullKeys="Weapons Platform" sideValue="sectorSide" />
+    <create type="neutral" x="42500.0" y="0.0" z="34500.0" angle="0" name="WP-06" raceKeys="TSN" hullKeys="Weapons Platform" sideValue="sectorSide" />
+    <create type="neutral" x="50726.0" y="0.0" z="44920.0" angle="0" name="SY-19" raceKeys="TSN" hullKeys="Ship Yard" sideValue="sectorSide" />
+    <create type="neutral" x="73387.0" y="0.0" z="30409.0" angle="165" name="Dikro Mining" hullID="1050" sideValue="sectorSide" />
+    <create type="neutral" x="72159.0" y="0.0" z="35320.0" angle="0" name="Dikro Gasses" hullID="1050" sideValue="sectorSide" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="d6ae502d-8e85-47f7-ac11-f83475278ef3" parent_id_arme="33a17718-a44b-4a95-b2e8-8e8393e44137">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="7d746c8a-b005-4b7f-8b55-5feb42633c44" parent_id_arme="33a17718-a44b-4a95-b2e8-8e8393e44137">
+    <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
+    <destroy name="Freyja V" />
+    <destroy name="Mendeleyjev Base" />
+    <destroy name="Dicro Processing" />
+    <destroy name="Dicro Mining" />
+    <destroy name="SY-19" />
+    <destroy name="WP-06" />
+    <destroy name="WP-07" />
+    <destroy name="Freyja Control" />
+    <set_variable name="Freyja System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Freyja Sector VI" id_arme="c78971ed-58c2-4607-8f75-b07db6a40817" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <event name="Create Freyja Sector VI" id_arme="4e5c0731-175e-4d97-a8fb-9bfc7630ee55" parent_id_arme="c78971ed-58c2-4607-8f75-b07db6a40817">
+    <if_variable name="Freyja System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="100" type="nebulas" nebType="1" startX="26784.0" startY="100.0" startZ="25979.0" endX="46181.0" endY="0.0" endZ="97135.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="33870.0" startY="-100.0" startZ="26390.0" endX="48605.0" endY="0.0" endZ="99060.0" randomRange="10000" />
+    <create count="100" type="asteroids" startX="75396.0" startY="300.0" startZ="21925.0" endX="26056.0" endY="-300.0" endZ="73162.0" randomRange="10000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Freyja System" value="2.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a" parent_id_arme="c78971ed-58c2-4607-8f75-b07db6a40817" />
+  <event name="Transition to Sector V" id_arme="73931322-b2da-434a-a455-a2dfffdc4bc5" parent_id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="4f96ebc3-2f04-4f08-95f6-f3f19a1b8f49" parent_id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="a5ba2d26-19fe-4dd7-84e2-947d86b9ba12" parent_id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="a48086c0-0dcc-4ce4-856a-b51f53b1f8ae" parent_id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="12de43d1-f43f-48fd-a038-c2927e3ccb95" parent_id_arme="f8cf7bc4-c925-47df-92a3-b47b272b320a">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="3fc0314a-bc58-4152-8eaa-8d46a2f7a0a5" parent_id_arme="c78971ed-58c2-4607-8f75-b07db6a40817" />
+  <event name="Generate Sector Entities" id_arme="b67f7793-8108-4e0f-9048-3fc833572fd3" parent_id_arme="3fc0314a-bc58-4152-8eaa-8d46a2f7a0a5">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="neutral" x="73052.0" y="0.0" z="45925.0" name="Kalu Polytech" hullID="1004" sideValue="sectorSide" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="748927e6-6fb1-484b-b3a2-dd06ad6f7f02" parent_id_arme="3fc0314a-bc58-4152-8eaa-8d46a2f7a0a5">
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="3d56b2bf-b86c-448c-9ac6-65b24549da2c" parent_id_arme="3fc0314a-bc58-4152-8eaa-8d46a2f7a0a5">
+    <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
+    <destroy name="Freyja VI" />
+    <destroy name="Kalu Polytech" />
+    <set_variable name="Freyja System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Freyja Sector VII" id_arme="e2d55524-a6bd-4018-9b07-688afae855de" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <event name="Create Freyja Sector VII" id_arme="1163159b-b277-4e16-b80e-a71d8360c29d" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de">
+    <if_variable name="Freyja System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="100" type="nebulas" nebType="1" startX="84773.0" startY="0.0" startZ="54297.0" endX="49610.0" endY="0.0" endZ="73051.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="3" startX="59321.0" startY="0.0" startZ="44474.0" endX="67359.0" endY="0.0" endZ="85441.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="79080.0" startY="0.0" startZ="78297.0" endX="47712.0" endY="0.0" endZ="51060.0" randomRange="10000" />
+    <create count="100" type="asteroids" startX="65238.0" startY="-200.0" startZ="65348.0" radius="15000" randomRange="10000" />
+    <create count="100" type="asteroids" startAngle="50" endAngle="400" startX="65238.0" startY="200.0" startZ="65348.0" radius="15000" randomRange="10000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Freyja System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b0176281-1c2e-4951-a043-be63996a31a1" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de" />
+  <event name="Transition to Sector VIII" id_arme="2199956d-bdfb-450b-9c4f-e46db380aed1" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="259bada4-df67-456e-8d3c-2341c1877201" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="775abecd-2c3d-45db-adfa-65a3622ac65d" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="797c7556-f1cb-4dd8-aef0-e2a2026d3fa5" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1" />
+  <event name="Gate Offline" id_arme="e2c49e04-35ca-42d7-82b2-777812019fae" parent_id_arme="797c7556-f1cb-4dd8-aef0-e2a2026d3fa5">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Vilnara Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12" parent_id_arme="797c7556-f1cb-4dd8-aef0-e2a2026d3fa5" />
+  <event name="Ship1 Activation Range" id_arme="9370dc82-5510-4a1a-bde4-b78be2553855" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="4314b1f8-39b1-4a59-a022-89874b7eb3fe" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="c6ee5727-5014-4017-9761-f9dc3e3612d3" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="e7e0635f-1dc6-46e3-9737-aabc8b5ffaa3" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="c41dfd44-f046-4a75-b392-160ef456500c" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="05285619-67a6-4a5e-9c5a-5a5643ec04d0" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="6864986a-efc9-48e0-b40c-f14e1bfef292" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="e09be7b7-7bf7-4aa2-9a9f-328b9b9305b6" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="06724839-6fae-477b-8826-d6ae539ebec7" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="43568e2f-0257-4cb9-9da1-68279101348d" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="833ef04a-7c21-48ff-9cd4-0bfa648d5433" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="d3d2c8bf-7b43-42c5-8ded-6f4f9442ed81" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="034003a7-4436-41e0-b23b-d54b2d26a70d" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="06dff140-3b32-4b2d-94ba-b3011050ef76" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="7e6b80c9-5393-4d36-be17-59b76563c13c" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="34d21bab-67b5-4fb3-9d57-a385bb469f9b" parent_id_arme="c272fae9-b1bf-4d2a-b644-e59bd97dec12">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="b08ed31a-0926-4378-a662-8e196d33a70f" parent_id_arme="797c7556-f1cb-4dd8-aef0-e2a2026d3fa5">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Vilnara Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="201eb4ce-74af-4a22-a4e3-59744bc66ebc" parent_id_arme="797c7556-f1cb-4dd8-aef0-e2a2026d3fa5">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Freyja to Vilnara" value="1.0" />
+    <set_variable name="Vilnara System" value="1.0" />
+    <set_variable name="Sector" value="4" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <event name="Arrival From Vilnara" id_arme="70fd96a3-6f6f-4e51-a25c-b82afedfae0c" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Vilnara to Freyja" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Vilnara Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Vilnara to Freyja" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="37fdd8e3-6b43-4b84-9e9e-17572786b5cb" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de" />
+  <event name="Generate Sector Entities" id_arme="f74ba783-829c-466f-afe5-820542c997a3" parent_id_arme="37fdd8e3-6b43-4b84-9e9e-17572786b5cb">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="genericMesh" x="65014.0" y="0.0" z="65460.0" name="Vilnara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="38559.0" y="0.0" z="36548.0" name="Freyja Civil" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="56642.0" y="0.0" z="22818.0" angle="180" name="Freyja Vega Casino" hullID="1056" sideValue="sectorSide" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="f8b3994c-b0f9-445e-bf69-61dc478a9604" parent_id_arme="37fdd8e3-6b43-4b84-9e9e-17572786b5cb">
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Vilnara Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Vilnara Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Vilnara Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Vilnara Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="4cbda876-7080-459a-ba22-9476790346de" parent_id_arme="37fdd8e3-6b43-4b84-9e9e-17572786b5cb">
+    <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
+    <destroy name="Freyja VII" />
+    <destroy name="Vilnara Gate" />
+    <destroy name="Freyja Forum" />
+    <destroy name="Freyja Vega Casino" />
+    <set_variable name="Freyja System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Freyja Sector VIII" id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <event name="Create Freyja Sector VIII" id_arme="ba89a4e6-f595-4e57-8d0d-916ec5b940f1" parent_id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c">
+    <if_variable name="Freyja System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="10" type="nebulas" nebType="1" startX="37331.0" startY="0.0" startZ="47265.0" endX="41238.0" endY="0.0" endZ="67246.0" randomRange="3000" />
+    <create count="10" type="nebulas" nebType="2" startX="39563.0" startY="0.0" startZ="66130.0" endX="36214.0" endY="0.0" endZ="48939.0" randomRange="3000" />
+    <create count="10" type="nebulas" nebType="1" startX="32312.0" startY="0.0" startZ="80854.0" endX="40233.0" endY="0.0" endZ="66465.0" randomRange="3000" />
+    <create count="10" type="nebulas" nebType="1" startX="32312.0" startY="0.0" startZ="80854.0" endX="16568.0" endY="0.0" endZ="88679.0" randomRange="3000" />
+    <create count="25" type="nebulas" nebType="1" startX="382.0" startY="0.0" startZ="83209.0" endX="27387.0" endY="0.0" endZ="82160.0" randomRange="6000" />
+    <create count="25" type="nebulas" nebType="2" startX="16791.0" startY="0.0" startZ="84437.0" endX="2391.0" endY="0.0" endZ="82093.0" randomRange="6000" />
+    <create count="10" type="nebulas" nebType="2" startX="39347.0" startY="0.0" startZ="68190.0" endX="26483.0" endY="0.0" endZ="84472.0" randomRange="3000" />
+    <create count="10" type="nebulas" nebType="1" startX="22362.0" startY="0.0" startZ="55226.0" endX="18845.0" endY="0.0" endZ="37638.0" randomRange="3000" />
+    <create count="10" type="nebulas" nebType="1" startX="29196.0" startY="0.0" startZ="23668.0" endX="18845.0" endY="0.0" endZ="37638.0" randomRange="5000" />
+    <create count="10" type="nebulas" nebType="1" startX="29096.0" startY="0.0" startZ="19547.0" endX="18845.0" endY="0.0" endZ="37638.0" randomRange="5000" />
+    <create count="30" type="nebulas" nebType="1" startX="28895.0" startY="0.0" startZ="26180.0" endX="50202.0" endY="0.0" endZ="1356.0" randomRange="7000" />
+    <create count="40" type="nebulas" nebType="2" startX="49096.0" startY="0.0" startZ="1758.0" endX="17036.0" endY="0.0" endZ="28693.0" randomRange="7000" />
+    <create count="10" type="nebulas" nebType="2" startX="16031.0" startY="0.0" startZ="41959.0" endX="18945.0" endY="0.0" endZ="54522.0" randomRange="3000" />
+    <create count="10" type="nebulas" nebType="2" startX="16031.0" startY="0.0" startZ="41959.0" endX="26483.0" endY="0.0" endZ="27185.0" randomRange="3000" />
+    <create count="30" type="nebulas" nebType="2" startAngle="50" endAngle="400" startX="26614.0" startY="0.0" startZ="52400.0" radius="8000" randomRange="2000" />
+    <create count="30" type="nebulas" nebType="1" startX="26614.0" startY="0.0" startZ="52400.0" radius="7000" randomRange="3000" />
+    <create count="100" type="asteroids" startX="25275.0" startY="0.0" startZ="52734.0" radius="10000" randomRange="2500" />
+    <create count="20" type="asteroids" startX="20475.0" startY="0.0" startZ="77069.0" endX="31861.0" endY="0.0" endZ="72827.0" randomRange="3000" />
+    <create count="20" type="asteroids" startX="35098.0" startY="0.0" startZ="69925.0" endX="35930.0" endY="0.0" endZ="55125.0" randomRange="3000" />
+    <create count="30" type="asteroids" startX="21145.0" startY="0.0" startZ="78409.0" endX="1156.0" endY="0.0" endZ="67587.0" randomRange="3000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Freyja System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14" parent_id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" />
+  <event name="Transition to Sector IX" id_arme="034a76f5-8570-47a5-a237-5d8176bf7604" parent_id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="281a35b6-ee8f-42a6-90cb-ab7681c397e0" parent_id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="7e3256ba-6bcf-4566-9ab0-ed438b9c02f7" parent_id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="1ae1fb82-e341-4e01-bc04-7c33a8e124ad" parent_id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="cfa0be79-25c6-47b8-b0cd-41d262a4e327" parent_id_arme="b4637506-9f1c-4490-b8bd-bd9685c50d14">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e04eb7b3-de99-4b25-af6b-12a4c917fe93" parent_id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" />
+  <event name="Generate Sector Entities" id_arme="0b0fb710-20f5-4955-b070-df626c08876b" parent_id_arme="e04eb7b3-de99-4b25-af6b-12a4c917fe93">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="neutral" x="26056.0" y="0.0" z="78967.0" angle="0" name="SB-52" hullID="1054" sideValue="sectorSide" />
+    <create type="neutral" x="22596.0" y="0.0" z="83879.0" angle="0" name="CR-52" hullID="1055" sideValue="sectorSide" />
+    <create type="neutral" x="26056.0" y="0.0" z="25497.0" angle="180" name="SB-53" hullID="1054" sideValue="sectorSide" />
+    <create type="neutral" x="23935.0" y="0.0" z="20027.0" angle="180" name="CR-53" hullID="1055" sideValue="sectorSide" />
+    <create type="blackHole" x="26056.0" y="0.0" z="52623.0" name="Y'trq" />
+    <create type="neutral" x="36732.0" y="0.0" z="52623.0" angle="90" name="Milliways Resort" hullID="1058" sideValue="sectorSide" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="5cdef4f7-f60f-4e79-b11c-01ec66abb68a" parent_id_arme="e04eb7b3-de99-4b25-af6b-12a4c917fe93">
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e9ceb032-3828-48b9-aed0-7ee3d78f791a" parent_id_arme="e04eb7b3-de99-4b25-af6b-12a4c917fe93">
+    <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
+    <destroy name="Freyja VIII" />
+    <destroy name="SB-52" />
+    <destroy name="CR-52" />
+    <destroy name="SB-53" />
+    <destroy name="CR-53" />
+    <destroy name="Y'trq" />
+    <set_variable name="Freyja System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Freyja Sector IX" id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
+  <event name="Create Freyja Sector IX" id_arme="a05a68ee-c3c8-422b-9e5c-886bb65cecad" parent_id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736">
+    <if_variable name="Freyja System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="26" />
+    <create count="60" type="nebulas" nebType="2" startX="65238.0" startY="0.0" startZ="55637.0" endX="54968.0" endY="0.0" endZ="46.0" randomRange="10000" />
+    <create count="50" type="nebulas" nebType="1" startX="47890.0" startY="0.0" startZ="653.0" endX="73116.0" endY="0.0" endZ="53417.0" randomRange="10000" />
+    <create count="30" type="nebulas" startX="62335.0" startY="0.0" startZ="57088.0" endX="98845.0" endY="0.0" endZ="76231.0" randomRange="8000" />
+    <create count="30" type="nebulas" nebType="2" startX="98744.0" startY="0.0" startZ="80552.0" endX="67805.0" endY="0.0" endZ="60102.0" randomRange="8000" />
+    <create count="130" type="asteroids" startX="24047.0" startY="0.0" startZ="20697.0" endX="92363.0" endY="0.0" endZ="67916.0" randomRange="12000" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Freyja System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+  </event>
+  <folder_arme name="Navigation" id_arme="d82c3305-8a5d-4e39-b209-755970e3e258" parent_id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736" />
+  <event name="Transition to Sector VIII" id_arme="7899320b-decd-4cfa-a270-b2728f625593" parent_id_arme="d82c3305-8a5d-4e39-b209-755970e3e258">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="40f1afc7-0d1c-44e6-8ee3-8562a5764a7a" parent_id_arme="d82c3305-8a5d-4e39-b209-755970e3e258">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="df5d0024-bff1-498a-a0da-ee16885771c8" parent_id_arme="d82c3305-8a5d-4e39-b209-755970e3e258">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Freyja System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="19016afb-8cf0-42f2-a4e2-7496d28f5ac6" parent_id_arme="f3f7be47-f8e2-4d35-8535-d303ebb78736" />
+  <event name="Generate Sector Entities" id_arme="14d46a11-8a2d-4af7-89e2-9afaabfa5957" parent_id_arme="19016afb-8cf0-42f2-a4e2-7496d28f5ac6">
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja IX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="667fb717-ba4d-4c2b-99b6-118dfa59aaab" parent_id_arme="19016afb-8cf0-42f2-a4e2-7496d28f5ac6">
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="f1bf1989-0925-406b-a7e4-6e589248a757" parent_id_arme="19016afb-8cf0-42f2-a4e2-7496d28f5ac6">
+    <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
+    <destroy name="Freyja IX" />
+    <set_variable name="Freyja System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>
