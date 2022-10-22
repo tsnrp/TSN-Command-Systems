@@ -27461,18 +27461,75 @@
     <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Tracking ships...</incoming_comms_text>
     <set_timer name="Gate System" seconds="5" />
   </event>
-  <event name="All ships ready" id_arme="8990aa4e-c514-4d2d-84d0-5c5f2ff3fe32" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+  <event name="All ships ready Ship 1" id_arme="4e2b990d-1d17-44ba-9a08-025afc516d22" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_exists player_slot="0" />
     <if_variable name="Gate System" comparator="EQUALS" value="2.0" />
     <if_timer_finished name="Gate System" />
     <if_variable name="shipsInrange" comparator="EQUALS" value="shipCount" />
     <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Signal locked.^Standing by for jump.</incoming_comms_text>
     <set_comms_button text="Jump" player_slot="0" />
+    <set_variable name="Gate System" value="3.0" integer="yes" />
+  </event>
+  <event name="All ships ready Ship 2" id_arme="a68bbf78-7747-444a-a776-c623da1c92a2" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_exists player_slot="1" />
+    <if_variable name="Gate System" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Gate System" />
+    <if_variable name="shipsInrange" comparator="EQUALS" value="shipCount" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Signal locked.^Standing by for jump.</incoming_comms_text>
     <set_comms_button text="Jump" player_slot="1" />
+    <set_variable name="Gate System" value="3.0" integer="yes" />
+  </event>
+  <event name="All ships ready Ship 3" id_arme="6826676e-cb86-4e11-b812-632ee252cc92" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_exists player_slot="2" />
+    <if_variable name="Gate System" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Gate System" />
+    <if_variable name="shipsInrange" comparator="EQUALS" value="shipCount" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Signal locked.^Standing by for jump.</incoming_comms_text>
     <set_comms_button text="Jump" player_slot="2" />
+    <set_variable name="Gate System" value="3.0" integer="yes" />
+  </event>
+  <event name="All ships ready Ship 4" id_arme="a28dbf34-7810-438a-8797-917a93e59ee2" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_exists player_slot="3" />
+    <if_variable name="Gate System" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Gate System" />
+    <if_variable name="shipsInrange" comparator="EQUALS" value="shipCount" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Signal locked.^Standing by for jump.</incoming_comms_text>
     <set_comms_button text="Jump" player_slot="3" />
+    <set_variable name="Gate System" value="3.0" integer="yes" />
+  </event>
+  <event name="All ships ready Ship 5" id_arme="31fa98cc-3ed8-4a8b-969c-9f1bddd1e010" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_exists player_slot="4" />
+    <if_variable name="Gate System" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Gate System" />
+    <if_variable name="shipsInrange" comparator="EQUALS" value="shipCount" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Signal locked.^Standing by for jump.</incoming_comms_text>
     <set_comms_button text="Jump" player_slot="4" />
+    <set_variable name="Gate System" value="3.0" integer="yes" />
+  </event>
+  <event name="All ships ready Ship 6" id_arme="ae044701-7eeb-47c9-9e9a-7d753c3ad613" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_exists player_slot="5" />
+    <if_variable name="Gate System" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Gate System" />
+    <if_variable name="shipsInrange" comparator="EQUALS" value="shipCount" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Signal locked.^Standing by for jump.</incoming_comms_text>
     <set_comms_button text="Jump" player_slot="5" />
+    <set_variable name="Gate System" value="3.0" integer="yes" />
+  </event>
+  <event name="All ships ready Ship 7" id_arme="5188419a-a4df-40ac-92b5-6297462d3d8a" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_exists player_slot="6" />
+    <if_variable name="Gate System" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Gate System" />
+    <if_variable name="shipsInrange" comparator="EQUALS" value="shipCount" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Signal locked.^Standing by for jump.</incoming_comms_text>
     <set_comms_button text="Jump" player_slot="6" />
+    <set_variable name="Gate System" value="3.0" integer="yes" />
+  </event>
+  <event name="All ships ready Ship 8" id_arme="8990aa4e-c514-4d2d-84d0-5c5f2ff3fe32" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_exists player_slot="7" />
+    <if_variable name="Gate System" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Gate System" />
+    <if_variable name="shipsInrange" comparator="EQUALS" value="shipCount" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Signal locked.^Standing by for jump.</incoming_comms_text>
     <set_comms_button text="Jump" player_slot="7" />
     <set_variable name="Gate System" value="3.0" integer="yes" />
   </event>
