@@ -9,15 +9,15 @@
   <folder_arme name="Freyja Menu" id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31" parent_id_arme="6015d1ff-e9fa-487d-8d3b-9eed19300e12" />
   <event name="Freyja Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
-    <set_gm_button text="Upper Arc/Freyja System" />
+    <set_gm_button text="Lower Arc/Freyja System" />
     <set_variable name="Freyja Gate" value="1.0" integer="yes" />
   </event>
   <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
     <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
-    <clear_gm_button text="Upper Arc/Freyja System" />
+    <clear_gm_button text="Lower Arc/Freyja System" />
   </event>
   <event name="Freyja System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="fdd61fc0-8866-4474-96e2-f619715b8f31">
-    <if_gm_button text="Upper Arc/Freyja System" />
+    <if_gm_button text="Lower Arc/Freyja System" />
     <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
     <set_variable name="Sector" value="102.0" integer="yes" />
     <set_variable name="Freyja System" value="1.0" integer="yes" />
@@ -459,29 +459,6 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <event name="Arrival From Corus" id_arme="708fb0d4-2d70-4140-898b-8cb4cbc6d044" parent_id_arme="4c4faf6e-c90d-4544-b4ee-615a239f6bce">
-    <if_variable name="Sector" comparator="EQUALS" value="3" />
-    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
-    <if_variable name="Corus to Freyja" comparator="EQUALS" value="1.0" />
-    <if_timer_finished name="Transition" />
-    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Corus Gate" />
-    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Corus Gate" />
-    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Corus Gate" />
-    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Corus Gate" />
-    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Corus Gate" />
-    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Corus Gate" />
-    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Corus Gate" />
-    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Corus Gate" />
-    <set_object_property property="angle" value="3.141592654" player_slot="0" />
-    <set_object_property property="angle" value="3.141592654" player_slot="1" />
-    <set_object_property property="angle" value="3.141592654" player_slot="2" />
-    <set_object_property property="angle" value="3.141592654" player_slot="3" />
-    <set_object_property property="angle" value="3.141592654" player_slot="4" />
-    <set_object_property property="angle" value="3.141592654" player_slot="5" />
-    <set_object_property property="angle" value="3.141592654" player_slot="6" />
-    <set_object_property property="angle" value="3.141592654" player_slot="7" />
-    <set_variable name="Corus to Freyja" value="0.0" />
-  </event>
   <folder_arme name="Sector Entities" id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87" parent_id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65" />
   <event name="Generate Sector Entities" id_arme="874ee4b6-2c61-4a13-875d-3de2780a9020" parent_id_arme="0ff74de6-d1c3-462a-b968-ac2b029aeb87">
     <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
@@ -509,6 +486,29 @@
     <destroy name="Corus Gate" />
     <set_variable name="Freyja System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Corus" id_arme="708fb0d4-2d70-4140-898b-8cb4cbc6d044" parent_id_arme="c0e96d96-c22b-47fd-8911-1f0071938b65">
+    <if_variable name="Sector" comparator="EQUALS" value="3" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Corus to Freyja" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Corus Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Corus Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Corus to Freyja" value="0.0" />
   </event>
   <folder_arme name="Freyja Sector IV" id_arme="6797704b-85b6-463b-82c0-02e2e4dcf8f6" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create Freyja Sector IV" id_arme="722c9594-7acc-4854-85eb-84bcb64ad6e8" parent_id_arme="6797704b-85b6-463b-82c0-02e2e4dcf8f6">
@@ -1093,29 +1093,6 @@
     <set_variable name="Gate System" value="0.0" />
     <set_variable name="ExitorRetreat" value="1.0" />
   </event>
-  <event name="Arrival From Vilnara" id_arme="70fd96a3-6f6f-4e51-a25c-b82afedfae0c" parent_id_arme="b0176281-1c2e-4951-a043-be63996a31a1">
-    <if_variable name="Sector" comparator="EQUALS" value="7" />
-    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
-    <if_variable name="Vilnara to Freyja" comparator="EQUALS" value="1.0" />
-    <if_timer_finished name="Transition" />
-    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Vilnara Gate" />
-    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Vilnara Gate" />
-    <set_object_property property="angle" value="3.141592654" player_slot="0" />
-    <set_object_property property="angle" value="3.141592654" player_slot="1" />
-    <set_object_property property="angle" value="3.141592654" player_slot="2" />
-    <set_object_property property="angle" value="3.141592654" player_slot="3" />
-    <set_object_property property="angle" value="3.141592654" player_slot="4" />
-    <set_object_property property="angle" value="3.141592654" player_slot="5" />
-    <set_object_property property="angle" value="3.141592654" player_slot="6" />
-    <set_object_property property="angle" value="3.141592654" player_slot="7" />
-    <set_variable name="Vilnara to Freyja" value="0.0" />
-  </event>
   <folder_arme name="Sector Entities" id_arme="37fdd8e3-6b43-4b84-9e9e-17572786b5cb" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de" />
   <event name="Generate Sector Entities" id_arme="f74ba783-829c-466f-afe5-820542c997a3" parent_id_arme="37fdd8e3-6b43-4b84-9e9e-17572786b5cb">
     <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
@@ -1145,6 +1122,29 @@
     <destroy name="Freyja Vega Casino" />
     <set_variable name="Freyja System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Vilnara" id_arme="70fd96a3-6f6f-4e51-a25c-b82afedfae0c" parent_id_arme="e2d55524-a6bd-4018-9b07-688afae855de">
+    <if_variable name="Sector" comparator="EQUALS" value="7" />
+    <if_variable name="Freyja System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Vilnara to Freyja" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Vilnara Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Vilnara to Freyja" value="0.0" />
   </event>
   <folder_arme name="Freyja Sector VIII" id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c" parent_id_arme="17c7c253-d38b-45af-a02e-26971650d1d9" />
   <event name="Create Freyja Sector VIII" id_arme="ba89a4e6-f595-4e57-8d0d-916ec5b940f1" parent_id_arme="9016d9b0-12e6-4392-aa2e-3a0f091bc19c">
