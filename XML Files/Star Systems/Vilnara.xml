@@ -594,36 +594,7 @@
     <set_variable name="Sector" value="7.0" integer="yes" />
     <set_variable name="Vilnara System" value="3.0" integer="yes" />
   </event>
-  <folder_arme name="Sector Entities" id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" />
-  <event name="Generate Sector Entities" id_arme="be34843d-3b9a-46ab-b420-99938d49dc40" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
-    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
-    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
-    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="72233.0" y="0.0" z="27901.0" name="Freyja Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="54286.0" y="0.0" z="58169.0" name="DS-555" hullID="1000" />
-    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <set_variable name="Sector Entities" value="2.0" />
-  </event>
-  <event name="Settings" id_arme="64d1a1d7-e112-4059-84c9-136ffb07605e" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
-    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
-    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
-    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
-    <set_object_property property="artScale" value="1.0" name="Freyja Gate" />
-    <set_object_property property="pushRadius" value="0.0" name="Freyja Gate" />
-    <set_object_property property="angle" value="4.71238898" name="Freyja Gate" />
-    <set_object_property property="rollDelta" value="0.3" name="Freyja Gate" />
-    <set_variable name="Sector Entities" value="3.0" />
-  </event>
-  <event name="Destroy Sector Entities" id_arme="e52034ec-c11b-4f29-86b2-cd1de4df5445" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
-    <if_variable name="Vilnara System" comparator="EQUALS" value="3.0" />
-    <destroy name="Freyja Gate" />
-    <destroy name="DS-555" />
-    <destroy name="Freyja Gate" />
-    <destroy name="Vilnara IV" />
-    <set_variable name="Vilnara System" value="System" integer="yes" />
-    <set_variable name="Sector Entities" value="0.0" />
-  </event>
-  <folder_arme name="System - Jump Gate Settings" id_arme="2128b5f0-fcff-45c5-a06e-bf950d4be954" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" />
+  <folder_arme name="System - Jump Gate Settings" id_arme="2128b5f0-fcff-45c5-a06e-bf950d4be954" parent_id_arme="ccb71e8b-6649-4b76-81ce-952a484b736f" />
   <event name="Gate Offline" id_arme="8514bad9-2162-461a-a413-c08b9783d853" parent_id_arme="2128b5f0-fcff-45c5-a06e-bf950d4be954">
     <if_variable name="Sector" comparator="EQUALS" value="4" />
     <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
@@ -802,7 +773,34 @@
     <set_variable name="Sector" value="7" />
     <set_timer name="Transition" seconds="2" />
     <set_variable name="Gate System" value="0.0" />
-    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd" />
+  <event name="Generate Sector Entities" id_arme="be34843d-3b9a-46ab-b420-99938d49dc40" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="72233.0" y="0.0" z="27901.0" name="Freyja Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="54286.0" y="0.0" z="58169.0" name="DS-555" hullID="1000" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="64d1a1d7-e112-4059-84c9-136ffb07605e" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Freyja Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Freyja Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Freyja Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Freyja Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e52034ec-c11b-4f29-86b2-cd1de4df5445" parent_id_arme="d39522b6-715a-4bef-a4e3-2078fa3241e3">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="3.0" />
+    <destroy name="Freyja Gate" />
+    <destroy name="DS-555" />
+    <destroy name="Vilnara IV" />
+    <set_variable name="Vilnara System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
   </event>
   <event name="Arrival From Freyja" id_arme="5c4a6a95-5423-417f-9f37-c56bc5af26f0" parent_id_arme="250b2903-1c66-4f79-90ad-f7c329a5c5dd">
     <if_variable name="Sector" comparator="EQUALS" value="4" />

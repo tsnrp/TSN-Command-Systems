@@ -488,7 +488,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="3.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="station" x="62782.0" y="0.0" z="64455.0" name="Gate Control &amp; Customs" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="62782.0" y="0.0" z="64455.0" name="Gate Control &amp; Customs" hullID="1001" sideValue="sectorSide" />
     <create type="genericMesh" x="40568.0" y="0.0" z="36995.0" name="Corus Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -730,11 +730,11 @@
     <if_variable name="Sector" comparator="EQUALS" value="5.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
-    <create type="neutral" x="76959.0" y="0.0" z="41795.0" name="Mendeleyjev Base" raceKeys="TSN" hullKeys="Science Base" sideValue="sectorSide" />
+    <create type="neutral" x="76959.0" y="0.0" z="41795.0" name="Mendeleyjev Base" hullID="1004" sideValue="sectorSide" />
     <create type="neutral" x="42500.0" y="0.0" z="49500.0" name="Freyja Control" hullID="1002" sideValue="sectorSide" />
-    <create type="neutral" x="42500.0" y="0.0" z="64500.0" angle="180" name="WP-07" raceKeys="TSN" hullKeys="Weapons Platform" sideValue="sectorSide" />
-    <create type="neutral" x="42500.0" y="0.0" z="34500.0" angle="0" name="WP-06" raceKeys="TSN" hullKeys="Weapons Platform" sideValue="sectorSide" />
-    <create type="neutral" x="50726.0" y="0.0" z="44920.0" angle="0" name="SY-19" raceKeys="TSN" hullKeys="Ship Yard" sideValue="sectorSide" />
+    <create type="neutral" x="42500.0" y="0.0" z="64500.0" angle="180" name="WP-07" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="42500.0" y="0.0" z="34500.0" angle="0" name="WP-06" hullID="1052" sideValue="sectorSide" />
+    <create type="neutral" x="50726.0" y="0.0" z="44920.0" angle="0" name="SY-19" hullID="1053" sideValue="sectorSide" />
     <create type="neutral" x="73387.0" y="0.0" z="30409.0" angle="165" name="Dikro Mining" hullID="1050" sideValue="sectorSide" />
     <create type="neutral" x="72159.0" y="0.0" z="35320.0" angle="0" name="Dikro Gasses" hullID="1050" sideValue="sectorSide" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -749,8 +749,8 @@
     <if_variable name="Freyja System" comparator="EQUALS" value="3.0" />
     <destroy name="Freyja V" />
     <destroy name="Mendeleyjev Base" />
-    <destroy name="Dicro Processing" />
-    <destroy name="Dicro Mining" />
+    <destroy name="Dikro Mining" />
+    <destroy name="Dikro Gasses" />
     <destroy name="SY-19" />
     <destroy name="WP-06" />
     <destroy name="WP-07" />
@@ -1123,7 +1123,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Freyja VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <create type="genericMesh" x="65014.0" y="0.0" z="65460.0" name="Vilnara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="neutral" x="38559.0" y="0.0" z="36548.0" name="Freyja Civil" hullID="1001" sideValue="sectorSide" />
+    <create type="neutral" x="38559.0" y="0.0" z="36548.0" name="Freyja Forum" hullID="1001" sideValue="sectorSide" />
     <create type="neutral" x="56642.0" y="0.0" z="22818.0" angle="180" name="Freyja Vega Casino" hullID="1056" sideValue="sectorSide" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -1250,7 +1250,7 @@
     <create type="neutral" x="26056.0" y="0.0" z="25497.0" angle="180" name="SB-53" hullID="1054" sideValue="sectorSide" />
     <create type="neutral" x="23935.0" y="0.0" z="20027.0" angle="180" name="CR-53" hullID="1055" sideValue="sectorSide" />
     <create type="blackHole" x="26056.0" y="0.0" z="52623.0" name="Y'trq" />
-    <create type="neutral" x="36732.0" y="0.0" z="52623.0" angle="90" name="Milliways Resort" hullID="1058" sideValue="sectorSide" />
+    <create type="neutral" x="36732.0" y="0.0" z="52623.0" angle="90" name="Milliways Resort" hullID="1001" sideValue="sectorSide" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
   <event name="Settings" id_arme="5cdef4f7-f60f-4e79-b11c-01ec66abb68a" parent_id_arme="e04eb7b3-de99-4b25-af6b-12a4c917fe93">
@@ -1267,6 +1267,7 @@
     <destroy name="SB-53" />
     <destroy name="CR-53" />
     <destroy name="Y'trq" />
+    <destroy name="Milliways Resort" />
     <set_variable name="Freyja System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
