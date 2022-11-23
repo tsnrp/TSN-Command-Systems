@@ -1,6 +1,7 @@
 <mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!--Configurations-->
+    <set_variable name="Clear" value="11.0" integer="yes" />
     <set_difficulty_level value="10" />
     <big_message title="The TSN Universe" subtitle1="Created by Xavier" subtitle2="Version 9.0" />
     <warning_popup_message message="V.9.0" consoles="MHWESCO" player_slot="0" />
@@ -13,6 +14,8 @@
     <warning_popup_message message="Initialising ship systems...." consoles="MHWESCO" player_slot="6" />
     <warning_popup_message message="Initialising ship systems...." consoles="MHWESCO" player_slot="7" />
     <gm_instructions title="Instructions">Welcome to the TSN Sandbox^--Activation---^The activation sequence allows the GM to choose the System and Sector for the players to start. It also sets up key variables that are tracked once the Sandbox is running.^Once the activation sequence is completed, the main Sandbox menu will appear and the GM can begin their mission. Below is a step-by-step guide to activation: ^- First, ensure all player ships have spawned before activating GM Mode.^- Next, click on Activate GM Mode to begin the Sandbox activation sequence.^- Finally, select the Operational area, System and Sector, or select the Command Base where the players will start.^- Once complete, the Sandbox will run.^The GM can restart the Activation sequence by clicking on Restart Sandbox. Note; this is only available during the Sandbox activation sequence. The Sandbox cannot be restarted once it is running.</gm_instructions>
+    <set_variable name="tagShipNumber" value="0.0" integer="yes" />
+    <set_variable name="CurrentLetter" value="1.0" integer="yes" />
     <!--Test Variables (not required in start block)-->
     <!--Test Variables-->
     <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
@@ -42,8 +45,8 @@
     <set_player_carried_type player_slot="0" bay_slot="0" hullID="102" name="Proteus" />
     <set_player_carried_type player_slot="1" bay_slot="0" hullID="102" name="Theseus" />
     <set_player_carried_type player_slot="2" bay_slot="0" hullID="102" name="Odysseus" />
-    <set_player_carried_type player_slot="3" bay_slot="0" hullID="102" name="Perseus" />
     <set_player_carried_type player_slot="4" bay_slot="0" hullID="102" name="Dionysus" />
+    <set_player_carried_type player_slot="3" bay_slot="0" hullID="102" name="Perseus" />
     <set_player_carried_type player_slot="5" bay_slot="0" hullID="102" name="Icarus" />
     <set_player_carried_type player_slot="6" bay_slot="0" hullID="102" name="Adonis" />
     <set_player_carried_type player_slot="7" bay_slot="0" hullID="102" name="Invention" />
