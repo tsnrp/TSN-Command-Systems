@@ -9,37 +9,37 @@
   <folder_arme name="Waypoint 78 Menu" id_arme="2f4a4e8b-245b-4bc1-974f-d2b0a915b7eb" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34" />
   <event name="Waypoint 78 Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="2f4a4e8b-245b-4bc1-974f-d2b0a915b7eb">
     <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
-    <set_gm_button text="Lower Arc/Waypoint 78 System" />
+    <set_gm_button text="Lower Arc/Waypoint 78" />
     <set_variable name="Waypoint 78 Gate" value="1.0" integer="yes" />
   </event>
   <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="2f4a4e8b-245b-4bc1-974f-d2b0a915b7eb">
     <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
-    <clear_gm_button text="Lower Arc/Waypoint 78 System" />
+    <clear_gm_button text="Lower Arc/Waypoint 78" />
   </event>
-  <event name="Waypoint 78 System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="2f4a4e8b-245b-4bc1-974f-d2b0a915b7eb">
-    <if_gm_button text="Lower Arc/Waypoint 78 System" />
+  <event name="Waypoint 78" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="2f4a4e8b-245b-4bc1-974f-d2b0a915b7eb">
+    <if_gm_button text="Lower Arc/Waypoint 78" />
     <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
     <set_variable name="Sector" value="108.0" integer="yes" />
-    <set_variable name="Waypoint 78 System" value="1.0" integer="yes" />
+    <set_variable name="Waypoint 78" value="1.0" integer="yes" />
     <set_variable name="GM Mode" value="3.0" integer="yes" />
   </event>
   <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34">
     <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
-    <if_variable name="Waypoint 78 System" comparator="EQUALS" value="System" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="System" />
     <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
     <set_variable name="systemSide" value="2.0" integer="yes" />
     <set_variable name="System Settings" value="2.0" integer="yes" />
   </event>
   <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34">
     <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
-    <if_variable name="Waypoint 78 System" comparator="EQUALS" value="System" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="System" />
     <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
     <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
     <set_variable name="System Settings" value="2.0" integer="yes" />
   </event>
   <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34">
     <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
-    <if_variable name="Waypoint 78 System" comparator="EQUALS" value="System" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="System" />
     <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
     <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
     <set_variable name="System Settings" value="3.0" integer="yes" />
@@ -51,7 +51,7 @@
   </event>
   <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="e8f51934-06c1-4626-91a8-3eaade362d34">
     <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
-    <if_variable name="Waypoint 78 System" comparator="EQUALS" value="System" />
+    <if_variable name="Waypoint 78" comparator="EQUALS" value="System" />
     <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
     <set_variable name="sectorSide" value="systemSide" integer="yes" />
     <set_variable name="System Settings" value="0.0" integer="yes" />

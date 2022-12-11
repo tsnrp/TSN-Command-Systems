@@ -2,7 +2,7 @@
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!---->
   </start>
-  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
+  <folder_arme name="Elements" id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
   <folder_arme name="Random Elements" id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <event name="Random Coordinates" id_arme="7c7265dd-f0de-4d29-9f42-9f23d1e09a4e" parent_id_arme="e5a3ec26-6d23-4bb8-9698-be3f70d38947">
     <if_variable name="Random Coordinates" comparator="EQUALS" value="1.0" />
@@ -27350,7 +27350,73 @@
     <set_variable name="Ship8Silent" value="2.0" integer="yes" />
     <set_timer name="Ship8Silent" seconds="10" />
   </event>
-  <folder_arme name="Gate Activation System" id_arme="4d100278-3ca4-410d-b427-d409701fcf24" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
+  <folder_arme name="Gate Activation System" id_arme="4d100278-3ca4-410d-b427-d409701fcf24" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" expanded_arme="" />
+  <event name="Clear Activate and Jump Button" id_arme="9f749b61-321d-4242-8ca3-7c8a79745ea2" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_variable name="Clear" comparator="EQUALS" value="0.0" />
+    <if_timer_finished name="Clear Gate Buttons" />
+    <clear_comms_button text="Activate Gate" player_slot="0" />
+    <clear_comms_button text="Jump" player_slot="0" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
+    <set_variable name="Clear" value="Clear + 1" integer="yes" />
+  </event>
+  <event name="Clear Activate and Jump Button" id_arme="d21a8850-cd81-4973-a6ae-655ecf0f28e3" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_variable name="Clear" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Clear Gate Buttons" />
+    <clear_comms_button text="Activate Gate" player_slot="1" />
+    <clear_comms_button text="Jump" player_slot="1" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
+    <set_variable name="Clear" value="Clear + 1" integer="yes" />
+  </event>
+  <event name="Clear Activate and Jump Button" id_arme="e20fb0fc-d8e6-4757-93b2-368ea4d88b36" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_variable name="Clear" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Clear Gate Buttons" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <clear_comms_button text="Activate Gate" player_slot="2" />
+    <clear_comms_button text="Jump" player_slot="2" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
+    <set_variable name="Clear" value="Clear + 1" integer="yes" />
+  </event>
+  <event name="Clear Activate and Jump Button" id_arme="e50cbd7d-71a4-48b6-b10a-da1e93b008aa" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_variable name="Clear" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="Clear Gate Buttons" />
+    <clear_comms_button text="Activate Gate" player_slot="3" />
+    <clear_comms_button text="Jump" player_slot="3" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
+    <set_variable name="Clear" value="Clear + 1" integer="yes" />
+  </event>
+  <event name="Clear Activate and Jump Button" id_arme="9e6f6e81-6d1a-44d4-9b3e-6a11000f0f1f" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_variable name="Clear" comparator="EQUALS" value="4.0" />
+    <if_timer_finished name="Clear Gate Buttons" />
+    <clear_comms_button text="Activate Gate" player_slot="4" />
+    <clear_comms_button text="Jump" player_slot="4" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
+    <set_variable name="Clear" value="Clear + 1" integer="yes" />
+  </event>
+  <event name="Clear Activate and Jump Button" id_arme="ff583b6d-c8da-4e7f-8ccf-fd17a45cfb92" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_variable name="Clear" comparator="EQUALS" value="5.0" />
+    <if_timer_finished name="Clear Gate Buttons" />
+    <clear_comms_button text="Activate Gate" player_slot="5" />
+    <clear_comms_button text="Jump" player_slot="5" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
+    <set_variable name="Clear" value="Clear + 1" integer="yes" />
+  </event>
+  <event name="Clear Activate and Jump Button" id_arme="d5d80e7a-4941-40c1-beca-f11a56740c8d" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_variable name="Clear" comparator="EQUALS" value="6.0" />
+    <if_timer_finished name="Clear Gate Buttons" />
+    <clear_comms_button text="Activate Gate" player_slot="6" />
+    <clear_comms_button text="Jump" player_slot="6" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
+    <set_variable name="Clear" value="Clear + 1" integer="yes" />
+  </event>
+  <event name="Clear Activate and Jump Button" id_arme="ea3172b8-8ab1-4e19-8a61-9fa9d1d38e75" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_variable name="Clear" comparator="EQUALS" value="7.0" />
+    <if_timer_finished name="Clear Gate Buttons" />
+    <clear_comms_button text="Activate Gate" player_slot="7" />
+    <clear_comms_button text="Jump" player_slot="7" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
+    <set_variable name="Clear" value="10.0" integer="yes" />
+  </event>
   <event name="Ship Tracking" id_arme="e1b62a55-290d-46d5-89bd-dba7c5eba540" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
     <if_variable name="shipsInrange" comparator="LESS" value="0.0" />
     <set_variable name="shipsInrange" value="0.0" integer="yes" />
@@ -27422,27 +27488,15 @@
   <event name="Deactive Gate" id_arme="036a77e3-3e24-4c79-9213-ec9e5a340863" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
     <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
     <if_variable name="shipsInrange" comparator="LESS" value="1.0" />
-    <clear_comms_button text="Activate Gate" player_slot="0" />
-    <clear_comms_button text="Activate Gate" player_slot="1" />
-    <clear_comms_button text="Activate Gate" player_slot="2" />
-    <clear_comms_button text="Activate Gate" player_slot="3" />
-    <clear_comms_button text="Activate Gate" player_slot="4" />
-    <clear_comms_button text="Activate Gate" player_slot="5" />
-    <clear_comms_button text="Activate Gate" player_slot="6" />
-    <clear_comms_button text="Activate Gate" player_slot="7" />
+    <set_variable name="Clear" value="0.0" integer="yes" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
     <set_variable name="Gate System" value="0.0" integer="yes" />
   </event>
   <event name="Deactive Gate" id_arme="3d68d7ed-0e36-405c-81a5-2488d80e4ff3" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
     <if_variable name="Gate System" comparator="GREATER" value="1.0" />
     <if_variable name="shipsInrange" comparator="LESS" value="1.0" />
-    <clear_comms_button text="Activate Gate" player_slot="0" />
-    <clear_comms_button text="Activate Gate" player_slot="1" />
-    <clear_comms_button text="Activate Gate" player_slot="2" />
-    <clear_comms_button text="Activate Gate" player_slot="3" />
-    <clear_comms_button text="Activate Gate" player_slot="4" />
-    <clear_comms_button text="Activate Gate" player_slot="5" />
-    <clear_comms_button text="Activate Gate" player_slot="6" />
-    <clear_comms_button text="Activate Gate" player_slot="7" />
+    <set_variable name="Clear" value="0.0" integer="yes" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
     <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Deactivating Gate</incoming_comms_text>
     <set_variable name="Gate System" value="0.0" />
   </event>
@@ -27450,14 +27504,8 @@
     <if_variable name="Gate System" comparator="EQUALS" value="2.0" />
     <if_timer_finished name="Gate System" />
     <if_variable name="shipsInrange" comparator="LESS" value="shipCount" />
-    <clear_comms_button text="Activate Gate" player_slot="0" />
-    <clear_comms_button text="Activate Gate" player_slot="1" />
-    <clear_comms_button text="Activate Gate" player_slot="2" />
-    <clear_comms_button text="Activate Gate" player_slot="3" />
-    <clear_comms_button text="Activate Gate" player_slot="4" />
-    <clear_comms_button text="Activate Gate" player_slot="5" />
-    <clear_comms_button text="Activate Gate" player_slot="6" />
-    <clear_comms_button text="Activate Gate" player_slot="7" />
+    <set_variable name="Clear" value="0.0" integer="yes" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
     <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Tracking ships...</incoming_comms_text>
     <set_timer name="Gate System" seconds="5" />
   </event>
@@ -27533,7 +27581,15 @@
     <set_comms_button text="Jump" player_slot="7" />
     <set_variable name="Gate System" value="3.0" integer="yes" />
   </event>
-  <event name="Signal lost" id_arme="b3a24410-ed40-45a3-bf5a-5bbe252a5389" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+  <event name="Signal loss detected" id_arme="4143c3d6-2724-4d52-82e1-b92e7b139d37" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
+    <if_variable name="Gate System" comparator="GREATER_EQUAL" value="3.0" />
+    <if_variable name="shipsInrange" comparator="LESS" value="shipCount" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Signal lost, recalculating...</incoming_comms_text>
+    <set_variable name="Clear" value="0.0" integer="yes" />
+    <set_timer name="Clear Gate Buttons" seconds="1" />
+    <set_variable name="Gate System" value="2.0" />
+  </event>
+  <disabled_event name="Signal lost" id_arme="b3a24410-ed40-45a3-bf5a-5bbe252a5389" parent_id_arme="4d100278-3ca4-410d-b427-d409701fcf24">
     <if_variable name="Gate System" comparator="GREATER_EQUAL" value="3.0" />
     <if_variable name="shipsInrange" comparator="LESS" value="shipCount" />
     <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Signal lost, recalculating...</incoming_comms_text>
@@ -27546,7 +27602,7 @@
     <clear_comms_button text="Jump" player_slot="6" />
     <clear_comms_button text="Jump" player_slot="7" />
     <set_variable name="Gate System" value="2.0" />
-  </event>
+  </disabled_event>
   <folder_arme name="GM Backup" id_arme="c6b5e50e-c4ae-4222-a318-f7fb7c467250" parent_id_arme="22ead096-32e5-4cf4-9f90-3c7924af9696" />
   <event name="Set Backup" id_arme="10f2edb1-31d9-47a6-9797-2fa6ac4c2df3" parent_id_arme="c6b5e50e-c4ae-4222-a318-f7fb7c467250">
     <if_variable name="GM Backup" comparator="EQUALS" value="1.0" />
