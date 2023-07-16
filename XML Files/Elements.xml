@@ -1,4 +1,4 @@
-<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Scorpion\TSN Horizon\TSN Necessity\TSN Hunter">
   <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
     <!---->
   </start>
@@ -4378,33 +4378,33 @@
   <event name="Energy Green" id_arme="7efa25d7-624b-4f90-b376-0613d62ef6be" parent_id_arme="8d8c2545-659d-4a3a-9ce7-6b63250ca5fc">
     <if_variable name="Refuel Ship3" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="2" comparator="GREATER_EQUAL" value="600" />
-    <if_not_exists name="TSN Viper - Green" />
+    <if_not_exists name="TSN Scorpion - Green" />
     <if_exists player_slot="2" />
     <if_variable name="Fuel Status Display" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="73000.0" y="0.0" z="0.0" name="TSN Viper - Green" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <destroy name="TSN Viper - Amber" />
-    <destroy name="TSN Viper - Red" />
+    <create type="genericMesh" x="73000.0" y="0.0" z="0.0" name="TSN Scorpion - Green" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <destroy name="TSN Scorpion - Amber" />
+    <destroy name="TSN Scorpion - Red" />
   </event>
   <event name="Energy Amber" id_arme="e6e6b8f4-09ea-4051-8be8-7550d883f0db" parent_id_arme="8d8c2545-659d-4a3a-9ce7-6b63250ca5fc">
     <if_variable name="Refuel Ship3" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="2" comparator="LESS" value="600" />
     <if_object_property property="energy" player_slot="2" comparator="GREATER_EQUAL" value="300" />
-    <if_not_exists name="TSN Viper - Amber" />
+    <if_not_exists name="TSN Scorpion - Amber" />
     <if_exists player_slot="2" />
     <if_variable name="Fuel Status Display" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="73000.0" y="0.0" z="0.0" name="TSN Viper - Amber" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <destroy name="TSN Viper - Green" />
-    <destroy name="TSN Viper - Red" />
+    <create type="genericMesh" x="73000.0" y="0.0" z="0.0" name="TSN Scorpion - Amber" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <destroy name="TSN Scorpion - Green" />
+    <destroy name="TSN Scorpion - Red" />
   </event>
   <event name="Energy Red" id_arme="d009389b-0f66-4486-aecf-10e3c0cfb6f7" parent_id_arme="8d8c2545-659d-4a3a-9ce7-6b63250ca5fc">
     <if_variable name="Refuel Ship3" comparator="EQUALS" value="0.0" />
     <if_object_property property="energy" player_slot="2" comparator="LESS" value="300" />
-    <if_not_exists name="TSN Viper - Red" />
+    <if_not_exists name="TSN Scorpion - Red" />
     <if_exists player_slot="2" />
     <if_variable name="Fuel Status Display" comparator="EQUALS" value="1.0" />
-    <create type="genericMesh" x="73000.0" y="0.0" z="0.0" name="TSN Viper - Red" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
-    <destroy name="TSN Viper - Green" />
-    <destroy name="TSN Viper - Amber" />
+    <create type="genericMesh" x="73000.0" y="0.0" z="0.0" name="TSN Scorpion - Red" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <destroy name="TSN Scorpion - Green" />
+    <destroy name="TSN Scorpion - Amber" />
   </event>
   <folder_arme name="Ship4" id_arme="b4bada20-48a4-48b7-824f-ed54a11bc2e6" parent_id_arme="b3425a71-9d46-47b4-b88c-60320d9a6e56" />
   <event name="Increase Homings" id_arme="aa4f5561-992b-4e1b-b4f8-de5be8203fd7" parent_id_arme="b4bada20-48a4-48b7-824f-ed54a11bc2e6">
@@ -24233,12 +24233,12 @@
     <set_variable name="CheckShip3PDZRange" value="1.0" integer="yes" />
   </event>
   <event name="Activation Messages" id_arme="b2052211-5fda-4508-9506-5cfa07c427fb" parent_id_arme="a89fd645-14f4-4ff1-8f0d-190c22284dcf">
-    <if_not_exists name="FCS - TSN Viper" />
+    <if_not_exists name="FCS - TSN Scorpion" />
     <if_variable name="Refuel Ship3" comparator="EQUALS" value="2.0" />
-    <destroy name="TSN Viper - Green" />
-    <destroy name="TSN Viper - Amber" />
-    <destroy name="TSN Viper - Red" />
-    <create type="genericMesh" x="73000.0" y="0.0" z="0.0" name="FCS - TSN Viper" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
+    <destroy name="TSN Scorpion - Green" />
+    <destroy name="TSN Scorpion - Amber" />
+    <destroy name="TSN Scorpion - Red" />
+    <create type="genericMesh" x="73000.0" y="0.0" z="0.0" name="FCS - TSN Scorpion" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="0.0" colorBlue="1.0" />
     <warning_popup_message message="FCS: Active" consoles="ME" player_slot="2" />
   </event>
   <folder_arme name="Deactivation" id_arme="71b2467e-3f35-451b-a339-3678eda9ceba" parent_id_arme="a89fd645-14f4-4ff1-8f0d-190c22284dcf" />
@@ -24247,7 +24247,7 @@
     <if_timer_finished name="Deactivate Ship3 FCS" />
     <if_object_property property="energy" player_slot="2" comparator="GREATER" value="981.0" />
     <warning_popup_message message="FCS Deactivated" player_slot="2">Fuel Collectors Deactivated</warning_popup_message>
-    <destroy name="FCS - TSN Viper" />
+    <destroy name="FCS - TSN Scorpion" />
     <set_variable name="Refuel Ship3" value="0.0" />
   </event>
   <event name="Deactivate Collectors" id_arme="677a252b-877e-469c-b938-b42f461802d7" parent_id_arme="71b2467e-3f35-451b-a339-3678eda9ceba">
@@ -24255,7 +24255,7 @@
     <if_timer_finished name="Deactivate Ship3 FCS" />
     <if_object_property property="throttle" player_slot="2" comparator="GREATER" value="0.5" />
     <warning_popup_message message="FCS Deactivated" player_slot="2">Fuel Collectors Deactivated</warning_popup_message>
-    <destroy name="FCS - TSN Viper" />
+    <destroy name="FCS - TSN Scorpion" />
     <set_variable name="Refuel Ship3" value="0.0" />
   </event>
   <event name="Deactivate Collectors" id_arme="0a0b1204-19dc-44df-ad80-e7dc5257f081" parent_id_arme="71b2467e-3f35-451b-a339-3678eda9ceba">
@@ -24263,7 +24263,7 @@
     <if_timer_finished name="Deactivate Ship3 FCS" />
     <if_object_property property="throttle" player_slot="2" comparator="LESS_EQUAL" value="0.1" />
     <warning_popup_message message="FCS Deactivated" player_slot="2">Fuel Collectors Deactivated</warning_popup_message>
-    <destroy name="FCS - TSN Viper" />
+    <destroy name="FCS - TSN Scorpion" />
     <set_variable name="Refuel Ship3" value="0.0" />
   </event>
   <event name="Deactivate Collectors" id_arme="d8ab2f15-8b5b-4259-97b7-4ea8e7686136" parent_id_arme="71b2467e-3f35-451b-a339-3678eda9ceba">
@@ -24271,7 +24271,7 @@
     <if_timer_finished name="Deactivate Ship3 FCS" />
     <if_object_property property="shieldsOn" player_slot="2" comparator="EQUALS" value="1.0" />
     <warning_popup_message message="FCS Deactivated" player_slot="2">Fuel Collectors Deactivated</warning_popup_message>
-    <destroy name="FCS - TSN Viper" />
+    <destroy name="FCS - TSN Scorpion" />
     <set_variable name="Refuel Ship3" value="0.0" />
   </event>
   <folder_arme name="Collectors Offline" id_arme="39a098e3-1502-4c12-8717-d8f607c8e543" parent_id_arme="a89fd645-14f4-4ff1-8f0d-190c22284dcf" />
