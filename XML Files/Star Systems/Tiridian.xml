@@ -1,0 +1,1460 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <!--Alignment Values-->
+  <!--Set Coord and Alignment in Start Block-->
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="360.0" integer="yes" />
+    <set_variable name="Coordinate Y" value="673.0" integer="yes" />
+    <set_variable name="Alignment" value="USFP" integer="yes" />
+  </start>
+  <folder_arme name="Tiridian System" id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <folder_arme name="Tiridian Settings" id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <folder_arme name="Tiridian Menu" id_arme="a680029d-40d7-4fe7-ac26-951602f65d78" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2" />
+  <event name="Tiridian Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="a680029d-40d7-4fe7-ac26-951602f65d78">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Upper Arc/Tiridian System" />
+    <set_variable name="Tiridian Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="a680029d-40d7-4fe7-ac26-951602f65d78">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Upper Arc/Tiridian System" />
+  </event>
+  <event name="Tiridian System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="a680029d-40d7-4fe7-ac26-951602f65d78">
+    <if_gm_button text="Upper Arc/Tiridian System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="104.0" integer="yes" />
+    <set_variable name="Tiridian System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="96f1c40c-0df2-4d1f-b7df-407c3ee2b7e2">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Tiridian Sector I" id_arme="28dd7353-94e4-45b3-9249-0ec42257871b" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector I" id_arme="c7184d3b-7f52-4991-abcd-99ee8482dd91" parent_id_arme="28dd7353-94e4-45b3-9249-0ec42257871b">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="60" type="nebulas" startAngle="0" endAngle="105" startX="87409.0" startY="0.0" startZ="39070.0" radius="12810" randomRange="11842" />
+    <create count="80" type="nebulas" startX="68485.0" startY="0.0" startZ="52640.0" endX="53961.0" endY="0.0" endZ="69804.0" randomRange="14369" />
+    <create count="80" type="nebulas" startX="44939.0" startY="0.0" startZ="75525.0" endX="8558.0" endY="0.0" endZ="91369.0" randomRange="14974" />
+    <create count="60" type="asteroids" startX="80587.0" startY="0.0" startZ="54400.0" endX="80587.0" endY="0.0" endZ="54400.0" randomRange="7349" />
+    <create count="90" type="asteroids" startAngle="72.7" endAngle="208.3" startX="66944.0" startY="0.0" startZ="32542.0" radius="13109" randomRange="8872" />
+    <create count="40" type="asteroids" startX="59023.0" startY="0.0" startZ="27628.0" endX="23228.0" endY="0.0" endZ="14132.0" randomRange="10426" />
+  </event>
+  <folder_arme name="Navigation" id_arme="424bf7cb-fa09-4d83-a41a-61055bd6eb7e" parent_id_arme="28dd7353-94e4-45b3-9249-0ec42257871b" />
+  <event name="Transition to Sector II" id_arme="bcabeb66-9df3-482d-8f72-e6d42fbc9766" parent_id_arme="424bf7cb-fa09-4d83-a41a-61055bd6eb7e">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="c9924754-f975-4014-a447-9d1a91436a39" parent_id_arme="424bf7cb-fa09-4d83-a41a-61055bd6eb7e">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="3af6d9fe-8cdc-4fe1-9b86-34431028618b" parent_id_arme="424bf7cb-fa09-4d83-a41a-61055bd6eb7e">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="6772bde8-54fb-407a-8d8d-3f9fa56f6cde" parent_id_arme="424bf7cb-fa09-4d83-a41a-61055bd6eb7e" />
+  <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="6772bde8-54fb-407a-8d8d-3f9fa56f6cde">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Al'Mare Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="e46984de-5a53-4446-9530-fdc47ba55617" parent_id_arme="6772bde8-54fb-407a-8d8d-3f9fa56f6cde" />
+  <event name="Ship1 Activation Range" id_arme="9ee3d7c6-fc41-4126-9f10-ff4740910803" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Al'Mare Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="a17eaf43-4ffc-4aab-8b15-1a3117b245d3" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Al'Mare Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="821c7eeb-4bda-470d-b813-db2f91f723f0" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Al'Mare Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="8538df1f-9f88-48bc-8fd3-25f196f7707d" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Al'Mare Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="487a4879-0868-4f63-8533-6213ba0d530f" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Al'Mare Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="cfecc391-c0f4-40c4-ac0c-262dce7f46bb" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Al'Mare Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="f6a229f0-ba8d-42f4-b3a7-e17f26ffaa78" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Al'Mare Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="6aefb361-f909-4601-b04d-64ee277ae1fa" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Al'Mare Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="ab17df6f-e69c-4bb7-88d2-466ab15382a3" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Al'Mare Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="305f2236-daf5-477e-a42f-c20a910ca54f" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Al'Mare Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="a06e393a-a845-4ac1-a474-f561bafe34cc" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Al'Mare Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="6f3cc0a7-9479-4ed6-8f08-1d2e8862b558" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Al'Mare Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="aa322b59-8748-4f26-a9ea-089be033b6fd" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Al'Mare Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="6605b477-d0b3-406f-98b2-d317c4c1f2b6" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Al'Mare Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="6d6d19a5-7e59-4609-a4d6-057b979f2dfe" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Al'Mare Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="e727d711-e221-4770-bdcf-0205f51d2e40" parent_id_arme="e46984de-5a53-4446-9530-fdc47ba55617">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Al'Mare Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="e113c47c-ccd7-48c8-b520-4174a25a8a6a" parent_id_arme="6772bde8-54fb-407a-8d8d-3f9fa56f6cde">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Al'Mare Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="cbb7a700-d872-4afe-97b3-23b096f478c8" parent_id_arme="6772bde8-54fb-407a-8d8d-3f9fa56f6cde">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Al'Mare Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Tiridian to Al'Mare" value="1.0" />
+    <set_variable name="Al'Mare System" value="1.0" />
+    <set_variable name="Sector" value="3.0" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="88c5bf62-190f-4f16-85d7-bd49548eddf2" parent_id_arme="28dd7353-94e4-45b3-9249-0ec42257871b" />
+  <event name="Generate Sector Entities" id_arme="193fdf29-4905-4ed2-a742-8095b701a1d1" parent_id_arme="88c5bf62-190f-4f16-85d7-bd49548eddf2">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="genericMesh" x="39658.0" y="0.0" z="26088.0" angle="0" name="Al'Mare Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="8d96ed18-7954-425f-bf7a-7b3fbd9c29be" parent_id_arme="88c5bf62-190f-4f16-85d7-bd49548eddf2">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Al'Mare Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Al'Mare Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Al'Mare Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Al'Mare Gate" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="0d81f86d-6bfb-4ca3-8239-9d752c16a69a" parent_id_arme="88c5bf62-190f-4f16-85d7-bd49548eddf2">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian I" />
+    <destroy name="Al'Mare Gate" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <event name="Arrival From Al'Mare" id_arme="708fb0d4-2d70-4140-898b-8cb4cbc6d044" parent_id_arme="28dd7353-94e4-45b3-9249-0ec42257871b">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Al'Mare to Tiridian" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Al'Mare Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Al'Mare Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Al'Mare Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Al'Mare Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Al'Mare Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Al'Mare Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Al'Mare Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Al'Mare Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Al'Mare to Tiridian" value="0.0" />
+  </event>
+  <folder_arme name="Tiridian Sector II" id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector II" id_arme="a809ba5b-a4de-453d-a686-511e5e880d0a" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="30" type="nebulas" startX="96798.0" startY="0.0" startZ="91075.0" endX="67898.0" endY="0.0" endZ="88875.0" randomRange="8014" />
+    <create count="80" type="nebulas" startX="62177.0" startY="0.0" startZ="81393.0" endX="34450.0" endY="0.0" endZ="47506.0" randomRange="9110" />
+    <create count="10" type="nebulas" startX="32177.0" startY="0.0" startZ="56821.0" endX="10245.0" endY="0.0" endZ="51760.0" randomRange="5510" />
+    <create count="10" type="nebulas" startX="76920.0" startY="0.0" startZ="95770.0" endX="33423.0" endY="0.0" endZ="95403.0" randomRange="5721" />
+    <create count="400" type="asteroids" startX="27262.0" startY="0.0" startZ="72738.0" radius="14176" randomRange="2585" />
+    <create count="200" type="asteroids" startX="43839.0" startY="0.0" startZ="82713.0" endX="22054.0" endY="0.0" endZ="71124.0" randomRange="8214" />
+    <create count="200" type="asteroids" startX="21247.0" startY="0.0" startZ="66356.0" endX="6064.0" endY="0.0" endZ="50146.0" randomRange="6591" />
+    <create count="10" type="asteroids" startX="27556.0" startY="0.0" startZ="55427.0" endX="16700.0" endY="0.0" endZ="50953.0" randomRange="6091" />
+  </event>
+  <folder_arme name="Navigation" id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" />
+  <event name="Transition to Sector III" id_arme="a3adbe75-527b-4693-bd45-83dad22af448" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="4f9099f6-6ea6-49af-b5ba-87fae50ca815" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="b9e70cde-5226-48f6-8745-2c0ae32565fe" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="3224c18e-b2bc-4d83-9760-1680985ab27d" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="a3367a1f-ac50-4006-b65d-f374608fa57b" parent_id_arme="f9a1e8c3-e8a7-4f25-83f3-06b21b03d75e">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="f327503d-6438-48ab-8a1d-d9db64972062" parent_id_arme="2e07c0ef-76b9-430f-8f50-0fda8e47b471" />
+  <event name="Generate Sector Entities" id_arme="351e8c78-00ed-4923-99be-5c92b087a3de" parent_id_arme="f327503d-6438-48ab-8a1d-d9db64972062">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="neutral" x="39952.0" y="0.0" z="57848.0" angle="0" name="I-31" hullID="1051" />
+    <create type="neutral" x="49560.0" y="0.0" z="67017.0" angle="0" name="I-32" hullID="1051" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="4fdfaa34-e608-4fe7-b16d-4f1cd220b319" parent_id_arme="f327503d-6438-48ab-8a1d-d9db64972062">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="2c7e4c3f-da71-4639-9b0d-c7027b29d3c6" parent_id_arme="f327503d-6438-48ab-8a1d-d9db64972062">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian II" />
+    <destroy name="I-31" />
+    <destroy name="I-32" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tiridian Sector III" id_arme="6906c031-0705-49d7-b06e-0b6d1d786498" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector III" id_arme="a4fc3ba1-4e8e-48ee-bcc6-797c3dfcaafd" parent_id_arme="6906c031-0705-49d7-b06e-0b6d1d786498">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="10" type="nebulas" startX="48093.0" startY="0.0" startZ="50880.0" endX="11565.0" endY="0.0" endZ="37897.0" randomRange="7776" />
+    <create count="10" type="nebulas" startX="54622.0" startY="0.0" startZ="72371.0" endX="12445.0" endY="0.0" endZ="62689.0" randomRange="8401" />
+  </event>
+  <folder_arme name="Navigation" id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91" parent_id_arme="6906c031-0705-49d7-b06e-0b6d1d786498" />
+  <event name="Transition to Sector IV" id_arme="57d8baa5-19a2-4e00-a989-f223339af5f9" parent_id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="c7c3edc9-1a04-4ab2-ae8b-a9a0aad7e977" parent_id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="ce282d1b-f067-4391-8d79-107f9de5b79d" parent_id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="232096af-11f7-4f92-ac70-120be8e8f4bd" parent_id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="fb68de04-80f0-4c85-a3fa-0f7e5e174f90" parent_id_arme="00a7a66b-e7a2-486b-b16f-262d703dbc91">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="5d72b334-8af7-4fb1-82ec-02f429fb34c5" parent_id_arme="6906c031-0705-49d7-b06e-0b6d1d786498" />
+  <event name="Generate Sector Entities" id_arme="883b850d-23ca-4adf-ba6d-4561dc95445a" parent_id_arme="5d72b334-8af7-4fb1-82ec-02f429fb34c5">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian III" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="neutral" x="44499.0" y="0.0" z="37457.0" angle="0" name="Tiridian Command" hullID="1002" />
+    <create type="neutral" x="51541.0" y="0.0" z="57188.0" angle="0" name="Tigrim Station" hullID="1001" />
+    <create type="neutral" x="32910.0" y="0.0" z="39217.0" angle="0" name="Jerum Station" hullID="1001" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="76dfc599-c9cd-4e18-8425-c793a8ebfa27" parent_id_arme="5d72b334-8af7-4fb1-82ec-02f429fb34c5">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="8469c1c9-73b0-4cfb-9242-099233659f19" parent_id_arme="5d72b334-8af7-4fb1-82ec-02f429fb34c5">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian III" />
+    <destroy name="Tiridian Command" />
+    <destroy name="Tigrim Station" />
+    <destroy name="Jerum Station" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tiridian Sector IV" id_arme="49e27b78-c734-4108-9f0f-b6ad8a9a3c0d" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector IV" id_arme="b8b5c2f3-b684-4b4e-8654-fd73eb0bdc76" parent_id_arme="49e27b78-c734-4108-9f0f-b6ad8a9a3c0d">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="500" type="nebulas" startX="24988.0" startY="0.0" startZ="24841.0" endX="24988.0" endY="0.0" endZ="24841.0" randomRange="23047" />
+    <create count="300" type="nebulas" startX="61370.0" startY="0.0" startZ="32909.0" endX="33644.0" endY="0.0" endZ="54107.0" randomRange="14231" />
+    <create count="40" type="nebulas" startX="56969.0" startY="0.0" startZ="13178.0" endX="56969.0" endY="0.0" endZ="13178.0" randomRange="10485" />
+    <create count="40" type="nebulas" startX="14719.0" startY="0.0" startZ="54841.0" endX="14719.0" endY="0.0" endZ="54841.0" randomRange="10485" />
+    <create count="10" type="asteroids" startX="39218.0" startY="0.0" startZ="15599.0" endX="39218.0" endY="0.0" endZ="15599.0" randomRange="1867" />
+    <create count="30" type="asteroids" startX="17580.0" startY="0.0" startZ="35330.0" endX="17580.0" endY="0.0" endZ="35330.0" randomRange="4722" />
+    <create count="10" type="asteroids" startX="32250.0" startY="0.0" startZ="17506.0" endX="23448.0" endY="0.0" endZ="24621.0" randomRange="7452" />
+  </event>
+  <folder_arme name="Navigation" id_arme="7a6973e3-11fa-4a82-b396-83a3edccf737" parent_id_arme="49e27b78-c734-4108-9f0f-b6ad8a9a3c0d" />
+  <event name="Transition to Sector III" id_arme="7fcdadb7-e01f-4a6f-b436-be36ca9d83cc" parent_id_arme="7a6973e3-11fa-4a82-b396-83a3edccf737">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="fd569edc-0a5e-4226-8a2c-850ba9bf1761" parent_id_arme="7a6973e3-11fa-4a82-b396-83a3edccf737">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="ab83c2f7-601a-453a-a90a-4a98db7eadeb" parent_id_arme="7a6973e3-11fa-4a82-b396-83a3edccf737">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="af47a8b7-d28d-43d6-9fee-cd8261cd4bb3" parent_id_arme="49e27b78-c734-4108-9f0f-b6ad8a9a3c0d" />
+  <event name="Generate Sector Entities" id_arme="0b5f65d4-e50d-45a1-afd2-7429c12bb472" parent_id_arme="af47a8b7-d28d-43d6-9fee-cd8261cd4bb3">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian IV" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="neutral" x="58876.0" y="0.0" z="18092.0" angle="0" name="I-901" hullID="1003" />
+    <create type="neutral" x="39071.0" y="0.0" z="25207.0" angle="0" name="I-34" hullID="1003" />
+    <create type="neutral" x="17580.0" y="0.0" z="16332.0" angle="0" name="I-20" hullID="1003" />
+    <create type="neutral" x="27702.0" y="0.0" z="38850.0" angle="0" name="I-556" hullID="1003" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="eb9221eb-0471-4a97-9a4a-2bf1abf5f1bb" parent_id_arme="af47a8b7-d28d-43d6-9fee-cd8261cd4bb3">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="1938269f-0405-410d-9f6a-a4a67a1755e9" parent_id_arme="af47a8b7-d28d-43d6-9fee-cd8261cd4bb3">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian IV" />
+    <destroy name="I-901" />
+    <destroy name="I-34" />
+    <destroy name="I-20" />
+    <destroy name="I-556" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tiridian Sector V" id_arme="1bd2ae32-eb2a-44c5-a373-54271c683e70" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector V" id_arme="58750c96-2d10-4a6f-9325-ddd393d15bb4" parent_id_arme="1bd2ae32-eb2a-44c5-a373-54271c683e70">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="20" type="nebulas" startX="38851.0" startY="0.0" startZ="7530.0" endX="5184.0" endY="0.0" endZ="12004.0" randomRange="5311" />
+    <create count="500" type="asteroids" startX="81174.0" startY="0.0" startZ="93349.0" endX="76260.0" endY="0.0" endZ="64156.0" randomRange="9255" />
+    <create count="200" type="asteroids" startX="94230.0" startY="0.0" startZ="94083.0" endX="93497.0" endY="0.0" endZ="57921.0" randomRange="4856" />
+    <create count="100" type="asteroids" startX="64744.0" startY="0.0" startZ="88068.0" endX="64744.0" endY="0.0" endZ="88068.0" randomRange="10965" />
+    <create count="90" type="asteroids" startX="56749.0" startY="0.0" startZ="89755.0" endX="15013.0" endY="0.0" endZ="94596.0" randomRange="7315" />
+    <create count="10" type="asteroids" startX="57409.0" startY="0.0" startZ="73105.0" endX="57409.0" endY="0.0" endZ="73105.0" randomRange="8953" />
+  </event>
+  <folder_arme name="Navigation" id_arme="ebf0e097-14a2-4578-b134-a62f584db216" parent_id_arme="1bd2ae32-eb2a-44c5-a373-54271c683e70" />
+  <event name="Transition to Sector VI" id_arme="8f8fb367-3402-460f-80c5-a0164e47aeef" parent_id_arme="ebf0e097-14a2-4578-b134-a62f584db216">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="cd0ad1a5-6a0c-4da4-ac7f-1804af6c33e2" parent_id_arme="ebf0e097-14a2-4578-b134-a62f584db216">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="3e4f1a5d-9518-4fb1-b606-275054180a63" parent_id_arme="ebf0e097-14a2-4578-b134-a62f584db216">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="ff2b9451-d4e5-4077-a287-aec1ed801449" parent_id_arme="ebf0e097-14a2-4578-b134-a62f584db216">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="b76c2cfa-d8b9-48f5-baea-363d03340ebf" parent_id_arme="ebf0e097-14a2-4578-b134-a62f584db216">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="379d893a-df52-4948-9e53-47728583800f" parent_id_arme="1bd2ae32-eb2a-44c5-a373-54271c683e70" />
+  <event name="Generate Sector Entities" id_arme="71676cd5-c73a-41c2-964b-37785f107576" parent_id_arme="379d893a-df52-4948-9e53-47728583800f">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="neutral" x="42079.0" y="0.0" z="25941.0" angle="0" name="I-73" hullID="1050" />
+    <create type="neutral" x="35697.0" y="0.0" z="30709.0" angle="0" name="I-46" hullID="1050" />
+    <create type="neutral" x="43912.0" y="0.0" z="34669.0" angle="0" name="I-72" hullID="1050" />
+    <create type="neutral" x="46553.0" y="0.0" z="29095.0" angle="0" name="SY-67" hullID="1053" />
+    <create type="neutral" x="81467.0" y="0.0" z="55721.0" angle="0" name="I-07" hullID="1003" />
+    <create type="neutral" x="65477.0" y="0.0" z="65916.0" angle="0" name="I-05" hullID="1003" />
+    <create type="neutral" x="57556.0" y="0.0" z="77212.0" angle="0" name="I-09" hullID="1003" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="847a4ea1-8714-4890-a5fa-5c74054c0ad1" parent_id_arme="379d893a-df52-4948-9e53-47728583800f">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="548b1b9b-67fa-44c9-a43a-49bcfa7d4d29" parent_id_arme="379d893a-df52-4948-9e53-47728583800f">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian V" />
+    <destroy name="I-73" />
+    <destroy name="I-46" />
+    <destroy name="I-72" />
+    <destroy name="SY-67" />
+    <destroy name="I-07" />
+    <destroy name="I-05" />
+    <destroy name="I-09" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tiridian Sector VI" id_arme="f806cbc0-4187-40fc-b1bc-12f24226032b" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector VI" id_arme="ab3896b3-05a7-4ad8-97fa-e2fead9c2506" parent_id_arme="f806cbc0-4187-40fc-b1bc-12f24226032b">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="60" type="nebulas" startX="93864.0" startY="0.0" startZ="7163.0" endX="66724.0" endY="0.0" endZ="6283.0" randomRange="6396" />
+    <create count="300" type="nebulas" startX="70978.0" startY="0.0" startZ="15525.0" endX="11419.0" endY="0.0" endZ="47359.0" randomRange="13460" />
+    <create count="50" type="nebulas" startX="75526.0" startY="0.0" startZ="67970.0" endX="28656.0" endY="0.0" endZ="53594.0" randomRange="10992" />
+  </event>
+  <folder_arme name="Navigation" id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4" parent_id_arme="f806cbc0-4187-40fc-b1bc-12f24226032b" />
+  <event name="Transition to Sector VII" id_arme="08bb3e76-d107-4f90-b440-373a73882fe6" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="fb110a74-d0c1-4aad-9601-b5de3aa6110c" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="4cd53a67-89e6-45f4-a1be-8ac60e9337a7" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="29240600-5461-4c59-80a4-9bbba75699ee" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="eda6cea8-c990-4ebc-968c-73911753e6d7" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="ce26424c-f90d-4315-b5d4-675c0e6fee10" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="27f179a4-ff8d-44ff-925e-d2c1bc5d5dff" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="e3443c0e-a92b-4c09-ad0e-2e3bf4d43c4f" parent_id_arme="b4e95e77-c03c-46b9-bb1b-250ae92c8cf4">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="4034ee67-c0fb-4f10-b747-1a6ed5015fd4" parent_id_arme="f806cbc0-4187-40fc-b1bc-12f24226032b" />
+  <event name="Generate Sector Entities" id_arme="b8313b11-d96e-454f-a2c5-873b1e438dfe" parent_id_arme="4034ee67-c0fb-4f10-b747-1a6ed5015fd4">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian VI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="66c45ac7-8cef-45dc-8ec7-4c62ad3d0664" parent_id_arme="4034ee67-c0fb-4f10-b747-1a6ed5015fd4">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="3649b11d-3b56-49ab-b2ed-932383e7ae75" parent_id_arme="4034ee67-c0fb-4f10-b747-1a6ed5015fd4">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian VI" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tiridian Sector VII" id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector VII" id_arme="0e82ab1d-af45-412b-a825-b41a4d78269c" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="300" type="nebulas" startX="89683.0" startY="0.0" startZ="33569.0" endX="25648.0" endY="0.0" endZ="40171.0" randomRange="12534" />
+    <create count="60" type="nebulas" startX="92617.0" startY="0.0" startZ="26308.0" endX="91296.0" endY="0.0" endZ="62542.0" randomRange="10345" />
+    <create count="10" type="nebulas" startX="78460.0" startY="0.0" startZ="52640.0" endX="72886.0" endY="0.0" endZ="57701.0" randomRange="7886" />
+    <create count="10" type="nebulas" startX="42812.0" startY="0.0" startZ="60415.0" endX="23521.0" endY="0.0" endZ="51980.0" randomRange="7983" />
+    <create count="30" type="nebulas" startX="68411.0" startY="0.0" startZ="16332.0" endX="24108.0" endY="0.0" endZ="23154.0" randomRange="12763" />
+  </event>
+  <folder_arme name="Navigation" id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" />
+  <event name="Transition to Sector VIII" id_arme="138ead23-dbfd-44aa-81d8-bd1ceff7ea12" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="e883319d-5329-4884-94b1-950c25c55d5f" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="f1ff9eb0-c411-4d8c-93aa-968572f9730d" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XI" id_arme="752aa281-c29f-4d42-ad4b-f005951ea124" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="de61506a-c0c4-47a7-b2b1-a57ee8cce468" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="db71a496-f8cd-45f0-93fd-3459ab77f9a9" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="840f44f0-b9b3-4f2e-8322-bb96cff3e996" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="919f1fbe-b3b5-43fe-9ca9-a36fa1889deb" parent_id_arme="fa6edee0-b01a-438e-b69b-199da7cb16ce">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="2261acc7-879c-4520-b456-245d9af95c5f" parent_id_arme="cb405639-a64c-4f68-9dd8-56b91558e351" />
+  <event name="Generate Sector Entities" id_arme="9ed6791b-36f2-44b1-ad3d-c2131877d2ad" parent_id_arme="2261acc7-879c-4520-b456-245d9af95c5f">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="c688f470-b862-40ab-ab0a-a54eada769aa" parent_id_arme="2261acc7-879c-4520-b456-245d9af95c5f">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="f39e4d7d-35fd-4fef-84e6-fd2cb785d57b" parent_id_arme="2261acc7-879c-4520-b456-245d9af95c5f">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian VII" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tiridian Sector VIII" id_arme="d5e05fbf-f84c-4caf-a9dd-8c54abb264fd" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector VIII" id_arme="b3fc16b5-65ef-4c66-a800-96ba234de919" parent_id_arme="d5e05fbf-f84c-4caf-a9dd-8c54abb264fd">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="10" type="nebulas" startX="84035.0" startY="0.0" startZ="45965.0" endX="25722.0" endY="0.0" endZ="44865.0" randomRange="27431" />
+    <create count="10" type="asteroids" startX="25502.0" startY="0.0" startZ="26014.0" endX="25502.0" endY="0.0" endZ="26014.0" randomRange="12870" />
+    <create count="10" type="asteroids" startX="19780.0" startY="0.0" startZ="72151.0" endX="19780.0" endY="0.0" endZ="72151.0" randomRange="9176" />
+  </event>
+  <folder_arme name="Navigation" id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f" parent_id_arme="d5e05fbf-f84c-4caf-a9dd-8c54abb264fd" />
+  <event name="Transition to Sector VII" id_arme="86b927dc-6ee4-492e-b5e6-b96628ae5967" parent_id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="f38a8640-0755-43e3-a518-69bf1b992230" parent_id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector XII" id_arme="2b5611e9-59bb-45f3-9e0d-edc76c11c734" parent_id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="459edd50-3aec-4017-b523-82b86d8276bf" parent_id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="d2fad3c0-13ee-417e-80ea-16c05a67fdc7" parent_id_arme="309b29f6-5b48-4404-8c9f-e8b6a184736f">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="33a6a376-1225-484c-a587-1b9c6f27706b" parent_id_arme="d5e05fbf-f84c-4caf-a9dd-8c54abb264fd" />
+  <event name="Generate Sector Entities" id_arme="7552481b-73fd-4f78-b9f6-9d8f7192e863" parent_id_arme="33a6a376-1225-484c-a587-1b9c6f27706b">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="3c60ee25-edb3-403c-b63b-7a808f8d6983" parent_id_arme="33a6a376-1225-484c-a587-1b9c6f27706b">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="52743fbc-e2be-45eb-a744-006f00813f78" parent_id_arme="33a6a376-1225-484c-a587-1b9c6f27706b">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian VIII" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tiridian Sector IX" id_arme="b9bccd53-91cb-4a58-b1a0-e26f861313ef" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector IX" id_arme="244c2706-f827-4bf5-a231-fb7163dd8a79" parent_id_arme="b9bccd53-91cb-4a58-b1a0-e26f861313ef">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="800" type="asteroids" startX="69512.0" startY="0.0" startZ="32689.0" endX="69512.0" endY="0.0" endZ="32689.0" randomRange="30156" />
+    <create count="300" type="asteroids" startX="93937.0" startY="0.0" startZ="78753.0" endX="58362.0" endY="0.0" endZ="66136.0" randomRange="8255" />
+    <create count="10" type="asteroids" startX="39291.0" startY="0.0" startZ="14278.0" endX="24768.0" endY="0.0" endZ="5990.0" randomRange="7019" />
+    <create count="10" type="asteroids" startX="38338.0" startY="0.0" startZ="25721.0" endX="27189.0" endY="0.0" endZ="40317.0" randomRange="8407" />
+    <create count="10" type="asteroids" startX="36724.0" startY="0.0" startZ="53154.0" endX="30196.0" endY="0.0" endZ="41344.0" randomRange="4191" />
+    <create count="60" type="asteroids" startX="76993.0" startY="0.0" startZ="39437.0" endX="76993.0" endY="0.0" endZ="39437.0" randomRange="4949" />
+    <create count="60" type="asteroids" startX="75306.0" startY="0.0" startZ="17432.0" endX="75306.0" endY="0.0" endZ="17432.0" randomRange="4949" />
+    <create count="60" type="asteroids" startX="53375.0" startY="0.0" startZ="38557.0" endX="53375.0" endY="0.0" endZ="38557.0" randomRange="4949" />
+    <create count="60" type="asteroids" startX="70758.0" startY="0.0" startZ="25134.0" endX="70758.0" endY="0.0" endZ="25134.0" randomRange="4949" />
+    <create count="60" type="asteroids" startX="80294.0" startY="0.0" startZ="26674.0" endX="80294.0" endY="0.0" endZ="26674.0" randomRange="4949" />
+    <create count="60" type="asteroids" startX="65844.0" startY="0.0" startZ="32469.0" endX="65844.0" endY="0.0" endZ="32469.0" randomRange="4949" />
+    <create count="60" type="asteroids" startX="65697.0" startY="0.0" startZ="40464.0" endX="65697.0" endY="0.0" endZ="40464.0" randomRange="4949" />
+    <create count="50" type="nebulas" startX="27042.0" startY="0.0" startZ="94376.0" endX="7824.0" endY="0.0" endZ="80733.0" randomRange="11155" />
+  </event>
+  <folder_arme name="Navigation" id_arme="0300c42f-cf2b-4e48-8354-c934abe1ca5f" parent_id_arme="b9bccd53-91cb-4a58-b1a0-e26f861313ef" />
+  <event name="Transition to Sector X" id_arme="7c033215-cade-4ca2-9564-a08d57d75c43" parent_id_arme="0300c42f-cf2b-4e48-8354-c934abe1ca5f">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="269f0ee9-78e8-408c-bcac-00a3dfd02cf6" parent_id_arme="0300c42f-cf2b-4e48-8354-c934abe1ca5f">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="a3e0156b-9772-4d39-9f91-cb1ea7792a57" parent_id_arme="0300c42f-cf2b-4e48-8354-c934abe1ca5f">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="9f34bc6f-af0e-4f4e-a3e1-21fca4c73b6b" parent_id_arme="b9bccd53-91cb-4a58-b1a0-e26f861313ef" />
+  <event name="Generate Sector Entities" id_arme="7d252bf1-3b50-443f-9f6e-f165f7579c4a" parent_id_arme="9f34bc6f-af0e-4f4e-a3e1-21fca4c73b6b">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian IX" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="f20f00c6-d98a-433f-870c-dbeb37ce4ecc" parent_id_arme="9f34bc6f-af0e-4f4e-a3e1-21fca4c73b6b">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="e96cc8f3-7f40-43fb-8177-f5a2cb0f8600" parent_id_arme="9f34bc6f-af0e-4f4e-a3e1-21fca4c73b6b">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian IX" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tiridian Sector X" id_arme="039e566e-993a-43ee-816f-0a49e9595594" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector X" id_arme="4204d83e-533f-4475-beb5-7818238ac615" parent_id_arme="039e566e-993a-43ee-816f-0a49e9595594">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="30" type="nebulas" startX="85648.0" startY="0.0" startZ="86014.0" endX="85648.0" endY="0.0" endZ="86014.0" randomRange="13701" />
+    <create count="10" type="nebulas" startX="70098.0" startY="0.0" startZ="86674.0" endX="70098.0" endY="0.0" endZ="86674.0" randomRange="2595" />
+    <create count="10" type="asteroids" startX="42666.0" startY="0.0" startZ="66797.0" endX="42666.0" endY="0.0" endZ="66797.0" randomRange="23620" />
+  </event>
+  <folder_arme name="Navigation" id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed" parent_id_arme="039e566e-993a-43ee-816f-0a49e9595594" />
+  <event name="Transition to Sector XI" id_arme="7fef43ca-d4e5-4be1-98c8-f22659ebff38" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="47abd31e-6374-4851-bdea-4a6664df6aab" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="132a8d6b-1ef7-4660-a530-d6502b7d769c" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="072101f8-957b-48cf-b0b9-50a4e7c88800" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="a73bc52e-2c81-4b29-99f7-7b762ae5b577" parent_id_arme="1a0b4eb2-1c1b-468f-bc47-6bf08de209ed">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="cd2ed16d-abee-4b97-90a9-fcc979d44d7e" parent_id_arme="039e566e-993a-43ee-816f-0a49e9595594" />
+  <event name="Generate Sector Entities" id_arme="b3845691-69f5-4385-8c6b-6f484ddf7777" parent_id_arme="cd2ed16d-abee-4b97-90a9-fcc979d44d7e">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian X" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="3e94c63a-1031-42dd-b427-5dfc81442988" parent_id_arme="cd2ed16d-abee-4b97-90a9-fcc979d44d7e">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="10.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="642c5db6-da85-4a7a-a8ae-c233a01c0838" parent_id_arme="cd2ed16d-abee-4b97-90a9-fcc979d44d7e">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian X" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tiridian Sector XI" id_arme="20ccf47c-c46b-4ba0-aba1-244ced6cfd79" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector XI" id_arme="05237c5d-e79b-451d-8ada-bee15afa6404" parent_id_arme="20ccf47c-c46b-4ba0-aba1-244ced6cfd79">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="10" type="asteroids" startX="56382.0" startY="0.0" startZ="47652.0" endX="56382.0" endY="0.0" endZ="47652.0" randomRange="31152" />
+    <create count="10" type="nebulas" startX="18827.0" startY="0.0" startZ="81687.0" endX="18827.0" endY="0.0" endZ="81687.0" randomRange="15137" />
+    <create count="10" type="nebulas" startX="35551.0" startY="0.0" startZ="90488.0" endX="35551.0" endY="0.0" endZ="90488.0" randomRange="6538" />
+  </event>
+  <folder_arme name="Navigation" id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97" parent_id_arme="20ccf47c-c46b-4ba0-aba1-244ced6cfd79" />
+  <event name="Transition to Sector XII" id_arme="f05f8293-10b3-40e9-bc34-a5d3764fb79c" parent_id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="12.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector X" id_arme="d61c8906-2424-4940-96f1-e05504437a91" parent_id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="10.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="eebe0444-b293-451c-9df7-682b31fcabc4" parent_id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="c10260a4-7270-4c0e-83ae-bffc1d83c189" parent_id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="d782a021-9795-45a8-88c3-9260fdfb23e5" parent_id_arme="699fe939-1b3e-48a7-bcb9-a5d7c866ae97">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="61219aab-db38-47d3-bd79-85a473a60e36" parent_id_arme="20ccf47c-c46b-4ba0-aba1-244ced6cfd79" />
+  <event name="Generate Sector Entities" id_arme="cc73848f-181d-41cf-8bf0-af2f761d3050" parent_id_arme="61219aab-db38-47d3-bd79-85a473a60e36">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian XI" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="ef4d666c-3c0f-4bcd-85b6-7fd3923aadfa" parent_id_arme="61219aab-db38-47d3-bd79-85a473a60e36">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="f66b7195-784d-4807-87ba-3104e3c0b14c" parent_id_arme="61219aab-db38-47d3-bd79-85a473a60e36">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian XI" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tiridian Sector XII" id_arme="d5f194b8-8b40-4e61-95c3-4d1f8148e0ae" parent_id_arme="565015a3-d871-44d3-b771-2aa286eec214" />
+  <event name="Create Tiridian Sector XII" id_arme="a24c6fa3-f106-4c0a-b80a-d7fad2399cc0" parent_id_arme="d5f194b8-8b40-4e61-95c3-4d1f8148e0ae">
+    <if_timer_finished name="Transition" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <set_skybox_index index="14" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+    <set_variable name="Tiridian System" value="2.0" />
+    <create count="200" type="nebulas" startX="65477.0" startY="0.0" startZ="87188.0" endX="9878.0" endY="0.0" endZ="54400.0" randomRange="14707" />
+    <create count="10" type="nebulas" startX="15966.0" startY="0.0" startZ="91955.0" endX="15966.0" endY="0.0" endZ="91955.0" randomRange="6095" />
+    <create count="200" type="asteroids" startX="42739.0" startY="0.0" startZ="59242.0" endX="10758.0" endY="0.0" endZ="46479.0" randomRange="12240" />
+  </event>
+  <folder_arme name="Navigation" id_arme="fcc665cc-3b6c-4e40-ab5d-81f94bfe3aa7" parent_id_arme="d5f194b8-8b40-4e61-95c3-4d1f8148e0ae" />
+  <event name="Transition to Sector XI" id_arme="bf90d329-a7dd-4963-a2f0-d9bfa669b484" parent_id_arme="fcc665cc-3b6c-4e40-ab5d-81f94bfe3aa7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="11.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="b00e34ed-c32d-49f9-8731-ef8591d95334" parent_id_arme="fcc665cc-3b6c-4e40-ab5d-81f94bfe3aa7">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="06e372d4-83bd-44cf-807f-99817173135b" parent_id_arme="fcc665cc-3b6c-4e40-ab5d-81f94bfe3aa7">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Tiridian System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="691e46e9-e217-497a-b9f6-462289aef5e3" parent_id_arme="d5f194b8-8b40-4e61-95c3-4d1f8148e0ae" />
+  <event name="Generate Sector Entities" id_arme="8226fc0b-e90a-49f0-87f2-deabad88f551" parent_id_arme="691e46e9-e217-497a-b9f6-462289aef5e3">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Tiridian XII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
+    <create type="neutral" x="54328.0" y="0.0" z="56894.0" angle="0" name="R-55" hullID="1004" />
+    <set_variable name="Sector Entities" value="2.0" />
+  </event>
+  <event name="Settings" id_arme="0ba0ba5e-d3fe-43af-9387-72524e70c111" parent_id_arme="691e46e9-e217-497a-b9f6-462289aef5e3">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="12.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="eb5541c7-fbc8-48d5-9545-1ffeb84ac22b" parent_id_arme="691e46e9-e217-497a-b9f6-462289aef5e3">
+    <if_variable name="Tiridian System" comparator="EQUALS" value="3.0" />
+    <destroy name="Tiridian XII" />
+    <destroy name="R-55" />
+    <set_variable name="Tiridian System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>
