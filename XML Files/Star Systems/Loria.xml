@@ -1725,12 +1725,15 @@
     <set_variable name="Corner A5 Transition Enabled" value="1.0" />
     <set_variable name="Corner E1 Transition Enabled" value="0.0" />
     <set_variable name="Corner E5 Transition Enabled" value="0.0" />
-    <!--<create type="genericMesh" x="32250.0" y="0.0" z="38477.0" angle="0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\Planets\planetTex4.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />-->
+
+    <create type="genericMesh" x="32250.0" y="0.0" z="38477.0" name="Planet" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.5" colorGreen="0.64" colorBlue="0.35" />
+
     <create count="30" type="asteroids" startX="74133.0" startY="0.0" startZ="8264.0" endX="90930.0" endY="0.0" endZ="12078.0" randomRange="11066" />
     <create count="10" type="asteroids" startX="89096.0" startY="0.0" startZ="21833.0" endX="91663.0" endY="0.0" endZ="46772.0" randomRange="9789" />
     <create count="10" type="nebulas" startX="78607.0" startY="0.0" startZ="24621.0" endX="78607.0" endY="0.0" endZ="24621.0" randomRange="20650" />
     <create count="30" type="nebulas" startX="75746.0" startY="0.0" startZ="96723.0" endX="6578.0" endY="0.0" endZ="73251.0" randomRange="8912" />
     <create count="40" type="nebulas" startX="49634.0" startY="0.0" startZ="93569.0" endX="6064.0" endY="0.0" endZ="90562.0" randomRange="8573" />
+
   </event>
   <folder_arme name="Navigation" id_arme="7b3c4900-a218-430d-8b2b-0937fef98662" parent_id_arme="da497e80-636e-4237-9b47-a4a906b1037e" />
   <event name="Transition to (Right)" id_arme="da4041bf-4f48-4dae-9332-b731be23b8c5" parent_id_arme="7b3c4900-a218-430d-8b2b-0937fef98662">
@@ -1781,12 +1784,30 @@
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
+
+    <set_variable name="CustomPlanet" value="1.0" integer="yes" />
   </event>
   <event name="Settings" id_arme="fc807ddc-3faf-4647-a145-b1562d54703a" parent_id_arme="39e63eca-fdd0-4af7-87b2-abf8cc3afd96">
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="13" />
     <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Custom Planet Data" id_arme="e34d88b5-6563-4ada-9bd7-13159ded9df3" parent_id_arme="b006c776-f791-4fa5-8cf6-a442ac708f8f">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="13.0" />
+    <if_variable name="CustomPlanet" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="CustomPlanet" />
+    <set_ship_text name="PA" newname=" " />
+    <set_ship_text name="PB" newname=" " />
+    <set_ship_text name="PC" newname=" " />
+    <set_ship_text name="PD" newname=" " />
+    <set_ship_text name="PE" newname=" " />
+    <set_ship_text name="PF" newname=" " />
+    <set_ship_text name="PG" newname=" " />
+    <set_ship_text name="PH" newname=" " />
+    <set_ship_text name="Planet" newname="Planet Loria" class="Planet" />
+    <set_variable name="CustomPlanet" value="0.0" integer="yes" />
   </event>
   <event name="Destroy Sector Entities" id_arme="6dbce355-d98e-4e55-848d-65d24c175800" parent_id_arme="39e63eca-fdd0-4af7-87b2-abf8cc3afd96">
     <if_variable name="Loria System" comparator="EQUALS" value="3.0" />

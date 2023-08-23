@@ -324,7 +324,9 @@
     <set_object_property property="surrenderChance" value="0" name="--" />
     <clear_ai name="--" />
     <add_ai type="SPCL_AI" name="--" />
-    <add_ai type="DIR_THROTTLE" value1="Degrees" value2="1.0" name="--" />
+    <add_ai type="CHASE_PLAYER" name="--" />
+    <add_ai type="CHASE_AI_SHIP" name="--" />
+    <add_ai type="CHASE_PLAYER" value1="3000" value2="500" name="--" />
     <add_ai type="CHASE_STATION" value1="20000" name="--" />
     <add_ai type="CHASE_AI_SHIP" value1="20000" value2="20000" name="--" />
     <add_ai type="CHASE_STATION" value1="3000" name="--" />
@@ -337,7 +339,9 @@
     <set_object_property property="surrenderChance" value="10" name="--" />
     <clear_ai name="--" />
     <add_ai type="SPCL_AI" name="--" />
-    <add_ai type="DIR_THROTTLE" value1="Degrees" value2="1.0" name="--" />
+    <add_ai type="CHASE_PLAYER" name="--" />
+    <add_ai type="CHASE_AI_SHIP" name="--" />
+    <add_ai type="CHASE_PLAYER" value1="3000" value2="500" name="--" />
     <add_ai type="CHASE_STATION" value1="100000" name="--" />
     <add_ai type="CHASE_AI_SHIP" name="--" />
     <add_ai type="CHASE_STATION" value1="1000" name="--" />

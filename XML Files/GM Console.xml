@@ -1104,17 +1104,18 @@
     <!--Neutral Menu-->
     <clear_gm_button text="Dinkuno\Warbird" />
     <clear_gm_button text="Dinkuno\Transport" />
-    <clear_gm_button text="Budron\Haughty" />
-    <clear_gm_button text="Budron\Aloof" />
+    <clear_gm_button text="Budron\Destruction" />
+    <clear_gm_button text="Budron\Devastator" />
     <clear_gm_button text="Budron\Light Fleet" />
     <clear_gm_button text="Budron\Medium Fleet" />
     <clear_gm_button text="Budron\Heavy Fleet" />
-    <clear_gm_button text="Budron\Trap Convoy" />
-    <clear_gm_button text="Budron\Convoy" />
-    <clear_gm_button text="Budron\Disdainful" />
-    <clear_gm_button text="Budron\Annoyed" />
-    <clear_gm_button text="Budron\Wretched" />
-    <clear_gm_button text="Budron\Vehement" />
+    <clear_gm_button text="Budron\Trap Carrier Convoy" />
+    <clear_gm_button text="Budron\Carrier Convoy" />
+    <clear_gm_button text="Budron\Cargo Convoy" />
+    <clear_gm_button text="Budron\Reaper" />
+    <clear_gm_button text="Budron\Havoc" />
+    <clear_gm_button text="Budron\Desolation" />
+    <clear_gm_button text="Budron\Demolition" />
     <clear_gm_button text="Budron\Cargo" />
     <clear_gm_button text="Budron\Q-Ship" />
     <clear_gm_button text="Budron\Platform" />
@@ -4906,17 +4907,18 @@
     <if_timer_finished name="Ship Spawn Menu" />
     <set_gm_button text="Dinkuno\Warbird" />
     <set_gm_button text="Dinkuno\Transport" />
-    <set_gm_button text="Budron\Haughty" />
-    <set_gm_button text="Budron\Aloof" />
-    <!--<set_gm_button text="Budron\Light Fleet" />-->
-    <!--<set_gm_button text="Budron\Medium Fleet" />-->
-    <!--<set_gm_button text="Budron\Heavy Fleet" />-->
-    <!--<set_gm_button text="Budron\Trap Convoy" />-->
-    <!--<set_gm_button text="Budron\Convoy" />-->
-    <set_gm_button text="Budron\Disdainful" />
-    <set_gm_button text="Budron\Annoyed" />
-    <set_gm_button text="Budron\Wretched" />
-    <set_gm_button text="Budron\Vehement" />
+    <set_gm_button text="Budron\Destruction" />
+    <set_gm_button text="Budron\Devastator" />
+    <set_gm_button text="Budron\Light Fleet" />
+    <set_gm_button text="Budron\Medium Fleet" />
+    <set_gm_button text="Budron\Heavy Fleet" />
+    <set_gm_button text="Budron\Trap Carrier Convoy" />
+    <set_gm_button text="Budron\Carrier Convoy" />
+    <set_gm_button text="Budron\Cargo Convoy" />
+    <set_gm_button text="Budron\Reaper" />
+    <set_gm_button text="Budron\Havoc" />
+    <set_gm_button text="Budron\Desolation" />
+    <set_gm_button text="Budron\Demolition" />
     <set_gm_button text="Budron\Cargo" />
     <set_gm_button text="Budron\Q-Ship" />
     <set_gm_button text="Budron\Platform" />
@@ -4943,15 +4945,15 @@
     <set_variable name="Ship Spawn Menu" value="1.0" />
   </event>
   <folder_arme name="Budron" id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd" parent_id_arme="575c1af4-cfa8-4d0c-9490-88dcedd93e96" />
-  <event name="Aloof" id_arme="98035107-b765-42da-af0c-ab8d1a377137" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
-    <if_gm_button text="Budron\Aloof" />
+  <event name="Devastator" id_arme="98035107-b765-42da-af0c-ab8d1a377137" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
+    <if_gm_button text="Budron\Devastator" />
     <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="-1" />
     <set_variable name="Auto AI Type" value="106.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <event name="Annoyed" id_arme="dbb759f6-a37f-4d36-97c6-f1db9b90e396" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
-    <if_gm_button text="Budron\Annoyed" />
+  <event name="Havoc" id_arme="dbb759f6-a37f-4d36-97c6-f1db9b90e396" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
+    <if_gm_button text="Budron\Havoc" />
     <create type="enemy" use_gm_position="" name="--" hullID="7703" sideValue="SideValue" fleetnumber="-1" />
     <set_variable name="Auto AI Type" value="106.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -4964,15 +4966,15 @@
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <event name="Disdainful" id_arme="72f536aa-bb48-4e91-a105-c3bdf15f5ab6" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
-    <if_gm_button text="Budron\Disdainful" />
+  <event name="Reaper" id_arme="72f536aa-bb48-4e91-a105-c3bdf15f5ab6" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
+    <if_gm_button text="Budron\Reaper" />
     <create type="enemy" use_gm_position="" name="--" hullID="7702" sideValue="SideValue" fleetnumber="-1" />
     <set_variable name="Auto AI Type" value="106.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <event name="Haughty" id_arme="a57803c0-1ae2-419e-91e4-a9e67af15564" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
-    <if_gm_button text="Budron\Haughty" />
+  <event name="Destruction" id_arme="a57803c0-1ae2-419e-91e4-a9e67af15564" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
+    <if_gm_button text="Budron\Destruction" />
     <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="-1" />
     <set_variable name="Auto AI Type" value="106.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -4993,76 +4995,123 @@
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
   <event name="Vehemant" id_arme="c2a43c53-87f8-47a8-9967-d56073de1a3c" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
-    <if_gm_button text="Budron\Vehement" />
+    <if_gm_button text="Budron\Demolition" />
     <create type="enemy" use_gm_position="" name="--" hullID="7705" sideValue="SideValue" fleetnumber="-1" />
     <set_variable name="Auto AI Type" value="106.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <event name="Wretched" id_arme="9651cfe3-00e0-46d7-bc70-6ff55628c311" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
-    <if_gm_button text="Budron\Wretched" />
+  <event name="Desolation" id_arme="9651cfe3-00e0-46d7-bc70-6ff55628c311" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
+    <if_gm_button text="Budron\Desolation" />
     <create type="enemy" use_gm_position="" name="--" hullID="7704" sideValue="SideValue" fleetnumber="-1" />
     <set_variable name="Auto AI Type" value="106.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
   </event>
-  <disabled_event name="Light Fleet" id_arme="88cb14ad-da61-4ec6-b7ca-d14be49780cc" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
+  <event name="Light Fleet" id_arme="88cb14ad-da61-4ec6-b7ca-d14be49780cc" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
     <if_gm_button text="Budron\Light Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Disdainful Annoyed" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <!-- vesselData is messed up, applying hardcoded values. 
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Reaper Havoc" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
+    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Auto AI Type" value="1.0" integer="yes" />
-  </disabled_event>
-  <disabled_event name="Medium Fleet" id_arme="8a99c5b4-fdfc-455b-8254-e8d0de1b2ef2" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
+  </event>
+  <event name="Medium Fleet" id_arme="8a99c5b4-fdfc-455b-8254-e8d0de1b2ef2" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
     <if_gm_button text="Budron\Medium Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Disdainful Annoyed" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Disdainful Annoyed" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Wretched Vehement" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <!-- vesselData is messed up, applying hardcoded values. 
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Reaper Havoc" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Reaper Havoc" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Desolation Demolition" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
+    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7702" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7703" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Auto AI Type" value="1.0" integer="yes" />
-  </disabled_event>
-  <disabled_event name="Heavey Fleet" id_arme="9ebf47ad-7dc8-4e98-9144-b1a16c648145" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
+  </event>
+  <event name="Heavey Fleet" id_arme="9ebf47ad-7dc8-4e98-9144-b1a16c648145" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
     <if_gm_button text="Budron\Heavy Fleet" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Disdainful Annoyed" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Disdainful Annoyed" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Disdainful Annoyed" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Wretched Vehement" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Wretched Vehement" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <!-- vesselData is messed up, applying hardcoded values. 
+      <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Reaper Havoc" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Reaper Havoc" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Reaper Havoc" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Desolation Demolition" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Desolation Demolition" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
+    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7702" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7702" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7703" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7704" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7705" sideValue="SideValue" fleetnumber="Fleetnumber" />
+
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Auto AI Type" value="1.0" integer="yes" />
-  </disabled_event>
+  </event>
   <event name="Trap Convoy" id_arme="f0072ac8-3132-434d-bac0-8970d26456b0" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
-    <if_gm_button text="Budron\Trap Convoy" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <if_gm_button text="Budron\Trap Carrier Convoy" />
+    <!-- vesselData is messed up, applying hardcoded values. 
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
+    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="--" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="--" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="--" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_variable name="Fleet Settings" value="1.0" />
+    <set_variable name="Name Assign" value="1.0" integer="yes" />
+    <set_variable name="Random Direction" value="1.0" />
+    <set_variable name="Auto AI Type" value="106.0" integer="yes" />
+  </event>
+  <event name="Trap Convoy" id_arme="f0072ac8-3132-434d-bac0-8970d26456b0" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
+    <if_gm_button text="Budron\Carrier Convoy" />
+    <!-- vesselData is messed up, applying hardcoded values. 
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
+    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="xx" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="xx" newname="--" race="Budron" class="Carrier" desc="Mixed passanger and cargo vessel adapted for fighter and bomber bays.^Ship has an upgraded reactor and is of newer construction, if old design" />
+    <create type="enemy" use_gm_position="" name="xx" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="xx" newname="--" race="Budron" class="Carrier" desc="Mixed passanger and cargo vessel adapted for fighter and bomber bays.^Ship has an upgraded reactor and is of newer construction, if old design" />
+    <create type="enemy" use_gm_position="" name="xx" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="xx" newname="--" race="Budron" class="Carrier" desc="Mixed passanger and cargo vessel adapted for fighter and bomber bays.^Ship has an upgraded reactor and is of newer construction, if old design" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
     <set_variable name="Auto AI Type" value="106.0" integer="yes" />
   </event>
   <event name="Convoy" id_arme="b2e6ffd2-a606-4a32-a147-1133537a44da" parent_id_arme="b29555a5-21d6-468d-8466-ce9d72dbd6bd">
-    <if_gm_button text="Budron\Convoy" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" raceKeys="Unknown A" hullKeys="Haughty Aloof" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <if_gm_button text="Budron\Cargo Convoy" />
+    <!-- vesselData is messed up, applying hardcoded values. 
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
+    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="--" hullID="7710" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="--" hullID="7710" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="--" hullID="7710" sideValue="SideValue" fleetnumber="Fleetnumber" />
