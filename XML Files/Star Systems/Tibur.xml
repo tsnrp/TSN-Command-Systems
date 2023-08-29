@@ -1,0 +1,1344 @@
+<mission_data version="1.7" background_id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4" playerShipNames_arme="TSN Sabre\TSN Valiant\TSN Lancer\TSN Stalker\TSN Viper\TSN Horizon\TSN Necessity\TSN Hunter">
+  <start name="Start" id_arme="8bf1c774-cd5c-41e1-b463-2a543cc7fbd4">
+    <set_variable name="Coordinate X" value="1450" integer="yes" />
+    <set_variable name="Coordinate Y" value="550" integer="yes" />
+    <set_variable name="Alignment" value="USFP" integer="yes" />
+  </start>
+  <folder_arme name="Tibur System" id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <folder_arme name="Tibur Settings" id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <folder_arme name="Tibur Menu" id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99" />
+  <event name="Tibur Active" id_arme="337134ea-f9d6-433b-9cce-8a40014d2f9b" parent_id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="1.0" />
+    <set_gm_button text="Lower Arc/Tibur System" />
+    <set_variable name="Tibur Gate" value="1.0" integer="yes" />
+  </event>
+  <event name="Clear Menu Item" id_arme="a949a464-0553-4fa8-8644-0faeb49a723d" parent_id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227">
+    <if_variable name="Activation Menu" comparator="EQUALS" value="0.0" />
+    <clear_gm_button text="Lower Arc/Tibur System" />
+  </event>
+  <event name="Tibur System" id_arme="574f28a8-7e17-4b5a-90c7-6c325f681710" parent_id_arme="44df6866-bd20-4269-90e7-9be7e4bd0227">
+    <if_gm_button text="Lower Arc/Tibur System" />
+    <set_variable name="Sandbox Activation" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="102.0" integer="yes" />
+    <set_variable name="Tibur System" value="1.0" integer="yes" />
+    <set_variable name="GM Mode" value="3.0" integer="yes" />
+  </event>
+  <event name="Default System Side" id_arme="6c13911f-0a70-4fe6-9625-86714d51a993" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="systemSide" value="2.0" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="System Side Override" id_arme="cd61a7d0-01a8-403b-8b23-8b0c34bdac65" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99">
+    <if_variable name="System Settings" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="System" />
+    <if_variable name="systemSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="systemSide" value="systemSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="2.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override" id_arme="3f602d27-595b-43f1-8fdb-b80385a8ec79" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="GREATER_EQUAL" value="1.0" />
+    <set_variable name="sectorSide" value="sectorSideOverride" integer="yes" />
+    <set_variable name="System Settings" value="3.0" integer="yes" />
+  </event>
+  <event name="Sector Side Override (RESET)" id_arme="6e959c03-0cf4-4896-8370-708ee5d520b5" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99">
+    <if_variable name="System Settings" comparator="EQUALS" value="3.0" />
+    <set_variable name="sectorSideOverride" value="0.0" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <event name="Set Sector Side" id_arme="f729a094-5131-48f9-a880-07becef4410b" parent_id_arme="a776f9c4-1690-40c2-a31a-a61e5fbf5a99">
+    <if_variable name="System Settings" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="System" />
+    <if_variable name="sectorSideOverride" comparator="LESS" value="1.0" />
+    <set_variable name="sectorSide" value="systemSide" integer="yes" />
+    <set_variable name="System Settings" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Tibur Sector I" id_arme="994a941f-a7a1-45b2-9635-b52ce51d6029" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Tibur Sector I" id_arme="cd5a3fa4-c1b2-4451-8062-df9adf986d86" parent_id_arme="994a941f-a7a1-45b2-9635-b52ce51d6029">
+    <if_variable name="Tibur System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Tibur System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+
+    <create count="100" type="nebulas" startX="72500.0" startY="0.0" startZ="79464.0" endX="39554.0" endY="0.0" endZ="32991.0" randomRange="9000" />
+    <create count="100" type="asteroids" startX="47456.0" startY="300.0" startZ="67678.0" endX="11697.0" endY="0.0" endZ="90580.0" randomRange="7000" />
+    <create count="100" type="asteroids" startX="29911.0" startY="-300.0" startZ="49732.0" endX="8081.0" endY="0.0" endZ="77053.0" randomRange="7000" />
+    <create count="50" type="mines" startAngle="0" endAngle="80" startX="58840.0" startY="0.0" startZ="39955.0" radius="25000" />
+    <create count="50" type="mines" startAngle="105" endAngle="175" startX="58840.0" startY="0.0" startZ="39955.0" radius="25000" />
+    <create count="50" type="mines" startAngle="200" endAngle="280" startX="58840.0" startY="0.0" startZ="39955.0" radius="25000" />
+  </event>
+  <folder_arme name="Navigation" id_arme="4975773b-0efa-4e1a-be5a-4413587b7212" parent_id_arme="994a941f-a7a1-45b2-9635-b52ce51d6029" />
+  <event name="Transition to Sector II" id_arme="38eca361-43c4-4bc5-9825-9a0eb72565ad" parent_id_arme="4975773b-0efa-4e1a-be5a-4413587b7212">
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="f5e71e3b-b00c-40c2-a663-a2115cbae953" parent_id_arme="4975773b-0efa-4e1a-be5a-4413587b7212">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="be77d00c-2ff4-4db2-a59f-a5d26896c357" parent_id_arme="4975773b-0efa-4e1a-be5a-4413587b7212">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+  </event>
+
+  <folder_arme name="System - Jump Gate Settings" id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" parent_id_arme="0449f601-eb0e-4282-9139-4ca2d9dc6708" />
+  <event name="Gate Offline" id_arme="90d63b6d-4f3d-40bc-86f5-dfe24357a66a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Mria Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83" />
+  <event name="Ship1 Activation Range" id_arme="9ee3d7c6-fc41-4126-9f10-ff4740910803" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="a17eaf43-4ffc-4aab-8b15-1a3117b245d3" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="821c7eeb-4bda-470d-b813-db2f91f723f0" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="8538df1f-9f88-48bc-8fd3-25f196f7707d" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="487a4879-0868-4f63-8533-6213ba0d530f" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="cfecc391-c0f4-40c4-ac0c-262dce7f46bb" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="f6a229f0-ba8d-42f4-b3a7-e17f26ffaa78" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="6aefb361-f909-4601-b04d-64ee277ae1fa" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="ab17df6f-e69c-4bb7-88d2-466ab15382a3" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="305f2236-daf5-477e-a42f-c20a910ca54f" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="a06e393a-a845-4ac1-a474-f561bafe34cc" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="6f3cc0a7-9479-4ed6-8f08-1d2e8862b558" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="aa322b59-8748-4f26-a9ea-089be033b6fd" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="6605b477-d0b3-406f-98b2-d317c4c1f2b6" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="6d6d19a5-7e59-4609-a4d6-057b979f2dfe" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Mria Gate" comparator="LESS" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="e727d711-e221-4770-bdcf-0205f51d2e40" parent_id_arme="bc8a1d78-1302-473a-af7c-f2dfd6fbe247">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Mria Gate" comparator="GREATER" value="4000.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="e113c47c-ccd7-48c8-b520-4174a25a8a6a" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Mria Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="cbb7a700-d872-4afe-97b3-23b096f478c8" parent_id_arme="b1e5404b-7945-4e81-852d-fad2496a4e83">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Tibur to Mria" value="1.0" />
+    <set_variable name="Mria System" value="1.0" />
+    <set_variable name="Sector" value="15.0" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+  </event>
+
+  <folder_arme name="Sector Entities" id_arme="6478d327-fe3c-4276-860c-283f7b770741" parent_id_arme="994a941f-a7a1-45b2-9635-b52ce51d6029" />
+  <event name="Generate Sector Entities" id_arme="295cbbad-46a7-4f31-a309-8f3bc47d77ea" parent_id_arme="6478d327-fe3c-4276-860c-283f7b770741">
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+
+    <create type="genericMesh" x="58974.0" y="0.0" z="39285.0" angle="0" name="Mria Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="30447.0" y="0.0" z="65401.0" angle="0" name="DS 903" hullID="1000" />
+    <set_ship_text name="DS 903" desc="Primary gatekeeper for traffic to/from Mria, especially neutrals. Station Commander has a general distrust of neutrals." />
+
+    <create type="neutral" x="34063.0" y="0.0" z="41294.0" angle="0" name="WP-123J" hullID="1052" />
+    <create type="neutral" x="61384.0" y="0.0" z="65000.0" angle="0" name="WP-67U" hullID="1052" />
+  </event>
+  <event name="Settings" id_arme="04a78bbd-fa8d-4df6-9691-ee675302001c" parent_id_arme="6478d327-fe3c-4276-860c-283f7b770741">
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+
+    <set_object_property property="artScale" value="1.0" name="Mria Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Mria Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Mria Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Mria Gate" />
+
+
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="2bebeb7e-d7f2-4201-88df-eea883fadedf" parent_id_arme="6478d327-fe3c-4276-860c-283f7b770741">
+    <if_variable name="Tibur System" comparator="EQUALS" value="3.0" />
+
+    <destroy name="Mria Gate" />
+    <destroy name="DS 903" />
+    <destroy name="WP-123J" />
+    <destroy name="WP-67U" />
+
+    <set_variable name="Tibur System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+
+  <event name="Arrival From Mria" id_arme="708fb0d4-2d70-4140-898b-8cb4cbc6d044" parent_id_arme="bd8aa687-c8d9-4c5e-b303-244c1df64884">
+    <if_variable name="Sector" comparator="EQUALS" value="1" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Mria to Tibur" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Mria Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Mria Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Mria to Tibur" value="0.0" />
+  </event>
+
+
+  <folder_arme name="Tibur Sector II" id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Tibur Sector II" id_arme="cbcb7ea4-4969-4fb9-a34c-96a8bfc90014" parent_id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da">
+    <if_variable name="Tibur System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Tibur System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+
+    <create count="100" type="nebulas" startX="65402.0" startY="300.0" startZ="18392.0" endX="26563.0" endY="300.0" endZ="43169.0" randomRange="15000" />
+    <create count="100" type="nebulas" nebType="2" startX="74108.0" startY="-300.0" startZ="19062.0" endX="17322.0" endY="-300.0" endZ="33392.0" randomRange="15000" />
+    <create count="100" type="asteroids" startX="79465.0" startY="0.0" startZ="52008.0" endX="48929.0" endY="0.0" endZ="16517.0" randomRange="10000" />
+  </event>
+  <folder_arme name="Navigation" id_arme="40317299-7ecd-4667-92c0-248b4746aef7" parent_id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da" />
+  <event name="Transition to Sector III" id_arme="223845c0-0623-4342-aa3e-549381b4375b" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="23020da1-0002-4e32-86d3-9ac3263195dd" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="511a0770-540c-43e2-a9ed-4964ccf2f015" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="3bbdc285-0e89-495d-8f12-573f235a39be" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="38216a87-7000-4c88-8228-48779184b713" parent_id_arme="40317299-7ecd-4667-92c0-248b4746aef7">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="43b8ed36-1779-4bd2-9ee7-7f18fef4859f" parent_id_arme="c62ea1fb-451b-4033-bc7a-b3813cafd0da" />
+  <event name="Generate Sector Entities" id_arme="2128fd85-20ca-479d-9be2-dc5003f76466" parent_id_arme="43b8ed36-1779-4bd2-9ee7-7f18fef4859f">
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+
+    <!-- <create type="genericMesh" x="49197.0" y="0.0" z="66339.0" angle="0" name="Tibur Prime" colorRed="0.0" colorGreen="0.8" colorBlue="0.0" /> -->
+    
+    <create type="genericMesh" x="49197.0" y="0.0" z="66339.0" name="Tibur Prime" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.0" colorGreen="0.8" colorBlue="0.0" />
+    <set_ship_text name="Tibur Prime" desc="Ocean world. Water world, 50,000 islands; heavy fishing and tourism; peaceful unified republic. Friendly, open culture; loves gambling, haggling, and general trading." />
+    <set_object_property property="pushRadius" value="0.0" name="Tibur Prime" />
+    <create type="genericMesh" x="100.0" y="0.0" z="100.0" angle="0" name="PA" meshFileName="dat\TSN\Planets\planet8.dxs" textureFileName="dat\TSN\Planets\planetTex8.png" fakeShieldsFront="1" fakeShieldsRear="1" hasFakeShldFreq="1" colorRed="0.0" colorGreen="0.2" colorBlue="0.7" />
+    <set_object_property property="pushRadius" value="1.0" name="PA" />
+    <set_object_property property="artScale" value="8.0" name="PA" />
+    <create type="genericMesh" x="100.0" y="2.0" z="100.0" angle="0" name="PB" meshFileName="dat\TSN\Planets\planet8.dxs" textureFileName="dat\TSN\Planets\planetTex8.png" fakeShieldsFront="1" fakeShieldsRear="1" hasFakeShldFreq="1" colorRed="0.0" colorGreen="0.2" colorBlue="0.7" />
+    <set_object_property property="artScale" value="8.0" name="PB" />
+    <set_object_property property="pushRadius" value="1.0" name="PB" />
+    <create type="genericMesh" x="100.0" y="4.0" z="100.0" angle="0" name="PC" meshFileName="dat\TSN\Planets\planet8.dxs" textureFileName="dat\TSN\Planets\planetTex8.png" fakeShieldsFront="1" fakeShieldsRear="1" hasFakeShldFreq="1" colorRed="0.0" colorGreen="0.2" colorBlue="0.7" />
+    <set_object_property property="pushRadius" value="1.0" name="PC" />
+    <set_object_property property="artScale" value="8.0" name="PC" />
+    <create type="genericMesh" x="100.0" y="6.0" z="100.0" angle="0" name="PD" meshFileName="dat\TSN\Planets\planet8.dxs" textureFileName="dat\TSN\Planets\planetTex8.png" fakeShieldsFront="1" fakeShieldsRear="1" hasFakeShldFreq="1" colorRed="0.0" colorGreen="0.2" colorBlue="0.7" />
+    <set_object_property property="pushRadius" value="1.0" name="PD" />
+    <set_object_property property="artScale" value="8.0" name="PD" />
+    <create type="genericMesh" x="100.0" y="8.0" z="100.0" angle="0" name="PE" meshFileName="dat\TSN\Planets\planet8.dxs" textureFileName="dat\TSN\Planets\planetTex8.png" fakeShieldsFront="1" fakeShieldsRear="1" hasFakeShldFreq="1" colorRed="0.0" colorGreen="0.2" colorBlue="0.7" />
+    <set_object_property property="pushRadius" value="1.0" name="PE" />
+    <set_object_property property="artScale" value="8.0" name="PE" />
+    <create type="genericMesh" x="100.0" y="10.0" z="100.0" angle="0" name="PF" meshFileName="dat\TSN\Planets\planet8.dxs" textureFileName="dat\TSN\Planets\planetTex8.png" fakeShieldsFront="1" fakeShieldsRear="1" hasFakeShldFreq="1" colorRed="0.0" colorGreen="0.2" colorBlue="0.7" />
+    <set_object_property property="pushRadius" value="1.0" name="PF" />
+    <set_object_property property="artScale" value="8.0" name="PF" />
+    <create type="genericMesh" x="100.0" y="12.0" z="100.0" angle="0" name="PG" meshFileName="dat\TSN\Planets\planet8.dxs" textureFileName="dat\TSN\Planets\planetTex8.png" fakeShieldsFront="1" fakeShieldsRear="1" hasFakeShldFreq="1" colorRed="0.0" colorGreen="0.2" colorBlue="0.7" />
+    <set_object_property property="pushRadius" value="1.0" name="PG" />
+    <set_object_property property="artScale" value="8.0" name="PG" />
+    <create type="genericMesh" x="100.0" y="14.0" z="100.0" angle="0" name="PH" meshFileName="dat\TSN\Planets\planet8.dxs" textureFileName="dat\TSN\Planets\planetTex8.png" fakeShieldsFront="1" fakeShieldsRear="1" hasFakeShldFreq="1" colorRed="0.0" colorGreen="0.2" colorBlue="0.7" />
+    <set_object_property property="pushRadius" value="1.0" name="PH" />
+    <set_object_property property="artScale" value="8.0" name="PH" />
+    <set_relative_position name2="PA" distance="2000" angle="0.0" name1="Tibur Prime" />
+    <set_relative_position name2="PB" distance="2000" angle="45.0" name1="Tibur Prime" />
+    <set_relative_position name2="PC" distance="2000" angle="90.0" name1="Tibur Prime" />
+    <set_relative_position name2="PD" distance="2000" angle="135.0" name1="Tibur Prime" />
+    <set_relative_position name2="PE" distance="2000" angle="180.0" name1="Tibur Prime" />
+    <set_relative_position name2="PF" distance="2000" angle="225.0" name1="Tibur Prime" />
+    <set_relative_position name2="PG" distance="2000" angle="270.0" name1="Tibur Prime" />
+    <set_relative_position name2="PH" distance="2000" angle="315.0" name1="Tibur Prime" />
+    <set_object_property property="angle" value="6.283185307" name="PA" />
+    <set_object_property property="angle" value="7.068583471" name="PB" />
+    <set_object_property property="angle" value="7.853981634" name="PC" />
+    <set_object_property property="angle" value="8.639379797" name="PD" />
+    <set_object_property property="angle" value="3.141590654" name="PE" />
+    <set_object_property property="angle" value="3.926990817" name="PF" />
+    <set_object_property property="angle" value="4.71238898" name="PG" />
+    <set_object_property property="angle" value="5.497787144" name="PH" />
+
+    <!-- Roll every 2nd slice so that the texture loops  -->
+    <set_object_property property="roll" value="3.141592654" name="PA" />
+    <set_object_property property="roll" value="3.141592654" name="PC" />
+    <set_object_property property="roll" value="3.141592654" name="PE" />
+    <set_object_property property="roll" value="3.141592654" name="PG" />
+    
+    <set_ship_text name="PA" newname=" " />
+    <set_ship_text name="PB" newname=" " />
+    <set_ship_text name="PC" newname=" " />
+    <set_ship_text name="PD" newname=" " />
+    <set_ship_text name="PE" newname=" " />
+    <set_ship_text name="PF" newname=" " />
+    <set_ship_text name="PG" newname=" " />
+    <set_ship_text name="PH" newname=" " />
+
+    <create type="neutral" x="49197.0" y="0.0" z="43169.0" angle="0" name="Tibur Mall" hullID="1001" />
+    <set_ship_text name="Tibur Mall" desc="Primary market for planet exports and general trade." />
+
+    <create type="neutral" x="35536.0" y="0.0" z="52276.0" angle="0" name="Alders Council" hullID="1001" />
+    <set_ship_text name="Alders Council" desc="Seat of administration for Tibur sector." />
+
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="2b2290b7-7c2a-44ca-8565-bbd5cfc0284d" parent_id_arme="43b8ed36-1779-4bd2-9ee7-7f18fef4859f">
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Antara Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Antara Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Antara Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Antara Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="c04b6bf3-556b-455f-b5b5-5a02076f9512" parent_id_arme="43b8ed36-1779-4bd2-9ee7-7f18fef4859f">
+    <if_variable name="Tibur System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Tibur System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+
+    <destroy name="Tibur Mall" />
+    <destroy name="Alders Council" />
+
+    <set_variable name="DestroyPlanet" value="1.0" integer="yes" />
+    <destroy name="Tibur Prime" />
+
+  </event>
+
+
+
+  <folder_arme name="Tibur Sector III" id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Tibur Sector III" id_arme="4d9141ec-c868-4ca6-85e5-74a62a9aea4e" parent_id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a">
+    <if_variable name="Tibur System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Tibur System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+
+    <create count="100" type="nebulas" nebType="2" startX="36474.0" startY="0.0" startZ="48125.0" endX="53081.0" endY="0.0" endZ="21875.0" randomRange="15000" />
+    <create count="50" type="asteroids" startX="72233.0" startY="-300.0" startZ="49062.0" endX="80000.0" endY="300.0" endZ="81205.0" randomRange="10000" />
+  </event>
+  <folder_arme name="Navigation" id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6" parent_id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a" />
+  <event name="Transition to Sector II" id_arme="cf917f7b-b0ea-43e2-84fb-244bf2418837" parent_id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="fecd4bb8-d415-43f0-bbf9-7c18976afa34" parent_id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="d9dd83a8-cac7-4f29-aa53-14a2bf4a64c0" parent_id_arme="a6f851cd-bdef-4629-95d9-231168a9f9e6">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="cbe556ab-699d-4c9c-b8eb-ba0a9ccbd923" parent_id_arme="a3a38c1f-9640-45c9-b638-db2509d3d18a" />
+  <event name="Generate Sector Entities" id_arme="e02be73f-fa81-427a-bbfd-268b6d24966f" parent_id_arme="cbe556ab-699d-4c9c-b8eb-ba0a9ccbd923">
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+
+    <create type="genericMesh" x="58170.0" y="0.0" z="25312.0" angle="0" name="Enyalius Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="52545.0" y="0.0" z="65000.0" angle="0" name="Astral Agora" hullID="1001" />
+    <set_ship_text name="Astral Agora" desc="Ancient and sacred diplomatic facility. A demilitarized zone (DMZ) is set up around it." />
+
+    <create type="genericMesh" use_gm_position="" name="--" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.3" colorGreen="0.5" colorBlue="0.8" />
+    <set_relative_position name2="--" distance="20000" angle="0.0" name1="Astral Agora" />
+    <set_ship_text name="--" newname="DMZ" desc="Boundary of demilitarized zone." />
+
+    <create type="genericMesh" use_gm_position="" name="--" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.3" colorGreen="0.5" colorBlue="0.8" />
+    <set_relative_position name2="--" distance="20000" angle="45.0" name1="Astral Agora" />
+    <set_ship_text name="--" newname="DMZ" desc="Boundary of demilitarized zone." />
+
+    <create type="genericMesh" use_gm_position="" name="--" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.3" colorGreen="0.5" colorBlue="0.8" />
+    <set_relative_position name2="--" distance="20000" angle="90.0" name1="Astral Agora" />
+    <set_ship_text name="--" newname="DMZ" desc="Boundary of demilitarized zone." />
+
+    <create type="genericMesh" use_gm_position="" name="--" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.3" colorGreen="0.5" colorBlue="0.8" />
+    <set_relative_position name2="--" distance="20000" angle="135.0" name1="Astral Agora" />
+    <set_ship_text name="--" newname="DMZ" desc="Boundary of demilitarized zone." />
+
+    <create type="genericMesh" use_gm_position="" name="--" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.3" colorGreen="0.5" colorBlue="0.8" />
+    <set_relative_position name2="--" distance="20000" angle="180.0" name1="Astral Agora" />
+    <set_ship_text name="--" newname="DMZ" desc="Boundary of demilitarized zone." />
+
+    <create type="genericMesh" use_gm_position="" name="--" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.3" colorGreen="0.5" colorBlue="0.8" />
+    <set_relative_position name2="--" distance="20000" angle="225.0" name1="Astral Agora" />
+    <set_ship_text name="--" newname="DMZ" desc="Boundary of demilitarized zone." />
+
+    <create type="genericMesh" use_gm_position="" name="--" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.3" colorGreen="0.5" colorBlue="0.8" />
+    <set_relative_position name2="--" distance="20000" angle="270.0" name1="Astral Agora" />
+    <set_ship_text name="--" newname="DMZ" desc="Boundary of demilitarized zone." />
+
+    <create type="genericMesh" use_gm_position="" name="--" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="0.3" colorGreen="0.5" colorBlue="0.8" />
+    <set_relative_position name2="--" distance="20000" angle="315.0" name1="Astral Agora" />
+    <set_ship_text name="--" newname="DMZ" desc="Boundary of demilitarized zone." />
+
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="424762ee-6484-4ba9-a223-a922dece71dc" parent_id_arme="cbe556ab-699d-4c9c-b8eb-ba0a9ccbd923">
+    <if_variable name="Sector" comparator="EQUALS" value="3.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_object_property property="artScale" value="1.0" name="Enyalius Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Enyalius Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Enyalius Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Enyalius Gate" />
+
+    
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="0a68c9d8-de1d-47e5-b741-6a2cff910d11" parent_id_arme="cbe556ab-699d-4c9c-b8eb-ba0a9ccbd923">
+    <if_variable name="Tibur System" comparator="EQUALS" value="3.0" />
+
+    <destroy name="Enyalius Gate" />
+    <destroy name="Astral Agora" />
+    <destroy name="DMZ" />
+    <destroy name="DMZ" />
+    <destroy name="DMZ" />
+    <destroy name="DMZ" />
+    <destroy name="DMZ" />
+    <destroy name="DMZ" />
+    <destroy name="DMZ" />
+    <destroy name="DMZ" />
+
+    <set_variable name="Tibur System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+
+  <folder_arme name="Tibur Sector IV" id_arme="87e16a09-cbfe-4b61-a51e-98be03376df0" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Tibur Sector IV" id_arme="3b6279e5-1fba-4463-858e-023106689cac" parent_id_arme="87e16a09-cbfe-4b61-a51e-98be03376df0">
+    <if_variable name="Tibur System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Tibur System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+
+    <create count="100" type="mines" startAngle="35" endAngle="185" startX="44500.0" startY="0.0" startZ="46500.0" radius="20000" />
+    <create count="100" type="mines" startAngle="210" endAngle="370" startX="44500.0" startY="0.0" startZ="46500.0" radius="20000" />
+    <create count="100" type="nebulas" startX="73974.0" startY="-300.0" startZ="61785.0" endX="47724.0" endY="300.0" endZ="18125.0" randomRange="10000" />
+    <create count="40" type="asteroids" startX="56965.0" startY="200.0" startZ="76651.0" endX="40759.0" endY="200.0" endZ="86830.0" randomRange="8000" />
+    <create count="40" type="asteroids" startX="76117.0" startY="-200.0" startZ="26562.0" endX="53215.0" endY="-200.0" endZ="13035.0" randomRange="8000" />
+  </event>
+  <folder_arme name="Navigation" id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc" parent_id_arme="87e16a09-cbfe-4b61-a51e-98be03376df0" />
+  <event name="Transition to Sector V" id_arme="cc3f86a0-45d9-4e38-8426-85c036a8ada8" parent_id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector I" id_arme="be69da06-5519-41aa-93c0-3c4d928509bb" parent_id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="b8bd9694-786b-4a26-bff2-0a047330a306" parent_id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="5695c407-008f-45d9-8377-4deded8f59d6" parent_id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="2dfa73ca-e21d-4fa6-bcb3-eae0d011b049" parent_id_arme="7364d3bb-7c98-4995-af44-0c2978fb68bc">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="9bed4d39-9396-4b95-9dc1-49ee8973f0e1" parent_id_arme="87e16a09-cbfe-4b61-a51e-98be03376df0" />
+  <event name="Generate Sector Entities" id_arme="2a60dd13-a9f0-46ca-86af-3c9c83a92aca" parent_id_arme="9bed4d39-9396-4b95-9dc1-49ee8973f0e1">
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+
+    <create type="neutral" x="44500.0" y="0.0" z="46500.0" angle="0" name="Tibur Command" hullID="1002" />
+    <set_ship_text name="Tibur Command" desc="Recently constructed due to the war efforts. Commandant is young but brilliant, clearly ambitious" />
+
+    <create type="neutral" x="54554.0" y="0.0" z="37410.0" angle="0" name="DS-59" hullID="1000" />
+    <set_ship_text name="DS-59" desc="Previously the command base for Tibur system. Base commander got the post just before Tibur Command was announced and built; highly resentful and petty" />
+
+    <create type="neutral" x="37009.0" y="0.0" z="28571.0" angle="0" name="WP-99T" hullID="1052" />
+    <create type="neutral" x="50268.0" y="0.0" z="65401.0" angle="0" name="WP-101E" hullID="1052" />
+    <create type="neutral" x="34599.0" y="0.0" z="50803.0" angle="0" name="SY-42" hullID="1053" />
+
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="1366d992-9d93-4f9e-a103-ab4e2c74429f" parent_id_arme="9bed4d39-9396-4b95-9dc1-49ee8973f0e1">
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="a7beb0b6-57c9-46e7-bc25-1e02b63dd8fa" parent_id_arme="9bed4d39-9396-4b95-9dc1-49ee8973f0e1">
+    <if_variable name="Tibur System" comparator="EQUALS" value="3.0" />
+
+    <destroy name="Tibur Command" />
+    <destroy name="DS-59" />
+    <destroy name="WP-99T" />
+    <destroy name="WP-101E" />
+    <destroy name="SY-42" />
+
+    <set_variable name="Tibur System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tibur Sector V" id_arme="6f71a6ae-36a1-46da-9f1c-daf6ccd9c17c" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Tibur Sector V" id_arme="bc0094dc-ab84-4a31-9e71-e2924137d01f" parent_id_arme="6f71a6ae-36a1-46da-9f1c-daf6ccd9c17c">
+    <if_variable name="Tibur System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Tibur System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="1.0" />
+
+    <create count="50" type="nebulas" startX="75983.0" startY="0.0" startZ="62991.0" endX="35536.0" endY="0.0" endZ="90446.0" randomRange="9000" />
+    <create count="50" type="nebulas" nebType="2" startX="78929.0" startY="0.0" startZ="54285.0" endX="41697.0" endY="0.0" endZ="89375.0" randomRange="9000" />
+    <create count="70" type="asteroids" startX="60313.0" startY="0.0" startZ="16116.0" endX="21742.0" endY="-300.0" endZ="34866.0" randomRange="10000" />
+  </event>
+  <folder_arme name="Navigation" id_arme="85b9b907-0573-4481-96b0-e13d70b423c4" parent_id_arme="6f71a6ae-36a1-46da-9f1c-daf6ccd9c17c" />
+  <event name="Transition to Sector VI" id_arme="8c5bfa56-5fe0-4b26-addb-c7d0da62a959" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="8518387e-5724-4b2d-813e-7c40f04c587b" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector II" id_arme="e6550bd6-4db9-4d76-9579-86c43aa6845e" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VIII" id_arme="b305e99b-0ccd-489b-93fa-65f297a39c29" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Right)" id_arme="d121a1f8-b588-4a32-9c03-d893c833a8a0" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Corner E5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E5 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="26cf2c1e-f676-47ab-888d-d6a4a660a1ea" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="6d4689fe-61ad-42ad-ad5f-3af21763c2dc" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="93f024ba-0703-45fe-8176-ad67832984e7" parent_id_arme="85b9b907-0573-4481-96b0-e13d70b423c4">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="e2f45a04-e0a9-49e7-a304-8e720d51b5a1" parent_id_arme="6f71a6ae-36a1-46da-9f1c-daf6ccd9c17c" />
+  <event name="Generate Sector Entities" id_arme="448f729a-4813-4fbb-9b9e-9cf9502942b5" parent_id_arme="e2f45a04-e0a9-49e7-a304-8e720d51b5a1">
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+
+    <create type="genericMesh" x="58170.0" y="0.0" z="45312.0" angle="0" name="Keltor Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="41965.0" y="0.0" z="56428.0" angle="0" name="Grand Emporium" hullID="1001" />
+    <set_ship_text name="Grand Emporium" desc="Biggest trading post for Tibur sector, benefits from its strategic central location. Home to 100,000, mostly small shopkeeps. Recently beefed with TSN marines. Station Chief loves visitors of any kind, extremely friendly (because she gets rich from them)" />
+
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="7e6fbb2a-4b16-4272-b11e-f882e6d57d23" parent_id_arme="e2f45a04-e0a9-49e7-a304-8e720d51b5a1">
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+
+    <set_object_property property="artScale" value="1.0" name="Keltor Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Keltor Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Keltor Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Keltor Gate" />
+
+
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="c70a4b12-fb21-4082-950c-4edfc8c610a3" parent_id_arme="e2f45a04-e0a9-49e7-a304-8e720d51b5a1">
+    <if_variable name="Tibur System" comparator="EQUALS" value="3.0" />
+
+    <destroy name="Keltor Gate" />
+    <destroy name="Grand Emporium" />
+
+    <set_variable name="Tibur System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tibur Sector VI" id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Tibur Sector VI" id_arme="3c185f07-54e4-4edd-920a-a74af77ee755" parent_id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16">
+    <if_variable name="Tibur System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Tibur System" value="2.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+
+    <create count="100" type="nebulas" startX="74911.0" startY="200.0" startZ="47187.0" endX="44108.0" endY="-200.0" endZ="94866.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="67411.0" startY="-200.0" startZ="44642.0" endX="52947.0" endY="200.0" endZ="92723.0" randomRange="10000" />
+    <create count="100" type="asteroids" startX="47992.0" startY="0.0" startZ="92187.0" endX="67411.0" endY="0.0" endZ="41696.0" randomRange="10000" />
+  </event>
+  <folder_arme name="Navigation" id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4" parent_id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16" />
+  <event name="Transition to Sector V" id_arme="01b84d9d-7624-4839-ae1c-e502a18ed116" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector III" id_arme="13f5e06d-bbe4-45df-8c42-e338ba02278f" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="3.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IX" id_arme="9737e30f-df29-4e87-9e3e-23745ca8e93d" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4">
+    <if_variable name="Grid E Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid E Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to (Bottom Left)" id_arme="d4634893-68bd-4712-8016-a756061dd8fb" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4">
+    <if_variable name="Corner E1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner E1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="578c8d13-b306-400a-8f80-1f8657f23a1a" parent_id_arme="ac89ee7c-6080-4d3d-9140-f0e9e32efba4">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="2.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="712fa932-7add-4bbc-94e1-9bb4397ee885" parent_id_arme="69612bf6-6497-4d9b-9586-a4b2e6116c16" />
+  <event name="Generate Sector Entities" id_arme="3c43bfe2-0ad7-4446-8122-ecd1308b10c9" parent_id_arme="712fa932-7add-4bbc-94e1-9bb4397ee885">
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+
+    <create type="neutral" x="54286.0" y="0.0" z="73437.0" angle="0" name="SB-87" hullID="1054" />
+    <create type="neutral" x="58036.0" y="0.0" z="65937.0" angle="0" name="CR-66" hullID="1055" />
+
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="574ae171-07ab-4723-a28a-44044aac1913" parent_id_arme="712fa932-7add-4bbc-94e1-9bb4397ee885">
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Cerberus Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Cerberus Gate" />
+    <set_object_property property="angle" value="1.221730476" name="Cerberus Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Cerberus Gate" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="226adf94-553b-487c-ab44-ef4f20d693f8" parent_id_arme="712fa932-7add-4bbc-94e1-9bb4397ee885">
+    <if_variable name="Tibur System" comparator="EQUALS" value="3.0" />
+    <destroy name="SB-87" />
+    <destroy name="CR-66" />
+    <set_variable name="Tibur System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tibur Sector VII" id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Tibur Sector VII" id_arme="cf73260d-9ecf-4da3-b473-a0ada0117bdd" parent_id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14">
+    <if_variable name="Tibur System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Tibur System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="0.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+
+    <create count="100" type="nebulas" startX="57099.0" startY="400.0" startZ="70491.0" endX="4197.0" endY="0.0" endZ="15178.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="51875.0" startY="400.0" startZ="77321.0" endX="1786.0" endY="0.0" endZ="20803.0" randomRange="10000" />
+    <create count="10" type="asteroids" startX="24286.0" startY="-300.0" startZ="65937.0" endX="24286.0" endY="-300.0" endZ="65937.0" randomRange="5000" />
+    <create count="10" type="asteroids" startX="67277.0" startY="300.0" startZ="36339.0" endX="67277.0" endY="300.0" endZ="36339.0" randomRange="5000" />
+    <create count="10" type="asteroids" startX="45447.0" startY="0.0" startZ="48928.0" endX="45447.0" endY="0.0" endZ="48928.0" randomRange="5000" />
+  </event>
+  <folder_arme name="Navigation" id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c" parent_id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14" />
+  <event name="Transition to Sector VIII" id_arme="fd7d7f42-60fa-4b25-a07e-0533294b1cf9" parent_id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector IV" id_arme="ba917c6b-0771-495b-88a2-bce7ac5b340e" parent_id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="ec80ae6d-f38c-44e4-8d60-c23c68fb83ac" parent_id_arme="c3b0e80a-14a3-4081-b32f-662f2b09269c">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="f40250e0-ea85-448e-9c02-6039b07d18b2" parent_id_arme="706bfa69-b9a5-42f8-adc1-69753b967b14" />
+  <event name="Generate Sector Entities" id_arme="98bcf296-7c67-4f53-a3a9-4e77d6015dd0" parent_id_arme="f40250e0-ea85-448e-9c02-6039b07d18b2">
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+
+    <create type="genericMesh" x="63125.0" y="0.0" z="56696.0" angle="0" name="Atilia Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="41295.0" y="0.0" z="36339.0" angle="0" name="Interstellar Spas" hullID="1001" />
+    <set_ship_text name="Interstellar Spas" desc="Primary marketplace for traffic to/from Atilia. Regional get-away for rich and famous. Station Chief is arrogant and snobby, disdains the TSN." />
+
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="30722f58-3c04-476d-947a-e4e20ecd302c" parent_id_arme="f40250e0-ea85-448e-9c02-6039b07d18b2">
+    <if_variable name="Sector" comparator="EQUALS" value="7.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_object_property property="artScale" value="1.0" name="Atilia Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Atilia Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Atilia Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Atilia Gate" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="d4e3b9bf-637f-492a-b093-3a2c81d22dd7" parent_id_arme="f40250e0-ea85-448e-9c02-6039b07d18b2">
+    <if_variable name="Tibur System" comparator="EQUALS" value="3.0" />
+
+    <destroy name="Atilia Gate" />
+    <destroy name="Interstellar Spas" />
+
+    <set_variable name="Tibur System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+
+  <folder_arme name="Tibur Sector VIII" id_arme="f50b6e5b-6c1f-4eb3-b010-790d941a1e40" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Tibur Sector VIII" id_arme="3675c7d8-9e52-4b73-a381-5a853516edaa" parent_id_arme="f50b6e5b-6c1f-4eb3-b010-790d941a1e40">
+    <if_variable name="Tibur System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Tibur System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="1.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="1.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+
+    <create count="100" type="nebulas" nebType="2" startX="87768.0" startY="0.0" startZ="17321.0" endX="46652.0" endY="0.0" endZ="78526.0" randomRange="10000" />
+    <create count="100" type="nebulas" startX="97545.0" startY="0.0" startZ="12901.0" endX="75179.0" endY="0.0" endZ="49866.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="51875.0" startY="0.0" startZ="77321.0" endX="17456.0" endY="0.0" endZ="68348.0" randomRange="10000" />
+    <create count="50" type="nebulas" startX="50000.0" startY="0.0" startZ="41160.0" endX="77456.0" endY="0.0" endZ="39553.0" randomRange="5000" />
+    <create count="50" type="nebulas" startX="48393.0" startY="0.0" startZ="44776.0" endX="16384.0" endY="0.0" endZ="23080.0" randomRange="5000" />
+    <create count="50" type="nebulas" nebType="2" startX="46117.0" startY="0.0" startZ="72232.0" endX="11429.0" endY="0.0" endZ="59776.0" randomRange="5000" />
+    <create count="50" type="asteroids" startX="34197.0" startY="300.0" startZ="22946.0" endX="66608.0" endY="0.0" endZ="12767.0" randomRange="5000" />
+    <create count="50" type="asteroids" startX="21474.0" startY="300.0" startZ="80267.0" endX="57902.0" endY="0.0" endZ="59776.0" randomRange="5000" />
+    <create count="50" type="mines" startAngle="20" endAngle="100" startX="40500.0" startY="0.0" startZ="59000.0" radius="25000" />
+    <create count="50" type="mines" startAngle="285" endAngle="355" startX="40500.0" startY="0.0" startZ="59000.0" radius="25000" />
+    <create count="50" type="mines" startAngle="175" endAngle="260" startX="40500.0" startY="0.0" startZ="59000.0" radius="25000" />
+  </event>
+  <folder_arme name="Navigation" id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659" parent_id_arme="f50b6e5b-6c1f-4eb3-b010-790d941a1e40" />
+  <event name="Transition to Sector IX" id_arme="e7db033b-891c-4abf-a12e-9b88b8779850" parent_id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659">
+    <if_variable name="Grid 5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 5 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="9.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VII" id_arme="90a38f15-5fc5-49f5-9c38-e57de15a652e" parent_id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="7.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector V" id_arme="3334d593-68e0-4de0-927d-cc8670c9f0e5" parent_id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Right)" id_arme="d9865cbd-6579-4658-be01-a088d6c99db8" parent_id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659">
+    <if_variable name="Corner A5 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A5 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="7fcfc7c1-5e98-4b7b-b1c0-6b763a778f10" parent_id_arme="60ba9cae-a40e-4d35-94aa-f4d2a77f3659">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="4.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="781ed8c5-308e-48ad-bbba-007c4557bbcc" parent_id_arme="f50b6e5b-6c1f-4eb3-b010-790d941a1e40" />
+  <event name="Generate Sector Entities" id_arme="a5cb4eb6-8426-4bd2-a22e-b949193898bc" parent_id_arme="781ed8c5-308e-48ad-bbba-007c4557bbcc">
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+
+    <create type="genericMesh" x="40500.0" y="0.0" z="59000.0" angle="0" name="Helios Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+    <create type="neutral" x="72500.0" y="0.0" z="29375.0" angle="0" name="DS 777" hullID="1000" />
+    <set_ship_text name="DS 777" desc="Primary gatekeeper for traffic to/from Mria, especially neutrals. Station commander has an odd affections for xenos, rumored to be into doing unspecified weird stuff with them." />
+
+    <create type="neutral" x="36608.0" y="0.0" z="33794.0" angle="0" name="WP-89W" hullID="1052" />
+    <create type="neutral" x="65804.0" y="0.0" z="58571.0" angle="0" name="WP-104Z" hullID="1052" />
+
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="55c201ab-271d-47b7-b8c9-9b8633c389dd" parent_id_arme="781ed8c5-308e-48ad-bbba-007c4557bbcc">
+    <if_variable name="Sector" comparator="EQUALS" value="8.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_object_property property="artScale" value="1.0" name="Helios Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Helios Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Helios Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Helios Gate" />
+
+    <set_variable name="Infiltrators" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="95529f9e-709a-45c2-b5ba-f2d079877a43" parent_id_arme="781ed8c5-308e-48ad-bbba-007c4557bbcc">
+    <if_variable name="Tibur System" comparator="EQUALS" value="3.0" />
+    
+    <destroy name="Helios Gate" />
+    <destroy name="DS 777" />
+    <destroy name="WP-89W" />
+    <destroy name="WP-104Z" />
+
+    <set_variable name="Tibur System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+  <folder_arme name="Tibur Sector IX" id_arme="2cca11a0-d788-4074-ad4f-41b71fffd729" parent_id_arme="c4b0eaf0-41b9-4c9c-8a23-c4c857ebd744" />
+  <event name="Create Tibur Sector IX" id_arme="263489ad-2277-4443-be3c-89db441fb52a" parent_id_arme="2cca11a0-d788-4074-ad4f-41b71fffd729">
+    <if_variable name="Tibur System" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_timer_finished name="Transition" />
+    <set_skybox_index index="12" />
+    <set_variable name="Sector Entities" value="1.0" />
+    <set_variable name="Tibur System" value="2.0" />
+    <set_variable name="Grid 5 Transition Enabled" value="0.0" />
+    <set_variable name="Grid 1 Transition Enabled" value="1.0" />
+    <set_variable name="Grid E Transition Enabled" value="0.0" />
+    <set_variable name="Grid A Transition Enabled" value="1.0" />
+    <set_variable name="Corner A1 Transition Enabled" value="1.0" />
+    <set_variable name="Corner A5 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E1 Transition Enabled" value="0.0" />
+    <set_variable name="Corner E5 Transition Enabled" value="0.0" />
+
+    <create count="100" type="nebulas" nebType="1" startX="41295.0" startY="-200.0" startZ="2723.0" endX="38617.0" endY="200.0" endZ="47857.0" randomRange="10000" />
+    <create count="100" type="nebulas" nebType="2" startX="44242.0" startY="200.0" startZ="848.0" endX="33929.0" endY="-200.0" endZ="49062.0" randomRange="10000" />
+    <create count="100" type="asteroids" startX="32724.0" startY="0.0" startZ="45848.0" endX="44375.0" endY="0.0" endZ="2455.0" randomRange="10000" />
+  </event>
+  <folder_arme name="Navigation" id_arme="e07ee84a-e606-4eb2-aacb-48f7b986efda" parent_id_arme="2cca11a0-d788-4074-ad4f-41b71fffd729" />
+  <event name="Transition to Sector VIII" id_arme="b6319b46-7274-4a18-bcea-a0e9ad7b82b7" parent_id_arme="e07ee84a-e606-4eb2-aacb-48f7b986efda">
+    <if_variable name="Grid 1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid 1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="8.0" integer="yes" />
+  </event>
+  <event name="Transition to Sector VI" id_arme="d138a56d-1ad6-4620-bb97-a56bd2eecc41" parent_id_arme="e07ee84a-e606-4eb2-aacb-48f7b986efda">
+    <if_variable name="Grid A Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Grid A Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="6.0" integer="yes" />
+  </event>
+  <event name="Transition to (Top Left)" id_arme="54a64fb3-794c-48b5-9e79-60a4f996582d" parent_id_arme="e07ee84a-e606-4eb2-aacb-48f7b986efda">
+    <if_variable name="Corner A1 Transition" comparator="EQUALS" value="1.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Sector Transition" consoles="MHWESCO">Sector Transition in progress</warning_popup_message>
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_timer name="Transition" seconds="0.5" />
+    <set_variable name="Corner A1 Transition" value="0.0" />
+    <set_variable name="Tibur System" value="3.0" integer="yes" />
+    <set_variable name="Sector" value="5.0" integer="yes" />
+  </event>
+  <folder_arme name="Sector Entities" id_arme="5afb07df-a1fe-46e9-85dc-602aedf74c22" parent_id_arme="2cca11a0-d788-4074-ad4f-41b71fffd729" />
+  <event name="Generate Sector Entities" id_arme="0cec9741-d227-4bba-893a-1ddd3f5a2603" parent_id_arme="5afb07df-a1fe-46e9-85dc-602aedf74c22">
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
+    <set_variable name="ExitorRetreat" value="0.0" />
+    <set_variable name="Sector Entities" value="2.0" />
+    <set_variable name="MissionCode" value="1.0" />
+  </event>
+  <event name="Settings" id_arme="8c8114d8-e7ef-43ba-b696-7eeaced55161" parent_id_arme="5afb07df-a1fe-46e9-85dc-602aedf74c22">
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_variable name="Tibur System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
+    <set_timer name="Entry Random" seconds="1" />
+    <set_variable name="Entry Random" value="1.0" />
+    <set_variable name="PirateRaid" value="1.0" />
+    <set_variable name="Sector Entities" value="3.0" />
+  </event>
+  <event name="Destroy Sector Entities" id_arme="513a62cb-3cf5-4426-8543-53aacc2d9534" parent_id_arme="5afb07df-a1fe-46e9-85dc-602aedf74c22">
+    <if_variable name="Tibur System" comparator="EQUALS" value="3.0" />
+    <set_variable name="Tibur System" value="System" integer="yes" />
+    <set_variable name="Sector Entities" value="0.0" />
+  </event>
+</mission_data>

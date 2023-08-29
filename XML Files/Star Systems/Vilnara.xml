@@ -115,7 +115,7 @@
     <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="1.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
-    <create type="station" x="40358.0" y="0.0" z="46651.0" name="Zu Chongzhi Astrolab" hullID="1004" />
+    <create type="neutral" x="40358.0" y="0.0" z="46651.0" name="Zu Chongzhi Astrolab" hullID="1004" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara I" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" integer="yes" />
     <set_variable name="Sector Entities" value="2.0" integer="yes" />
@@ -398,7 +398,7 @@
     <if_variable name="Sector" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="61920.0" y="0.0" z="39687.0" name="Loria Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="29777.0" y="0.0" z="71562.0" name="Gohtzao-de" hullID="1001" />
+    <create type="neutral" x="29777.0" y="0.0" z="71562.0" name="Gohtzao-de" hullID="1001" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara II" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -1069,8 +1069,8 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="27768.0" y="0.0" z="71294.0" name="Vanir Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
     <create type="blackHole" x="36608.0" y="0.0" z="31517.0" name="Ebusku" />
-    <create type="station" x="64733.0" y="0.0" z="62857.0" name="Kusihlwa Exchange" hullID="1001" />
-    <create type="station" x="59375.0" y="0.0" z="29375.0" name="DS-26T" hullID="1000" />
+    <create type="neutral" x="64733.0" y="0.0" z="62857.0" name="Kusihlwa Exchange" hullID="1001" />
+    <create type="neutral" x="59375.0" y="0.0" z="29375.0" name="DS-26T" hullID="1000" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara V" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
@@ -1302,7 +1302,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="neutral" x="58974.0" y="300.0" z="46919.0" angle="0" name="Sheng Gaowan Mining" hullID="1050" />
     <create type="neutral" x="26729.0" y="-300.0" z="65687.0" angle="0" name="Luanchao Ores" hullID="1050" />
-    <create type="station" x="31190.0" y="0.0" z="39962.0" name="Ying'er Forges" hullID="1003" />
+    <create type="neutral" x="31190.0" y="0.0" z="39962.0" name="Ying'er Forges" hullID="1003" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara VII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
@@ -1563,8 +1563,8 @@
     <if_variable name="Sector" comparator="EQUALS" value="8.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
     <create type="genericMesh" x="52009.0" y="0.0" z="68214.0" name="Tyr Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="station" x="55224.0" y="0.0" z="30446.0" name="Vilnara Post" hullID="1001" />
-    <create type="station" x="73572.0" y="0.0" z="50937.0" name="DS-500" hullID="1000" />
+    <create type="neutral" x="55224.0" y="0.0" z="30446.0" name="Vilnara Post" hullID="1001" />
+    <create type="neutral" x="73572.0" y="0.0" z="50937.0" name="DS-500" hullID="1000" />
     <create type="genericMesh" x="100000.0" y="0.0" z="0.0" name="Vilnara VIII" meshFileName="dat\TSN\USFP\marker.dxs" textureFileName="dat\TSN\USFP\marker.png" colorRed="1.0" colorGreen="1.0" colorBlue="1.0" />
     <set_variable name="Sector Entities" value="2.0" />
   </event>
