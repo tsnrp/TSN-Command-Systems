@@ -5014,10 +5014,14 @@
     <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="-" hullKeys="Reaper Havoc" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
-    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -5033,12 +5037,18 @@
     <create type="enemy" use_gm_position="" name="-" hullKeys="Reaper Havoc" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="-" hullKeys="Reaper Havoc" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="-" hullKeys="Desolation Demolition" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
-    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7702" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7703" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7702" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7703" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -5057,15 +5067,24 @@
     <create type="enemy" use_gm_position="" name="-" hullKeys="Reaper Havoc" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="-" hullKeys="Desolation Demolition" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="-" hullKeys="Desolation Demolition" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
-    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7702" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7702" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7703" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7704" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7705" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7702" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7702" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7703" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7704" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7705" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
 
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
@@ -5077,11 +5096,16 @@
     <!-- vesselData is messed up, applying hardcoded values. 
     <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
-    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
@@ -5092,8 +5116,10 @@
     <!-- vesselData is messed up, applying hardcoded values. 
     <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
-    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
     <create type="enemy" use_gm_position="" name="xx" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <set_ship_text name="xx" newname="--" race="Budron" class="Carrier" desc="Mixed passanger and cargo vessel adapted for fighter and bomber bays.^Ship has an upgraded reactor and is of newer construction, if old design" />
     <create type="enemy" use_gm_position="" name="xx" hullID="7711" sideValue="SideValue" fleetnumber="Fleetnumber" />
@@ -5110,11 +5136,16 @@
     <!-- vesselData is messed up, applying hardcoded values. 
     <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" />
     <create type="enemy" use_gm_position="" name="-" hullKeys="Destruction Devastator" sideValue="SideValue" fleetnumber="Fleetnumber" /> -->
-    <create type="enemy" use_gm_position="" name="--" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7710" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7710" sideValue="SideValue" fleetnumber="Fleetnumber" />
-    <create type="enemy" use_gm_position="" name="--" hullID="7710" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7700" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7701" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7710" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7710" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
+    <create type="enemy" use_gm_position="" name="r" hullID="7710" sideValue="SideValue" fleetnumber="Fleetnumber" />
+    <set_ship_text name="r" newname="--" race="Budron" />
     <set_variable name="Fleet Settings" value="1.0" />
     <set_variable name="Name Assign" value="1.0" integer="yes" />
     <set_variable name="Random Direction" value="1.0" />
