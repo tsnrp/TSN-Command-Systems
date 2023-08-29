@@ -1106,7 +1106,7 @@
     <if_variable name="Sector Entities" comparator="EQUALS" value="1.0" />
 
     <create type="genericMesh" x="63125.0" y="0.0" z="56696.0" angle="0" name="Atilia Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
-    <create type="neutral" x="41295.0" y="0.0" z="36339.0" angle="0" name="Interstellar Spas" hullKeys="Large Civilian Base" />
+    <create type="neutral" x="41295.0" y="0.0" z="36339.0" angle="0" name="Interstellar Spas" hullID="1001" />
     <set_ship_text name="Interstellar Spas" desc="Primary marketplace for traffic to/from Atilia. Regional get-away for rich and famous. Station Chief is arrogant and snobby, disdains the TSN." />
 
     <set_variable name="ExitorRetreat" value="0.0" />

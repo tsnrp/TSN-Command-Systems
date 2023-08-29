@@ -1933,6 +1933,213 @@
     <set_variable name="Loria System" value="System" integer="yes" />
     <set_variable name="Sector Entities" value="0.0" />
   </event>
+
+  <event name="Arrival From Vilnara" id_arme="eaacf06c-92c9-4b9b-b4a5-3bbcadd96ac0" parent_id_arme="e887bc5f-398a-4b23-a291-5ad2de429229">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Vilnara to Loria" comparator="EQUALS" value="1.0" />
+    <if_timer_finished name="Transition" />
+    <set_relative_position player_slot2="0" distance="4200" angle="0.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="1" distance="4200" angle="5.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="2" distance="4200" angle="10.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="3" distance="4200" angle="15.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="4" distance="4200" angle="20.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="5" distance="4200" angle="355.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="6" distance="4200" angle="350.0" name1="Vilnara Gate" />
+    <set_relative_position player_slot2="7" distance="4200" angle="345.0" name1="Vilnara Gate" />
+    <set_object_property property="angle" value="3.141592654" player_slot="0" />
+    <set_object_property property="angle" value="3.141592654" player_slot="1" />
+    <set_object_property property="angle" value="3.141592654" player_slot="2" />
+    <set_object_property property="angle" value="3.141592654" player_slot="3" />
+    <set_object_property property="angle" value="3.141592654" player_slot="4" />
+    <set_object_property property="angle" value="3.141592654" player_slot="5" />
+    <set_object_property property="angle" value="3.141592654" player_slot="6" />
+    <set_object_property property="angle" value="3.141592654" player_slot="7" />
+    <set_variable name="Vilnara to Loria" value="0.0" />
+  </event>
+  <folder_arme name="System - Jump Gate Settings" id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1" parent_id_arme="30d551e8-c1fa-40f4-b420-ad9c2d143b6e" />
+  <event name="Gate Offline" id_arme="38cbc171-f49a-46fa-be1d-7d0983a98789" parent_id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="0.0" />
+    <set_object_property property="rollDelta" value="0.3" name="Vilnara Gate" />
+  </event>
+  <folder_arme name="Tracking System" id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b" parent_id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1" />
+  <event name="Ship1 Activation Range" id_arme="245683e8-6ba8-4fab-a70a-a262d1421eec" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="0" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship1" value="1.0" />
+  </event>
+  <event name="Ship1 Out of Range" id_arme="018be533-26c0-4407-acb3-b2aa370672bb" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship1" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="0" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship1" value="0.0" />
+  </event>
+  <event name="Ship2 Activation Range" id_arme="166bc2bf-4323-4136-9232-d89e5bbe0199" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="1" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship2" value="1.0" />
+  </event>
+  <event name="Ship2 Out of Range" id_arme="d63e9c6f-7fe9-4ea5-ac09-9ddc2fadbabc" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship2" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="1" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship2" value="0.0" />
+  </event>
+  <event name="Ship3 Activation Range" id_arme="4c2c18ac-33b0-4cfb-b704-0078aec03276" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="2" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship3" value="1.0" />
+  </event>
+  <event name="Ship3 Out of Range" id_arme="cbaf1456-66af-464a-a950-068167b5dfa0" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship3" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="2" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship3" value="0.0" />
+  </event>
+  <event name="Ship4 Activation Range" id_arme="1d123ced-d953-4866-8396-e386ac74753e" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="3" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship4" value="1.0" />
+  </event>
+  <event name="Ship4 Out of Range" id_arme="8b9d36eb-b22a-415c-9d22-7596e887e802" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship4" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="3" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship4" value="0.0" />
+  </event>
+  <event name="Ship5 Activation Range" id_arme="d74c2240-a1b7-42a7-83be-a1fde58a1d31" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="4" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship5" value="1.0" />
+  </event>
+  <event name="Ship5 Out of Range" id_arme="571d5d44-624a-4245-b191-1556d37bc45b" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship5" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="4" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship5" value="0.0" />
+  </event>
+  <event name="Ship6 Activation Range" id_arme="3c500a4c-206d-4249-8348-155f28e55207" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="5" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship6" value="1.0" />
+  </event>
+  <event name="Ship6 Out of Range" id_arme="14698ca4-d0c8-4985-bc51-b3bf374b8bc5" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship6" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="5" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship6" value="0.0" />
+  </event>
+  <event name="Ship7 Activation Range" id_arme="7e2a66d2-33aa-497e-9a5c-585800aa9da5" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="6" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship7" value="1.0" />
+  </event>
+  <event name="Ship7 Out of Range" id_arme="47dfb18b-591e-466f-ace6-7d85e3d88556" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship7" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="6" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship7" value="0.0" />
+  </event>
+  <event name="Ship8 Activation Range" id_arme="b9c6545d-51b9-4160-a95c-e0849d7fe7c7" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="0.0" />
+    <if_distance player_slot1="7" name2="Vilnara Gate" comparator="LESS" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange+1" />
+    <set_variable name="Gate Tracking Ship8" value="1.0" />
+  </event>
+  <event name="Ship8 Out of Range" id_arme="b146b8b3-4ca9-4d53-818d-5ecb842ca550" parent_id_arme="54e3dd53-5f1f-41da-b814-59ca48ca597b">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate Tracking Ship8" comparator="EQUALS" value="1.0" />
+    <if_distance player_slot1="7" name2="Vilnara Gate" comparator="GREATER" value="4000.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <set_variable name="shipsInrange" value="shipsInrange-1" />
+    <set_variable name="Gate Tracking Ship8" value="0.0" />
+  </event>
+  <event name="Gate Online" id_arme="d38e5354-c4aa-407d-9dbe-4a1511acf506" parent_id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Gate System" comparator="EQUALS" value="1.0" />
+    <if_comms_button text="Activate Gate" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Gate System" sideValue="playerSide" type="STATUS">Activating Gate^Locking signal...</incoming_comms_text>
+    <set_object_property property="rollDelta" value="1.0" name="Vilnara Gate" />
+    <set_timer name="Gate System" seconds="5" />
+    <set_variable name="Gate System" value="2.0" />
+    <clear_comms_button text="Activate Gate" sideValue="playerSide" />
+  </event>
+  <event name="Jump Initiated" id_arme="a9a7abfe-86bd-478a-b874-2f170a88bd10" parent_id_arme="a38241ed-797c-4a2c-ba5f-900bff5076f1">
+    <if_variable name="Sector" comparator="EQUALS" value="15" />
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_comms_button text="Jump" />
+    <if_variable name="Gate System" comparator="EQUALS" value="3.0" />
+    <if_variable name="Vilnara Gate" comparator="EQUALS" value="1.0" />
+    <clear_comms_button text="Jump" sideValue="playerSide" />
+    <set_variable name="Loria System" value="3.0" integer="yes" />
+    <set_variable name="System" value="0.0" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0" centerZ="50000" />
+    <set_variable name="Loria to Vilnara" value="1.0" />
+    <set_variable name="Vilnara System" value="1.0" />
+    <set_variable name="Sector" value="2" />
+    <set_variable name="shipsInrange" value="0.0" integer="yes" />
+    <set_timer name="Transition" seconds="2" />
+    <set_variable name="Gate System" value="0.0" />
+    <set_variable name="ExitorRetreat" value="1.0" />
+  </event>
+
   <folder_arme name="Loria Sector XV" id_arme="3c773f67-cdc4-4311-a467-b2e137d97d80" parent_id_arme="5aafddc1-e70d-40e1-b872-d8494ffd8e98" />
   <event name="Create Loria Sector XV" id_arme="af97d770-b944-4ee9-93a9-64be5f693757" parent_id_arme="3c773f67-cdc4-4311-a467-b2e137d97d80">
     <if_timer_finished name="Transition" />
@@ -2024,6 +2231,8 @@
     <create type="neutral" x="78795.0" y="0.0" z="56696.0" angle="0" name="Lorian Council" hullID="1001" sideValue="sectorSide" />
     <create type="neutral" x="47858.0" y="0.0" z="28705.0" angle="0" name="SY-881" hullID="1053" sideValue="sectorSide" />
     <create type="neutral" x="32858.0" y="0.0" z="35535.0" angle="0" name="Tiffan Denebite" hullID="1051" sideValue="sectorSide" />
+    <create type="genericMesh" x="45715.0" y="0.0" z="58205.0" name="Vilnara Gate" meshFileName="dat\TSN\USFP\TSNGate.dxs" textureFileName="dat\TSN\USFP\TSNGate.png" colorRed="1.0" colorGreen="0.5" colorBlue="0.0" />
+
     <set_variable name="ExitorRetreat" value="0.0" />
     <set_variable name="Sector Entities" value="2.0" />
     <set_variable name="MissionCode" value="1.0" />
@@ -2032,10 +2241,18 @@
     <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector Entities" comparator="EQUALS" value="2.0" />
     <if_variable name="Sector" comparator="EQUALS" value="15" />
+
+    <set_object_property property="artScale" value="1.0" name="Vilnara Gate" />
+    <set_object_property property="pushRadius" value="0.0" name="Vilnara Gate" />
+    <set_object_property property="angle" value="4.71238898" name="Vilnara Gate" />
+    <set_object_property property="rollDelta" value="0.3" name="Vilnara Gate" />
+
+
     <set_variable name="Sector Entities" value="3.0" />
   </event>
   <event name="Destroy Sector Entities" id_arme="7eb8bdfd-7618-4d9c-824f-6ac31cafd692" parent_id_arme="720c30b9-8b57-4389-b177-feb2e9f41a4b">
     <if_variable name="Loria System" comparator="EQUALS" value="3.0" />
+    <destroy name="Vilnara Gate" />
     <destroy name="DS-123" />
     <destroy name="DS-138" />
     <destroy name="Umber" />
