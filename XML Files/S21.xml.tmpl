@@ -1,0 +1,1004 @@
+<mission_data version="1.0" background_id_arme="cc79b12b-5573-4dcf-81ea-333725385034" playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana">
+  <start id_arme="f1f9329a-5fb4-454b-b10b-8fca1bce67c4">
+    <!---->
+  </start>
+  <!-- Ships -->
+  {% for spawnKey, ships in {
+      "3": [
+        "TSN Ships\+Verdant",
+        "TSN Ships\+VerdantFleet",
+        "TSN Ships\+WhispersofFreedom"
+      ],
+      "4": [
+        "Civilian USFP\+Wisdom",
+        "Civilian USFP\+Ubuntu"
+      ],
+      "7": [
+        "Single Hegemony\+KeloiGitos"
+      ],
+    }.items() %}
+  <event name="S21_Set_SpawnKey_{{ spawnKey }}" id_arme="acca2d78-a30b-4570-96d4-2b1356a27f4d" parent_id_arme="8d34f566-84d9-4830-a518-47fee928470a">
+    <if_variable name="Ship Spawn Menu" comparator="EQUALS" value="{{ spawnKey }}.0" />
+    {% for ship in ships %}
+      <set_gm_button text="{{ ship }}" />
+    {% endfor %}
+  </event>
+  {% endfor %}
+  <event name="S21_Clear_SpawnKeys" id_arme="acca2d78-a30b-4570-96d4-2b1356a27f4d" parent_id_arme="8d34f566-84d9-4830-a518-47fee928470a">
+    <if_variable name="CycleSpawnMenu" comparator="EQUALS" value="1.0" />
+    {% for ship in [
+          "TSN Ships\+Verdant",
+          "TSN Ships\+VerdantFleet",
+          "TSN Ships\+WhispersofFreedom",
+          "Civilian USFP\+Wisdom",
+          "Civilian USFP\+Ubuntu",
+          "Single Hegemony\+KeloiGitos"
+        ]
+    %}
+      <clear_gm_button text="{{ ship }}" />
+    {% endfor %}
+  </event>
+
+  {% for name in ["Keloi Gitosz"] %}
+  <event name="{{ name }}" id_arme="1923bd22-e490-4245-a797-2d14e56dd7f6" parent_id_arme="8d34f566-84d9-4830-a518-47fee928470a">
+    <if_gm_button text="Single Hegemony\+KeloiGitos" />
+    <create type="enemy" use_gm_position="" angle="0" name="{{ name }}" hullID="2002" sideValue="SideValue" fleetnumber="-1" />
+
+    <set_object_property property="shieldMaxStateFront" value="2000" name="{{ name }}" />
+    <set_object_property property="shieldMaxStateBack" value="2000" name="{{ name }}" />
+    <set_object_property property="shieldStateFront" value="2000" name="{{ name }}" />
+    <set_object_property property="shieldStateBack" value="2000" name="{{ name }}" />
+
+    <clear_ai name="{{ name }}" />
+
+    <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+
+    <add_ai type="SPCL_AI" name="{{ name }}" />
+    <add_ai type="CHASE_PLAYER" value1="5000" value2="500" name="{{ name }}" />
+    <add_ai type="CHASE_AI_SHIP" value1="3000" value2="500" name="{{ name }}" />
+    <add_ai type="CHASE_STATION" value1="1000" name="{{ name }}" />
+    <add_ai type="CHASE_ANGER" name="{{ name }}" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="2000" name="{{ name }}" />
+
+    <set_special name="{{ name }}" ability="HET" />
+    <set_special name="{{ name }}" ability="Teleport" />
+    <set_special name="{{ name }}" ability="AntiMine" />
+    <set_special name="{{ name }}" ability="AntiTorp" />
+    <set_special name="{{ name }}" ability="Drones" />
+    <set_special name="{{ name }}" ability="ShldDrain" />
+    <set_special name="{{ name }}" ship="1" /> <!-- overpowered -->
+
+    <set_ship_text name="{{ name }}" desc="Heavily modified Kralien Dreadnought."
+      scan_desc="Kralien Dreadnought with heavily modulated shields. Commanded by Celestial Guardian Karanu Gerkna. Specials: HET Teleport AntiMine AntiTorp Drones ShldDrain LongRangeJump" />
+
+  </event>
+  {% endfor %}
+
+  {% for name in ["TSN Verdant"] %}
+  <event name="{{ name }}" id_arme="1923bd22-e490-4245-a797-2d14e56dd7f6" parent_id_arme="8d34f566-84d9-4830-a518-47fee928470a">
+    <if_gm_button text="TSN Ships\+Verdant" />
+    <create type="enemy" use_gm_position="" angle="0" name="{{ name }}" hullID="1701" sideValue="SideValue" fleetnumber="-1" />
+
+    <clear_ai name="{{ name }}" />
+
+    <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+
+
+    <set_object_property property="shieldMaxStateFront" value="150" name="TSN Verdant" />
+    <set_object_property property="shieldStateFront" value="150" name="TSN Verdant" />
+    <set_object_property property="shieldMaxStateBack" value="130" name="TSN Verdant" />
+    <set_object_property property="shieldStateBack" value="130" name="TSN Verdant" />
+
+    <add_ai type="SPCL_AI" name="{{ name }}" />
+    <add_ai type="CHASE_STATION" value1="5000" name="{{ name }}" />
+    <add_ai type="CHASE_AI_SHIP" value1="10000" value2="5000" name="{{ name }}" />
+    <add_ai type="CHASE_ANGER" name="{{ name }}" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="{{ name }}" />
+    <add_ai type="LAUNCH_FIGHTERS" value1="2000" name="{{ name }}" />
+
+    <set_special name="{{ name }}" ability="HET" />
+    <set_special name="{{ name }}" ability="Warp" />
+    <set_special name="{{ name }}" ability="AntiTorp" />
+    <set_special name="{{ name }}" ability="Drones" />
+    <set_special name="{{ name }}" ship="1" /> <!-- overpowered -->
+
+    <set_ship_text name="{{ name }}" desc="TSN Athena Class."
+      scan_desc="Flagship of the 1st Space Fleet, 1st Heavy Division. Commanded by Flt. Cpt. Min Mwenya. Specials: HET Warp AntiTorp Drones" />
+  </event>
+  {% endfor %}
+
+  {% for name in ["TSN Whispers of Freedom"] %}
+  <event name="{{ name }}" id_arme="1923bd22-e490-4245-a797-2d14e56dd7f6" parent_id_arme="8d34f566-84d9-4830-a518-47fee928470a">
+    <if_gm_button text="TSN Ships\+WhispersofFreedom" />
+    <create type="neutral" use_gm_position="" angle="0" name="{{ name }}" hullID="1503" sideValue="SideValue" fleetnumber="-1" />
+
+    <set_object_property property="shieldMaxStateFront" value="180" name="{{ name }}" />
+    <set_object_property property="shieldStateFront" value="180" name="{{ name }}" />
+    <set_object_property property="shieldMaxStateBack" value="220" name="{{ name }}" />
+    <set_object_property property="shieldStateBack" value="220" name="{{ name }}" />
+
+    <set_object_property property="topSpeed" value="6.0" name="{{ name }}" />
+
+    <clear_ai name="{{ name }}" />
+
+    <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="{{ name }}" />
+
+    <set_ship_text name="{{ name }}" desc="Modified Bulk Cargo."
+      scan_desc="Able to carry approximately 3500 souls." />
+  </event>
+  {% endfor %}
+
+  <event name="S21_VerdantFleet" id_arme="1923bd22-e490-4245-a797-2d14e56dd7f6" parent_id_arme="8d34f566-84d9-4830-a518-47fee928470a">
+    <if_gm_button text="TSN Ships\+VerdantFleet" />
+
+    <!-- flagship -->
+    <create type="neutral" use_gm_position="" angle="0" name="TSN Verdant" hullID="1701" sideValue="SideValue" fleetnumber="99" />
+
+    <!-- 2 cruisers -->
+    <create type="neutral" use_gm_position="" angle="0" name="TSN Vengeance" hullID="0" sideValue="SideValue" fleetnumber="99" />
+    <create type="neutral" use_gm_position="" angle="0" name="TSN Warspite" hullID="0" sideValue="SideValue" fleetnumber="99" />
+    <!-- 3 battleships -->
+    <create type="neutral" use_gm_position="" angle="0" name="TSN Fury" hullID="2" sideValue="SideValue" fleetnumber="99" />
+    <create type="neutral" use_gm_position="" angle="0" name="TSN Dawn" hullID="2" sideValue="SideValue" fleetnumber="99" />
+    <create type="neutral" use_gm_position="" angle="0" name="TSN Shield" hullID="2" sideValue="SideValue" fleetnumber="99" />
+    <!-- 1 scout -->
+    <create type="neutral" use_gm_position="" angle="0" name="TSN Daring" hullID="1" sideValue="SideValue" fleetnumber="99" />
+
+    <set_object_property property="shieldMaxStateFront" value="150" name="TSN Verdant" />
+    <set_object_property property="shieldStateFront" value="150" name="TSN Verdant" />
+    <set_object_property property="shieldMaxStateBack" value="130" name="TSN Verdant" />
+    <set_object_property property="shieldStateBack" value="130" name="TSN Verdant" />
+
+    {% for name in ["TSN Verdant", "TSN Vengeance", "TSN Warspite", "TSN Fury", "TSN Dawn", "TSN Shield", "TSN Daring"] %}
+      <clear_ai name="{{ name }}" />
+
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="TRY_TO_BECOME_LEADER" name="{{ name }}" />
+      <add_ai type="CHASE_STATION" value1="5000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="10000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_ANGER" name="{{ name }}" />
+      <add_ai type="LEADER_LEADS" name="{{ name }}" />
+      <add_ai type="FOLLOW_LEADER" name="{{ name }}" />
+      <add_ai type="FOLLOW_COMMS_ORDERS" name="{{ name }}" />
+      <add_ai type="LAUNCH_FIGHTERS" value1="2000" name="{{ name }}" />
+      <set_special name="{{ name }}" ability="Warp" />
+      <set_special name="{{ name }}" ability="AntiTorp" />
+      <set_special name="{{ name }}" ability="Drones" />
+      <set_special name="{{ name }}" ability="HET" />
+    {% endfor %}
+
+    <set_special name="TSN Verdant" ship="1" /> <!-- overpowered -->
+
+    <set_ship_text name="TSN Verdant" desc="TSN Athena Class."
+      scan_desc="Flagship of the 1st Space Fleet, 1st Heavy Division. Commanded by Rear Adm. Min Mwenya. Specials: HET Warp AntiTorp Drones" />
+  </event>
+
+  <event name="S21_VerdantFleet_AIReset" id_arme="1923bd22-e490-4245-a797-2d14e56dd7f6" parent_id_arme="8d34f566-84d9-4830-a518-47fee928470a">
+    <if_gm_button text="Ally12" />
+    {% for name in ["TSN Verdant", "TSN Vengeance", "TSN Warspite", "TSN Fury", "TSN Dawn", "TSN Shield", "TSN Daring"] %}
+      <clear_ai name="{{ name }}" />
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="TRY_TO_BECOME_LEADER" name="{{ name }}" />
+      <add_ai type="CHASE_STATION" value1="5000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="10000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_ANGER" name="{{ name }}" />
+      <add_ai type="LEADER_LEADS" name="{{ name }}" />
+      <add_ai type="FOLLOW_LEADER" name="{{ name }}" />
+      <add_ai type="FOLLOW_COMMS_ORDERS" name="{{ name }}" />
+      <add_ai type="LAUNCH_FIGHTERS" value1="2000" name="{{ name }}" />
+    {% endfor %}
+  </event>
+
+  {% for name in ["Wisdom"] %}
+  <event name="{{ name }}" id_arme="1923bd22-e490-4245-a797-2d14e56dd7f6" parent_id_arme="8d34f566-84d9-4830-a518-47fee928470a">
+    <if_gm_button text="Civilian USFP\+Wisdom" />
+    <create type="neutral" use_gm_position="" angle="0" name="{{ name }}" hullID="1504" sideValue="SideValue" fleetnumber="-1" />
+
+    <set_object_property property="shieldMaxStateFront" value="400" name="{{ name }}" />
+    <set_object_property property="shieldStateFront" value="400" name="{{ name }}" />
+    <set_object_property property="shieldMaxStateBack" value="400" name="{{ name }}" />
+    <set_object_property property="shieldStateBack" value="400" name="{{ name }}" />
+
+    <clear_ai name="{{ name }}" />
+
+    <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+
+    <set_special name="{{ name }}" ability="Warp" />
+    <set_special name="{{ name }}" ability="AntiTorp" />
+    <set_special name="{{ name }}" ability="AntiMine" />
+
+    <add_ai type="SPCL_AI" name="{{ name }}" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="{{ name }}" />
+
+    <set_ship_text name="{{ name }}" race="USFP" class="Luxury Liner" desc="Reinforced presidential luxury liner."
+      scan_desc="Vessel of President Amandu Liam. Specials: Warp AntiMine AntiTorp" />
+  </event>
+  {% endfor %}
+
+  {% for name in ["Ubuntu"] %}
+  <event name="{{ name }}" id_arme="1923bd22-e490-4245-a797-2d14e56dd7f6" parent_id_arme="8d34f566-84d9-4830-a518-47fee928470a">
+    <if_gm_button text="Civilian USFP\+Ubuntu" />
+    <create type="neutral" use_gm_position="" angle="0" name="{{ name }}" hullID="1602" sideValue="SideValue" fleetnumber="-1" />
+
+    <set_object_property property="shieldMaxStateFront" value="600" name="{{ name }}" />
+    <set_object_property property="shieldStateFront" value="600" name="{{ name }}" />
+    <set_object_property property="shieldMaxStateBack" value="620" name="{{ name }}" />
+    <set_object_property property="shieldStateBack" value="620" name="{{ name }}" />
+
+    <clear_ai name="{{ name }}" />
+
+    <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+
+    <set_special name="{{ name }}" ability="Warp" />
+    <set_special name="{{ name }}" ability="AntiTorp" />
+    <set_special name="{{ name }}" ability="AntiMine" />
+
+    <add_ai type="SPCL_AI" name="{{ name }}" />
+    <add_ai type="CHASE_STATION" value1="1000" name="{{ name }}" />
+    <add_ai type="CHASE_AI_SHIP" value1="3000" value2="500" name="{{ name }}" />
+    <add_ai type="CHASE_ANGER" name="{{ name }}" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="{{ name }}" />
+
+    <set_ship_text name="{{ name }}" race="USFP" class="Modified Patrol Boat" desc="Decommissioned USFP Patrol Boat, in civilian use."
+      scan_desc="Vessel of Former President Kuyas Tolunay. Specials: Warp AntiMine AntiTorp" />
+  </event>
+  {% endfor %}
+
+  <!-- System changes -->
+  {% for sector in ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"] %}
+    <event name="S21_DeleteOnwiaMapMarkers_{{ sector }}" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+      <if_exists name="Onwia {{ sector }}" />
+      <if_variable name="Onwia System" comparator="EQUALS" value="2.0" />
+      <destroy name="Onwia {{ sector }}" />
+    </event>
+  {% endfor %}
+  <event name="S21_Drenan_14_Gate" id_arme="490fd3ca-37fd-4acb-b446-092f73e0b7b3">
+    <if_exists name="Ibroan Gate" />
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <destroy name="Ibroan Gate" />
+  </event>
+  <event name="S21_Drenan_14_CustomObjectsCreate" id_arme="f42a1458-fc0a-4130-be26-598883808b5e">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Slingshot Platform" />
+    <if_variable name="Sector" comparator="EQUALS" value="14.0" />
+    <create type="enemy" x="50000.0" y="0.0" z="72000.0" angle="22" name="Slingshot Platform" hullID="1355" sideValue="1" />
+    <clear_ai name="Slingshot Platform" />
+    <set_object_property property="surrenderChance" value="0.0" name="Slingshot Platform" />
+  </event>
+  <event name="S21_Drenan_14_CustomObjectsRemove" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+    <if_variable name="Drenan System" comparator="EQUALS" value="2.0" />
+    <if_exists name="Slingshot Platform" />
+    <if_variable name="Sector" comparator="NOT" value="14.0" />
+    <destroy name="Slingshot Platform" />
+  </event>
+  <event name="S21_Krellis_1_Gate" id_arme="4e63749f-6292-411b-83f6-7196ad7aa673">
+    <if_exists name="Acantha Gate" />
+    <if_variable name="Krellis System" comparator="EQUALS" value="2.0" />
+    <destroy name="Acantha Gate" />
+  </event>
+  {% for station in [
+    "A'ania Denabite",
+    "Gi'Yanu Mall",
+    "Intaka",
+    "King Manufacturing",
+    "Kinth Refinery",
+    "Ladna Labs",
+    "Le-Ray Refinery",
+    "Meltorda",
+    "Multada Denabite",
+    "Nautri Ores",
+    "Nessin",
+    "Ni'yata",
+    "Nuzeli",
+    "Ozkal",
+    "Potzhu Construction",
+    "Potzhu Shipyards",
+    "Quee",
+    "Sistera Processors",
+    "Truda Mining",
+    "Utimni",
+    "Yimsu",
+    "Zorazi Mining"
+    ] %}
+    <event name="S21_Acantha_{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
+      <set_ship_text name="{{ station }}" scan_desc="No life signs. No power signature." hailtext="No response." />
+      <clear_ai name="{{ station }}" />
+    </event>
+  {% endfor %}
+  {% for station in [
+    "CR-982",
+    "SB-112",
+    "Raschad",
+    "Onzi Oasis",
+    "Betos Bazaar",
+    "Acantha Protectorate"
+    ] %}
+    <event name="S21_Acantha_Destroy{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
+      <destroy name="{{ station }}" />
+    </event>
+  {% endfor %}
+  <event name="S21_Acantha_5_CustomObjectsCreate" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_not_exists name="WP-41" />
+    <create type="enemy" x="58844.0" y="0.0" z="41380.0" angle="20" name="WP-41" hullID="1350" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="39814.0" y="0.0" z="49216.0" angle="40" name="WP-19" hullID="1350" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="56829.0" y="0.0" z="58843.0" angle="168" name="WP-82" hullID="1350" sideValue="1" fleetnumber="-1" />
+    {% for name in ["WP-41", "WP-19", "WP-82"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiMine" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiTorp" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="{{ name }}" />
+      <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Acantha_5_CustomObjectsRemove" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+    <if_variable name="Acantha System" comparator="EQUALS" value="2.0" />
+    <if_exists name="WP-41" />
+    <if_variable name="Sector" comparator="NOT" value="5.0" />
+    {% for name in ["WP-41", "WP-19", "WP-82"] %}
+      <destroy name="{{ name }}" />
+    {% endfor %}
+  </event>
+  {% for station in [
+    "Casey",
+    "Cenotes Market",
+    "DS-03T",
+    "DS-128",
+    "DS-165",
+    "DS-189",
+    "DS-201",
+    "DS-229",
+    "DS-250",
+    "DS-256",
+    "DS-269",
+    "DS-277",
+    "DS-29X",
+    "DS-303",
+    "DS-311",
+    "DS-31R",
+    "DS-388",
+    "DS-42A",
+    "DS-476",
+    "DS-505",
+    "DS-512",
+    "DS-541",
+    "DS-552",
+    "DS-567",
+    "DS-661",
+    "DS-67E",
+    "DS-781",
+    "DS-819",
+    "DS-88P",
+    "Franklin",
+    "Goshen Hitchpost",
+    "Indigo Mining"
+    ] %}
+    <event name="S21_Ashia_{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+      <set_ship_text name="{{ station }}" scan_desc="No life signs. No power signature." hailtext="No response." />
+      <clear_ai name="{{ station }}" />
+    </event>
+  {% endfor %}
+  {% for station in [
+    "Acantha Gate",
+    "Phinmor Gate",
+    "Ashia Command",
+    "Ashia Transit",
+    "Ironmast",
+    "SY-716",
+    "WP-40",
+    "WP-10",
+    "WP-247",
+    "WP-221",
+    "WP-262",
+    "WP-285",
+    "SY-737",
+    "DS-76",
+    "Customs &amp; Immigration",
+    "Altun Ha Denabite",
+    "Tazumal Exchange",
+    "Ashia Authority",
+    "Valti"
+    ] %}
+    <event name="S21_Ashia_Destroy{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+      <destroy name="{{ station }}" />
+    </event>
+  {% endfor %}
+  <event name="S21_Ashia_1_CustomObjectsCreate" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="1.0" />
+    <if_not_exists name="WP-50" />
+    <create count="10" type="mines" startAngle="-20" endAngle="70" startX="47206.0" startY="0.0" startZ="36739.0" radius="7000" />
+    <create count="10" type="mines" startAngle="200" endAngle="290" startX="47325.0" startY="0.0" startZ="36501.0" radius="7000" />
+    <create type="enemy" x="53084.0" y="0.0" z="30049.0" angle="320" name="WP-50" hullID="1350" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="44209.0" y="0.0" z="44544.0" angle="180" name="WP-53" hullID="1350" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="39608.0" y="0.0" z="39712.0" angle="90" name="WP-51" hullID="1350" sideValue="1" fleetnumber="-1" />
+    {% for name in ["WP-50", "WP-51", "WP-53"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiMine" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiTorp" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="{{ name }}" />
+      <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Ashia_1_CustomObjectsRemove" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_exists name="WP-50" />
+    <if_variable name="Sector" comparator="NOT" value="1.0" />
+    {% for name in ["WP-50", "WP-51", "WP-53"] %}
+      <destroy name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Ashia_4_CustomObjectsCreate" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_not_exists name="Venga Planetary Supervision" />
+    <create type="enemy" x="15333.0" y="0.0" z="15450.0" angle="30" name="Venga Planetary Supervision" hullID="1005" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="47087.0" y="0.0" z="12834.0" angle="0" name="CJ-503" hullID="1351" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="7126.0" y="0.0" z="43280.0" angle="180" name="CJ-422" hullID="1351" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="37810.0" y="0.0" z="37333.0" angle="270" name="CJ-319" hullID="1351" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="33172.0" y="0.0" z="18424.0" angle="254" name="WP-A" hullID="1350" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="14143.0" y="0.0" z="28414.0" angle="150" name="WP-B" hullID="1350" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="69890.0" y="0.0" z="71588.0" angle="0" name="Venga Antenna" hullID="1353" sideValue="1" fleetnumber="-1" />
+    {% for name in ["Venga Planetary Supervision", "WP-A", "WP-B"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiMine" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiTorp" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="{{ name }}" />
+      <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="{{ name }}" />
+    {% endfor %}
+    {% for name in ["Venga Antenna", "CJ-503", "CJ-422", "CJ-319"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Ashia_4_CustomObjectsRemove" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_exists name="Venga Planetary Supervision" />
+    <if_variable name="Sector" comparator="NOT" value="4.0" />
+    {% for name in ["Venga Planetary Supervision", "WP-A", "WP-B", "Venga Antenna", "CJ-503", "CJ-422", "CJ-319"] %}
+      <destroy name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Ashia_9_CustomObjectsCreate" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_not_exists name="Ashia Planetary Supervision" />
+    <create count="10" type="mines" startAngle="90" endAngle="190" startX="55888.0" startY="0.0" startZ="43875.0" radius="5000" />
+    <create type="enemy" x="50655.0" y="0.0" z="29008.0" angle="100" name="CJ-404" hullID="1351" fleetnumber="-1" />
+    <create type="enemy" x="70159.0" y="0.0" z="53508.0" angle="300" name="CJ-304" hullID="1351" fleetnumber="-1" />
+    <create type="enemy" x="75035.0" y="0.0" z="22705.0" angle="0" name="CJ-500" hullID="1351" fleetnumber="-1" />
+    <create type="enemy" x="56006.0" y="0.0" z="43637.0" angle="330" name="Ashia Planetary Supervision" hullID="1005" fleetnumber="-1" />
+    <create type="enemy" x="72776.0" y="0.0" z="35312.0" angle="270" name="WP-G" hullID="1350" fleetnumber="-1" />
+    <create type="enemy" x="60169.0" y="0.0" z="28771.0" angle="0" name="WP-H" hullID="1350" fleetnumber="-1" />
+    {% for name in ["WP-G", "WP-H", "Ashia Planetary Supervision"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiMine" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiTorp" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="{{ name }}" />
+      <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="{{ name }}" />
+    {% endfor %}
+    {% for name in ["CJ-500", "CJ-404", "CJ-304"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Ashia_9_CustomObjectsRemove" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+    <if_variable name="Ashia System" comparator="EQUALS" value="2.0" />
+    <if_exists name="Ashia Planetary Supervision" />
+    <if_variable name="Sector" comparator="NOT" value="9.0" />
+    {% for name in ["WP-G", "WP-H", "Ashia Planetary Supervision", "CJ-500", "CJ-404", "CJ-304"] %}
+      <destroy name="{{ name }}" />
+    {% endfor %}
+  </event>
+  {% for station in [
+    "Edo",
+    "Gena",
+    "Guardic",
+    "I-264",
+    "Jukuru",
+    "Keshanti",
+    "Keshanti Ores",
+    "Kive",
+    "Korti",
+    "Leesh",
+    "Luek",
+    "Luro",
+    "M-184",
+    "M-844",
+    "M-845",
+    "M-846",
+    "Sam's Junkyard"
+    ] %}
+    <event name="S21_Tyr_{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Tyr System" comparator="EQUALS" value="2.0" />
+      <set_ship_text name="{{ station }}" scan_desc="No life signs. No power signature." hailtext="No response." />
+      <clear_ai name="{{ station }}" />
+    </event>
+  {% endfor %}
+  {% for station in [
+    "Phinmor Gate",
+    "Tyr Administration",
+    "SY-287",
+    "LCS Himae",
+    "Anning Research"
+    ] %}
+    <event name="S21_Tyr_Destroy{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Tyr System" comparator="EQUALS" value="2.0" />
+      <destroy name="{{ station }}" />
+    </event>
+  {% endfor %}
+  <event name="S21_Tyr_5_CustomObjectsCreate" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Tyr System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="5.0" />
+    <if_not_exists name="Tyr Planetary Supervision" />
+    <create count="10" type="mines" startX="53666.0" startY="0.0" startZ="44745.0" radius="23000" randomRange="1000" />
+    <create type="enemy" x="40836.0" y="0.0" z="54154.0" angle="0" name="Tyr Planetary Supervision" hullID="1005" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="42936.0" y="0.0" z="32636.0" angle="0" name="CJ-42" hullID="1005" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="64542.0" y="0.0" z="52321.0" angle="0" name="WP-42" hullID="1350" sideValue="1" fleetnumber="-1" />
+    {% for name in ["WP-42", "Tyr Planetary Supervision"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiMine" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiTorp" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="{{ name }}" />
+      <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="{{ name }}" />
+    {% endfor %}
+    {% for name in ["CJ-42"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Tyr_5_CustomObjectsRemove" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+    <if_variable name="Tyr System" comparator="EQUALS" value="2.0" />
+    <if_exists name="Tyr Planetary Supervision" />
+    <if_variable name="Sector" comparator="NOT" value="5.0" />
+    {% for name in ["WP-42", "CJ-42", "Tyr Planetary Supervision"] %}
+      <destroy name="{{ name }}" />
+    {% endfor %}
+  </event>
+  {% for station in [
+    "DS-26T",
+    "DS-555",
+    "Luanchao Ores",
+    "Sheng Gaowan Mining",
+    "Ying'er Forges",
+    ] %}
+    <event name="S21_Vilnara_{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+      <set_ship_text name="{{ station }}" scan_desc="No life signs. No power signature." hailtext="No response." />
+      <clear_ai name="{{ station }}" />
+    </event>
+  {% endfor %}
+  {% for station in [
+    "Zu Chongzhi Astrolab",
+    "Gohtzao-de",
+    "Kushihlwa Exchange",
+    "Vilnara Post",
+    "DS-500",
+    ] %}
+    <event name="S21_Vilnara_Destroy{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+      <destroy name="{{ station }}" />
+    </event>
+  {% endfor %}
+  <event name="S21_Vilnara_4_CustomObjectsCreate" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="4.0" />
+    <if_variable name="S21_Vilnara4Mines" comparator="EQUALS" value="0.0" />
+    <create count="30" type="mines" startAngle="-170" endAngle="150" startX="74171.0" startY="0.0" startZ="24979.0" radius="5000" />
+    <set_variable name="S21_Vilnara4Mines" value="1.0" integer="yes" />
+  </event>
+  <event name="S21_Vilnara_4_CustomObjectsReset" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="NOT" value="4.0" />
+    <set_variable name="S21_Vilnara4Mines" value="0.0" integer="yes" />
+  </event>
+  <event name="S21_Vilnara_2_CustomObjectsCreate" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Gohtzao-De Staging Platform" />
+    <create type="enemy" x="68098.0" y="0.0" z="30931.0" angle="0" name="WP-55" hullID="1007" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="68219.0" y="0.0" z="39919.0" angle="0" name="WP-57" hullID="1007" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="68062.0" y="0.0" z="48542.0" angle="0" name="WP-58" hullID="1007" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="29960.0" y="0.0" z="70161.0" angle="0" name="Gohtzao-De Staging Platform" hullID="1361" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="49515.0" y="0.0" z="24372.0" angle="0" name="SB-11" hullID="1351" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="30810.0" y="0.0" z="47327.0" angle="0" name="SB-22" hullID="1351" sideValue="1" fleetnumber="-1" />
+    {% for name in ["WP-55", "WP-57", "WP-58", "Gohtzao-De Staging Platform"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiMine" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiTorp" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="Drones" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="{{ name }}" />
+    {% endfor %}
+    {% for name in ["SB-11", "SB-22"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Vilnara_2_CustomObjectsRemove" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+    <if_variable name="Vilnara System" comparator="EQUALS" value="2.0" />
+    <if_exists name="Gohtzao-De Staging Platform" />
+    <if_variable name="Sector" comparator="NOT" value="2.0" />
+    {% for name in ["WP-55", "WP-57", "WP-58", "Gohtzao-De Staging Platform", "SB-11", "SB-22"] %}
+      <destroy name="{{ name }}" />
+    {% endfor %}
+  </event>
+  {% for station in [
+    "Akira Metal Works",
+    "Arylin",
+    "Ayana",
+    "CR-007",
+    "CR-640",
+    "CR-818",
+    "Chel-don",
+    "Chel-rea",
+    "Conduti",
+    "DS-10",
+    "DS-101",
+    "DS-105",
+    "DS-107",
+    "DS-109",
+    "DS-114",
+    "DS-118",
+    "DS-119",
+    "DS-120",
+    "DS-123",
+    "DS-125",
+    "DS-138",
+    "DS-143",
+    "DS-144",
+    "DS-148",
+    "DS-159",
+    "DS-160",
+    "DS-166",
+    "DS-170",
+    "DS-180",
+    "DS-181",
+    "DS-19",
+    "DS-190",
+    "DS-199",
+    "Deserati",
+    "Diana",
+    "Diatha",
+    "Isotopia",
+    "Melnibo",
+    "Okogonik",
+    "Phineas",
+    "Puerto Piedra",
+    "Tiffan Denebite",
+    "Taylor Denabite",
+    "Ries",
+    "Rio",
+    "Rockaway Metallurgy",
+    "Sanda",
+    "Santiago",
+    "Joshua Tree Denebite",
+    "BY-100",
+    "Singh",
+    "Umber"
+    ] %}
+    <event name="S21_Loria_{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+      <set_ship_text name="{{ station }}" scan_desc="No life signs. No power signature." hailtext="No response." />
+      <clear_ai name="{{ station }}" />
+    </event>
+  {% endfor %}
+  {% for station in [
+    "Customs House",
+    "Mria Gate",
+    "SY-144",
+    "SY-169",
+    "SY-172",
+    "SY-199",
+    "SY-99",
+    "SY-992",
+    "DS-21",
+    "DS-28",
+    "Immigration",
+    "DS-33",
+    "DS-39",
+    "DS-53",
+    "DS-57",
+    "WP-09",
+    "WP-54",
+    "DS-59",
+    "SY-881",
+    "DS-68",
+    "DS-71",
+    "DS-87",
+    "DS-88",
+    "DS-92",
+    "Civilian SY",
+    "Sensor Buoy",
+    "Comms Relay",
+    "WP",
+    "Loria Command",
+    "DS-44",
+    "Ries",
+    "Terranic Mining",
+    "SY-169",
+    "Comms Relay 1",
+    "Comms Relay 2",
+    "SY-144",
+    "SY-172",
+    "SY-199",
+    "SY-998",
+    "Staunton",
+    "Diana",
+    "Anton",
+    "Oralo",
+    "Penton",
+    "DS-165",
+    "Lorian Council"
+    ] %}
+    <event name="S21_Loria_Destroy{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+      <destroy name="{{ station }}" />
+    </event>
+  {% endfor %}
+  <event name="S21_Loria_11_CustomObjectsCreate" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="11.0" />
+    <if_not_exists name="Loria Platform" />
+    <create type="enemy" x="60081.0" y="0.0" z="45219.0" angle="0" name="Loria Platform" hullID="1355" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="65490.0" y="0.0" z="37396.0" angle="0" name="Loria Antenna" hullID="1353" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="55137.0" y="0.0" z="37239.0" angle="0" name="Loria Generator" hullID="1354" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="49150.0" y="0.0" z="48056.0" angle="0" name="Unaten" hullID="1005" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="58745.0" y="0.0" z="27415.0" angle="0" name="Collective" hullID="1006" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="72498.0" y="0.0" z="44048.0" angle="0" name="Targ" hullID="1007" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="60203.0" y="0.0" z="15627.0" angle="0" name="WP-A" hullID="1005" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="59960.0" y="0.0" z="63967.0" angle="0" name="WP-B" hullID="1005" sideValue="1" fleetnumber="-1" />
+
+    <set_special name="Targ" ship="-1" captain="-1" ability="Drones" />
+    {% for name in ["WP-A", "WP-B"] %}
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiMine" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiTorp" />
+    {% endfor %}
+    {% for name in ["WP-A", "WP-B", "Unaten", "Targ", "Collective"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="{{ name }}" />
+    {% endfor %}
+    <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="Collective" />
+    {% for name in ["Loria Platform", "Loria Antenna", "Loria Generator"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Loria_11_CustomObjectsRemove" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_exists name="Loria Platform" />
+    <if_variable name="Sector" comparator="NOT" value="11.0" />
+    {% for name in ["WP-A", "WP-B", "Unaten", "Targ", "Collective", "Loria Platform", "Loria Antenna", "Loria Generator"] %}
+      <destroy name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Loria_6_CustomObjectsCreate" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="6.0" />
+    <if_not_exists name="Staunton Forward Observation" />
+    <create type="enemy" x="52065.0" y="0.0" z="48421.0" angle="0" name="Staunton Forward Observation" hullID="1350" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="80365.0" y="0.0" z="33117.0" angle="0" name="SB-4a" hullID="1351" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="21094.0" y="0.0" z="20242.0" angle="0" name="SB-4f" hullID="1351" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="71741.0" y="0.0" z="83157.0" angle="0" name="SB-4g" hullID="1351" sideValue="1" fleetnumber="-1" />
+    {% for name in ["Staunton Forward Observation"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="{{ name }}" />
+      <add_ai type="LAUNCH_FIGHTERS" value1="6000" name="{{ name }}" />
+    {% endfor %}
+    {% for name in ["SB-4a", "SB-4f", "SB-4g"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Loria_6_CustomObjectsRemove" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+    <if_variable name="Loria System" comparator="EQUALS" value="2.0" />
+    <if_exists name="Staunton Forward Observation" />
+    <if_variable name="Sector" comparator="NOT" value="6.0" />
+    {% for name in ["SB-4a", "SB-4f", "SB-4g", "Staunton Forward Observation"] %}
+      <destroy name="{{ name }}" />
+    {% endfor %}
+  </event>
+  {% for station in [
+    "Alkanillion",
+    "Axitymy",
+    "Cholander Ores",
+    "Crescent Denabite",
+    "Djakinti",
+    "Finaro",
+    "Goldstone industries",
+    "Imidri Mining",
+    "Jetel",
+    "Kazu",
+    "Majarki",
+    "Massimon",
+    "Oophedran",
+    "Opal Ores",
+    "Paragusan",
+    "Premoler",
+    "Pretara",
+    "Redeymo Ores",
+    "Roshtic Market",
+    "Sandinal",
+    "Tergi",
+    "DS-795",
+    "DS-506",
+    "DS-441",
+    "DS-459",
+    "DS-900",
+    "DS-881",
+    "DS-521",
+    "Goldone Industries",
+    "Pargusan",
+    "Oppia",
+    "Tossey Fabricants",
+    "Zildi Systems"
+    ] %}
+    <event name="S21_Mria_{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
+      <set_ship_text name="{{ station }}" scan_desc="No life signs. No power signature." hailtext="No response." />
+      <clear_ai name="{{ station }}" />
+    </event>
+  {% endfor %}
+  {% for station in [
+      "Loria Gate",
+      "Hooke Labs",
+      "Inidabi Institute",
+      "Capara Processors",
+      "Elite Refining",
+      "Sheol Ore Processing",
+      "Shachat Denabite",
+      "Customs &amp; Immigration",
+      "DS-701",
+      "DS-312",
+      "DS-448",
+      "DS-662",
+      "Elson",
+      "Ela Industries",
+      "Elson Shipyards",
+      "Ufaqi Mining",
+      "Mria Command",
+      "Mrir Authority",
+      "Mria Shipyards",
+      "Precious Mining",
+      "Jeketa Ores",
+      "Capitol City",
+      "Ayala Trading Post",
+      "DS-257",
+      "SY-110",
+      "SY-198",
+      "DS-202",
+      "WP-62A",
+      "WP-87B"
+    ] %}
+    <event name="S21_Mria_Destroy{{ station }}" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+      <if_exists name="{{ station }}" />
+      <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
+      <destroy name="{{ station }}" />
+    </event>
+  {% endfor %}
+  <event name="S21_Mria_2_CustomObjectsCreate" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Capara Base" />
+    <create type="enemy" x="20000.0" y="0.0" z="51457.0" angle="0" name=" Mria Shipyards " hullID="1005" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="60324.0" y="0.0" z="59838.0" angle="0" name="Relay a6" hullID="1352" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="39798.0" y="0.0" z="60202.0" angle="0" name="Relay 7f" hullID="1352" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="47693.0" y="0.0" z="46234.0" angle="0" name="Capara Base" hullID="1005" sideValue="1" fleetnumber="-1" />
+    {% for name in [" Mria Shipyards ", "Capara Base"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="Drones" />
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="{{ name }}" />
+    {% endfor %}
+    {% for name in ["Relay a6", "Relay 7f"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Mria_2_CustomObjectsRemove" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+    <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
+    <if_exists name="Capara Base" />
+    <if_variable name="Sector" comparator="NOT" value="2.0" />
+    {% for name in [" Mria Shipyards ", "Capara Base", "Relay a6", "Relay 7f"] %}
+      <destroy name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Mria_9_CustomObjectsCreate" id_arme="cf2d66e7-e5b4-4b4f-ac61-27c721a34ef6">
+    <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
+    <if_variable name="Sector" comparator="EQUALS" value="9.0" />
+    <if_not_exists name="Mria Supervision" />
+    <create type="enemy" x="40891.0" y="0.0" z="24979.0" angle="0" name=" Capitol City " hullID="1001" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="53887.0" y="0.0" z="30445.0" angle="0" name="Mria Supervision" hullID="1005" sideValue="1" fleetnumber="-1" />
+    <create type="enemy" x="27409.0" y="0.0" z="53886.0" angle="0" name="WP-Elson" hullID="1058" sideValue="1" fleetnumber="-1" />
+    <set_ship_text name="WP-Elson" desc="A USFP civilian base hastily retrofitted into a Hegemony weapon station of sorts." />
+    {% for name in [" Capitol City ", "WP-Elson", "Mria Supervision"] %}
+      <set_object_property property="topSpeed" value="0" name="{{ name }}" />
+      <set_object_property property="surrenderChance" value="0" name="{{ name }}" />
+      <clear_ai name="{{ name }}" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="Drones" />
+      <set_special name="{{ name }}" ship="-1" captain="-1" ability="AntiTorp" />
+      <add_ai type="SPCL_AI" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="6000" value2="6000" name="{{ name }}" />
+      <add_ai type="CHASE_AI_SHIP" value1="5000" value2="5000" name="{{ name }}" />
+      <add_ai type="CHASE_PLAYER" value1="1000" value2="1000" name="{{ name }}" />
+    {% endfor %}
+  </event>
+  <event name="S21_Mria_9_CustomObjectsRemove" id_arme="b9fe652e-d1bc-4871-850e-49f47fb98ac8">
+    <if_variable name="Mria System" comparator="EQUALS" value="2.0" />
+    <if_exists name="Mria Supervision" />
+    <if_variable name="Sector" comparator="NOT" value="9.0" />
+    {% for name in [" Capitol City ", "WP-Elson", "Mria Supervision"] %}
+      <destroy name="{{ name }}" />
+    {% endfor %}
+  </event>
+</mission_data>
